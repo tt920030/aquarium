@@ -1,0 +1,50 @@
+// 頁首
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 30px;
+  background-color: map-get($color, bgc1);
+
+  .logo {
+    color: map-get($color, text);
+  }
+
+  section {
+    // 右上角icon
+    ul {
+      display: flex;
+      margin-bottom: 10px;
+      justify-content: flex-end;
+
+      li {
+        margin: 0 10px;
+        color: map-get($color, text);
+      }
+    }
+
+    // 導覽列
+    nav {
+      display: flex;
+      @include mobile() {
+        flex-direction: column;
+        font-size: 1.2rem;
+      }
+      div {
+        margin: 0 20px;
+      }
+    }
+  }
+}
+
+// 內頁
+main {
+  // background-color: red;
+  @include wrapper {
+    @include title(h1);
+    @include title(p) {
+      background-color: red;
+      font-size: 10rem;
+    }
+    @include title(a);
+  }
+}
