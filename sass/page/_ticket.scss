@@ -1,0 +1,78 @@
+body.ticket{
+   
+    @include title(h1);
+    @include title(h2);
+    @include title(h3);
+    @include title(h4);
+    @include title(p);
+   
+   
+      table{
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        border-collapse: collapse;
+        margin: 1em 0;
+        background: white; 
+        font-size: 16px;
+      }
+ 
+      table th,
+      table td{
+        text-align: center;
+        border: 2px solid map-get($color, bgc2 );
+        padding: 2rem 6rem;
+      }
+      
+      table thead{
+        background-color: map-get($color , bgc2 );
+        font-weight: bold;
+      }
+
+      table tr td:first-child{
+        background-color: map-get($color , bgc2 );
+        font-weight: bold;
+      }
+      
+      @include mobile{
+        table{
+            width: 80%;
+            box-shadow: none;  
+          }
+          table thead{
+            display: none; 
+          }
+        table th,
+        table td{
+          padding: .5em;
+        }
+          
+      
+        table.day td:nth-child(2):before{
+            content: "日間票";
+        }
+        table.day td:nth-child(3):before{
+            content: "星光票";
+        }
+        table td:before{
+          position: absolute;
+          left: .5em;
+          font-weight: bold;
+        }
+        
+          table tr,
+          table td{
+              display: block;
+          }
+          table tr{
+              position: relative;
+              margin-bottom: 1em;
+          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+          }
+          table td{
+              border-top: none;
+          }
+       
+     
+      }
+     
+
+}
