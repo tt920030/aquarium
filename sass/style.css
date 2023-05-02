@@ -209,4 +209,16 @@ main a {
   letter-spacing: 0.2rem;
 }
 
+.about main {
+  background-image: url(../../img/about_bg.png);
+}
+.about main .banner {
+  background-image: url(../../img/about_banner.jpg);
+}
+.about main .banner h1 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 4.8rem;
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=style.css.map */
