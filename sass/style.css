@@ -1,17 +1,256 @@
-/* Error: expected "{".
- *    ,
- * 28 | @import "./page/floor_introduction";
- *    |                                    ^
- *    '
- *   sass\style.scss 28:36  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a    \2577 \a 28 \2502  @import "./page/floor_introduction";\d\a    \2502                                     ^\a    \2575 \a   sass\\style.scss 28:36  root stylesheet';
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  color: black;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Noto Sans TC", sans-serif;
+  color: #16355a;
+}
+@media all and (max-width: 414px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+h1 {
+  color: white;
+  font-family: "Noto Serif TC", serif;
+  font-size: 4.8rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  line-height: 6.5rem;
+}
+
+h2 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 3.2rem;
+  letter-spacing: 0.4rem;
+}
+
+h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.45rem;
+}
+
+h4 {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+}
+
+a {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #fff61c;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px 30px;
+  transition: 0.5s;
+  color: #16355a;
+  cursor: pointer;
+}
+
+.floor_introduction main {
+  background-image: url("../../img/floor_introduction_bgi.jpg");
+}
+.floor_introduction main .wrapper {
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+.floor_introduction main .wrapper .title {
+  width: 410px;
+  height: 191px;
+  margin: 0 auto;
+  background-image: url("../../img/floor_introduction_title.png");
+  overflow: hidden;
+}
+.floor_introduction main .wrapper .title h2 {
+  position: relative;
+  top: 104px;
+  left: 131px;
+  color: #26450c;
+  font-weight: bold;
+}
+.floor_introduction main .wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 200px;
+}
+@media all and (max-width: 414px) {
+  .floor_introduction main .wrapper ul {
+    flex-direction: column;
+  }
+}
+.floor_introduction main .wrapper ul li {
+  flex: 0 0 50%;
+  margin-top: 25px;
+}
+.floor_introduction main .wrapper ul li img {
+  display: block;
+  width: 70%;
+  margin: auto;
+}
+.floor_introduction main .wrapper ul li h4 {
+  text-align: center;
+  margin-top: -20px;
+}
+.floor_introduction main .wrapper ul li p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.about main {
+  background-image: url(../../img/about_bg.png);
+}
+.about main .banner {
+  background-image: url(../../img/about_banner.jpg);
+}
+
+/*# sourceMappingURL=style.css.map */
