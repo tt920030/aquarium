@@ -35,9 +35,16 @@
 // 中間區塊規範
 @mixin wrapper() {
   .wrapper {
-    max-width: 900px;
+    box-sizing: border-box;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
   }
   @content;
+}
+
+// flex
+@mixin flex() {
+  display: flex;
+  flex-wrap: wrap;
 }
