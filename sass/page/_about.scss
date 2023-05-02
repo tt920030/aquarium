@@ -1,0 +1,14 @@
+.about {
+    main{
+        background-image:url(../../img/about_bg.png) ;
+        .banner{
+            background-image: url(../../img/about_banner.jpg);
+           
+            @include title(h1);
+           
+        }
+    }
+    .wrapper{
+
+    }
+}
