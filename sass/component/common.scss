@@ -133,6 +133,7 @@ a {
 html {
   font-size: 10px;
   font-family: "Noto Sans TC", sans-serif;
+  color: #16355a;
   @include mobile() {
     font-size: 8px;
   }
