@@ -1,5 +1,4 @@
 .about {
-<<<<<<< HEAD
     main{
         
     
@@ -7,19 +6,15 @@
             background-image: url(../../img/about_banner.jpg);
             height: 660px;
             background-size: cover;
-            @include title(h1){padding-top: 300px
-            ;letter-spacing: 0.235rem;
+            h1{padding-top: 300px;
+            letter-spacing: 0.235rem;
         };
             
            
         }
     }
     .wrapper{
-        @include title(h1){color: #16355A};
-        @include title(h2);
-        @include title(h3);
-        @include title(h4);
-        @include title(p);
+        h1{color: #16355A;}
         .top{
            
             background-image: url(../../img/about_bg.png);
@@ -49,14 +44,3 @@
 
     }
 }
-=======
-  main {
-    background-image: url(../../img/about_bg.png);
-    .banner {
-      background-image: url(../../img/about_banner.jpg);
-    }
-  }
-  .wrapper {
-  }
-}
->>>>>>> 7147fe9da0371535c245fa8b687df620603b38e1
