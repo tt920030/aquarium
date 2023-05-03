@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -138,11 +139,49 @@ a {
 html {
   font-size: 10px;
   font-family: "Noto Sans TC", sans-serif;
+  color: #16355a;
 }
 @media all and (max-width: 414px) {
   html {
     font-size: 8px;
   }
+}
+
+h1 {
+  color: white;
+  font-family: "Noto Serif TC", serif;
+  font-size: 4.8rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  line-height: 6.5rem;
+}
+
+h2 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 3.2rem;
+  letter-spacing: 0.4rem;
+}
+
+h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.45rem;
+}
+
+h4 {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+}
+
+a {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
 }
 
 .btn {
@@ -156,50 +195,52 @@ html {
   cursor: pointer;
 }
 
-.btn1 {
-  display: inline-block;
-  background: #fff61c;
-  border-radius: 40px;
-  text-align: center;
-  padding: 10px 30px;
-  transition: 0.5s;
-  color: #16355a;
-  cursor: pointer;
-  border: 0;
-  width: 100%;
-}
-
-.input {
+header {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  margin: 20px 30px;
+  background-color: #ccf1f5;
 }
-.input label {
-  font-size: 1.6rem;
-  margin-bottom: 5px;
+header .logo {
+  color: #16355a;
 }
-.input input {
-  appearance: none;
-  border: 0px;
-  border-bottom: 1px solid black;
-  border-radius: 0;
-  height: 30px;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position: left 5px center;
-  padding: 0 25px;
+header section ul {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: flex-end;
 }
-.input input:focus {
-  outline: 0;
-  box-shadow: none;
-  border-bottom: 1px solid black;
-  background-color: white;
+header section ul li {
+  margin: 0 10px;
+  color: #16355a;
+}
+header section nav {
+  display: flex;
+}
+@media all and (max-width: 414px) {
+  header section nav {
+    flex-direction: column;
+    font-size: 1.2rem;
+  }
+}
+header section nav div {
+  margin: 0 20px;
 }
 
-#pathR path {
+main .wrapper {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+.login main .left .pic1 {
+  background-size: cover;
+  clip-path: url(#pathR);
+  width: 184px;
+  height: 178px;
+  background-color: red;
+}
+.login main .left .pic1 #pathR path {
   animation: pathR 3s linear infinite alternate;
 }
-
 @keyframes pathR {
   50% {
     d: path("M243.5 0.500064C290.593 0.384563 339.027 9.85499 367.3 44.857C394.791 78.892 388.401 133.059 385 175.5C380.256 234.698 391.055 304.484 342 342.5C282.792 388.385 197.955 401.584 127.5 372.5C55.0303 342.585 2.0737 274.183 0.499988 200.501C-0.868936 136.406 64.721 103.775 117.5 62.5005C153.399 34.4267 196.583 0.615132 243.5 0.500064Z");
@@ -207,51 +248,6 @@ html {
   100% {
     d: path("M240.353 0.35113C287.445 0.23563 325.227 18.498 353.5 53.5C387.022 95 398.901 147.559 395.5 190C390.756 249.198 392.408 314.334 343.352 352.351C284.144 398.236 197.455 404.084 127 375C54.5303 345.085 1.94751 290.028 0.373794 216.345C-0.99513 152.251 47.0735 107.625 99.8525 66.3507C135.751 38.2769 193.436 0.466199 240.353 0.35113Z");
   }
-}
-.login {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-}
-.login .fork {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-}
-.login main {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 828px;
-  height: 567px;
-  margin: auto;
-  display: flex;
-}
-@media all and (max-width: 414px) {
-  .login main {
-    width: 414px;
-  }
-}
-.login main .left {
-  background-image: url(../../img/login_bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 414px;
-  position: relative;
-}
-@media all and (max-width: 414px) {
-  .login main .left {
-    display: none;
-  }
-}
-.login main .left .pic1 {
-  background-size: cover;
-  clip-path: path("M243.5 0.500064C290.593 0.384563 339.027 9.85499 367.3 44.857C394.791 78.892 388.401 133.059 385 175.5C380.256 234.698 391.055 304.484 342 342.5C282.792 388.385 197.955 401.584 127.5 372.5C55.0303 342.585 2.0737 274.183 0.499988 200.501C-0.868936 136.406 64.721 103.775 117.5 62.5005C153.399 34.4267 196.583 0.615132 243.5 0.500064Z");
-  width: 184px;
-  height: 178px;
-  background-color: red;
 }
 .login main .left .pic2 {
   position: absolute;
@@ -280,94 +276,22 @@ html {
 }
 .login main .right h3 {
   font-family: "Noto Serif TC", serif;
-  font-size: 2.6rem;
-  text-align: center;
-  margin-bottom: 7px;
+  font-size: 4.8rem;
+  font-weight: bold;
 }
-.login main .right .top form .input {
-  position: relative;
-}
-.login main .right .top form .input #email {
-  background-image: url(../../img/login_email.svg);
-}
-.login main .right .top form .input #password {
-  background-image: url(../../img/login_password.svg);
-}
-.login main .right .top form .input .eye {
-  position: absolute;
-  right: 5px;
-  bottom: 47px;
-  cursor: pointer;
-}
-.login main .right .top form .btn1 h4 {
-  font-size: 2rem;
-  margin-bottom: 0;
-}
-.login main .right .top form p {
+main p {
   font-size: 1.6rem;
   line-height: 1.6;
   letter-spacing: 0.1rem;
-  margin-top: 5px;
+  background-color: red;
+  font-size: 10rem;
 }
-.login main .right .top form .forget {
-  text-align: right;
+
+.about main {
+  background-image: url(../../img/about_bg.png);
 }
-.login main .right .top form .forget a {
-  color: black;
-  text-decoration: none;
-}
-.login main .right .top form .register1 {
-  justify-content: center;
-  display: flex;
-}
-.login main .right .top form .register1 a {
-  cursor: pointer;
-}
-.login main .right .top p {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  letter-spacing: 0.1rem;
-  margin-top: 5px;
-}
-.login main .right .bottom {
-  margin-top: 40px;
-}
-.login main .right .bottom p {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  letter-spacing: 0.1rem;
-}
-.login main .right .bottom .register2 {
-  text-align: center;
-  position: relative;
-}
-.login main .right .bottom .register2::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 96px;
-  height: 1px;
-  background-color: black;
-}
-.login main .right .bottom .register2::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 96px;
-  height: 1px;
-  background-color: black;
-}
-.login main .right .bottom .social {
-  display: flex;
-  justify-content: center;
-}
-.login main .right .bottom .social img {
-  padding: 5px;
-  cursor: pointer;
+.about main .banner {
+  background-image: url(../../img/about_banner.jpg);
 }
 
 /*# sourceMappingURL=style.css.map */
