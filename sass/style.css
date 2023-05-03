@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -251,6 +252,107 @@ a {
 }
 .about main .banner {
   background-image: url(../../img/about_banner.jpg);
+}
+body.ticket main .wrapper {
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+body.ticket table {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem auto;
+  background: white;
+  font-size: 1.6rem;
+}
+body.ticket table thead {
+  background-color: #97cbe0;
+  font-weight: bold;
+}
+body.ticket table tr td:first-child {
+  background-color: #97cbe0;
+  font-weight: bold;
+}
+body.ticket table th,
+body.ticket table td {
+  text-align: center;
+  border: 2px solid #97cbe0;
+  padding: 2.5rem 4rem;
+}
+body.ticket .year {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.ticket .year table {
+  margin: 2rem;
+}
+body.ticket .year table td:nth-child(2) {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+body.ticket .group td:not(:nth-child(1)) {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+body.ticket .notice {
+  border: 1px solid black;
+  padding: 2rem;
+  margin: 5rem;
+}
+body.ticket ul {
+  margin-left: 3rem;
+}
+body.ticket ul li {
+  list-style: disc;
+  font-size: 1.6rem;
+  line-height: 4rem;
+}
+body.ticket a {
+  font-weight: bold;
+}
+@media all and (max-width: 414px) {
+  body.ticket table {
+    width: 80%;
+    box-shadow: none;
+  }
+  body.ticket table thead {
+    display: none;
+  }
+  body.ticket table th,
+  body.ticket table td {
+    padding: 0.5em;
+  }
+  body.ticket table td:before {
+    position: absolute;
+    left: 0.5em;
+    font-weight: bold;
+  }
+  body.ticket table.day td:nth-child(2):before {
+    content: "日間票";
+  }
+  body.ticket table.day td:nth-child(3):before {
+    content: "星光票";
+  }
+  body.ticket .year {
+    flex-direction: column;
+  }
+  body.ticket table tr,
+  body.ticket table td {
+    display: block;
+  }
+  body.ticket table tr {
+    position: relative;
+    margin-bottom: 1em;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  }
+  body.ticket table td {
+    border-top: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

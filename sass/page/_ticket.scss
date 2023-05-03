@@ -1,78 +1,151 @@
-body.ticket{
-   
-    @include title(h1);
-    @include title(h2);
-    @include title(h3);
-    @include title(h4);
-    @include title(p);
-   
-   
-      table{
-        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-        border-collapse: collapse;
-        margin: 1em 0;
-        background: white; 
-        font-size: 16px;
-      }
- 
-      table th,
-      table td{
-        text-align: center;
-        border: 2px solid map-get($color, bgc2 );
-        padding: 2rem 6rem;
-      }
-      
-      table thead{
-        background-color: map-get($color , bgc2 );
-        font-weight: bold;
-      }
+body.ticket {
 
-      table tr td:first-child{
-        background-color: map-get($color , bgc2 );
-        font-weight: bold;
-      }
-      
-      @include mobile{
-        table{
-            width: 80%;
-            box-shadow: none;  
-          }
-          table thead{
-            display: none; 
-          }
-        table th,
-        table td{
-          padding: .5em;
+
+
+    main {
+        @include wrapper
+    }
+
+
+    table {
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 2rem auto;
+        background: white;
+        font-size: 1.6rem;
+
+        thead {
+            background-color: map-get($color , bgc2);
+            font-weight: bold;
         }
-          
-      
-        table.day td:nth-child(2):before{
-            content: "日間票";
+
+        tr td:first-child {
+            background-color: map-get($color , bgc2);
+            font-weight: bold;
         }
-        table.day td:nth-child(3):before{
-            content: "星光票";
+
+
+        th,
+        td {
+            text-align: center;
+            border: 2px solid map-get($color, bgc2);
+            padding: 2.5rem 4rem;
         }
-        table td:before{
-          position: absolute;
-          left: .5em;
-          font-weight: bold;
-        }
-        
-          table tr,
-          table td{
-              display: block;
-          }
-          table tr{
-              position: relative;
-              margin-bottom: 1em;
-          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-          }
-          table td{
-              border-top: none;
-          }
+
        
-     
-      }
-     
+
+    }
+
+
+    .year {
+
+
+        margin: 0 auto;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        table {
+
+            margin: 2rem;
+
+
+            td:nth-child(2) {
+                padding-left: 10rem;
+                padding-right: 10rem;
+            }
+        }
+
+
+    }
+
+    .group{
+        td:not(:nth-child(1)) {
+            padding-left: 8rem;
+            padding-right: 8rem;
+        }
+    }
+
+    .notice {
+        border: 1px solid black;
+        padding: 2rem;
+        margin: 5rem;
+    }
+
+    ul {
+        margin-left: 3rem;
+
+        li {
+            list-style: disc;
+            font-size: 1.6rem;
+            line-height: 4rem;
+        }
+
+
+    }
+
+    a{
+        font-weight: bold
+    };
+
+
+    @include mobile {
+        table {
+            width: 80%;
+            box-shadow: none;
+
+            thead {
+                display: none;
+            }
+
+            th,
+            td {
+                padding: .5em;
+            }
+
+            td:before {
+                position: absolute;
+                left: .5em;
+                font-weight: bold;
+            }
+
+            &.day {
+                td:nth-child(2):before {
+                    content: "日間票";
+                }
+
+                td:nth-child(3):before {
+                    content: "星光票";
+                }
+            }
+        }
+
+
+        .year {
+            flex-direction: column;
+        }
+
+
+
+        table tr,
+        table td {
+            display: block;
+        }
+
+        table tr {
+            position: relative;
+            margin-bottom: 1em;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table td {
+            border-top: none;
+        }
+
+
+    }
+
 
 }
