@@ -146,6 +146,43 @@ html {
   }
 }
 
+h1 {
+  color: white;
+  font-family: "Noto Serif TC", serif;
+  font-size: 4.8rem;
+  font-weight: bold;
+  letter-spacing: 1rem;
+  line-height: 6.5rem;
+}
+
+h2 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 3.2rem;
+  letter-spacing: 0.4rem;
+}
+
+h3 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.45rem;
+}
+
+h4 {
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+}
+
+a {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+}
+
 .btn {
   display: inline-block;
   background: #fff61c;
@@ -157,62 +194,63 @@ html {
   cursor: pointer;
 }
 
-.test header {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 30px;
-  background-color: #ccf1f5;
+.floor_introduction main {
+  background-image: url("../../img/floor_introduction_bgi.jpg");
 }
-.test header .logo {
-  color: #16355a;
-}
-.test header section ul {
-  display: flex;
-  margin-bottom: 10px;
-  justify-content: flex-end;
-}
-.test header section ul li {
-  margin: 0 10px;
-  color: #16355a;
-}
-.test header section nav {
-  display: flex;
-}
-@media all and (max-width: 414px) {
-  .test header section nav {
-    flex-direction: column;
-    font-size: 1.2rem;
-  }
-}
-.test header section nav div {
-  margin: 0 20px;
-}
-.test main .wrapper {
+.floor_introduction main .wrapper {
   box-sizing: border-box;
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+  max-width: 1100px;
 }
-.test main .wrapper h1 {
-  color: white;
-  font-family: "Noto Serif TC", serif;
-  font-size: 4.8rem;
+.floor_introduction main .wrapper .title {
+  width: 410px;
+  height: 191px;
+  margin: 0 auto;
+  background-image: url("../../img/floor_introduction_title.png");
+  overflow: hidden;
+}
+.floor_introduction main .wrapper .title h2 {
+  position: relative;
+  top: 104px;
+  left: 131px;
+  color: #26450c;
   font-weight: bold;
 }
-.test main .wrapper h1 {
-  font-size: 4.8rem;
-  line-height: 1.6;
+.floor_introduction main .wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 200px;
 }
-.test main .wrapper p {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  letter-spacing: 0.1rem;
-  background-color: red;
-  font-size: 10rem;
+@media all and (max-width: 414px) {
+  .floor_introduction main .wrapper ul {
+    flex-direction: column;
+  }
 }
-.test main .wrapper a {
-  font-size: 1.4rem;
-  letter-spacing: 0.2rem;
+.floor_introduction main .wrapper ul li {
+  flex: 0 0 50%;
+  margin-top: 25px;
+}
+.floor_introduction main .wrapper ul li img {
+  display: block;
+  width: 70%;
+  margin: auto;
+}
+.floor_introduction main .wrapper ul li h4 {
+  text-align: center;
+  margin-top: -20px;
+}
+.floor_introduction main .wrapper ul li p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.about main {
+  background-image: url(../../img/about_bg.png);
+}
+.about main .banner {
+  background-image: url(../../img/about_banner.jpg);
 }
 
 /*# sourceMappingURL=style.css.map */

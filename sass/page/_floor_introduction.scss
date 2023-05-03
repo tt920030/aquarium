@@ -1,0 +1,58 @@
+.floor_introduction {
+  // 主內容
+  main {
+    background-image: url("../../img/floor_introduction_bgi.jpg");
+    @include wrapper {
+      max-width: 1100px;
+      // 標題
+      .title {
+        width: 410px;
+        height: 191px;
+        margin: 0 auto;
+        background-image: url("../../img/floor_introduction_title.png");
+        overflow: hidden;
+        h2 {
+          position: relative;
+          top: 104px;
+          left: 131px;
+          color: #26450c;
+          font-weight: bold;
+        }
+      }
+
+      // 圖片排列
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0 200px;
+        // RWD
+        @include mobile {
+          flex-direction: column;
+        }
+
+        li {
+          flex: 0 0 50%;
+          margin-top: 25px;
+
+          img {
+            display: block;
+            width: 70%;
+            margin: auto;
+          }
+
+          h4 {
+            text-align: center;
+            margin-top: -20px;
+          }
+
+          p {
+            text-align: center;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 各樓層指南
