@@ -246,6 +246,132 @@ a {
   margin-top: 10px;
 }
 
+.floor {
+  background: #f4f5f7;
+}
+.floor .wrapper {
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.floor .wrapper h2 {
+  margin: 0 0 35px;
+  padding: 0 0 25px;
+  width: 250px;
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: bold;
+  background: url("../../img/floor_introduction_h2_line.svg") no-repeat left bottom;
+  background-size: 250px 10px;
+}
+.floor .wrapper .floor_image {
+  padding: 70px 85px 55px;
+  margin: 0 0 30px;
+  background: #fff;
+  border-radius: 28px;
+}
+.floor .wrapper .floor_image .floor_img {
+  position: relative;
+  margin: 0 0 70px;
+}
+.floor .wrapper .floor_image .floor_img p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 8.3rem;
+}
+.floor .wrapper .floor_image .floor_img span {
+  font-size: 6rem;
+}
+.floor .wrapper .floor_image .floor_img img {
+  width: 100%;
+  border-radius: 10px;
+}
+.floor .wrapper .floor_image .floor_img .p1 {
+  position: absolute;
+  left: 20px;
+  top: 200px;
+  width: 112px;
+  height: 72px;
+  animation: animalMove 3s infinite;
+}
+.floor .wrapper .floor_image .floor_img .p1 a:hover {
+  animation: shake 0.1s infinite linear alternate;
+}
+.floor .wrapper .floor_image .floor_img .p1 a img {
+  width: 112px;
+  height: 72px;
+}
+.floor .wrapper .floor_image .floor_img .p2 {
+  position: absolute;
+  left: 190px;
+  top: -20px;
+  width: 112px;
+  height: 72px;
+  animation: animalMove 3s infinite;
+}
+.floor .wrapper .floor_image .floor_img .p2 a:hover {
+  animation: shake 0.1s infinite linear alternate;
+}
+.floor .wrapper .floor_image .floor_img .p2 a img {
+  width: 112px;
+  height: 72px;
+}
+.floor .wrapper .floor_image .floor_img .p3 {
+  position: absolute;
+  right: 230px;
+  top: -20px;
+  width: 112px;
+  height: 72px;
+  animation: animalMove 3s infinite;
+}
+.floor .wrapper .floor_image .floor_img .p3 a:hover {
+  animation: shake 0.1s infinite linear alternate;
+}
+.floor .wrapper .floor_image .floor_img .p3 a img {
+  width: 112px;
+  height: 72px;
+}
+.floor .wrapper .floor_image ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.floor .wrapper .floor_image ul li {
+  width: 135px;
+  margin-right: 20px;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+@keyframes animalMove {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0, 20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(4px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 .about main {
   background-image: url(../../img/about_bg.png);
 }
