@@ -1,14 +1,50 @@
 .about {
     main{
-        background-image:url(../../img/about_bg.png) ;
+        
+    
         .banner{
             background-image: url(../../img/about_banner.jpg);
-           
-            @include title(h1);
+            height: 660px;
+            background-size: cover;
+            @include title(h1){padding-top: 300px
+            ;letter-spacing: 0.235rem;
+        };
+            
            
         }
     }
     .wrapper{
+        @include title(h1){color: #16355A};
+        @include title(h2);
+        @include title(h3);
+        @include title(h4);
+        @include title(p);
+        .top{
+           
+            background-image: url(../../img/about_bg.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            .img1{
+                width: 30%;
+            }
+            .img2{
+                width: 45%;
+            }
+        }
+        .mid{
+            background-color: #97cbe0,;
+            .img3{
+                width:40%
+            }
+            ul{
+                width: 25%;
+                background-color: white;
+                img{
+                    width: 100%;
+                }
+
+            }
+        }
 
     }
 }
