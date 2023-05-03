@@ -147,7 +147,7 @@
             padding: 50px 40px;
             box-sizing: border-box;
 
-            @include title(h3) {
+            h3 {
                 text-align: center;
                 margin-bottom: 7px;
             }
@@ -173,12 +173,12 @@
                     }
 
                     .btn1 {
-                        @include title(h4){
+                        h4{
                             margin-bottom: 0;
                         };
                     }
 
-                    @include title(p) {
+                    p{
                         margin-top: 5px;
                     }
 
@@ -202,7 +202,7 @@
 
                 }
 
-                @include title(p) {
+                p {
                     margin-top: 5px;
                 }
             }
@@ -210,7 +210,7 @@
 
             .bottom{
                 margin-top: 40px;
-                @include title(p);
+                
                 .register2 {
                     text-align: center;
                     position: relative;
