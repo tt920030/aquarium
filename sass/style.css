@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -372,11 +373,343 @@ a {
     transform: translate(0, 0);
   }
 }
-.about main {
-  background-image: url(../../img/about_bg.png);
-}
 .about main .banner {
   background-image: url(../../img/about_banner.jpg);
+  height: 660px;
+  background-size: cover;
+}
+.about main .banner h1 {
+  padding-top: 300px;
+  letter-spacing: 0.235rem;
+}
+.about .wrapper h1 {
+  color: #16355A;
+}
+.about .wrapper .top {
+  background-image: url(../../img/about_bg.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.about .wrapper .top .img1 {
+  width: 30%;
+}
+.about .wrapper .top .img2 {
+  width: 45%;
+}
+.about .wrapper .mid {
+  background-color: #97cbe0;
+}
+.about .wrapper .mid .img3 {
+  width: 40%;
+}
+.about .wrapper .mid ul {
+  width: 25%;
+  background-color: white;
+}
+.about .wrapper .mid ul img {
+  width: 100%;
+}
+
+.btn1 {
+  display: inline-block;
+  background: #fff61c;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px 30px;
+  transition: 0.5s;
+  color: #16355a;
+  cursor: pointer;
+  border: 0;
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.input label {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+.input input {
+  appearance: none;
+  border: 0px;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  height: 30px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: left 5px center;
+  padding: 0 25px;
+}
+.input input:focus {
+  outline: 0;
+  box-shadow: none;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+#pathR path {
+  animation: pathR 3s linear infinite alternate;
+}
+
+@keyframes pathR {
+  50% {
+    d: path("M243.5 0.500064C290.593 0.384563 339.027 9.85499 367.3 44.857C394.791 78.892 388.401 133.059 385 175.5C380.256 234.698 391.055 304.484 342 342.5C282.792 388.385 197.955 401.584 127.5 372.5C55.0303 342.585 2.0737 274.183 0.499988 200.501C-0.868936 136.406 64.721 103.775 117.5 62.5005C153.399 34.4267 196.583 0.615132 243.5 0.500064Z");
+  }
+  100% {
+    d: path("M240.353 0.35113C287.445 0.23563 325.227 18.498 353.5 53.5C387.022 95 398.901 147.559 395.5 190C390.756 249.198 392.408 314.334 343.352 352.351C284.144 398.236 197.455 404.084 127 375C54.5303 345.085 1.94751 290.028 0.373794 216.345C-0.99513 152.251 47.0735 107.625 99.8525 66.3507C135.751 38.2769 193.436 0.466199 240.353 0.35113Z");
+  }
+}
+.login {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.login .fork {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.login main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 828px;
+  height: 567px;
+  margin: auto;
+  display: flex;
+}
+@media all and (max-width: 414px) {
+  .login main {
+    width: 414px;
+  }
+}
+.login main .left {
+  background-image: url(../../img/login_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 414px;
+  position: relative;
+}
+@media all and (max-width: 414px) {
+  .login main .left {
+    display: none;
+  }
+}
+.login main .left .pic1 {
+  background-size: cover;
+  clip-path: path("M243.5 0.500064C290.593 0.384563 339.027 9.85499 367.3 44.857C394.791 78.892 388.401 133.059 385 175.5C380.256 234.698 391.055 304.484 342 342.5C282.792 388.385 197.955 401.584 127.5 372.5C55.0303 342.585 2.0737 274.183 0.499988 200.501C-0.868936 136.406 64.721 103.775 117.5 62.5005C153.399 34.4267 196.583 0.615132 243.5 0.500064Z");
+  width: 184px;
+  height: 178px;
+  background-color: red;
+}
+.login main .left .pic2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.login main .left .pic3 {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+}
+.login main .left .pic4 {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+}
+.login main .left .pic5 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.login main .right {
+  width: 414px;
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+.login main .right h3 {
+  text-align: center;
+  margin-bottom: 7px;
+}
+.login main .right .top form .input {
+  position: relative;
+}
+.login main .right .top form .input #email {
+  background-image: url(../../img/login_email.svg);
+}
+.login main .right .top form .input #password {
+  background-image: url(../../img/login_password.svg);
+}
+.login main .right .top form .input .eye {
+  position: absolute;
+  right: 5px;
+  bottom: 47px;
+  cursor: pointer;
+}
+.login main .right .top form .btn1 h4 {
+  margin-bottom: 0;
+}
+.login main .right .top form p {
+  margin-top: 5px;
+}
+.login main .right .top form .forget {
+  text-align: right;
+}
+.login main .right .top form .forget a {
+  color: black;
+  text-decoration: none;
+}
+.login main .right .top form .register1 {
+  justify-content: center;
+  display: flex;
+}
+.login main .right .top form .register1 a {
+  cursor: pointer;
+}
+.login main .right .top p {
+  margin-top: 5px;
+}
+.login main .right .bottom {
+  margin-top: 40px;
+}
+.login main .right .bottom .register2 {
+  text-align: center;
+  position: relative;
+}
+.login main .right .bottom .register2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 96px;
+  height: 1px;
+  background-color: black;
+}
+.login main .right .bottom .register2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 96px;
+  height: 1px;
+  background-color: black;
+}
+.login main .right .bottom .social {
+  display: flex;
+  justify-content: center;
+}
+.login main .right .bottom .social img {
+  padding: 5px;
+  cursor: pointer;
+}
+
+body.ticket main .wrapper {
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+body.ticket table {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem auto;
+  background: white;
+  font-size: 1.6rem;
+}
+body.ticket table thead {
+  background-color: #97cbe0;
+  font-weight: bold;
+}
+body.ticket table tr td:first-child {
+  background-color: #97cbe0;
+  font-weight: bold;
+}
+body.ticket table th,
+body.ticket table td {
+  text-align: center;
+  border: 2px solid #97cbe0;
+  padding: 2.5rem 4rem;
+}
+body.ticket .year {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.ticket .year table {
+  margin: 2rem;
+}
+body.ticket .year table td:nth-child(2) {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+body.ticket .group td:not(:nth-child(1)) {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+body.ticket .notice {
+  border: 1px solid black;
+  padding: 2rem;
+  margin: 5rem;
+}
+body.ticket ul {
+  margin-left: 3rem;
+}
+body.ticket ul li {
+  list-style: disc;
+  font-size: 1.6rem;
+  line-height: 4rem;
+}
+body.ticket a {
+  font-weight: bold;
+}
+@media all and (max-width: 414px) {
+  body.ticket table {
+    width: 80%;
+    box-shadow: none;
+  }
+  body.ticket table thead {
+    display: none;
+  }
+  body.ticket table th,
+  body.ticket table td {
+    padding: 0.5em;
+  }
+  body.ticket table td:before {
+    position: absolute;
+    left: 0.5em;
+    font-weight: bold;
+  }
+  body.ticket table.day td:nth-child(2):before {
+    content: "日間票";
+  }
+  body.ticket table.day td:nth-child(3):before {
+    content: "星光票";
+  }
+  body.ticket .year {
+    flex-direction: column;
+  }
+  body.ticket table tr,
+  body.ticket table td {
+    display: block;
+  }
+  body.ticket table tr {
+    position: relative;
+    margin-bottom: 1em;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  }
+  body.ticket table td {
+    border-top: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,254 @@
+// 元素
+.btn1 {
+    display: inline-block;
+    background: #fff61c;
+    border-radius: 40px;
+    text-align: center;
+    padding: 10px 30px;
+    transition: 0.5s;
+    color: #16355a;
+    cursor: pointer;
+    border: 0;
+    width: 100%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 1.6rem;
+        margin-bottom:5px;
+    }
+
+    input {
+        appearance: none;
+        border: 0px;
+        border-bottom: 1px solid black;
+        border-radius: 0;
+        height: 30px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: left 5px center;
+        padding: 0 25px;
+
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+            border-bottom: 1px solid black;
+            background-color: white;
+
+        }
+    }
+
+    margin-bottom: 20px;
+}
+
+#pathR path{
+    animation: pathR 3s linear infinite alternate;
+}
+
+@keyframes pathR{
+    50%{
+        d:path("M243.5 0.500064C290.593 0.384563 339.027 9.85499 367.3 44.857C394.791 78.892 388.401 133.059 385 175.5C380.256 234.698 391.055 304.484 342 342.5C282.792 388.385 197.955 401.584 127.5 372.5C55.0303 342.585 2.0737 274.183 0.499988 200.501C-0.868936 136.406 64.721 103.775 117.5 62.5005C153.399 34.4267 196.583 0.615132 243.5 0.500064Z")
+    }
+    100%{
+        d:path("M240.353 0.35113C287.445 0.23563 325.227 18.498 353.5 53.5C387.022 95 398.901 147.559 395.5 190C390.756 249.198 392.408 314.334 343.352 352.351C284.144 398.236 197.455 404.084 127 375C54.5303 345.085 1.94751 290.028 0.373794 216.345C-0.99513 152.251 47.0735 107.625 99.8525 66.3507C135.751 38.2769 193.436 0.466199 240.353 0.35113Z")
+    }
+}
+
+
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    .fork{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    main {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 828px;
+        height: 567px;
+        margin: auto;
+        display: flex;
+        @include mobile{
+            width: 414px;
+        }
+
+
+        .left {
+            background-image: url(../../img/login_bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 414px;
+            position: relative;
+
+            @include mobile{
+                display: none;
+            }
+
+            .pic1 {
+                // background-image: url(../../img/index_fish.jpg);
+                background-size: cover;
+                clip-path: path("M243.5 0.500064C290.593 0.384563 339.027 9.85499 367.3 44.857C394.791 78.892 388.401 133.059 385 175.5C380.256 234.698 391.055 304.484 342 342.5C282.792 388.385 197.955 401.584 127.5 372.5C55.0303 342.585 2.0737 274.183 0.499988 200.501C-0.868936 136.406 64.721 103.775 117.5 62.5005C153.399 34.4267 196.583 0.615132 243.5 0.500064Z");
+                width: 184px;
+                height: 178px;
+                background-color: red;
+
+                
+                img {}
+            }
+
+            .pic2 {
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                img {}
+            }
+
+            .pic3 {
+                position: absolute;
+                left: 50px;
+                top: 100px;
+
+                img {}
+            }
+
+            .pic4 {
+                position: absolute;
+                left: 0;
+                bottom: 30px;
+
+                img {}
+            }
+
+            .pic5 {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+
+                img {}
+            }
+        }
+
+        .right {
+            width: 414px;
+            padding: 50px 40px;
+            box-sizing: border-box;
+
+            h3 {
+                text-align: center;
+                margin-bottom: 7px;
+            }
+
+            .top {
+                form {
+                    .input {
+                        position: relative;
+                        #email {
+                            background-image: url(../../img/login_email.svg);
+                        }
+
+                        #password {
+                            background-image: url(../../img/login_password.svg);
+                        }
+
+                        .eye{
+                            position: absolute;
+                            right: 5px;
+                            bottom: 47px;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .btn1 {
+                        h4{
+                            margin-bottom: 0;
+                        };
+                    }
+
+                    p{
+                        margin-top: 5px;
+                    }
+
+                    .forget {
+                        text-align: right;
+
+                        a {
+                            color: black;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .register1 {
+                        justify-content: center;
+                        display: flex;
+
+                        a{
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+
+                p {
+                    margin-top: 5px;
+                }
+            }
+
+
+            .bottom{
+                margin-top: 40px;
+                
+                .register2 {
+                    text-align: center;
+                    position: relative;
+                    &::before{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        width: 96px;
+                        height: 1px;
+                        background-color: black;
+                    }
+                    &::after{
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        width: 96px;
+                        height: 1px;
+                        background-color: black;
+                    }
+                }
+
+                .social {
+                    display: flex;
+                    justify-content: center;
+                    
+                    img {
+                        padding: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+
+        }
+    }
+
+}
