@@ -195,7 +195,6 @@ a {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 .index .index_logo_video {
   position: relative;
 }
@@ -208,7 +207,178 @@ a {
   transform: translate(-50%, -50%);
 }
 .index .wrapper {
-=======
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+.index .wrapper .intro_text {
+  text-align: center;
+  margin-top: 100px;
+}
+.index .wrapper .intro_text h4 {
+  margin-bottom: 30px;
+  letter-spacing: 10px;
+}
+.index .wrapper .intro_text h1 {
+  font-family: Noto Sans TC;
+  color: #16355a;
+  font-weight: 400;
+  margin-bottom: 30px;
+  letter-spacing: 12px;
+}
+.index .wrapper .intro_text p {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  max-width: 600px;
+  width: 50%;
+}
+.index .index_park_button_all ul {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.index .index_park_button_all ul li {
+  width: 50%;
+}
+.index .index_park_button_all ul li a {
+  display: flex;
+  overflow: hidden;
+}
+.index .index_park_button_all ul li img {
+  width: 100%;
+  transform: scale(1, 1);
+  transition: all 0.5s ease;
+}
+.index .index_park_button_all ul li img:hover {
+  transform: scale(1.1, 1.1);
+}
+@media all and (max-width: 414px) {
+  .index .index_park_button_all ul li ul li {
+    width: 100%;
+  }
+  .index .index_park_button_all ul li ul li a {
+    width: 100vw;
+  }
+}
+.index .wrapper {
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+.index .wrapper .index_journey {
+  margin-top: 100px;
+  text-align: center;
+}
+.index .wrapper .index_journey ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.index .wrapper .index_journey ul li {
+  width: 440px;
+}
+.index .wrapper .index_journey ul li .index_journey_content {
+  margin-top: 40px;
+  background-color: #ccf1f5;
+  border-radius: 20px;
+}
+.index .wrapper .index_journey ul li .index_journey_content a {
+  display: flex;
+  justify-content: space-between;
+}
+.index .wrapper .index_journey ul li .index_journey_content a img {
+  width: 40%;
+  padding: 20px;
+}
+.index .wrapper .index_journey ul li .index_journey_content a .index_journey_content_sub {
+  text-align: left;
+  margin-top: 50px;
+}
+.index .wrapper .index_journey ul li .index_journey_content a .index_journey_content_sub h4 {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.index .wrapper .index_journey ul li .index_journey_content a .index_journey_content_sub p {
+  font-size: 12px;
+  margin-top: 20px;
+  padding-right: 25px;
+}
+.index .wrapper .index_button .btn {
+  display: block;
+  width: fit-content;
+  margin: 100px auto 0;
+}
+.index .index_colorblock .index_path {
+  margin-top: 100px;
+  max-width: 80%;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 61% 80%, 61% 100%, 0 100%);
+  box-shadow: 10px 50px 50px black;
+}
+.index .index_news .wrapper {
+  box-sizing: border-box;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+.index .index_news .wrapper h2 {
+  margin-top: 100px;
+  text-align: center;
+}
+.index .index_news .wrapper ul {
+  margin-top: 50px;
+}
+.index .index_news .wrapper li {
+  position: relative;
+  display: flex;
+}
+.index .index_news .wrapper li::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  border: 1px dashed #16355a;
+}
+.index .index_news .wrapper li:last-child::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  border: 1px dashed #16355a;
+  bottom: 0;
+}
+.index .index_news .wrapper li img {
+  margin: 30px 0;
+}
+.index .index_news .wrapper li .index_news_content {
+  margin-top: 50px;
+  margin-left: 40px;
+}
+.index .index_news .wrapper li .index_news_content h3 {
+  font-family: Noto Sans TC;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.index .index_news .wrapper li .index_news_content h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.index .index_ad {
+  height: 200px;
+  background-color: #97cbe0;
+  max-width: 100%;
+  margin-top: 100px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.index .index_ad img {
+  border-radius: 10px;
+  max-width: 600px;
+  width: 200px;
+}
+
 .floor_introduction main {
   background-image: url("../../img/floor_introduction_bgi.jpg");
 }
@@ -625,239 +795,6 @@ a {
 }
 
 body.ticket main .wrapper {
->>>>>>> 198a70b912479ac80071dfa0dd31eb31ee51cd79
-  box-sizing: border-box;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-}
-<<<<<<< HEAD
-.index .wrapper .intro_text {
-  text-align: center;
-  margin-top: 100px;
-}
-.index .wrapper .intro_text h4 {
-  margin-bottom: 30px;
-  letter-spacing: 10px;
-}
-.index .wrapper .intro_text h1 {
-  font-family: Noto Sans TC;
-  color: #16355a;
-  font-weight: 400;
-  margin-bottom: 30px;
-  letter-spacing: 12px;
-}
-.index .wrapper .intro_text p {
-  margin: 0 auto;
-  margin-bottom: 30px;
-  max-width: 600px;
-  width: 50%;
-}
-.index .index_park_button_all ul {
-  margin-top: 100px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.index .index_park_button_all ul li {
-  width: 50%;
-}
-.index .index_park_button_all ul li a {
-  display: flex;
-  overflow: hidden;
-}
-.index .index_park_button_all ul li img {
-  width: 100%;
-  transform: scale(1, 1);
-  transition: all 0.5s ease;
-}
-.index .index_park_button_all ul li img:hover {
-  transform: scale(1.1, 1.1);
-}
-@media all and (max-width: 414px) {
-  .index .index_park_button_all ul li ul li {
-    width: 100%;
-  }
-  .index .index_park_button_all ul li ul li a {
-    width: 100vw;
-  }
-}
-.index .wrapper {
-  box-sizing: border-box;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-}
-.index .wrapper .index_journey {
-  margin-top: 100px;
-  text-align: center;
-}
-.index .wrapper .index_journey ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.index .wrapper .index_journey ul li {
-  width: 440px;
-}
-.index .wrapper .index_journey ul li .index_journey_content {
-  margin-top: 40px;
-  background-color: #ccf1f5;
-  border-radius: 20px;
-}
-.index .wrapper .index_journey ul li .index_journey_content a {
-  display: flex;
-  justify-content: space-between;
-}
-.index .wrapper .index_journey ul li .index_journey_content a img {
-  width: 40%;
-  padding: 20px;
-}
-.index .wrapper .index_journey ul li .index_journey_content a .index_journey_content_sub {
-  text-align: left;
-  margin-top: 50px;
-}
-.index .wrapper .index_journey ul li .index_journey_content a .index_journey_content_sub h4 {
-  font-size: 16px;
-  line-height: 1.6;
-}
-.index .wrapper .index_journey ul li .index_journey_content a .index_journey_content_sub p {
-  font-size: 12px;
-  margin-top: 20px;
-  padding-right: 25px;
-}
-.index .wrapper .index_button .btn {
-  display: block;
-  width: fit-content;
-  margin: 100px auto 0;
-}
-.index .index_colorblock .index_path {
-  margin-top: 100px;
-  max-width: 80%;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 61% 80%, 61% 100%, 0 100%);
-  box-shadow: 10px 50px 50px black;
-}
-.index .index_news .wrapper {
-  box-sizing: border-box;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-}
-.index .index_news .wrapper h2 {
-  margin-top: 100px;
-  text-align: center;
-}
-.index .index_news .wrapper ul {
-  margin-top: 50px;
-}
-.index .index_news .wrapper li {
-  position: relative;
-  display: flex;
-}
-.index .index_news .wrapper li::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  border: 1px dashed #16355a;
-}
-.index .index_news .wrapper li:last-child::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  border: 1px dashed #16355a;
-  bottom: 0;
-}
-.index .index_news .wrapper li img {
-  margin: 30px 0;
-}
-.index .index_news .wrapper li .index_news_content {
-  margin-top: 50px;
-  margin-left: 40px;
-}
-.index .index_news .wrapper li .index_news_content h3 {
-  font-family: Noto Sans TC;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-.index .index_news .wrapper li .index_news_content h4 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-.index .index_ad {
-  height: 200px;
-  background-color: #97cbe0;
-  max-width: 100%;
-  margin-top: 100px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
-.index .index_ad img {
-  border-radius: 10px;
-  max-width: 600px;
-  width: 200px;
-}
-
-.floor_introduction main {
-  background-image: url("../../img/floor_introduction_bgi.jpg");
-}
-.floor_introduction main .wrapper {
-  box-sizing: border-box;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1100px;
-}
-.floor_introduction main .wrapper .title {
-  width: 410px;
-  height: 191px;
-  margin: 0 auto;
-  background-image: url("../../img/floor_introduction_title.png");
-  overflow: hidden;
-}
-.floor_introduction main .wrapper .title h2 {
-  position: relative;
-  top: 104px;
-  left: 131px;
-  color: #26450c;
-  font-weight: bold;
-}
-.floor_introduction main .wrapper ul {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 0 200px;
-}
-@media all and (max-width: 414px) {
-  .floor_introduction main .wrapper ul {
-    flex-direction: column;
-  }
-}
-.floor_introduction main .wrapper ul li {
-  flex: 0 0 50%;
-  margin-top: 25px;
-}
-.floor_introduction main .wrapper ul li img {
-  display: block;
-  width: 70%;
-  margin: auto;
-}
-.floor_introduction main .wrapper ul li h4 {
-  text-align: center;
-  margin-top: -20px;
-}
-.floor_introduction main .wrapper ul li p {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.about main {
-  background-image: url(../../img/about_bg.png);
-}
-.about main .banner {
-  background-image: url(../../img/about_banner.jpg);
-}
-body.ticket main .wrapper {
   box-sizing: border-box;
   max-width: 1000px;
   width: 100%;
@@ -879,24 +816,6 @@ body.ticket table tr td:first-child {
   background-color: #97cbe0;
   font-weight: bold;
 }
-=======
-body.ticket table {
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 2rem auto;
-  background: white;
-  font-size: 1.6rem;
-}
-body.ticket table thead {
-  background-color: #97cbe0;
-  font-weight: bold;
-}
-body.ticket table tr td:first-child {
-  background-color: #97cbe0;
-  font-weight: bold;
-}
->>>>>>> 198a70b912479ac80071dfa0dd31eb31ee51cd79
 body.ticket table th,
 body.ticket table td {
   text-align: center;
