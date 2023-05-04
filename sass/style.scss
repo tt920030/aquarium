@@ -1,5 +1,5 @@
 // base
-// @import "./base/var";
+@import "./base/var";
 @import "./base/color";
 // @import './plugin/';
 
@@ -14,6 +14,7 @@
 // @import "./component/form";
 // @import "./component/title";
 // @import "./component/grid";
+@import"./component/header_footer";
 
 // // 共用區塊
 // @import "./layout/header";
@@ -24,10 +25,14 @@
 // // 各頁面
 // @import "./page/test";
 @import "./page/prdouct";
+@import "./page/index";
 @import "./page/floor_introduction";
 @import "./page/about";
+@import "./page/journey";
+
 
 @import "./page/login";
+@import "./page/register";
 // @import "./page/main";
 // @import "./page/about";
 @import "./page/ticket";

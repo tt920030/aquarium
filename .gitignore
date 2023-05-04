@@ -2,3 +2,4 @@ node_modules
 sass/style.css
 sass/style.css.map
 dist
+.vscode
