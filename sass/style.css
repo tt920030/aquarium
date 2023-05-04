@@ -195,6 +195,86 @@ a {
   cursor: pointer;
 }
 
+header {
+  width: 100%;
+  height: 192px;
+  background-image: url(../../img/header_bg2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+header .logo img {
+  width: 30%;
+  margin-left: 30px;
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+}
+header nav .icon {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+header nav .icon li {
+  margin-right: 20px;
+}
+header nav .icon li button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border-style: none;
+  border-color: #ccf1f5;
+  background-color: #ccf1f5;
+  color: #16355a;
+}
+header nav .icon li .icon i {
+  font-size: 25px;
+  color: #ccf1f5;
+}
+header nav .menu {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+header nav .menu li {
+  margin-right: 40px;
+}
+header nav .menu li p {
+  color: white;
+}
+
+footer img {
+  display: block;
+}
+footer h4 {
+  color: white;
+  font-size: 18px;
+}
+footer p {
+  color: white;
+  font-size: 14px;
+  line-height: 3rem;
+}
+footer .bg {
+  width: 100%;
+  transform: rotate(180deg);
+}
+footer nav {
+  background-color: #16355a;
+  display: flex;
+  justify-content: space-between;
+}
+footer nav .logo img {
+  width: 40%;
+}
+
 .floor_introduction main {
   background-image: url("../../img/floor_introduction_bgi.jpg");
 }
@@ -254,34 +334,74 @@ a {
 }
 .about main .banner h1 {
   padding-top: 300px;
-  letter-spacing: 0.235rem;
 }
 .about .wrapper h1 {
   color: #16355A;
 }
 .about .wrapper .top {
+  background-color: #97cbe0;
   background-image: url(../../img/about_bg.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
+.about .wrapper .top .content {
+  width: 50%;
+  margin-left: 150px;
+}
+.about .wrapper .top .content h2 {
+  margin-top: 80px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.about .wrapper .top .content h3 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.about .wrapper .top .content h4 {
+  line-height: 3.5rem;
+}
 .about .wrapper .top .img1 {
   width: 30%;
+  float: left;
 }
 .about .wrapper .top .img2 {
-  width: 45%;
+  width: 40%;
 }
 .about .wrapper .mid {
   background-color: #97cbe0;
 }
+.about .wrapper .mid .content1 {
+  width: 50%;
+  margin-left: 250px;
+}
+.about .wrapper .mid .content1 h3 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.about .wrapper .mid .content1 h4 {
+  line-height: 3.5rem;
+}
 .about .wrapper .mid .img3 {
   width: 40%;
+  float: right;
 }
 .about .wrapper .mid ul {
   width: 25%;
-  background-color: white;
 }
-.about .wrapper .mid ul img {
+.about .wrapper .mid ul li {
+  background-image: url(../../img/about_link_bg.png);
+}
+.about .wrapper .mid ul li img {
   width: 100%;
+}
+.about .wrapper .mid ul li a {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff61c;
+}
+.about .wrapper .mid ul li a p {
+  color: #16355a;
 }
 
 body.ticket main .wrapper {
