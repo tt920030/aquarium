@@ -13,11 +13,10 @@
     <title>台北海生館 ｜ 首頁</title>
 </head>
 <body class="index">
-
-    <video autoplay="autoplay" id="video_sea" width="100%">
-        <source src="./img/index_videosea.mp4" type="video/mp4">
-    </video>
-    <div class="white_logo">
+    <div class="index_logo_video">
+        <video autoplay id="video_sea" width="100%">
+            <source src="./img/index_videosea.mp4" type="video/mp4">
+        </video>
         <img src="./img/index_logo.svg" alt="">
     </div>
 
@@ -32,27 +31,33 @@
     </div>
 
     <!-- 連結到園區介紹按鈕 -->
-    <div class="park_button_all">
-        <div class="park_button_up">
-            <a href=""><img src="./img/index_button4.jpg" alt=""></a>
-            <a href=""><img src="./img/index_button1.jpg" alt=""></a>
-        </div>
-        <div class="park_button_down">
-            <a href=""><img src="./img/index_button2.jpg" alt=""></a>
-            <a href=""><img src="./img/index_button3.jpg" alt=""></a>
-        </div>
+    <div class="index_park_button_all">
+        <ul>
+            <li>
+                <a href=""><img src="./img/index_button1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="./img/index_button2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="./img/index_button3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="./img/index_button4.jpg" alt=""></a>
+            </li>
+        </ul>
     </div>
 
     <main class="wrapper">
         <!-- 活動行程 -->
-        <div class="journey">
+        <div class="index_journey">
             <h2>活動行程</h2>
             <ul>
                 <li>
-                    <div class="journey_content">
+                    <div class="index_journey_content">
                         <a href="">
                             <img src="./img/index_journey1.jpg" alt="">
-                            <div class="journey_content_sub">
+                            <div class="index_journey_content_sub">
                                 <h4>海洋跳躍者：海豚秀</h4>
                                 <p>看到海豚們跳躍、翻轉、灑水等技巧動作，展現出它們非凡的運動天賦。</p>
                             </div>
@@ -60,10 +65,10 @@
                     </div>
                 </li>
                 <li>
-                    <div class="journey_content">
+                    <div class="index_journey_content">
                         <a href="">
                             <img src="./img/index_journey2.jpg" alt="">
-                            <div class="journey_content_sub">
+                            <div class="index_journey_content_sub">
                                 <h4>水中留影</h4>
                                 <p>在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻。</p>
                             </div>
@@ -71,10 +76,10 @@
                     </div>
                 </li>
                 <li>
-                    <div class="journey_content">
+                    <div class="index_journey_content">
                         <a href="">
                             <img src="./img/index_journey3.jpg" alt="">
-                            <div class="journey_content_sub">
+                            <div class="index_journey_content_sub">
                                 <h4>磷蝦小管家：<br>餵魚體驗活動</h4>
                                 <p>穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。</p>
                             </div>
@@ -82,11 +87,11 @@
                     </div>
                 </li>
                 <li>
-                    <div class="journey_content">
+                    <div class="index_journey_content">
                         <a href="">
                             <img src="./img/index_journey4.jpg" alt="">
-                            <div class="journey_content_sub">
-                                <h4>只想和做朋友:<br>與水獺近距離接觸體驗活動</h4>
+                            <div class="index_journey_content_sub">
+                                <h4>只想和你做朋友:<br>與水獺近距離接觸體驗活動</h4>
                                 <p>親手投放食物給水獺，觀察牠們的行為與習性。</p>
                             </div>
                         </a>
@@ -96,7 +101,9 @@
         </div>
 
         <!-- 了解更多button -->
-        <a class="btn">了解更多<i class="bi bi-chevron-right"></i></a>
+        <div class="index_button">
+            <a class="btn">了解更多<i class="bi bi-chevron-right"></i></a>
+        </div>
     </main>
 
     <!-- 館內照片輪播圖 -->
@@ -129,18 +136,23 @@
                 </div>
             </li>
         </ul>
+
+        <!-- 了解更多button -->
+        <div class="index_button">
+            <a class="btn">了解更多<i class="bi bi-chevron-right"></i></a>
+        </div>
+
     </div>
     </main>
 
     <!-- 贊助商 -->
-    <div class="index_ad_out">
+    
     <div class="index_ad">
         <img src="./img/index_logo1.jpg" alt="">
         <img src="./img/index_logo2.jpg" alt="">
         <img src="./img/index_logo3.jpg" alt="">
         <img src="./img/index_logo4.jpg" alt="">
         <img src="./img/index_logo5.jpg" alt="">
-    </div>
     </div>
 
 

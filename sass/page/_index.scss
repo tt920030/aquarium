@@ -1,12 +1,15 @@
 .index {
-    
-    .white_logo {
+
+    .index_logo_video {
+        position: relative;
+
         img {
             z-index: 999;
             position: absolute;
-            top: 250px;
-            left: 600px;
+            top: 50%;
+            left: 50%;
             width: 180px;
+            transform: translate(-50%, -50%);
         }
     }
 
@@ -17,59 +20,83 @@
             text-align: center;
             margin-top: 100px;
 
-            h4{
+            h4 {
                 margin-bottom: 30px;
                 letter-spacing: 10px;
             }
 
-            h1{
+            h1 {
                 font-family: Noto Sans TC;
+                color: map-get($color, text);
                 font-weight: 400;
                 margin-bottom: 30px;
-                letter-spacing: 15px;
+                letter-spacing: 12px;
             }
 
-            p{
+            p {
                 margin: 0 auto;
                 margin-bottom: 30px;
                 max-width: 600px;
-                width: 60%;
+                width: 50%;
             }
         }
     }
 
     // 連結到園區介紹按鈕
-    .park_button_all {
-        margin-top: 100px;
+    .index_park_button_all {
 
-        img {
-            width: 100%;
-        }
-
-        .park_button_up {
+        ul {
+            margin-top: 100px;
             display: flex;
+            flex-wrap: wrap;
 
-            // RWD
-            @include mobile() {
-                flex-direction: column;
-            }
-        }
+            li {
+                width: 50%;
 
-        .park_button_down {
-            display: flex;
+                a {
+                    display: flex; // 做一次垂直對齊消除空隙
+                    overflow: hidden;
+                }
 
-            // RWD
-            @include mobile() {
-                flex-direction: column;
+                img {
+                    width: 100%;
+                    transform: scale(1, 1);
+                    transition: all .5s ease;
+
+                    &:hover {
+                        transform: scale(1.1, 1.1);
+
+                        // &::before{
+                        //     content: "";
+                        //     width: 100%;
+                        //     background-image: linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(255, 174, 174) 100%);
+                        // }
+                    }
+                }
+
+                // RWD
+                @include mobile() {
+
+                    ul {
+                        // flex-direction: column;
+
+                        li {
+                            width: 100%;
+
+                            a {
+                                width: 100vw;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 
-
     @include wrapper {
 
         // 活動行程
-        .journey {
+        .index_journey {
             margin-top: 100px;
             text-align: center;
 
@@ -78,20 +105,20 @@
                 // font-size: 20px;
             }
 
-            ul{
+            ul {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
 
-                li{
+                li {
                     width: 440px;
 
-                    .journey_content {
+                    .index_journey_content {
                         margin-top: 40px;
                         background-color: map-get($color, bgc1);
                         border-radius: 20px;
-    
-                        a{
+
+                        a {
                             display: flex;
                             justify-content: space-between;
 
@@ -99,17 +126,17 @@
                                 width: 40%;
                                 padding: 20px;
                             }
-            
-                            .journey_content_sub {
+
+                            .index_journey_content_sub {
                                 text-align: left;
                                 margin-top: 50px;
-                
-                                @include title(h4) {
+
+                                h4 {
                                     font-size: 16px;
                                     line-height: 1.6;
                                 }
-                
-                                @include title(p) {
+
+                                p {
                                     font-size: 12px;
                                     margin-top: 20px;
                                     padding-right: 25px;
@@ -121,15 +148,20 @@
             }
         }
 
-        .btn{
-            margin-top: 30px;
+        .index_button {
+            .btn {
+                display: block;
+                width: fit-content;
+                margin: 100px auto 0;
+            }
         }
+
     }
 
-    .index_colorblock{
+    .index_colorblock {
         // background-color: map-get($color, bgc2);
 
-        .index_path{
+        .index_path {
             margin-top: 100px;
             max-width: 80%;
             clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 61% 80%, 61% 100%, 0 100%);
@@ -137,53 +169,53 @@
         }
     }
 
-    .index_news{
+    .index_news {
         @include wrapper {
 
-            @include title (h2){
+            h2 {
                 margin-top: 100px;
                 text-align: center;
             }
-    
-            ul{
+
+            ul {
                 // display: flex;
                 margin-top: 50px;
             }
-    
-            li{
+
+            li {
                 position: relative;
                 display: flex;
 
-                &::before{
+                &::before {
                     position: absolute;
                     content: "";
                     width: 100%;
-                    border: 1px dashed map-get($color , text);
+                    border: 1px dashed map-get($color, text);
                 }
 
-                &::after{
+                &:last-child::after {
                     position: absolute;
                     content: "";
                     width: 100%;
-                    border: 1px dashed map-get($color , text);
+                    border: 1px dashed map-get($color, text);
                     bottom: 0;
                 }
 
-                img{
+                img {
                     margin: 30px 0;
                 }
 
-                .index_news_content{
+                .index_news_content {
                     margin-top: 50px;
                     margin-left: 40px;
 
-                    @include title(h3){
+                    h3 {
                         font-family: Noto Sans TC;
                         font-size: 16px;
                         margin-bottom: 20px;
                     }
 
-                    @include title(h4){
+                    h4 {
                         font-size: 18px;
                         font-weight: bold;
                         margin-bottom: 15px;
@@ -193,17 +225,21 @@
         }
     }
 
-    .index_ad_out{
-        height: 200px;
-        background-color: map-get($color , bgc2);
 
-        .index_ad{
-            max-width: 100%;
-            margin-top: 100px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
+    .index_ad {
+        height: 200px;
+        background-color: map-get($color, bgc2);
+        max-width: 100%;
+        margin-top: 100px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            border-radius: 10px;
+            max-width: 600px;
+            width: 200px;
         }
     }
 }

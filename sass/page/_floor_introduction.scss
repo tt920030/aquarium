@@ -56,3 +56,153 @@
 }
 
 // 各樓層指南
+.floor {
+  background: #f4f5f7;
+  @include wrapper {
+    padding: 60px 0;
+    h2 {
+      margin: 0 0 35px;
+      padding: 0 0 25px;
+      width: 250px;
+      font-size: 24px;
+      line-height: 1.6;
+      font-weight: bold;
+      background: url("../../img/floor_introduction_h2_line.svg") no-repeat left
+        bottom;
+      background-size: 250px 10px;
+    }
+
+    // 白色區塊
+    .floor_image {
+      padding: 70px 85px 55px;
+      margin: 0 0 30px;
+      background: #fff;
+      border-radius: 28px;
+      //   樓層對齊
+      .floor_img {
+        position: relative;
+        margin: 0 0 70px;
+        //   樓層文字
+        p {
+          position: absolute;
+          left: 0;
+          top: 0;
+          font-size: 8.3rem;
+        }
+        span {
+          font-size: 6rem;
+        }
+
+        // 樓層圖
+        img {
+          width: 100%;
+          border-radius: 10px;
+        }
+
+        // 區塊1
+        .p1 {
+          position: absolute;
+          left: 20px;
+          top: 200px;
+          width: 112px;
+          height: 72px;
+          animation: animalMove 3s infinite;
+          a {
+            &:hover {
+              animation: shake 0.3s infinite linear alternate;
+            }
+            img {
+              width: 112px;
+              height: 72px;
+            }
+          }
+        }
+
+        // 區塊2
+        .p2 {
+          position: absolute;
+          left: 190px;
+          top: -20px;
+          width: 112px;
+          height: 72px;
+          animation: animalMove 3s infinite;
+          a {
+            &:hover {
+              animation: shake 0.1s infinite linear alternate;
+            }
+            img {
+              width: 112px;
+              height: 72px;
+            }
+          }
+        }
+
+        // 區塊3
+        .p3 {
+          position: absolute;
+          right: 230px;
+          top: -20px;
+          width: 112px;
+          height: 72px;
+          animation: animalMove 3s infinite;
+          a {
+            &:hover {
+              animation: shake 0.1s infinite linear alternate;
+            }
+            img {
+              width: 112px;
+              height: 72px;
+            }
+          }
+        }
+      }
+    }
+
+    // 圖像說明
+    .floor_image {
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        li {
+          width: 135px;
+          margin-right: 20px;
+          padding-left: 40px;
+          margin-bottom: 20px;
+          font-size: $p;
+        }
+      }
+    }
+  }
+}
+
+// 動畫
+@keyframes animalMove {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0, 20px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(4px, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
