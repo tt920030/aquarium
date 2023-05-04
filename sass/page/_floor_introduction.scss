@@ -109,7 +109,7 @@
           animation: animalMove 3s infinite;
           a {
             &:hover {
-              animation: shake 0.1s infinite linear alternate;
+              animation: shake 0.3s infinite linear alternate;
             }
             img {
               width: 112px;
