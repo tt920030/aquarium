@@ -1,5 +1,5 @@
 // base
-// @import "./base/var";
+@import "./base/var";
 @import "./base/color";
 // @import './plugin/';
 
@@ -30,6 +30,7 @@
 @import "./page/journey";
 
 
+@import "./page/login";
 // @import "./page/main";
 // @import "./page/about";
 @import "./page/ticket";

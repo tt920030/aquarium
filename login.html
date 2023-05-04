@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入</title>
+    <link rel="stylesheet" href="./sass/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+
+<body>
+    <div class="login">
+        <main>
+            <img src="./img/input_fork.svg" alt="" class="fork">
+            <div class="left">
+                <div class="pic1">
+                    <!-- <img src="./img/login_photo1.png" alt=""> -->
+                </div>
+                <div class="pic2">
+                    <img src="./img/login_photo2.png" alt="">
+                </div>
+                <div class="pic3">
+                    <img src="./img/login_photo3.png" alt="">
+                </div>
+                <div class="pic4">
+                    <img src="./img/login_photo4.png" alt="">
+                </div>
+                <div class="pic5">
+                    <img src="./img/login_photo5.png" alt="">
+                </div>
+            </div>
+            <div class="right">
+                <h3>登入</h3>
+                <div class="top">
+                    <form action="post">
+                        <div class="input">
+                            <label for="email">email</label>
+                            <input type="email" id="email" name="email">
+                            <div class="invalid-feedback">email格式錯誤</div>
+                        </div>
+                        <div class="input">
+                            <label for="password">密碼</label>
+                            <input type="password" id="password" name="password">
+                            <img src="./img/login_eye.svg" alt="" class="eye">
+                            <div class="invalid-feedback">密碼錯誤</div>
+                            <p class="forget"><a href="#">忘記密碼</a></p>
+                        </div>
+
+                        <button type="submit" class="btn1"><h4>登入</h4></button>
+                        <div class="register1">
+                            <p>沒有帳號嗎?</p>
+                            <p><a>&nbsp;註冊</a></p>
+                        </div>
+                        
+                    </form>
+                </div>
+
+                <div class="bottom">
+                    <p class="register2">或用以下方式登入</p>
+                    <div class="social">
+                        <img src="./img/login_fb.svg" alt="">
+                        <img src="./img/login_twitter.svg" alt="">
+                        <img src="./img/login_google.svg" alt="">
+                    </div>
+                </div>
+
+
+            </div>
+        </main>
+
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>

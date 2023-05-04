@@ -19,5 +19,9 @@
   "homepage": "https://github.com/tt920030/aquarium#readme",
   "dependencies": {
     "jquery": "^3.6.4"
+  },
+  "devDependencies": {
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.62.1"
   }
 }
