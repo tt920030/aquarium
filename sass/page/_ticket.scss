@@ -29,7 +29,7 @@ body.ticket {
         th,
         td {
             text-align: center;
-            border: 2px solid map-get($color, bgc2);
+            border: 1px solid map-get($color, bgc2);
             padding: 2.5rem 4rem;
         }
 
@@ -42,13 +42,12 @@ body.ticket {
 
 
         margin: 0 auto;
-        width: 80%;
+        width: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
 
         table {
-
             margin: 2rem;
 
 
@@ -89,7 +88,19 @@ body.ticket {
     a{
         font-weight: bold
     };
+    //年度方案頁面
 
+    .yearpass-mid{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5rem;
+        gap: 10rem;
+        border-bottom: 1px solid black;
+        img{
+            width: 30%;
+        }
+    }
 
     @include mobile {
         table {

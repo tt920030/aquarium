@@ -509,12 +509,12 @@ body.ticket table tr td:first-child {
 body.ticket table th,
 body.ticket table td {
   text-align: center;
-  border: 2px solid #97cbe0;
+  border: 1px solid #97cbe0;
   padding: 2.5rem 4rem;
 }
 body.ticket .year {
   margin: 0 auto;
-  width: 80%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -545,6 +545,17 @@ body.ticket ul li {
 }
 body.ticket a {
   font-weight: bold;
+}
+body.ticket .yearpass-mid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+  gap: 10rem;
+  border-bottom: 1px solid black;
+}
+body.ticket .yearpass-mid img {
+  width: 30%;
 }
 @media all and (max-width: 414px) {
   body.ticket table {
