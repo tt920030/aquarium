@@ -137,7 +137,7 @@
 }
 
 
-.login {
+.sign {
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -282,6 +282,9 @@
                 form {
                     .input {
                         position: relative;
+                        #name {
+                            background-image: url(../../img/register_name.svg);
+                        }
 
                         #email {
                             background-image: url(../../img/login_email.svg);
@@ -294,7 +297,7 @@
                         .eye {
                             position: absolute;
                             right: 5px;
-                            bottom: 47px;
+                            top: 37px;
                             cursor: pointer;
                         }
                     }
