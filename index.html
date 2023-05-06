@@ -13,11 +13,15 @@
     <title>台北海生館 ｜ 首頁</title>
 </head>
 <body class="index">
+    <header></header>
+
     <div class="index_logo_video">
-        <video autoplay id="video_sea" width="100%">
-            <source src="./img/index_videosea.mp4" type="video/mp4">
-        </video>
-        <img src="./img/index_logo.svg" alt="">
+        <video src="./img/index_videosea.mp4" id="video_sea" width="100%" autoplay muted loop></video>
+        <div class="index_logo_text">
+            <h4>探索海洋奧秘</h4>
+            <p>in Taipei Town</p>
+            <img src="./img/index_logo.svg" alt="">
+        </div>
     </div>
 
     <div class="wrapper">
@@ -34,20 +38,53 @@
     <div class="index_park_button_all">
         <ul>
             <li>
-                <a href=""><img src="./img/index_button1.jpg" alt=""></a>
+                <a href="">
+                    <div class="house_icon">
+                        <img src="./img/index_penguin.svg" alt="">
+                        <img class="penguin_blue" src="./img/index_penguin_blue-01.svg" alt="">
+                        <p>企鵝館</p>
+                        <p>Penguin House</p>
+                    </div>
+                    <img src="./img/index_button1.jpg" alt="">
+                </a>
             </li>
             <li>
-                <a href=""><img src="./img/index_button2.jpg" alt=""></a>
+                <a href="">
+                    <div class="house_icon">
+                        <img src="./img/index_jellyfish.svg" alt="">
+                        <img class="jellyfish_blue" src="./img/index_jellyfish_blue-01.svg" alt="">
+                        <p>水母館</p>
+                        <p>JellyFish House</p>
+                    </div>
+                    <img src="./img/index_button2.jpg" alt="">
+                </a>
             </li>
             <li>
-                <a href=""><img src="./img/index_button3.jpg" alt=""></a>
+                <a href="">
+                    <div class="house_icon">
+                        <img src="./img/index_dolphin.svg" alt="">
+                        <img class="dolphin_blue" src="./img/index_dolphin_blue-01.svg" alt="">
+                        <p>海豚館</p>
+                        <p>Dolphin House</p>
+                    </div>
+                    <img src="./img/index_button3.jpg" alt=""
+                </a>
             </li>
             <li>
-                <a href=""><img src="./img/index_button4.jpg" alt=""></a>
+                <a href="">
+                    <div class="house_icon">
+                        <img src="./img/index_sealion.svg" alt="">
+                        <img class="sealion_blue" src="./img/index_sealion_blue-01.svg" alt="">
+                        <p>海獅館</p>
+                        <p>Sea Lion House</p>
+                    </div>
+                    <img src="./img/index_button4.jpg" alt="">
+                </a>
             </li>
         </ul>
     </div>
 
+<div class="index_bgc">
     <main class="wrapper">
         <!-- 活動行程 -->
         <div class="index_journey">
@@ -91,7 +128,7 @@
                         <a href="">
                             <img src="./img/index_journey4.jpg" alt="">
                             <div class="index_journey_content_sub">
-                                <h4>只想和你做朋友:<br>與水獺近距離接觸體驗活動</h4>
+                                <h4>只想和你做朋友:<br>與水獺近距離接觸</h4>
                                 <p>親手投放食物給水獺，觀察牠們的行為與習性。</p>
                             </div>
                         </a>
@@ -105,6 +142,8 @@
             <a class="btn">了解更多<i class="bi bi-chevron-right"></i></a>
         </div>
     </main>
+</div>
+
 
     <!-- 館內照片輪播圖 -->
     <!-- <div class="index_colorblock">
@@ -122,7 +161,7 @@
             <li>
                 <img src="./img/index_news1.jpg" alt="">
                 <div class="index_news_content">
-                    <h3>2023年04月17日</h3>
+                    <h3>2023/04/17</h3>
                     <h4>企鵝館迎來新成員！</h4>
                     <p>保育人員細心照顧，企鵝寶寶健康成長中！</p>
                 </div>
@@ -130,7 +169,7 @@
             <li>
                 <img src="./img/index_news2.jpg" alt="">
                 <div class="index_news_content">
-                    <h3>2023年04月17日</h3>
+                    <h3>2023/04/17</h3>
                     <h4>台北水族館新開幕！</h4>
                     <p>各種海洋生物都在這，還有各項活動可以參與！</p>
                 </div>
@@ -155,7 +194,9 @@
         <img src="./img/index_logo5.jpg" alt="">
     </div>
 
+    <footer></footer>
 
+    <!-- js -->
     <script src="./index.js"></script>
 </body>
 </html>
