@@ -83,23 +83,27 @@
                             display: flex;
                             margin-top: 40px;
                             gap: 30px;
+                            align-items: center;
     
                             i{
                                 display: flex;
                                 font-size: 20px;
                                 gap: 8px;
-
+                                
                                 p{
                                     line-height: 1;
                                 }
                             }
+                        
 
-                            .btn{
-                                display: flex;
+                            .journey_btn{
                                 gap: 10px;
+                                margin-left: auto;
 
                                 i{
                                     font-size: 15px;
+                                    display: inline-block;
+
                                 }
                             }
                         }
