@@ -7,7 +7,7 @@ header {
     background-repeat: no-repeat;
     display: flex;
     justify-content: space-between;
-    position: sticky;
+    // position: sticky;
     top: 0;
     left: 0;
     z-index: 999;
@@ -77,8 +77,14 @@ header {
 }
 
 footer {
-    img {
+    position: absolute;
+    .bg {
+        width: 100%;
+        transform: rotate(180deg);
         display: block;
+        margin-bottom: -80px;
+        z-index: -1;
+        position: relative;
         // vertical-align: bottom;
     }
 
@@ -93,20 +99,19 @@ footer {
         line-height: 3rem;
     }
 
-    .bg {
-        width: 100%;
-        transform: rotate(180deg);
-    }
+   
 
     nav {
         background-color: #16355a;
         display: flex;
         justify-content: space-between;
+        height: 180px;
 
         // text-align:justify;
         .logo {
             img {
                 width: 40%;
+                z-index: 999;
             }
         }
     }

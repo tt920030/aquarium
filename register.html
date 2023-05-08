@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/index_ico.ico">
     <title>註冊</title>
     <link rel="stylesheet" href="./sass/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
@@ -12,7 +13,7 @@
         rel="stylesheet" />
 </head>
 <body>
-    <div class="register">
+    <div class="sign" id="register">
         <main>
             <img src="./img/input_fork.svg" alt="" class="fork">
             <div class="left">
@@ -56,23 +57,23 @@
                     <form action="post">
                         <div class="input">
                             <label for="name">姓名</label>
-                            <input type="name" id="name" name="name">
+                            <input type="text" id="name" name="name" placeholder="請輸入姓名">
                             <div class="invalid-feedback">此欄位必填</div>
                         </div>
                         <div class="input">
                             <label for="email">email</label>
-                            <input type="email" id="email" name="email">
+                            <input type="email" id="email" name="email" placeholder="請輸入email">
                             <div class="invalid-feedback">email格式錯誤</div>
                         </div>
                         <div class="input">
                             <label for="password">密碼</label>
-                            <input type="password" id="password" name="password">
+                            <input type="password" id="password" name="password" placeholder="密碼長度需六至十二位">
                             <img src="./img/login_eye.svg" alt="" class="eye">
                             <div class="invalid-feedback">密碼須包含大小寫英文及數字</div>
                         </div>
                         <div class="input">
                             <label for="password">密碼確認</label>
-                            <input type="password" id="password" name="password">
+                            <input type="password" id="password" name="password"  placeholder="請再次輸入密碼">
                             <img src="./img/login_eye.svg" alt="" class="eye">
                             <div class="invalid-feedback">二次輸入與密碼不符</div>
                         </div>
