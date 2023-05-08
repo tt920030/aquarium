@@ -107,7 +107,24 @@
                                 }
                             }
                         }
-                    } 
+                    }
+                    @include mobile(){
+                        flex-direction: column;
+                        
+                        .intro_img{
+                            order: 2;
+                            width: 50%;
+                        }
+
+                        .journey_intro_content{
+                            order: 1;
+                        }
+
+                        .journey_intor_icon{
+                            flex-direction: column;
+                            margin-right: auto;
+                        }
+                    }
                 }
             }
         }
