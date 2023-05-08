@@ -46,6 +46,13 @@
     margin-bottom: 20px;
 }
 
+.fork {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
 @keyframes bobble1 {
     0% {
         d: path("M134.605 11.2357C143.048 35.5996 135.698 61.0752 126.813 85.3717C118.47 108.186 107.6 130.701 86.4791 142.839C64.6178 155.404 38.1151 157.685 14.1435 150.125C-9.68116 142.612 -26.072 123.479 -40.1215 102.914C-56.7399 78.5882 -78.4501 52.9 -71.9618 24.0868C-65.2198 -5.85306 -35.7295 -23.7815 -8.39492 -37.9781C18.7938 -52.099 49.6211 -63.9916 78.4946 -54.0547C106.776 -44.3215 124.838 -16.9462 134.605 11.2357Z")
@@ -137,21 +144,12 @@
 }
 
 
-.login {
+.sign {
     width: 100vw;
     height: 100vh;
     position: relative;
 
-    @include mobile{
-        width: 100%;
-    }
 
-    .fork {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        cursor: pointer;
-    }
 
     main {
         position: absolute;
@@ -266,7 +264,7 @@
             padding: 50px 40px;
             box-sizing: border-box;
 
-            @include mobile{
+            @include mobile {
                 width: 100%;
             }
 
@@ -283,6 +281,10 @@
                     .input {
                         position: relative;
 
+                        #name {
+                            background-image: url(../../img/register_name.svg);
+                        }
+
                         #email {
                             background-image: url(../../img/login_email.svg);
                         }
@@ -294,7 +296,7 @@
                         .eye {
                             position: absolute;
                             right: 5px;
-                            bottom: 47px;
+                            top: 37px;
                             cursor: pointer;
                         }
                     }
@@ -362,7 +364,7 @@
                         height: 1px;
                         background-color: black;
 
-                        @include mobile{
+                        @include mobile {
                             width: 23%;
                         }
                     }
@@ -377,7 +379,7 @@
                         height: 1px;
                         background-color: black;
 
-                        @include mobile{
+                        @include mobile {
                             width: 23%;
                         }
                     }
