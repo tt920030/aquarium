@@ -83,27 +83,48 @@
                             display: flex;
                             margin-top: 40px;
                             gap: 30px;
+                            align-items: center;
     
                             i{
                                 display: flex;
                                 font-size: 20px;
                                 gap: 8px;
-
+                                
                                 p{
                                     line-height: 1;
                                 }
                             }
+                        
 
-                            .btn{
-                                display: flex;
+                            .journey_btn{
                                 gap: 10px;
+                                margin-left: auto;
 
                                 i{
                                     font-size: 15px;
+                                    display: inline-block;
+
                                 }
                             }
                         }
-                    } 
+                    }
+                    @include mobile(){
+                        flex-direction: column;
+                        
+                        .intro_img{
+                            order: 2;
+                            width: 50%;
+                        }
+
+                        .journey_intro_content{
+                            order: 1;
+                        }
+
+                        .journey_intor_icon{
+                            flex-direction: column;
+                            margin-right: auto;
+                        }
+                    }
                 }
             }
         }
