@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/index_ico.ico">
+    <title>會員中心</title>
+    <link rel="stylesheet" href="./sass/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="member">
+    <main>
+        <div class="left">
+            <div class="photo">
+                <img src="./img/member_photo1.png" alt="">
+            </div>
+            <p class="name">使用者姓名</p>
+            <button class="btn1">
+                <p>年度會員</p>
+            </button>
+
+            <div class="list ">
+                <i class="fa-solid fa-folder-open"></i>
+                <p>我的訂單</p>
+            </div>
+            <div class="list">
+                <i class="fa-solid fa-ticket"></i>
+                <p>我的折價券</p>
+            </div>
+            <div class="list -on">
+                <i class="fa-solid fa-fish"></i>
+                <p>虛擬寵物</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="profile wrapper">
+                <div class="top">
+                    <div class="left">
+                        <div class="photo">
+                            <img src="./img/member_photo1.png" alt="">
+                        </div>
+                        <button class="btn1">
+                            <p>更換頭貼</p>
+                        </button>
+                    </div>
+                    <div class="right">
+                        <div class="input">
+                            <label for="email">email</label>
+                            <input type="email" id="email" name="email" disabled="disabled">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bottom">
+                    <form action="post" method="" class="">
+                        <div class="input">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" name="name" disabled="disabled">
+                            <div class="invalid-feedback">此欄位必填</div>
+                        </div>
+                        <div class="input">
+                            <label for="sex">性別</label>
+                            <input type="text" id="sex" name="sex" disabled="disabled">
+                        </div>
+                        <div class="input">
+                            <label for="birthday">生日</label>
+                            <input type="text" id="birthday" name="birthday" disabled="disabled">
+                        </div>
+                        <div class="input">
+                            <label for="phone">手機</label>
+                            <input type="phone" id="phone" name="phone" disabled="disabled">
+                        </div>
+                        <div class="input">
+                            <label for="password">密碼</label>
+                            <input type="password" id="password" name="password" disabled="disabled">
+                            <div class="invalid-feedback">此欄位必填</div>
+                        </div>
+                        <div class="input">
+                            <label for="address">地址</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+
+                        <button type="submit" class="btn1">
+                            <h4>確認修改</h4>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+            <div class="order wrapper">
+
+            </div>
+            <div class="coupon wrapper">
+
+            </div>
+            <div class="pet wrapper -on">
+                <h3>目前點數:&nbsp<span>2</span>點</h3>
+                <p>-&nbsp每消費500元就可獲得1點</p>
+
+                <form method="post" action="" class="area">
+                    <div class="fish -chose">
+                        <input type="radio" id="1" name="chose_pet" value="1" checked>
+                        <label for="1">
+                            <div class="container">
+                                <img src="./img/member_pet1_on.png" alt="">
+                            </div>
+
+                            <p class="name">小丑魚</p>
+                            <p class="point">1點</p>
+                        </label>
+
+                    </div>
+                    <div class="fish ">
+                        <input type="radio" id="2" name="chose_pet" value="2">
+                        <label for="2">
+                            <div class="container">
+                                <img src="./img/member_pet2_off.png" alt="">
+                            </div>
+
+                            <p class="name">???</p>
+                            <p class="point">5點</p>
+                        </label>
+
+                    </div>
+                    <div class="fish">
+                        <input type="radio" id="3" name="chose_pet" value="3">
+                        <label for="3">
+                            <div class="container">
+                                <img src="./img/member_pet3_off.png" alt="">
+                            </div>
+
+                            <p class="name">???</p>
+                            <p class="point">10點</p>
+                        </label>
+
+                    </div>
+                    <div class="fish">
+                        <input type="radio" id="4" name="chose_pet" value="4">
+                        <label for="4">
+                            <div class="container">
+                                <img src="./img/member_pet4_off.png" alt="">
+                            </div>
+
+                            <p class="name">???</p>
+                            <p class="point">15點</p>
+                        </label>
+
+                    </div>
+                    <div class="fish">
+                        <input type="radio" id="5" name="chose_pet" value="5">
+                        <label for="5">
+                            <div class="container">
+                                <img src="./img/member_pet5_off.png" alt="">
+                            </div>
+
+                            <p class="name">???</p>
+                            <p class="point">20點</p>
+                        </label>
+
+                    </div>
+                    <div class="fish">
+                        <input type="radio" id="6" name="chose_pet" value="6">
+                        <label for="6">
+                            <div class="container">
+                                <img src="./img/member_pet6_off.png" alt="">
+                            </div>
+
+                            <p class="name">???</p>
+                            <p class="point">25點</p>
+                        </label>
+
+                    </div>
+                    <div class="button">
+                        <button type="submit" class="btn1">
+                            <p>更換寵物</p>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

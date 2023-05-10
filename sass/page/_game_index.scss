@@ -7,16 +7,47 @@
             }
         }
 
-        .banner {
-            h1 {
-                color: black;
+
+        .banner { 
+            margin: 100px auto; 
+            width: 450px; 
+            position: relative; 
+
+            .content{
+                padding: 50px; 
                 text-align: center;
-                padding: 100px;
-                letter-spacing: 0.235rem;
+
+                h1{
+                    color: black;
+                }
             }
+            .content_mask { 
+                padding: 50px; 
+                text-align: center;
 
-
+                position: absolute; 
+                top: 0;
+                left: 0;
+                background: #A5DEE4;
+                color: #FFFFFF;
+                -webkit-clip-path: polygon(50% 0, 0 25%, 70% 50%);
+                clip-path: polygon(50% 0, 0 25%, 70% 50%);
+                pointer-events: none;
+                -webkit-animation: triango_animation 9s alternate infinite;
+                animation: triango_animation 9s alternate infinite;
+            }
+            @keyframes triango_animation{
+                33% {
+                    -webkit-clip-path:polygon(10% 0, 0 60%, 70% 10%);
+                    clip-path:polygon(10% 0, 0 60%, 70% 10%);
+                }
+                66% {
+                    -webkit-clip-path:polygon(0 45%, 50% 75%, 80% 30%);
+                    clip-path:polygon(0 45%, 50% 75%, 80% 30%);
+                }
+            }
         }
+        
 
         section {
             .rule {
@@ -69,7 +100,7 @@
             a{
                 position: absolute;
                 right: 530px;
-                top: 1425px;
+                top: 1440px;
                 margin-bottom: 100px;
             }
 
@@ -77,8 +108,7 @@
                 width: 300px;
                 position: absolute;
                 right: 80px;
-                top: 1285
-                px;
+                top: 1400px;
             }
         }
     }
