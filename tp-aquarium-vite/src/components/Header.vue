@@ -1,6 +1,6 @@
 <template>
    <header>
-        <a class="logo" href=""><img src="src/img/logo-white.svg" alt=""></a>
+        <RouterLink to="/" class="logo" href=""><img src="src/img/logo-white.svg" alt=""></RouterLink>
         <nav>
             <ul class="icon">
                 <li><span></span><button><img src="src/img/header_sun.svg" alt="">
@@ -11,18 +11,19 @@
                 <li><a href=""><i class="bi bi-cart-fill"></i></a></li>
             </ul>
             <ul  class="menu">
-                <li v-for="item in navItems"><a href="">
-                        <p>{{item}}</p>
-                    </a>
+                <li v-for="item in navItems">
+                    <RouterLink :to="item.link"> <p>{{item.name}}</p></RouterLink>
                 </li>
             </ul>
         </nav>
     </header>
-
+    <RouterView/>
 </template>
 
 <script setup>
-    const navItems = [ "最新消息", "園區介紹", "購票資訊", "行程預約", "參觀資訊", "網路商城", "小遊戲" ]
+    import{ RouterLink, RouterView } from "vue-router";
+    const navItems = [ {name:"最新消息",link:"/"}, {name:"園區介紹",link:"/"}, {name:"購票資訊",link:"/ticket"}, {name:"行程預約",link:"/"}, {name:"參觀資訊",link:"/"}, {name:"網路商城",link:"/"}, {name:"小遊戲",link:"/"} ];
+
 </script>
 
 <style lang="scss" scoped>

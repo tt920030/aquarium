@@ -9,7 +9,7 @@ import { RouterLink, RouterView, useRouter } from 'vue-router';
 
 <template>
 
-  <router-link to="/"></router-link>
+  <!-- <router-link to="/"></router-link> -->
 
   <RouterView />
 </template>

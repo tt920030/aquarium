@@ -160,7 +160,7 @@ import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer.vue';
 
 
-import { onMounted, reactive } from "vue";
+import { onMounted, reactive, ref } from "vue";
 
 const park_buttons = reactive([
   { a: "", src1: "src/img/index_penguin.svg", class: "peguin_blue", src2: "src/img/index_penguin_blue-01.svg", cName: "企鵝館", eName: "Penguin House", src3: "src/img/index_button1.jpg" },
@@ -178,17 +178,11 @@ const videoNoStop = function () {
     };
 
   });
-  console.log("aa")
 };
 
 onMounted(()=>{
   videoNoStop();
 });
-
-// onUnmounted(() => {
-//   console.log("not mount");
-// });
-
 
 </script>
 

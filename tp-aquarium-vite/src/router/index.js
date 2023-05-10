@@ -10,16 +10,18 @@ const router = createRouter({
       component: index
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue'),
-      children:[
-        {
-          path: 'aaa',
-          name: 'aaa',
-          component: ()=> import("../views/about/a.vue")
-        }
-      ]
+      path: '/ticket',    //自己取之後連的路徑名稱
+      name: 'ticket',		//自己取
+      component: () => import('../views/Ticket.vue') //路徑連到剛剛建的vue檔
+       //children是這個頁面的子頁面
+      // children:[
+      //   {
+      //     path: 'yearpass',
+      //     name: 'yearpass',
+      //     component: ()=> import("../views/ticket/yearpass.vue")
+           
+      //   }
+      // ]
     },
     // {
     //   path: '/:id', 
