@@ -217,9 +217,11 @@
                         <h4>NT $1360</h4>
                     </div>
                     <div class="discount">
-                        <h4>折扣金額<span>(使用折價券: 1D52593)</span></h4>
+                        <h4>折扣金額 <span>(使用折價券: 1D52593)</span></h4>
                         <h4>-NT $100</h4>
+                        
                     </div>
+                    
                     <button class="cart-button">
                         <p>查看可用優惠券</p>
                     </button>
@@ -241,13 +243,7 @@
         const extendButtons = document.querySelectorAll(".cart-group>button");
         extendButtons.forEach(button=>{
             button.addEventListener("click",(e)=>{
-                let children = button.parentElement.childElementCount-3;
-                if(!button.parentElement.style.height || button.parentElement.style.height == "30rem" ){
-                    button.parentElement.style.height = (children*30)+30+"rem";
-                }else{
-                    button.parentElement.style.height = 30+"rem";
-                }
-                
+                button.parentElement.classList.toggle("extend");
             })
         })
     </script>
