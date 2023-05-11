@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/tt920030/aquarium#readme",
   "dependencies": {
-    "jquery": "^3.6.4"
+    "jquery": "^3.6.4",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "gulp-sass": "^5.1.0",
