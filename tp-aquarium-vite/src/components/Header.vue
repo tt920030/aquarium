@@ -1,9 +1,9 @@
 <template>
    <header>
-        <RouterLink to="/" class="logo" href=""><img src="src/img/logo-white.svg" alt=""></RouterLink>
+        <RouterLink to="/" class="logo" href=""><img src="/src/img/logo-white.svg" alt=""></RouterLink>
         <nav>
             <ul class="icon">
-                <li><span></span><button><img src="src/img/header_sun.svg" alt="">
+                <li><span></span><button><img src="/src/img/header_sun.svg" alt="">
                     </button></li>
                 <li><button>EN</button></li>
                 <li><button>繁</button></li>
