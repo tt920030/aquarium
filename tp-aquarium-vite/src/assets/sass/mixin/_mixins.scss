@@ -1,0 +1,23 @@
+// RWD
+@mixin mobile() {
+  @media all and (max-width: 414px) {
+    @content;
+  }
+}
+
+// 中間區塊規範
+@mixin wrapper() {
+  .wrapper {
+    box-sizing: border-box;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    @content;
+  }
+}
+
+// flex
+@mixin flex() {
+  display: flex;
+  flex-wrap: wrap;
+}
