@@ -4,12 +4,12 @@
         .left{
             width: 16%;
             background-color: map-get($color , bgc1 );
+            padding: 300px 0; 
 
             .photo{
                 width: 170px;
                 height: 170px;
                 margin: 0 auto;
-                margin-top: 300px;
                 
                 img{
                     width: 100%;
@@ -33,6 +33,7 @@
                 width: fit-content;
                 p{
                     font-family: "Noto Sans TC", sans-serif;
+                    margin: 0;
                 }
             }
 
@@ -60,23 +61,192 @@
 
         .right{
             width: 84%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            @include wrapper;
+            @include wrapper{
+                margin: 310px auto;
+            };
 
             .profile{
                 display: none;
+                .top{
+                    display: flex;
+                    .left{
+                        width: 50%;
+                        background-color: #fff;
+                        .photo-area{
+                            width: 240px;
+                            height: 240px;
+                            margin: 0 auto;
+                            margin-bottom: 55px;
+                            
+                            img{}
+                        }
 
+                        .btn1{
+                            p{}
+                        }
+                    }
+
+                    .right{
+                        width: 50%;
+
+                        .input{
+                            margin-top: 100px;
+                            margin-left: 70px;
+                            width: 300px;
+                            label{}
+                            #email{}
+                        }
+
+                    }
+                }
+
+                .bottom{
+                    // .-on{
+                    //     display: block;
+                    // }
+
+                    form{
+                        margin: 0 auto;
+                        width: 800px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        .input{
+                            width: 320px;
+                            margin: 20px 0;
+                        }
+
+                        .block{
+                            width: 100%;
+                            .btn1 {
+                                display: block;
+                                width: fit-content;
+                                margin: 0 auto;
+                                margin-top: 50px;
+
+                                h4 {
+                                    margin: 0;
+                                    font-family: "Noto Serif TC", serif;
+                                    font-size: 2rem;
+                                    letter-spacing: 0.2rem;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
                 
             }
 
             .order{
                 display: none;
+                select{
+                    margin-bottom: 60px;
+                    width: 150px;
+                    height: 50px;
+                    font-family: "Noto Sans TC", sans-serif;
+                    font-size: 1.6rem;
+                    line-height: 1.6;
+                    letter-spacing: 0.1rem;
+                    border: 1px solid black;
+                    padding: 5px 10px;
+                    margin-left: 10px;
+                    appearance: none;
+                    background-image: url(../../img/member_angle.svg);
+                    background-repeat: no-repeat;
+                    background-position: right 13px center;
+                    outline: none;
+                    option{}
+                    
+                }
+                .table{
+                    border-radius: 20px;
+                    border: 1px solid map-get($color , bgc2 );
+                    overflow: hidden;
+                    .title{
+                        height: 100px;
+                        background-color: map-get($color , bgc2 );
+                        
+                        h3{
+                            text-align: center;
+                            font-size: 2rem;
+                            letter-spacing: 0.2rem;
+                            font-family: "Noto Sans TC", sans-serif;
+                            margin: 0;
+                            line-height: 100px;
+                        }
+                    }
+                    table{
+                        width: 100%;
+                        
+                        text-align: center;
+                        
+                        tr{
+                            th,td{
+                                border: 1px solid map-get($color , bgc2 );
+                                padding: 15px;
+                                vertical-align: middle;
+                                p{
+                                    font-family: "Noto Sans TC", sans-serif;
+                                    margin: 0;
+                                    font-size: 1.6rem;
+                                    line-height: 1.6;
+                                    letter-spacing: 0.1rem;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
             }
 
             .coupon{
                 display: none;
+                .table{
+                    border-radius: 20px;
+                    border: 1px solid map-get($color , bgc2 );
+                    overflow: hidden;
+                    .title{
+                        height: 100px;
+                        background-color: map-get($color , bgc2 );
+                        
+                        h3{
+                            text-align: center;
+                            font-size: 2rem;
+                            letter-spacing: 0.2rem;
+                            font-family: "Noto Sans TC", sans-serif;
+                            margin: 0;
+                            line-height: 100px;
+                        }
+                    }
+                    table{
+                        width: 100%;
+                        
+                        text-align: center;
+                        
+                        tr{
+                            th,td{
+                                border: 1px solid map-get($color , bgc2 );
+                                padding: 15px;
+                                vertical-align: middle;
+                                p{
+                                    font-family: "Noto Sans TC", sans-serif;
+                                    margin: 0;
+                                    font-size: 1.6rem;
+                                    line-height: 1.6;
+                                    letter-spacing: 0.1rem;
+                                }
+                            }
+                            .time{
+                                width: 150px;
+                                word-break:break-all;
+                            }
+
+
+                        }
+                    }
+                }
             }
 
             .pet{
@@ -107,6 +277,8 @@
                         }
                         label{
                             text-align: center;
+                            margin: 0 auto;
+                            display: block;
                             .container{
                                 width: 90%;
                                 height: 250px;
@@ -151,6 +323,7 @@
                             margin-top: 20px;
                             p{
                                 font-family: "Noto Sans TC", sans-serif;
+                                margin: 0;
                             }
                         }
                     }
