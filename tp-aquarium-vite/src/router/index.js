@@ -23,6 +23,17 @@ const router = createRouter({
       //   }
       // ]
     },
+
+
+
+
+
+
+
+
+
+
+    
     // {
     //   path: '/:id', 
     //   name: 'userdata',
