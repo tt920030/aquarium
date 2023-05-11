@@ -72,12 +72,12 @@ const router = createRouter({
       component: () => import("../views/About.vue"),
     },
     {
-      path: "/floor_introduction", //自己取之後要連的路徑名稱
+      path: "/floorIntroduction", //自己取之後要連的路徑名稱
       name: "FloorIntroduction", //自己取
       component: () => import("../views/FloorIntroduction.vue"), //路徑連到剛剛建的vue檔
     },
     {
-      path: "/park_activity", //自己取之後要連的路徑名稱
+      path: "parkActivity", //自己取之後要連的路徑名稱
       name: "ParkActivity", //自己取
       component: () => import("../views/ParkActivity.vue"), //路徑連到剛剛建的vue檔
     },
@@ -85,13 +85,11 @@ const router = createRouter({
       path: "/news",
       name: "News",
       component: () => import("../views/News.vue"),
-      children:[
-        {
-          path: "news_page",
-          name: "NewsPage",
-          component: () => import("../views/news/NewsPage.vue"),
-        },
-        ]
+    },
+    {
+      path: "/newspage",
+      name: "NewsPage",
+      component: () => import("../views/NewsPage.vue"),
     },
    
     {
