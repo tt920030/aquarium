@@ -1,4 +1,4 @@
-@import "./prdouct";
+@import "./product";
 @import "./index";
 @import "./floor_introduction";
 @import "./about";
@@ -7,14 +7,14 @@
 @import "./faq";
 @import "./overnight";
 
+
 @import "./sign";
 @import "./hello";
 @import "./getpet";
 @import "./ticket";
-
-@import "./game_index";
 @import "./cart";
-@import "./game_index";
+@import"./game_index";
+@import '_game_quiz.scss';
 
-@import "./member";
-@import "./park_activity";
+
+@import"./member";

@@ -1,5 +1,4 @@
 $(function () {
-  // 燈箱()
   // 找到該元素
   $(".lightbox").click(function (e) {
     // 防止點擊時跳轉
@@ -24,11 +23,4 @@ $(function () {
     $(this).fadeOut();
     $("body").css("overflow", "visible");
   });
-
-  // 手風琴()
-  $(".accordion_header").click(function () {
-    $(this).toggleClass("active");
-    $(this).next().slideToggle();
-  });
-  // $(".accordion_header").first().click();
 });
