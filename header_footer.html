@@ -134,12 +134,14 @@
                 }
             });
 
-            // $(document).on('click', function (event) {
-            //     if (!$(event.target).closest('header .content .menu, header .content nav i').length) {
-            //     $("header .content .menu").animate({ right: "-500px", display: 'none' }, 1000);
-            //         is_open = false;
-            //     }
-            // });
+            $(document).on('click', function (event) {
+                if (!$(event.target).closest('header .content .menu, header .content nav i').length) {
+                    $("header .content .menu").animate({ right: "-500px", display: 'none' }, 1000);
+                    is_open = false;
+                    
+                }
+                console.log("aaa");
+            });
             
         })
         </script>
