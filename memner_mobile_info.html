@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./sass/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="mobile_info wrapper ">
+        <div class="top">
+            <div class="left">
+                <div class="photo-area">
+                    <img src="./img/member_photo1.png" alt="">
+                </div>
+                <button class="btn1">
+                    <p>更換頭貼</p>
+                </button>
+            </div>
+            <div class="right">
+                <div class="input">
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email" disabled="disabled">
+                </div>
+
+            </div>
+        </div>
+        <div class="bottom">
+            <form action="post" method="" class="">
+                <div class="input">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" disabled="disabled">
+                    <div class="invalid-feedback">此欄位必填</div>
+                </div>
+                <div class="input">
+                    <label for="sex">性別</label>
+                    <input type="text" id="sex" name="sex" disabled="disabled">
+                </div>
+                <div class="input">
+                    <label for="birthday">生日</label>
+                    <input type="text" id="birthday" name="birthday" disabled="disabled">
+                </div>
+                <div class="input">
+                    <label for="phone">手機</label>
+                    <input type="phone" id="phone" name="phone" disabled="disabled">
+                </div>
+                <div class="input">
+                    <label for="password">密碼</label>
+                    <input type="password" id="password" name="password" disabled="disabled">
+                    <div class="invalid-feedback">此欄位必填</div>
+                </div>
+                <div class="input">
+                    <label for="address">地址</label>
+                    <input type="text" id="address" name="address">
+                </div>
+
+                <div class="block">
+                    <button type="submit" class="btn1">
+                        <h4>修改資料</h4>
+                    </button>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

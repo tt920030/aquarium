@@ -24,6 +24,7 @@
                 text-align: center;
                 margin-bottom: 35px;
             }
+
             .btn1{
                 display: block;
                 margin: 0 auto;
@@ -63,7 +64,7 @@
             width: 84%;
             @include wrapper{
                 margin: 310px auto;
-            };
+            }
 
             .profile{
                 display: none;

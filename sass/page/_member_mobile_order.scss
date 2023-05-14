@@ -1,0 +1,97 @@
+.mobile_order {
+    select {
+        margin-bottom: 30px;
+        width: 150px;
+        height: 35px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        letter-spacing: 0.1rem;
+        border: 1px solid black;
+        padding: 5px 10px;
+        margin-left: 10px;
+        appearance: none;
+        background-image: url(../../img/member_angle.svg);
+        background-repeat: no-repeat;
+        background-position: right 13px center;
+        outline: none;
+
+        option {}
+
+    }
+
+    .table {
+        margin: 0 auto;
+        width: 90%;
+        border: 1px solid map-get($color, bgc2);
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 100px;
+
+        .title {
+            height: 65px;
+            background-color: map-get($color, bgc2);
+            h3 {
+                line-height: 65px;
+                text-align: center;
+            }
+        }
+
+        table {
+            
+            width: 100%;
+            .top{
+                background-color: map-get($color, bgc1);
+            }
+
+            tr {
+                width: 100%;
+               
+                text-align: center;
+                
+                th{
+                    box-sizing: border-box;
+                    border: 1px solid map-get($color, bgc2);
+                    padding: 15px;
+                    vertical-align: middle;
+                    width: 30%;
+                    border-left: 0px;
+                
+                    
+                }
+                
+                td {
+                    box-sizing: border-box;
+                    border: 1px solid map-get($color, bgc2);
+                    padding: 15px;
+                    vertical-align: middle;
+                    width: 70%;
+                    border-right: 0px;
+                    position: relative;
+                    img{
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                    }
+                }
+
+                &:last-child{
+
+                    th{
+                        border-bottom: 0;
+                    }
+                }
+
+                &:last-child{
+                    td{
+                        border-bottom: 0;
+                    }
+
+                }
+
+                p {}
+            }
+        }
+    }
+}
