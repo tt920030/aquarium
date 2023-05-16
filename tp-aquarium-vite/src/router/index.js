@@ -89,7 +89,7 @@ const router = createRouter({
     {
       path: "/news_page",
       name: "NewsPage",
-      component: () => import("../views/NewsPage.vue"),
+      component: () => import("../views/news/NewsPage.vue"),
     },
    
     {
