@@ -9,6 +9,11 @@ const router = createRouter({
       name: "index",
       component: index,
     },
+    {
+      path: "/member",
+      name: "Member",
+      component: () => import("../views/Member.vue"),
+    },
 
     {
       path: "/cart",
@@ -106,6 +111,11 @@ const router = createRouter({
           component: () => import("../views/ticket/Yearpass.vue"),
         },
       ],
+    },
+    {
+      path: "/news_manage", //自己取之後要連的路徑名稱
+      name: "NewsManage", //自己取
+      component: () => import("../views/NewsManage.vue"), //路徑連到剛剛建的vue檔
     },
     // {
     //   path: '/:id',
