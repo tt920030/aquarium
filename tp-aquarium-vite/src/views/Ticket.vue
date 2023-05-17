@@ -32,7 +32,7 @@
             </table>
             <div class="ticket-day-bottom">
                 <p>*星光票限17:00後入場使用</p>
-                <a class="btn" href="#">按此前往購票</a>
+                <RouterLink to="/itinerary" class="btn">點選前往購票</RouterLink>
             </div>
 
             <h3>年度通行方案</h3>
@@ -50,11 +50,11 @@
                     </thead>
                     <tbody>
                         <tr v-for="yearType in yearTypes">
-                            <td >
-                                {{yearType.type}}
+                            <td>
+                                {{ yearType.type }}
                             </td>
                             <td>
-                               {{yearType.price}}
+                                {{ yearType.price }}
                             </td>
                         </tr>
                     </tbody>
@@ -148,6 +148,7 @@
         </div>
     </main>
     <Footer />
+    <RouterView></RouterView>
 </template>
 
 <script setup>
