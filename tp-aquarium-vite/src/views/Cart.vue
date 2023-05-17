@@ -2,7 +2,9 @@
     <Header></Header>
 
     <main class="cart">
+
         <div class="wrapper">
+            <h2>購物車</h2>
             <div class="cart-product-information">
 
                 <h2>商品資訊</h2>
@@ -27,7 +29,7 @@
                                     </div>
                                     <div>
                                         <h4>金額</h4>
-                                        <h3>NT ${{ choices[ticket.name][ticket.id]['price']*ticket.amount}}</h3>
+                                        <h3>NT ${{ choices[ticket.name][ticket.id]['price'] * ticket.amount }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +60,7 @@
                                     </div>
                                     <div>
                                         <h4>金額</h4>
-                                        <h3>NT ${{ choices[journey.name][journey.id]['price']*journey.amount}}</h3>
+                                        <h3>NT ${{ choices[journey.name][journey.id]['price'] * journey.amount }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -89,8 +91,8 @@
             <div class="cart-delivery">
                 <h2>運送資訊</h2>
                 <div>
-                    <h4>宅配地址: {{address}}</h4>
-                    <button class="cart-button">
+                    <h4>宅配地址: {{ address }}</h4>
+                    <button @click="addressModify=true" class="cart-button">
                         <p>變更收貨地址</p>
                     </button>
                 </div>
@@ -125,17 +127,37 @@
                 </div>
             </div>
         </div>
-        <div class="addressModifier" >
+
+    </main>
+    <div v-if="addressModify" class="address-modifier">
+
+        <div>
+            <button @click="addressModify=false" class="close"><img src="/src/img/cart_close.svg" alt=""></button>
             <h3>變更收貨地址</h3>
             <div>
-                <h4>縣市</h4><select v-model="citySelected"><option v-for="city in AddressJson" :value="city.CityName" >{{ city.CityName }}</option></select>
-                <h4>鄉鎮市區</h4><select v-model="areaSelected"><option v-for="area in (AddressJson.find(item => item.CityName === citySelected).AreaList)" :value="area.AreaName">{{area.AreaName}}</option></select>
-                <h4>郵遞區號</h4><select><option value=""></option></select>
-                <h4>地址</h4><input type="text">
+                <div>
+                    <p>縣市</p><select v-model="citySelected">
+                        <option v-for="city in AddressJson" :value="city.CityName">{{ city.CityName }}</option>
+                    </select>
+                </div>
+                <div>
+                    <p>鄉鎮市區</p><select v-model="areaSelected">
+                        <option v-for="area in (AddressJson.find(item => item.CityName === citySelected).AreaList)"
+                            :value="area.AreaName">{{ area.AreaName }}</option>
+                    </select>
+                </div>
+                <div>
+                    <p>郵遞區號</p><input    type="text"
+                        :value="AddressJson.find(item => item.CityName === citySelected).AreaList.find(item => item.AreaName === areaSelected) ? AddressJson.find(item => item.CityName === citySelected).AreaList.find(item => item.AreaName === areaSelected).ZipCode : ''">
+                </div>
+                <div>
+                    <p>地址</p><input type="text" v-model="addressFilled" >
+                </div>
             </div>
-            <button>確認變更</button>
+            <button @click="addressChange();addressModify=flase" class="btn">確認變更</button>
         </div>
-    </main>
+
+    </div>
 
     <Footer></Footer>
 
@@ -144,7 +166,7 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { onBeforeUpdate, onMounted, reactive, ref } from "vue";
+import { watch, onBeforeUpdate, onMounted, reactive, ref } from "vue";
 import AddressJson from '/src/json/CityCountyData.json';
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer.vue';
@@ -155,7 +177,9 @@ const products = reactive([]);
 const address = ref('100台北市中正區濟南路一段321號');
 const citySelected = ref('臺北市');
 const areaSelected = ref('中正區');
-const addressModifiy = ref(false);
+const zipSelected = ref(AddressJson.find(item => item.CityName === citySelected.value).AreaList.find(item => item.AreaName === areaSelected.value).ZipCode);
+const addressFilled = ref('');
+const addressModify = ref(false);
 //引入行程名稱、種類及票價資訊
 const choices = reactive(
     {
@@ -179,6 +203,12 @@ const productsName = reactive([]);
 //最終轉換為購物車商品的陣列
 const transformedTickets = reactive([]);
 const transformedJourneys = reactive([]);
+const addressChange = function(){
+    address.value = zipSelected.value+citySelected.value+areaSelected.value+addressFilled.value;
+}
+watch(() => areaSelected.value, (newVal) => {
+    zipSelected.value = AddressJson.find(item => item.CityName === citySelected.value).AreaList.find(item => item.AreaName === areaSelected.value).ZipCode;
+})
 onMounted(() => {
     //取得localStorge中加入購物車的資料(key開頭為cart)
     const keys = Object.keys(localStorage);
@@ -230,11 +260,10 @@ onMounted(() => {
     transformedJourneys.push(...journeys.flatMap(item => {
         const { name, date, 遊客 } = item;
         return [
-            { name, date, "amount": 遊客, "type": "遊客", "id":0 },
+            { name, date, "amount": 遊客, "type": "遊客", "id": 0 },
         ];
     }))
 
-    console.log(AddressJson.find(item => item.CityName === '新北市').AreaList);
 });
 
 </script>
