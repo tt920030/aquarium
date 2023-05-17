@@ -1,12 +1,10 @@
 
 <template>
     <Header />
-    <h1>購票資訊</h1>
-    <h1>TICKET INFORMATION</h1>
     <main class="ticket">
         <div class="wrapper">
             <h2>入館費用</h2>
-            <h3>單日門票</h3>
+            <h3>單日門票</h3>   
             <table class="ticket-day">
                 <thead>
                     <tr>
@@ -59,7 +57,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div>
+                <div class="ticket-year-right">
                     <h4>申請年度通行方案取得各項優惠</h4>
                     <ul>
                         <li>本館地下停車費享消費享8折優惠</li>
@@ -67,9 +65,7 @@
                         <li>本館指定餐廳消費享8折優惠</li>
                         <li>紀念品店消費享9折優惠</li>
                     </ul>
-                    <a class="btn" href="#">
-                        <h4>前往申請年度通行方案</h4>
-                    </a>
+                    <RouterLink class="btn" to="ticket/yearpass">前往申請年度通行方案</RouterLink>
                 </div>
             </div>
 
@@ -180,7 +176,9 @@ main.ticket {
     @include wrapper;
 
 
-
+    h3{
+        margin-top: 3rem;
+    }
     table {
         box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
         border-collapse: separate;
@@ -235,7 +233,12 @@ main.ticket {
 
 
     }
-
+    .ticket-year-right{
+        margin-left: 1.5rem;
+        a{
+            width:80%;
+        }
+    }
     .ticket-group {
         td:not(:nth-child(1)) {
             padding-left: 8rem;
@@ -250,24 +253,31 @@ main.ticket {
     }
 
     .ticket-day-bottom {
+        margin: 0 auto;
+        width: 90%;
+        align-items: center;
         display: flex;
         justify-content: space-between;
     }
-
+    
     ul {
-        margin-left: 3rem;
+        margin: 2rem 3rem;
 
         li {
             list-style: disc;
             font-size: 1.6rem;
-            line-height: 4rem;
+            line-height: 5rem;
         }
 
 
     }
 
     a {
-        font-weight: bold
+        font-weight: bold;
+        padding: 1rem 3rem;
+        &:hover{
+            transform: scale(1.2)
+        }
     }
 
     ;
@@ -320,7 +330,11 @@ main.ticket {
 
             }
         }
+        .ticket-day-bottom {
+        flex-direction: column;
+        gap: 2rem;
 
+    }
 
         .ticket-year {
             flex-direction: column;

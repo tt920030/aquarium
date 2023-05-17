@@ -3,7 +3,7 @@
     :disabled-week-days="[3, 0]" prevent-min-max-navigation locale="zh" selectText="okay" :enable-time-picker="false"
     calendar-cell-class-name="dp-custom-cell"
     @update:model-value="handleDate"
-    select-text="確定" >
+    select-text="查詢選擇日期" >
   </VueDatePicker>
 </template>
   
@@ -46,6 +46,10 @@ const handleDate = (e) => {
 .dp__menu{
   padding: 8px;
   box-sizing: border-box;
+}
+.dp__month_year_select{
+  font-size: 1.8rem;
+  font-weight:500;
 }
 .dp__flex_display{
   justify-content: center;
