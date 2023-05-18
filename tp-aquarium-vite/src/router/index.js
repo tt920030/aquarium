@@ -11,10 +11,36 @@ const router = createRouter({
     },
     {
       path: "/member",
+      name: "member",
+      component: () => import("../views/Member.vue"),
+      children: [
+        {
+          path: "profile",
+          name: "profile",
+          component: () => import("../views/member/Profile.vue"),
+        },
+        {
+          path: "order",
+          name: "order",
+          component: () => import("../views/member/Order.vue"),
+        },
+        {
+          path: "coupon",
+          name: "coupon",
+          component: () => import("../views/member/Coupon.vue"),
+        },
+        {
+          path: "pet",
+          name: "pet",
+          component: () => import("../views/member/Pet.vue"),
+        }
+      ]
+    },
+    {
+      path: "/member",
       name: "Member",
       component: () => import("../views/Member.vue"),
     },
- 
 
     {
       path: "/cart",
@@ -36,7 +62,7 @@ const router = createRouter({
           name: "GamePuzzle",
           component: () => import("../views/game/GamePuzzle.vue"),
         },
-      ],
+      ]
     },
 
     {
@@ -50,6 +76,13 @@ const router = createRouter({
           component: () => import("../views/journey/Overnight.vue"),
         },
       ],
+    },
+
+    {
+      path: "/overnight",
+      name: "Overnight",
+      component: () => import("../views/Overnight.vue")
+      
     },
 
     {

@@ -29,6 +29,15 @@
           <td v-if="form.f">{{ form.f }}</td>
           <td v-if="form.g">{{ form.g }}</td>
           <td v-if="form.h">{{ form.h }}</td>
+        <tr v-for="form in forms" :key="form.a">
+          <td v-if="form.a">{{ form.a }}</td>
+          <td v-if="form.b">{{ form.b }}</td>
+          <td v-if="form.c">{{ form.c }}</td>
+          <td v-if="form.d">{{ form.d }}</td>
+          <td v-if="form.e">{{ form.e }}</td>
+          <td v-if="form.f">{{ form.f }}</td>
+          <td v-if="form.g">{{ form.g }}</td>
+          <td v-if="form.h">{{ form.h }}</td>
           <td><button>修改</button></td>
           <td>刪除</td>
         </tr>
@@ -67,8 +76,20 @@ const forms = reactive([
     d: 0.1,
     e: 10000,
     f: 30,
+    a: "無敵折價券",
+    b: "88888",
+    c: 10000,
+    d: 0.1,
+    e: 10000,
+    f: 30,
   },
   {
+    a: "無敵折價券",
+    b: "88888",
+    c: 10000,
+    d: 0.1,
+    e: 10000,
+    f: 30,
     a: "無敵折價券",
     b: "88888",
     c: 10000,
