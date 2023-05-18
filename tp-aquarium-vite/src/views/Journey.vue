@@ -1,12 +1,6 @@
 <template>
   <div class="journey">
-    <Header>
-    <div>
-        <h2>1234</h2>
-       
-    </div>
-    <RouterView :inheritAttrs="false"></RouterView>
-</Header>
+    <Header></Header>
     <main>
       <!-- journer banner -->
       <div class="journey_banner_content">

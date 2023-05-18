@@ -17,7 +17,8 @@
         <div class="bottom">
             <h3>選擇購買張數</h3>
             <TicketCounter @count="count" @total="total" @types="types"
-                :remain="itinerarySelected ? remainSearch[itinerarySelected][daySearch] : ''" :itinerary="itinerarySelected">
+                :remain="itinerarySelected ? remainSearch[itinerarySelected][daySearch] : ''"
+                :itinerary="itinerarySelected">
             </TicketCounter>
             <div class="final">
                 <p>{{ dateSelected }}</p>
@@ -29,9 +30,9 @@
                 </div>
 
                 <h3>共計金額 NT ${{ finalTotal }}</h3>
-                
+
             </div>
-            <a @click.prevent="addCart" :class="['btn', 'goCart', finalTotal?'':'disable']">加入購物車</a >
+            <a @click.prevent="addCart" :class="['btn', 'goCart', finalTotal ? '' : 'disable']">加入購物車</a>
         </div>
 
     </div>
@@ -68,7 +69,7 @@ const total = function (e) {
 const count = function (e) {
     finalCount.value = e;
 }
-const types = function(e){
+const types = function (e) {
     finalTypes.value = e;
 }
 //引入各行程各日期剩餘票數
@@ -78,14 +79,20 @@ const remainSearch = reactive({
     '夜宿海生館-兩天一夜1': { '2023/5/18': 40, '2023/5/19': 10, '2023/5/20': 2 },
     '夜宿海生館-兩天一夜': { '2023/5/18': 40, '2023/5/19': 10, '2023/5/20': 4 },
 })
+//放入購物車
+const addCart = function () {
+    if (finalTotal && finalTotal.value.value > 0) {
+        const list = JSON.parse(localStorage.getItem('list')) || []
+        list.push(data)
+        localStorage.setItem('list', JSON.stringify(list))
 
-const addCart =  function(){
-    if(finalTotal&&finalTotal.value.value>0){
-        localStorage.setItem("cart"+(new Date().valueOf()), JSON.stringify({...{"name":itinerarySelected.value},...finalTypes.value.value,...{"date":daySearch.value}}));
+
+
+        localStorage.setItem("cart" + daySearch.value, JSON.stringify({ ...{ "name": itinerarySelected.value }, ...finalTypes.value.value, ...{ "date": daySearch.value } }));
         //減少資料庫裡的票券數量
-        remainSearch[itinerarySelected.value][daySearch.value]-=finalCount.value.value;
+        remainSearch[itinerarySelected.value][daySearch.value] -= finalCount.value.value;
         alert("加入購物車成功!")
-    }else{
+    } else {
         alert("尚未選取任何票券");
     }
 }
@@ -132,14 +139,17 @@ const addCart =  function(){
             display: flex;
             align-items: center;
             justify-content: space-between;
-            .iti{
+
+            .iti {
                 width: 15%;
                 font-weight: bold;
             }
+
             h3 {
                 margin: 2rem 0;
             }
-            .inside{
+
+            .inside {
                 display: flex;
                 align-items: center;
                 gap: 1rem;
@@ -148,35 +158,41 @@ const addCart =  function(){
 
     }
 
-    .goCart{
+    .goCart {
         float: right;
         padding: 2rem 5rem;
         font-weight: bold;
-        &:hover{
+
+        &:hover {
             transform: scale(1.2);
         }
-        &.disable{
+
+        &.disable {
             cursor: not-allowed;
             pointer-events: none;
             background-color: rgba(229, 229, 229, 0.8);
-            color:rgba(174, 174, 174, 0.8)
+            color: rgba(174, 174, 174, 0.8)
         }
     }
 
-    @include mobile{
-        .final{
+    @include mobile {
+        .final {
             margin: 2rem 0;
             flex-direction: column;
             gap: 1.5rem;
-            .iti{
+
+            .iti {
                 width: 100% !important;
             }
-            h3,h4{
+
+            h3,
+            h4 {
                 margin: 0 !important;
             }
         }
-        .goCart{
-            float:none;
+
+        .goCart {
+            float: none;
         }
     }
 }</style>
