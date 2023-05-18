@@ -1,11 +1,6 @@
 <template>
-  <Header></Header>
-  <main>
-    <div class="mb-3">
-      <h3>折價券管理</h3>
-      <button>新增折價券</button>
-    </div>
-<!-- 
+ 
+
     <table class="table table-bordered border-dark">
       <thead class="table-primary border-dark">
         <tr>
@@ -33,9 +28,8 @@
           <td>刪除</td>
         </tr>
       </tbody>
-    </table> -->
-    <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
-  </main>
+    </table>
+ 
 </template>
 
 <script setup>
@@ -45,61 +39,16 @@ import Header from "/src/components/CMSHeader.vue";
 // 引入bootstrap
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ManageTemplate from '/src/components/ManageTemplate2.vue'
 // a =  a b = a
-const title = reactive(
-  {
-    a: "名稱",
-    b: "序號",
-    c: "面額",
-    d: "折數",
-    e: "抵用門檻",
-    f: "有效期限",
-    g: "修改",
-    h: "刪除",
-  },
-);
-const forms = reactive([
-  {
-    a: "無敵折價券",
-    b: "88888",
-    c: 10000,
-    d: 0.1,
-    e: 10000,
-    f: 30,
-  },
-  {
-    a: "無敵折價券",
-    b: "88888",
-    c: 10000,
-    d: 0.1,
-    e: 10000,
-    f: 30,
-  },
-  {
-    a: "無敵折價券",
-    b: "88888",
-    c: 10000,
-    d: 0.1,
-    e: 10000,
-    f: 30,
-  },
-]);
+const props = defineProps(['title','forms'])
 </script>
 <style lang="scss" scoped>
-main {
-  box-sizing: border-box;
-  padding: 50px 20px 0 200px;
-  h3 {
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid black;
-  }
+
   .row {
     margin-right: 0;
   }
   .row.justify-content-center {
     margin-left: -170px;
   }
-}
+
 </style>
