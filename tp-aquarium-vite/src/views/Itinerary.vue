@@ -85,6 +85,8 @@ const addCart =  function(){
         //減少資料庫裡的票券數量
         remainSearch[itinerarySelected.value][daySearch.value]-=finalCount.value.value;
         alert("加入購物車成功!")
+    }else{
+        alert("尚未選取任何票券");
     }
 }
 </script>

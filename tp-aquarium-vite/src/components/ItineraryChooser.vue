@@ -62,7 +62,7 @@ const handleItinerary = () => {
             padding: 1rem;
             width:90%;
             background-color: white;
-            border: 1px solid #efefef;
+            border: 1px solid #d1d1d1;
             border-radius: 5px;
             margin-bottom: 2rem;
             font-weight: bold;
