@@ -17,7 +17,6 @@
             </ul>
         </nav>
     </header>
-    <RouterView/>
 </template>
 
 <script setup>
