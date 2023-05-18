@@ -1,6 +1,6 @@
 <template>
   <footer>
-        <img class="bg" src="/src/img/header_bg2.png" alt="">
+        <img class="bg" src="src/img/header_bg2.png" alt="">
         <nav>
             <div class="left">
                 <h4>台北海生館</h4>
@@ -21,7 +21,7 @@
                     <p>{{ right }}</p>
                 </a>
             </div>
-            <a class="logo" href=""><img src="/src/img/logo-white.svg" alt=""></a>
+            <a class="logo" href=""><img src="src/img/logo-white.svg" alt=""></a>
         </nav>
     </footer>
 </template>

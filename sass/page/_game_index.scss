@@ -1,4 +1,6 @@
 .game {
+
+    background-color: white;
     main {
 
         .top {
@@ -6,9 +8,10 @@
                 width: 100%;
             }
         }
-
+// 
 
         .banner { 
+
             margin: 100px auto; 
             width: 450px; 
             position: relative; 
@@ -49,7 +52,7 @@
         }
         
 
-        section {
+        .game_section {
             .rule {
 
                 position: absolute;
@@ -100,7 +103,7 @@
             a{
                 position: absolute;
                 right: 530px;
-                top: 1440px;
+                top: 1430px;
                 margin-bottom: 100px;
             }
 
@@ -108,7 +111,7 @@
                 width: 300px;
                 position: absolute;
                 right: 80px;
-                top: 1400px;
+                top: 1420px;
             }
         }
     }
