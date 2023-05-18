@@ -10,7 +10,13 @@
 }
 
 .quiz{
-    background: map-get($color, bgc2);
+    // background: map-get($color, bgc2);
+    @include mobile{
+        .info_box{
+            width: 400px !important;
+        }
+    
+    }
 }
 
 // ::selection{
@@ -34,6 +40,9 @@
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
 .result_box.activeResult{
+
+    
+
     opacity: 1;
     z-index: 5;
     pointer-events: auto;
@@ -53,6 +62,7 @@
 }
 
 .info_box{
+
 
     width: 540px;
     background: #fff;

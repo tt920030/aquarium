@@ -56,6 +56,9 @@
 }
 
 .info_box{
+    @include mobile{
+        width: 90%;
+      }
     width: 540px;
     background: #fff;
     border-radius: 5px;
@@ -114,6 +117,11 @@
 }
 
 .quiz_box{
+
+    @include mobile{
+        width: 90%;
+      }
+
     width: 550px;
     background: #fff;
     border-radius: 5px;
@@ -313,6 +321,10 @@
 }
 
 .result_box{
+    @include mobile{
+        width: 90%;
+      }
+
     background: #fff;
     border-radius: 5px;
     display: flex;
