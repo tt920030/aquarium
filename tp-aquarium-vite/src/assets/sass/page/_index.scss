@@ -4,6 +4,7 @@
         position: relative;
 
         .index_logo_text {
+
             h4 {
                 position: absolute;
                 z-index: 999;
@@ -46,17 +47,13 @@
             }
 
             @include mobile() {
-                .index_logo_text {
+                &::after {
+                    left: 35%;
+                    width: 30%;
+                }
 
-                    &::after {
-                        top: 64%;
-                        left: 44.5%;
-                        width: 50%;
-                    }
-
-                    img {
-                        width: 150px;
-                    }
+                img {
+                    width: 150px;
                 }
             }
         }
@@ -92,7 +89,6 @@
 
             p {
                 margin: 0 auto;
-                margin-bottom: 30px;
                 max-width: 600px;
                 width: 50%;
             }
@@ -248,7 +244,7 @@
 
     .index_bgc {
         background-color: #f1f1f1;
-        padding-bottom: 80px;
+        margin-top: 100px;
 
         @include wrapper {
 
@@ -259,9 +255,8 @@
                 text-align: center;
 
                 h2 {
-                    padding-top: 70px;
-                    padding-bottom: 20px;
                     margin-bottom: 50px;
+                    padding-top: 70px;
                 }
 
                 ul {
@@ -289,7 +284,8 @@
 
                                 .index_journey_content_sub {
                                     text-align: left;
-                                    margin-top: 50px;
+                                    align-self: center;
+                                    padding-right: 10px;
 
                                     h4 {
                                         font-size: 16px;
@@ -299,7 +295,6 @@
                                     p {
                                         font-size: 12px;
                                         margin-top: 20px;
-                                        padding-right: 25px;
                                     }
                                 }
                             }
@@ -326,6 +321,8 @@
             }
 
             .index_button {
+                padding-bottom: 70px;
+
                 .btn {
                     display: block;
                     width: fit-content;
@@ -355,7 +352,6 @@
             }
 
             ul {
-                // display: flex;
                 margin-top: 50px;
             }
 
@@ -379,13 +375,12 @@
                 }
 
                 img {
-                    margin: 30px 0;
+                    margin: 30px;
                     border-radius: 10px;
                 }
 
                 .index_news_content {
-                    margin-top: 50px;
-                    margin-left: 40px;
+                    align-self: center;
 
                     h3 {
                         font-family: Noto Sans TC;
@@ -402,8 +397,6 @@
 
                     // RWD
                     @include mobile() {
-                        margin-left: 20px;
-                        margin-top: 25px;
 
                         p {
                             width: 80%;
@@ -417,7 +410,7 @@
                 @include mobile() {
                     img {
                         width: 30%;
-                        margin-left: 20px;
+                        margin: 20px;
                     }
 
                     &::before {
@@ -447,23 +440,35 @@
         height: 200px;
         background-color: map-get($color, bgc2);
         max-width: 100%;
-        margin-top: 100px;
+        margin: 100px 0;
         display: flex;
-        gap: 20px;
         justify-content: center;
         align-items: center;
 
-        img {
-            border-radius: 10px;
-            max-width: 600px;
-            width: 200px;
-        }
+        .index_ad_box{
+            position: relative;
+            width: 70%;
+            height: 80px;
+            overflow: hidden;
 
-        // RWD
-        @include mobile() {
-            overflow-x: hidden;
-        }
+            .index_ad_list {
+                position: absolute;
+                display: flex;
+                gap: 20px;
+                left: 0;
+
+                img {
+                    border-radius: 10px;
+                    max-width: 600px;
+                    width: 200px;
+                    cursor: pointer;
+                }
+
+                // RWD
+                @include mobile() {
+                    overflow-x: hidden;
+                }
+            }
+        } 
     }
 }
-
-

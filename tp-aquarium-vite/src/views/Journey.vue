@@ -1,6 +1,12 @@
 <template>
   <div class="journey">
-    <Header></Header>
+    <Header>
+    <div>
+        <h2>1234</h2>
+       
+    </div>
+    <RouterView :inheritAttrs="false"></RouterView>
+</Header>
     <main>
       <!-- journer banner -->
       <div class="journey_banner_content">
@@ -58,12 +64,16 @@
       </svg>
 
       <!-- journey slider -->
-      <div class="journey_slide">
-        <img src="../img/journey_slide1.jpg" alt="" />
-        <img src="../img/journey_slide2.jpg" alt="" />
-        <img src="../img/journey_slide3.jpg" alt="" />
-        <img src="../img/journey_slide4.jpg" alt="" />
-        <img src="../img/journey_slide5.jpg" alt="" />
+      <div class="journey_slider">
+        <div class="journey_slider_box">
+          <div class="journey_slider_list">
+            <img src="../img/journey_slide1.jpg" alt="" />
+            <img src="../img/journey_slide2.jpg" alt="" />
+            <img src="../img/journey_slide3.jpg" alt="" />
+            <img src="../img/journey_slide4.jpg" alt="" />
+            <img src="../img/journey_slide5.jpg" alt="" />
+          </div>
+        </div>
       </div>
 
       <section class="wrapper">
@@ -332,6 +342,7 @@
   <RouterView />
 </template>
 
+
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
@@ -375,6 +386,47 @@ $(function () {
   });
   // $(".accordion_header").first().click();
 });
+
+// index_ad 跑馬燈
+window.onload = function() {
+
+let box = document.querySelector('.journey_slider_box');
+let list = document.querySelector('.journey_slider_list');
+
+// 複製一份讓中間不間斷
+list.innerHTML += list.innerHTML;
+
+let left = 0;
+let time;
+
+function move(){
+    clearInterval(time);
+    time = setInterval(() => {
+    left -= 2;
+
+        if( left === -(6 * 200 + 6 * 20)){
+            left = 0;
+        }
+
+    list.style.left = left + "px"
+    }, 20)
+};
+
+move();
+
+box.addEventListener('mouseenter', () => {
+    clearInterval(time);
+});
+
+box.addEventListener('mouseleave', () => {
+    move();
+});
+};
+
+
+
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -715,21 +767,30 @@ $(function () {
     }
   }
 
-  .journey_slide {
+  .journey_slider {
     display: flex;
-    gap: 15px;
-    overflow-x: hidden;
+    justify-content: center;
+    align-items: center;
+    .journey_slider_box{
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
 
-    img {
-      width: 20%;
-    }
+      .journey_slider_list{
+        position: absolute;
+        display: flex;
+        gap: 20px;
+        left: 0;
 
-    @include mobile() {
-      overflow-x: hidden;
-      margin-top: -180px;
+        @include mobile() {
+          overflow-x: hidden;
+          margin-top: -180px;
 
-      img {
-        width: 50%;
+          img {
+            width: 50%;
+          }
+        }
       }
     }
   }
