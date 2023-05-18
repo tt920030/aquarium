@@ -15,6 +15,7 @@ const router = createRouter({
       component: () => import("../views/Member.vue"),
     },
  
+
     {
       path: "/cart",
       name: "Cart",
@@ -24,32 +25,33 @@ const router = createRouter({
       path: "/game_index",
       name: "GameIndex",
       component: () => import("../views/GameIndex.vue"),
-      children:[
-          {
-            path: "game_question",
-            name: "GameQuestion",
-            component: () => import("../views/game/GameQuestion.vue"),
-          },
-          {
-            path: "game_puzzle",
-            name: "GamePuzzle",
-            component: () => import("../views/game/GamePuzzle.vue"),
-          },
-        ]
+      children: [
+        {
+          path: "game_question",
+          name: "GameQuestion",
+          component: () => import("../views/game/GameQuestion.vue"),
+        },
+        {
+          path: "game_puzzle",
+          name: "GamePuzzle",
+          component: () => import("../views/game/GamePuzzle.vue"),
+        },
+      ],
     },
-    
+
     {
       path: "/journey",
       name: "Journey",
       component: () => import("../views/Journey.vue"),
+      children: [
+        {
+          path: "overnight",
+          name: "Overnight",
+          component: () => import("../views/journey/Overnight.vue"),
+        },
+      ],
     },
-    {
-      path: "/journey/overnight",
-      name: "Overnight",
-      component: () => import("../views/journey/Overnight.vue")
-      
-    },
-   
+
     {
       path: "/faq",
       name: "Faq",
@@ -76,7 +78,7 @@ const router = createRouter({
       component: () => import("../views/About.vue"),
     },
     {
-      path: "/floor_introduction", //自己取之後要連的路徑名稱
+      path: "/floor_Introduction", //自己取之後要連的路徑名稱
       name: "FloorIntroduction", //自己取
       component: () => import("../views/FloorIntroduction.vue"), //路徑連到剛剛建的vue檔
     },
@@ -89,15 +91,15 @@ const router = createRouter({
       path: "/news",
       name: "News",
       component: () => import("../views/News.vue"),
-      children:[
+      children: [
         {
           path: "news_page",
           name: "NewsPage",
           component: () => import("../views/news/NewsPage.vue"),
         },
-        ]
+      ],
     },
-   
+
     {
       path: "/ticket", //自己取之後連的路徑名稱
       name: "ticket", //自己取
@@ -124,6 +126,16 @@ const router = createRouter({
       path: "/:pathMatch(.*)",
       name: "NotFound",
       component: import("../views/404.vue"),
+    },
+    {
+      path: "/news_manage", //自己取之後要連的路徑名稱
+      name: "NewsManage", //自己取
+      component: () => import("../views/NewsManage.vue"), //路徑連到剛剛建的vue檔
+    },
+    {
+      path: "/coupon_manage", //自己取之後要連的路徑名稱
+      name: "CouponManage", //自己取
+      component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
     },
   ],
 });
