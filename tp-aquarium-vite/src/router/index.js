@@ -138,6 +138,17 @@ const router = createRouter({
       name: "Itinerary", //自己取
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
+
+    {
+      path: "/news_manage", //自己取之後要連的路徑名稱
+      name: "NewsManage", //自己取
+      component: () => import("../views/NewsManage.vue"), //路徑連到剛剛建的vue檔
+    },
+    {
+      path: "/coupon_manage", //自己取之後要連的路徑名稱
+      name: "CouponManage", //自己取
+      component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
+    },
     // {
     //   path: '/:id',
     //   name: 'userdata',
