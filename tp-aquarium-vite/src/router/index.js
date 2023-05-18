@@ -11,10 +11,32 @@ const router = createRouter({
     },
     {
       path: "/member",
-      name: "Member",
+      name: "member",
       component: () => import("../views/Member.vue"),
+      children: [
+        {
+          path: "profile",
+          name: "profile",
+          component: () => import("../views/member/Profile.vue"),
+        },
+        {
+          path: "order",
+          name: "order",
+          component: () => import("../views/member/Order.vue"),
+        },
+        {
+          path: "coupon",
+          name: "coupon",
+          component: () => import("../views/member/Coupon.vue"),
+        },
+        {
+          path: "pet",
+          name: "pet",
+          component: () => import("../views/member/Pet.vue"),
+        }
+      ]
     },
- 
+
     {
       path: "/cart",
       name: "Cart",
@@ -24,25 +46,25 @@ const router = createRouter({
       path: "/game_index",
       name: "GameIndex",
       component: () => import("../views/GameIndex.vue"),
-      children:[
-          {
-            path: "game_question",
-            name: "GameQuestion",
-            component: () => import("../views/game/GameQuestion.vue"),
-          },
-          {
-            path: "game_puzzle",
-            name: "GamePuzzle",
-            component: () => import("../views/game/GamePuzzle.vue"),
-          },
-        ]
+      children: [
+        {
+          path: "game_question",
+          name: "GameQuestion",
+          component: () => import("../views/game/GameQuestion.vue"),
+        },
+        {
+          path: "game_puzzle",
+          name: "GamePuzzle",
+          component: () => import("../views/game/GamePuzzle.vue"),
+        },
+      ]
     },
-    
+
     {
       path: "/journey",
       name: "Journey",
       component: () => import("../views/Journey.vue"),
-      children:[
+      children: [
         {
           path: "overnight",
           name: "Overnight",
@@ -50,7 +72,7 @@ const router = createRouter({
         },
       ]
     },
-   
+
     {
       path: "/faq",
       name: "Faq",
@@ -90,25 +112,25 @@ const router = createRouter({
       path: "/news",
       name: "News",
       component: () => import("../views/News.vue"),
-      children:[
+      children: [
         {
           path: "news_page",
           name: "NewsPage",
           component: () => import("../views/news/NewsPage.vue"),
         },
-        ]
+      ]
     },
-   
+
     {
       path: "/ticket", //自己取之後連的路徑名稱
       name: "ticket", //自己取
       component: () => import("../views/Ticket.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
-      children:[
+      children: [
         {
           path: 'yearpass',
           name: 'yearpass',
-          component: ()=> import("../views/ticket/Yearpass.vue")
+          component: () => import("../views/ticket/Yearpass.vue")
 
         }
       ]

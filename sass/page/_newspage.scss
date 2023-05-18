@@ -1,6 +1,6 @@
 .newspage {
     .banner {
-        background-image: url(../../img/news_banner.jpg);
+        background-image: url('@/img/news_banner.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         height: 900px;
@@ -19,7 +19,7 @@
         }
 
         @include mobile {
-            background-image: url(../../img/news_banner_small.png);
+            background-image: url('@/img/news_banner_small.png');
             height: 197px;
         }
     }
@@ -41,7 +41,7 @@
             position: relative;
             margin-bottom: 175px;
 
-            @include mobile{
+            @include mobile {
                 margin-bottom: 115px;
             }
 
@@ -118,7 +118,7 @@
             padding: 15px;
             position: relative;
 
-            @include mobile{
+            @include mobile {
                 padding: 5px;
                 margin: 5px;
             }
@@ -142,7 +142,7 @@
                     height: 111px;
                     align-items: center;
 
-                    @include mobile{
+                    @include mobile {
                         width: 90%;
                         height: 70px;
                         top: -60px;
@@ -153,7 +153,8 @@
                         margin-right: 30px;
                         width: 50px;
                         height: 50px;
-                        @include mobile{
+
+                        @include mobile {
                             width: 28px;
                             height: 28px;
                             margin-left: 10px;
@@ -162,7 +163,7 @@
                     }
 
                     h4 {
-                        @include mobile{
+                        @include mobile {
                             font-size: $p;
                         }
                     }
@@ -180,7 +181,8 @@
                         height: 100%;
                         object-fit: cover;
                     }
-                    @include mobile{
+
+                    @include mobile {
                         width: 280px;
                         height: 284px;
                         margin-top: 15px;
@@ -193,7 +195,7 @@
                     margin: 0 auto;
                     margin-bottom: 50px;
 
-                    @include mobile{
+                    @include mobile {
                         width: 280px;
                         margin-bottom: 30px;
                     }

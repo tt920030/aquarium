@@ -2,352 +2,108 @@
     <Header></Header>
     <div class="member">
         <main>
-        <div class="left">
-            <div class="photo">
-                <img src="../img/member_photo1.png" alt="">
-            </div>
-            <p class="name">使用者姓名</p>
-            <button class="btn1">
-                <p>年度會員</p>
-            </button>
-
-            <div class="list ">
-                <i class="fa-solid fa-folder-open"></i>
-                <p>我的訂單</p>
-            </div>
-            <div class="list">
-                <i class="fa-solid fa-ticket"></i>
-                <p>我的折價券</p>
-            </div>
-            <div class="list -on">
-                <i class="fa-solid fa-fish"></i>
-                <p>虛擬寵物</p>
-            </div>
-        </div>
-        <div class="right">
-            <div class="profile wrapper ">
-                <div class="top">
-                    <div class="left">
-                        <div class="photo-area">
-                            <img src="../img/member_photo1.png" alt="">
-                        </div>
-                        <button class="btn1">
-                            <p>更換頭貼</p>
-                        </button>
-                    </div>
-                    <div class="right">
-                        <div class="input">
-                            <label for="email">email</label>
-                            <input type="email" id="email" name="email" disabled="disabled">
-                        </div>
-
-                    </div>
+            <div class="left">
+                <div class="photo">
+                    <img src="../img/member_photo1.png" alt="">
                 </div>
-                <div class="bottom">
-                    <form action="post" method="" class="">
-                        <div class="input">
-                            <label for="name">姓名</label>
-                            <input type="text" id="name" name="name" disabled="disabled">
-                            <div class="invalid-feedback">此欄位必填</div>
-                        </div>
-                        <div class="input">
-                            <label for="sex">性別</label>
-                            <input type="text" id="sex" name="sex" disabled="disabled">
-                        </div>
-                        <div class="input">
-                            <label for="birthday">生日</label>
-                            <input type="text" id="birthday" name="birthday" disabled="disabled">
-                        </div>
-                        <div class="input">
-                            <label for="phone">手機</label>
-                            <input type="phone" id="phone" name="phone" disabled="disabled">
-                        </div>
-                        <div class="input">
-                            <label for="password">密碼</label>
-                            <input type="password" id="password" name="password" disabled="disabled">
-                            <div class="invalid-feedback">此欄位必填</div>
-                        </div>
-                        <div class="input">
-                            <label for="address">地址</label>
-                            <input type="text" id="address" name="address">
-                        </div>
+                <p class="name">使用者姓名</p>
+                <button class="btn1">
+                    <p>年度會員</p>
+                </button>
 
-                        <div class="block">
-                            <button type="submit" class="btn1">
-                                <h4>修改資料</h4>
-                            </button>
-
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-            <div class="order wrapper">
-                <select name="" id="">
-                    <option value="one_month">一個月內訂單</option>
-                    <option value="未出貨訂單">未出貨訂單</option>
-                    <option value="six_month">六個月內訂單</option>
-                </select>
-
-                <div class="table">
-                    <div class="title">
-                        <h3>一個月內訂單</h3>
+                <RouterLink to="/member/Profile">aaa</RouterLink>
+                <RouterLink to="/member/Order">
+                    <div class="list ">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <p>我的訂單</p>
                     </div>
-                    
-                        <table>
-                            <tr>
-                                <th>
-                                    <p>訂單編號</p>
-                                </th>
-                                <th class="time">
-                                    <p>訂購時間</p>
-                                </th>
-                                <th>
-                                    <p>付款方式</p>
-                                </th>
-                                <th>
-                                    <p>訂單金額</p>
-                                </th>
-                                <th>
-                                    <p>使用時間</p>
-                                </th>
-                                <th>
-                                    <p>商品名稱</p>
-                                </th>
-                                <th>
-                                    <p>數量</p>
-                                </th>
-                                <th>
-                                    <p>處理狀態</p>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td rowspan='2'>
-                                    <p>20230325012413</p>
-                                </td>
-                                <td rowspan='2' class="time">
-                                    <p>2023/03/25 21:36:54</p>
-                                </td>
-                                <td rowspan='2'>
-                                    <p>信用卡付款</p>
-                                </td>
-                                <td rowspan='2'>
-                                    <p>640</p>
-                                </td>
-                                <td>
-                                    <p>2023/1/1</p>
-                                </td>
-                                <td>
-                                    <p>成人票</p>
-                                </td>
-                                <td>
-                                    <p>1</p>
-                                </td>
-                                <td class="time">
-                                    <p>03/27 08:30 已使用</p>
-                                </td>
-                            </tr>
+                </RouterLink>
+                <RouterLink to="/member/Coupon">
+                    <div class="list">
+                        <i class="fa-solid fa-ticket"></i>
+                        <p>我的折價券</p>
+                    </div>
+                </RouterLink>
+                <RouterLink to="/member/Pet">
+                    <div class="list -on">
+                        <i class="fa-solid fa-fish"></i>
+                        <p>虛擬寵物</p>
+                    </div>
+                </RouterLink>
 
-                            <tr>
-                                <td>
-                                    <p>-</p>
-                                </td>
-                                <td>
-                                    <p>企鵝筆記本</p>
-                                </td>
-                                <td>
-                                    <p>1</p>
-                                </td>
-                                <td class="time">
-                                    <p>03/27 17:21 已取貨</p>
-                                </td>
-                            </tr>
 
-                        </table>
-                </div>
 
             </div>
-            <div class="coupon wrapper">
-                <div class="table">
-                    <div class="title">
-                        <h3>我的折價券</h3>
-                    </div>
-                    <table>
-                        <tr>
-                            <th>
-                                <p>名稱</p>
-                            </th>
-                            <th>
-                                <p>序號</p>
-                            </th>
-                            <th>
-                                <p>面額</p>
-                            </th>
-                            <th>
-                                <p>折數</p>
-                            </th>
-                            <th>
-                                <p>抵用門檻</p>
-                            </th>
-                            <th>
-                                <p>使用狀況</p>
-                            </th>
-                            <th>
-                                <p>有效期限</p>
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>小遊戲過關禮物</p>
-                            </td>
-                            <td>
-                                <p>#gP5BJHspm</p>
-                            </td>
-                            <td>
-                                <p>300</p>
-                            </td>
-                            <td>
-                                <p>-</p>
-                            </td>
-                            <td>
-                                <p>1000</p>
-                            </td>
-                            <td>
-                                <p>未使用</p>
-                            </td>
-                            <td>
-                                <p>2023/04/01~2023/04/30</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>小遊戲過關禮物</p>
-                            </td>
-                            <td>
-                                <p>#gP5BJHspm</p>
-                            </td>
-                            <td>
-                                <p>-</p>
-                            </td>
-                            <td>
-                                <p>95折</p>
-                            </td>
-                            <td>
-                                <p>-</p>
-                            </td>
-                            <td>
-                                <p>未使用</p>
-                            </td>
-                            <td>
-                                <p>2023/04/01~2023/04/30</p>
-                            </td>
-                        </tr>
+            <div class="right">
 
-                    </table>
-                </div>
+
+                <RouterView></RouterView>
+                
+
             </div>
-            <div class="pet wrapper  -on">
-                <h3>目前點數:&nbsp<span>2</span>點</h3>
-                <p>-&nbsp每消費500元就可獲得1點</p>
-
-                <form method="post" action="" class="area">
-                    <div class="fish -chose">
-                        <input type="radio" id="1" name="chose_pet" value="1" checked>
-                        <label for="1">
-                            <div class="container">
-                                <img src="../img/member_pet1_on.png" alt="">
-                            </div>
-
-                            <p class="name">小丑魚</p>
-                            <p class="point">1點</p>
-                        </label>
-
-                    </div>
-                    <div class="fish ">
-                        <input type="radio" id="2" name="chose_pet" value="2">
-                        <label for="2">
-                            <div class="container">
-                                <img src="../img/member_pet2_off.png" alt="">
-                            </div>
-
-                            <p class="name">???</p>
-                            <p class="point">5點</p>
-                        </label>
-
-                    </div>
-                    <div class="fish">
-                        <input type="radio" id="3" name="chose_pet" value="3">
-                        <label for="3">
-                            <div class="container">
-                                <img src="../img/member_pet3_off.png" alt="">
-                            </div>
-
-                            <p class="name">???</p>
-                            <p class="point">10點</p>
-                        </label>
-
-                    </div>
-                    <div class="fish">
-                        <input type="radio" id="4" name="chose_pet" value="4">
-                        <label for="4">
-                            <div class="container">
-                                <img src="../img/member_pet4_off.png" alt="">
-                            </div>
-
-                            <p class="name">???</p>
-                            <p class="point">15點</p>
-                        </label>
-
-                    </div>
-                    <div class="fish">
-                        <input type="radio" id="5" name="chose_pet" value="5">
-                        <label for="5">
-                            <div class="container">
-                                <img src="../img/member_pet5_off.png" alt="">
-                            </div>
-
-                            <p class="name">???</p>
-                            <p class="point">20點</p>
-                        </label>
-
-                    </div>
-                    <div class="fish">
-                        <input type="radio" id="6" name="chose_pet" value="6">
-                        <label for="6">
-                            <div class="container">
-                                <img src="../img/member_pet6_off.png" alt="">
-                            </div>
-
-                            <p class="name">???</p>
-                            <p class="point">25點</p>
-                        </label>
-
-                    </div>
-                    <div class="button">
-                        <button type="submit" class="btn1">
-                            <p>更換寵物</p>
-                        </button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </main>
-    <RouterLink to="/ticket">1234</RouterLink>
+        </main>
     </div>
-    
-    <!-- <Footer></Footer>  -->
-    
-    <RouterView></RouterView>
+
+    <Footer></Footer>
+
+
+
 </template>
 
 <script setup>
-    import{ RouterLink, RouterView } from "vue-router";
-    import { onMounted, reactive, ref } from "vue";
-    import Header from '/src/components/Header.vue';
-	import Footer from '/src/components/Footer.vue';
+import { RouterLink, RouterView } from "vue-router";
+import { onMounted, reactive, ref } from "vue";
+
 </script>
 
 <style lang="scss">
-    @import "../../src/assets/sass/page/member";
+@import "../../src/assets/sass/page/member";
+
+.btn1 {
+    display: block;
+    background: #fff61c;
+    border-radius: 40px;
+    text-align: center;
+    padding: 10px 30px;
+    transition: 0.5s;
+    color: #16355a;
+    cursor: pointer;
+    border: 0;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        letter-spacing: 0.1rem;
+        margin-bottom: 5px;
+    }
+
+    input {
+        appearance: none;
+        border: 0px;
+        border-bottom: 1px solid black;
+        border-radius: 0;
+        height: 30px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: left 5px center;
+        padding: 0 25px;
+
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+            border-bottom: 1px solid black;
+            background-color: white;
+
+        }
+    }
+
+    margin-bottom: 20px;
+}
 </style>
