@@ -20,13 +20,15 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="coupon in coupons" :key="coupon.number">
-          <td>{{ coupon.name }}</td>
-          <td>{{ coupon.number }}</td>
-          <td>{{ coupon.value }}</td>
-          <td>{{ coupon.discount }}</td>
-          <td>{{ coupon.threshold }}</td>
-          <td>{{ coupon.expire }}</td>
+        <tr v-for="form in forms" :key="form.a">
+          <td v-if="form.a">{{ form.a }}</td>
+          <td v-if="form.b">{{ form.b }}</td>
+          <td v-if="form.c">{{ form.c }}</td>
+          <td v-if="form.d">{{ form.d }}</td>
+          <td v-if="form.e">{{ form.e }}</td>
+          <td v-if="form.f">{{ form.f }}</td>
+          <td v-if="form.g">{{ form.g }}</td>
+          <td v-if="form.h">{{ form.h }}</td>
           <td><button>修改</button></td>
           <td>刪除</td>
         </tr>
@@ -42,31 +44,31 @@ import Header from "/src/components/CMSHeader.vue";
 // 引入bootstrap
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-const coupons = reactive([
+// a =  a b = a
+const forms = reactive([
   {
-    name: "無敵折價券",
-    number: "88888",
-    value: 10000,
-    discount: 0.1,
-    threshold: 10000,
-    expire: 30,
+    a: "無敵折價券",
+    b: "88888",
+    c: 10000,
+    d: 0.1,
+    e: 10000,
+    f: 30,
   },
   {
-    name: "無敵折價券",
-    number: "88888",
-    value: 10000,
-    discount: 0.1,
-    threshold: 10000,
-    expire: 30,
+    a: "無敵折價券",
+    b: "88888",
+    c: 10000,
+    d: 0.1,
+    e: 10000,
+    f: 30,
   },
   {
-    name: "無敵折價券",
-    number: "88888",
-    value: 10000,
-    discount: 0.1,
-    threshold: 10000,
-    expire: 30,
+    a: "無敵折價券",
+    a: "88888",
+    c: 10000,
+    d: 0.1,
+    e: 10000,
+    f: 30,
   },
 ]);
 </script>

@@ -65,10 +65,11 @@ const router = createRouter({
       name: "Journey",
       component: () => import("../views/Journey.vue"),
     },
+
     {
-      path: "/journey/overnight",
+      path: "/overnight",
       name: "Overnight",
-      component: () => import("../views/journey/Overnight.vue")
+      component: () => import("../views/Overnight.vue")
       
     },
 

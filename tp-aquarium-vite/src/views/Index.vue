@@ -1,4 +1,3 @@
-
 <template>
   <body class="index">
     <Header/>
@@ -144,11 +143,16 @@
     <!-- 贊助商 -->
 
     <div class="index_ad">
-      <img src="/src/img/index_logo1.jpg" alt="">
-      <img src="/src/img/index_logo2.jpg" alt="">
-      <img src="/src/img/index_logo3.jpg" alt="">
-      <img src="/src/img/index_logo4.jpg" alt="">
-      <img src="/src/img/index_logo5.jpg" alt="">
+      <div class="index_ad_box">
+        <div class="index_ad_list">
+          <img src="/src/img/index_logo1.jpg" alt="">
+          <img src="/src/img/index_logo2.jpg" alt="">
+          <img src="/src/img/index_logo3.jpg" alt="">
+          <img src="/src/img/index_logo4.jpg" alt="">
+          <img src="/src/img/index_logo5.jpg" alt="">
+          <img src="/src/img/index_logo6.jpg" alt="">
+        </div>
+      </div>
     </div>
 
     <Footer/>
@@ -169,6 +173,9 @@ const park_buttons = reactive([
   { a: "", src1: "/src/img/index_sealion.svg", class: "sealion_blue", src2: "/src/img/index_sealion_blue-01.svg", cName: "海獅館", eName: "Sea Lion House", src3: "/src/img/index_button4.jpg" }
 ]);
 
+
+
+// index video
 const videoNoStop = function () {
   let video_sea = document.getElementById("video_sea");
 
@@ -184,6 +191,43 @@ onMounted(()=>{
   videoNoStop();
 });
 
+
+
+// index_ad 跑馬燈
+window.onload = function() {
+
+    let box = document.querySelector('.index_ad_box');
+    let list = document.querySelector('.index_ad_list');
+
+    // 複製一份讓中間不間斷
+    list.innerHTML += list.innerHTML;
+
+    let left = 0;
+    let time;
+    
+    function move(){
+        clearInterval(time);
+        time = setInterval(() => {
+        left -= 2;
+
+            if( left === -(6 * 200 + 6 * 20)){
+                left = 0;
+            }
+
+        list.style.left = left + "px"
+        }, 20)
+    };
+
+    move();
+
+    box.addEventListener('mouseenter', () => {
+        clearInterval(time);
+    });
+
+    box.addEventListener('mouseleave', () => {
+        move();
+    });
+};
+
 </script>
 
-<style></style>
