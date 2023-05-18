@@ -104,14 +104,17 @@ const router = createRouter({
       name: "ticket", //自己取
       component: () => import("../views/Ticket.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
-      children:[
-        {
-          path: 'yearpass',
-          name: 'yearpass',
-          component: ()=> import("../views/ticket/Yearpass.vue")
-
-        }
-      ]
+    },
+    {
+      path: "/ticket/yearpass", //自己取之後連的路徑名稱
+      name: "YearPass", //自己取
+      component: () => import("../views/ticket/Yearpass.vue"), //路徑連到剛剛建的vue檔
+      //children是這個頁面的子頁面
+    },
+    {
+      path: "/itinerary", //自己取之後連的路徑名稱
+      name: "Itinerary", //自己取
+      component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
     // {
     //   path: '/:id',

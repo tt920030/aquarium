@@ -1,6 +1,12 @@
 <template>
   <div class="journey">
-    <Header></Header>
+    <Header>
+    <div>
+        <h2>1234</h2>
+       
+    </div>
+    <RouterView :inheritAttrs="false"></RouterView>
+</Header>
     <main>
       <!-- journer banner -->
       <div class="journey_banner_content">
@@ -335,6 +341,7 @@
   </div>
   <RouterView />
 </template>
+
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
