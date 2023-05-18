@@ -11,10 +11,6 @@
 
 .quiz{
     background: map-get($color, bgc2);
-
-    @include mobile{
-        width: 80%;
-      }
 }
 
 // ::selection{
@@ -26,6 +22,7 @@
 .info_box,
 .quiz_box,
 .result_box{
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,6 +53,7 @@
 }
 
 .info_box{
+
     width: 540px;
     background: #fff;
     border-radius: 5px;
@@ -342,7 +340,7 @@
     // display: flex;
     margin: 10px 0;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .result_box .score_text span .abc{
