@@ -1,68 +1,72 @@
 <template>
-  <form>
-    <div class="mb-3 row">
-      <label for="title" class="col-sm-1 col-form-label">消息標題</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="title" />
-      </div>
+  <Header></Header>
+  <main>
+    <div class="mb-3">
+      <h3>消息管理</h3>
     </div>
-    <div class="mb-3 row">
-      <label for="sub_title" class="col-sm-1 col-form-label">消息副標題</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="sub_title" />
-      </div>
-    </div>
-    <div class="mb-3 row">
-      <label for="content" class="col-sm-1 col-form-label">消息內容</label>
-      <div class="col-sm-10">
-        <textarea class="form-control" id="content" rows="3"></textarea>
-      </div>
-    </div>
-    <div class="mb-3 row">
-      <label for="picture" class="col-sm-1 col-form-label">消息主照片</label>
-      <div class="col-sm-10">
-        <input class="form-control" type="file" id="picture" />
-      </div>
-    </div>
-    <div class="mb-3 row">
-      <label for="sub_picture1" class="col-sm-1 col-form-label"
-        >消息副照片</label
+    <form>
+      <div
+        class="mb-3 row justify-content-center"
+        v-for="news in news"
+        :key="news.id"
       >
-      <div class="col-sm-10">
-        <input class="form-control" type="file" id="sub_picture1" />
+        <label :for="news.id" class="col-sm-1 col-form-label">
+          {{ news.title }}</label
+        >
+
+        <div class="col-sm-5">
+          <input
+            v-if="news.type != 'textarea'"
+            :type="news.type"
+            class="form-control"
+            :id="news.id"
+            required
+          />
+          <textarea
+            v-if="news.type == 'textarea'"
+            class="form-control"
+            :id="news.id"
+            rows="5"
+            required
+          ></textarea>
+        </div>
       </div>
-    </div>
-    <div class="mb-3 row">
-      <label for="sub_picture2" class="col-sm-1 col-form-label"
-        >消息副照片</label
-      >
-      <div class="col-sm-10">
-        <input class="form-control" type="file" id="sub_picture2" />
-      </div>
-    </div>
-    <div class="mb-3 row">
-      <label for="release_date" class="col-sm-1 col-form-label">發布日期</label>
-      <div class="col-sm-10">
-        <input type="date" class="form-control" id="release_date" />
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">取消</button>
-    <button type="submit" class="btn btn-primary">新增</button>
-  </form>
+    </form>
+  </main>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
+import Header from "/src/components/CMSHeader.vue";
 // 引入bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-// 引入bootstrap Icon
-// import "bootstrap-icons/font/bootstrap-icons.css";
+const news = reactive([
+  { id: "title", title: "消息標題", type: "text" },
+  { id: "sub_title", title: "消息副標題", type: "text" },
+  { id: "content", title: "消息內容", type: "textarea" },
+  { id: "picture", title: "消息主照片", type: "file" },
+  { id: "picture1", title: "消息副照片", type: "file" },
+  { id: "picture2", title: "消息副照片", type: "file" },
+  { id: "release_date", title: "發布日期", type: "date" },
+]);
 </script>
 <style lang="scss" scoped>
-.row {
-  margin-right: 0;
+main {
+  box-sizing: border-box;
+  padding: 50px 0 0 200px;
+  h3 {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+  }
+  .row {
+    margin-right: 0;
+  }
+  .row.justify-content-center {
+    margin-left: -170px;
+  }
 }
 </style>
