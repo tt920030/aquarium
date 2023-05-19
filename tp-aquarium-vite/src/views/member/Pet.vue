@@ -8,7 +8,7 @@
                 <input type="radio" id="1" name="chose_pet" value="1" checked>
                 <label for="1">
                     <div class="container">
-                        <img src="../../img/member_pet1_on.png" alt="">
+                        <img src="@/img/member_pet1_on.png" alt="">
                     </div>
 
                     <p class="name">小丑魚</p>
@@ -20,7 +20,7 @@
                 <input type="radio" id="2" name="chose_pet" value="2">
                 <label for="2">
                     <div class="container">
-                        <img src="../../img/member_pet2_off.png" alt="">
+                        <img src="@/img/member_pet2_off.png" alt="">
                     </div>
 
                     <p class="name">???</p>
@@ -32,7 +32,7 @@
                 <input type="radio" id="3" name="chose_pet" value="3">
                 <label for="3">
                     <div class="container">
-                        <img src="../../img/member_pet3_off.png" alt="">
+                        <img src="@/img/member_pet3_off.png" alt="">
                     </div>
 
                     <p class="name">???</p>
@@ -44,7 +44,7 @@
                 <input type="radio" id="4" name="chose_pet" value="4">
                 <label for="4">
                     <div class="container">
-                        <img src="../../img/member_pet4_off.png" alt="">
+                        <img src="@/img/member_pet4_off.png" alt="">
                     </div>
 
                     <p class="name">???</p>
@@ -56,7 +56,7 @@
                 <input type="radio" id="5" name="chose_pet" value="5">
                 <label for="5">
                     <div class="container">
-                        <img src="../../img/member_pet5_off.png" alt="">
+                        <img src="@/img/member_pet5_off.png" alt="">
                     </div>
 
                     <p class="name">???</p>
@@ -68,7 +68,7 @@
                 <input type="radio" id="6" name="chose_pet" value="6">
                 <label for="6">
                     <div class="container">
-                        <img src="../../img/member_pet6_off.png" alt="">
+                        <img src="@/img/member_pet6_off.png" alt="">
                     </div>
 
                     <p class="name">???</p>
@@ -90,4 +90,94 @@
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.pet {
+
+
+    height: fit-content;
+
+    h3 {
+        text-align: left;
+        margin-bottom: 10px;
+
+        span {}
+    }
+
+    p {
+        text-align: left;
+    }
+
+    .area {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .fish {
+            width: 30%;
+            height: fit-content;
+            margin-bottom: 50px;
+
+            input {
+                appearance: none;
+            }
+
+            label {
+                text-align: center;
+                margin: 0 auto;
+                display: block;
+
+                .container {
+                    width: 90%;
+                    height: 250px;
+                    margin: 0 auto;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: fit-content;
+                        height: fit-content;
+
+                    }
+
+                }
+
+                .name {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+
+                .point {
+                    text-align: center;
+                }
+            }
+        }
+
+        .-chose {
+            background-image: url(@/img/member_bg.png);
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .button {
+            width: 100%;
+
+            .btn1 {
+                display: block;
+                width: fit-content;
+                border: 0px;
+                margin: 0 auto;
+                margin-top: 20px;
+
+                p {
+                    font-family: "Noto Sans TC", sans-serif;
+                    margin: 0;
+                }
+            }
+        }
+
+
+    }
+}</style>

@@ -1,13 +1,16 @@
 <template>
     <div class="profile wrapper ">
+        <Photo v-if="show"></Photo>
         <div class="top">
             <div class="inner-left">
                 <div class="photo-area">
-                    <img src="../../img/member_photo1.png" alt="">
+                    <img src="@/img/member_photo1.png" alt="">
                 </div>
                 <button class="btn1" @click="showPhoto()">
                     <p>更換頭貼</p>
+
                 </button>
+
             </div>
             <div class="inner-right">
                 <div class="input">
@@ -55,8 +58,7 @@
 
             </form>
         </div>
-        <!-- <component :is="showPhoto"></component> -->
-        <Photo v-if="show"></Photo>
+
     </div>
 </template>
 
@@ -64,22 +66,12 @@
 import { onMounted, ref } from 'vue';
 import Photo from '../../components/Photo.vue';
 
-// const emit = defineEmits(["showPhoto"]);
 
-let show = ref(false)
-// let show = false;
+let show = ref(false);
 
 const showPhoto = () => {
-    if (show.value === true) {
-        // console.log(true);
-        // // console.log(close);
-        show.value = false;
 
-    } else {
-        console.log(false);
-        console.log(show);
-        show.value = true;
-    }
+    show.value = !show.value;
 }
 
 
@@ -90,6 +82,7 @@ const showPhoto = () => {
 
 <style lang="scss" scoped>
 .profile {
+    position: relative;
 
     .top {
         display: flex;
@@ -97,6 +90,7 @@ const showPhoto = () => {
         .inner-left {
             width: 50%;
             background-color: #fff;
+
 
             .photo-area {
                 width: 240px;
@@ -108,6 +102,7 @@ const showPhoto = () => {
             }
 
             .btn1 {
+                background-color: map-get($color, bgc2 );
 
                 p {}
             }

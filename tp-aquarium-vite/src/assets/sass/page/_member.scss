@@ -46,8 +46,8 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                i{
-                    font-size: 66px;
+                img{
+ 
                     margin-bottom: 20px;
                 }
                 p{
@@ -63,203 +63,15 @@
         .right{
             width: 84%;
             @include wrapper{
-                margin: 310px auto;
+                margin-top: 700px;
             }
 
 
-            .order{
+            
 
-                select{
-                    margin-bottom: 60px;
-                    width: 150px;
-                    height: 50px;
-                    font-family: "Noto Sans TC", sans-serif;
-                    font-size: 1.6rem;
-                    line-height: 1.6;
-                    letter-spacing: 0.1rem;
-                    border: 1px solid black;
-                    padding: 5px 10px;
-                    margin-left: 10px;
-                    appearance: none;
-                    background-image: url(../../../img/member_angle.svg);
-                    background-repeat: no-repeat;
-                    background-position: right 13px center;
-                    outline: none;
-                    option{}
-                    
-                }
-                .table{
-                    border-radius: 20px;
-                    border: 1px solid map-get($color , bgc2 );
-                    overflow: hidden;
-                    .title{
-                        height: 100px;
-                        background-color: map-get($color , bgc2 );
-                        
-                        h3{
-                            text-align: center;
-                            font-size: 2rem;
-                            letter-spacing: 0.2rem;
-                            font-family: "Noto Sans TC", sans-serif;
-                            margin: 0;
-                            line-height: 100px;
-                        }
-                    }
-                    table{
-                        width: 100%;
-                        
-                        text-align: center;
-                        
-                        tr{
-                            th,td{
-                                border: 1px solid map-get($color , bgc2 );
-                                padding: 15px;
-                                vertical-align: middle;
-                                p{
-                                    font-family: "Noto Sans TC", sans-serif;
-                                    margin: 0;
-                                    font-size: 1.6rem;
-                                    line-height: 1.6;
-                                    letter-spacing: 0.1rem;
-                                }
-                            }
+           
 
-
-                        }
-                    }
-                }
-            }
-
-            .coupon{
-
-                .table{
-                    border-radius: 20px;
-                    border: 1px solid map-get($color , bgc2 );
-                    overflow: hidden;
-                    .title{
-                        height: 100px;
-                        background-color: map-get($color , bgc2 );
-                        
-                        h3{
-                            text-align: center;
-                            font-size: 2rem;
-                            letter-spacing: 0.2rem;
-                            font-family: "Noto Sans TC", sans-serif;
-                            margin: 0;
-                            line-height: 100px;
-                        }
-                    }
-                    table{
-                        width: 100%;
-                        
-                        text-align: center;
-                        
-                        tr{
-                            th,td{
-                                border: 1px solid map-get($color , bgc2 );
-                                padding: 15px;
-                                vertical-align: middle;
-                                p{
-                                    font-family: "Noto Sans TC", sans-serif;
-                                    margin: 0;
-                                    font-size: 1.6rem;
-                                    line-height: 1.6;
-                                    letter-spacing: 0.1rem;
-                                }
-                            }
-                            .time{
-                                width: 150px;
-                                word-break:break-all;
-                            }
-
-
-                        }
-                    }
-                }
-            }
-
-            .pet{
-
-                
-                height: fit-content;
-                h3{
-                    text-align: left;
-                    margin-bottom: 10px;
-                    span{}
-                }
-                p{
-                    text-align: left;
-                }
-
-                .area{
-                    margin-top: 60px;
-                    display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                    .fish{
-                        width: 30%;
-                        height: fit-content;
-                        margin-bottom: 50px;
-
-                        input{
-                            appearance: none;
-                        }
-                        label{
-                            text-align: center;
-                            margin: 0 auto;
-                            display: block;
-                            .container{
-                                width: 90%;
-                                height: 250px;
-                                margin: 0 auto;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                
-                                img{
-                                    width: fit-content;
-                                    height: fit-content;
-
-                                }
-
-                            }
-                            
-                            .name{
-                                text-align: center;
-                                margin-bottom: 20px;
-                            }
-
-                            .point{
-                                text-align: center;
-                            }
-                        }
-                    }
-
-                    .-chose{
-                        background-image: url(../../../img/member_bg.png);
-                        background-size: contain;
-                        background-position: center center;
-                        background-repeat: no-repeat;
-                    }
-
-                    .button{
-                        width: 100%;
-                        .btn1{
-                            display: block;
-                            width: fit-content;
-                            border: 0px;
-                            margin: 0 auto;
-                            margin-top: 20px;
-                            p{
-                                font-family: "Noto Sans TC", sans-serif;
-                                margin: 0;
-                            }
-                        }
-                    }
-                    
-
-                }
-            }
+            
 
         }
     }

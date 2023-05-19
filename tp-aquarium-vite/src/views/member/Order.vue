@@ -90,4 +90,73 @@
 
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.order {
+
+    select {
+        margin-bottom: 60px;
+        width: 150px;
+        height: 50px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        letter-spacing: 0.1rem;
+        border: 1px solid black;
+        padding: 5px 10px;
+        margin-left: 10px;
+        appearance: none;
+        background-image: url(@/img/member_angle.svg);
+        background-repeat: no-repeat;
+        background-position: right 13px center;
+        outline: none;
+
+        option {}
+
+    }
+
+    .table {
+        border-radius: 20px;
+        border: 1px solid map-get($color , bgc2);
+        overflow: hidden;
+
+        .title {
+            height: 100px;
+            background-color: map-get($color , bgc2);
+
+            h3 {
+                text-align: center;
+                font-size: 2rem;
+                letter-spacing: 0.2rem;
+                font-family: "Noto Sans TC", sans-serif;
+                margin: 0;
+                line-height: 100px;
+            }
+        }
+
+        table {
+            width: 100%;
+
+            text-align: center;
+
+            tr {
+
+                th,
+                td {
+                    border: 1px solid map-get($color , bgc2);
+                    padding: 15px;
+                    vertical-align: middle;
+
+                    p {
+                        font-family: "Noto Sans TC", sans-serif;
+                        margin: 0;
+                        font-size: 1.6rem;
+                        line-height: 1.6;
+                        letter-spacing: 0.1rem;
+                    }
+                }
+
+
+            }
+        }
+    }
+}</style>

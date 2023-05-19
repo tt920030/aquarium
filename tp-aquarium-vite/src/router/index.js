@@ -36,11 +36,6 @@ const router = createRouter({
         }
       ]
     },
-    {
-      path: "/member",
-      name: "Member",
-      component: () => import("../views/Member.vue"),
-    },
 
     {
       path: "/cart",
@@ -69,14 +64,14 @@ const router = createRouter({
       path: "/journey",
       name: "Journey",
       component: () => import("../views/Journey.vue"),
-     
+
     },
 
     {
       path: "/overnight",
       name: "Overnight",
       component: () => import("../views/Overnight.vue")
-      
+
     },
 
     {
@@ -118,13 +113,12 @@ const router = createRouter({
       path: "/news",
       name: "News",
       component: () => import("../views/News.vue"),
-      children: [
-        {
-          path: "news_page",
-          name: "NewsPage",
-          component: () => import("../views/news/NewsPage.vue"),
-        },
-      ],
+
+    },
+    {
+      path: "/news/news_page",
+      name: "NewsPage",
+      component: () => import("../views/news/NewsPage.vue"),
     },
 
     {

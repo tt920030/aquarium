@@ -4,33 +4,37 @@
         <main>
             <div class="left">
                 <div class="photo">
-                    <img src="../img/member_photo1.png" alt="">
+                    <img src="@/img/member_photo1.png" alt="">
                 </div>
                 <p class="name">使用者姓名</p>
                 <button class="btn1">
                     <p>年度會員</p>
                 </button>
 
-                <RouterLink to="/member/Profile">aaa</RouterLink>
+                <RouterLink to="/member/Profile">
+                    <div class="list -on" @click="button(0)">
+                        <img src="@/img/member_user.svg" alt="">
+                        <p>我的資料</p>
+                    </div>
+                </RouterLink>
                 <RouterLink to="/member/Order">
-                    <div class="list ">
-                        <i class="fa-solid fa-folder-open"></i>
+                    <div class="list " @click="button(1)">
+                        <img src="@/img/member_order.svg" alt="">
                         <p>我的訂單</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Coupon">
-                    <div class="list">
-                        <i class="fa-solid fa-ticket"></i>
+                    <div class="list" @click="button(2)">
+                        <img src="@/img/member_coupon.svg" alt="">
                         <p>我的折價券</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Pet">
-                    <div class="list -on">
-                        <i class="fa-solid fa-fish"></i>
+                    <div class="list" @click="button(3)">
+                        <img src="@/img/member_pet.svg" alt="">
                         <p>虛擬寵物</p>
                     </div>
                 </RouterLink>
-
 
 
             </div>
@@ -38,21 +42,26 @@
 
 
                 <RouterView></RouterView>
-                
+
 
             </div>
         </main>
     </div>
 
     <Footer></Footer>
-
-
-
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
+import $ from "jquery";
+
+const button = (i) => {
+
+    $(document).find(".list").removeClass("-on");
+    $(document).find(".list").eq(i).addClass("-on");
+    // $(this).addClass("-on");
+}
 
 </script>
 
@@ -66,6 +75,7 @@ import { onMounted, reactive, ref } from "vue";
     text-align: center;
     padding: 10px 30px;
     transition: 0.5s;
+    font-family: "Noto Sans TC", sans-serif;
     color: #16355a;
     cursor: pointer;
     border: 0;
@@ -105,5 +115,12 @@ import { onMounted, reactive, ref } from "vue";
     }
 
     margin-bottom: 20px;
+}
+
+.fork {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
 }
 </style>
