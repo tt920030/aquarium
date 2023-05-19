@@ -45,6 +45,7 @@ const router = createRouter({
     {
       path: "/cart",
       name: "Cart",
+      meta: {title:'購物車'},
       component: () => import("../views/Cart.vue"),
     },
     {
@@ -69,13 +70,7 @@ const router = createRouter({
       path: "/journey",
       name: "Journey",
       component: () => import("../views/Journey.vue"),
-      children: [
-        {
-          path: "overnight",
-          name: "Overnight",
-          component: () => import("../views/journey/Overnight.vue"),
-        },
-      ],
+     
     },
 
     {
@@ -138,6 +133,7 @@ const router = createRouter({
       name: "ticket", //自己取
       component: () => import("../views/Ticket.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
+      meta: {title: "購票資訊"}
     },
     {
       path: "/ticket/yearpass", //自己取之後連的路徑名稱
@@ -148,6 +144,7 @@ const router = createRouter({
     {
       path: "/itinerary", //自己取之後連的路徑名稱
       name: "Itinerary", //自己取
+      meta: {title: "票券/行程購買"},
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
     // {
@@ -172,5 +169,8 @@ const router = createRouter({
     },
   ],
 });
-
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title
+  next()
+});
 export default router;

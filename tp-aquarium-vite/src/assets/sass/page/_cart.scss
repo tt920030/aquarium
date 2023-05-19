@@ -67,7 +67,8 @@ main.cart {
             box-shadow: 5px 5px 5px rgba(0, 0, 0, .4);
             transition: height .5s ease;
             &.close{
-                height: 30rem;
+                height: 28rem;
+                overflow: hidden;
                 transition: .5s ease;
             }
             input {
@@ -85,11 +86,10 @@ main.cart {
                 height: 100%;
                 .content-inside{
                 background: none;
-                height: 20rem;
                 display: flex;
                 padding: 3rem;
                 gap: 3rem;
-
+                
                 //商品圖片加內容
                 .cart-product-content-r {
                     display: flex;
@@ -248,15 +248,20 @@ main.cart {
             }
 
             .cart-group {
-                height: 26rem;
-
+                height: 100%;
+                .cart-product-content:has(.content-inside){
+                    border: 1px solid rgb(214, 214, 214);
+                    margin-bottom: 1rem;
+                }
                 .cart-product-content {
                     
-                    gap: 1rem;
-                    padding:2rem 1rem;
+                   
+                    .content-inside{
+                        padding: 1rem;
+                        gap: 1rem;
+                    }
                     //商品圖片加內容
                     .cart-product-content-r {
-
                         img {
                             display: none;
                         }
@@ -286,7 +291,7 @@ main.cart {
                                 }
 
                                 h4 {
-                                    margin-left: .5em;
+                                    margin-left: .5em !important;
                                     margin-right: .3rem;
                                 }
                             }
@@ -409,8 +414,12 @@ main.cart {
                     padding-left: .5rem;
                     margin-left: 1rem;
                     border: none;
-                    box-shadow: inset 1px 1px 3px #747474;
-
+                    box-shadow: inset 1px 1px 2px #747474;
+                    &.empty{
+                        border: 1px solid red;
+                      
+                    }
+    
                 }
             }
         }
@@ -419,7 +428,9 @@ main.cart {
     @include mobile{
         &>div{
             height: 30rem;
+          
         }
+       
     }
     
 }

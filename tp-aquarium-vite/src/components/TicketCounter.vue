@@ -19,7 +19,7 @@
 
 <script setup>
 import { ref, reactive, onMounted, onUpdated, watch } from "vue";
-const props = defineProps({ 'itinerary': { default: '' }, 'remain': { default: 0 } });
+const props = defineProps({ 'itinerary': { default: '' }, 'remain': { default: 20 }, 'add':{default:0} });
 const emit = defineEmits(['total','count','types']);
 const handleTotal = () => {
   emit("total",total);
@@ -43,10 +43,7 @@ const total=ref(0);
 const types=ref({"大人":0,"學生":0,"兒童":0,"博愛票":0,"遊客":0});
 
 const add = function () {
-    // let total = 0
-    // for (let i = 0; i < choices[props.itinerary].length; i++) {
-    //     total += choices[props.itinerary][i].amount
-    // }
+
     if (remaining.value > 0) {
         remaining.value -= 1;
     }else{
@@ -54,10 +51,7 @@ const add = function () {
     }
 }
 const minus = function () {
-    // let total = 0
-    // for (let i = 0; i < choices[props.itinerary].length; i++) {
-    //     total += choices[props.itinerary][i].amount
-    // }
+
     if (remaining.value < props.remain) {
         remaining.value += 1;
     }
@@ -77,6 +71,15 @@ watch(() => props.itinerary, (newVal) => {
     for (let i = 0; i < choices[props.itinerary].length; i++) {
        choices[props.itinerary][i].amount=0;
     }
+    total.value=0;
+    count.value=0;
+    types.value={"大人":0,"學生":0,"兒童":0,"博愛票":0,"遊客":0};
+})
+watch(() => props.add, (newVal) => {
+    for (let i = 0; i < choices[props.itinerary].length; i++) {
+       choices[props.itinerary][i].amount=0;
+    }
+
     total.value=0;
     count.value=0;
     types.value={"大人":0,"學生":0,"兒童":0,"博愛票":0,"遊客":0};

@@ -1,6 +1,3 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
 
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -9,8 +6,7 @@ import LogIn from './components/LogIn.vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 
-
-app.use(router);
+const app = createApp(App);
 
 app.use(router)
 
