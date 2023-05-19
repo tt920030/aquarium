@@ -85,10 +85,20 @@
                                 margin-left: 0;
                                 li{
                                     margin-top: 10px;
+                                    &:hover{
+                                        color: map-get($color, bgc2 );
+                                        cursor: pointer;
+                                    }
                                     @include mobile{
                                         display: none;
                                     }
                                 }
+                            }
+                        }
+                        .filterByAll{
+                            &:hover{
+                                color: map-get($color, bgc2 );
+                                cursor: pointer;
                             }
                         }
                         .filterByType{
