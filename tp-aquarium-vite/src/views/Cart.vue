@@ -171,8 +171,7 @@
 import { RouterLink, RouterView } from "vue-router";
 import { watch, onBeforeUpdate, onMounted, reactive, ref } from "vue";
 import AddressJson from '/src/json/CityCountyData.json';
-import Header from '/src/components/Header.vue';
-import Footer from '/src/components/Footer.vue';
+
 const inCart = reactive([]);
 const tickets = reactive([]);
 const journeys = reactive([]);

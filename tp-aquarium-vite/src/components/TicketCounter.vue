@@ -33,7 +33,8 @@ const choices = reactive(
         '日間票': [{ name: "大人", price: 520, id: 1, amount: 0 }, { name: "學生", price: 360, id: 2, amount: 0 }, { name: "兒童", price: 240, id: 3, amount: 0 }, { name: "博愛票", price: 240, id: 4, amount: 0 }],
         '星光票': [{ name: "大人", price: 460, id: 1, amount: 0 }, { name: "學生", price: 300, id: 2, amount: 0 }, { name: "兒童", price: 180, id: 3, amount: 0 }, { name: "博愛票", price: 180, id: 4, amount: 0 }],
         '夜宿海生館-兩天一夜1': [{ name: "遊客", price: 2680, id: 1, amount: 0 }],
-        '夜宿海生館-兩天一夜': [{ name: "遊客", price: 3680, id: 1, amount: 0 }]
+        '夜宿海生館-兩天一夜': [{ name: "遊客", price: 3680, id: 1, amount: 0 }],
+        '年度通行證': [{ name: "大人", price: 1080, id: 1, amount: 0 }, { name: "學生", price: 760, id: 2, amount: 0 }, { name: "兒童", price: 520, id: 3, amount: 0 }, { name: "博愛票", price: 520, id: 4, amount: 0 }],
     }
 );
 
@@ -88,6 +89,8 @@ watch(() => props.add, (newVal) => {
 
 <style lang="scss" scoped>
 .counter {
+    margin: 0 auto;
+    width:80%;
     max-width: 900px;
     border: 1px solid rgb(218, 218, 218);
     padding: 3rem 8rem;

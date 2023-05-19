@@ -62,12 +62,12 @@ main.cart {
             display: flex;
             flex-direction: column;
             margin: 2rem;
-            height: 100%;
+            // height: 100%;
             border: 5px solid white;
             box-shadow: 5px 5px 5px rgba(0, 0, 0, .4);
             transition: height .5s ease;
             &.close{
-                height: 28rem;
+                height:30rem;
                 overflow: hidden;
                 transition: .5s ease;
             }
@@ -248,7 +248,7 @@ main.cart {
             }
 
             .cart-group {
-                height: 100%;
+                // height: 100%;
                 .cart-product-content:has(.content-inside){
                     border: 1px solid rgb(214, 214, 214);
                     margin-bottom: 1rem;
