@@ -1,0 +1,13 @@
+.game_level{
+
+    .top {
+ 
+        img{
+            width: 100%;
+
+            @include mobile{
+                width: 100%;
+              }
+        }
+    }
+}
