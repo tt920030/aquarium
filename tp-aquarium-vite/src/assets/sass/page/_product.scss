@@ -73,8 +73,14 @@
                         width: 32%;
                         height: 32%;
                         margin-right: 2%;
+                        &:hover{
+                            cursor: pointer;
+                        }
                     }:last-child{
                         margin-right: 0;
+                    }
+                    .imgOn{
+                        opacity: 0.4;
                     }
                 }
             }
@@ -162,14 +168,15 @@
             @include mobile{
                 width: 100%;
             }
-            div:nth-child(1){
+            .precautionTitle{
                 @include flex;
-                h4{
+                button{
+                    cursor: pointer;
                     color: #c4c4c4;
                     display: block;
                     width: 172px;
-                    height: 76px;
-                    line-height: 76px;
+                    height: 77px;
+                    line-height: 77px;
                     text-align: center;
                     background-color: white;
                     border: none;
@@ -183,7 +190,8 @@
                     border-top: 7px solid black;
                     border-left: 1px solid black;
                     border-right: 1px solid black;
-                    height: 70px;
+                    height: 77px;
+                    color: #000;
                 }
                 span{
                     display: block;
@@ -202,7 +210,6 @@
                     width: 100%;
                 }
                 p{
-                    display: none;
                     padding-top: 62px;
                     margin-left: 66px;
                     width: 1059px;

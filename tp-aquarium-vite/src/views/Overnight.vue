@@ -379,6 +379,10 @@
 
                         ul{
                             li{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
                                 p{
                                     width: 80%;
                                 }

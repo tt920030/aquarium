@@ -12,12 +12,16 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
     "jquery": "^3.7.0",
-
+    "@popperjs/core": "^2.11.7",
+    "bootstrap": "^5.2.3",
     "@vuepic/vue-datepicker": "^5.1.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
-
+    "@popperjs/core": "^2.11.7",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
+    "jquery": "^3.7.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "vue3-carousel": "^0.3.1"
