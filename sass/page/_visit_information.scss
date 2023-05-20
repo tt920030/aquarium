@@ -120,18 +120,32 @@
                         display: flex;
                         justify-content: center;
                         padding: 50px 0px 20px 0px;
+                        @include mobile{
+                            padding: 20px 0px 20px 0px;
+                            flex-direction: column;
+                        }
 
                         .left{
                             padding: 10px 30px;
                             background-color: #CCF1F5;
                             border-radius: 15px;
+                            @include mobile{
+                                margin-bottom: 16px;
+                            }
+                            p { @include mobile{
+                                text-align: center;
+                            }}
+                           
                         }
                         .mid_icon{
                             margin: 30px 20px 0px 20px;
                             position: relative;
                             p{
                                 position: relative;
-                               
+                               @include mobile{
+                                padding-bottom: 37px;
+                                padding-left: 80px;
+                               }
                             }
                             p::before{
                                 content: "";
@@ -141,6 +155,11 @@
                                 position: absolute;
                                 left: 0px;
                                 bottom: 25px;
+                                @include mobile{
+                                    width: 1%;
+                                    height: 100px;
+                                    bottom: 2px;
+                                }
                             }
 
                             .person{    
@@ -148,6 +167,11 @@
                                 position: absolute;
                                 bottom: 35px;
                                 left: 77px;
+                                @include mobile{
+                                    width: 10%;
+                                    bottom: 28px;
+                                    left: 38px;
+                                }
                             }
 
                             .bus{
@@ -155,6 +179,11 @@
                                 position: absolute;
                                 bottom: 35px;
                                 left: 77px;
+                                @include mobile{
+                                    width: 14%;
+                                    bottom: 28px;
+                                    left: 28px;
+                                }
                             }
 
                             .car{
@@ -162,7 +191,13 @@
                                 position: absolute;
                                 bottom: 35px;
                                 left: 69px;
+                                @include mobile{
+                                    width: 15%;
+                                    bottom: 29px;
+                                    left: 27px;
+                                }
                             }
+                    
 
     
 
@@ -173,6 +208,9 @@
                             padding: 10px 68px;
                             border: 3px solid #CCF1F5;
                             border-radius: 15px;
+                            p { @include mobile{
+                                text-align: center;
+                            }}
                         }
 
 
@@ -187,7 +225,8 @@
                     padding-bottom: 30px;
 
                     h3{
-                        position: relative;}
+                        position: relative;
+                        padding-top: 30px;}
                     h3::after{
                         content: "";
                         width: 90%;
@@ -196,6 +235,10 @@
                         position: absolute;
                         left: 38px;
                         bottom: -15px;
+                        @include mobile{
+                            width: 80%;
+                            left: 30px;
+                        }
                         }
                     .opentime{
                         margin-left: 40px;

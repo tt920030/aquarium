@@ -43,6 +43,9 @@ header {
                 flex-direction: row-reverse;
                 margin-top: 20px;
                 margin-right: 20px;
+                @include mobile{
+                    margin-right: 5px;
+                }
                 
                 i{
                     display: none;
@@ -57,23 +60,29 @@ header {
                 li {
                     margin-right: 20px;
 
-                    // span{
-                    //     width: 50px;
-                    //     height: 35px;
-                    //     background-color: white;
-                    // }
+                    @include mobile{
+                        margin-right: 10px;
+                    }
                     button {
                         width: 32px;
                         height: 32px;
                         border-radius: 50%;
                         border-style: none;
-                        border-color: #ccf1f5;
-                        background-color: #ccf1f5;
+                        border-color: #fff;
+                        background-color: #fff;
                         color: #16355a;
+                        
+                        @include mobile{
+                            height: 30px;
+                            width: 30px;
+                        }
                     }
                     a{
                        .icons{
                         width: 70%;
+                        @include mobile{
+                            width: 65%;  
+                        }
                        }
                     }
                     
@@ -133,7 +142,7 @@ header {
         transform:scaleY(-1);
         @include mobile{
             top:80px;
-            height: 48px;
+            height: 46px;
         }
       
       
@@ -247,13 +256,52 @@ footer {
         nav {
             // background-color: #16355a;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             height: 180px;
             margin: 0 auto;
-
+            @include mobile{
+                position: relative;
+            }
+            
             div{
                 margin: 40px 60px 0px 50px;
+                @include mobile{
+                    margin: 10px 58px 0px 20px;
+                }
+                a:hover{
+                    
+                }
+               
             }
+
+            .left{
+                h4{
+                    position: relative;
+                }
+                h4::after{
+                    content: "";
+                    width: 130%;
+                    height: 1px;
+                    background-color: #fff;
+                    position: absolute;
+                    left: 0px;
+                    bottom: -10px;
+                }
+                .icon{
+                display: flex;
+                margin-top: 20px;
+                img{
+                    width: 65%;
+                }
+            }}
+
+            .right{
+                margin-right: 220px;
+            }
+
+            
+
+            
 
             @include mobile{
                 .mid{
@@ -266,12 +314,15 @@ footer {
 
             // text-align:justify;
             .logo {
-               
+                flex: 0 0 160px;
                 img {
-                    width: 40%;
+                    width: 100%;
                     z-index: 999;
                     @include mobile{
-                        width: 100%;
+                        position: absolute;
+                        right: 30px;
+                        bottom: 50px;  
+                        width: 28%;
                     }
                 }
             }
