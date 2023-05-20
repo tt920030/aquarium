@@ -4,7 +4,7 @@
     <video autoplay muted loop id="myVideo">
       <source src="/src/img/404_nemo.mp4" type="video/mp4">
     </video>
-    <RouterLink to="/">click go home</RouterLink>
+    <RouterLink to="/">click here go home</RouterLink>
   </div>
   <RouterView></RouterView>
 </template>
@@ -34,7 +34,7 @@ div.not-found{
   }
 
   a{
-    top: 40vh;
+    top: 44vh;
     color: white;
     left: 0;
     position: fixed;
@@ -45,15 +45,15 @@ div.not-found{
     line-height: 10vw;
     letter-spacing: .5vw;
     &:hover{
-      color:map-get($color, text );
+      color:map-get($color, bgc2 );
     }
   }
   #myVideo {
   position: fixed;
   right: 0;
   bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100vw;
+
 }
 
 }
