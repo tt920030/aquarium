@@ -74,7 +74,7 @@ const router = createRouter({
         {
           path: "overnight",
           name: "Overnight",
-          component: () => import("../views/journey/Overnight.vue"),
+          component: () => import("../views/Overnight.vue"),
         },
       ],
     },
