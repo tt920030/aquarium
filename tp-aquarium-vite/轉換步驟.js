@@ -26,6 +26,12 @@ import{ RouterLink, RouterView } from "vue-router";
       path: '/ticket',    //自己取之後要連的路徑名稱
       name: 'ticket',		//自己取
       component: () => import('../views/Ticket.vue'),  //路徑連到剛剛建的vue檔
+<<<<<<< HEAD
+      meta: {
+        title: '購票'}
+        ,
+=======
+>>>>>>> anniesu
       children:[
         {
           path: 'yearpass',
