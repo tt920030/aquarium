@@ -40,6 +40,7 @@ const router = createRouter({
     {
       path: "/cart",
       name: "Cart",
+      meta: {title:'購物車'},
       component: () => import("../views/Cart.vue"),
     },
     {
@@ -58,13 +59,14 @@ const router = createRouter({
           component: () => import("../views/game/GamePuzzle.vue"),
         },
       ]
+      
     },
 
     {
       path: "/journey",
       name: "Journey",
       component: () => import("../views/Journey.vue"),
-
+      
     },
 
     {
@@ -126,6 +128,10 @@ const router = createRouter({
       name: "ticket", //自己取
       component: () => import("../views/Ticket.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
+      meta: {title: "購票資訊"}
+    },
+    {
+      path: "/yearpass", //自己取之後連的路徑名稱
     },
     {
       path: "/ticket/yearpass", //自己取之後連的路徑名稱
@@ -136,7 +142,19 @@ const router = createRouter({
     {
       path: "/itinerary", //自己取之後連的路徑名稱
       name: "Itinerary", //自己取
+      meta: {title: "票券/行程購買"},
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
+    },
+
+    {
+      path: "/news_manage", //自己取之後要連的路徑名稱
+      name: "NewsManage", //自己取
+      component: () => import("../views/NewsManage.vue"), //路徑連到剛剛建的vue檔
+    },
+    {
+      path: "/coupon_manage", //自己取之後要連的路徑名稱
+      name: "CouponManage", //自己取
+      component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
     },
     // {
     //   path: '/:id',
@@ -146,6 +164,7 @@ const router = createRouter({
     {
       path: "/:pathMatch(.*)",
       name: "NotFound",
+      meta: {title: "404 Not Found"},
       component: import("../views/404.vue"),
     },
     {
@@ -158,7 +177,16 @@ const router = createRouter({
       name: "CouponManage", //自己取
       component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
     },
-  ],
+    {
+      path: "/backstage_index", //自己取之後要連的路徑名稱
+      name: "BackstageIndex", //自己取
+      component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
+    },
+  );
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title
+  next()
 });
-
 export default router;
+    
+
