@@ -260,10 +260,7 @@ footer {
             div{
                 margin: 40px 60px 0px 50px;
                 @include mobile{
-                    margin: 10px 58px 0px 20px;
-                }
-                a:hover{
-                    
+                    margin: 10px 30px 0px 20px;
                 }
                
             }
@@ -274,7 +271,7 @@ footer {
                 }
                 h4::after{
                     content: "";
-                    width: 130%;
+                    width: 120%;
                     height: 1px;
                     background-color: #fff;
                     position: absolute;

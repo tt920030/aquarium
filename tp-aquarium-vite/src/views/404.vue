@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="not-found">
     <h1>404<br>Not Found</h1>
     <video autoplay muted loop id="myVideo">
@@ -7,10 +8,14 @@
     <RouterLink to="/">click here go home</RouterLink>
   </div>
   <RouterView></RouterView>
+=======
+  <h2>404</h2>
+>>>>>>> anniesu
 </template>
 
 <script setup>
 
+<<<<<<< HEAD
 import { RouterView, RouterLink } from 'vue-router';
 
 
@@ -58,5 +63,10 @@ div.not-found{
 
 }
 
+=======
+</script>
+
+<style>
+>>>>>>> anniesu
 
 </style>

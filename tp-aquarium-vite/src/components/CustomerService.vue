@@ -2,7 +2,11 @@
     <div class="customer_service">
 
         <!-- 客服圖示 -->
+<<<<<<< HEAD
         <img class="customer_service_photo" :src="photoSrc" @click="closeContent"  alt="" ref="servicePhoto">
+=======
+        <img class="customer_service_photo" src="../img/customer_service_2.svg" @click="closeContent" :src="photoSrc" alt="" ref="servicePhoto">
+>>>>>>> anniesu
         <!-- 客服對話框 -->
         <div class="customer_service_content" v-if="isVisible" >
             <div class="close" @click="closeContent">
@@ -52,6 +56,7 @@
                         </template>
                     </Carousel>
                 </div> 
+<<<<<<< HEAD
                 <!-- 用戶提問 -->
                 <!-- <div class="question">
                     <div class="messageWrapper">
@@ -59,10 +64,25 @@
                     </div>
                 </div> -->
                 <Question :questions="questions"></Question>
+=======
+                <!-- 客服回覆 -->
+                <div class="answer">
+                    <img src="../img/customer_service1.png" alt="">
+                    <div class="messageWrapper">
+                        <p class="messageAnswer">您好～我是智能客服</p>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="messageWrapper">
+                        <p class="messageQuestion">請問假日幾點開門？</p>
+                    </div>
+                </div>
+>>>>>>> anniesu
             </div>
             <!-- 用戶提問輸入框 -->
             <div class="questionInput">
                 <form action="">
+<<<<<<< HEAD
                     <input 
                     type="text" 
                     placeholder="請於此輸入您的問題" 
@@ -74,10 +94,21 @@
             </div>
         </div>
         <router-view></router-view>
+=======
+                    <input type="text" placeholder="請於此輸入您的問題">
+                </form>
+                <div class="send">
+                    <img src="../img/customer_service_send.svg" alt="">
+                </div>
+            </div>
+        </div>
+ 
+>>>>>>> anniesu
     </div>
 </template>
 <script setup>
     import 'vue3-carousel/dist/carousel.css'
+<<<<<<< HEAD
     import { ref, reactive, onMounted } from 'vue';
     import { Carousel, Slide, Navigation } from 'vue3-carousel'; 
     import  Question  from '/src/components/Question.vue'
@@ -123,4 +154,26 @@
 </script>
 <style lang="scss" scoped>
     @import "../assets/sass/page/customer_service";
+=======
+    import { ref } from 'vue';
+    import { Carousel, Slide, Navigation } from 'vue3-carousel'; 
+
+    const isVisible = ref(false);
+    const photoSrc = ref('');
+
+    function closeContent(){
+        isVisible.value = !isVisible.value;
+        if(isVisible.value === false){
+            photoSrc.value = '../img/customer_service1.png'
+        }
+    }
+
+    
+
+</script>
+<style lang="scss" scoped>
+    @import "../assets/sass/page/customer_service";
+
+    
+>>>>>>> anniesu
 </style>

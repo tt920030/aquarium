@@ -15,6 +15,7 @@
                 <div class="product_filter">
                     <div>
                         <ul>
+<<<<<<< HEAD
                             <li class="filterByAll" @click="filterNumber= 1"><h3>所有商品</h3></li>
                             <!-- <li class="filterByBest"><h3>熱門商品</h3></li> -->
                             <li class="filterByAnimal">
@@ -25,16 +26,36 @@
                                     <li @click="filterNumber = 4"><h4>魚類</h4></li>
                                     <li @click="filterNumber = 5"><h4>水母</h4></li>
                                     <li @click="filterNumber = 6"><h4>其他</h4></li>
+=======
+                            <li class="filterByAll"><h3>所有商品</h3></li>
+                            <li class="filterByBest"><h3>熱門商品</h3></li>
+                            <li class="filterByAnimal">
+                                <h3>依動物</h3>
+                                <ul>
+                                    <li><h4>企鵝</h4></li>
+                                    <li><h4>海豚</h4></li>
+                                    <li><h4>魚類</h4></li>
+                                    <li><h4>水母</h4></li>
+                                    <li><h4>其他</h4></li>
+>>>>>>> anniesu
                                 </ul>
                             </li>
                             <li class="filterByType">
                                 <h3>依種類</h3>
                                 <ul>
+<<<<<<< HEAD
                                     <li @click="filterNumber = 7"><h4>玩偶</h4></li>
                                     <li @click="filterNumber = 8"><h4>文具</h4></li>
                                     <li @click="filterNumber = 10"><h4>食品</h4></li>
                                     <li @click="filterNumber = 9"><h4>吊飾</h4></li>
                                     <li @click="filterNumber = 11"><h4>其他</h4></li>
+=======
+                                    <li><h4>玩偶</h4></li>
+                                    <li><h4>文具</h4></li>
+                                    <li><h4>食品</h4></li>
+                                    <li><h4>吊飾</h4></li>
+                                    <li><h4>其他</h4></li>
+>>>>>>> anniesu
                                 </ul>
                             </li>
                         </ul>
@@ -42,10 +63,16 @@
                 </div>
                 <!-- 商品列 -->
                 <ul class="product_list">
+<<<<<<< HEAD
                     <ProductList :filterNumber="filterNumber"></ProductList>
                     <!-- <li>
                         <a href="" class="product_info">
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                    <li>
+                        <a href="" class="product_info">
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -53,7 +80,11 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
+<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -61,7 +92,11 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
+<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -69,7 +104,11 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
+<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -77,7 +116,11 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
+<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -85,7 +128,11 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
+<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -93,7 +140,11 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
+<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -101,7 +152,11 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
+<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -109,23 +164,39 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
+<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
+=======
+                            <img src="../img/product_penguinDoll.jpg" alt="">
+>>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
                         </a>
+<<<<<<< HEAD
                     </li> -->
+=======
+                    </li>
+>>>>>>> anniesu
                 </ul>
             </div>
             <!-- 頁碼 -->
             <div class="wrapper page_list">
                 <ul>
+<<<<<<< HEAD
                     <Paginator></Paginator>
                     <!-- <li><a href="">1</a></li>
                     <li><a href="">2</a></li>
                     <li><a href="">3</a></li>
                     <li><a href="">4</a></li>
                     <li><a href="">5</a></li> -->
+=======
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+>>>>>>> anniesu
                 </ul>
             </div>
         </main>        
@@ -138,6 +209,7 @@
 	import Header from '/src/components/Header.vue';
 	import Footer from '/src/components/Footer.vue';
     import CustomerService from '/src/components/CustomerService.vue'; 
+<<<<<<< HEAD
     import ProductList from '../components/ProductList.vue';
     import Paginator from '../components/Paginator.vue'
     import { ref } from 'vue';
@@ -148,6 +220,8 @@
         console.log('aa')
     }
 
+=======
+>>>>>>> anniesu
 </script>
 <style lang="scss" scoped>
 @import "../assets/sass/page/stores";

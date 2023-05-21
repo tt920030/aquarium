@@ -2,7 +2,11 @@
   <div class="cms">
     <!-- Header -->
     <header>
+<<<<<<< HEAD
       <img class="logo" src="../img/cms_logo.svg" alt="" />
+=======
+      <img class="logo" src="@/img/cms_logo.svg" alt="" />
+>>>>>>> anniesu
       <h2>後台管理系統</h2>
 
       <div class="profile">
@@ -12,11 +16,19 @@
 
       <a class="signOut" href="">
         <h3>登出</h3>
+<<<<<<< HEAD
         <img src="../img/cms_logout.svg" alt="" />
       </a>
     </header>
     <!-- 選單列 -->
     <Aside>
+=======
+        <img src="@/img/cms_logout.svg" alt="" />
+      </a>
+    </header>
+    <!-- 選單列 -->
+    <aside>
+>>>>>>> anniesu
       <a>
         <div class="news"></div>
         <h4>消息管理</h4>
@@ -37,7 +49,11 @@
         <div class="customer"></div>
         <h4>客服</h4>
       </a>
+<<<<<<< HEAD
     </Aside>
+=======
+    </aside>
+>>>>>>> anniesu
   </div>
 </template>
 <script setup></script>
@@ -90,8 +106,13 @@
         line-height: 50px;
         font-size: 2.4rem;
       }
+<<<<<<< HEAD
       img {
       }
+=======
+      // img {
+      // }
+>>>>>>> anniesu
     }
   }
 
@@ -115,6 +136,7 @@
         color: white;
       }
       &:hover .news {
+<<<<<<< HEAD
         background-image: url(../img/cms_icon1_white.svg);
       }
       &:hover .product {
@@ -144,6 +166,37 @@
       }
       .customer {
         background-image: url(../img/cms_icon5_blue.svg);
+=======
+        background-image: url(@/img/cms_icon1_white.svg);
+      }
+      &:hover .product {
+        background-image: url(@/img/cms_icon2_white.svg);
+      }
+      &:hover .journey {
+        background-image: url(@/img/cms_icon3_white.svg);
+      }
+      &:hover .coupon {
+        background-image: url(@/img/cms_icon4_white.svg);
+      }
+      &:hover .customer {
+        background-image: url(@/img/cms_icon5_white.svg);
+      }
+
+      .news {
+        background-image: url(@/img/cms_icon1_blue.svg);
+      }
+      .product {
+        background-image: url(@/img/cms_icon2_blue.svg);
+      }
+      .journey {
+        background-image: url(@/img/cms_icon3_blue.svg);
+      }
+      .coupon {
+        background-image: url(@/img/cms_icon4_blue.svg);
+      }
+      .customer {
+        background-image: url(@/img/cms_icon5_blue.svg);
+>>>>>>> anniesu
       }
 
       div {
