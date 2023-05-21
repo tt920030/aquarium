@@ -4,7 +4,6 @@
     <div class="mb-3">
       <h3>消息管理</h3>
     </div>
-
     <ManageTemplate :news="news"></ManageTemplate>
   </main>
 </template>
@@ -16,7 +15,8 @@ import Header from "/src/components/CMSHeader.vue";
 // 引入bootstrap
 // import "bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
-import ManageTemplate from '/src/components/ManageTemplate.vue';
+
+import ManageTemplate from "/src/components/ManageTemplate.vue";
 const news = reactive([
   { id: "title", title: "消息標題", type: "text" },
   { id: "sub_title", title: "消息副標題", type: "text" },
