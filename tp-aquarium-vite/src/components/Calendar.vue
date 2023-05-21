@@ -1,32 +1,18 @@
 <template>
-<<<<<<< HEAD
   <VueDatePicker ref="datepicker" v-model="today" hide-offset-dates  :min-date="new Date()" :max-date="datePlus30"
     :disabled-week-days="[3, 0]" prevent-min-max-navigation locale="zh" selectText="okay" :enable-time-picker="false"
     calendar-cell-class-name="dp-custom-cell"
     @update:model-value="handleDate"
     inline
     select-text="選擇日期" >
-=======
-  <VueDatePicker ref="datepicker" v-model="today" hide-offset-dates inline :min-date="new Date()" :max-date="datePlus30"
-    :disabled-week-days="[3, 0]" prevent-min-max-navigation locale="zh" selectText="okay" :enable-time-picker="false"
-    calendar-cell-class-name="dp-custom-cell"
-    @update:model-value="handleDate"
-    select-text="查詢選擇日期" >
->>>>>>> anniesu
   </VueDatePicker>
 </template>
   
 <script setup>
-<<<<<<< HEAD
 import { ref, reactive, onMounted} from 'vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import { onUpdated } from 'vue';
-=======
-import { ref, reactive, onMounted } from 'vue';
-import VueDatePicker from '@vuepic/vue-datepicker';
-import '@vuepic/vue-datepicker/dist/main.css'
->>>>>>> anniesu
 const today = ref(new Date())
 const date = ref(new Date());
 const datePlus30 = ref(new Date(date.value.setDate(date.value.getDate() + 30)));
