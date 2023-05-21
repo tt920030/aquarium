@@ -348,10 +348,11 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">餵食海龜</h4>
               <ul>
-
+<<<<<<< HEAD
                 <li><img src="../img/floor_introduction_p7.jpg" alt="" /></li>
-
+=======
                 <li><img src="@/img/floor_introduction_p7.jpg" alt="" /></li>
+>>>>>>> anniesu
                 <li>
                   <a href="" class="btn">了解更多</a>
                 </li>
@@ -371,11 +372,11 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">海星</h4>
               <ul>
-
+<<<<<<< HEAD
                 <li><img src="../img/floor_introduction_p8.jpg" alt="" /></li>
-
+=======
                 <li><img src="@/img/floor_introduction_p8.jpg" alt="" /></li>
-
+>>>>>>> anniesu
                 <li>
                   <h4>您可以在這裡欣賞到多種顏色和形狀的海星，</h4>
                   <p>

@@ -11,6 +11,21 @@
       <!-- 樓層指南選單 -->
       <ul class="floor_nav">
         <li>
+<<<<<<< HEAD
+          <a href=""><img src="../img/floor_p1.jpg" alt="" /> </a>
+          <h4>樓層介紹</h4>
+        </li>
+        <li>
+          <a href=""><img src="../img/floor_p2_active.jpg" alt="" /> </a>
+          <h4 class="h4_active">館內活動</h4>
+        </li>
+        <li>
+          <a href=""><img src="../img/floor_p3.jpg" alt="" /> </a>
+          <h4>常見問題</h4>
+        </li>
+        <li>
+          <a href=""><img src="../img/floor_p4.jpg" alt="" /> </a>
+=======
           <a href=""><img src="@/img/floor_p1.jpg" alt="" /> </a>
           <h4>樓層介紹</h4>
         </li>
@@ -24,6 +39,7 @@
         </li>
         <li>
           <a href=""><img src="@/img/floor_p4.jpg" alt="" /> </a>
+>>>>>>> anniesu
           <h4>參觀資訊</h4>
         </li>
       </ul>
@@ -35,12 +51,20 @@
           <ul>
             <li id="journey1">
               <a href="" class="lightbox">
+<<<<<<< HEAD
+                <img class="intro_img" src="../img/park_activity1.jpg" alt="" />
+=======
                 <img class="intro_img" src="@/img/park_activity1.jpg" alt="" />
+>>>>>>> anniesu
               </a>
 
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
+<<<<<<< HEAD
+                  <img src="../img/journey_intro_icon.svg" alt="" />
+=======
                   <img src="@/img/journey_intro_icon.svg" alt="" />
+>>>>>>> anniesu
                   <h4>海底隧道漫步</h4>
                   <p>
                     在這種活動中，人們可以漫步在海生館的隧道，觀察各種海洋生物在身旁游泳的情景，感受置身於海底世界的奇妙體驗。透過這種活動，人們可以近距離觀察各種海洋生物，包括鯊魚、海龜、海星、珊瑚等，並且學習到關於海洋生物和海洋生態系統的知識。
@@ -54,11 +78,19 @@
             </li>
             <li id="journey2">
               <a href="" class="lightbox">
+<<<<<<< HEAD
+                <img class="intro_img" src="../img/park_activity2.jpg" alt="" />
+              </a>
+              <div class="journey_intro_content">
+                <div class="journey_intro_main">
+                  <img src="../img/journey_intro_icon.svg" alt="" />
+=======
                 <img class="intro_img" src="@/img/park_activity2.jpg" alt="" />
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
                   <img src="@/img/journey_intro_icon.svg" alt="" />
+>>>>>>> anniesu
                   <h4>海洋生物導覽</h4>
                   <p>
                     導覽員會帶領參觀者進入展館或戶外區域，介紹不同種類的海洋生物、牠們的生活習性、食物鏈、海洋保育等相關知識。這種活動讓人們能夠深入了解海洋世界，了解海洋生物的生存環境和保育現狀，提高對保護海洋環境的意識。
@@ -72,11 +104,19 @@
             </li>
             <li id="journey3">
               <a href="" class="lightbox">
+<<<<<<< HEAD
+                <img class="intro_img" src="../img/park_activity3.jpg" alt="" />
+              </a>
+              <div class="journey_intro_content">
+                <div class="journey_intro_main">
+                  <img src="../img/journey_intro_icon.svg" alt="" />
+=======
                 <img class="intro_img" src="@/img/park_activity3.jpg" alt="" />
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
                   <img src="@/img/journey_intro_icon.svg" alt="" />
+>>>>>>> anniesu
                   <h4>海獅秀</h4>
                   <p>
                     在這個活動中，訓練師會訓練海獅完成各種表演，例如跳躍、翻滾、平衡、接球等，以展示海獅的智慧和技能。這種活動不僅讓觀眾欣賞到海獅的可愛和聰明，還可以提高人們對海洋動物的認識和對保護海洋環境的意識。
@@ -90,11 +130,19 @@
             </li>
             <li id="journey4">
               <a href="" class="lightbox">
+<<<<<<< HEAD
+                <img class="intro_img" src="../img/park_activity4.jpg" alt="" />
+              </a>
+              <div class="journey_intro_content">
+                <div class="journey_intro_main">
+                  <img src="../img/journey_intro_icon.svg" alt="" />
+=======
                 <img class="intro_img" src="@/img/park_activity4.jpg" alt="" />
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
                   <img src="@/img/journey_intro_icon.svg" alt="" />
+>>>>>>> anniesu
                   <h4>海星觸摸</h4>
                   <p>
                     觸摸海星活動是一種與海洋生物近距離互動的體驗，海星是一種生活在海洋中的奇特生物，牠們的身體扁平，呈星形，有著吸盤狀的足，能夠吸附在海洋中的礁石或其他物體上。通過觸摸海星活動，人們可以近距離觀察和感受這種奇特生物的外形和觸感，以及了解更多海星的生態和習性。
@@ -108,11 +156,19 @@
             </li>
             <li id="journey5">
               <a href="" class="lightbox">
+<<<<<<< HEAD
+                <img class="intro_img" src="../img/park_activity5.jpg" alt="" />
+              </a>
+              <div class="journey_intro_content">
+                <div class="journey_intro_main">
+                  <img src="../img/journey_intro_icon.svg" alt="" />
+=======
                 <img class="intro_img" src="@/img/park_activity5.jpg" alt="" />
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
                   <img src="@/img/journey_intro_icon.svg" alt="" />
+>>>>>>> anniesu
                   <h4>餵食海龜</h4>
                   <p>
                     在海生館，你可以參加「餵食海龜體驗」活動，與海洋生物近距離互動。在活動中，你將有機會體驗親手餵食海龜的樂趣和刺激。你可以觀察這些可愛的海龜在水中游動，透過這個活動，你可以了解到關於海龜的一些基本知識
@@ -138,7 +194,11 @@
                 <h4 class="accordion_header">海底隧道漫步</h4>
                 <ul>
                   <li>
+<<<<<<< HEAD
+                    <img src="../img/park_activity1.jpg" />
+=======
                     <img src="@/img/park_activity1.jpg" />
+>>>>>>> anniesu
                   </li>
                   <li>
                     <h4>享受漫步海底世界的浪漫吧!</h4>
@@ -162,7 +222,11 @@
               <div class="lightbox_block">
                 <h4 class="accordion_header">海洋生物導覽</h4>
                 <ul>
+<<<<<<< HEAD
+                  <li><img src="../img/park_activity2.jpg" alt="" /></li>
+=======
                   <li><img src="@/img/park_activity2.jpg" alt="" /></li>
+>>>>>>> anniesu
                   <li>
                     <h4>由專業的嚮導為您解說海底世界</h4>
                     <p>
@@ -185,7 +249,11 @@
               <div class="lightbox_block">
                 <h4 class="accordion_header">海獅秀</h4>
                 <ul>
+<<<<<<< HEAD
+                  <li><img src="../img/park_activity3.jpg" alt="" /></li>
+=======
                   <li><img src="@/img/park_activity3.jpg" alt="" /></li>
+>>>>>>> anniesu
                   <li>
                     <h4>快來欣賞可愛海獅的表演吧!</h4>
                     <p>
@@ -208,10 +276,13 @@
               <div class="lightbox_block">
                 <h4 class="accordion_header">海星觸摸</h4>
                 <ul>
-
+<<<<<<< HEAD
                   <li><img src="../img/park_activity4.jpg" alt="" /></li>
-
+=======
                   <li><img src="@/img/park_activity4.jpg" alt="" /></li>
+>>>>>>> anniesu
+                  <li>
+                    <h4>感受海星神秘的觸感吧!</h4>
                     <p>
                     </p>
                   
@@ -231,11 +302,11 @@
               <div class="lightbox_block">
                 <h4 class="accordion_header">餵食海龜</h4>
                 <ul>
-
+<<<<<<< HEAD
                   <li><img src="../img/park_activity5.jpg" alt="" /></li>
-
+=======
                   <li><img src="@/img/park_activity5.jpg" alt="" /></li>
-
+>>>>>>> anniesu
                   <li>
                     <h4>快來親自體會餵食海龜的樂趣吧!</h4>
                     <p>
@@ -263,11 +334,11 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-
+<<<<<<< HEAD
 import Header from "/src/components/Header.vue";
 import Footer from "/src/components/Footer.vue";
-
-
+=======
+>>>>>>> anniesu
 import $ from "jquery";
 
 $(function () {
@@ -333,11 +404,11 @@ $(function () {
   main {
     // 開場介紹圖
     .banner {
-
+<<<<<<< HEAD
       background-image: url("../../../../src/img/guided_tour_banner.jpg");
-
+=======
       background-image: url("@/img/guided_tour_banner.jpg");
-
+>>>>>>> anniesu
       width: 100%;
       height: 660px;
       background-size: cover;
@@ -367,11 +438,11 @@ $(function () {
         }
         &:nth-child(2)::after {
           content: "";
-
+<<<<<<< HEAD
           background-image: url("../../../../src/img/floor_nav_index.jpg");
-
+=======
           background-image: url("@/img/floor_nav_index.jpg");
-
+>>>>>>> anniesu
           background-repeat: no-repeat;
           display: block;
           width: 30px;
@@ -400,7 +471,7 @@ $(function () {
         }
       }
     }
-
+<<<<<<< HEAD
     .journey_banner_content {
       // position: relative;
       // writing-mode: vertical-lr;
@@ -766,11 +837,11 @@ $(function () {
       }
     }
 
-
+=======
   }
 
   @include wrapper {
-
+>>>>>>> anniesu
     .journey_info {
       margin-bottom: 20px;
 

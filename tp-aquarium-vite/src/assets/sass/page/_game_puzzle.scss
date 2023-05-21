@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding:0;
+    border: none;
+  }
+  #forPuzzle {
+    border:none;
+    left:0px;
+    top:0px;
+  }
+  #divmenu {
+    position:absolute;
+    top:5px;
+    left:15px;
+    width:0px;
+    height:0px;
+    cursor:default;
+    z-index:50001;
+    border-radius:5px;
+  }
+  #divmenu.open {
+    width:120px;
+    height:100px;
+    background-color:rgba(255,255,180,0.7);
+    z-index:50001;
+  }
+
+  #divmenu .title {
+      font-family: Verdana, "Bitstream Vera Sans", "Lucida Sans", sans-serif;
+    font-weight:bold;
+    font-size:15px;
+    position:absolute;
+    top:0px;
+    left:30px;
+    color:blue;
+    background-color:rgba(255,255,180,0.7);
+    padding:5px;
+    border-radius:5px;
+  }
+
+  #divmenu .line {
+      font-family: Verdana, "Bitstream Vera Sans", "Lucida Sans", sans-serif;
+    font-weight:bold;
+    font-size:15px;
+    text-align:center;
+    position:absolute;
+    width:100px;
+    left:5px;
+    color:blue;
+    padding:5px;
+    display:none;
+    border-radius:5px;
+  }
+
+  #divmenu.open .line {
+    display:block;
+  }
+  #divmenu.open .line:hover {
+    background-color: rgba(255,230,90,1);
+    cursor:pointer;
+  }
+
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    margin: 50px;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 450px;
+    background-color: #FFFEEE;
+    z-index: 99999;
+
+    border: 1px solid #000;
+    border-radius: 20px;
+  }
+  
+  .lightbox-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    flex-direction: column;
+  }
+  
+  .lightbox-content img {
+    max-width: 50%;
+    /* max-height: 50%; */
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .puzzle_line {
+    width: 70%;
+    height: 1px;
+    border-top: solid #000 1px;
+}
+
+  .puzzle_coupon {
+    width: 270px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .puzzle_number {
+
+    width: 120px;
+    height: 60px;
+    background-color: #FFF;
+    border: 2px solid #000;
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .save_coupon {
+
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: #FFF61C;
+    margin: auto;
+
+  }
+
+  .save_coupon a {
+    color: #000;
+    text-decoration:none
+  }
+  
+  .open-lightbox {
+    margin-top: 20px;
+  }
+
+
+  
