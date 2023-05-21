@@ -174,6 +174,21 @@ const router = createRouter({
       name: "CouponManage", //自己取
       component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
     },
+    {
+      path: "/journeyManage", //自己取之後要連的路徑名稱
+      name: "Journey_Manage", //自己取
+      component: () => import("../views/JourneyManage.vue"), //路徑連到剛剛建的vue檔
+    },
+    {
+      path: "/journeyChange", //自己取之後要連的路徑名稱
+      name: "Journey_Change", //自己取
+      component: () => import("../views/JourneyChange.vue"), //路徑連到剛剛建的vue檔
+    },
+    {
+      path: "/journeyCreate", //自己取之後要連的路徑名稱
+      name: "Journey_Create", //自己取
+      component: () => import("../views/JourneyCreate.vue"), //路徑連到剛剛建的vue檔
+    },
   ],
 });
 

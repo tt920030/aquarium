@@ -2,8 +2,8 @@
   <Header></Header>
   <main>
     <div class="mb-3">
-      <h3>折價券管理</h3>
-      <button>新增折價券</button>
+      <h3>行程管理</h3>
+      <button>新增行程</button>
     </div>
     <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
   </main>
@@ -18,18 +18,18 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ManageTemplate from "/src/components/ManageTemplate2.vue";
 const title = reactive([
-  "名稱",
-  "序號",
-  "面額",
-  "折數",
-  "抵用門檻",
-  "有效期限",
+  "行程ID",
+  "行程名稱",
+  "票價",
+  "行程時間",
+  "區域",
+  "狀態",
   "修改",
   "刪除",
 ]);
 const forms = reactive([
-  ["無敵折價券", "88888", 10000, 0.1, 10000, 30],
-  ["無敵折價券", "88888", 10000, 0.1, 10000, 30],
+  ["123", "海生館專人導覽-全區(預約制)", 1200, 120, "台北海生館", "上架中"],
+  ["1234", "海洋跳躍者：海豚秀", 450, 30, "台北海生館", "上架中"],
 ]);
 </script>
 <style lang="scss" scoped>
