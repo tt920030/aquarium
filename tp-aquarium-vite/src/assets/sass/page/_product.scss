@@ -73,7 +73,6 @@
                         width: 32%;
                         height: 32%;
                         margin-right: 2%;
-<<<<<<< HEAD
                         &:hover{
                             cursor: pointer;
                         }
@@ -83,11 +82,6 @@
                     .imgOn{
                         opacity: 0.4;
                     }
-=======
-                    }:last-child{
-                        margin-right: 0;
-                    }
->>>>>>> anniesu
                 }
             }
             .rightside{
@@ -174,7 +168,6 @@
             @include mobile{
                 width: 100%;
             }
-<<<<<<< HEAD
             .precautionTitle{
                 @include flex;
                 button{
@@ -184,16 +177,6 @@
                     width: 172px;
                     height: 77px;
                     line-height: 77px;
-=======
-            div:nth-child(1){
-                @include flex;
-                h4{
-                    color: #c4c4c4;
-                    display: block;
-                    width: 172px;
-                    height: 76px;
-                    line-height: 76px;
->>>>>>> anniesu
                     text-align: center;
                     background-color: white;
                     border: none;
@@ -207,12 +190,8 @@
                     border-top: 7px solid black;
                     border-left: 1px solid black;
                     border-right: 1px solid black;
-<<<<<<< HEAD
                     height: 77px;
                     color: #000;
-=======
-                    height: 70px;
->>>>>>> anniesu
                 }
                 span{
                     display: block;
@@ -231,10 +210,6 @@
                     width: 100%;
                 }
                 p{
-<<<<<<< HEAD
-=======
-                    display: none;
->>>>>>> anniesu
                     padding-top: 62px;
                     margin-left: 66px;
                     width: 1059px;

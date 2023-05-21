@@ -87,11 +87,13 @@ const router = createRouter({
       path: "/product",
       name: "Product",
       component: () => import("../views/Product.vue"),
+      meta: {title: "商品"},
     },
     {
       path: "/stores",
       name: "Stores",
       component: () => import("../views/Stores.vue"),
+      meta: {title: "網路商城"},
     },
     {
       path: "/visit_information",
@@ -149,9 +151,10 @@ const router = createRouter({
     },
 
     {
-      path: "/news_manage", //自己取之後要連的路徑名稱
-      name: "NewsManage", //自己取
-      component: () => import("../views/NewsManage.vue"), //路徑連到剛剛建的vue檔
+      path: "/news_change", //自己取之後要連的路徑名稱
+      name: "NewsChange", //自己取
+      component: () => import("../views/NewsChange.vue"), //路徑連到剛剛建的vue檔
+      meta: {title: "更改消息"},
     },
     {
       path: "/coupon_manage", //自己取之後要連的路徑名稱
@@ -170,9 +173,10 @@ const router = createRouter({
       component: import("../views/404.vue"),
     },
     {
-      path: "/news_manage", //自己取之後要連的路徑名稱
-      name: "NewsManage", //自己取
-      component: () => import("../views/NewsManage.vue"), //路徑連到剛剛建的vue檔
+      path: "/news_create", //自己取之後要連的路徑名稱
+      name: "NewsCreate", //自己取
+      component: () => import("../views/NewsCreate.vue"), //路徑連到剛剛建的vue檔
+      meta: {title: "新增消息"},
     },
     {
       path: "/coupon_manage", //自己取之後要連的路徑名稱
