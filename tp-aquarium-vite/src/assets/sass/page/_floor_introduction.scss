@@ -1,0 +1,502 @@
+// .floor_introduction {
+//   ::-webkit-scrollbar {
+//     background-color: transparent;
+//     width: 7px;
+//   }
+//   ::-webkit-scrollbar-thumb {
+//     background-color: black;
+//   }
+
+//   // 開場介紹圖
+//   .banner {
+//     background-image: url("../../../../src/img/guided_tour_banner.jpg");
+//     width: 100%;
+//     height: 660px;
+//     background-size: cover;
+//     // RWD
+//     @include mobile {
+//       height: 300px;
+//     }
+//     h1 {
+//       padding-top: 300px;
+//       padding-left: 40px;
+//       @include mobile {
+//         padding-top: 105px;
+//       }
+//     }
+//   }
+
+//   // 樓層nav
+//   .floor_nav {
+//     display: flex;
+//     justify-content: center;
+//     li {
+//       margin: 20px 30px;
+//       text-align: center;
+//       // RWD
+//       @include mobile() {
+//         margin: 15px 0;
+//         padding: 0 10px;
+//       }
+//       &:first-child::after {
+//         content: "";
+//         background-image: url("../../../../src/img/floor_nav_index.jpg");
+//         background-repeat: no-repeat;
+//         display: block;
+//         width: 30px;
+//         height: 27px;
+//         position: relative;
+//         top: 9px;
+//         left: 36%;
+//       }
+//       a {
+//         // width: 100px;
+//         height: 82px;
+//         @include mobile() {
+//           height: 60px;
+//         }
+//         img {
+//           width: 70%;
+//           display: block;
+//           margin: auto;
+//         }
+//       }
+//       h4 {
+//         color: #97cbe0;
+//       }
+//       .h4_active {
+//         color: #16355a;
+//       }
+//     }
+//   }
+
+//   // 主內容
+//   main {
+//     background-image: url("../../../../src/img/floor_introduction_bgi.jpg");
+//     @include wrapper {
+//       max-width: 1100px;
+//       // 標題
+//       .title {
+//         width: 410px;
+//         height: 191px;
+//         margin: 0 auto;
+//         background-image: url("../../../../src/img/floor_introduction_title.svg");
+//         overflow: hidden;
+//         h2 {
+//           position: relative;
+//           top: 104px;
+//           left: 129px;
+//           color: #26450c;
+//           font-weight: bold;
+//         }
+//       }
+
+//       // 圖片排列
+//       ul {
+//         display: flex;
+//         flex-wrap: wrap;
+//         padding: 0 0 200px;
+//         // RWD
+//         @include mobile {
+//           flex-direction: column;
+//           padding: 0 0 70px;
+//         }
+
+//         li {
+//           flex: 0 0 50%;
+//           margin-top: 25px;
+
+//           img {
+//             display: block;
+//             width: 70%;
+//             margin: auto;
+//           }
+
+//           h4 {
+//             text-align: center;
+//             margin-top: -20px;
+//           }
+
+//           p {
+//             text-align: center;
+//             margin-top: 10px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // 各樓層指南
+// .floor {
+//   background: #f4f5f7;
+//   @include mobile() {
+//     display: none;
+//   }
+//   @include wrapper {
+//     padding: 60px 0;
+//     h2 {
+//       margin: 0 0 35px;
+//       padding: 0 0 25px;
+//       width: 250px;
+//       font-size: 24px;
+//       line-height: 1.6;
+//       font-weight: bold;
+//       background: url("../../../../src/img/floor_introduction_h2_line.svg")
+//         no-repeat left bottom;
+//       background-size: 250px 10px;
+//     }
+
+//     // 白色區塊
+//     .floor_white {
+//       padding: 140px 85px 55px;
+//       margin: 0 0 30px;
+//       background: #fff;
+//       border-radius: 28px;
+
+//       //   樓層對齊
+//       .floor_img {
+//         position: relative;
+//         margin: 0 0 125px;
+//         &:last-child {
+//           margin-bottom: 40px;
+//         }
+//         //   樓層文字
+//         p {
+//           position: absolute;
+//           left: -10px;
+//           top: -60px;
+//           font-size: 8.6rem;
+//         }
+//         span {
+//           font-size: 6rem;
+//         }
+
+//         // 樓層圖
+//         img {
+//           width: 100%;
+//           border-radius: 10px;
+//         }
+
+//         // 區塊共用
+//         .fp {
+//           position: absolute;
+//           width: 112px;
+//           height: 72px;
+//           animation: animalMove 3s infinite;
+//           a {
+//             &:hover {
+//               animation: shake 0.2s infinite linear alternate;
+//             }
+//             img {
+//               width: 112px;
+//               height: 72px;
+//             }
+//           }
+//         }
+//         // 區塊1
+//         .p1 {
+//           left: -29px;
+//           top: 142px;
+//         }
+
+//         // 區塊2
+//         .p2 {
+//           left: 131px;
+//           top: -100px;
+//         }
+
+//         // 區塊3
+//         .p3 {
+//           right: 285px;
+//           top: -100px;
+//         }
+
+//         // 區塊4
+//         .p4 {
+//           left: 322px;
+//           top: -100px;
+//         }
+
+//         // 區塊5
+//         .p5 {
+//           left: 406px;
+//           top: 95px;
+//         }
+
+//         // 區塊6
+//         .p6 {
+//           left: 552px;
+//           top: -10px;
+//         }
+//       }
+//     }
+
+//     // 圖像說明
+//     .floor_white1 {
+//       padding: 70px 50px 40px 142px;
+//       margin: 0 0 30px;
+//       background: #fff;
+//       border-radius: 28px;
+//       ul {
+//         display: flex;
+//         justify-content: flex-start;
+//         flex-wrap: wrap;
+//         li {
+//           width: 135px;
+//           margin-right: 20px;
+//           padding-left: 40px;
+//           margin-bottom: 30px;
+//           font-size: $p;
+//           line-height: 2;
+//         }
+//         // 各區塊設定
+//         .barrier {
+//           background: url("/img/floor_introduction_barrier_free_icon.svg")
+//             no-repeat 2px 50%;
+//           background-size: 25px 25px;
+//         }
+//         .scope {
+//           background: url("/img/floor_introduction_fish_icon.svg") no-repeat 2px
+//             50%;
+//           background-size: 25px 25px;
+//         }
+//         .lift {
+//           background: url("/img/floor_introduction_lift_icon.svg") no-repeat 2px
+//             50%;
+//           background-size: 25px 25px;
+//         }
+//         .baby {
+//           background: url("/img/floor_introduction_baby_icon.svg") no-repeat 2px
+//             50%;
+//           background-size: 30px 25px;
+//         }
+//         .shop {
+//           background: url("/img/floor_introduction_shop_icon.svg") no-repeat 2px
+//             50%;
+//           background-size: 25px 25px;
+//         }
+//         .toilet {
+//           background: url("/img/floor_introduction_toilet_icon.svg") no-repeat
+//             2px 50%;
+//           background-size: 25px 25px;
+//         }
+//         .academy {
+//           background: url("/img/floor_introduction_school_icon.svg") no-repeat
+//             2px 50%;
+//           background-size: 25px 25px;
+//         }
+//         .cafe {
+//           background: url("/img/floor_introduction_coffee_icon.svg") no-repeat
+//             2px 50%;
+//           background-size: 25px 25px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// //燈箱
+// .light_box {
+//   @include mobile() {
+//     padding-top: 50px;
+//     background: #f4f5f7;
+//   }
+//   .lightbox_overlay {
+//     display: none;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.4);
+//     // RWD
+//     @include mobile() {
+//       display: block;
+//       position: static;
+//       background-color: transparent;
+//     }
+
+//     @include wrapper {
+//       overflow-y: scroll;
+//       overflow-x: hidden;
+//       height: 630px;
+
+//       @include mobile() {
+//         height: auto;
+//         overflow: initial;
+//       }
+
+//       // 內容設定
+//       .lightbox_content {
+//         padding: 70px 85px 55px;
+//         margin: 50px 0;
+//         background: #fff;
+//         border-radius: 28px;
+//         position: relative;
+//         // RWD
+//         @include mobile() {
+//           padding: 0;
+//           margin: 0;
+//           position: static;
+//           background: #f4f5f7;
+//         }
+
+//         // 區塊
+//         .lightbox_block {
+//           // RWD
+//           @include mobile() {
+//             border: 1px solid #ddd;
+//             border-radius: 10px;
+//             box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+//             margin-bottom: 15px;
+//           }
+
+//           h4 {
+//             margin-bottom: 25px;
+//             font-weight: bold;
+//             line-height: 1.6;
+//             // RWD
+//             @include mobile() {
+//               margin: 0;
+//               padding: 10px;
+//               display: flex;
+//               justify-content: space-between;
+//               align-items: center;
+//               &.accordion_header::after {
+//                 content: "\002B";
+//                 font-size: 24px;
+//                 font-weight: bold;
+//                 color: #666;
+//                 transition: transform 0.3s ease;
+//               }
+//               &.active {
+//                 background-color: lightseagreen;
+//               }
+//               &.active::after {
+//                 transform: rotate(45deg);
+//               }
+//             }
+//           }
+
+//           // 內文主排版
+//           ul {
+//             display: flex;
+//             // RWD
+//             @include mobile() {
+//               flex-direction: column;
+//             }
+
+//             li {
+//               padding: 0 0 50px 0;
+//               // RWD
+//               @include mobile() {
+//                 padding: 0;
+//               }
+//               &:last-child {
+//                 margin: 30px 0 0 45px;
+//                 // RWD
+//                 @include mobile() {
+//                   margin: 20px;
+//                 }
+//                 p {
+//                   font-size: 1.4rem;
+//                   line-height: 1.8;
+//                   // RWD
+//                   @include mobile() {
+//                     margin: 10px;
+//                   }
+//                 }
+//               }
+//               img {
+//                 // RWD
+//                 @include mobile() {
+//                   margin: auto;
+//                   display: block;
+//                 }
+//               }
+//             }
+
+//             // 內文二
+//             &:last-child {
+//               padding-top: 60px;
+//               border-top: 1px solid #546a88;
+//               // RWD
+//               @include mobile() {
+//                 padding-top: 40px;
+//                 display: none;
+//               }
+
+//               a {
+//                 margin: 71px 0 0 287px;
+//                 // RWD
+//                 @include mobile() {
+//                   margin: 0;
+//                   margin-left: auto;
+//                   display: block;
+//                   width: fit-content;
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     // 關閉按鈕
+//     .lightbox_close {
+//       position: fixed;
+//       top: 27px;
+//       right: 133px;
+//       font-size: 3.6rem;
+//       color: #003366;
+//       width: 60px;
+//       height: 60px;
+//       line-height: 53px;
+//       display: block;
+//       text-align: center;
+//       border-radius: 50%;
+//       background: #fff;
+//       box-shadow: 0px 0px 5px #000;
+//       cursor: pointer;
+//       @include mobile() {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+// // 各別區塊調整
+// .seal .wrapper .lightbox_content .lightbox_block ul:last-child p {
+//   margin: 60px 0 0 0;
+// }
+
+// // 動畫
+// @keyframes animalMove {
+//   0% {
+//     transform: translate(0, 0);
+//     opacity: 1;
+//   }
+//   50% {
+//     transform: translate(0, 20px);
+//     opacity: 1;
+//   }
+
+//   100% {
+//     transform: translate(0, 0);
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes shake {
+//   0% {
+//     transform: translate(0, 0);
+//   }
+
+//   50% {
+//     transform: translate(4px, 0);
+//   }
+
+//   100% {
+//     transform: translate(0, 0);
+//   }
+// }

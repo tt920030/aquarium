@@ -1,0 +1,200 @@
+.game_index {
+    
+
+        .top {
+ 
+            img{
+                width: 100%;
+
+                @include mobile{
+                    width: 100%;
+                  }
+            }
+        }
+
+
+        .banner { 
+
+        @include mobile{
+            width: 100%;
+
+        }
+
+            margin: 100px auto; 
+            width: 450px; 
+            position: relative; 
+
+            .content{
+
+                @include mobile{
+                    // margin-right: 10px;
+        
+                }
+                // padding: 50px; 
+                text-align: center;
+
+                h1{
+                    color: map-get($color, text);
+                }
+            }
+            .content_mask { 
+                @include mobile{
+                    margin-left: 68px;
+        
+                }
+                // padding: 50px; 
+                text-align: center;
+                margin-left: 50px;
+                position: absolute; 
+                top: 0;
+                left: 0;
+                background: map-get($color, bgc2);
+                color: #FFFFFF;
+                -webkit-clip-path: polygon(50% 0, 0 25%, 70% 50%);
+                clip-path: polygon(50% 0, 0 25%, 70% 50%);
+                pointer-events: none;
+                -webkit-animation: triango_animation 9s alternate infinite;
+                animation: triango_animation 9s alternate infinite;
+            }
+            @keyframes triango_animation{
+                33% {
+                    -webkit-clip-path:polygon(10% 0, 0 60%, 70% 10%);
+                    clip-path:polygon(10% 0, 0 60%, 70% 10%);
+                }
+                66% {
+                    -webkit-clip-path:polygon(0 45%, 50% 75%, 80% 30%);
+                    clip-path:polygon(0 45%, 50% 75%, 80% 30%);
+                }
+            }
+        }
+        
+        .game_index_rule{
+
+
+
+            height: 440px;
+
+            .rule {
+
+            @include mobile{
+                width: 80%;
+                height: 280px;
+                margin:0 -80px;
+            
+            }
+
+                height: 400px;
+
+                position: absolute;
+                right: 120px;
+                background-color: map-get($color, bgc1);
+                width: 1000px;
+                border: 2px solid black;
+                border-radius: 40px;
+
+                h2 {
+
+                @include mobile{
+                    width: 70%;
+                    margin: 35px auto;
+                }
+
+                    text-align: center;
+                    margin-top: 60px;
+
+                    &::before {
+
+                    @include mobile{
+                        width: 20%;
+                        height: 5px;
+                        margin: -30px -80px;
+                        
+                    }
+                        content: '';
+                        border-top: 1px solid black;
+                        border-bottom: 1px solid black;
+                        position: absolute;
+                        width: 30%;
+                        height: 8px;
+                        top: 75px;
+                        right: 110px;
+                        z-index: 999;
+                    }
+
+                    &::after {
+
+                    @include mobile{
+                        width: 20%;
+                        height: 5px;
+                        margin:-30px -80px;
+                        
+                    }
+                        content: '';
+                        border-top: 1px solid black;
+                        border-bottom: 1px solid black;
+                        position: absolute;
+                        width: 30%;
+                        left: 110px;
+                        height: 8px;
+                        top: 75px;
+                        z-index: 999;
+                    }
+
+                }
+
+                h3 {
+
+                @include mobile{
+                    width: 90%;
+                    margin: 0 auto;
+                    font-size: 20px;
+    
+                }
+
+                    margin-top:60px;
+                    margin-bottom: 100px;
+                    margin-left: 200px;
+                }
+
+            
+            
+                .game_index_button{
+
+                    .btn{
+
+                        @include mobile{
+                            width: 40%;
+                            margin: 55px auto;
+                        }
+        
+                            display: block;
+
+                            width: fit-content;
+                            margin: -50px auto 0;
+                            
+        
+                            h3{
+                                margin: 0;
+                            }
+                        }
+                }
+                
+
+                img{
+
+                @include mobile{
+                    width: 40%;
+                    margin: 25px -65px;
+                }
+
+                    width: 300px;
+                    position: absolute;
+                    right: 80px;
+                    top: 315px;
+                }
+            }
+        }
+            
+        
+}
+    

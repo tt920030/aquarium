@@ -1,0 +1,257 @@
+.customer_service{
+    
+        position: fixed;
+        right: 2%;
+        bottom: 2%;
+        z-index: 999;
+        @include mobile{
+            width: 100%;
+            right: -65%;
+        }
+
+
+        // 客服圖示
+        .customer_service_photo{
+            border-radius: 50%;
+            width: 200px;
+            position: relative;
+            z-index: 5;
+            @include mobile{
+                width: 150px;
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        // 客服對話框
+        .customer_service_content{
+            outline: 1px solid lavender;
+            width: 500px;
+            height: 603px;
+            background-color: white;
+            position: absolute;
+            right: 147px;
+            bottom: 80px;
+            z-index: 1;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px #ccc;
+            @include mobile{
+                width: 98%;
+                height: 650px;
+                right: 66%;
+                bottom: 10px;                
+            }
+            .close{
+                position: absolute;
+                right: 15px;
+                top: 8px;
+                width: 30px;
+                height: 30px;
+                &:hover{
+                    background-color: #dbd9d9;
+                    border-radius: 50%;
+                }
+                img{
+                    width: 30px;
+                    height: 30px;
+                    transition: all .3s;
+
+                }
+            }
+    
+            .title{
+                height: 48px;
+                width: 100%;
+                right: 0;
+                bottom: 0;
+                background-color: map-get($color, bgc1 );
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+                h4{
+                    line-height: 48px;
+                    text-align: center;
+                }
+            }
+            // 對話內容區塊
+            .messageList{
+                width: 500px;
+                height: 500px;
+                overflow-y:auto;
+                @include mobile{
+                    width: 100%;
+                    height: 550px;
+                }
+
+                // 客服回覆
+                .answer{
+                    width: 80%;
+                    height: fit-content;
+                    margin-top: 30px;
+                    margin-left: 20px;
+                    margin-right: 20%;
+                    margin-bottom: 30px;
+                    @include mobile{
+                        margin-left: 3%;
+                    }
+
+                    // 客服大頭貼
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        outline: 1px solid #ccc;
+                    }
+
+                    // 回覆內容
+                    .messageWrapper{
+                        left: 50px;
+                        background-color: map-get($color, bgc1 );
+                        border-radius: 10px;
+                        width: fit-content;
+                        height: fit-content;
+                        margin-left: 50px;
+                        p{
+                            padding: 7px;
+                        }::before{
+                            content: url(../img/customer_service_message_a.svg);
+                            position: relative;
+                            left: -12px;
+                            top: -19px;
+                            @include mobile{
+                                top: -15px;
+                            }
+                            }
+                    }::before{
+                        content: none;
+                    }
+                }
+
+                // 問題選單
+                .lists{
+                    height: 207px;
+
+                    .listBox{
+                        width: 200px;
+                        text-align: center;
+                        h4{
+                            display: block;
+                            border-top-right-radius: 10px;
+                            border-top-left-radius: 10px;
+                            height: 35px;
+                            line-height: 35px;
+                            background-color: map-get($color, bgc2 );
+                        }
+                        ul{
+                            li{
+                                background-color: map-get($color, bgc1 );
+                                height: 30px;
+                                border-bottom: 1px solid #A19B9B;
+                                p{
+                                    line-height: 30px;
+
+                                }
+                            }:hover{
+                                background-color: map-get($color, bgc2 );
+                            }:last-child{
+                                border-bottom-left-radius: 10px;
+                                border-bottom-right-radius: 10px;
+                                border: none;    
+                            }
+                            
+                        }
+                    }
+                }
+                
+                // 用戶提問
+                .question{
+                    width: 80%;
+                    margin-left: 20%;
+                    height: fit-content;
+                    margin-bottom: 30px;
+                    display: flex;
+                    justify-content: flex-end;
+                    @include mobile{
+                        margin-left: auto;
+                        margin-right: 3%;
+                    }
+                    .messageWrapper{
+                        background-color: map-get($color, bgc1 );
+                        border-radius: 10px;
+                        width: fit-content;
+                        height: fit-content;
+                        margin-right: 5%;
+                        @include mobile{
+                            margin: 0;
+                        }
+
+                        p{
+                            padding: 7px;
+                        }::before{
+                            content: url(../img/customer_service_message_q.svg);
+                            position: relative;
+                            right: -164px;
+                            top: -18px;
+                            transform: rotateY(180deg);
+                            @include mobile{
+                                left: 133px;
+                                top: -14px;
+                            }
+                        }
+                    }
+                }
+            }
+            // 用戶提問輸入框
+            .questionInput{
+                width: 100%;
+                position: absolute;
+                bottom: 10px;
+                align-items: center;
+                margin: 0 auto;
+                @include flex;
+                @include mobile{
+                    width: 95%;
+                    margin: 0 2.5%;
+                    @include flex;
+                    justify-content: space-between;
+                }
+                form{
+                    width: 350px;
+                    @include mobile{
+                        width: 70%;
+                    }
+                    input{
+                        width: 350px;
+                        height: 40px;
+                        background-color: map-get($color, bgc2 );
+                        border: none;
+                        border-radius: 10px;
+                        text-indent: 10px;
+                        margin-left: 73px;
+                        @include mobile{
+                            width: 100%;
+                            margin: 0;
+                        }
+                    }
+    
+                }
+                .send{
+                    width: 45px;
+                    height: 45px;
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    @include mobile{
+                        width: 10%;
+                    }
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+            }
+            
+        }
+
+    
+}
