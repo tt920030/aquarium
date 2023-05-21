@@ -95,7 +95,7 @@
                     <h4>共計張數 <span>{{ finalCount }}</span> 張</h4>
                     <h3>共計金額 NT ${{ finalTotal }}</h3>
                 </div>
-                <a @click.prevent="addCart" :class="['btn', 'goCart', finalTotal>0? '' : 'disable']">加入購物車</a>
+                <a @click.prevent="addCart" :class="['btn', 'goCart', finalTotal? '' : 'disable']">加入購物車</a>
 
 
 
