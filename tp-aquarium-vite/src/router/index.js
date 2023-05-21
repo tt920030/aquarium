@@ -69,13 +69,13 @@ const router = createRouter({
       path: "/journey",
       name: "Journey",
       component: () => import("../views/Journey.vue"),
-      children: [
-        {
-          path: "overnight",
-          name: "Overnight",
-          component: () => import("../views/journey/Overnight.vue"),
-        },
-      ],
+      // children: [
+      //   {
+      //     path: "overnight",
+      //     name: "Overnight",
+      //     component: () => import("../views/journey/Overnight.vue"),
+      //   },
+      // ],
     },
 
     {

@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <link rel="stylesheet" href="./tp-aquarium-vite/src/assets/sass/style.scss">
+    <title>拼圖遊戲</title>
 </head>
 <body>
     
+    <div id="forPuzzle"></div>
+
+
+    <!-- style="display: block;" -->
+    <div class="lightbox" style="display: block;" >
+        <div class="lightbox-content">
+            <span class="close">&times;</span>
+            <img src="./crownshark.png" alt="Image">
+            <h1>完成挑戰！</h1>
+            <div class="puzzle_line"></div>
+            <p>恭喜獲得商城購物折價券300元！<br>
+                結帳時，點選使用即可享有優惠
+            </p>
+            <div class="puzzle_coupon">
+                <div class="puzzle_number">TAIPEI2023</div>
+                <button class="save_coupon">
+                    <a href="#">儲存折價券</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <button class="open-lightbox">獲得優惠券</button>
+      
+
+    <!-- <div  class="puzzle-taking" style="display: none;"> -->
+                
+        <!-- 優惠券按鈕 -->
+        <!-- <a href="#0" class="cd-popup-trigger">獲得優惠券</a> -->
+
+
+
+    <script src="./game_puzzle.js"></script>
+
 </body>
 </html>
