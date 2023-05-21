@@ -205,6 +205,7 @@
         right: 0;
         overflow-x: hidden;
         transform:scaleY(-1);
+        z-index: 99999;
         @include mobile{
             top:80px;
             height: 46px;

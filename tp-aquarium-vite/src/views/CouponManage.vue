@@ -5,7 +5,6 @@
       <h3>折價券管理</h3>
       <button>新增折價券</button>
     </div>
-<<<<<<< HEAD
 <!-- 
     <table class="table table-bordered border-dark">
       <thead class="table-primary border-dark">
@@ -45,13 +44,6 @@
       </tbody>
     </table> -->
     <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
-=======
-    <ManageTemplate
-      :title="title"
-      :forms="forms"
-      :formName="formName"
-    ></ManageTemplate>
->>>>>>> anniesu
   </main>
 </template>
 
@@ -62,7 +54,6 @@ import Header from "/src/components/CMSHeader.vue";
 // 引入bootstrap
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-<<<<<<< HEAD
 import ManageTemplate from '/src/components/ManageTemplate2.vue'
 // a =  a b = a
 const title = reactive(
@@ -114,26 +105,6 @@ const forms = reactive([
     e: 10000,
     f: 30,
   },
-=======
-import ManageTemplate from "/src/components/ManageTemplate2.vue";
-
-// 表單name
-const formName = "coupon";
-
-const title = reactive([
-  "名稱",
-  "序號",
-  "面額",
-  "折數",
-  "抵用門檻",
-  "有效期限",
-  "修改",
-  "刪除",
-]);
-let forms = reactive([
-  ["無敵折價券", "88888", 10000, 0.1, 10000, 30],
-  ["無敵折價券", "88888", 10000, 0.1, 10000, 30],
->>>>>>> anniesu
 ]);
 </script>
 <style lang="scss" scoped>
@@ -152,8 +123,4 @@ main {
     margin-left: -170px;
   }
 }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> anniesu

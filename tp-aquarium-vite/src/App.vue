@@ -18,10 +18,6 @@ import { RouterLink, RouterView, useRouter } from 'vue-router';
 
   @import "@/assets/sass/style.scss";
   
-<<<<<<< HEAD
-</style>
-=======
 </style>
 
 
->>>>>>> anniesu

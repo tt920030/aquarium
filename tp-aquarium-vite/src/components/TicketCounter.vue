@@ -19,11 +19,7 @@
 
 <script setup>
 import { ref, reactive, onMounted, onUpdated, watch } from "vue";
-<<<<<<< HEAD
 const props = defineProps({ 'itinerary': { default: '' }, 'remain': { default: 20 }, 'add':{default:0} });
-=======
-const props = defineProps({ 'itinerary': { default: '' }, 'remain': { default: 0 } });
->>>>>>> anniesu
 const emit = defineEmits(['total','count','types']);
 const handleTotal = () => {
   emit("total",total);
@@ -37,12 +33,8 @@ const choices = reactive(
         '日間票': [{ name: "大人", price: 520, id: 1, amount: 0 }, { name: "學生", price: 360, id: 2, amount: 0 }, { name: "兒童", price: 240, id: 3, amount: 0 }, { name: "博愛票", price: 240, id: 4, amount: 0 }],
         '星光票': [{ name: "大人", price: 460, id: 1, amount: 0 }, { name: "學生", price: 300, id: 2, amount: 0 }, { name: "兒童", price: 180, id: 3, amount: 0 }, { name: "博愛票", price: 180, id: 4, amount: 0 }],
         '夜宿海生館-兩天一夜1': [{ name: "遊客", price: 2680, id: 1, amount: 0 }],
-<<<<<<< HEAD
         '夜宿海生館-兩天一夜': [{ name: "遊客", price: 3680, id: 1, amount: 0 }],
         '年度通行證': [{ name: "大人", price: 1080, id: 1, amount: 0 }, { name: "學生", price: 760, id: 2, amount: 0 }, { name: "兒童", price: 520, id: 3, amount: 0 }, { name: "博愛票", price: 520, id: 4, amount: 0 }],
-=======
-        '夜宿海生館-兩天一夜': [{ name: "遊客", price: 3680, id: 1, amount: 0 }]
->>>>>>> anniesu
     }
 );
 
@@ -52,14 +44,6 @@ const total=ref(0);
 const types=ref({"大人":0,"學生":0,"兒童":0,"博愛票":0,"遊客":0});
 
 const add = function () {
-<<<<<<< HEAD
-
-=======
-    // let total = 0
-    // for (let i = 0; i < choices[props.itinerary].length; i++) {
-    //     total += choices[props.itinerary][i].amount
-    // }
->>>>>>> anniesu
     if (remaining.value > 0) {
         remaining.value -= 1;
     }else{
@@ -67,14 +51,6 @@ const add = function () {
     }
 }
 const minus = function () {
-<<<<<<< HEAD
-
-=======
-    // let total = 0
-    // for (let i = 0; i < choices[props.itinerary].length; i++) {
-    //     total += choices[props.itinerary][i].amount
-    // }
->>>>>>> anniesu
     if (remaining.value < props.remain) {
         remaining.value += 1;
     }
@@ -98,7 +74,6 @@ watch(() => props.itinerary, (newVal) => {
     count.value=0;
     types.value={"大人":0,"學生":0,"兒童":0,"博愛票":0,"遊客":0};
 })
-<<<<<<< HEAD
 watch(() => props.add, (newVal) => {
     for (let i = 0; i < choices[props.itinerary].length; i++) {
        choices[props.itinerary][i].amount=0;
@@ -108,17 +83,12 @@ watch(() => props.add, (newVal) => {
     count.value=0;
     types.value={"大人":0,"學生":0,"兒童":0,"博愛票":0,"遊客":0};
 })
-=======
->>>>>>> anniesu
 </script>
 
 <style lang="scss" scoped>
 .counter {
-<<<<<<< HEAD
     margin: 0 auto;
     width:80%;
-=======
->>>>>>> anniesu
     max-width: 900px;
     border: 1px solid rgb(218, 218, 218);
     padding: 3rem 8rem;
@@ -183,11 +153,7 @@ watch(() => props.add, (newVal) => {
     }
 
 }
-<<<<<<< HEAD
 </style>
 
 
 
-=======
-</style>
->>>>>>> anniesu
