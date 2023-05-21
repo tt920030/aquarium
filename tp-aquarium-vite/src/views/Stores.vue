@@ -93,7 +93,6 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
-<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
 =======
                             <img src="../img/product_penguinDoll.jpg" alt="">
@@ -101,11 +100,7 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
-<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
-=======
-                            <img src="../img/product_penguinDoll.jpg" alt="">
->>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
@@ -113,18 +108,12 @@
                     </li>
                     <li>
                         <a href="" class="product_info">
-<<<<<<< HEAD
                             <img src="../img/product_1_1.jpg" alt="">
-=======
-                            <img src="../img/product_penguinDoll.jpg" alt="">
->>>>>>> anniesu
                             <p class="product_name">企鵝娃娃</p>
                             <p class="product_price">NTD $500</p>
                             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
                         </a>
-<<<<<<< HEAD
                     </li> -->
-                    </li>
                 </ul>
             </div>
             <!-- 頁碼 -->

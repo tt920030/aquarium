@@ -5,7 +5,6 @@
       <h3>折價券管理</h3>
       <button>新增折價券</button>
     </div>
-<<<<<<< HEAD
 <!-- 
     <table class="table table-bordered border-dark">
       <thead class="table-primary border-dark">
@@ -45,13 +44,6 @@
       </tbody>
     </table> -->
     <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
-=======
-    <ManageTemplate
-      :title="title"
-      :forms="forms"
-      :formName="formName"
-    ></ManageTemplate>
->>>>>>> anniesu
   </main>
 </template>
 
@@ -94,8 +86,4 @@ main {
     margin-left: -170px;
   }
 }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> anniesu

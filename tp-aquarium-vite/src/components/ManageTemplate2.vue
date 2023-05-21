@@ -43,10 +43,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const props = defineProps(['title','forms'])
 </script>
 <style lang="scss" scoped>
-.row {
-  margin-right: 0;
-}
-.row.justify-content-center {
-  margin-left: -170px;
-}
+
+  .row {
+    margin-right: 0;
+  }
+  .row.justify-content-center {
+    margin-left: -170px;
+  }
+
 </style>

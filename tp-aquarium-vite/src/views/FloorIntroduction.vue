@@ -44,6 +44,7 @@
           </li>
           <li>
             <img src="../img/floor_introduction_jellyfish.png" alt="水母圖" />
+            <h4>水母</h4>
             <p>
           </li>
           <li>
