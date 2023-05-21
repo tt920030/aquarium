@@ -33,13 +33,10 @@ const router = createRouter({
           path: "pet",
           name: "pet",
           component: () => import("../views/member/Pet.vue"),
-<<<<<<< HEAD
         }
       ]
-=======
         },
       ],
->>>>>>> anniesu
     },
     {
       path: "/member",
@@ -50,10 +47,7 @@ const router = createRouter({
     {
       path: "/cart",
       name: "Cart",
-<<<<<<< HEAD
       meta: {title:'購物車'},
-=======
->>>>>>> anniesu
       component: () => import("../views/Cart.vue"),
     },
     {
@@ -71,38 +65,22 @@ const router = createRouter({
           name: "GamePuzzle",
           component: () => import("../views/game/GamePuzzle.vue"),
         },
-<<<<<<< HEAD
       ]
-=======
-      ],
->>>>>>> anniesu
+      
     },
 
     {
       path: "/journey",
       name: "Journey",
       component: () => import("../views/Journey.vue"),
-<<<<<<< HEAD
-      children: [
-        {
-          path: "overnight",
-          name: "Overnight",
-          component: () => import("../views/Overnight.vue"),
-        },
-      ],
-=======
->>>>>>> anniesu
+      
     },
 
     {
       path: "/overnight",
       name: "Overnight",
-<<<<<<< HEAD
       component: () => import("../views/Overnight.vue")
       
-=======
-      component: () => import("../views/Overnight.vue"),
->>>>>>> anniesu
     },
 
     {
@@ -158,16 +136,13 @@ const router = createRouter({
       name: "ticket", //自己取
       component: () => import("../views/Ticket.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
-<<<<<<< HEAD
       meta: {title: "購票資訊"}
     },
     {
       path: "/yearpass", //自己取之後連的路徑名稱
-=======
     },
     {
       path: "/ticket/yearpass", //自己取之後連的路徑名稱
->>>>>>> anniesu
       name: "YearPass", //自己取
       component: () => import("../views/ticket/Yearpass.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
@@ -175,10 +150,7 @@ const router = createRouter({
     {
       path: "/itinerary", //自己取之後連的路徑名稱
       name: "Itinerary", //自己取
-<<<<<<< HEAD
       meta: {title: "票券/行程購買"},
-=======
->>>>>>> anniesu
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
 
@@ -200,10 +172,7 @@ const router = createRouter({
     {
       path: "/:pathMatch(.*)",
       name: "NotFound",
-<<<<<<< HEAD
       meta: {title: "404 Not Found"},
-=======
->>>>>>> anniesu
       component: import("../views/404.vue"),
     },
     {
@@ -216,22 +185,16 @@ const router = createRouter({
       name: "CouponManage", //自己取
       component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
     },
-<<<<<<< HEAD
-  ],
-});
-router.beforeEach((to, from, next) => {
-  window.document.title = to.meta.title
-  next()
-});
-export default router;
-=======
     {
       path: "/backstage_index", //自己取之後要連的路徑名稱
       name: "BackstageIndex", //自己取
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
     },
-  ],
+  );
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title
+  next()
 });
-
 export default router;
->>>>>>> anniesu
+    
+
