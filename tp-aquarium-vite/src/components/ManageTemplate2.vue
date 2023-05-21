@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
  
 
     <table class="table table-bordered border-dark">
@@ -31,24 +30,6 @@
       </tbody>
     </table>
  
-=======
-  <table class="table table-bordered border-dark">
-    <thead class="table-primary border-dark">
-      <tr>
-        <th scope="col" v-for="(title, index) in title" :key="index">
-          {{ title }}
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="form in forms" :key="form.a">
-        <td v-for="item in form">{{ item }}</td>
-        <td><button>修改</button></td>
-        <td>刪除</td>
-      </tr>
-    </tbody>
-  </table>
->>>>>>> anniesu
 </template>
 
 <script setup>
@@ -59,7 +40,6 @@ import Header from "/src/components/CMSHeader.vue";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 // a =  a b = a
-<<<<<<< HEAD
 const props = defineProps(['title','forms'])
 </script>
 <style lang="scss" scoped>
@@ -72,15 +52,3 @@ const props = defineProps(['title','forms'])
   }
 
 </style>
-=======
-const props = defineProps(["title", "forms"]);
-</script>
-<style lang="scss" scoped>
-.row {
-  margin-right: 0;
-}
-.row.justify-content-center {
-  margin-left: -170px;
-}
-</style>
->>>>>>> anniesu
