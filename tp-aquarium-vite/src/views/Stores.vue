@@ -120,7 +120,7 @@
             <!-- 頁碼 -->
             <div class="wrapper page_list">
                 <ul>
-                    <Paginator></Paginator>
+                    <!-- <Paginator></Paginator> -->
                     <!-- <li><a href="">1</a></li>
                     <li><a href="">2</a></li>
                     <li><a href="">3</a></li>
@@ -139,7 +139,7 @@
 	import Footer from '/src/components/Footer.vue';
     import CustomerService from '/src/components/CustomerService.vue'; 
     import ProductList from '../components/ProductList.vue';
-    import Paginator from '../components/Paginator.vue'
+    // import Paginator from '../components/Paginator.vue'
     import { ref } from 'vue';
     const filterNumber = ref(1);
 

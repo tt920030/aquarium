@@ -83,7 +83,7 @@
 import { RouterLink, RouterView } from "vue-router";
 import ChangePassword from '../components/ChangePassword.vue';
 import Profile from "./member/Profile.vue";
-import { onMounted, reactive, ref, created } from "vue";
+import { onMounted, reactive, ref} from "vue";
 import $ from "jquery";
 
 const password = ref(false);
@@ -103,14 +103,15 @@ const showPassword1 = ( n ) => {
     console.log(password.value);
 }
 
-created(() => {
-  if(window.innerWidth <= 414){
+
+// created(() => {
+//   if(window.innerWidth <= 414){
     
-    console.log("aaa");
-    computer.value = false;
-  }
-    console.log(window.innerWidth);
-})
+//     console.log("aaa");
+//     computer.value = false;
+//   }
+//     console.log(window.innerWidth);
+// })
 
 </script>
 
