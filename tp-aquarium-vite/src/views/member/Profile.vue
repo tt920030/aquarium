@@ -1,6 +1,7 @@
 <template>
+    
     <div class="profile wrapper ">
-        <Photo v-if="show"></Photo>
+        <Photo v-if="show" @closePhoto="showPhoto()" ></Photo>
         <div class="top">
             <div class="inner-left">
                 <div class="photo-area">
@@ -15,43 +16,45 @@
             <div class="inner-right">
                 <div class="input">
                     <label for="email">email</label>
-                    <input type="email" id="email" name="email" disabled="disabled">
+                    <input type="email" id="email" name="email" disabled="disabled" value="123@gmail.com">
                 </div>
 
             </div>
         </div>
         <div class="bottom">
-            <form action="post" method="" class="">
+            <form action="post" method="" class=""  @submit.prevent="onSubmit">
                 <div class="input">
                     <label for="name">姓名</label>
-                    <input type="text" id="name" name="name" disabled="disabled">
-                    <!-- <div class="invalid-feedback">此欄位必填</div> -->
+                    <input type="text" id="name" name="name" :disabled="isButtonDisabled" value="王小明" class="text">
+                    <div class="invalid-feedback">此欄位必填</div>
                 </div>
                 <div class="input">
                     <label for="sex">性別</label>
-                    <input type="text" id="sex" name="sex" disabled="disabled">
+                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" class="text">
                 </div>
                 <div class="input">
                     <label for="birthday">生日</label>
-                    <input type="text" id="birthday" name="birthday" disabled="disabled">
+                    <input type="date" id="birthday" name="birthday" :disabled="isButtonDisabled" class="text">
                 </div>
                 <div class="input">
                     <label for="phone">手機</label>
-                    <input type="phone" id="phone" name="phone" disabled="disabled">
+                    <input type="phone" id="phone" name="phone" :disabled="isButtonDisabled" value="0912345678" class="text">
                 </div>
                 <div class="input">
                     <label for="password">密碼</label>
-                    <input type="password" id="password" name="password" disabled="disabled">
-                    <!-- <div class="invalid-feedback">此欄位必填</div> -->
+                    <input :type="type" id="password" name="password" value="Aa1234" disabled>
+                    <div class="invalid-feedback">此欄位必填</div>
+                    <button class="change" v-if="!isButtonDisabled" @click="changePassword()">修改</button>
                 </div>
                 <div class="input">
                     <label for="address">地址</label>
-                    <input type="text" id="address" name="address">
+                    <input type="text" id="address" name="address" :disabled="isButtonDisabled" class="text">
                 </div>
 
                 <div class="block">
-                    <button type="submit" class="btn1">
-                        <h4>修改資料</h4>
+                    <button type="submit" class="btn1" @click="changeDisabled($event)">
+                        <h4 v-if="isButtonDisabled">修改資料</h4>
+                        <h4 v-else>確認修改</h4>
                     </button>
 
                 </div>
@@ -60,22 +63,43 @@
         </div>
 
     </div>
+    
+
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, defineEmits } from 'vue';
 import Photo from '../../components/Photo.vue';
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import $ from "jquery";
 
 
-let show = ref(false);
+const show = ref(false);
+
+const isButtonDisabled = ref(true);
+
+const type = ref("password");
+
+const emit = defineEmits(["showPassword"]);
 
 const showPhoto = () => {
 
     show.value = !show.value;
 }
 
+const changeDisabled = (e) => {
+    isButtonDisabled.value = !isButtonDisabled.value;
+    isButtonDisabled.value? type.value = "password" : type.value = "text";
+    
+    $(".text").toggleClass("-on");
 
+}
 
+const changePassword = () => {
+    emit("showPassword", true);
+    console.log("aaa");
+}
 
 
 </script>
@@ -104,12 +128,15 @@ const showPhoto = () => {
             .btn1 {
                 background-color: map-get($color, bgc2 );
 
-                p {}
+                p {
+                    margin: 0;
+                }
             }
         }
 
         .inner-right {
             width: 50%;
+            
 
             .input {
                 margin-top: 100px;
@@ -118,7 +145,9 @@ const showPhoto = () => {
 
                 label {}
 
-                #email {}
+                
+
+                
             }
 
         }
@@ -137,6 +166,29 @@ const showPhoto = () => {
             .input {
                 width: 320px;
                 margin: 20px 0;
+                position: relative;
+
+                .-on {
+                    // border: 1px solid black;
+                    background-color: map-get($color , bgc1 );
+                }
+                
+                .change{
+                    position: absolute;
+                    top: 38%;
+                    right: 0px;
+                    background-color: map-get($color , bgc2 );
+                    display: block;
+                    border-radius: 40px;
+                    text-align: center;
+                    padding: 10px 30px;
+                    transition: 0.5s;
+                    font-family: "Noto Sans TC", sans-serif;
+                    color: #16355a;
+                    cursor: pointer;
+                    border: 0;
+                    width: fit-content;
+                }
             }
 
             .block {

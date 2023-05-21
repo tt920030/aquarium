@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <img src="@/img/input_fork.svg" alt="" class="fork" @click="$emit('showPhoto')">
+        <img src="@/img/input_fork.svg" alt="" class="fork" @click="emitClose">
         <h4>請選擇頭貼</h4>
         <form method="post" action="" class="photo">
             <div class="list" v-for="(photo, index) in photos" :key="index" @click="chosePhoto($event)">
@@ -20,10 +20,13 @@
 
 <script setup>
 import { ref } from "vue";
-const emit = defineEmits(["showPhoto"]);
+const emit = defineEmits(["closePhoto"]);
+const emitClose = () => {
+  emit("closePhoto","");
+}
 
 const photos = ref([
-    '../../src/img/member_photo1.png',
+    "../../src/img/member_photo1.png",
     "../../src/img/member_photo2.png",
     "../../src/img/member_photo3.png",
     "../../src/img/member_photo4.png",
@@ -111,7 +114,9 @@ const chosePhoto = (e) => {
         .btn1 {
             margin-top: 40px;
 
-            p {}
+            p {
+                margin: 0;
+            }
         }
     }
 }

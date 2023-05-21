@@ -1,6 +1,8 @@
 <template>
     <Header></Header>
-    <div class="member">
+
+    <!-- 電腦版 -->
+    <div class="member" v-if="computer">
         <main>
             <div class="left">
                 <div class="photo">
@@ -11,7 +13,7 @@
                     <p>年度會員</p>
                 </button>
 
-                <RouterLink to="/member/Profile">
+                <RouterLink to="/member/Profile" @showPassword="showPassword1(n)">
                     <div class="list -on" @click="button(0)">
                         <img src="@/img/member_user.svg" alt="">
                         <p>我的資料</p>
@@ -47,26 +49,74 @@
             </div>
         </main>
     </div>
+    <div class="member_mobile" v-else>
+        <div class="photo">
+            <img src="./img/member_photo1.png" alt="">
+        </div>
+        <p class="name">使用者姓名</p>
+        <button class="btn1">
+            <p>修改資料</p>
+        </button>
 
+        <div class="bottom">
+            <div class="list1 list">
+                <i class="fa-solid fa-folder-open"></i>
+                <p>我的訂單</p>
+            </div>
+            <div class="list2  list">
+                <i class="fa-solid fa-ticket"></i>
+                <p>我的折價券</p>
+            </div>
+            <div class="list3  list">
+                <i class="fa-solid fa-fish"></i>
+                <p>虛擬寵物</p>
+            </div>
+        </div>
+
+    </div>
+    <ChangePassword v-if="password" ></ChangePassword>
+    <!-- <Profile v-if="false" @showPassword="showPassword()"></Profile> -->
     <Footer></Footer>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { onMounted, reactive, ref } from "vue";
+import ChangePassword from '../components/ChangePassword.vue';
+import Profile from "./member/Profile.vue";
+import { onMounted, reactive, ref, created } from "vue";
 import $ from "jquery";
+
+const password = ref(false);
+
+const computer = ref(true);
 
 const button = (i) => {
 
     $(document).find(".list").removeClass("-on");
     $(document).find(".list").eq(i).addClass("-on");
-    // $(this).addClass("-on");
+    
 }
+
+const showPassword1 = ( n ) => {
+    console.log(n);
+    password.value = n;
+    console.log(password.value);
+}
+
+created(() => {
+  if(window.innerWidth <= 414){
+    
+    console.log("aaa");
+    computer.value = false;
+  }
+    console.log(window.innerWidth);
+})
 
 </script>
 
 <style lang="scss">
 @import "../../src/assets/sass/page/member";
+@import "../../src/assets/sass/page/member_mobile";
 
 .btn1 {
     display: block;
@@ -99,7 +149,7 @@ const button = (i) => {
         border: 0px;
         border-bottom: 1px solid black;
         border-radius: 0;
-        height: 30px;
+        height: 40px;
         width: 100%;
         background-repeat: no-repeat;
         background-position: left 5px center;
