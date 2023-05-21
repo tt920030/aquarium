@@ -7,6 +7,9 @@ import vue from '@vitejs/plugin-vue';
 
 
 export default defineConfig({
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
+  },
   plugins: [vue()],
   resolve: {
     alias: {
