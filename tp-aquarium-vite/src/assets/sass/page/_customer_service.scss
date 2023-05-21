@@ -3,7 +3,11 @@
         position: fixed;
         right: 2%;
         bottom: 2%;
+<<<<<<< HEAD
         z-index: 998;
+=======
+        z-index: 999;
+>>>>>>> anniesu
         @include mobile{
             width: 100%;
             right: -65%;
@@ -25,7 +29,11 @@
         }
         // 客服對話框
         .customer_service_content{
+<<<<<<< HEAD
             border: 1px solid lavender;
+=======
+            outline: 1px solid lavender;
+>>>>>>> anniesu
             width: 500px;
             height: 603px;
             background-color: white;
@@ -88,7 +96,11 @@
                     height: fit-content;
                     margin-top: 30px;
                     margin-left: 20px;
+<<<<<<< HEAD
                     // margin-right: 20%;
+=======
+                    margin-right: 20%;
+>>>>>>> anniesu
                     margin-bottom: 30px;
                     @include mobile{
                         margin-left: 3%;
@@ -99,7 +111,11 @@
                         width: 40px;
                         height: 40px;
                         border-radius: 50%;
+<<<<<<< HEAD
                         border: 1px solid #ccc;
+=======
+                        outline: 1px solid #ccc;
+>>>>>>> anniesu
                     }
 
                     // 回覆內容
@@ -161,6 +177,47 @@
                         }
                     }
                 }
+<<<<<<< HEAD
+=======
+                
+                // 用戶提問
+                .question{
+                    width: 80%;
+                    margin-left: 20%;
+                    height: fit-content;
+                    margin-bottom: 30px;
+                    display: flex;
+                    justify-content: flex-end;
+                    @include mobile{
+                        margin-left: auto;
+                        margin-right: 3%;
+                    }
+                    .messageWrapper{
+                        background-color: map-get($color, bgc1 );
+                        border-radius: 10px;
+                        width: fit-content;
+                        height: fit-content;
+                        margin-right: 5%;
+                        @include mobile{
+                            margin: 0;
+                        }
+
+                        p{
+                            padding: 7px;
+                        }::before{
+                            content: url(../img/customer_service_message_q.svg);
+                            position: relative;
+                            right: -164px;
+                            top: -18px;
+                            transform: rotateY(180deg);
+                            @include mobile{
+                                left: 133px;
+                                top: -14px;
+                            }
+                        }
+                    }
+                }
+>>>>>>> anniesu
             }
             // 用戶提問輸入框
             .questionInput{
@@ -177,6 +234,7 @@
                     justify-content: space-between;
                 }
                 form{
+<<<<<<< HEAD
                     width: 400px;
                     @include flex;
                     @include mobile{
@@ -184,11 +242,20 @@
                     }
                     input{
                         width: 300px;
+=======
+                    width: 350px;
+                    @include mobile{
+                        width: 70%;
+                    }
+                    input{
+                        width: 350px;
+>>>>>>> anniesu
                         height: 40px;
                         background-color: map-get($color, bgc2 );
                         border: none;
                         border-radius: 10px;
                         text-indent: 10px;
+<<<<<<< HEAD
                         margin-left: 70px;
                         @include mobile{
                             width: 80%;
@@ -219,4 +286,34 @@
             }
             
         }
+=======
+                        margin-left: 73px;
+                        @include mobile{
+                            width: 100%;
+                            margin: 0;
+                        }
+                    }
+    
+                }
+                .send{
+                    width: 45px;
+                    height: 45px;
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    @include mobile{
+                        width: 10%;
+                    }
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+            }
+            
+        }
+
+    
+>>>>>>> anniesu
 }

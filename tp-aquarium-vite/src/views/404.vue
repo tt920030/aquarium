@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="not-found">
     <div>
       <h1>404<br>Not Found</h1>
@@ -13,10 +14,14 @@
 
   </div>
   <RouterView></RouterView>
+=======
+  <h2>404</h2>
+>>>>>>> anniesu
 </template>
 
 <script setup>
 
+<<<<<<< HEAD
 import { RouterView, RouterLink } from 'vue-router';
 
 
@@ -79,6 +84,11 @@ div.not-found {
     width: 100vw;
     object-fit: cover;
 
+=======
+</script>
+
+<style>
+>>>>>>> anniesu
 
 
   }

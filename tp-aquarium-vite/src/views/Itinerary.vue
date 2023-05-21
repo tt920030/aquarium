@@ -6,16 +6,33 @@
             <div class="top-right">
                 <h3>選擇來館日期</h3>
                 <Calendar class="calendar" @date-selected="getDate"></Calendar>
+<<<<<<< HEAD
+=======
+                <h4 :class="{
+                    'less': (itinerarySelected ? remainSearch[itinerarySelected][daySearch] : '點選查詢') <= 10 &&
+                        (itinerarySelected ? remainSearch[itinerarySelected][daySearch] : '') >= 0
+                }">
+                    剩餘票數:{{ itinerarySelected ? remainSearch[itinerarySelected][daySearch] : "" }}</h4>
+>>>>>>> anniesu
             </div>
 
         </div>
         <div class="bottom">
             <h3>選擇購買張數</h3>
+<<<<<<< HEAD
             <TicketCounter @count="count" @total="total" @types="types" :add="add" :itinerary="itinerarySelected">
             </TicketCounter>
             <div class="final">
                 <h4 v-if="!dateSelected">尚未選擇日期</h4>
                 <h4>{{ dateSelected }}</h4>
+=======
+            <TicketCounter @count="count" @total="total" @types="types"
+                :remain="itinerarySelected ? remainSearch[itinerarySelected][daySearch] : ''"
+                :itinerary="itinerarySelected">
+            </TicketCounter>
+            <div class="final">
+                <p>{{ dateSelected }}</p>
+>>>>>>> anniesu
                 <h4 class="iti">{{ itinerarySelected }}</h4>
                 <div class="inside">
                     <h4>共計張數 </h4>
@@ -26,7 +43,11 @@
                 <h3>共計金額 NT ${{ finalTotal }}</h3>
 
             </div>
+<<<<<<< HEAD
             <a @click.prevent="addCart" :class="['btn', 'goCart', finalTotal && dateSelected ? '' : 'disable']">加入購物車</a>
+=======
+            <a @click.prevent="addCart" :class="['btn', 'goCart', finalTotal ? '' : 'disable']">加入購物車</a>
+>>>>>>> anniesu
         </div>
 
     </div>
@@ -42,13 +63,20 @@ import Calendar from '../components/Calendar.vue';
 import ItineraryChooser from '../components/ItineraryChooser.vue';
 import TicketCounter from '../components/TicketCounter.vue';
 import { onMounted, ref, reactive } from 'vue';
+<<<<<<< HEAD
+=======
+const props = defineProps({ choose: String });
+>>>>>>> anniesu
 const dateSelected = ref();
 const itinerarySelected = ref();
 const finalTotal = ref();
 const finalCount = ref();
 const daySearch = ref();
 const finalTypes = ref();
+<<<<<<< HEAD
 const add = ref(0);
+=======
+>>>>>>> anniesu
 const options = reactive({ weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 const getDate = function (e) {
     dateSelected.value = e.toLocaleDateString('zh-TW', options);
@@ -66,6 +94,7 @@ const count = function (e) {
 const types = function (e) {
     finalTypes.value = e;
 }
+<<<<<<< HEAD
 //放入購物車
 const addCart = function () {
     const dataKey = "cart" + itinerarySelected.value + daySearch.value;
@@ -76,6 +105,28 @@ const addCart = function () {
         localStorage.setItem(dataKey, JSON.stringify(list));
         alert("加入成功，請至購物車查看!");
         add.value+=1;
+=======
+//引入各行程各日期剩餘票數
+const remainSearch = reactive({
+    '日間票': { '2023/5/18': 40, '2023/5/19': 10, '2023/5/20': 3 },
+    '星光票': { '2023/5/18': 20, '2023/5/19': 5, '2023/5/20': 1 },
+    '夜宿海生館-兩天一夜1': { '2023/5/18': 40, '2023/5/19': 10, '2023/5/20': 2 },
+    '夜宿海生館-兩天一夜': { '2023/5/18': 40, '2023/5/19': 10, '2023/5/20': 4 },
+})
+//放入購物車
+const addCart = function () {
+    if (finalTotal && finalTotal.value.value > 0) {
+        const list = JSON.parse(localStorage.getItem('list')) || []
+        list.push(data)
+        localStorage.setItem('list', JSON.stringify(list))
+
+
+
+        localStorage.setItem("cart" + daySearch.value, JSON.stringify({ ...{ "name": itinerarySelected.value }, ...finalTypes.value.value, ...{ "date": daySearch.value } }));
+        //減少資料庫裡的票券數量
+        remainSearch[itinerarySelected.value][daySearch.value] -= finalCount.value.value;
+        alert("加入購物車成功!")
+>>>>>>> anniesu
     } else {
         alert("尚未選取任何票券");
     }
@@ -179,5 +230,9 @@ const addCart = function () {
             float: none;
         }
     }
+<<<<<<< HEAD
 }
 </style>
+=======
+}</style>
+>>>>>>> anniesu

@@ -9,15 +9,24 @@
 
                 <h2>商品資訊</h2>
                 <!-- 門票 -->
+<<<<<<< HEAD
                 <div v-if="tickets[0]" :class="['cart-group', 'cart-tickets',{'close':ticketsClose}]">
                     <h3>門票</h3>
                     <div v-for="ticket in transformedTickets" class="cart-product-content">
                         <div class="content-inside" v-if="ticket.amount">
                             <input type="checkbox" v-model="ticket.checked" @change="addTotal()" checked>
+=======
+                <div v-if="tickets[0]" class="cart-group cart-tickets">
+                    <h3>門票</h3>
+                    <div v-for="ticket in transformedTickets" class="cart-product-content">
+                        <div class="content-inside" v-if="ticket.amount">
+                            <input type="checkbox">
+>>>>>>> anniesu
                             <div class="cart-product-content-r">
                                 <img src="../img/cart_ticket.png" alt="">
                                 <div>
                                     <div>
+<<<<<<< HEAD
                                         <h4>{{ ticket.name }}-{{ ticket.type }}</h4>
                                         <p>{{ ticket.date }}</p>
                                         <h3>${{ choices[ticket.name][ticket.id]['price'] }}</h3>
@@ -25,17 +34,31 @@
                                             <button @click="ticket.amount--; addTotal(); amountChange()">-</button>
                                             <p>{{ ticket.amount }}</p>
                                             <button @click="ticket.amount++; addTotal(); amountChange()">+</button>
+=======
+                                        <h4>{{ ticket.name }}</h4>
+                                        <p>{{ ticket.date }}</p>
+                                        <h3>${{ choices[ticket.name][ticket.id]['price'] }}</h3>
+                                        <div>
+                                            <button @click="ticket.amount--">-</button>
+                                            <p>{{ ticket.amount }}</p>
+                                            <button @click="ticket.amount++">+</button>
+>>>>>>> anniesu
                                         </div>
                                     </div>
                                     <div>
                                         <h4>金額</h4>
+<<<<<<< HEAD
                                         <h3 class="count">NT ${{ choices[ticket.name][ticket.id]['price'] * ticket.amount }}
                                         </h3>
+=======
+                                        <h3>NT ${{ choices[ticket.name][ticket.id]['price'] * ticket.amount }}</h3>
+>>>>>>> anniesu
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <button @click="ticketsClose=!ticketsClose">
                         <h4 v-if="ticketsClose">展開查看全部</h4>
                         <h4 v-if="!ticketsClose">收起</h4>
@@ -47,6 +70,18 @@
                     <div v-for="journey in transformedJourneys" class="cart-product-content">
                         <div class="content-inside" v-if="journey.amount">
                             <input type="checkbox" v-model="journey.checked" @change="addTotal" checked>
+=======
+                    <button>
+                        <h4>展開查看全部</h4>
+                    </button>
+                </div>
+                <!-- 行程 -->
+                <div v-if="journeys[0]" class="cart-group cart-journeys">
+                    <h3>行程</h3>
+                    <div v-for="journey in transformedJourneys" class="cart-product-content">
+                        <div class="content-inside" v-if="journey.amount">
+                            <input type="checkbox">
+>>>>>>> anniesu
                             <div class="cart-product-content-r">
                                 <img src="../img/cart_journey.png" alt="">
                                 <div>
@@ -55,24 +90,39 @@
                                         <p>{{ journey.date }}</p>
                                         <h3>${{ choices[journey.name][journey.id]['price'] }}</h3>
                                         <div>
+<<<<<<< HEAD
                                             <button @click="journey.amount--; addTotal();amountChange()">-</button>
                                             <p>{{ journey.amount }}</p>
                                             <button @click="journey.amount++; addTotal();amountChange()">+</button>
+=======
+                                            <button @click="journey.amount--">-</button>
+                                            <p>{{ journey.amount }}</p>
+                                            <button @click="journey.amount++">+</button>
+>>>>>>> anniesu
                                         </div>
                                     </div>
                                     <div>
                                         <h4>金額</h4>
+<<<<<<< HEAD
                                         <h3 class="count">NT ${{ choices[journey.name][journey.id]['price'] * journey.amount
                                         }}</h3>
+=======
+                                        <h3>NT ${{ choices[journey.name][journey.id]['price'] * journey.amount }}</h3>
+>>>>>>> anniesu
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <button @click="journeysClose=!journeysClose">
                         <h4 v-if="journeysClose">展開查看全部</h4>
                         <h4 v-if="!journeysClose">收起</h4>
+=======
+                    <button>
+                        <h4>展開查看全部</h4>
+>>>>>>> anniesu
                     </button>
                 </div>
                 <!-- 商品 -->
@@ -88,7 +138,11 @@
                 <div class="cart-total">
                     <h3>共計金額</h3>
                     <h3>NT $</h3>
+<<<<<<< HEAD
                     <h3>{{ total }}</h3>
+=======
+                    <h3>1360</h3>
+>>>>>>> anniesu
                 </div>
             </div>
             <!-- 運送地址 -->
@@ -96,7 +150,11 @@
                 <h2>運送資訊</h2>
                 <div>
                     <h4>宅配地址: {{ address }}</h4>
+<<<<<<< HEAD
                     <button @click="addressModify = true" class="cart-button">
+=======
+                    <button @click="addressModify=true" class="cart-button">
+>>>>>>> anniesu
                         <p>變更收貨地址</p>
                     </button>
                 </div>
@@ -107,11 +165,19 @@
                 <div>
                     <div class="origin">
                         <h4>商品金額</h4>
+<<<<<<< HEAD
                         <h4>NT ${{total}}</h4>
                     </div>
                     <div class="discount">
                         <h4>折扣金額 <span>(使用折價券: 1D52593)</span></h4>
                         <h4>-NT ${{discount}}</h4>
+=======
+                        <h4>NT $1360</h4>
+                    </div>
+                    <div class="discount">
+                        <h4>折扣金額 <span>(使用折價券: 1D52593)</span></h4>
+                        <h4>-NT $100</h4>
+>>>>>>> anniesu
 
                     </div>
 
@@ -120,12 +186,20 @@
                     </button>
                     <div class="shipping">
                         <h4>商品運費</h4>
+<<<<<<< HEAD
                         <h4>NT ${{delivery}}</h4>
+=======
+                        <h4>NT $60</h4>
+>>>>>>> anniesu
                     </div>
                     <div class="hr"></div>
                     <div>
                         <h3>付款金額</h3>
+<<<<<<< HEAD
                         <h3>NT ${{total - discount + delivery}}</h3>
+=======
+                        <h3>NT $1320</h3>
+>>>>>>> anniesu
                     </div>
                     <a class="btn" href="">立即付款</a>
                 </div>
@@ -136,7 +210,11 @@
     <div v-if="addressModify" class="address-modifier">
 
         <div>
+<<<<<<< HEAD
             <button @click="addressModify = false" class="close"><img src="/src/img/cart_close.svg" alt=""></button>
+=======
+            <button @click="addressModify=false" class="close"><img src="/src/img/cart_close.svg" alt=""></button>
+>>>>>>> anniesu
             <h3>變更收貨地址</h3>
             <div>
                 <div>
@@ -151,6 +229,7 @@
                     </select>
                 </div>
                 <div>
+<<<<<<< HEAD
                     <p>郵遞區號</p><input type="text"
                         :value="AddressJson.find(item => item.CityName === citySelected).AreaList.find(item => item.AreaName === areaSelected) ? AddressJson.find(item => item.CityName === citySelected).AreaList.find(item => item.AreaName === areaSelected).ZipCode : ''">
                 </div>
@@ -162,6 +241,20 @@
         </div>
 
     </div>
+=======
+                    <p>郵遞區號</p><input    type="text"
+                        :value="AddressJson.find(item => item.CityName === citySelected).AreaList.find(item => item.AreaName === areaSelected) ? AddressJson.find(item => item.CityName === citySelected).AreaList.find(item => item.AreaName === areaSelected).ZipCode : ''">
+                </div>
+                <div>
+                    <p>地址</p><input type="text" v-model="addressFilled" >
+                </div>
+            </div>
+            <button @click="addressChange();addressModify=flase" class="btn">確認變更</button>
+        </div>
+
+    </div>
+
+>>>>>>> anniesu
     <Footer></Footer>
 
     <RouterView></RouterView>
@@ -171,24 +264,35 @@
 import { RouterLink, RouterView } from "vue-router";
 import { watch, onBeforeUpdate, onMounted, reactive, ref } from "vue";
 import AddressJson from '/src/json/CityCountyData.json';
+<<<<<<< HEAD
 
+=======
+import Header from '/src/components/Header.vue';
+import Footer from '/src/components/Footer.vue';
+>>>>>>> anniesu
 const inCart = reactive([]);
 const tickets = reactive([]);
 const journeys = reactive([]);
 const products = reactive([]);
+<<<<<<< HEAD
 const ticketsClose = ref(false);
 const journeysClose = ref(false);
 const productsClose = ref(false);
 const total = ref(0);
 const discount = ref(0);
 const delivery = ref(0);
+=======
+>>>>>>> anniesu
 const address = ref('100台北市中正區濟南路一段321號');
 const citySelected = ref('臺北市');
 const areaSelected = ref('中正區');
 const zipSelected = ref(AddressJson.find(item => item.CityName === citySelected.value).AreaList.find(item => item.AreaName === areaSelected.value).ZipCode);
 const addressFilled = ref('');
 const addressModify = ref(false);
+<<<<<<< HEAD
 const addressEmpty = ref(false);
+=======
+>>>>>>> anniesu
 //引入行程名稱、種類及票價資訊
 const choices = reactive(
     {
@@ -198,7 +302,17 @@ const choices = reactive(
         '夜宿海生館-兩天一夜': [{ name: "遊客", price: 3680, id: 1, amount: 0 }]
     }
 );
+<<<<<<< HEAD
 
+=======
+//引入各行程各日期剩餘票數
+const remainSearch = reactive({
+    '日間票': { '2023/5/18': 40, '2023/5/19': 10, '2023/5/20': 3 },
+    '星光票': { '2023/5/18': 20, '2023/5/19': 5, '2023/5/20': 1 },
+    '夜宿海生館-兩天一夜1': { '2023/5/18': 40, '2023/5/19': 10, '2023/5/20': 2 },
+    '夜宿海生館-兩天一夜': { '2023/5/18': 40, '2023/5/19': 10, '2023/5/20': 4 },
+});
+>>>>>>> anniesu
 //引入所有商品名稱
 const ticketsName = reactive(['日間票', '星光票']);
 const journeysName = reactive(["夜宿海生館-兩天一夜1", "夜宿海生館-兩天一夜"]);
@@ -206,6 +320,7 @@ const productsName = reactive([]);
 //最終轉換為購物車商品的陣列
 const transformedTickets = reactive([]);
 const transformedJourneys = reactive([]);
+<<<<<<< HEAD
 
 //計算商品總金額
 const addTotal = function () {
@@ -260,6 +375,10 @@ const addressChange = function () {
     }else{
         addressEmpty.value = true;
     }
+=======
+const addressChange = function(){
+    address.value = zipSelected.value+citySelected.value+areaSelected.value+addressFilled.value;
+>>>>>>> anniesu
 }
 watch(() => areaSelected.value, (newVal) => {
     zipSelected.value = AddressJson.find(item => item.CityName === citySelected.value).AreaList.find(item => item.AreaName === areaSelected.value).ZipCode;
@@ -274,6 +393,7 @@ onMounted(() => {
             inCart.push(cartValue);
         });
     }
+<<<<<<< HEAD
     if (inCart.length > 0) {
 
         for (let i = 0; i < inCart.length; i++) {
@@ -287,10 +407,19 @@ onMounted(() => {
 
     }
 
+=======
+
+    const filteredTickets = inCart.filter(item => ticketsName.includes(item.name));
+    tickets.push(...filteredTickets);
+
+    const filteredJourneys = inCart.filter(item => journeysName.includes(item.name));
+    journeys.push(...filteredJourneys);
+>>>>>>> anniesu
     //將日期和品名相同的商品結合
     for (let i = 0; i < tickets.length; i++) {
         for (let j = i + 1; j < tickets.length; j++) {
             if (tickets[i].name === tickets[j].name && tickets[i].date === tickets[j].date) {
+<<<<<<< HEAD
                 if(!tickets[i]["大人"]){
                     tickets[i]["大人"] = 0;
                 }
@@ -303,6 +432,8 @@ onMounted(() => {
                 if(!tickets[i]["博愛票"]){
                     tickets[i]["博愛票"] = 0;
                 }
+=======
+>>>>>>> anniesu
                 tickets[i]["大人"] += tickets[j]["大人"];
                 tickets[i]["學生"] += tickets[j]["學生"];
                 tickets[i]["兒童"] += tickets[j]["兒童"];
@@ -325,19 +456,32 @@ onMounted(() => {
     transformedTickets.push(...tickets.flatMap(item => {
         const { name, date, 大人, 學生, 兒童, 博愛票 } = item;
         return [
+<<<<<<< HEAD
             { name, date, "amount": 大人, "type": "大人", "id": 0 , "checked":true},
             { name, date, "amount": 學生, "type": "學生", "id": 1 , "checked":true},
             { name, date, "amount": 兒童, "type": "兒童", "id": 2 , "checked":true},
             { name, date, "amount": 博愛票, "type": "博愛票", "id": 3, "checked":true },
+=======
+            { name, date, "amount": 大人, "type": "大人", "id": 0 },
+            { name, date, "amount": 學生, "type": "學生", "id": 1 },
+            { name, date, "amount": 兒童, "type": "兒童", "id": 2 },
+            { name, date, "amount": 博愛票, "type": "博愛票", "id": 3 },
+>>>>>>> anniesu
         ];
     }));
     transformedJourneys.push(...journeys.flatMap(item => {
         const { name, date, 遊客 } = item;
         return [
+<<<<<<< HEAD
             { name, date, "amount": 遊客, "type": "遊客", "id": 0 , "checked":true},
         ];
     }));
     addTotal();
+=======
+            { name, date, "amount": 遊客, "type": "遊客", "id": 0 },
+        ];
+    }))
+>>>>>>> anniesu
 
 });
 

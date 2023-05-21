@@ -35,6 +35,8 @@ const router = createRouter({
           component: () => import("../views/member/Pet.vue"),
         }
       ]
+        },
+      ],
     },
     {
       path: "/member",
@@ -64,19 +66,14 @@ const router = createRouter({
           component: () => import("../views/game/GamePuzzle.vue"),
         },
       ]
+      
     },
 
     {
       path: "/journey",
       name: "Journey",
       component: () => import("../views/Journey.vue"),
-      children: [
-        {
-          path: "overnight",
-          name: "Overnight",
-          component: () => import("../views/Overnight.vue"),
-        },
-      ],
+      
     },
 
     {
@@ -143,6 +140,9 @@ const router = createRouter({
     },
     {
       path: "/yearpass", //自己取之後連的路徑名稱
+    },
+    {
+      path: "/ticket/yearpass", //自己取之後連的路徑名稱
       name: "YearPass", //自己取
       component: () => import("../views/ticket/Yearpass.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
@@ -185,10 +185,16 @@ const router = createRouter({
       name: "CouponManage", //自己取
       component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
     },
-  ],
-});
+    {
+      path: "/backstage_index", //自己取之後要連的路徑名稱
+      name: "BackstageIndex", //自己取
+      component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
+    },
+  );
 router.beforeEach((to, from, next) => {
   window.document.title = to.meta.title
   next()
 });
 export default router;
+    
+
