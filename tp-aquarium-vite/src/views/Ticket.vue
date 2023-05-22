@@ -65,7 +65,7 @@
                         <li>本館指定餐廳消費享8折優惠</li>
                         <li>紀念品店消費享9折優惠</li>
                     </ul>
-                    <RouterLink class="btn" to="ticket/yearpass">前往申請年度通行方案</RouterLink>
+                    <RouterLink class="btn" to="/yearpass">前往申請年度通行方案</RouterLink>
                 </div>
             </div>
 

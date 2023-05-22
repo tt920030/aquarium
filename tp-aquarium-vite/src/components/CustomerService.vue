@@ -12,9 +12,9 @@
             <div class="title">
                 <h4>智能客服</h4>
             </div>
-            <div class="messageList" >
+            <div class="messageList" ref="messageContainer">
                 <!-- 客服回覆 -->
-                <div class="answer">
+                <div class="answerDefault">
                     <img src="../img/customer_service1.png" alt="">
                     <div class="messageWrapper">
                         <p class="messageAnswer">您好～我是智能客服，請於下方點選您的問題，或是輸入於下方對話框</p>
@@ -27,11 +27,11 @@
                          <div class="listBox">
                             <h4>常見問題</h4>
                             <ul>
-                                <li><p>營業時間</p></li>
-                                <li><p>場館資訊</p></li>
-                                <li><p>交通資訊</p></li>
-                                <li><p>票價資訊</p></li>
-                                <li><p>相關行程</p></li>
+                                <li @click="questionNum = 1; submitCommonQuestion()"><p>營業時間</p></li>
+                                <li @click="questionNum = 2;  submitCommonQuestion()"><p>場館資訊</p></li>
+                                <li @click="questionNum = 3;  submitCommonQuestion()"><p>交通資訊</p></li>
+                                <li @click="questionNum = 4;  submitCommonQuestion()"><p>票價資訊</p></li>
+                                <li @click="questionNum = 5;  submitCommonQuestion()"><p>相關行程</p></li>
                             </ul>
                         </div>
                         </Slide>
@@ -52,13 +52,13 @@
                         </template>
                     </Carousel>
                 </div> 
-                <!-- 用戶提問 -->
-                <!-- <div class="question">
-                    <div class="messageWrapper">
-                        <p class="messageQuestion">請問假日幾點開門？</p>
-                    </div>
-                </div> -->
-                <Question :questions="questions"></Question>
+                <DialogBox
+                    v-for="message in sortedMessages"
+                    :key="message.id"
+                    :text="message.text"
+                    :isReply="message.isReply"
+                >
+                </DialogBox>
             </div>
             <!-- 用戶提問輸入框 -->
             <div class="questionInput">
@@ -68,7 +68,7 @@
                     placeholder="請於此輸入您的問題" 
                     v-model.trim="questionText"
                     >
-                    <button class="send" @click.stop="addQuestion"></button>
+                    <button class="send" @click.stop="submitQuestion"></button>
                     <!-- <img src="../img/customer_service_send.svg" alt=""> -->
                 </form>
             </div>
@@ -78,9 +78,9 @@
 </template>
 <script setup>
     import 'vue3-carousel/dist/carousel.css'
-    import { ref, reactive, onMounted } from 'vue';
+    import { ref, reactive, watch, computed } from 'vue';
     import { Carousel, Slide, Navigation } from 'vue3-carousel'; 
-    import  Question  from '/src/components/Question.vue'
+    import  DialogBox from '/src/components/DialogBox.vue';
 
     // 對話框關閉或開啟
     const isVisible = ref(false);
@@ -88,38 +88,73 @@
     const photoSrc = ref('src/img/customer_service_2.svg');
     //對話框內容
     const questionText = ref('');
-    const questions = reactive([])
+    //問題及回覆
+    const messages = reactive([]);
+    //常見文題回覆
+    const commonQuestions = [
+        '營業時間為：',
+        '場館資訊:',
+        '交通資訊:',
+        '票價資訊:',
+        '相關行程:',
+    ];
+    //常見問題代碼
+    const questionNum = ref(null)
+
+    const messageContainer = ref(null);
 
     // 關閉&開啟對話框 ＆ 更換客服圖案 
     function closeContent(){
         isVisible.value = !isVisible.value;
         if(isVisible.value == true){
-            photoSrc.value = 'src/img/customer_service1.png'
+            if(window.innerWidth > 414 ){
+                photoSrc.value = 'src/img/customer_service1.png'
+            }else{
+                photoSrc.value = ''
+            }
         }else{
             photoSrc.value = 'src/img/customer_service_2.svg';
             localStorage.clear();
         }
-    }
-
-    onMounted(() => {
-        let questions = JSON.parse(localStorage.getItem('questions'));
-        if(questions){
-            questions = questions;
-        }
-    })
-
-    function addQuestion(e){
-        // console.log(questionText.value);
+    }    
+    //用戶提問送出
+    const submitQuestion = (e) => {
         e.preventDefault();
-        if(questionText !== ""){
-            questions.push({
-                id: Date.now(),
-                name: questionText.value
-            });
+        if (questionText.value.trim() !== '') {
+            const message = { id: Date.now(), text: questionText.value, isReply: false };
+            messages.push(message);
+            scrollToBottom();
             questionText.value = '';
-            localStorage.setItem("questions", JSON.stringify(questions))
         }
-    }
+    };
+    //常見問題點選
+    const submitCommonQuestion = () => {
+        const question = commonQuestions[questionNum.value-1];
+
+        if (question) {
+            const message = { id: Date.now(), text: question, isReply: true };
+            messages.push(message);
+            scrollToBottom();
+        }
+    };
+
+    const scrollToBottom = () => {
+        if (messageContainer.value) {
+            messageContainer.value.scrollTop = messageContainer.value.scrollHeight - 114;
+        }
+    };
+
+
+    watch(messages, () => {
+        scrollToBottom();
+    });
+  
+    const sortedMessages = computed(() => {
+        return messages.sort((a, b) => a.id - b.id);
+    });
+
+
+
 </script>
 <style lang="scss" scoped>
     @import "../assets/sass/page/customer_service";

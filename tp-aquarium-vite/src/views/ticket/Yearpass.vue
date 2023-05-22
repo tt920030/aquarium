@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <Header></Header>
     <main class="ticket">
   
@@ -96,7 +95,7 @@
                     <h4>共計張數 <span>{{ finalCount }}</span> 張</h4>
                     <h3>共計金額 NT ${{ finalTotal }}</h3>
                 </div>
-                <a @click.prevent="addCart" :class="['btn', 'goCart', finalTotal>0? '' : 'disable']">加入購物車</a>
+                <a @click.prevent="addCart" :class="['btn', 'goCart', finalTotal? '' : 'disable']">加入購物車</a>
 
 
 
@@ -385,14 +384,3 @@ main.ticket {
 
     }
 }</style>
-=======
-    <h3>123</h3>
-</template>
-
-<script setup>
-import{ RouterLink, RouterView } from "vue-router";
-import { onMounted, reactive, ref } from "vue";
-</script>
-
-<style></style>
->>>>>>> anniesu

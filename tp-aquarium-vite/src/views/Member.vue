@@ -1,36 +1,42 @@
 <template>
     <Header></Header>
-    <div class="member">
+
+    <!-- 電腦版 -->
+    <div class="member" v-if="computer">
         <main>
             <div class="left">
                 <div class="photo">
-                    <img src="../img/member_photo1.png" alt="">
+                    <img src="@/img/member_photo1.png" alt="">
                 </div>
                 <p class="name">使用者姓名</p>
                 <button class="btn1">
                     <p>年度會員</p>
                 </button>
 
-                <RouterLink to="/member/Profile">aaa</RouterLink>
+                <RouterLink to="/member/Profile" @showPassword="showPassword1(n)">
+                    <div class="list -on" @click="button(0)">
+                        <img src="@/img/member_user.svg" alt="">
+                        <p>我的資料</p>
+                    </div>
+                </RouterLink>
                 <RouterLink to="/member/Order">
-                    <div class="list ">
-                        <i class="fa-solid fa-folder-open"></i>
+                    <div class="list " @click="button(1)">
+                        <img src="@/img/member_order.svg" alt="">
                         <p>我的訂單</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Coupon">
-                    <div class="list">
-                        <i class="fa-solid fa-ticket"></i>
+                    <div class="list" @click="button(2)">
+                        <img src="@/img/member_coupon.svg" alt="">
                         <p>我的折價券</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Pet">
-                    <div class="list -on">
-                        <i class="fa-solid fa-fish"></i>
+                    <div class="list" @click="button(3)">
+                        <img src="@/img/member_pet.svg" alt="">
                         <p>虛擬寵物</p>
                     </div>
                 </RouterLink>
-
 
 
             </div>
@@ -38,26 +44,79 @@
 
 
                 <RouterView></RouterView>
-                
+
 
             </div>
         </main>
     </div>
+    <div class="member_mobile" v-else>
+        <div class="photo">
+            <img src="./img/member_photo1.png" alt="">
+        </div>
+        <p class="name">使用者姓名</p>
+        <button class="btn1">
+            <p>修改資料</p>
+        </button>
 
+        <div class="bottom">
+            <div class="list1 list">
+                <i class="fa-solid fa-folder-open"></i>
+                <p>我的訂單</p>
+            </div>
+            <div class="list2  list">
+                <i class="fa-solid fa-ticket"></i>
+                <p>我的折價券</p>
+            </div>
+            <div class="list3  list">
+                <i class="fa-solid fa-fish"></i>
+                <p>虛擬寵物</p>
+            </div>
+        </div>
+
+    </div>
+    <ChangePassword v-if="password" ></ChangePassword>
+    <!-- <Profile v-if="false" @showPassword="showPassword()"></Profile> -->
     <Footer></Footer>
-
-
-
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { onMounted, reactive, ref } from "vue";
+import ChangePassword from '../components/ChangePassword.vue';
+import Profile from "./member/Profile.vue";
+import { onMounted, reactive, ref, created } from "vue";
+import $ from "jquery";
+
+const password = ref(false);
+
+const computer = ref(true);
+
+const button = (i) => {
+
+    $(document).find(".list").removeClass("-on");
+    $(document).find(".list").eq(i).addClass("-on");
+    
+}
+
+const showPassword1 = ( n ) => {
+    console.log(n);
+    password.value = n;
+    console.log(password.value);
+}
+
+created(() => {
+  if(window.innerWidth <= 414){
+    
+    console.log("aaa");
+    computer.value = false;
+  }
+    console.log(window.innerWidth);
+})
 
 </script>
 
 <style lang="scss">
 @import "../../src/assets/sass/page/member";
+@import "../../src/assets/sass/page/member_mobile";
 
 .btn1 {
     display: block;
@@ -66,6 +125,7 @@ import { onMounted, reactive, ref } from "vue";
     text-align: center;
     padding: 10px 30px;
     transition: 0.5s;
+    font-family: "Noto Sans TC", sans-serif;
     color: #16355a;
     cursor: pointer;
     border: 0;
@@ -89,7 +149,7 @@ import { onMounted, reactive, ref } from "vue";
         border: 0px;
         border-bottom: 1px solid black;
         border-radius: 0;
-        height: 30px;
+        height: 40px;
         width: 100%;
         background-repeat: no-repeat;
         background-position: left 5px center;
@@ -105,5 +165,12 @@ import { onMounted, reactive, ref } from "vue";
     }
 
     margin-bottom: 20px;
+}
+
+.fork {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
 }
 </style>
