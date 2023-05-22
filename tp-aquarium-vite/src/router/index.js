@@ -66,7 +66,18 @@ const router = createRouter({
           path: "journey_change",
           name: "JourneyChange",
           component: () => import("../views/manage/JourneyChange.vue")
+        },
+        {
+          path: "product_manage",
+          name: "ProductManage",
+          component: () => import("../views/manage/ProductManage.vue")
+        },
+        {
+          path: "customer_change",
+          name: "CustomerManage",
+          component: () => import("../views/manage/CustomerChange.vue")
         }
+
       ]
     },
 
