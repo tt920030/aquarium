@@ -66,7 +66,18 @@ const router = createRouter({
           path: "journey_change",
           name: "JourneyChange",
           component: () => import("../views/manage/JourneyChange.vue")
+        },
+        {
+          path: "product_manage",
+          name: "ProductManage",
+          component: () => import("../views/manage/ProductManage.vue")
+        },
+        {
+          path: "customer_change",
+          name: "CustomerManage",
+          component: () => import("../views/manage/CustomerChange.vue")
         }
+
       ]
     },
 
@@ -239,8 +250,13 @@ const router = createRouter({
       path: "/backstage_index", //自己取之後要連的路徑名稱
       name: "BackstageIndex", //自己取
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
-    }]}
-  );
+    },
+    {
+      path: "/backstagelogin", //自己取之後要連的路徑名稱
+      name: "Backstagelogin", //自己取
+      component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
+    },
+  ]});
 router.beforeEach((to, from, next) => {
   window.document.title = to.meta.title
   next()

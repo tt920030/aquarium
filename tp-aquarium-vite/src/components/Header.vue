@@ -7,7 +7,7 @@
 
    <header>
         <div class="content" :class="{'-light_color2':waveColor2 === 'DeepSkyBlue'}">
-            <RouterLink to="/" class="logo" href=""><img src="src/img/logo-white.svg" alt=""></RouterLink>
+            <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt=""></RouterLink>
             <nav>
                 <ul class="icon">
                     <i class="bi bi-list"></i>
@@ -20,9 +20,12 @@
                         <RouterLink to="/cart"><img class="icons" src="src/img/header_cart.svg" alt=""></RouterLink>
                     </li>
                 </ul>
+                <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
                 <ul class="menu">
                     <li v-for="item in navItems">
-                        <RouterLink :to="item.link"> <p>{{item.name}}</p></RouterLink>
+                        <RouterLink :to="item.link">
+                            <p>{{ item.name }}</p>
+                        </RouterLink>
                     </li>
                 </ul>
             </nav>
@@ -37,10 +40,24 @@
 </template>
 
 <script setup>
-    import{ RouterLink, RouterView } from "vue-router";
-    import { onMounted, reactive, ref } from "vue";
+import { RouterLink, RouterView } from "vue-router";
+import $ from "jquery";
+import { transform } from "@vue/compiler-core";
+const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/park_activity" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
+$(function () {
+    let is_open = false;
+    $("header .content nav i").click(function () {
+        if (is_open == false) {
+            $("header .content .menu").animate({ right: "0px" }, 1000).show();
+            is_open = true;
+        } else {
+            $("header .content .menu").animate({ right: "-100%", display: 'none' }, 1000);
+            is_open = false;
+        }
+    });
+})
+   
 
-    const navItems = [ {name:"最新消息",link:"/news"}, {name:"園區介紹",link:"/floor_Introduction"}, {name:"購票資訊",link:"/ticket"}, {name:"行程預約",link:"/journey"}, {name:"參觀資訊",link:"/visit_information"}, {name:"網路商城",link:"/stores"}, {name:"小遊戲",link:"/game_index"} ];
     // const 
     let flag = ref(false);
     let bg = ref('')
@@ -123,8 +140,9 @@
 </script>
 
 <style lang="scss" scoped>
-    header {
-        .content{
+header {
+
+    .content {
         width: 100%;
         height: 128px;
         background-color: #003f7cf2;
@@ -133,7 +151,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 999;
+        z-index: 1000;
         overflow-x: hidden;
 
         @include mobile{
@@ -147,14 +165,16 @@
         .logo {
             flex: 0 0 115px;
 
-            @include mobile{
-                flex:0 0 75px;
+            @include mobile {
+                flex: 0 0 75px;
             }
+
             img {
                 width: 100%;
                 margin-left: 30px;
                 padding-top: 10px;
-                @include mobile{
+
+                @include mobile {
                     margin-left: 10px;
                     padding-top: 10px;
                 }
@@ -164,7 +184,7 @@
         nav {
             display: flex;
             flex-direction: column;
-         
+
 
             .icon {
                 display: flex;
@@ -177,7 +197,8 @@
                 li:nth-child(5){
                     margin-right: 0;
                 }
-                li:nth-child(6){
+
+                li:nth-child(6) {
                     margin-right: 0;
                 }
                 // @include mobile{
@@ -186,7 +207,8 @@
                 
                 i{
                     display: none;
-                    @include mobile{
+
+                    @include mobile {
                         display: block;
                         font-size: 30px;
                         font-weight: bold;
@@ -203,12 +225,13 @@
                         border-color: #fff;
                         background-color: #C1EAFB;
                         color: #16355a;
-                        
-                        @include mobile{
+
+                        @include mobile {
                             height: 26px;
                             width: 26px;
                         }
-                        p{
+
+                        p {
                             font-size: 0.1rem;
                         }
                     }
@@ -258,14 +281,17 @@
                 display: flex;
                 flex-direction: row;
                 margin-top: 20px;
-                @include mobile{
+               
+
+                @include mobile {
                     margin: 0;
                 }
 
                 li {
                     margin-right: 40px;
-                    @include mobile{
-                        height: 40px;
+
+                    @include mobile {
+                        
                         margin-right: 0px;
                     }
 
@@ -276,12 +302,13 @@
                         position: relative;
                         transition: 0.5s;
 
-                        @include mobile{
-                            line-height: 40px;
+                        @include mobile {
+                            line-height: 70px;
                             text-align: center;
                         }
 
                     }
+
                     p:after {
                         content: "";
                         position: absolute;
@@ -293,38 +320,41 @@
                         transition: 0.3s;
                         transform: scale(0);
                     }
+
                     p:hover::after {
                         transform: scaleX(1);
                     }
                 }
-                @include mobile{
+
+                @include mobile {
                     display: none;
                     flex-direction: column;
                     width: 100%;
-                    position: fixed;        
-                    background-color:#16355a;
+                    position: fixed;
+                    background-color: #16355a;
                     /* js滑入效果 */
-                    right:-500px;
-                    top:60px;
-                    z-index: 1;
+                    right: -500px;
+                    top: 80px;
+                    
                 }
             }
         }
-          
+
     }
 
     .ocean {
         height: 74px;
         width: 100%;
         position: absolute;
-        top:128px;
+        top: 128px;
         left: 0;
         right: 0;
         overflow-x: hidden;
-        transform:scaleY(-1);
-        z-index: 99999;
-        @include mobile{
-            top:80px;
+        transform: scaleY(-1);
+        z-index: 999;
+
+        @include mobile {
+            top: 80px;
             height: 46px;
         }
       
@@ -363,6 +393,4 @@
       }
     }
 }
-
-
 </style>

@@ -2,8 +2,10 @@
 
     <h1>Experience the Wonder and Beauty of Nature</h1>
     <img src="../img/logo-black.svg" alt="">
-    <div><a class="front" href=""><p>前台</p></a></div>
-    <div><a class="back" href=""><p>後台</p></a></div>
+    <!-- <div><a class="front" href=""><p>前台</p></a></div> -->
+    <div><router-link to="/" class="front"><p>前台</p></router-link></div>
+    <!-- <div><a class="back" href=""><p>後台</p></a></div> -->
+    <div><router-link to="/backstagelogin" class="back"><p>後台</p></router-link></div>
     <h3>深藍海水緩緩地波動像一首悠揚的詩篇，彷彿穿越到另一個世界，
         這裡展示著各種美麗的海洋生物 ，讓人們感受到大自然的神奇與美妙</h3>
 </template>

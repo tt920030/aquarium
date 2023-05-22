@@ -33,7 +33,7 @@
             </nav>
         </div>
     </footer>
-    <RouterView></RouterView>
+    
 </template>
 
 <script setup>
