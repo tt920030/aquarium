@@ -10,19 +10,15 @@
             <RouterLink to="/" class="logo" href=""><img src="src/img/logo-white.svg" alt=""></RouterLink>
             <nav>
                 <ul class="icon">
-                    <li>
-                        <div class="weather">
-                            <img :src="get_weather_img()" alt="" class="weather_img">
-                            <p><span class="temp" @change="getWeather">{{ tempWeather }}</span></p>
-                            <p><span class="rain" @change="getWeather">{{ rainWeather }}</span></p>
-                        </div>
-                    </li>
                     <i class="bi bi-list"></i>
+                    <li><p><span class="rain" @change="getWeather">{{ rainWeatherState }}</span></p></li>
+                    <li><p><span class="temp" @change="getWeather">{{ tempWeather }}</span></p></li>
+                    <li><img :src="get_weather_img()" alt="" class="weather_img"></li>
                     <li><button type="button" ref="circle" class="switch"  @click="SwitchColor" ><i class="bi bi-moon-stars-fill"></i></button></li>
-                    <li><button><p>EN</p></button></li>
-                    <li><button><p>繁</p></button></li>
-                    <li><a href=""><img class="icons" src="src/img/header.member.svg" alt=""></a></li>
-                    <li><a href=""><img class="icons" src="src/img/header_cart.svg" alt=""></a></li>
+                    <li><img class="icons" src="src/img/header.member.svg" alt=""></li>
+                    <li>
+                        <RouterLink to="/cart"><img class="icons" src="src/img/header_cart.svg" alt=""></RouterLink>
+                    </li>
                 </ul>
                 <ul class="menu">
                     <li v-for="item in navItems">
@@ -48,10 +44,13 @@
     // const 
     let flag = ref(false);
     let bg = ref('')
-    let currentWeather = ref('天')
+    let currentWeather = ref(null)
     const circle = ref(null);
     const waveColor = ref(null);
     const waveColor2 = ref(null);
+    const tempWeather = ref(null);
+    const rainWeatherState = ref(null);
+
 
         function SwitchColor (){
             flag.value = !flag.value;
@@ -74,10 +73,7 @@
 
     // weather API ---------------------------------------------------
     let xhr = new XMLHttpRequest();
-    // let tem = document.querySelector('.temp');
-    // let rain = document.querySelector(".rain");
 
-    // 串接API
     function get_weather_img(currentWeather){
         switch (currentWeather){
                 case "陰":
@@ -91,6 +87,7 @@
                     break;
             }
     }
+
     function getWeather(){
         xhr.open('get', 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415', true);
         xhr.send(null);
@@ -110,18 +107,14 @@
 
             // 加上溫度單位
             let tempList = temp + "°C";
-            const tempWeather = tempList;
-            const rainWeather = WeatherState;
 
+            tempWeather.value = tempList;
+            rainWeatherState.value = WeatherState;
 
-            // 放入html中
-            // const tempWeather = ref(tempList);
-            // const rainWeather = ref(WeatherState);
 
             // 找出天氣描述的第一個字去換圖片
-            console.log(WeatherState,'weather');
             let a = WeatherState.split(",")[0];
-            currentWeather.value = a
+            currentWeather.value = a;
             
         }
     }
@@ -177,8 +170,9 @@
                 display: flex;
                 flex-direction: row-reverse;
                 margin-top: 20px;
-                margin-right: 18px;
+                padding-right: 40px;
                 align-items: center;
+                gap: 20px;
 
                 li:nth-child(5){
                     margin-right: 0;
@@ -186,9 +180,9 @@
                 li:nth-child(6){
                     margin-right: 0;
                 }
-                @include mobile{
-                    margin-right: 5px;
-                }
+                // @include mobile{
+                //     margin-right: 5px;
+                // }
                 
                 i{
                     display: none;
@@ -201,11 +195,6 @@
                 }
 
                 li {
-                    margin-right: 20px;
-
-                    @include mobile{
-                        margin-right: 10px;
-                    }
                     button {
                         width: 28px;
                         height: 28px;
@@ -223,22 +212,19 @@
                             font-size: 0.1rem;
                         }
                     }
-                    a{
                        .icons{
-                        width: 60%;
-                       
+                            width: 25px;
                        }
-                    }
-
-                    .weather{
-                        display: flex;
-                        gap: 10px;
 
                         .weather_img{
-                            width: 20%;
-                            align-self: center;
+                            width: 35px;
+                            // align-self: center;
                         }
-                    }
+
+                        p{
+                            color: white;
+                        }
+                    // }
                     
                     .switch{
                         background-color:lightgrey;
@@ -253,6 +239,17 @@
                         }
 
                     }
+
+                    &:nth-child(2){
+                        @include mobile(){
+                            display: none;
+                        }
+                    }
+                }
+
+                @include mobile(){
+                    gap: 10px;
+                    padding-right: 20px;
                 }
 
             }

@@ -382,6 +382,11 @@ window.onload = function() {
                         border-radius: 50%;
                         transition: all .5s ease;
                         z-index: -5;
+
+                        @include mobile(){
+                          width: 200px;
+                          height: 200px;
+                        }
                     }
 
                     img {
@@ -501,6 +506,7 @@ window.onload = function() {
 
                         a {
                             display: flex;
+                            align-items: center;
                             justify-content: space-between;
 
                             img {
@@ -521,7 +527,7 @@ window.onload = function() {
 
                                 p {
                                     font-size: 12px;
-                                    margin-top: 20px;
+                                    margin-top: 5px;
                                 }
                             }
                         }
@@ -534,7 +540,6 @@ window.onload = function() {
                         .index_journey_content {
                             a {
                                 .index_journey_content_sub {
-                                    margin-top: 20px;
 
                                     p {
                                         margin-top: 10px;
