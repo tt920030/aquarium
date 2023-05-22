@@ -2,12 +2,12 @@
     <footer>
 
         <div class="ocean">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
+            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
+            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
+            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
         </div>
 
-        <div class="content">
+        <div class="content" :class="{'-light_color2':waveColor2 === 'DeepSkyBlue'}">
             <nav>
                 <div class="left">
                     <h4>台北海生館</h4>
@@ -39,27 +39,52 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-const mids = reactive([{
-    path: '/about',
-    content: "關於我們"
-}, {
-    path: "/visit_information",
-    content: "參觀資訊"
-}, {
-    path: "/floor_Introduction",
-    content: "園區介紹"
-}]);
+    const mids = reactive([{
+        path: '/about',
+        content: "關於我們"
+    }, {
+        path: "/visit_information",
+        content: "參觀資訊"
+    }, {
+        path: "/floor_Introduction",
+        content: "園區介紹"
+    }]);
 
-const rights = reactive([{
-    path: '/ticket',
-    content: "購票資訊"
-}, {
-    path: "/journey",
-    content: "行程預約"
-}, {
-    path: "/stores",
-    content: "網路商城"
-}]);
+    const rights = reactive([{
+        path: '/ticket',
+        content: "購票資訊"
+    }, {
+        path: "/journey",
+        content: "行程預約"
+    }, {
+        path: "/stores",
+        content: "網路商城"
+    }]);
+
+let flag = ref(false);
+const circle = ref(null);
+const waveColor = ref(null);
+const waveColor2 = ref(null);
+
+    function SwitchColor (){
+        flag.value = !flag.value;
+
+        if(flag.value){
+            circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
+            let icon = document.querySelector('i');
+            
+            circle.value.style.backgroundColor = '#ccf1f5';
+            waveColor.value = 'DeepSkyBlue';
+            waveColor2.value = 'DeepSkyBlue';
+
+        }else{
+            circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+            circle.value.style.backgroundColor = 'lightgrey';
+            waveColor.value = 'blue';
+            waveColor2.value = 'blue';
+        }
+    }
+
 </script>
 
 <style lang="scss">
@@ -90,7 +115,13 @@ footer {
             animation: wave 10s -3s linear infinite;
             transform: translate3d(0, 0, 0);
             opacity: 0.8;
+
+            &.-light_color{
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='DeepSkyBlue'/%3E%3C/svg%3E");
+            }
         }
+
+        
 
         .wave:nth-of-type(2) {
             bottom: 0;
@@ -126,6 +157,10 @@ footer {
         bottom: 0;
         left: 0;
         right: 0;
+
+        &.-light_color2{
+            background-color: DeepSkyBlue;
+        }
 
         h4 {
             color: white;
