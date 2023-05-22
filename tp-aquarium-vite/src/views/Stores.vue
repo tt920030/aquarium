@@ -48,12 +48,12 @@
             <!-- 頁碼 -->
             <div class="wrapper page_list">
                 <ul>
-                    <Paginator :totalPage="totalPage"   :currentPage="currentPage" @currentPage="handleCurrentPage"></Paginator>
+                    <Paginator :totalPage="totalPage"  :currentPage="currentPage" @currentPage="handleCurrentPage"></Paginator>
                 </ul>
             </div>
         </main>        
     </div>
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
     <CustomerService></CustomerService>
     <router-view></router-view>
 </template>

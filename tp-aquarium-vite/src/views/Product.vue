@@ -66,8 +66,8 @@
 <script setup>
 	import Header from '/src/components/Header.vue';
 	import Footer from '/src/components/Footer.vue';
-     	import CustomerService from '/src/components/CustomerService.vue';
-    	import { ref, reactive } from "vue";
+    import CustomerService from '/src/components/CustomerService.vue';
+    import { ref, reactive } from "vue";
 
     // 數量
     let counter = ref(1);
