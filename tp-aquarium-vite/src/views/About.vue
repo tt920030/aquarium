@@ -22,8 +22,16 @@
                         我們打造像公園一樣的海生館，等你的到來</h4>
                        
                 </div>       
-                <img class="img1" data-aos="fade-right" src="@/img/about_img1.png" alt="">
-                <img class="img2"  src="@/img/about_img2.png" alt="">
+                <div class="img1"></div>
+                <div class="img2"></div>
+                
+                <svg viewBox="0 0 1920 1920" fill="none" xmlns="http://www.w3.org/2000/svg" width="0px">
+                <clipPath id="bobble1">
+                <path
+                    d="M196.281 6.30836C252.113 -0.412241 312.469 -9.25734 357.56 24.3449C407.502 61.5614 438.956 123.372 436.905 185.621C434.902 246.434 391.96 295.315 347.275 336.612C304.771 375.893 254.157 407.836 196.281 407.999C138.263 408.162 82.7123 381.063 44.435 337.464C8.33101 296.341 -3.89043 240.121 1.04595 185.621C5.54766 135.92 32.9023 92.7576 69.6573 59.0001C104.659 26.8525 149.096 11.9881 196.281 6.30836Z" fill="#C4C4C4"/>
+                </clipPath>
+                </svg>
+               
             </section>
 
             
@@ -44,8 +52,14 @@
                         各式豐富多樣的活動和課程都在台北海生館。<br>
                     </h4>
                 </div>
-                <img class="img3"  src="@/img/about_img3.png" alt="">
-                <img class="img4" data-aos="fade-right"  src="@/img/about_img4.png" alt="">
+                <div class="img3"></div>
+                <div class="img4"></div>
+                <svg viewBox="0 0 1920 1920" fill="none" xmlns="http://www.w3.org/2000/svg" width="0px">
+                <clipPath id="bobble1">
+                <path
+                    d="M226.032 1.29936C291.146 7.18244 341.807 51.4574 382.498 102.606C423.094 153.637 460.465 213.936 445.715 277.444C431.011 340.752 372.291 381.399 312.061 405.884C256.951 428.287 196.734 425.148 142.498 400.707C86.2302 375.351 40.0661 332.683 20.0886 274.31C-3.05688 206.681 -13.4898 127.79 29.5618 70.7181C73.5589 12.393 153.249 -5.27673 226.032 1.29936Z" />
+                </clipPath>
+                </svg>
                 <ul>
                     <li>
                         <img src="@/img/about_link1.jpg" alt="">
@@ -75,8 +89,14 @@
         
             </section>
 
-            <img class="img5" data-aos="zoom-in" src="@/img/about_img5.png" alt="">
-            <img class="img6" data-aos="zoom-in-up" data-aos-duration="4000" src="@/img/about_img6.png" alt="">
+            <div class="img5"></div>
+            <div class="img6"></div>
+            <svg viewBox="0 0 1920 1920" fill="none" xmlns="http://www.w3.org/2000/svg" width="0px">
+            <clipPath id="bobble1">
+            <path
+                d="M226.032 1.29936C291.146 7.18244 341.807 51.4574 382.498 102.606C423.094 153.637 460.465 213.936 445.715 277.444C431.011 340.752 372.291 381.399 312.061 405.884C256.951 428.287 196.734 425.148 142.498 400.707C86.2302 375.351 40.0661 332.683 20.0886 274.31C-3.05688 206.681 -13.4898 127.79 29.5618 70.7181C73.5589 12.393 153.249 -5.27673 226.032 1.29936Z" />
+            </clipPath>
+            </svg>
 
                 
         </div> 
@@ -96,6 +116,7 @@ import { onMounted, reactive, ref } from "vue";
 .about {
     main{
         background-color: #97cbe0;
+        padding-bottom: 300px;
     
         .banner{
             background-image: url(../img/about_banner.jpg);
@@ -161,29 +182,61 @@ import { onMounted, reactive, ref } from "vue";
                     }
                 }
                 .img1{
-                    width: 35%;
+                    width: 500px;
+                    height: 500px;
                     float: left;
+                    background-image: url(@/img/about_bubblebg1.png);
+                    clip-path: url(#bobble1);
+                    background-position-x: -130px;
+                    margin-top: 40px;
+                    margin-left: 33px;
                     @include mobile{
-                        width: 50%;
+                        display: none;
                     }
                 }
+
+                
                 .img2{
-                    width: 53%;
+                    width: 500px;
+                    height: 500px;
+                    background-image: url(@/img/about_bubblebg2.png);
+                    clip-path: url(#bobble1);
                     margin-top: -275px;
-                    margin-left: 590px;
+                    margin-left: 640px;
+                    background-position-x: -18px;
+                    background-position-y: -111px;
                     @include mobile{
-                        width: 60%;
-                        margin-top: -108px;
-                        margin-left: 140px;
-                    }
-                    
-                    
+                        display: none;
+                    }  
                 }
+                @keyframes bobble1 {
+                    0% {
+                        d: path("M196.281 6.30836C252.113 -0.412241 312.469 -9.25734 357.56 24.3449C407.502 61.5614 438.956 123.372 436.905 185.621C434.902 246.434 391.96 295.315 347.275 336.612C304.771 375.893 254.157 407.836 196.281 407.999C138.263 408.162 82.7123 381.063 44.435 337.464C8.33101 296.341 -3.89043 240.121 1.04595 185.621C5.54766 135.92 32.9023 92.7576 69.6573 59.0001C104.659 26.8525 149.096 11.9881 196.281 6.30836Z")
+                    }
+
+                    33% {
+                        d: path("M226.144 0.09229C295.905 -1.35649 372.292 13.8933 411.917 71.3117C449.608 125.928 426.418 197.347 405.797 260.417C388.165 314.341 359.915 366.455 307.957 389.265C257.846 411.265 203.678 391.898 152.921 371.434C95.5378 348.299 29.9348 327.228 9.37434 268.886C-13.2752 204.616 7.02321 131.88 49.8042 78.8319C92.3155 26.1181 158.429 1.49859 226.144 0.09229Z" fill="#C4C4C4")
+                    }
+
+                    66% {
+                        d: path("M177.289 0.192935C233.83 2.31093 282.391 33.9001 323.609 72.6621C366.495 112.993 408.444 160.13 409.942 218.982C411.465 278.878 383.138 342.988 331.248 372.942C284.667 399.829 229.894 364.474 177.289 353.279C141.473 345.656 105.62 342.197 77.3601 318.911C45.7617 292.873 23.2699 258.934 14.31 218.982C2.34404 165.628 -13.0855 105.124 19.5796 61.2735C54.5894 14.2747 118.724 -2.00082 177.289 0.192935Z")
+                    }
+
+                    100% {
+                        d: path("M196.281 6.30836C252.113 -0.412241 312.469 -9.25734 357.56 24.3449C407.502 61.5614 438.956 123.372 436.905 185.621C434.902 246.434 391.96 295.315 347.275 336.612C304.771 375.893 254.157 407.836 196.281 407.999C138.263 408.162 82.7123 381.063 44.435 337.464C8.33101 296.341 -3.89043 240.121 1.04595 185.621C5.54766 135.92 32.9023 92.7576 69.6573 59.0001C104.659 26.8525 149.096 11.9881 196.281 6.30836Z")
+                    }
+                }
+
+                svg {
+                    #bobble1 path {
+                    animation: bobble1 15s linear infinite;
+                 }}
             }
             .mid{
                 
                 .content1{
                     width: 50%;
+                    margin-top: 320px;
                     margin-left: 250px;
                     @include mobile{
                         width: 62%;
@@ -213,19 +266,25 @@ import { onMounted, reactive, ref } from "vue";
 
                 }
                 .img3{
-                    width:43%;
+                    width: 500px;
+                    height: 500px;
+                    background-image: url(@/img/about_bubblebg3.png);
+                    clip-path: url(#bobble1);
                     float: right;
                     margin-top: -165px;
+                    background-position-y: -32px;
                     @include mobile{
-                        width: 54%;
-                        margin-top: -75px;
+                        display: none;
                     }
                 }
                 .img4{
-                    width: 32%;
+                    width: 500px;
+                    height: 500px;
+                    background-image: url(@/img/about_bubblebg4.png);
+                    clip-path: url(#bobble1);
                     margin-top:100px ;
                     @include mobile{
-                        width: 44%;
+                        display: none;
                     }
                 }
                 ul{
@@ -287,22 +346,28 @@ import { onMounted, reactive, ref } from "vue";
                 }
             }
             .img5{
-                width: 45%;
+                width: 500px;
+                height: 500px;
+                background-image: url(@/img/about_bubblebg5.png);
+                clip-path: url(#bobble1);
                 position: absolute;
-                margin-top: -300px;
+                margin-top: -385px;
                 @include mobile{
-                    width: 60%;
+                    display: none;
                 }
             
             }
             .img6{
-                width: 35%;
-                padding-top: 247px;
-                padding-left: 710px;
+                width: 500px;
+                height: 500px;
+                background-image: url(@/img/about_bubblebg6.png);
+                clip-path: url(#bobble1);
+                margin-left: 710px;
+                padding-top: 0;
+                background-position-x: -70px;
+                background-position-y: -50px;
                 @include mobile{
-                    width: 56%;
-                    padding-top: 180px;
-                    padding-left: 175px;
+                    display: none;
                 }
             }
 
