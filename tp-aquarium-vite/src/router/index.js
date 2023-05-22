@@ -37,7 +37,38 @@ const router = createRouter({
         }
       ]
     },
-      
+    {
+      path: "/cms",
+      name: "CMS",
+      component: () => import("../views/CMSindex.vue"),
+      children: [
+        {
+          path: "news_change",
+          name: "NewsChange",
+          component: () => import("../views/manage/NewsChange.vue")
+        },
+        {
+          path: "news_manage",
+          name: "NewsManage",
+          component: () => import("../views/manage/NewsManage.vue")
+        },
+        {
+          path: "coupon_manage",
+          name: "CouponManage",
+          component: () => import("../views/manage/CouponManage.vue")
+        },
+        {
+          path: "journey_manage",
+          name: "JourneyManage",
+          component: () => import("../views/manage/JourneyManage.vue")
+        },
+        {
+          path: "journey_change",
+          name: "JourneyChange",
+          component: () => import("../views/manage/JourneyChange.vue")
+        }
+      ]
+    },
 
   
     {
@@ -153,17 +184,17 @@ const router = createRouter({
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
 
-    {
-      path: "/news_change", //自己取之後要連的路徑名稱
-      name: "NewsChange", //自己取
-      component: () => import("../views/NewsChange.vue"), //路徑連到剛剛建的vue檔
-      meta: {title: "更改消息"},
-    },
-    {
-      path: "/coupon_manage", //自己取之後要連的路徑名稱
-      name: "CouponManage", //自己取
-      component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
-    },
+    // {
+    //   path: "/news_change", //自己取之後要連的路徑名稱
+    //   name: "NewsChange", //自己取
+    //   component: () => import("../views/NewsChange.vue"), //路徑連到剛剛建的vue檔
+    //   meta: {title: "更改消息"},
+    // },
+    // {
+    //   path: "/coupon_manage", //自己取之後要連的路徑名稱
+    //   name: "CouponManage", //自己取
+    //   component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
+    // },
     // {
     //   path: '/:id',
     //   name: 'userdata',
@@ -181,23 +212,23 @@ const router = createRouter({
       component: () => import("../views/NewsCreate.vue"), //路徑連到剛剛建的vue檔
       meta: {title: "新增消息"},
     },
-    {
-      path: "/coupon_manage", //自己取之後要連的路徑名稱
-      name: "CouponManage", //自己取
-      component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
-    },
-    {
-      path: "/journeyManage", //自己取之後要連的路徑名稱
-      name: "Journey_Manage", //自己取
-      meta: {title:'台北海生館後台｜行程管理'},
-      component: () => import("../views/JourneyManage.vue"), //路徑連到剛剛建的vue檔
-    },
-    {
-      path: "/journeyChange", //自己取之後要連的路徑名稱
-      name: "Journey_Change", //自己取
-      meta: {title:'台北海生館後台｜修改行程'},
-      component: () => import("../views/JourneyChange.vue"), //路徑連到剛剛建的vue檔
-    },
+    // {
+    //   path: "/coupon_manage", //自己取之後要連的路徑名稱
+    //   name: "CouponManage", //自己取
+    //   component: () => import("../views/CouponManage.vue"), //路徑連到剛剛建的vue檔
+    // },
+    // {
+    //   path: "/journeyManage", //自己取之後要連的路徑名稱
+    //   name: "Journey_Manage", //自己取
+    //   meta: {title:'台北海生館後台｜行程管理'},
+    //   component: () => import("../views/JourneyManage.vue"), //路徑連到剛剛建的vue檔
+    // },
+    // {
+    //   path: "/journeyChange", //自己取之後要連的路徑名稱
+    //   name: "Journey_Change", //自己取
+    //   meta: {title:'台北海生館後台｜修改行程'},
+    //   component: () => import("../views/JourneyChange.vue"), //路徑連到剛剛建的vue檔
+    // },
     {
       path: "/journeyCreate", //自己取之後要連的路徑名稱
       name: "Journey_Create", //自己取

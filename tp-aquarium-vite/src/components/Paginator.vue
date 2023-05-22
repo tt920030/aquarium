@@ -6,15 +6,15 @@
     :class="{'pageOn': page == currentPage}" >{{ page }}</li>
 </template>
 <script setup>
-import {ref, watch, defineProps, defineEmits} from 'vue';
+import {ref, watch, defineProps, defineEmits, onMounted} from 'vue';
 
-const props = defineProps(['totalPage']);
+const props = defineProps(['totalPage','currentPage']);
 const totalPage = ref();
 const currentPage = ref(1)
 
 const emits = defineEmits(['currentPage'])
 
-watch(() => {
+onMounted(() => {
     totalPage.value = props.totalPage
 })
 

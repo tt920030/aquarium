@@ -13,10 +13,10 @@
 <script setup>
     import { reactive, defineEmits, defineProps, watch, onMounted, onBeforeMount } from 'vue';
    
-    const props = defineProps(['productInPage']);
-    let productInPage = reactive([]);
-    watch(() =>{
-        productInPage = [...props.productInPage]
+    const props = defineProps(['productInPage','filterNumber','currentPage']);
+    let productInPage = reactive(props.productInPage);
+    watch(() => props.productInPage, (newVal) =>{
+        productInPage = [...newVal];
     })
 
 </script>

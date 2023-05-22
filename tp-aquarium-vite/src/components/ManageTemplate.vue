@@ -37,12 +37,12 @@ import { onMounted, reactive, ref } from "vue";
 import Header from "/src/components/CMSHeader.vue";
 // 引入bootstrap
 import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 const props = defineProps(['news']);
 
 </script>
 <style lang="scss" scoped>
-
+  @import 'bootstrap/dist/css/bootstrap.min.css';
   .row {
     margin-right: 0;
   }

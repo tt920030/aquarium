@@ -45,7 +45,7 @@
           <li>
             <img src="../img/floor_introduction_jellyfish.png" alt="水母圖" />
             <h4>水母</h4>
-            <p>
+            <p></p>
           </li>
           <li>
             <img src="../img/floor_introduction_dolphin.png" alt="海豚圖" />
@@ -130,6 +130,8 @@
               /></a>
             </div>
           </div>
+        </div>
+        </div>
         </div>
         <!-- 圖像說明 -->
         <div class="floor_white1">

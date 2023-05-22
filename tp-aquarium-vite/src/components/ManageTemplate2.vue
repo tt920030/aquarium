@@ -23,11 +23,12 @@ import { onMounted, reactive, ref } from "vue";
 import Header from "/src/components/CMSHeader.vue";
 // 引入bootstrap
 import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 // a =  a b = a
 const props = defineProps(["title", "forms"]);
 </script>
 <style lang="scss" scoped>
+@import 'bootstrap/dist/css/bootstrap.min.css';
 .row {
   margin-right: 0;
 }
