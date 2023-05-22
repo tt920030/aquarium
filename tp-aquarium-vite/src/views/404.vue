@@ -79,7 +79,7 @@ div.not-found {
     width: 100vw;
     object-fit: cover;
 
-
+  }
 
 
 }</style>
