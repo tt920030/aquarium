@@ -8,6 +8,7 @@ const router = createRouter({
       path: "/",
       name: "index",
       component: index,
+      meta: {title:'台北海生館｜首頁'},
     },
     {
       path: "/member",
@@ -71,6 +72,7 @@ const router = createRouter({
     {
       path: "/journey",
       name: "Journey",
+      meta: {title:'台北海生館｜行程預約'},
       component: () => import("../views/Journey.vue"),
       
     },
@@ -78,6 +80,7 @@ const router = createRouter({
     {
       path: "/overnight",
       name: "Overnight",
+      meta: {title:'台北海生館｜行程介紹'},
       component: () => import("../views/Overnight.vue")
       
     },
@@ -187,16 +190,19 @@ const router = createRouter({
     {
       path: "/journeyManage", //自己取之後要連的路徑名稱
       name: "Journey_Manage", //自己取
+      meta: {title:'台北海生館後台｜行程管理'},
       component: () => import("../views/JourneyManage.vue"), //路徑連到剛剛建的vue檔
     },
     {
       path: "/journeyChange", //自己取之後要連的路徑名稱
       name: "Journey_Change", //自己取
+      meta: {title:'台北海生館後台｜修改行程'},
       component: () => import("../views/JourneyChange.vue"), //路徑連到剛剛建的vue檔
     },
     {
       path: "/journeyCreate", //自己取之後要連的路徑名稱
       name: "Journey_Create", //自己取
+      meta: {title:'台北海生館後台｜新增行程'},
       component: () => import("../views/JourneyCreate.vue"), //路徑連到剛剛建的vue檔
     },
     {
