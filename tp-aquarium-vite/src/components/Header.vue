@@ -11,26 +11,10 @@
             <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt=""></RouterLink>
             <nav>
                 <ul class="icon">
-                    <<<<<<< HEAD <!-- <div class="weather">
-                        <img src="" alt="" class="weather_img">
-                        <p><span class="temp"></span></p>
-                        <p><span class="rain"></span></p>
-        </div> -->
-        <i class="bi bi-list"></i>
-        <li><button><img src="src/img/header_sun.svg" alt=""></button></li>
-        <li><button>
-                <p>EN</p>
-            </button></li>
-        <li><button>
-                <p>繁</p>
-            </button></li>
-        <li><a href="#" @click.prevent="logIn()"><img class="icons" src="src/img/header.member.svg" alt=""></a></li>
-        <li><a href=""><img class="icons" src="src/img/header_cart.svg" alt=""></a></li>
-        =======
-        <!-- <i class="bi bi-list" @click="is_open = !is_open"></i> -->
-        <i class="bi bi-list"></i>
-        <li><button><img src="@/img/header_sun.svg" alt=""></button></li>
-        <!-- <li><button>
+                    <!-- <i class="bi bi-list" @click="is_open = !is_open"></i> -->
+                    <i class="bi bi-list"></i>
+                    <li><button><img src="@/img/header_sun.svg" alt=""></button></li>
+                    <!-- <li><button>
                             <p>EN</p>
                         </button></li>
                     <li><button>
@@ -64,7 +48,8 @@ import { RouterLink, RouterView } from "vue-router";
 import $ from "jquery";
 import { defineEmits } from "vue";
 import { transform } from "@vue/compiler-core";
-const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/park_activity" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
+
+const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/journey" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
 $(function () {
     let is_open = false;
     $("header .content nav i").click(function () {
@@ -81,8 +66,85 @@ $(function () {
 
 
 
+
+//         SwitchColor(){
+//             if(!flag){
+//             // bg.classList.add("color");
+//             circle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+//             // let icon = document.querySelector('i');
+//             // console.log(icon)
+
 const emit = defineEmits(['openLogin']);
 
+//             circle.style.backgroundColor = 'lightgrey';
+//             // icon.style.color = 'black';
+//             }else{
+//                 // bg.classList.remove("color");
+//                 circle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+//                 circle.style.backgroundColor = 'white';
+//             }
+//         }
+//     }
+// })
+
+let circle = document.getElementById("circle");
+console.log(circle);
+// let bg = document.getElementById('bgc');
+
+let flag = false;
+
+
+    // weather API ---------------------------------------------------
+    // 指定DOM
+    // let xhr = new XMLHttpRequest();
+    // let img = document.querySelector(".weather_img");
+    // let tem = document.querySelector('.temp');
+    // let rain = document.querySelector(".rain");
+
+    // tem.addEventListener('change', getWeather);
+
+    // // 串接API
+    // function getWeather(){
+    //     xhr.open('get', 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415', true);
+    //     xhr.send(null);
+    //     xhr.onload = function () {
+
+    //         // 讀取JSON檔
+    //         var dataObject = JSON.parse(xhr.responseText);
+    //         // console.log(dataObject);
+
+    //         // 查找溫度資料
+    //         let temp = dataObject.records.location[14].weatherElement[3].elementValue;
+    //         // console.log(temp);
+
+    //         // 查找天氣型態資料
+    //         let WeatherState = dataObject.records.location[14].weatherElement[20].elementValue;
+    //         // console.log(WeatherState);
+
+    //         // 加上溫度單位
+    //         let tempList = temp + "°C";
+
+    //         // 放入html中
+    //         tem.textContent = tempList;
+    //         rain.textContent = WeatherState;
+
+    //         // 找出天氣描述的第一個字去換圖片
+    //         let a = WeatherState.split(",")[0];
+
+    //         switch (a){
+    //             case "陰":
+    //                 img.setAttribute('src', './img/OKYJ1L1-02.png');
+    //                 break;
+    //             case "晴":
+    //                 img.setAttribute('src', './img/OKYJ1L1-03.png');
+    //                 break;
+    //             default:
+    //                 img.setAttribute('src', './img/OKYJ1L1_weather elements.png');
+    //                 break;
+    //         }
+    //     }
+    // }
+    // getWeather(); 
 const logIn = () => {
     emit("openLogin", true);
     // console.log("aaa");
@@ -307,6 +369,8 @@ header {
             animation: wave 10s -3s linear infinite;
             transform: translate3d(0, 0, 0);
             opacity: 0.8;
+
+            
         }
 
         .wave:nth-of-type(2) {
@@ -335,4 +399,5 @@ header {
             }
         }
     }
-}</style>
+}
+</style> 
