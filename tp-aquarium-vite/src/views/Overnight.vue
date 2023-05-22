@@ -20,7 +20,7 @@
                 <section class="wrapper">
 
                     <div class="overnight_circle_content">
-                        <img src="../img/overnight_circle1.png" alt="">
+                        <img src="@/img/overnight_circle1.png" alt="">
                         <div class="overnight_circle_content_text">
                             <div class="overnight_circle_content_text_inside">
                                 <h3>世界水域區(兩天一夜)</h3>
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="overnight_circle_content">
-                        <img src="../img/overnight_circle2.png" alt="">
+                        <img src="@/img/overnight_circle2.png" alt="">
                         <div class="overnight_circle_content_text">
                             <div class="overnight_circle_content_text_inside">
                                 <h3>台灣水域區(兩天一夜)</h3>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="overnight_circle_content">
-                        <img src="../img/overnight_circle3.png" alt="">
+                        <img src="@/img/overnight_circle3.png" alt="">
                         <div class="overnight_circle_content_text">
                             <div class="overnight_circle_content_text_inside">
                                 <h3>觀賞珊瑚(兩天一夜)</h3>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                     <div class="overnight_circle_content">
-                        <img src="../img/overnight_circle4.png" alt="">
+                        <img src="@/img/overnight_circle4.png" alt="">
                         <div class="overnight_circle_content_text">
                             <div class="overnight_circle_content_text_inside">
                                 <h3>蟹逅(兩天一夜)</h3>
@@ -74,20 +74,24 @@
                 <section class="wrapper">
                     <h2>回味夜宿海生館<br>體驗海洋奇妙，留下珍貴回憶</h2>
                 </section>
-            <div class="overnight_slide">
-                <img src="../img/overnight_slide1.jpg" alt="">
-                <img src="../img/overnight_slide2.jpg" alt="">
-                <img src="../img/overnight_slide3.jpg" alt="">
-            </div>
+                <div class="overnight_slider">
+                    <div class="overnight_slider_box">
+                        <div class="overnight_slider_list">
+                            <img src="@/img/overnight_slide1.jpg" alt="">
+                            <img src="@/img/overnight_slide2.jpg" alt="">
+                            <img src="@/img/overnight_slide3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- overnight notice -->
             <section class="wrapper">
-                <h1>注意事項</h1>
             </section>
             <div class="overnight_notice">
                 <div class="overnight_notice_left">
-                    <img src="./img/overnight_notice.jpg" alt="">
+                    <h1>注意事項</h1>
+                    <img src="@/img/overnight_notice.jpg" alt="">
                 </div>
 
                 <section class="wrapper">
@@ -132,6 +136,44 @@
     import { onMounted, reactive, ref } from "vue";
     import Header from '/src/components/Header.vue';
     import Footer from '/src/components/Footer.vue';
+
+    // overnight slider 跑馬燈
+    window.onload = function() {
+
+    let box = document.querySelector('.overnight_slider_box');
+    let list = document.querySelector('.overnight_slider_list');
+
+    // 複製一份讓中間不間斷
+    list.innerHTML += list.innerHTML;
+
+    let left = 0;
+    let time;
+
+    move();
+
+    function move(){
+        clearInterval(time);
+        time = setInterval(() => {
+        left -= 2;
+
+            if( left === -(3 * 685 + 3 * 30)){
+                left = 0;
+            }
+
+        list.style.left = left + "px"
+        }, 20)
+    };
+
+
+    box.addEventListener('mouseenter', () => {
+        clearInterval(time);
+    });
+
+    box.addEventListener('mouseleave', () => {
+        move();
+    });
+    };
+
 </script>
 
 <style lang="scss" scoped>
@@ -146,6 +188,11 @@
             clip-path: ellipse(1000px 450px at 50% 20%);
             background-size: cover;
             background-repeat: no-repeat;
+            margin-top: 100px;
+
+            @include mobile(){
+                margin-top: 70px;
+            }
 
             .overnight_banner_content {
                 color: white;
@@ -191,7 +238,7 @@
         .overnight_circle_bgc {
             background-image: url(../img/overnight_bgc.jpg);
             width: 100%;
-            height: 2800px;
+            height: 3097px;
             background-repeat: no-repeat;
             padding-top: 300px;
             margin-top: -200px;
@@ -301,19 +348,28 @@
                 }
             }
 
-            .overnight_slide{
+            .overnight_slider{
                 display: flex;
                 gap: 30px;
                 margin-top: 80px;
-                overflow-x: hidden;
+                .overnight_slider_box{
+                    position: relative;
+                    width: 100%;
+                    height: 450px;
+                    overflow: hidden;
 
-                img{
-                    width: 35%;
-                }
+                    .overnight_slider_list{
+                        position: absolute;
+                        display: flex;
+                        gap: 20px;
+                        left: 0;
 
-                @include mobile(){
-                    margin-top: 40px;
-                }
+                        @include mobile(){
+                            margin-top: 40px;
+
+                        }
+                    }
+                }  
             }
         }
 
@@ -333,6 +389,7 @@
         .overnight_notice{
             display: flex;
             justify-content: space-between;
+            margin: 200px 0 420px;
 
             .overnight_notice_left{
                 background-color: map-get($color , text );
@@ -342,10 +399,21 @@
                 position: sticky;
                 top: 0;
                 left: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
 
                 @include mobile(){
                     display: none;
-                    // background-color: transparent;
+                }
+
+                h1{
+                    margin-bottom: 30px;
+                }
+
+                img{
+                    width: 70%;
                 }
             }
 

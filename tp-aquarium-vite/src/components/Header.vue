@@ -4,8 +4,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
         rel="stylesheet" />
-    <header>
+   <header>
 
+        
         <div class="content">
             <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt=""></RouterLink>
             <nav>
@@ -58,6 +59,87 @@ $(function () {
         }
     });
 })
+   
+
+
+  
+    //         SwitchColor(){
+    //             if(!flag){
+    //             // bg.classList.add("color");
+    //             circle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+    //             // let icon = document.querySelector('i');
+    //             // console.log(icon)
+
+    //             circle.style.backgroundColor = 'lightgrey';
+    //             // icon.style.color = 'black';
+    //             }else{
+    //                 // bg.classList.remove("color");
+    //                 circle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    //                 circle.style.backgroundColor = 'white';
+    //             }
+    //         }
+    //     }
+    // })
+
+    let circle = document.getElementById("circle");
+    console.log(circle);
+    // let bg = document.getElementById('bgc');
+
+    let flag = false;
+
+
+    // weather API ---------------------------------------------------
+    // 指定DOM
+    // let xhr = new XMLHttpRequest();
+    // let img = document.querySelector(".weather_img");
+    // let tem = document.querySelector('.temp');
+    // let rain = document.querySelector(".rain");
+
+    // tem.addEventListener('change', getWeather);
+
+    // // 串接API
+    // function getWeather(){
+    //     xhr.open('get', 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415', true);
+    //     xhr.send(null);
+    //     xhr.onload = function () {
+
+    //         // 讀取JSON檔
+    //         var dataObject = JSON.parse(xhr.responseText);
+    //         // console.log(dataObject);
+
+    //         // 查找溫度資料
+    //         let temp = dataObject.records.location[14].weatherElement[3].elementValue;
+    //         // console.log(temp);
+
+    //         // 查找天氣型態資料
+    //         let WeatherState = dataObject.records.location[14].weatherElement[20].elementValue;
+    //         // console.log(WeatherState);
+
+    //         // 加上溫度單位
+    //         let tempList = temp + "°C";
+
+    //         // 放入html中
+    //         tem.textContent = tempList;
+    //         rain.textContent = WeatherState;
+
+    //         // 找出天氣描述的第一個字去換圖片
+    //         let a = WeatherState.split(",")[0];
+
+    //         switch (a){
+    //             case "陰":
+    //                 img.setAttribute('src', './img/OKYJ1L1-02.png');
+    //                 break;
+    //             case "晴":
+    //                 img.setAttribute('src', './img/OKYJ1L1-03.png');
+    //                 break;
+    //             default:
+    //                 img.setAttribute('src', './img/OKYJ1L1_weather elements.png');
+    //                 break;
+    //         }
+    //     }
+    // }
+    // getWeather(); 
+
 </script>
 
 <style lang="scss" scoped>
@@ -82,6 +164,16 @@ header {
 
         .logo {
             flex: 0 0 115px;
+
+            // .weather{
+            //     display: flex;
+            //     gap: 10px;
+
+            //     .weather_img{
+            //         width: 3%;
+            //         align-self: center;
+            //     }
+            // }
 
             @include mobile {
                 flex: 0 0 75px;
@@ -166,6 +258,13 @@ header {
                         }
                     }
 
+                    #circle{
+
+                        i{
+                            display: block;
+                        }
+
+                    }
                 }
 
             }

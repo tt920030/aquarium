@@ -45,10 +45,7 @@
           <li>
             <img src="../img/floor_introduction_jellyfish.png" alt="水母圖" />
             <h4>水母</h4>
-            <p>
-              水母是一種生活在海洋中的奇特生物，其形態各異，<br />
-              有些像雨傘，有些像口袋
-            </p>
+            <p></p>
           </li>
           <li>
             <img src="../img/floor_introduction_dolphin.png" alt="海豚圖" />
@@ -90,10 +87,8 @@
             <div class="p3 fp" id="coral">
               <a href="" class="lightbox"
                 ><img src="../img/floor_introduction_p3.jpg" alt=""
+                ><img src="@/img/floor_introduction_p3.jpg" alt=""
               /></a>
-            </div>
-          </div>
-
           <!-- 2樓 -->
           <div class="floor_img">
             <p>2<span>F</span></p>
@@ -135,6 +130,8 @@
               /></a>
             </div>
           </div>
+        </div>
+        </div>
         </div>
         <!-- 圖像說明 -->
         <div class="floor_white1">
@@ -350,9 +347,6 @@
               <ul>
                 <li><img src="../img/floor_introduction_p7.jpg" alt="" /></li>
                 <li>
-                  <p>
-                    在活動中，你將有機會體驗親手餵食海龜的樂趣和刺激。你可以觀察這些可愛的海龜在水中游動，透過這個活動，你可以了解到關於海龜的一些基本知識，例如牠們的營養需求和生態環境。此外，在活動中，專業的飼養員會分享更多有關海龜的生態和保育知識，讓你更深入了解海洋生物的重要性和生態價值。
-                  </p>
                   <a href="" class="btn">了解更多</a>
                 </li>
               </ul>

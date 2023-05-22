@@ -1,5 +1,5 @@
 <template>
-    <!-- <Header></Header> -->
+    <Header></Header>
     <div class="product">
         <div class="banner">
         <h1>網路商城<br>STORES</h1>
@@ -60,14 +60,14 @@
         </main>
     </div>
     <CustomerService></CustomerService>
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
     <router-view></router-view>
 </template>
 <script setup>
 	import Header from '/src/components/Header.vue';
 	import Footer from '/src/components/Footer.vue';
-    import CustomerService from '/src/components/CustomerService.vue';
-    import { ref, reactive } from "vue";
+     	import CustomerService from '/src/components/CustomerService.vue';
+    	import { ref, reactive } from "vue";
 
     // 數量
     let counter = ref(1);
@@ -119,7 +119,6 @@
     //切換顯示內容
     function clickHandle(){
         contentShow.value = tabs[currentTab.value].content;
-        console.log(typeof (data.imgs[0].src))
     }
 
     // 增加數量
