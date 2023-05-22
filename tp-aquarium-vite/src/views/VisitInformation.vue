@@ -6,6 +6,25 @@
             <h1>園區介紹<br>GUIDED TOUR</h1>
         </div>
 
+         <!-- 樓層指南選單 -->
+      <ul class="floor_nav">
+        <li>
+          <a href=""><img src="@/img/floor_p1.svg" alt="" /> </a>
+          <h4>樓層介紹</h4>
+        </li>
+        <li>
+          <a href=""><img src="@/img/floor_p2.svg" alt="" /> </a>
+          <h4>館內活動</h4>
+        </li>
+        <li>
+          <a href=""><img src="@/img/floor_p3.svg" alt="" /> </a>
+          <h4>常見問題</h4>
+        </li>
+        <li>
+          <a href=""><img src="@/img/floor_p4_active.svg" alt="" /> </a>
+          <h4 class="h4_active">參觀資訊</h4>
+        </li>
+      </ul>
 
         <div class="wrapper">
             <div class="visit_top">
@@ -141,6 +160,51 @@
             
            
         }
+
+         // 樓層nav
+    .floor_nav {
+      display: flex;
+      justify-content: center;
+      li {
+        margin: 20px 30px;
+        text-align: center;
+        // RWD
+        @include mobile() {
+          margin: 15px 0;
+          padding: 0 10px;
+        }
+        &:nth-child(4)::after {
+          content: "";
+          background-image: url("@/img/floor_nav_index.svg");
+          background-repeat: no-repeat;
+          display: block;
+          width: 30px;
+          height: 27px;
+          position: relative;
+          top: 9px;
+          left: 36%;
+        }
+        a {
+          // width: 100px;
+          height: 82px;
+          @include mobile() {
+            height: 60px;
+          }
+          img {
+            width: 70%;
+            display: block;
+            margin: auto;
+          }
+        }
+        h4 {
+          color: #97cbe0;
+        }
+        .h4_active {
+          color: #16355a;
+        }
+      }
+    }
+
 
         @include wrapper{
 
