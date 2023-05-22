@@ -1,5 +1,4 @@
 .stores{
-    //header
     //kv
     .banner{
         background-image: url(../img/product_kv.png);
@@ -72,9 +71,13 @@
                             justify-content: space-between;
                             margin: 0 auto;
                             @include flex;
+                            margin-bottom: 40px;
                         }
                         li{
                             margin-top: 50px;
+                            @include mobile{
+                                position: relative;
+                            }
                             h3{
                                 @include mobile{
                                     font-size: 16px;
@@ -83,6 +86,15 @@
                             ul{
                                 margin-top: 20px;
                                 margin-left: 0;
+                                @include mobile{
+                                    // display: none;
+                                    flex-direction: column;
+                                    margin-top: 5px;
+                                    border-top: 1px solid map-get($color, bgc2 );
+                                    position: absolute;
+                                    bottom: -200px;
+                                    width: 100%;
+                                }
                                 li{
                                     margin-top: 10px;
                                     &:hover{
@@ -90,9 +102,17 @@
                                         cursor: pointer;
                                     }
                                     @include mobile{
-                                        display: none;
+                                        text-align: center;
+                                        height: 30px;
+                                        line-height: 30px;
+                                        margin: 0;
+                                        background-color: #ccc;
+
                                     }
                                 }
+                            }
+                            .showSlelects{
+                                display: block;
                             }
                         }
                         .filterByAll{
@@ -103,6 +123,9 @@
                         }
                         .filterByType{
                             margin-bottom: 50px;
+                            @include mobile{
+                                margin-bottom: 0;
+                            }
                         }
 
                     }
@@ -170,22 +193,12 @@
         // 頁碼
         .page_list{
             text-align: center;
+            margin-bottom: 30px;
             ul{
                 @include flex;
                 justify-content: center;
-                li{
-                    margin-right: 30px;
-                    a{
-                        display: block;
-                        width: 20px;
-                        height: 20px;
-                        font-size: 20px;
-                    }
-
-                }
             }
         }
     }
-    //Footer
 }
 

@@ -5,11 +5,17 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
         rel="stylesheet" />
    <header>
-    
+
+        
         <div class="content">
             <RouterLink to="/" class="logo" href=""><img src="src/img/logo-white.svg" alt=""></RouterLink>
             <nav>
                 <ul class="icon">
+                    <!-- <div class="weather">
+                        <img src="" alt="" class="weather_img">
+                        <p><span class="temp"></span></p>
+                        <p><span class="rain"></span></p>
+                    </div> -->
                     <i class="bi bi-list"></i>
                         <li><button><img src="src/img/header_sun.svg" alt=""></button></li>
                         <li><button><p>EN</p></button></li>
@@ -17,7 +23,7 @@
                         <li><a href="#" @click.prevent="logIn()"><img class="icons" src="src/img/header.member.svg" alt=""></a></li>
                         <li><a href=""><img class="icons" src="src/img/header_cart.svg" alt=""></a></li>
                 </ul>
-                <ul  class="menu">
+                <ul class="menu">
                     <li v-for="item in navItems">
                         <RouterLink :to="item.link"> <p>{{item.name}}</p></RouterLink>
                     </li>
@@ -68,6 +74,16 @@
 
         .logo {
             flex: 0 0 115px;
+            // .weather{
+            //     display: flex;
+            //     gap: 10px;
+
+            //     .weather_img{
+            //         width: 3%;
+            //         align-self: center;
+            //     }
+            // }
+
             @include mobile{
                 flex:0 0 75px;
             }
@@ -142,6 +158,13 @@
                        }
                     }
                     
+                    #circle{
+
+                        i{
+                            display: block;
+                        }
+
+                    }
                 }
 
             }
