@@ -86,7 +86,7 @@ const addCart = function () {
 @include wrapper;
 
 .wrapper {
-    padding: 5rem 3rem;
+    padding: 25rem 3rem;
 
     h4 {
         margin: 2rem 0;
