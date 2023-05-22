@@ -189,6 +189,11 @@ const router = createRouter({
       name: "BackstageIndex", //自己取
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
     },
+    {
+      path: "/backstagelogin", //自己取之後要連的路徑名稱
+      name: "Backstagelogin", //自己取
+      component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
+    },
   ]});
 router.beforeEach((to, from, next) => {
   window.document.title = to.meta.title
