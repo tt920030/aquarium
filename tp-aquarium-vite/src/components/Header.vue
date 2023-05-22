@@ -4,20 +4,21 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
         rel="stylesheet" />
-   <header>
 
-        
-        <div class="content">
+   <header>
+        <div class="content" :class="{'-light_color2':waveColor2 === 'DeepSkyBlue'}">
             <RouterLink to="/" class="logo" href=""><img src="src/img/logo-white.svg" alt=""></RouterLink>
             <nav>
                 <ul class="icon">
-                    <!-- <div class="weather">
-                        <img src="" alt="" class="weather_img">
-                        <p><span class="temp"></span></p>
-                        <p><span class="rain"></span></p>
-                    </div> -->
+                    <li>
+                        <div class="weather">
+                            <img :src="get_weather_img()" alt="" class="weather_img">
+                            <p><span class="temp" @change="getWeather">{{ tempWeather }}</span></p>
+                            <p><span class="rain" @change="getWeather">{{ rainWeather }}</span></p>
+                        </div>
+                    </li>
                     <i class="bi bi-list"></i>
-                    <li><button type="button" id="circle" class="switch" @click="SwitchColor"><i class="bi bi-sun-fill"></i></button></li>
+                    <li><button type="button" ref="circle" class="switch"  @click="SwitchColor" ><i class="bi bi-moon-stars-fill"></i></button></li>
                     <li><button><p>EN</p></button></li>
                     <li><button><p>繁</p></button></li>
                     <li><a href=""><img class="icons" src="src/img/header.member.svg" alt=""></a></li>
@@ -32,10 +33,10 @@
         </div>
 
         <div class="ocean">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-        </div>>
+            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
+            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
+            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
+        </div>
     </header>
 </template>
 
@@ -44,84 +45,87 @@
     import { onMounted, reactive, ref } from "vue";
 
     const navItems = [ {name:"最新消息",link:"/news"}, {name:"園區介紹",link:"/floor_Introduction"}, {name:"購票資訊",link:"/ticket"}, {name:"行程預約",link:"/journey"}, {name:"參觀資訊",link:"/visit_information"}, {name:"網路商城",link:"/stores"}, {name:"小遊戲",link:"/game_index"} ];
+    // const 
+    let flag = ref(false);
+    let bg = ref('')
+    let currentWeather = ref('天')
+    const circle = ref(null);
+    const waveColor = ref(null);
+    const waveColor2 = ref(null);
 
-  
-    //         SwitchColor(){
-    //             if(!flag){
-    //             // bg.classList.add("color");
-    //             circle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-    //             // let icon = document.querySelector('i');
-    //             // console.log(icon)
+        function SwitchColor (){
+            flag.value = !flag.value;
 
-    //             circle.style.backgroundColor = 'lightgrey';
-    //             // icon.style.color = 'black';
-    //             }else{
-    //                 // bg.classList.remove("color");
-    //                 circle.innerHTML = '<i class="bi bi-sun-fill"></i>';
-    //                 circle.style.backgroundColor = 'white';
-    //             }
-    //         }
-    //     }
-    // })
+            if(flag.value){
+                circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
+                let icon = document.querySelector('i');
+                
+                circle.value.style.backgroundColor = '#ccf1f5';
+                waveColor.value = 'DeepSkyBlue'
+                waveColor2.value = 'DeepSkyBlue'
 
-    let circle = document.getElementById("circle");
-    console.log(circle);
-    // let bg = document.getElementById('bgc');
-
-    let flag = false;
-
+            }else{
+                circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+                circle.value.style.backgroundColor = 'lightgrey';
+                waveColor.value = 'blue'
+                waveColor2.value = 'blue'
+            }
+        }
 
     // weather API ---------------------------------------------------
-    // 指定DOM
-    // let xhr = new XMLHttpRequest();
-    // let img = document.querySelector(".weather_img");
+    let xhr = new XMLHttpRequest();
     // let tem = document.querySelector('.temp');
     // let rain = document.querySelector(".rain");
 
-    // tem.addEventListener('change', getWeather);
+    // 串接API
+    function get_weather_img(currentWeather){
+        switch (currentWeather){
+                case "陰":
+                    return '../img/weather_elements2.png'
+                    break;
+                case "晴":
+                    return '../img/weather_elements3.png'
+                    break;
+                default:
+                    return './src/img/weather_elements1.png'
+                    break;
+            }
+    }
+    function getWeather(){
+        xhr.open('get', 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415', true);
+        xhr.send(null);
+        xhr.onload = function () {
 
-    // // 串接API
-    // function getWeather(){
-    //     xhr.open('get', 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415', true);
-    //     xhr.send(null);
-    //     xhr.onload = function () {
+            // 讀取JSON檔
+            var dataObject = JSON.parse(xhr.responseText);
+            // console.log(dataObject);
 
-    //         // 讀取JSON檔
-    //         var dataObject = JSON.parse(xhr.responseText);
-    //         // console.log(dataObject);
+            // 查找溫度資料
+            let temp = dataObject.records.location[14].weatherElement[3].elementValue;
+            // console.log(temp);
 
-    //         // 查找溫度資料
-    //         let temp = dataObject.records.location[14].weatherElement[3].elementValue;
-    //         // console.log(temp);
+            // 查找天氣型態資料
+            let WeatherState = dataObject.records.location[14].weatherElement[20].elementValue;
+            // console.log(WeatherState);
 
-    //         // 查找天氣型態資料
-    //         let WeatherState = dataObject.records.location[14].weatherElement[20].elementValue;
-    //         // console.log(WeatherState);
+            // 加上溫度單位
+            let tempList = temp + "°C";
+            const tempWeather = tempList;
+            const rainWeather = WeatherState;
 
-    //         // 加上溫度單位
-    //         let tempList = temp + "°C";
 
-    //         // 放入html中
-    //         tem.textContent = tempList;
-    //         rain.textContent = WeatherState;
+            // 放入html中
+            // const tempWeather = ref(tempList);
+            // const rainWeather = ref(WeatherState);
 
-    //         // 找出天氣描述的第一個字去換圖片
-    //         let a = WeatherState.split(",")[0];
-
-    //         switch (a){
-    //             case "陰":
-    //                 img.setAttribute('src', './img/OKYJ1L1-02.png');
-    //                 break;
-    //             case "晴":
-    //                 img.setAttribute('src', './img/OKYJ1L1-03.png');
-    //                 break;
-    //             default:
-    //                 img.setAttribute('src', './img/OKYJ1L1_weather elements.png');
-    //                 break;
-    //         }
-    //     }
-    // }
-    // getWeather(); 
+            // 找出天氣描述的第一個字去換圖片
+            console.log(WeatherState,'weather');
+            let a = WeatherState.split(",")[0];
+            currentWeather.value = a
+            
+        }
+    }
+    getWeather(); 
 
 </script>
 
@@ -138,22 +142,17 @@
         left: 0;
         z-index: 999;
         overflow-x: hidden;
+
         @include mobile{
             height: 80px;
         }
-        
+       
+        &.-light_color2{
+            background-color: DeepSkyBlue;
+        }
 
         .logo {
             flex: 0 0 115px;
-            // .weather{
-            //     display: flex;
-            //     gap: 10px;
-
-            //     .weather_img{
-            //         width: 3%;
-            //         align-self: center;
-            //     }
-            // }
 
             @include mobile{
                 flex:0 0 75px;
@@ -179,6 +178,8 @@
                 flex-direction: row-reverse;
                 margin-top: 20px;
                 margin-right: 18px;
+                align-items: center;
+
                 li:nth-child(5){
                     margin-right: 0;
                 }
@@ -228,11 +229,27 @@
                        
                        }
                     }
+
+                    .weather{
+                        display: flex;
+                        gap: 10px;
+
+                        .weather_img{
+                            width: 20%;
+                            align-self: center;
+                        }
+                    }
                     
-                    #circle{
+                    .switch{
+                        background-color:lightgrey;
 
                         i{
                             display: block;
+                            @include mobile() {
+                                font-size: 10px;
+                                color: map-get($color , text );
+
+                            }
                         }
 
                     }
@@ -323,6 +340,11 @@
         animation: wave 10s -3s linear infinite;
         transform: translate3d(0, 0, 0);
         opacity: 0.8;
+
+        &.-light_color{
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='DeepSkyBlue'/%3E%3C/svg%3E");
+
+        }
       }
       
       .wave:nth-of-type(2) {
