@@ -4,15 +4,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
         rel="stylesheet" />
-   <header>
+    <header>
 
-        
+
         <div class="content">
             <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt=""></RouterLink>
             <nav>
                 <ul class="icon">
                     <!-- <i class="bi bi-list" @click="is_open = !is_open"></i> -->
-                    <i class="bi bi-list" ></i>
+                    <i class="bi bi-list"></i>
                     <li><button><img src="@/img/header_sun.svg" alt=""></button></li>
                     <!-- <li><button>
                             <p>EN</p>
@@ -46,7 +46,8 @@
 import { RouterLink, RouterView } from "vue-router";
 import $ from "jquery";
 import { transform } from "@vue/compiler-core";
-const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/park_activity" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
+
+const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/journey" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
 $(function () {
     let is_open = false;
     $("header .content nav i").click(function () {
@@ -59,33 +60,33 @@ $(function () {
         }
     });
 })
-   
 
 
-  
-    //         SwitchColor(){
-    //             if(!flag){
-    //             // bg.classList.add("color");
-    //             circle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-    //             // let icon = document.querySelector('i');
-    //             // console.log(icon)
 
-    //             circle.style.backgroundColor = 'lightgrey';
-    //             // icon.style.color = 'black';
-    //             }else{
-    //                 // bg.classList.remove("color");
-    //                 circle.innerHTML = '<i class="bi bi-sun-fill"></i>';
-    //                 circle.style.backgroundColor = 'white';
-    //             }
-    //         }
-    //     }
-    // })
 
-    let circle = document.getElementById("circle");
-    console.log(circle);
-    // let bg = document.getElementById('bgc');
+//         SwitchColor(){
+//             if(!flag){
+//             // bg.classList.add("color");
+//             circle.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+//             // let icon = document.querySelector('i');
+//             // console.log(icon)
 
-    let flag = false;
+//             circle.style.backgroundColor = 'lightgrey';
+//             // icon.style.color = 'black';
+//             }else{
+//                 // bg.classList.remove("color");
+//                 circle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+//                 circle.style.backgroundColor = 'white';
+//             }
+//         }
+//     }
+// })
+
+let circle = document.getElementById("circle");
+console.log(circle);
+// let bg = document.getElementById('bgc');
+
+let flag = false;
 
 
     // weather API ---------------------------------------------------
@@ -258,9 +259,9 @@ header {
                         }
                     }
 
-                    #circle{
+                    #circle {
 
-                        i{
+                        i {
                             display: block;
                         }
 
@@ -273,7 +274,7 @@ header {
                 display: flex;
                 flex-direction: row;
                 margin-top: 20px;
-               
+
 
                 @include mobile {
                     margin: 0;
@@ -283,7 +284,7 @@ header {
                     margin-right: 40px;
 
                     @include mobile {
-                        
+
                         margin-right: 0px;
                     }
 
@@ -327,7 +328,7 @@ header {
                     /* js滑入效果 */
                     right: -500px;
                     top: 80px;
-                    
+
                 }
             }
         }
@@ -359,6 +360,8 @@ header {
             animation: wave 10s -3s linear infinite;
             transform: translate3d(0, 0, 0);
             opacity: 0.8;
+
+            
         }
 
         .wave:nth-of-type(2) {
@@ -388,4 +391,4 @@ header {
         }
     }
 }
-</style>
+</style> 
