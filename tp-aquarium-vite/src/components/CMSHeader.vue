@@ -17,33 +17,47 @@
     </header>
     <!-- 選單列 -->
     <aside>
-      <a>
+      <RouterLink to="news_manage" @click="clicked='1';emitClicked()" :class="{click:clicked=='1'}">
         <div class="news"></div>
         <h4>消息管理</h4>
-      </a>
-      <a>
+      </RouterLink>
+     
+      <RouterLink to="product_manage" @click="clicked='2';emitClicked()" :class="{click:clicked=='2'}">
         <div class="product"></div>
         <h4>商品管理</h4>
-      </a>
-      <a>
+      </RouterLink>
+      
+      <RouterLink to="journey_manage" @click="clicked='3';emitClicked()" :class="{click:clicked=='3'}">
         <div class="journey"></div>
         <h4>行程管理</h4>
-      </a>
-      <a>
+      </RouterLink>
+
+      <RouterLink to="coupon_manage" @click="clicked='4';emitClicked()" :class="{click:clicked=='4'}">
         <div class="coupon"></div>
         <h4>折價券管理</h4>
-      </a>
-      <a>
+      </RouterLink>
+    
+      <RouterLink to="coustomer_manage" @click="clicked='5';emitClicked()" :class="{click:clicked=='5'}">
         <div class="customer"></div>
         <h4>客服</h4>
-      </a>
+      </RouterLink>
+     
     </aside>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import {ref, defineEmits} from 'vue';
+import {RouterLink} from 'vue-router';
+const clicked = ref('');
+const emit = defineEmits(['clicked']);
+const emitClicked = function(){
+  emit("clicked",clicked.value);
+}
+</script>
 <style lang="scss" scoped>
 .cms {
   header {
+    
     @include flex;
     width: 100%;
     height: 100px;
@@ -107,13 +121,36 @@
       align-items: center;
       @include flex;
       transition: all 0.5s;
+      &.click{
+        background-color: map-get($color, text);
+        cursor: pointer;
+        h4 {
+        color: white;
+      }
+      .news {
+        background-image: url(@/img/cms_icon1_white.svg);
+      }
+      .product {
+        background-image: url(@/img/cms_icon2_white.svg);
+      }
+      .journey {
+        background-image: url(@/img/cms_icon3_white.svg);
+      }
+      .coupon {
+        background-image: url(@/img/cms_icon4_white.svg);
+      }
+      .customer {
+        background-image: url(@/img/cms_icon5_white.svg);
+      }
+      }
       &:hover {
         background-color: map-get($color, text);
         cursor: pointer;
-      }
-      &:hover h4 {
+        h4 {
         color: white;
       }
+      }
+     
       &:hover .news {
         background-image: url(@/img/cms_icon1_white.svg);
       }

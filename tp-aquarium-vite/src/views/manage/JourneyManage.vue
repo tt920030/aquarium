@@ -1,21 +1,17 @@
 <template>
-  <Header></Header>
-  <main>
-    <div class="mb-3">
+  
+    <!-- <div class="mb-3">
       <h3>行程管理</h3>
       <button>新增行程</button>
-    </div>
+    </div> -->
     <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
-  </main>
+ 
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import Header from "/src/components/CMSHeader.vue";
-// 引入bootstrap
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import ManageTemplate from "/src/components/ManageTemplate2.vue";
 const title = reactive([
   "行程ID",
@@ -33,19 +29,5 @@ const forms = reactive([
 ]);
 </script>
 <style lang="scss" scoped>
-main {
-  box-sizing: border-box;
-  padding: 50px 20px 0 200px;
-  h3 {
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid black;
-  }
-  .row {
-    margin-right: 0;
-  }
-  .row.justify-content-center {
-    margin-left: -170px;
-  }
-}
+
 </style>
