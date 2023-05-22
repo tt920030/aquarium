@@ -23,19 +23,7 @@
             <div class="game_choose">
     
                 <div class="choose">
-                    <h2>遊戲規則</h2>
-                    <h3>1、遊戲內容分為拼圖關卡以及問答關卡<br>
-                        2、拼圖關卡：共一關，可自行選擇拼圖數量<br>
-                        3、問答關卡：共兩關，皆為選擇題<br>
-                        4、通過關卡可獲得隨機商品折價券！
-                    </h3>
-                    
-                    <div class="game_index_button">
-                        <a class="btn" href="_game_level.html">
-                            <h3>我要挑戰</h3>
-                        </a>
-                    </div>
-                    <img src="../img/game_shark.png" alt="">
+
                 </div>
     
             </div>
