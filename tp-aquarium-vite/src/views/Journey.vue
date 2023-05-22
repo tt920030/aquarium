@@ -84,7 +84,7 @@
           <ul>
             <li id="journey1">
               <a href="" class="lightbox">
-                <img class="intro_img" src="../img/journey_intro1.jpg" alt="" />
+                <img class="intro_img" src="@/img/journey_intro1.jpg" alt="" />
               </a>
 
               <div class="journey_intro_content">
@@ -100,22 +100,20 @@
                   <i class="bi bi-clock"><p>兩天一夜</p></i>
                   <i class="bi bi-geo-alt-fill"><p>台北海生館</p></i>
                   <i class="bi bi-coin"><p>$2680/人</p></i>
-                  <a class="btn"
-                    >加入購物車<i class="bi bi-chevron-right"></i
-                  ></a>
+                  <a class="btn">加入購物車</a>
                 </div>
               </div>
             </li>
             <li id="journey2">
               <a href="" class="lightbox">
-                <img class="intro_img" src="../img/journey_intro2.jpg" alt="" />
+                <img class="intro_img" src="@/img/journey_intro2.jpg" alt="" />
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
                   <img src="../img/journey_intro_icon.svg" alt="" />
                   <h4>水中留影</h4>
                   <p>
-                    水中拍照是一種非常有趣的活動，可以在游泳池或海灘等水域進行。<br />通過使用專業的防水相機或手機殼，您可以在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻技巧，如水滴拍攝、水面倒影等，以獲得令人驚嘆的效果。
+                    水中拍照是一種非常有趣的活動，可以在游泳池或海灘等水域進行。<br/>通過使用專業的防水相機或手機殼，您可以在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻技巧，如水滴拍攝、水面倒影等，以獲得令人驚嘆的效果。
                   </p>
                 </div>
 
@@ -123,15 +121,13 @@
                   <i class="bi bi-clock"><p>25分鐘</p></i>
                   <i class="bi bi-geo-alt-fill"><p>台北海生館</p></i>
                   <i class="bi bi-coin"><p>$300/人</p></i>
-                  <a class="btn"
-                    >加入購物車<i class="bi bi-chevron-right"></i
-                  ></a>
+                  <a class="btn">加入購物車</a>
                 </div>
               </div>
             </li>
             <li id="journey3">
               <a href="" class="lightbox">
-                <img class="intro_img" src="../img/journey_intro3.jpg" alt="" />
+                <img class="intro_img" src="@/img/journey_banner1.jpg" alt="" />
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
@@ -146,15 +142,13 @@
                   <i class="bi bi-clock"><p>120分鐘</p></i>
                   <i class="bi bi-geo-alt-fill"><p>台北海生館</p></i>
                   <i class="bi bi-coin"><p>$1200/時</p></i>
-                  <a class="btn"
-                    >加入購物車<i class="bi bi-chevron-right"></i
-                  ></a>
+                  <a class="btn">加入購物車</a>
                 </div>
               </div>
             </li>
             <li id="journey4">
               <a href="" class="lightbox">
-                <img class="intro_img" src="../img/journey_intro4.jpg" alt="" />
+                <img class="intro_img" src="@/img/journey_intro4.jpg" alt="" />
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
@@ -169,15 +163,13 @@
                   <i class="bi bi-clock"><p>30分鐘</p></i>
                   <i class="bi bi-geo-alt-fill"><p>台北海生館</p></i>
                   <i class="bi bi-coin"><p>$450/人</p></i>
-                  <a class="btn"
-                    >加入購物車<i class="bi bi-chevron-right"></i
-                  ></a>
+                  <a class="btn">加入購物車</a>
                 </div>
               </div>
             </li>
             <li id="journey5">
               <a href="" class="lightbox">
-                <img class="intro_img" src="../img/journey_intro5.jpg" alt="" />
+                <img class="intro_img" src="@/img/journey_intro5.jpg" alt="" />
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
@@ -192,9 +184,7 @@
                   <i class="bi bi-clock"><p>30分鐘</p></i>
                   <i class="bi bi-geo-alt-fill"><p>台北海生館</p></i>
                   <i class="bi bi-coin"><p>$500/人</p></i>
-                  <a class="btn"
-                    >加入購物車<i class="bi bi-chevron-right"></i
-                  ></a>
+                  <a class="btn">加入購物車</a>
                 </div>
               </div>
             </li>
@@ -212,7 +202,7 @@
                 <h4 class="accordion_header">夜宿海生館</h4>
                 <ul>
                   <li>
-                    <img src="../img/journey_intro1.jpg" />
+                    <img src="@/img/journey_intro1.jpg" />
                   </li>
                   <li>
                     <h4>享受夜晚海生館的浪漫吧!</h4>
@@ -286,7 +276,7 @@
               <div class="lightbox_block">
                 <h4 class="accordion_header">海洋跳躍者：海豚秀</h4>
                 <ul>
-                  <li><img src="../img/journey_intro4.jpg" alt="" /></li>
+                  <li><img src="@/img/journey_intro4.jpg" alt="" /></li>
                   <li>
                     <h4>一同來欣賞"海洋天使"的表演吧!</h4>
                     <p>
@@ -311,7 +301,8 @@
               <div class="lightbox_block">
                 <h4 class="accordion_header">磷蝦小管家：餵魚體驗活動</h4>
                 <ul>
-                  <li><img src="../img/journey_intro5.jpg" alt="" /></li>
+                  <li>
+                    <img src="@/img/journey_intro5.jpg" alt="" /></li>
                   <li>
                     <h4>快來親自體會磷蝦餵魚的樂趣吧!</h4>
                     <p>
@@ -391,14 +382,16 @@ let list = document.querySelector('.journey_slider_list');
 list.innerHTML += list.innerHTML;
 
 let left = 0;
-let time;
+let time = 0;
+
+move();
 
 function move(){
     clearInterval(time);
     time = setInterval(() => {
     left -= 2;
 
-        if( left === -(6 * 200 + 6 * 20)){
+        if( left === -(324 + 326 + 3 * 390 + 5 * 20)){
             left = 0;
         }
 
@@ -406,7 +399,6 @@ function move(){
     }, 20)
 };
 
-move();
 
 box.addEventListener('mouseenter', () => {
     clearInterval(time);
@@ -417,18 +409,13 @@ box.addEventListener('mouseleave', () => {
 });
 };
 
-
-
-
-
 </script>
 
 <style lang="scss" scoped>
 .journey {
   main {
     .journey_banner_content {
-      // position: relative;
-      // writing-mode: vertical-lr;
+      margin-top: 200px;
 
       h2 {
         position: absolute;
@@ -480,7 +467,7 @@ box.addEventListener('mouseleave', () => {
 
     .journey_banner {
       position: relative;
-      padding-top: 450px;
+      padding-bottom: 420px;
 
       .pic_1 {
         position: absolute;
@@ -547,9 +534,9 @@ box.addEventListener('mouseleave', () => {
       }
 
       @include mobile() {
-        overflow-x: hidden;
 
         .pic_1 {
+          overflow-x: hidden;
           top: -150px;
           left: 300px;
         }
@@ -765,6 +752,7 @@ box.addEventListener('mouseleave', () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    // margin-top: 420px;
     .journey_slider_box{
       position: relative;
       width: 100%;
@@ -776,17 +764,9 @@ box.addEventListener('mouseleave', () => {
         display: flex;
         gap: 20px;
         left: 0;
-
-        @include mobile() {
-          overflow-x: hidden;
-          margin-top: -180px;
-
-          img {
-            width: 50%;
-          }
-        }
       }
     }
+
   }
 
   @include wrapper {
@@ -810,9 +790,10 @@ box.addEventListener('mouseleave', () => {
     }
 
     .journey_intro {
-      margin-bottom: 100px;
+      margin-bottom: 420px;
 
       ul {
+        
         li {
           position: relative;
           display: flex;
@@ -836,7 +817,6 @@ box.addEventListener('mouseleave', () => {
 
           .intro_img {
             padding: 30px 30px 30px 0;
-            // width: 20%;
           }
 
           .journey_intro_content {

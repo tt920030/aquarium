@@ -6,6 +6,25 @@
                 <h1>園區介紹<br>GUIDED TOUR</h1>
             </div>
 
+            <!-- 樓層指南選單 -->
+            <ul class="floor_nav">
+                <li>
+                    <a href=""><img src="@/img/floor_p1.svg" alt="" /> </a>
+                    <h4>樓層介紹</h4>
+                </li>
+                <li>
+                    <a href=""><img src="@/img/floor_p2.svg" alt="" /> </a>
+                    <h4>館內活動</h4>
+                </li>
+                <li>
+                    <a href=""><img src="@/img/floor_p3.svg" alt="" /> </a>
+                    <h4>常見問題</h4>
+                </li>
+                <li>
+                    <a href=""><img src="@/img/floor_p4_active.svg" alt="" /> </a>
+                    <h4 class="h4_active">參觀資訊</h4>
+                </li>
+            </ul>
 
             <div class="wrapper">
                 <div class="visit_top">
@@ -41,88 +60,122 @@
                 </div>
 
 
-                <div class="visit_mid">
-                    <h3>搭乘捷運</h3>
-                    <div class="info">
-                        <h4>捷運善導寺站10號出口步行3分鐘</h4>
-                        <div class="info_detail">
-                            <span class="left">
-                                <p>捷運善導寺站10號出口</p>
-                            </span>
-                            <div class="mid_icon">
-                                <img class="person" src="src/img/visitinfo1.svg" alt="">
-                                <p>出站直行150公尺後向右轉</p>
-                            </div>
-                            <span class="right">
-                                <p>台北海生館</p>
-                            </span>
-                        </div>
-                    </div>
-
-                    <h3>搭乘公車</h3>
-                    <div class="info">
-                        <h4>搭乘第10005號公車往海生館方向</h4>
-                        <div class="info_detail">
-                            <span class="left">
-                                <p>於台北海生館站下車</p>
-                            </span>
-                            <div class="mid_icon">
-                                <img class="bus" src="src/img/visitinfo2.png" alt="">
-                                <p>下車後向右轉直行100公尺</p>
-                            </div>
-                            <span class="right">
-                                <p>台北海生館</p>
-                            </span>
-                        </div>
-                    </div>
-
-                    <h3>自行開車</h3>
-                    <div class="info">
-                        <h4>國道100號海生館出口下交流道</h4>
-                        <div class="info_detail">
-                            <span class="left">
-                                <p>海生館出口下交流道</p>
-                            </span>
-                            <div class="mid_icon">
-                                <img class="car" src="src/img/visitinfo3.png" alt="">
-                                <p>往海生館路直行600公尺</p>
-                            </div>
-                            <span class="right">
-                                <p>台北海生館</p>
-                            </span>
-                        </div>
-                    </div>
-
-
-                    <div class="park">
-                        <h3>停車場資訊</h3>
-                        <p class="opentime">開放時間：<br>平日(二~五)：8:30~17:30<br />周末(六~日)：8:00~18:30<br>周一休館日不開放</p>
+                <div class="wrapper">
+                    <div class="visit_top">
+                        <h2>營業資訊</h2>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <p>汽車</p>
+                                        <p>平日(周二~周五)</p>
                                     </td>
                                     <td>
-                                        <p>每小時20元，館內消費200元可折抵一小時</p>
+                                        <p>9:00-17:00</p>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <p>機車</p>
+                                        <p>假日(周六~周日)</p>
                                     </td>
                                     <td>
-                                        <p>每小時10元，館內消費100元可折抵一小時</p>
+                                        <p>8:30-18:00</p>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
+                        <p>公休日：每個星期一公休</p>
+
+                        <h2>交通方式</h2>
+                        <p>地址：台北市中正區杭州南路2023號</p>
+                        <iframe class="gmap"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7363885430764!2d121.52225777416575!3d25.04301863793058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a9708f9d0e77%3A0xde4dfc6bbe7f2dac!2z5ZyL56uL5Y-w5YyX5ZWG5qWt5aSn5a245om_5pum5qiT!5e0!3m2!1szh-TW!2stw!4v1683353426450!5m2!1szh-TW!2stw"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+
+                    <div class="visit_mid">
+                        <h3>搭乘捷運</h3>
+                        <div class="info">
+                            <h4>捷運善導寺站10號出口步行3分鐘</h4>
+                            <div class="info_detail">
+                                <span class="left">
+                                    <p>捷運善導寺站10號出口</p>
+                                </span>
+                                <div class="mid_icon">
+                                    <img class="person" src="src/img/visitinfo1.svg" alt="">
+                                    <p>出站直行150公尺後向右轉</p>
+                                </div>
+                                <span class="right">
+                                    <p>台北海生館</p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <h3>搭乘公車</h3>
+                        <div class="info">
+                            <h4>搭乘第10005號公車往海生館方向</h4>
+                            <div class="info_detail">
+                                <span class="left">
+                                    <p>於台北海生館站下車</p>
+                                </span>
+                                <div class="mid_icon">
+                                    <img class="bus" src="src/img/visitinfo2.png" alt="">
+                                    <p>下車後向右轉直行100公尺</p>
+                                </div>
+                                <span class="right">
+                                    <p>台北海生館</p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <h3>自行開車</h3>
+                        <div class="info">
+                            <h4>國道100號海生館出口下交流道</h4>
+                            <div class="info_detail">
+                                <span class="left">
+                                    <p>海生館出口下交流道</p>
+                                </span>
+                                <div class="mid_icon">
+                                    <img class="car" src="src/img/visitinfo3.png" alt="">
+                                    <p>往海生館路直行600公尺</p>
+                                </div>
+                                <span class="right">
+                                    <p>台北海生館</p>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="park">
+                            <h3>停車場資訊</h3>
+                            <p class="opentime">開放時間：<br>平日(二~五)：8:30~17:30<br />周末(六~日)：8:00~18:30<br>周一休館日不開放</p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p>汽車</p>
+                                        </td>
+                                        <td>
+                                            <p>每小時20元，館內消費200元可折抵一小時</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>機車</p>
+                                        </td>
+                                        <td>
+                                            <p>每小時10元，館內消費100元可折抵一小時</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
-
         </main>
 
     </div>
@@ -180,6 +233,59 @@
 
 
         }
+
+        // 樓層nav
+        .floor_nav {
+            display: flex;
+            justify-content: center;
+
+            li {
+                margin: 20px 30px;
+                text-align: center;
+
+                // RWD
+                @include mobile() {
+                    margin: 15px 0;
+                    padding: 0 10px;
+                }
+
+                &:nth-child(4)::after {
+                    content: "";
+                    background-image: url("@/img/floor_nav_index.svg");
+                    background-repeat: no-repeat;
+                    display: block;
+                    width: 30px;
+                    height: 27px;
+                    position: relative;
+                    top: 9px;
+                    left: 36%;
+                }
+
+                a {
+                    // width: 100px;
+                    height: 82px;
+
+                    @include mobile() {
+                        height: 60px;
+                    }
+
+                    img {
+                        width: 70%;
+                        display: block;
+                        margin: auto;
+                    }
+                }
+
+                h4 {
+                    color: #97cbe0;
+                }
+
+                .h4_active {
+                    color: #16355a;
+                }
+            }
+        }
+
 
         @include wrapper {
 

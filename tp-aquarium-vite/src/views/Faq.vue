@@ -6,12 +6,32 @@
                 <h1>園區介紹<br>GUIDED TOUR</h1>
             </div>
 
+            <!-- 樓層指南選單 -->
+            <ul class="floor_nav">
+                <li>
+                    <a href=""><img src="@/img/floor_p1.svg" alt="" /> </a>
+                    <h4>樓層介紹</h4>
+                </li>
+                <li>
+                    <a href=""><img src="@/img/floor_p2.svg" alt="" /> </a>
+                    <h4>館內活動</h4>
+                </li>
+                <li>
+                    <a href=""><img src="@/img/floor_p3_active.svg" alt="" /> </a>
+                    <h4 class="h4_active">常見問題</h4>
+                </li>
+                <li>
+                    <a href=""><img src="@/img/floor_p4.svg" alt="" /> </a>
+                    <h4>參觀資訊</h4>
+                </li>
+            </ul>
+
             <div class="wrapper">
-                <div class="accordion">
+                <div class="accordion ">
                     <div class="topic">
                         <h4>營業相關</h4>
                     </div>
-                    <div class="faq1">
+                    <div class="faq1 active">
                         <p class="question">Q:平假日營業時間、休館時間？</p>
                         <p class="answer">A:平日營業時間早上9:00至下午17:00，假日營業時間早上8:30至下午18:00。休館時間為每周一。</p>
                         <P class="question">Q:如何預約團體參觀？</P>
@@ -22,11 +42,11 @@
 
                 </div>
 
-                <div class="accordion">
+                <div class="accordion ">
                     <div class="topic">
                         <h4>參觀與服務</h4>
                     </div>
-                    <div class="faq1">
+                    <div class="faq1 active">
                         <p class="question">Q:是否能攜帶寵物入館？</p>
                         <p class="answer">A:本館不得攜帶任何寵物入館</p>
                         <P class="question">Q:館內是否提供行李寄放服務？</P>
@@ -39,11 +59,11 @@
 
                 </div>
 
-                <div class="accordion">
+                <div class="accordion ">
                     <div class="topic">
                         <h4>交通資訊</h4>
                     </div>
-                    <div class="faq1">
+                    <div class="faq1 active">
                         <p class="question">Q:平假日營業時間、休館時間？</p>
                         <p class="answer">A:平日營業時間早上9:00至下午17:00，假日營業時間早上8:30至下午18:00。休館時間為每周一。</p>
                         <P class="question">Q:如何預約團體參觀？</P>
@@ -75,18 +95,17 @@ import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer.vue';
 import $ from "jquery";
 
-const abc = function(){};
+const abc = function () { };
 
 onMounted();
 
-$( function() {
-        // 手風琴()
-        $(".accordion").click(function () {
-            $(this).toggleClass("active");
-            $(this).next().slideToggle();
-        });
-    } 
-);
+$(function () {
+    // 手風琴()
+    $(".accordion").click(function () {
+        $(this).find(".topic").toggleClass("on");
+        $(this).find(".faq1").slideToggle();
+    });
+});
 
 </script>
 
@@ -95,11 +114,11 @@ $( function() {
 
 .faq {
     main {
-        background-image: url(../img/faq_bg2.jpg);
-        height: 2200px;
+
+
 
         .banner {
-            background-image: url(../img/guided_tour_banner.jpg);
+            background-image: url(@/img/guided_tour_banner.jpg);
             width: 100%;
             height: 660px;
             background-size: cover;
@@ -107,16 +126,103 @@ $( function() {
             h1 {
                 padding-top: 300px;
                 padding-left: 40px;
-            };
+            }
+
+            ;
         }
 
-        @include wrapper {
+        .floor_nav {
+            display: flex;
+            justify-content: center;
+
+            li {
+                margin: 20px 30px;
+                text-align: center;
+
+                // RWD
+                @include mobile() {
+                    margin: 15px 0;
+                    padding: 0 10px;
+                }
+
+                &:nth-child(3)::after {
+                    content: "";
+                    background-image: url("@/img/floor_nav_index.svg");
+                    background-repeat: no-repeat;
+                    display: block;
+                    width: 30px;
+                    height: 27px;
+                    position: relative;
+                    top: 9px;
+                    left: 36%;
+                }
+
+                a {
+                    // width: 100px;
+                    height: 82px;
+
+                    @include mobile() {
+                        height: 60px;
+                    }
+
+                    img {
+                        width: 70%;
+                        display: block;
+                        margin: auto;
+                    }
+                }
+
+                h4 {
+                    color: #97cbe0;
+                }
+
+                .h4_active {
+                    color: #16355a;
+                }
+            }
+        }
+
+        .wrapper {
+            background-image: url(@/img/faq_bg2.jpg);
+            height: 1700px;
+            background-size: contain;
+            padding-top: 20px;
+
             .accordion {
-                width: 90%;
+                width: 70%;
                 border: 1px solid #16355a;
                 margin: 0 auto;
                 margin-bottom: 50px;
                 background-color: white;
+
+                .topic {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &::after {
+                        content: "\002B";
+                        font-size: 24px;
+                        font-weight: bold;
+                        color: #666;
+                        transition: transform 0.3s ease;
+
+
+                    }
+
+                    &.on {
+                        background-color: lightseagreen;
+                    }
+
+                    &.on::after {
+                        transform: rotate(45deg);
+                    }
+                }
+
+
+
+
+
 
                 .topic {
                     padding: 20px;
@@ -124,6 +230,7 @@ $( function() {
                 }
 
                 .faq1 {
+                    display: none;
                     padding: 20px;
 
                     .question {

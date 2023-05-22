@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <button class="open-lightbox">獲得優惠券</button>
+    <button class="open-lightbox" scoped>獲得優惠券</button>
       
 
     <!-- <div  class="puzzle-taking" style="display: none;"> -->

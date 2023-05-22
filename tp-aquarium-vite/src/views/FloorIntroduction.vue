@@ -45,10 +45,7 @@
           <li>
             <img src="../img/floor_introduction_jellyfish.png" alt="水母圖" />
             <h4>水母</h4>
-            <p>
-              水母是一種生活在海洋中的奇特生物，其形態各異，<br />
-              有些像雨傘，有些像口袋
-            </p>
+            <p></p>
           </li>
           <li>
             <img src="../img/floor_introduction_dolphin.png" alt="海豚圖" />
@@ -90,10 +87,8 @@
             <div class="p3 fp" id="coral">
               <a href="" class="lightbox"
                 ><img src="../img/floor_introduction_p3.jpg" alt=""
+                ><img src="@/img/floor_introduction_p3.jpg" alt=""
               /></a>
-            </div>
-          </div>
-
           <!-- 2樓 -->
           <div class="floor_img">
             <p>2<span>F</span></p>
@@ -135,6 +130,8 @@
               /></a>
             </div>
           </div>
+        </div>
+        </div>
         </div>
         <!-- 圖像說明 -->
         <div class="floor_white1">
