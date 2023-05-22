@@ -33,7 +33,7 @@
             </nav>
         </div>
     </footer>
-    <RouterView></RouterView>
+    <!-- <RouterView></RouterView> -->
 </template>
 
 <script setup>
@@ -60,6 +60,8 @@ const rights = reactive([{
     path: "/stores",
     content: "網路商城"
 }]);
+
+
 </script>
 
 <style lang="scss">

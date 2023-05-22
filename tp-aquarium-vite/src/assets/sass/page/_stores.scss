@@ -85,28 +85,22 @@
                                 margin-left: 0;
                                 li{
                                     margin-top: 10px;
-<<<<<<< HEAD
                                     &:hover{
                                         color: map-get($color, bgc2 );
                                         cursor: pointer;
                                     }
-=======
->>>>>>> anniesu
                                     @include mobile{
                                         display: none;
                                     }
                                 }
                             }
                         }
-<<<<<<< HEAD
                         .filterByAll{
                             &:hover{
                                 color: map-get($color, bgc2 );
                                 cursor: pointer;
                             }
                         }
-=======
->>>>>>> anniesu
                         .filterByType{
                             margin-bottom: 50px;
                         }

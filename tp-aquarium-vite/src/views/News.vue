@@ -48,55 +48,55 @@ const items = ref([
     },
     {
         id: 2,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },
     {
         id: 3,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },
     {
         id: 4,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },
     {
         id: 5,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },
     {
         id: 6,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },
     {
         id: 7,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },
     {
         id: 8,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },
     {
         id: 9,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.30",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },
     {
         id: 10,
-        src: "@/img/news_picture1-1.jpg",
+        src: "src/img/news_picture1-1.jpg",
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     }

@@ -14,7 +14,7 @@
                         <li><button><img src="src/img/header_sun.svg" alt=""></button></li>
                         <li><button><p>EN</p></button></li>
                         <li><button><p>繁</p></button></li>
-                        <li><a href=""><img class="icons" src="src/img/header.member.svg" alt=""></a></li>
+                        <li><a href="#" @click.prevent="logIn()"><img class="icons" src="src/img/header.member.svg" alt=""></a></li>
                         <li><a href=""><img class="icons" src="src/img/header_cart.svg" alt=""></a></li>
                 </ul>
                 <ul  class="menu">
@@ -35,7 +35,16 @@
 
 <script setup>
     import{ RouterLink, RouterView } from "vue-router";
+    import { defineEmits } from "vue";
+
+    const emit = defineEmits(['openLogin']);
+
     const navItems = [ {name:"最新消息",link:"/news"}, {name:"園區介紹",link:"/floor_Introduction"}, {name:"購票資訊",link:"/ticket"}, {name:"行程預約",link:"/park_activity"}, {name:"參觀資訊",link:"/visit_information"}, {name:"網路商城",link:"/stores"}, {name:"小遊戲",link:"/game_index"} ];
+
+    const logIn = () => {
+        emit("openLogin", true);
+        // console.log("aaa");
+    }
 
 </script>
 
