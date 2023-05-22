@@ -9,13 +9,13 @@
 import {ref, watch, defineProps, defineEmits, onMounted} from 'vue';
 
 const props = defineProps(['totalPage','currentPage']);
-const totalPage = ref();
+const totalPage = ref(props.totalPage);
 const currentPage = ref(1)
 
 const emits = defineEmits(['currentPage'])
 
-onMounted(() => {
-    totalPage.value = props.totalPage
+watch(() => props.totalPage,(newVal) => {
+    totalPage.value = newVal
 })
 
 const changePage = (page) => {
