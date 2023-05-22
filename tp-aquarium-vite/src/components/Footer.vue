@@ -60,6 +60,8 @@ const rights = reactive([{
     path: "/stores",
     content: "網路商城"
 }]);
+
+
 </script>
 
 <style lang="scss">

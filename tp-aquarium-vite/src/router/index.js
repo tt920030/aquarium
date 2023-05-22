@@ -13,6 +13,7 @@ const router = createRouter({
     {
       path: "/member",
       name: "member",
+      meta: { title: '會員中心' },
       component: () => import("../views/Member.vue"),
       children: [
         {
@@ -35,6 +36,7 @@ const router = createRouter({
           name: "pet",
           component: () => import("../views/member/Pet.vue"),
         }
+        
       ]
     },
     {
@@ -163,6 +165,7 @@ const router = createRouter({
     {
       path: "/news",
       name: "News",
+      meta: { title: '最新消息' },
       component: () => import("../views/News.vue"),
 
     },

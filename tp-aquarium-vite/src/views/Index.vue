@@ -1,6 +1,6 @@
 <template>
-  <div class="index">
-    <Header/>
+  <body class="index">
+    <Header @openLogin="openLogin"></Header>
     <div class="index_logo_video">
       <video src="@/img/index_videosea.mp4" id="video_sea" width="100%" autoplay muted loop></video>
       <div class="index_logo_text">
@@ -156,13 +156,33 @@
     </div>
 
     <Footer/>
-  </div>
+    <LogIn v-if="hide" @close="openLogin"></LogIn>
+    
+  </body>
+  
 </template>
 
 <script setup>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
+
+
+import Header from '/src/components/Header.vue';
+import Footer from '/src/components/Footer.vue';
+
+
+
+
 import { onMounted, reactive, ref } from "vue";
+
+const hide = ref(false);
+
+const openLogin = (n) => {
+  // console.log(n );
+  hide.value = n;
+  // console.log(hide.value);
+};
+
+
+
 
 const park_buttons = reactive([
   { a: "", src1: "@/img/index_penguin.svg", class: "penguin_blue", src2: "@/img/index_penguin_blue-01.svg", cName: "企鵝館", eName: "Penguin House", src3: "@/img/index_button1.jpg" },
