@@ -4,9 +4,8 @@
     calendar-cell-class-name="dp-custom-cell"
     @update:model-value="handleDate"
     inline
-    select-text="選擇日期" >
+    select-text="點選確認" >
   </VueDatePicker>
-  <button @click="changeDate">123</button>
 </template>
   
 <script setup>
@@ -21,11 +20,13 @@ const datepicker = ref(null);
 const emit = defineEmits(['dateSelected']);
 const handleDate = (e) => {
   emit("dateSelected",e);
+  document.querySelector(".dp__action_button").classList.add("confirm");
+  document.querySelector(".dp__action_button").textContent = "已確認";
   let inners = document.querySelectorAll(".dp__cell_inner");
   inners.forEach(inner=>{
     inner.addEventListener("click",()=>{
-      console.log(232);
-      document.querySelector(".dp__action_button").classList.add("confirm");
+      document.querySelector(".dp__action_button").classList.remove("confirm");
+      document.querySelector(".dp__action_button").textContent = "點選確認";
     })
   })
 };
