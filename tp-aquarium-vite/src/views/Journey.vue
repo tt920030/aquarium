@@ -90,7 +90,7 @@
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
                   <img src="@/img/journey_intro_icon.svg" alt="" />
-                  <h4>夜宿海生館-兩天一夜</h4>
+                  <h4>夜宿海生館-兩天一夜</h4>                   
                   <p>
                     夜宿海生館是一個兩天一夜的活動，將帶您前往探索台灣水域區的豐富生態和文化。<br />進行夜間探索、聆聽海洋生物的聲音，更有機會觀察到燈籠魚、海蜇等特殊生物，兩天一夜的行程充滿探索和學習的樂趣，讓您深入了解台灣水域區的獨特之處。
                   </p>
@@ -211,7 +211,7 @@
                       晚上，您將入住海生館，進行夜間探索、聆聽海洋生物的聲音，更有機會觀察到燈籠魚、海蜇等特殊生物。第二天，您將前往海洋保護區進行浮潛活動，近距離觀察海洋生態，並且參與海洋保
                       育行動。這個兩天一夜的行程充滿探索和學習的樂趣，讓您深入了解台灣水域區的獨特之處。
                     </p>
-                    <RouterLink to="/overnight" class="btn">了解更多</RouterLink>
+                    <RouterLink to="/overnight" class="btn" @click="rescroll">了解更多</RouterLink>
                   </li>
                 </ul>
               </div>
@@ -304,6 +304,7 @@
                   <li>
                     <img src="@/img/journey_intro5.jpg" alt="" /></li>
                   <li>
+                    
                     <h4>快來親自體會磷蝦餵魚的樂趣吧!</h4>
                     <p>
                       在海生館，你可以參加「磷蝦小管家」活動，親身體驗磷蝦餵魚的樂趣！在活動中，你將穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。當磷蝦在餌料中出現時，你會感到一陣刺鼻的氣味，但
@@ -318,7 +319,7 @@
           <div class="lightbox_close">x</div>
         </div>
       </section>
-
+      
       <RouterLink to="/ticket">aaaaaa</RouterLink>
     </main>
 
@@ -371,7 +372,11 @@ $(function () {
   });
   // $(".accordion_header").first().click();
 });
-
+//滾輪復原
+const rescroll = function(){
+  document.querySelector("body").style.overflow = "visible";
+  window.scrollTo(0, 0);
+}
 // index_ad 跑馬燈
 window.onload = function() {
 
