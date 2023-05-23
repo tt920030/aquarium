@@ -41,7 +41,7 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-    import { defineEmits } from "vue";
+    import { defineEmits, ref } from "vue";
 import $ from "jquery";
 
     const emit = defineEmits(['openLogin']);
@@ -66,9 +66,9 @@ $(function () {
 
 
     // const 
-    let flag = ref(false);
-    let bg = ref('')
-    let currentWeather = ref(null)
+    const flag = ref(false);
+    const bg = ref('')
+    const currentWeather = ref(null)
     const circle = ref(null);
     const waveColor = ref(null);
     const waveColor2 = ref(null);

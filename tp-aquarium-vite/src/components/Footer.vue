@@ -2,12 +2,12 @@
     <footer>
 
         <div class="ocean">
-            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
-            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
-            <div class="wave" :class="{'-light_color':waveColor === 'DeepSkyBlue'}"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
         </div>
 
-        <div class="content" :class="{'-light_color2':waveColor2 === 'DeepSkyBlue'}">
+        <div class="content">
             <nav>
                 <div class="left">
                     <h4>台北海生館</h4>
