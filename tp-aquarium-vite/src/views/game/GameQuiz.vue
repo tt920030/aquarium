@@ -1,5 +1,13 @@
 <template>
     <body class="quiz">
+
+          <!-- 回首頁按鈕 -->
+        <button class="back_to_home">
+            <img src="../../img/logosvg.svg" alt="LOGO SVG" />
+            <RouterLink to="/">
+            <h5>回首頁</h5>
+            </RouterLink>
+        </button>
         <!-- start Quiz button -->
         <div class="start_btn"><button>開始答題</button></div>
 
@@ -95,11 +103,14 @@ onMounted(() => {
 
 })
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 
 /* importing google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+
+
+.quiz{
+    *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -108,7 +119,33 @@ onMounted(() => {
 
 }
 
-.quiz{
+/* 回首頁按鈕 */
+.back_to_home {
+  position: absolute;
+  top: 25px;
+  left: 1060px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 125px;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background: #FFF;
+  margin: auto;
+  /* border: 2px solid black; */
+
+}
+
+.back_to_home img {
+  width: 50px;
+}
+
+.back_to_home a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+}
     // background: map-get($color, bgc2);
     @include mobile{
         .info_box{
@@ -304,7 +341,7 @@ onMounted(() => {
     display: block;   
 }
 
-.quiz_section .option_list .option.op{
+.quiz_section .option_list .option{
     background: aliceblue;
     border: 1px solid #84c5fe;
     border-radius: 5px;
