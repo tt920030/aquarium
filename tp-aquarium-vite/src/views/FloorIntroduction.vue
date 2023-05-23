@@ -11,19 +11,19 @@
     <!-- 樓層指南選單 -->
     <ul class="floor_nav">
       <li>
-        <a href=""><img src="../img/floor_p1_active.jpg" alt="" /> </a>
+        <a href=""><img src="@/img/floor_p1_active.svg" alt="" /> </a>
         <h4 class="h4_active">樓層介紹</h4>
       </li>
       <li>
-        <a href=""><img src="../img/floor_p2.jpg" alt="" /> </a>
+        <a href=""><img src="@/img/floor_p2.svg" alt="" /> </a>
         <h4>館內活動</h4>
       </li>
       <li>
-        <a href=""><img src="../img/floor_p3.jpg" alt="" /> </a>
+        <a href=""><img src="@/img/floor_p3.svg" alt="" /> </a>
         <h4>常見問題</h4>
       </li>
       <li>
-        <a href=""><img src="../img/floor_p4.jpg" alt="" /> </a>
+        <a href=""><img src="@/img/floor_p4.svg" alt="" /> </a>
         <h4>參觀資訊</h4>
       </li>
     </ul>
@@ -36,26 +36,26 @@
         <!-- 中間區塊 -->
         <ul>
           <li>
-            <img src="../img/floor_introduction_penguin.png" alt="企鵝圖" />
+            <img src="@/img/floor_introduction_penguin.png" alt="企鵝圖" />
             <h4>企鵝</h4>
             <p>
               企鵝是一種生活在南極洲及其周邊地區的特殊鳥類。<br />牠們具有黑白分明的羽毛和笨拙的外表
             </p>
           </li>
           <li>
-            <img src="../img/floor_introduction_jellyfish.png" alt="水母圖" />
+            <img src="@/img/floor_introduction_jellyfish.png" alt="水母圖" />
             <h4>水母</h4>
             <p></p>
           </li>
           <li>
-            <img src="../img/floor_introduction_dolphin.png" alt="海豚圖" />
+            <img src="@/img/floor_introduction_dolphin.png" alt="海豚圖" />
             <h4>海豚</h4>
             <p>
               海豚是在海洋中的智慧動物，被譽為“海洋天使”<br />有著美麗外表、漂亮的圓形鰭狀肢
             </p>
           </li>
           <li>
-            <img src="../img/floor_introduction_seal.png" alt="海獅圖" />
+            <img src="@/img/floor_introduction_seal.png" alt="海獅圖" />
             <h4>海獅</h4>
             <p>
               海獅是一種生活在海洋中的哺乳動物，<br />
@@ -73,65 +73,64 @@
           <!-- 1樓 -->
           <div class="floor_img">
             <p>1<span>F</span></p>
-            <img src="../img/floor_introduction_floor1.svg" alt="樓層圖" />
+            <img src="@/img/floor_introduction_floor1.svg" alt="樓層圖" />
             <div class="p1 fp" id="dolphin">
               <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p1.jpg" alt=""
+                ><img src="@/img/floor_introduction_p1.jpg" alt=""
               /></a>
             </div>
             <div class="p2 fp" id="shark">
               <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p2.jpg" alt=""
+                ><img src="@/img/floor_introduction_p2.jpg" alt=""
               /></a>
             </div>
             <div class="p3 fp" id="coral">
               <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p3.jpg" alt=""
                 ><img src="@/img/floor_introduction_p3.jpg" alt=""
               /></a>
-          <!-- 2樓 -->
-          <div class="floor_img">
-            <p>2<span>F</span></p>
-            <img src="../img/floor_introduction_floor2.svg" alt="樓層圖" />
-            <div class="p1 fp" id="penguin">
-              <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p4.jpg" alt=""
-              /></a>
-            </div>
-            <div class="p2 fp" id="jellyfish">
-              <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p5.jpg" alt=""
-              /></a>
-            </div>
-            <div class="p3 fp" id="seal">
-              <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p6.jpg" alt=""
-              /></a>
-            </div>
-          </div>
+              <!-- 2樓 -->
+            <div class="floor_img">
+                <p>2<span>F</span></p>
+                <img src="@/img/floor_introduction_floor2.svg" alt="樓層圖" />
+                <div class="p1 fp" id="penguin">
+                  <a href="" class="lightbox"
+                    ><img src="@/img/floor_introduction_p4.jpg" alt=""
+                  /></a>
+                </div>
+                <div class="p2 fp" id="jellyfish">
+                  <a href="" class="lightbox"
+                    ><img src="@/img/floor_introduction_p5.jpg" alt=""
+                  /></a>
+                </div>
+                <div class="p3 fp" id="seal">
+                  <a href="" class="lightbox"
+                    ><img src="@/img/floor_introduction_p6.jpg" alt=""
+                  /></a>
+                </div>
+              </div>
 
-          <!-- 3樓 -->
-          <div class="floor_img">
-            <p>3<span>F</span></p>
-            <img src="../img/floor_introduction_floor3.svg" alt="樓層圖" />
-            <div class="p4 fp" id="turtle">
-              <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p7.jpg" alt=""
-              /></a>
-            </div>
-            <div class="p5 fp" id="starfish">
-              <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p8.jpg" alt=""
-              /></a>
-            </div>
-            <div class="p6 fp" id="otter">
-              <a href="" class="lightbox"
-                ><img src="../img/floor_introduction_p9.jpg" alt=""
-              /></a>
+              <!-- 3樓 -->
+              <div class="floor_img">
+                <p>3<span>F</span></p>
+                <img src="@/img/floor_introduction_floor3.svg" alt="樓層圖" />
+                <div class="p4 fp" id="turtle">
+                  <a href="" class="lightbox"
+                    ><img src="@/img/floor_introduction_p7.jpg" alt=""
+                  /></a>
+                </div>
+                <div class="p5 fp" id="starfish">
+                  <a href="" class="lightbox"
+                    ><img src="@/img/floor_introduction_p8.jpg" alt=""
+                  /></a>
+                </div>
+                <div class="p6 fp" id="otter">
+                  <a href="" class="lightbox"
+                    ><img src="@/img/floor_introduction_p9.jpg" alt=""
+                  /></a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        </div>
         </div>
         <!-- 圖像說明 -->
         <div class="floor_white1">
@@ -159,7 +158,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">海豚</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p1.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p1.jpg" alt="" /></li>
                 <li>
                   <h4>海豚是一種生活在海洋中的智慧動物，被譽為“海洋天使”</h4>
                   <p>
@@ -176,7 +175,7 @@
                   <img
                     style="width: 360px"
                     class="intro_img"
-                    src="../img/journey_intro4.jpg"
+                    src="@/img/journey_intro4.jpg"
                     alt=""
                   />
                 </li>
@@ -202,7 +201,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">鯨鯊</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p2.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p2.jpg" alt="" /></li>
                 <li>
                   <h4>鯨鯊是一種生活在海洋中的巨型動物，體型驚人</h4>
                   <p>
@@ -225,7 +224,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">珊瑚礁</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p3.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p3.jpg" alt="" /></li>
                 <li>
                   <h4>海生館內的珊瑚礁區是一個令人驚嘆的世界</h4>
                   <p>
@@ -248,7 +247,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">企鵝</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p4.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p4.jpg" alt="" /></li>
                 <li>
                   <h4>國王企鵝，霸道威武 、 雪花企鵝，小巧玲瓏</h4>
                   <p>
@@ -271,7 +270,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">水母</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p5.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p5.jpg" alt="" /></li>
                 <li>
                   <h4>優雅的月亮水母與奇異的炸彈水母</h4>
                   <p>
@@ -294,7 +293,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">海獅</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p6.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p6.jpg" alt="" /></li>
                 <li>
                   <h4>海獅是一種生活在海洋中的哺乳動物，外型親人可愛</h4>
                   <p>
@@ -307,7 +306,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">海獅秀</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p6.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p6.jpg" alt="" /></li>
                 <li>
                   <p>
                     在這個活動中，訓練師會訓練海獅完成各種表演，例如跳躍、翻滾、平衡、接球等，以展示海獅的智慧和技能。這種活動不僅讓觀眾欣賞到海獅的可愛和聰明，還可以提高人們對海洋動物的認識和對保護海洋環境的意識。
@@ -330,7 +329,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">海龜</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p7.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p7.jpg" alt="" /></li>
                 <li>
                   <h4 class="light_box_header">
                     小巧可愛的綠海龜和雄壯威武的鱷龜
@@ -345,7 +344,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">餵食海龜</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p7.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p7.jpg" alt="" /></li>
                 <li>
                   <a href="" class="btn">了解更多</a>
                 </li>
@@ -365,7 +364,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">海星</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p8.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p8.jpg" alt="" /></li>
                 <li>
                   <h4>您可以在這裡欣賞到多種顏色和形狀的海星，</h4>
                   <p>
@@ -378,7 +377,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">海星觸摸</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p8.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p8.jpg" alt="" /></li>
                 <li>
                   <p>
                     觸摸海星活動是一種與海洋生物近距離互動的體驗，海星是一種生活在海洋中的奇特生物，牠們的身體扁平，呈星形，有著吸盤狀的足，能夠吸附在海洋中的礁石或其他物體上。通過觸摸海星活動，人們可以近距離觀察和感受這種奇特生物的外形和觸感，以及了解更多海星的生態和習性。
@@ -401,7 +400,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">水獺</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p9.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p9.jpg" alt="" /></li>
                 <li>
                   <h4>可愛又迷人的水獺，快來感受他們的呆萌吧!</h4>
                   <p>
@@ -414,7 +413,7 @@
             <div class="lightbox_block">
               <h4 class="accordion_header">水獺近距離接觸</h4>
               <ul>
-                <li><img src="../img/floor_introduction_p9.jpg" alt="" /></li>
+                <li><img src="@/img/floor_introduction_p9.jpg" alt="" /></li>
                 <li>
                   <p>
                     您可以參加「水獺小管家」活動，與水獺近距離接觸！在活動中，您將跟隨專業的飼養員進入水獺的棲息地，親手投放食物給水獺，觀察牠們的行為與習性。當水獺靠近你時，您會感受到牠們柔軟的毛髮和溫暖的體溫，
@@ -438,8 +437,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import Header from "/src/components/Header.vue";
-import Footer from "/src/components/Footer.vue";
 import $ from "jquery";
 
 $(function () {
@@ -490,7 +487,7 @@ $(function () {
 
   // 開場介紹圖
   .banner {
-    background-image: url("../../../../src/img/guided_tour_banner.jpg");
+    background-image: url("@/img/guided_tour_banner.jpg");
     width: 100%;
     height: 660px;
     background-size: cover;
@@ -521,7 +518,7 @@ $(function () {
       }
       &:first-child::after {
         content: "";
-        background-image: url("../../../../src/img/floor_nav_index.jpg");
+        background-image: url("@/img/floor_nav_index.jpg");
         background-repeat: no-repeat;
         display: block;
         width: 30px;
@@ -553,7 +550,7 @@ $(function () {
 
   // 主內容
   main {
-    background-image: url("../../../../src/img/floor_introduction_bgi.jpg");
+    background-image: url("@/img/floor_introduction_bgi.jpg");
     @include wrapper {
       max-width: 1100px;
       // 標題
@@ -561,7 +558,7 @@ $(function () {
         width: 410px;
         height: 191px;
         margin: 0 auto;
-        background-image: url("../../../../src/img/floor_introduction_title.svg");
+        background-image: url("@/img/floor_introduction_title.svg");
         overflow: hidden;
         h2 {
           position: relative;
@@ -623,8 +620,8 @@ $(function () {
       font-size: 24px;
       line-height: 1.6;
       font-weight: bold;
-      background: url("../../../../src/img/floor_introduction_h2_line.svg")
-        no-repeat left bottom;
+      background: url("@/img/floor_introduction_h2_line.svg") no-repeat left
+        bottom;
       background-size: 250px 10px;
     }
 
@@ -716,7 +713,7 @@ $(function () {
     // 圖像說明
     .floor_white1 {
       padding: 70px 50px 40px 142px;
-      margin: 0 0 30px;
+      margin: 0 0 250px;
       background: #fff;
       border-radius: 28px;
       ul {
@@ -733,42 +730,42 @@ $(function () {
         }
         // 各區塊設定
         .barrier {
-          background: url("/img/floor_introduction_barrier_free_icon.svg")
+          background: url("@/img/floor_introduction_barrier_free_icon.svg")
             no-repeat 2px 50%;
           background-size: 25px 25px;
         }
         .scope {
-          background: url("/img/floor_introduction_fish_icon.svg") no-repeat 2px
-            50%;
+          background: url("@/img/floor_introduction_fish_icon.svg") no-repeat
+            2px 50%;
           background-size: 25px 25px;
         }
         .lift {
-          background: url("/img/floor_introduction_lift_icon.svg") no-repeat 2px
-            50%;
+          background: url("@/img/floor_introduction_lift_icon.svg") no-repeat
+            2px 50%;
           background-size: 25px 25px;
         }
         .baby {
-          background: url("/img/floor_introduction_baby_icon.svg") no-repeat 2px
-            50%;
+          background: url("@/img/floor_introduction_baby_icon.svg") no-repeat
+            2px 50%;
           background-size: 30px 25px;
         }
         .shop {
-          background: url("/img/floor_introduction_shop_icon.svg") no-repeat 2px
-            50%;
+          background: url("@/img/floor_introduction_shop_icon.svg") no-repeat
+            2px 50%;
           background-size: 25px 25px;
         }
         .toilet {
-          background: url("/img/floor_introduction_toilet_icon.svg") no-repeat
+          background: url("@/img/floor_introduction_toilet_icon.svg") no-repeat
             2px 50%;
           background-size: 25px 25px;
         }
         .academy {
-          background: url("/img/floor_introduction_school_icon.svg") no-repeat
+          background: url("@/img/floor_introduction_school_icon.svg") no-repeat
             2px 50%;
           background-size: 25px 25px;
         }
         .cafe {
-          background: url("/img/floor_introduction_coffee_icon.svg") no-repeat
+          background: url("@/img/floor_introduction_coffee_icon.svg") no-repeat
             2px 50%;
           background-size: 25px 25px;
         }
