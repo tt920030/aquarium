@@ -2,6 +2,9 @@
 <template>
     <Header />
     <main class="ticket">
+        <div class="banner">
+            <h1>購票資訊<br>TICKET INFORMATION</h1>
+        </div>
         <div class="wrapper">
             <h2>入館費用</h2>
             <h3>單日門票</h3>   
@@ -150,8 +153,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import Header from '/src/components/Header.vue';
-import Footer from '/src/components/Footer.vue';
+
 const dayThs = reactive(["門票種類", "日間票", "星光票", "適用對象"]);
 const Types = ["大人", "學生", "兒童", "博愛票"];
 const Prices = [520, 360, 240, 240];
@@ -173,7 +175,29 @@ const notices = reactive(["我只是一條先隨便打得須知範例不要亂�
 
 <style lang="scss">
 main.ticket {
-    @include wrapper;
+    .banner{
+            background-image: url(/src/img/ticket_banner.png);
+            height: 660px;
+            background-size: cover;
+            @include mobile{
+                height: 268px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            h1{padding-top: 35rem;
+                padding-left: 40px;
+                @include mobile{
+                    padding-left:0;
+                    padding-top: 100px;
+                    font-size: 2.8rem;
+                    line-height: 5rem;
+                }
+            };
+        }
+
+    @include wrapper{
+        padding: 5rem 0 25rem;
+    }
 
 
     h3{
@@ -276,7 +300,7 @@ main.ticket {
         font-weight: bold;
         padding: 1rem 3rem;
         &:hover{
-            transform: scale(1.2)
+            transform: scale(1.1)
         }
     }
 
@@ -356,7 +380,17 @@ main.ticket {
         table td {
             border-top: none;
         }
-
+        .ticket-notice {
+        padding: 2rem 2rem 0;
+        margin: 5rem;
+        ul{
+            margin: 0;
+            li{ margin: 1rem;
+                line-height: 3rem;
+            }
+        }
+    }
+       
 
     }
 }
