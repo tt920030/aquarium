@@ -75,77 +75,62 @@
             <p>1<span>F</span></p>
             <img src="@/img/floor_introduction_floor1.svg" alt="樓層圖" />
             <div class="p1 fp" id="dolphin">
-              <a href="" class="lightbox"
-                ><img src="@/img/floor_introduction_p1.jpg" alt=""
-              /></a>
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p1.jpg" alt="" /></a>
             </div>
             <div class="p2 fp" id="shark">
-              <a href="" class="lightbox"
-                ><img src="@/img/floor_introduction_p2.jpg" alt=""
-              /></a>
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p2.jpg" alt="" /></a>
             </div>
             <div class="p3 fp" id="coral">
-              <a href="" class="lightbox"
-                ><img src="@/img/floor_introduction_p3.jpg" alt=""
-              /></a>
-              <!-- 2樓 -->
-            <div class="floor_img">
-                <p>2<span>F</span></p>
-                <img src="@/img/floor_introduction_floor2.svg" alt="樓層圖" />
-                <div class="p1 fp" id="penguin">
-                  <a href="" class="lightbox"
-                    ><img src="@/img/floor_introduction_p4.jpg" alt=""
-                  /></a>
-                </div>
-                <div class="p2 fp" id="jellyfish">
-                  <a href="" class="lightbox"
-                    ><img src="@/img/floor_introduction_p5.jpg" alt=""
-                  /></a>
-                </div>
-                <div class="p3 fp" id="seal">
-                  <a href="" class="lightbox"
-                    ><img src="@/img/floor_introduction_p6.jpg" alt=""
-                  /></a>
-                </div>
-              </div>
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p3.jpg" alt="" /></a>
+            </div>
+          </div>
+          <!-- 2樓 -->
+          <div class="floor_img">
+            <p>2<span>F</span></p>
+            <img src="@/img/floor_introduction_floor2.svg" alt="樓層圖" />
+            <div class="p1 fp" id="penguin">
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p4.jpg" alt="" /></a>
+            </div>
+            <div class="p2 fp" id="jellyfish">
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p5.jpg" alt="" /></a>
+            </div>
+            <div class="p3 fp" id="seal">
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p6.jpg" alt="" /></a>
+            </div>
+          </div>
 
-              <!-- 3樓 -->
-              <div class="floor_img">
-                <p>3<span>F</span></p>
-                <img src="@/img/floor_introduction_floor3.svg" alt="樓層圖" />
-                <div class="p4 fp" id="turtle">
-                  <a href="" class="lightbox"
-                    ><img src="@/img/floor_introduction_p7.jpg" alt=""
-                  /></a>
-                </div>
-                <div class="p5 fp" id="starfish">
-                  <a href="" class="lightbox"
-                    ><img src="@/img/floor_introduction_p8.jpg" alt=""
-                  /></a>
-                </div>
-                <div class="p6 fp" id="otter">
-                  <a href="" class="lightbox"
-                    ><img src="@/img/floor_introduction_p9.jpg" alt=""
-                  /></a>
-                </div>
-              </div>
+          <!-- 3樓 -->
+          <div class="floor_img">
+            <p>3<span>F</span></p>
+            <img src="@/img/floor_introduction_floor3.svg" alt="樓層圖" />
+            <div class="p4 fp" id="turtle">
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p7.jpg" alt="" /></a>
+            </div>
+            <div class="p5 fp" id="starfish">
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p8.jpg" alt="" /></a>
+            </div>
+            <div class="p6 fp" id="otter">
+              <a href="" class="lightbox"><img src="@/img/floor_introduction_p9.jpg" alt="" /></a>
             </div>
           </div>
         </div>
-        <!-- 圖像說明 -->
-        <div class="floor_white1">
-          <ul>
-            <li class="barrier">無障礙休息室</li>
-            <li class="scope">水族範圍</li>
-            <li class="lift">電梯</li>
-            <li class="baby">親子空間</li>
-            <li class="shop">海洋商城</li>
-            <li class="toilet">洗手間</li>
-            <li class="academy">海洋學院</li>
-            <li class="cafe">咖啡館</li>
-          </ul>
-        </div>
+         <!-- 圖像說明 -->
+      <div class="floor_white1">
+        <ul>
+          <li class="barrier">無障礙休息室</li>
+          <li class="scope">水族範圍</li>
+          <li class="lift">電梯</li>
+          <li class="baby">親子空間</li>
+          <li class="shop">海洋商城</li>
+          <li class="toilet">洗手間</li>
+          <li class="academy">海洋學院</li>
+          <li class="cafe">咖啡館</li>
+        </ul>
       </div>
+      </div>
+
+     
+
     </section>
 
     <!-- 燈箱 -->
@@ -172,12 +157,7 @@
               <h4 class="accordion_header">海豚秀</h4>
               <ul>
                 <li>
-                  <img
-                    style="width: 360px"
-                    class="intro_img"
-                    src="@/img/journey_intro4.jpg"
-                    alt=""
-                  />
+                  <img style="width: 360px" class="intro_img" src="@/img/journey_intro4.jpg" alt="" />
                 </li>
                 <li>
                   <p>
@@ -481,6 +461,7 @@ $(function () {
     background-color: transparent;
     width: 7px;
   }
+
   ::-webkit-scrollbar-thumb {
     background-color: black;
   }
@@ -491,13 +472,16 @@ $(function () {
     width: 100%;
     height: 660px;
     background-size: cover;
+
     // RWD
     @include mobile {
       height: 300px;
     }
+
     h1 {
       padding-top: 300px;
       padding-left: 40px;
+
       @include mobile {
         padding-top: 105px;
       }
@@ -508,14 +492,17 @@ $(function () {
   .floor_nav {
     display: flex;
     justify-content: center;
+
     li {
       margin: 20px 30px;
       text-align: center;
+
       // RWD
       @include mobile() {
         margin: 15px 0;
         padding: 0 10px;
       }
+
       &:first-child::after {
         content: "";
         background-image: url("@/img/floor_nav_index.jpg");
@@ -527,21 +514,26 @@ $(function () {
         top: 9px;
         left: 36%;
       }
+
       a {
         // width: 100px;
         height: 82px;
+
         @include mobile() {
           height: 60px;
         }
+
         img {
           width: 70%;
           display: block;
           margin: auto;
         }
       }
+
       h4 {
         color: #97cbe0;
       }
+
       .h4_active {
         color: #16355a;
       }
@@ -551,8 +543,10 @@ $(function () {
   // 主內容
   main {
     background-image: url("@/img/floor_introduction_bgi.jpg");
+
     @include wrapper {
       max-width: 1100px;
+
       // 標題
       .title {
         width: 410px;
@@ -560,6 +554,7 @@ $(function () {
         margin: 0 auto;
         background-image: url("@/img/floor_introduction_title.svg");
         overflow: hidden;
+
         h2 {
           position: relative;
           top: 104px;
@@ -574,6 +569,7 @@ $(function () {
         display: flex;
         flex-wrap: wrap;
         padding: 0 0 200px;
+
         // RWD
         @include mobile {
           flex-direction: column;
@@ -608,11 +604,78 @@ $(function () {
 // 各樓層指南
 .floor {
   background: #f4f5f7;
+
+   // 圖像說明
+   .floor_white1 {
+      padding: 70px 50px 40px 142px;
+      margin: 0 0 250px;
+      background: #fff;
+      border-radius: 28px;
+
+
+      ul {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        li {
+          width: 135px;
+          margin-right: 20px;
+          padding-left: 40px;
+          margin-bottom: 30px;
+          font-size: $p;
+          line-height: 2;
+        }
+
+        // 各區塊設定
+        .barrier {
+          background: url("@/img/floor_introduction_barrier_free_icon.svg") no-repeat 2px 50%;
+          background-size: 25px 25px;
+        }
+
+        .scope {
+          background: url("@/img/floor_introduction_fish_icon.svg") no-repeat 2px 50%;
+          background-size: 25px 25px;
+        }
+
+        .lift {
+          background: url("@/img/floor_introduction_lift_icon.svg") no-repeat 2px 50%;
+          background-size: 25px 25px;
+        }
+
+        .baby {
+          background: url("@/img/floor_introduction_baby_icon.svg") no-repeat 2px 50%;
+          background-size: 30px 25px;
+        }
+
+        .shop {
+          background: url("@/img/floor_introduction_shop_icon.svg") no-repeat 2px 50%;
+          background-size: 25px 25px;
+        }
+
+        .toilet {
+          background: url("@/img/floor_introduction_toilet_icon.svg") no-repeat 2px 50%;
+          background-size: 25px 25px;
+        }
+
+        .academy {
+          background: url("@/img/floor_introduction_school_icon.svg") no-repeat 2px 50%;
+          background-size: 25px 25px;
+        }
+
+        .cafe {
+          background: url("@/img/floor_introduction_coffee_icon.svg") no-repeat 2px 50%;
+          background-size: 25px 25px;
+        }
+      }
+    }
   @include mobile() {
     display: none;
   }
+
   @include wrapper {
     padding: 60px 0;
+
     h2 {
       margin: 0 0 35px;
       padding: 0 0 25px;
@@ -620,8 +683,7 @@ $(function () {
       font-size: 24px;
       line-height: 1.6;
       font-weight: bold;
-      background: url("@/img/floor_introduction_h2_line.svg") no-repeat left
-        bottom;
+      background: url("@/img/floor_introduction_h2_line.svg") no-repeat left bottom;
       background-size: 250px 10px;
     }
 
@@ -636,9 +698,11 @@ $(function () {
       .floor_img {
         position: relative;
         margin: 0 0 125px;
+
         &:last-child {
           margin-bottom: 40px;
         }
+
         //   樓層文字
         p {
           position: absolute;
@@ -646,6 +710,7 @@ $(function () {
           top: -60px;
           font-size: 8.6rem;
         }
+
         span {
           font-size: 6rem;
         }
@@ -662,16 +727,19 @@ $(function () {
           width: 112px;
           height: 72px;
           animation: animalMove 3s infinite;
+
           a {
             &:hover {
               animation: shake 0.2s infinite linear alternate;
             }
+
             img {
               width: 112px;
               height: 72px;
             }
           }
         }
+
         // 區塊1
         .p1 {
           left: -29px;
@@ -710,67 +778,7 @@ $(function () {
       }
     }
 
-    // 圖像說明
-    .floor_white1 {
-      padding: 70px 50px 40px 142px;
-      margin: 0 0 250px;
-      background: #fff;
-      border-radius: 28px;
-      ul {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        li {
-          width: 135px;
-          margin-right: 20px;
-          padding-left: 40px;
-          margin-bottom: 30px;
-          font-size: $p;
-          line-height: 2;
-        }
-        // 各區塊設定
-        .barrier {
-          background: url("@/img/floor_introduction_barrier_free_icon.svg")
-            no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
-        .scope {
-          background: url("@/img/floor_introduction_fish_icon.svg") no-repeat
-            2px 50%;
-          background-size: 25px 25px;
-        }
-        .lift {
-          background: url("@/img/floor_introduction_lift_icon.svg") no-repeat
-            2px 50%;
-          background-size: 25px 25px;
-        }
-        .baby {
-          background: url("@/img/floor_introduction_baby_icon.svg") no-repeat
-            2px 50%;
-          background-size: 30px 25px;
-        }
-        .shop {
-          background: url("@/img/floor_introduction_shop_icon.svg") no-repeat
-            2px 50%;
-          background-size: 25px 25px;
-        }
-        .toilet {
-          background: url("@/img/floor_introduction_toilet_icon.svg") no-repeat
-            2px 50%;
-          background-size: 25px 25px;
-        }
-        .academy {
-          background: url("@/img/floor_introduction_school_icon.svg") no-repeat
-            2px 50%;
-          background-size: 25px 25px;
-        }
-        .cafe {
-          background: url("@/img/floor_introduction_coffee_icon.svg") no-repeat
-            2px 50%;
-          background-size: 25px 25px;
-        }
-      }
-    }
+   
   }
 }
 
@@ -780,6 +788,7 @@ $(function () {
     padding-top: 50px;
     background: #f4f5f7;
   }
+
   .lightbox_overlay {
     display: none;
     position: fixed;
@@ -788,6 +797,7 @@ $(function () {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+
     // RWD
     @include mobile() {
       display: block;
@@ -812,6 +822,7 @@ $(function () {
         background: #fff;
         border-radius: 28px;
         position: relative;
+
         // RWD
         @include mobile() {
           padding: 0;
@@ -822,6 +833,7 @@ $(function () {
 
         // 區塊
         .lightbox_block {
+
           // RWD
           @include mobile() {
             border: 1px solid #ddd;
@@ -834,6 +846,7 @@ $(function () {
             margin-bottom: 25px;
             font-weight: bold;
             line-height: 1.6;
+
             // RWD
             @include mobile() {
               margin: 0;
@@ -841,6 +854,7 @@ $(function () {
               display: flex;
               justify-content: space-between;
               align-items: center;
+
               &.accordion_header::after {
                 content: "\002B";
                 font-size: 24px;
@@ -848,9 +862,11 @@ $(function () {
                 color: #666;
                 transition: transform 0.3s ease;
               }
+
               &.active {
                 background-color: lightseagreen;
               }
+
               &.active::after {
                 transform: rotate(45deg);
               }
@@ -860,6 +876,7 @@ $(function () {
           // 內文主排版
           ul {
             display: flex;
+
             // RWD
             @include mobile() {
               flex-direction: column;
@@ -867,26 +884,33 @@ $(function () {
 
             li {
               padding: 0 0 50px 0;
+
               // RWD
               @include mobile() {
                 padding: 0;
               }
+
               &:last-child {
                 margin: 30px 0 0 45px;
+
                 // RWD
                 @include mobile() {
                   margin: 20px;
                 }
+
                 p {
                   font-size: 1.4rem;
                   line-height: 1.8;
+
                   // RWD
                   @include mobile() {
                     margin: 10px;
                   }
                 }
               }
+
               img {
+
                 // RWD
                 @include mobile() {
                   margin: auto;
@@ -899,6 +923,7 @@ $(function () {
             &:last-child {
               padding-top: 60px;
               border-top: 1px solid #546a88;
+
               // RWD
               @include mobile() {
                 padding-top: 40px;
@@ -907,6 +932,7 @@ $(function () {
 
               a {
                 margin: 71px 0 0 287px;
+
                 // RWD
                 @include mobile() {
                   margin: 0;
@@ -937,12 +963,14 @@ $(function () {
       background: #fff;
       box-shadow: 0px 0px 5px #000;
       cursor: pointer;
+
       @include mobile() {
         display: none;
       }
     }
   }
 }
+
 // 各別區塊調整
 .seal .wrapper .lightbox_content .lightbox_block ul:last-child p {
   margin: 60px 0 0 0;
@@ -954,6 +982,7 @@ $(function () {
     transform: translate(0, 0);
     opacity: 1;
   }
+
   50% {
     transform: translate(0, 20px);
     opacity: 1;
