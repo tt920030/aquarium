@@ -130,7 +130,7 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main.ticket {
     .banner{
             background-image: url(/src/img/ticket_banner.png);

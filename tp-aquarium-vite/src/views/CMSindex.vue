@@ -1,6 +1,6 @@
 <template>
   <Header  @clicked="importClicked($event)"></Header>
-  <main>
+  <main class="cms">
     <div v-if="clicked>0" class="mb-3">
       <h3>{{ clicked?manages[clicked].name:'' }}</h3>
       <button>
@@ -46,7 +46,7 @@ import { faPersonWalkingWithCane } from "@fortawesome/free-solid-svg-icons";
 <style lang="scss" scoped>
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-main {
+main.cms {
   box-sizing: border-box;
   padding: 50px 40px 0 200px;
 

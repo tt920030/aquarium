@@ -39,9 +39,11 @@ const router = createRouter({
         
       ]
     },
+    //後臺管理頁面
     {
       path: "/cms",
       name: "CMS",
+      meta: {title:'台北海生館｜後台管理系統'},
       component: () => import("../views/CMSindex.vue"),
       children: [
         {
@@ -87,7 +89,7 @@ const router = createRouter({
     {
       path: "/cart",
       name: "Cart",
-      meta: { title: '購物車' },
+      meta: { title: '台北海生館｜購物車' },
       component: () => import("../views/Cart.vue"),
     },
     {
@@ -178,20 +180,21 @@ const router = createRouter({
     {
       path: "/ticket", //自己取之後連的路徑名稱
       name: "ticket", //自己取
+      meta: {title:'台北海生館｜購票資訊'},
       component: () => import("../views/Ticket.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
-      meta: { title: "購票資訊" }
     },
     {
       path: "/yearpass", //自己取之後連的路徑名稱
       name: "YearPass", //自己取
+      meta: {title:'台北海生館｜年度通行證'},
       component: () => import("../views/ticket/Yearpass.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
     },
     {
       path: "/itinerary", //自己取之後連的路徑名稱
       name: "Itinerary", //自己取
-      meta: { title: "票券/行程購買" },
+      meta: { title: "台北海生館｜票券及行程購買" },
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
 

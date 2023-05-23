@@ -6,6 +6,7 @@
     inline
     select-text="選擇日期" >
   </VueDatePicker>
+  <button @click="changeDate">123</button>
 </template>
   
 <script setup>
@@ -20,6 +21,13 @@ const datepicker = ref(null);
 const emit = defineEmits(['dateSelected']);
 const handleDate = (e) => {
   emit("dateSelected",e);
+  let inners = document.querySelectorAll(".dp__cell_inner");
+  inners.forEach(inner=>{
+    inner.addEventListener("click",()=>{
+      console.log(232);
+      document.querySelector(".dp__action_button").classList.add("confirm");
+    })
+  })
 };
 
 </script>
@@ -41,6 +49,9 @@ const handleDate = (e) => {
   height: 3rem;
   &:hover{
     background-color: darken(map-get($color ,bgc2),20%);
+  }
+  &.confirm{
+    background-color: #5CB85C;
   }
 }
 .dp__menu{

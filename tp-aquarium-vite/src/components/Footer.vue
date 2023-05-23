@@ -29,7 +29,7 @@
                         <p>{{ right.content }}</p>
                     </router-link>
                 </div>
-                <a class="logo" href=""><img src="src/img/logo-white.svg" alt=""></a>
+                <a class="logo" href=""><img src="/src/img/logo-white.svg" alt=""></a>
             </nav>
         </div>
     </footer>

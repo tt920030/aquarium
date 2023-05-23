@@ -20,9 +20,9 @@
                     <li><button>
                             <p>繁</p>
                         </button></li> -->
-        <li><a href=""><img class="icons" src="src/img/header.member.svg" alt=""></a></li>
-        <li><a href=""><img class="icons" src="src/img/header_cart.svg" alt=""></a></li>
-        >>>>>>> 5bfc0d2ddc1220787b3adc496c9401492fad789b
+        <li><a href=""><img class="icons" src="/src/img/header.member.svg" alt=""></a></li>
+        <li><a href=""><img class="icons" src="/src/img/header_cart.svg" alt=""></a></li>
+      
         </ul>
         <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
         <ul class="menu">
@@ -88,7 +88,7 @@ const emit = defineEmits(['openLogin']);
 // })
 
 let circle = document.getElementById("circle");
-console.log(circle);
+// console.log(circle);
 // let bg = document.getElementById('bgc');
 
 let flag = false;
