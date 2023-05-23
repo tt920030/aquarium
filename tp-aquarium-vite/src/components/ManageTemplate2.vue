@@ -28,6 +28,7 @@ import "bootstrap";
 const props = defineProps(["title", "forms"]);
 </script>
 <style lang="scss" scoped>
+@import "bootstrap/dist/css/bootstrap.min.css";
 .row {
   margin-right: 0;
 }
