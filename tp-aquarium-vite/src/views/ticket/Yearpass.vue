@@ -1,9 +1,10 @@
 <template>
     <Header></Header>
     <main class="ticket">
-  
+        <div class="banner">
+            <h1>年度通行<br>YEARPASS</h1>
+        </div>
         <div class="wrapper">
-            <h1>年度通行證</h1>
             <div class="year">
 
                 <table>
@@ -67,11 +68,11 @@
                         </tr>
                     </tbody>
                 </table>
-                <ul>
-                    <li>本館地下停車費享消費享8折優惠</li>
-                    <li>有效期限內不限次數暢遊本館</li>
-                    <li>本館指定餐廳消費享8折優惠</li>
-                    <li>紀念品店消費享9折優惠
+                <ul class="offer">
+                    <li><h4>本館地下停車費享消費享8折優惠</h4></li>
+                    <li><h4>有效期限內不限次數暢遊本館</h4></li>
+                    <li><h4>本館指定餐廳消費享8折優惠</h4></li>
+                    <li><h4>紀念品店消費享9折優惠</h4>
                     </li>
                 </ul>
             </div>
@@ -129,14 +130,32 @@ onMounted(() => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main.ticket {
+    .banner{
+            background-image: url(/src/img/ticket_banner.png);
+            height: 660px;
+            background-size: cover;
+            @include mobile{
+                height: 268px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            h1{padding-top: 35rem;
+                padding-left: 40px;
+                @include mobile{
+                    padding-left:0;
+                    padding-top: 100px;
+                    font-size: 2.8rem;
+                    line-height: 5rem;
+                }
+            };
+        }
+    margin-bottom: 40rem;
     @include wrapper;
     h1{
-        color: map-get($color, text );
-        display: inline-block;
-        width:100%;
-        margin: 2rem auto;
+       
+        margin: 3rem 5rem 0;
     }
 
     h3 {
@@ -226,19 +245,26 @@ main.ticket {
         display: flex;
         justify-content: space-between;
     }
-
-    ul {
-        margin: 2rem 3rem;
-
+    .offer{
+        display: flex;
+        flex-wrap: wrap;
+        width:70%;
+        justify-content: space-between;
+        margin: 0 auto;
         li {
+            text-align: left;
+            width:46%;
             list-style: disc;
             font-size: 1.6rem;
-            line-height: 5rem;
+            line-height: 8rem;
+            @include mobile{
+                width:100%;
+                line-height: 3rem;
+            }
         }
 
-
     }
-
+  
     a {
         font-weight: bold;
         padding: 1rem 3rem;
@@ -252,6 +278,7 @@ main.ticket {
             background-color: rgba(229, 229, 229, 0.8);
             color: rgba(174, 174, 174, 0.8)
         }
+        
     }
 
     ;
@@ -292,6 +319,9 @@ main.ticket {
         }
         a{
             float: right;
+            @include mobile{
+                float: none;
+            }
         }
     }
 

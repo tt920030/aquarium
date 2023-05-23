@@ -2,7 +2,7 @@
     <Header></Header>
 
     <!-- 電腦版 -->
-    <div class="member" v-if="computer">
+    <div class="member">
         <main>
             <div class="left">
                 <div class="photo">
@@ -49,68 +49,82 @@
             </div>
         </main>
     </div>
-    <div class="member_mobile" v-else>
+    <div class="member_mobile" v-if="mobile">
         <div class="photo">
-            <img src="./img/member_photo1.png" alt="">
+            <img src="@/img/member_photo1.png" alt="">
         </div>
         <p class="name">使用者姓名</p>
-        <button class="btn1">
-            <p>修改資料</p>
-        </button>
+
+        <RouterLink to="/member/Profile" @click="hideBar()">
+            <button class="btn1">
+                <p>修改資料</p>
+            </button>
+        </RouterLink>
+
 
         <div class="bottom">
-            <div class="list1 list">
-                <i class="fa-solid fa-folder-open"></i>
-                <p>我的訂單</p>
-            </div>
-            <div class="list2  list">
-                <i class="fa-solid fa-ticket"></i>
-                <p>我的折價券</p>
-            </div>
-            <div class="list3  list">
-                <i class="fa-solid fa-fish"></i>
-                <p>虛擬寵物</p>
-            </div>
+            <RouterLink to="/member/Order" @click="hideBar()">
+                <div class="list1 list">
+                    <img src="@/img/member_user.svg" alt="">
+                    <p>我的訂單</p>
+                </div>
+            </RouterLink>
+
+            <RouterLink to="/member/Coupon" @click="hideBar()">
+                <div class="list2  list">
+                    <img src="@/img/member_coupon.svg" alt="">
+                    <p>我的折價券</p>
+                </div>
+            </RouterLink>
+
+            <RouterLink to="/member/Pet" @click="hideBar()">
+                <div class="list3  list">
+                    <img src="@/img/member_pet.svg" alt="">
+                    <p>虛擬寵物</p>
+                </div>
+            </RouterLink>
+
         </div>
 
     </div>
-    <ChangePassword v-if="password" ></ChangePassword>
-    <!-- <Profile v-if="false" @showPassword="showPassword()"></Profile> -->
+    <RouterView v-else></RouterView>
+    <Profile v-if="false" @showPassword="showPassword1"></Profile>
     <Footer></Footer>
+    <!-- <ChangePassword v-if="password"></ChangePassword> -->
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import ChangePassword from '../components/ChangePassword.vue';
 import Profile from "./member/Profile.vue";
-import { onMounted, reactive, ref, created } from "vue";
+import { onMounted, reactive, ref, watch } from "vue";
 import $ from "jquery";
 
 const password = ref(false);
 
-const computer = ref(true);
+const mobile = ref(true);
+
 
 const button = (i) => {
 
     $(document).find(".list").removeClass("-on");
     $(document).find(".list").eq(i).addClass("-on");
-    
+
 }
 
-const showPassword1 = ( n ) => {
+const showPassword1 = (n) => {
     console.log(n);
     password.value = n;
     console.log(password.value);
 }
 
-created(() => {
-  if(window.innerWidth <= 414){
-    
-    console.log("aaa");
-    computer.value = false;
-  }
-    console.log(window.innerWidth);
-})
+const hideBar = () => {
+    mobile.value = false;
+}
+
+
+
+
 
 </script>
 

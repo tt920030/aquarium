@@ -93,6 +93,6 @@ const previous = () => {
         border-radius: 50%;
     }
 
-    margin-bottom: 100px;
+    margin-bottom: 360px;
 }
 </style>

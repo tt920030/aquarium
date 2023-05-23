@@ -1,5 +1,6 @@
 .stores{
     //kv
+    margin-bottom: 300px;
     .banner{
         background-image: url(../img/product_kv.png);
         width: 100%;
@@ -121,7 +122,6 @@
                                 cursor: pointer;
                             }
                         }
-
                         .filterByType{
                             margin-bottom: 50px;
                             @include mobile{

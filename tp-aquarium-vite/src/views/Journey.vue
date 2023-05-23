@@ -89,8 +89,8 @@
 
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
-                  <img src="../img/journey_intro_icon.svg" alt="" />
-                  <h4>夜宿海生館-兩天一夜</h4>
+                  <img src="@/img/journey_intro_icon.svg" alt="" />
+                  <h4>夜宿海生館-兩天一夜</h4>                   
                   <p>
                     夜宿海生館是一個兩天一夜的活動，將帶您前往探索台灣水域區的豐富生態和文化。<br />進行夜間探索、聆聽海洋生物的聲音，更有機會觀察到燈籠魚、海蜇等特殊生物，兩天一夜的行程充滿探索和學習的樂趣，讓您深入了解台灣水域區的獨特之處。
                   </p>
@@ -110,7 +110,7 @@
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
-                  <img src="../img/journey_intro_icon.svg" alt="" />
+                  <img src="@/img/journey_intro_icon.svg" alt="" />
                   <h4>水中留影</h4>
                   <p>
                     水中拍照是一種非常有趣的活動，可以在游泳池或海灘等水域進行。<br/>通過使用專業的防水相機或手機殼，您可以在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻技巧，如水滴拍攝、水面倒影等，以獲得令人驚嘆的效果。
@@ -131,7 +131,7 @@
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
-                  <img src="../img/journey_intro_icon.svg" alt="" />
+                  <img src="@/img/journey_intro_icon.svg" alt="" />
                   <h4>海生館專人導覽(預約制)</h4>
                   <p>
                     海生館專人導覽，讓你更深入了解海洋生物的奧秘！<br />透過預約專人導覽，你可以在專業的生物解說帶領下，深入了解各種海洋生物的特性及生態，更進一步瞭解大自然的神奇。
@@ -152,7 +152,7 @@
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
-                  <img src="../img/journey_intro_icon.svg" alt="" />
+                  <img src="@/img/journey_intro_icon.svg" alt="" />
                   <h4>海洋跳躍者：海豚秀</h4>
                   <p>
                     來到海生館，別錯過與海豚互動的機會！海豚秀是海生館最受歡迎的活動之一，每天都有多場表演，讓你可以近距離觀察這些聰明、可愛的海洋哺乳動物。<br />在表演中，你可以看到海豚們跳躍、翻轉、灑水等技巧動作，展現出它們非凡的運動天賦。
@@ -173,7 +173,7 @@
               </a>
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
-                  <img src="../img/journey_intro_icon.svg" alt="" />
+                  <img src="@/img/journey_intro_icon.svg" alt="" />
                   <h4>磷蝦小管家：餵魚體驗活動</h4>
                   <p>
                     將穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。<br />深入瞭解飼養員們餵養觀賞魚的技巧和磷蝦的生態知識，同時體驗到成為一名飼養員的感覺。
@@ -211,7 +211,7 @@
                       晚上，您將入住海生館，進行夜間探索、聆聽海洋生物的聲音，更有機會觀察到燈籠魚、海蜇等特殊生物。第二天，您將前往海洋保護區進行浮潛活動，近距離觀察海洋生態，並且參與海洋保
                       育行動。這個兩天一夜的行程充滿探索和學習的樂趣，讓您深入了解台灣水域區的獨特之處。
                     </p>
-                    <a href="#" class="btn">了解更多</a>
+                    <RouterLink to="/overnight" class="btn" @click="rescroll">了解更多</RouterLink>
                   </li>
                 </ul>
               </div>
@@ -229,7 +229,7 @@
               <div class="lightbox_block">
                 <h4 class="accordion_header">鯨鯊</h4>
                 <ul>
-                  <li><img src="../img/journey_intro2.jpg" alt="" /></li>
+                  <li><img src="@/img/journey_intro2.jpg" alt="" /></li>
                   <li>
                     <h4>快來體驗水中拍照的快感吧!</h4>
                     <p>
@@ -253,7 +253,7 @@
               <div class="lightbox_block">
                 <h4 class="accordion_header">海生館專人導覽(預約制)</h4>
                 <ul>
-                  <li><img src="../img/journey_intro3.jpg" alt="" /></li>
+                  <li><img src="@/img/journey_intro3.jpg" alt="" /></li>
                   <li>
                     <h4>由最專業的嚮導帶你悠遊海底世界!</h4>
                     <p>
@@ -304,6 +304,7 @@
                   <li>
                     <img src="@/img/journey_intro5.jpg" alt="" /></li>
                   <li>
+                    
                     <h4>快來親自體會磷蝦餵魚的樂趣吧!</h4>
                     <p>
                       在海生館，你可以參加「磷蝦小管家」活動，親身體驗磷蝦餵魚的樂趣！在活動中，你將穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。當磷蝦在餌料中出現時，你會感到一陣刺鼻的氣味，但
@@ -318,7 +319,7 @@
           <div class="lightbox_close">x</div>
         </div>
       </section>
-
+      
       <RouterLink to="/ticket">aaaaaa</RouterLink>
     </main>
 
@@ -371,7 +372,11 @@ $(function () {
   });
   // $(".accordion_header").first().click();
 });
-
+//滾輪復原
+const rescroll = function(){
+  document.querySelector("body").style.overflow = "visible";
+  window.scrollTo(0, 0);
+}
 // index_ad 跑馬燈
 window.onload = function() {
 
@@ -449,17 +454,17 @@ box.addEventListener('mouseleave', () => {
 
       @include mobile() {
         h2 {
-          top: 40%;
+          top: 30%;
           right: 7%;
         }
 
         h1 {
-          top: 40%;
+          top: 30%;
           right: 15%;
         }
 
         h4 {
-          top: 45%;
+          top: 35%;
           right: 30%;
         }
       }
@@ -534,7 +539,9 @@ box.addEventListener('mouseleave', () => {
       }
 
       @include mobile() {
-
+        padding-bottom: 460px;
+        overflow-x: hidden;
+        margin-top: -115px;
         .pic_1 {
           overflow-x: hidden;
           top: -150px;
@@ -868,6 +875,7 @@ box.addEventListener('mouseleave', () => {
           }
 
           @include mobile() {
+            display: none;
             flex-direction: column;
             padding: 20px;
 
@@ -919,8 +927,10 @@ box.addEventListener('mouseleave', () => {
   }
   .light_box {
     @include mobile() {
-      padding-top: 50px;
+      padding: 120px 0;
       background: #f4f5f7;
+      margin-bottom: 300px;
+      margin-top: -500px;
     }
     .lightbox_overlay {
       display: none;

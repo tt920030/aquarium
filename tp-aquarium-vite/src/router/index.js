@@ -13,6 +13,7 @@ const router = createRouter({
     {
       path: "/member",
       name: "member",
+      meta: { title: '會員中心' },
       component: () => import("../views/Member.vue"),
       children: [
         {
@@ -35,13 +36,14 @@ const router = createRouter({
           name: "pet",
           component: () => import("../views/member/Pet.vue"),
         }
+        
       ]
     },
-
-
+    //後臺管理頁面
     {
       path: "/cms",
       name: "CMS",
+      meta: {title:'台北海生館｜後台管理系統'},
       component: () => import("../views/CMSindex.vue"),
       children: [
         {
@@ -68,7 +70,18 @@ const router = createRouter({
           path: "journey_change",
           name: "JourneyChange",
           component: () => import("../views/manage/JourneyChange.vue")
+        },
+        {
+          path: "product_manage",
+          name: "ProductManage",
+          component: () => import("../views/manage/ProductManage.vue")
+        },
+        {
+          path: "customer_change",
+          name: "CustomerManage",
+          component: () => import("../views/manage/CustomerChange.vue")
         }
+
       ]
     },
 
@@ -76,7 +89,7 @@ const router = createRouter({
     {
       path: "/cart",
       name: "Cart",
-      meta: { title: '購物車' },
+      meta: { title: '台北海生館｜購物車' },
       component: () => import("../views/Cart.vue"),
     },
     {
@@ -164,6 +177,7 @@ const router = createRouter({
     {
       path: "/news",
       name: "News",
+      meta: { title: '最新消息' },
       component: () => import("../views/News.vue"),
 
     },
@@ -176,23 +190,21 @@ const router = createRouter({
     {
       path: "/ticket", //自己取之後連的路徑名稱
       name: "ticket", //自己取
+      meta: {title:'台北海生館｜購票資訊'},
       component: () => import("../views/Ticket.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
-      meta: { title: "購票資訊" }
     },
     {
       path: "/yearpass", //自己取之後連的路徑名稱
-    },
-    {
-      path: "/ticket/yearpass", //自己取之後連的路徑名稱
       name: "YearPass", //自己取
+      meta: {title:'台北海生館｜年度通行證'},
       component: () => import("../views/ticket/Yearpass.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
     },
     {
       path: "/itinerary", //自己取之後連的路徑名稱
       name: "Itinerary", //自己取
-      meta: { title: "票券/行程購買" },
+      meta: { title: "台北海生館｜票券及行程購買" },
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
 
@@ -251,10 +263,8 @@ const router = createRouter({
       path: "/backstage_index", //自己取之後要連的路徑名稱
       name: "BackstageIndex", //自己取
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
-    }
-  ]
-}
-);
+    }]}
+  );
 router.beforeEach((to, from, next) => {
   window.document.title = to.meta.title
   next()

@@ -21,6 +21,7 @@
         @include mobile {
             background-image: url(../../img/news_banner_small.png);
             height: 197px;
+            margin-top: 60px;
         }
     }
 
@@ -117,10 +118,12 @@
             border-radius: 15px;
             padding: 15px;
             position: relative;
+            margin-bottom: 400px;
 
             @include mobile{
                 padding: 5px;
                 margin: 5px;
+                margin-bottom: 320px;
             }
 
             .border2 {
