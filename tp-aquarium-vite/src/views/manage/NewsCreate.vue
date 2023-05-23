@@ -10,28 +10,17 @@
         </div>
     </main>
 </template>
-
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 
 
-import ManageTemplate from "/src/components/ManageTemplate.vue";
-const news = reactive([
-  { id: "title", title: "消息標題", type: "text" },
-  { id: "sub_title", title: "消息副標題", type: "text" },
-  { id: "content", title: "消息內容", type: "textarea" },
-  { id: "picture", title: "消息主照片", type: "file" },
-  { id: "picture1", title: "消息副照片", type: "file" },
-  { id: "picture2", title: "消息副照片", type: "file" },
-  { id: "release_date", title: "發布日期", type: "date" },
-]);
 </script>
 <style lang="scss" scoped>
 
 main {
   box-sizing: border-box;
-  padding: 50px 0 0 200px;
+  padding: 50px 20px 0 200px;
   h3 {
     padding-bottom: 10px;
     margin-bottom: 30px;
