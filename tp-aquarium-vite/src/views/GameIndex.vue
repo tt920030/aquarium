@@ -1,4 +1,5 @@
 <template>
+
     <body class=game_index>
         <Header></Header>
 
@@ -34,9 +35,9 @@
                         <h3>我要挑戰</h3>
                     </a> -->
                     <div class="btn">
-                        <RouterLink to="game_choose">
+                        <RouterLink to="/game_choose">
                         <h3>我要挑戰</h3>
-                    </RouterLink>
+                        </RouterLink>
                     </div>
 
                 </div>
@@ -53,7 +54,7 @@
     </body>
 
 
-    <RouterView></RouterView>
+    <!-- <RouterView></RouterView> -->
 </template>
 <script setup>
 import { RouterLink, RouterView } from "vue-router";

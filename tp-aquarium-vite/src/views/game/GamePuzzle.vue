@@ -4,9 +4,11 @@
   <!-- 回首頁按鈕 -->
   <button class="back_to_home">
     <img src="../../img/logosvg.svg" alt="LOGO SVG" />
-    <a href="#">回首頁</a>
+    <RouterLink to="/">
+    <h5>回首頁</h5>
+    </RouterLink>
   </button>
-
+  
   <!-- 拼圖框框 -->
   <div class="puzzle_frame"></div>
 
@@ -40,32 +42,15 @@
 <script  setup>
 // import particlesJS from "vue3-particles";
 import Puzzle from "/src/js/puzzle.js";
-import particlesJS_Start from '/src/js/particle.js'
+
 import { onMounted, ref } from "vue";
+import particlesJS_Start from '/src/js/particle.js';
 
 // import { onMounted, reactive, ref } from "vue";
 onMounted(() => {
   particlesJS_Start()
 
-
-
-
   Puzzle()
-  // 選擇圖片
-  // let img = '/img/puzzle_seahorse.png';
-
-  // // autoStart = isMiniature(); // used for nice miniature in CodePen
-
-  // // 拼圖出現的大小
-
-  // let x = new Puzzle({
-  //   img: img,
-  //   width: window.innerWidth - 150,
-  //   height: window.innerHeight - 150,
-  //   idiv: "forPuzzle"
-  // });
-
-
 
 })
 </script>

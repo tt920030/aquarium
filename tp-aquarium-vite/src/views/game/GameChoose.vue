@@ -1,10 +1,10 @@
 <template>
         
-    <body class=game_index>
+    <body class=game_choose>
         <Header></Header>
         
             <div class="top">
-                <img src="../img/game_photo.png" alt="">
+                <img src="../../img/game_photo.png" alt="">
             </div>
     
             <div class="banner">
@@ -20,12 +20,22 @@
                 </div>
             </div>
     
-            <div class="game_choose">
+            <div class="game_choose_choose">
     
-                <div class="choose">
-
+                <RouterLink to="/game_quiz">
+                <div class="choose_quiz">
+                <h2>問答遊戲</h2>
+                <img src="../../img/game_choose_quiz.png" alt="Quiz Image">
                 </div>
-    
+                </RouterLink>
+
+                <RouterLink to="/game_puzzle">
+                <div class="choose_puzzle">
+                <h2>拼圖遊戲</h2>
+                <img src="../../img/game_choose_puzzle.png" alt="Puzzle Image">
+                </div>
+                </RouterLink>
+
             </div>
     
 
@@ -33,7 +43,7 @@
     </body>
     
     
-    <RouterView></RouterView>
+    <!-- <RouterView></RouterView> -->
     
     </template>
     <script setup>  
@@ -44,5 +54,5 @@
     import Footer from '/src/components/Footer.vue';
     </script>
     <style lang="scss" scoped>
-    @import "../../assets/sass/page/game_index"
+    @import "../../assets/sass/page/game_choose"
     </style>
