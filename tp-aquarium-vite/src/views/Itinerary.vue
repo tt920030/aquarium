@@ -1,5 +1,5 @@
 <template>
-    <Header></Header>
+    <!-- <Header></Header> -->
     <div class="wrapper">
         <div class="top">
             <ItineraryChooser class="chooser" @itinerary-selected="getItinerary"></ItineraryChooser>
@@ -30,7 +30,7 @@
         </div>
 
     </div>
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
     <RouterView></RouterView>
 </template>
 
@@ -86,7 +86,7 @@ const addCart = function () {
 @include wrapper;
 
 .wrapper {
-    padding: 5rem 3rem;
+    padding: 25rem 3rem;
 
     h4 {
         margin: 2rem 0;

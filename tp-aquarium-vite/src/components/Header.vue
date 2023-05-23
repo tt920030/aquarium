@@ -41,9 +41,16 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+    import { defineEmits } from "vue";
 import $ from "jquery";
+
+    const emit = defineEmits(['openLogin']);
+
+
+
 import { transform } from "@vue/compiler-core";
-const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/park_activity" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
+
+const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/journey" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
 $(function () {
     let is_open = false;
     $("header .content nav i").click(function () {
@@ -56,7 +63,7 @@ $(function () {
         }
     });
 })
-   
+
 
     // const 
     let flag = ref(false);
@@ -252,7 +259,7 @@ header {
                     .switch{
                         background-color:lightgrey;
 
-                        i{
+                        i {
                             display: block;
                             @include mobile() {
                                 font-size: 10px;
@@ -281,7 +288,7 @@ header {
                 display: flex;
                 flex-direction: row;
                 margin-top: 20px;
-               
+
 
                 @include mobile {
                     margin: 0;
@@ -291,7 +298,7 @@ header {
                     margin-right: 40px;
 
                     @include mobile {
-                        
+
                         margin-right: 0px;
                     }
 
@@ -335,7 +342,7 @@ header {
                     /* js滑入效果 */
                     right: -500px;
                     top: 80px;
-                    
+
                 }
             }
         }
@@ -393,4 +400,4 @@ header {
       }
     }
 }
-</style>
+</style> 

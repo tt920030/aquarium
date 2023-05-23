@@ -50,40 +50,17 @@ import { onMounted, reactive, ref } from "vue";
         content: "園區介紹"
     }]);
 
-    const rights = reactive([{
-        path: '/ticket',
-        content: "購票資訊"
-    }, {
-        path: "/journey",
-        content: "行程預約"
-    }, {
-        path: "/stores",
-        content: "網路商城"
-    }]);
+const rights = reactive([{
+    path: '/ticket',
+    content: "購票資訊"
+}, {
+    path: "/journey",
+    content: "行程預約"
+}, {
+    path: "/stores",
+    content: "網路商城"
+}]);
 
-let flag = ref(false);
-const circle = ref(null);
-const waveColor = ref(null);
-const waveColor2 = ref(null);
-
-    function SwitchColor (){
-        flag.value = !flag.value;
-
-        if(flag.value){
-            circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
-            let icon = document.querySelector('i');
-            
-            circle.value.style.backgroundColor = '#ccf1f5';
-            waveColor.value = 'DeepSkyBlue';
-            waveColor2.value = 'DeepSkyBlue';
-
-        }else{
-            circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-            circle.value.style.backgroundColor = 'lightgrey';
-            waveColor.value = 'blue';
-            waveColor2.value = 'blue';
-        }
-    }
 
 </script>
 

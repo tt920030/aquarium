@@ -91,20 +91,41 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/sass/page/member_mobile_pet';
+
 .pet {
-
-
     height: fit-content;
+    @include mobile {
+
+        width: 100%;
+        height: 1270px;
+        margin-top: 170px;
+        margin-bottom: 30px;
+
+    }
+
+
+
+
+    
 
     h3 {
         text-align: left;
         margin-bottom: 10px;
+
+        @include mobile {
+            padding-left: 20px;
+        }
 
         span {}
     }
 
     p {
         text-align: left;
+
+        @include mobile{
+            padding-left: 20px;
+        }
     }
 
     .area {
@@ -113,10 +134,20 @@
         justify-content: space-between;
         flex-wrap: wrap;
 
+        @include mobile{
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
         .fish {
             width: 30%;
             height: fit-content;
             margin-bottom: 50px;
+
+            @include mobile{
+                width: 50%;
+            }
 
             input {
                 appearance: none;
@@ -135,9 +166,17 @@
                     justify-content: center;
                     align-items: center;
 
+                    @include mobile{
+                        height: 150px;
+                    }
+
                     img {
-                        width: fit-content;
-                        height: fit-content;
+                        max-width: 90%;
+                        max-height: 250px;
+
+                        @include mobile{
+                            max-height: 150px;
+                        }
 
                     }
 
@@ -171,13 +210,19 @@
                 margin: 0 auto;
                 margin-top: 20px;
 
+
                 p {
                     font-family: "Noto Sans TC", sans-serif;
                     margin: 0;
+
+                    @include mobile{
+                        padding: 0;
+                    }
                 }
             }
         }
 
 
     }
-}</style>
+}
+</style>

@@ -13,10 +13,14 @@ import { ref, reactive, onMounted} from 'vue';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import { onUpdated } from 'vue';
+const today = ref(new Date())
 const date = ref(new Date());
 const datePlus30 = ref(new Date(date.value.setDate(date.value.getDate() + 30)));
-
-
+const datepicker = ref(null);
+const emit = defineEmits(['dateSelected']);
+const handleDate = (e) => {
+  emit("dateSelected",e);
+};
 
 </script>
 
