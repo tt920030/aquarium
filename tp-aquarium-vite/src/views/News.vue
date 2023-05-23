@@ -37,12 +37,13 @@ import { RouterLink } from "vue-router";
 import { computed, onMounted, reactive, ref } from 'vue';
 import Page from "../components/Page.vue";
 
+import src1 from "@/img/news_picture1-1.jpg"
 
 // 最新消息列表
 const items = ref([
     {
         id: 1,
-        src: "src/img/news_picture1-1.jpg",
+        src: src1,
         time: "2023.4.18",
         title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！保育人員細心照顧，企鵝寶寶健康成長中！"
     },

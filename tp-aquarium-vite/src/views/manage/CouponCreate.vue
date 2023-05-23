@@ -1,11 +1,11 @@
 <template>
-  <Header></Header>
-  <main>
-    <div class="mb-3">
+  
+
+    <!-- <div class="mb-3">
       <h3>消息管理</h3>
-    </div>
+    </div> -->
     <ManageTemplate :news="news" :buttons="buttons"></ManageTemplate>
-  </main>
+
 </template>
 
 <script setup>

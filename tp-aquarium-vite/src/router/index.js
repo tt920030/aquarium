@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import index from "../views/Index.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
@@ -62,6 +62,11 @@ const router = createRouter({
           component: () => import("../views/manage/CouponManage.vue")
         },
         {
+          path: "coupon_create",
+          name: "CouponCreate",
+          component: () => import("../views/manage/CouponCreate.vue")
+        },
+        {
           path: "journey_manage",
           name: "JourneyManage",
           component: () => import("../views/manage/JourneyManage.vue")
@@ -77,8 +82,14 @@ const router = createRouter({
           component: () => import("../views/manage/ProductManage.vue")
         },
         {
-          path: "customer_change",
+          path: "customer_manage",
           name: "CustomerManage",
+          component: () => import("../views/manage/CustomerManage.vue")
+        },
+
+        {
+          path: "customer_change",
+          name: "CustomerChange",
           component: () => import("../views/manage/CustomerChange.vue")
         }
 

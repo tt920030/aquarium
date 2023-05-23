@@ -10,23 +10,23 @@
       </div>
       <!-- 樓層指南選單 -->
       <ul class="floor_nav">
-        <li>
-          <a href=""><img src="@/img/floor_p1.svg" alt="" /> </a>
-          <h4>樓層介紹</h4>
-        </li>
-        <li>
-          <a href=""><img src="@/img/floor_p2_active.svg" alt="" /> </a>
-          <h4 class="h4_active">館內活動</h4>
-        </li>
-        <li>
-          <a href=""><img src="@/img/floor_p3.svg" alt="" /> </a>
-          <h4>常見問題</h4>
-        </li>
-        <li>
-          <a href=""><img src="@/img/floor_p4.svg" alt="" /> </a>
-          <h4>參觀資訊</h4>
-        </li>
-      </ul>
+      <li>
+        <RouterLink to="/floor_introduction"><img src="@/img/floor_p1.svg" alt="" /></RouterLink>
+        <h4 >樓層介紹</h4>
+      </li>
+      <li>
+        <RouterLink to="/park_activity"><img src="@/img/floor_p2_active.svg" alt="" /> </RouterLink>
+        <h4 class="h4_active">館內活動</h4>
+      </li>
+      <li>
+        <RouterLink to="/faq"><img src="@/img/floor_p3.svg" alt="" />  </RouterLink>
+        <h4>常見問題</h4>
+      </li>
+      <li>
+        <RouterLink to="/visit_information"><img src="@/img/floor_p4.svg" alt="" /> </RouterLink>
+        <h4>參觀資訊</h4>
+      </li>
+    </ul>
       <section class="wrapper">
         <!-- journey information -->
         <h3 class="journey_info">台北海生館活動</h3>

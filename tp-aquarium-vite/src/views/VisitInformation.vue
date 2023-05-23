@@ -8,23 +8,24 @@
 
             <!-- 樓層指南選單 -->
             <ul class="floor_nav">
-                <li>
-                    <a href=""><img src="@/img/floor_p1.svg" alt="" /> </a>
-                    <h4>樓層介紹</h4>
-                </li>
-                <li>
-                    <a href=""><img src="@/img/floor_p2.svg" alt="" /> </a>
-                    <h4>館內活動</h4>
-                </li>
-                <li>
-                    <a href=""><img src="@/img/floor_p3.svg" alt="" /> </a>
-                    <h4>常見問題</h4>
-                </li>
-                <li>
-                    <a href=""><img src="@/img/floor_p4_active.svg" alt="" /> </a>
-                    <h4 class="h4_active">參觀資訊</h4>
-                </li>
-            </ul>
+      <li>
+        <RouterLink to="/floor_introduction"><img src="@/img/floor_p1.svg" alt="" /></RouterLink>
+        <h4 >樓層介紹</h4>
+      </li>
+      <li>
+        <RouterLink to="/park_activity"><img src="@/img/floor_p2.svg" alt="" /> </RouterLink>
+
+        <h4>館內活動</h4>
+      </li>
+      <li>
+        <RouterLink to="/faq"><img src="@/img/floor_p3.svg" alt="" />  </RouterLink>
+        <h4>常見問題</h4>
+      </li>
+      <li>
+        <RouterLink to="/visit_information"><img src="@/img/floor_p4_active.svg" alt="" /> </RouterLink>
+        <h4 class="h4_active">參觀資訊</h4>
+      </li>
+    </ul>
 
             <div class="wrapper">
                 <div class="visit_top">
@@ -103,7 +104,7 @@
                                     <p>捷運善導寺站10號出口</p>
                                 </span>
                                 <div class="mid_icon">
-                                    <img class="person" src="src/img/visitinfo1.svg" alt="">
+                                    <img class="person" src="/src/img/visitinfo1.svg" alt="">
                                     <p>出站直行150公尺後向右轉</p>
                                 </div>
                                 <span class="right">
@@ -120,7 +121,7 @@
                                     <p>於台北海生館站下車</p>
                                 </span>
                                 <div class="mid_icon">
-                                    <img class="bus" src="src/img/visitinfo2.png" alt="">
+                                    <img class="bus" src="/src/img/visitinfo2.png" alt="">
                                     <p>下車後向右轉直行100公尺</p>
                                 </div>
                                 <span class="right">
@@ -137,7 +138,7 @@
                                     <p>海生館出口下交流道</p>
                                 </span>
                                 <div class="mid_icon">
-                                    <img class="car" src="src/img/visitinfo3.png" alt="">
+                                    <img class="car" src="/src/img/visitinfo3.png" alt="">
                                     <p>往海生館路直行600公尺</p>
                                 </div>
                                 <span class="right">

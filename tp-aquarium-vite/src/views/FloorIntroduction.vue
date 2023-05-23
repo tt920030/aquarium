@@ -11,19 +11,20 @@
     <!-- 樓層指南選單 -->
     <ul class="floor_nav">
       <li>
-        <a href=""><img src="@/img/floor_p1_active.svg" alt="" /> </a>
+        <RouterLink to="/floor_introduction"><img src="@/img/floor_p1_active.svg" alt="" /></RouterLink>
         <h4 class="h4_active">樓層介紹</h4>
       </li>
       <li>
-        <a href=""><img src="@/img/floor_p2.svg" alt="" /> </a>
+        <RouterLink to="/park_activity"><img src="@/img/floor_p2.svg" alt="" /> </RouterLink>
+
         <h4>館內活動</h4>
       </li>
       <li>
-        <a href=""><img src="@/img/floor_p3.svg" alt="" /> </a>
+        <RouterLink to="/faq"><img src="@/img/floor_p3.svg" alt="" />  </RouterLink>
         <h4>常見問題</h4>
       </li>
       <li>
-        <a href=""><img src="@/img/floor_p4.svg" alt="" /> </a>
+        <RouterLink to="/visit_information"><img src="@/img/floor_p4.svg" alt="" /> </RouterLink>
         <h4>參觀資訊</h4>
       </li>
     </ul>

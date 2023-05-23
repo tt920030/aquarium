@@ -101,7 +101,7 @@
                     </th>
                     <td>
                         <p>小遊戲過關禮物</p>
-                        <img src="./img/member_angle.svg" alt="">
+                        <img src="/src/img/member_angle.svg" alt="">
                     </td>
 
                 </tr>
@@ -159,7 +159,7 @@
                     </th>
                     <td>
                         <p>小遊戲過關禮物</p>
-                        <img src="./img/member_angle.svg" alt="">
+                        <img src="/src/img/member_angle.svg" alt="">
                     </td>
 
                 </tr>

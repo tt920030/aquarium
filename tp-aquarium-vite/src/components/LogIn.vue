@@ -49,7 +49,7 @@
                         <div class="input">
                             <label for="password">密碼</label>
                             <input :type="eye" id="password" name="password" placeholder="請輸入密碼">
-                            <img src="@/img/login_eye.svg" alt="" class="eye" @click="toText()">
+                            <img src="/src/img/login_eye.svg" alt="" class="eye" @click="toText()">
                             <div class="invalid-feedback">密碼錯誤</div>
                             <p class="forget" @click="toResigner('C')">忘記密碼</p>
                         </div>
@@ -71,9 +71,9 @@
                 <div class="bottom">
                     <p class="register2">或用以下方式登入</p>
                     <div class="social">
-                        <img src="@/img/login_fb.svg" alt="">
-                        <img src="@/img/login_twitter.svg" alt="">
-                        <img src="@/img/login_google.svg" alt="">
+                        <img src="/src/img/login_fb.svg" alt="">
+                        <img src="/src/img/login_twitter.svg" alt="">
+                        <img src="/src/img/login_google.svg" alt="">
                     </div>
                 </div>
 
@@ -96,13 +96,13 @@
                         <div class="input">
                             <label for="password">密碼</label>
                             <input type="password" id="password" name="password" placeholder="密碼長度需六至十二位">
-                            <img src="./img/login_eye.svg" alt="" class="eye" @click="toText()">
+                            <img src="/src/img/login_eye.svg" alt="" class="eye" @click="toText()">
                             <div class="invalid-feedback">密碼須包含大小寫英文及數字</div>
                         </div>
                         <div class="input">
                             <label for="password">密碼確認</label>
                             <input type="password" id="password" name="password" placeholder="請再次輸入密碼">
-                            <img src="./img/login_eye.svg" alt="" class="eye" @click="toText()">
+                            <img src="/src/img/login_eye.svg" alt="" class="eye" @click="toText()">
                             <div class="invalid-feedback">二次輸入與密碼不符</div>
                         </div>
 
@@ -122,13 +122,13 @@
                         <div class="input">
                             <label for="password">密碼</label>
                             <input :type="eye" id="password" name="password" placeholder="密碼長度需六至十二位">
-                            <img src="@/img/login_eye.svg" alt="" class="eye">
+                            <img src="/src/img/login_eye.svg" alt="" class="eye">
                             <div class="invalid-feedback">密碼須包含大小寫英文及數字</div>
                         </div>
                         <div class="input">
                             <label for="password2">密碼確認</label>
                             <input :type="eye" id="password2" name="password" placeholder="請再次輸入密碼">
-                            <img src="@/img/login_eye.svg" alt="" class="eye">
+                            <img src="/src/img/login_eye.svg" alt="" class="eye">
                             <div class="invalid-feedback">二次輸入與密碼不符</div>
                         </div>
 
