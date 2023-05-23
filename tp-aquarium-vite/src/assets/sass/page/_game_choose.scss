@@ -1,0 +1,157 @@
+.game_choose {
+    
+
+    .top {
+ 
+        img{
+            width: 100%;
+            margin-top: 110px;
+
+            @include mobile{
+                width: 100%;
+                margin-top: 70px;
+              }
+        }
+    }
+
+
+    .banner { 
+
+    @include mobile{
+        width: 100%;
+
+    }
+
+        margin: 100px auto; 
+        width: 450px; 
+        position: relative; 
+
+        .content{
+
+            @include mobile{
+                // margin-right: 10px;
+    
+            }
+            // padding: 50px; 
+            text-align: center;
+
+            h1{
+                color: map-get($color, text);
+            }
+        }
+        .content_mask { 
+            @include mobile{
+                margin-left: 68px;
+    
+            }
+            // padding: 50px; 
+            text-align: center;
+            margin-left: 50px;
+            position: absolute; 
+            top: 0;
+            left: 0;
+            background: map-get($color, bgc2);
+            color: #FFFFFF;
+            -webkit-clip-path: polygon(50% 0, 0 25%, 70% 50%);
+            clip-path: polygon(50% 0, 0 25%, 70% 50%);
+            pointer-events: none;
+            -webkit-animation: triango_animation 9s alternate infinite;
+            animation: triango_animation 9s alternate infinite;
+        }
+        @keyframes triango_animation{
+            33% {
+                -webkit-clip-path:polygon(10% 0, 0 60%, 70% 10%);
+                clip-path:polygon(10% 0, 0 60%, 70% 10%);
+            }
+            66% {
+                -webkit-clip-path:polygon(0 45%, 50% 75%, 80% 30%);
+                clip-path:polygon(0 45%, 50% 75%, 80% 30%);
+            }
+        }
+    }
+    
+    .game_choose_choose {
+
+        height: 440px;
+        margin-bottom: 300px;
+        display: flex;
+        justify-content: Space-evenly;
+
+            @include mobile{
+                margin-bottom: 220px;
+        
+            }
+
+        .choose_quiz {
+
+            @include mobile{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 10px;
+    
+            }
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            text-align: center;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 20px;
+
+            h2 {
+                padding: 50px;
+            }
+
+            img{
+
+                @include mobile{
+                    width: 40%;
+                    margin: -65px -65px;
+                }
+
+                    width: 300px;
+                    margin-top: 25px;
+
+                }
+            }
+        }
+        .choose_puzzle {
+
+            @include mobile {
+
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 10px;
+            
+            }
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            text-align: center;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 20px;
+
+            h2 {
+                padding: 50px;
+            }
+
+            img{
+
+                @include mobile{
+                    width: 40%;
+                    margin: -65px -65px;
+                }
+
+                    width: 300px;
+
+                }
+        }
+
+
+}
+        
+    
+
