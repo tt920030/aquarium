@@ -54,7 +54,7 @@ onMounted(() => {
 
 })
 </script>
-<style>
+<style lang="scss">
 /* 拼圖框框 */
 .puzzle_frame {
   position: absolute;
@@ -145,7 +145,7 @@ onMounted(() => {
 }
 </style>
 
-<style scoped>
+<style lang="scss" scoped>
 /* ---- 拼圖背景 ---- */
 
 #particles-js {
@@ -190,6 +190,11 @@ onMounted(() => {
   font-size: 18px;
 }
 
+@include mobile{
+  .back_to_home{
+    left: 370px;
+  }
+}
 
 
 /* 燈箱 */
