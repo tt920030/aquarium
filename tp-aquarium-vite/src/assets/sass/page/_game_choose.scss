@@ -73,22 +73,22 @@
     .game_choose_choose {
 
         height: 440px;
-        margin-bottom: 300px;
+        margin-bottom: 30px;
         display: flex;
         justify-content: Space-evenly;
 
             @include mobile{
-                margin-bottom: 220px;
-        
+                width: 100%;
+                margin-bottom: 390px;
+                flex-direction: column;
             }
 
         .choose_quiz {
 
             @include mobile{
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                margin-bottom: 10px;
+                // width: 100%;
+                margin-top: 60px;
+                height: 250px;
     
             }
             width: 400px;
@@ -118,13 +118,11 @@
         }
         .choose_puzzle {
 
-            @include mobile {
-
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                margin-bottom: 10px;
-            
+            @include mobile{
+                // width: 100%;
+                margin-top: 60px;
+                height: 250px;
+    
             }
             width: 400px;
             height: 400px;
@@ -136,6 +134,12 @@
 
             h2 {
                 padding: 50px;
+                @include mobile {
+
+                    // width: 100%;
+                    // margin-bottom: 10px;
+                
+                }
             }
 
             img{
