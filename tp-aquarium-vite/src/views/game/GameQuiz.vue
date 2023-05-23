@@ -1,3 +1,102 @@
+<template>
+    <body class="quiz">
+        <!-- start Quiz button -->
+        <div class="start_btn"><button>開始答題</button></div>
+
+        <!-- Info Box -->
+        <div class="info_box">
+            <div class="info-title"><span>遊戲規則</span></div>
+            <div class="info-list">
+                <div class="info">1. 問答關卡共有五題，皆為選擇題。</div>
+                <div class="info">2. 每一題只有 <span>15 秒</span> 進行作答。</div>
+                <div class="info">3. 選擇答案後無法更改。</div>
+                <div class="info">4. 作答途中無法暫停，退出後將無法保留進度。</div>
+                <div class="info">5. 答對三題以上可獲得<span>商品折價券！</span></div>
+            </div>
+            <div class="buttons">
+                <button class="quit" style="display: none;">離開遊戲</button>
+                <button class="restart">開始挑戰</button>
+            </div>
+        </div>
+
+        <!-- Quiz Box -->
+        <div class="quiz_box">
+            <div class=quiz_header>
+                <div class="title">海洋知識問答</div>
+                <div class="timer">
+                    <div class="time_left_txt">時間剩下</div>
+                    <div class="timer_sec">15</div>
+                </div>
+                <div class="time_line"></div>
+            </div>
+            <div class=quiz_section>
+                <div class="que_text">
+                    <!--JavaScript -->
+                </div>
+                <div class="option_list">
+                    <!--JavaScript -->
+                </div>
+            </div>
+
+            <!-- footer of Quiz Box -->
+            <div class=quiz_footer>
+                <div class="total_que">
+                    <!--JavaScript -->
+                </div>
+                <button class="next_btn">下一題</button>
+            </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="result_box">
+            <div class="winner">
+                <img src="../../img/crownshark.png" alt="Image">
+            </div>
+            <div class="complete_text">完成挑戰！</div>
+            <div class="score_text">
+                <!--JavaScript -->
+            </div>
+            <div class="buttons">
+                <button class="restart">立即領取</button>
+                <button class="quit">再玩一次</button>
+            </div>
+        </div>
+
+        <!--Questions and Options-->
+        <!-- <script src="game_quesion.js"></script> -->
+
+        <!--Quiz Codes -->
+        <!-- <script src="game_quiz.js"></script> -->
+
+    </body>
+
+
+    <!-- <RouterView></RouterView> -->
+</template>
+
+<script  setup>
+import {reactive} from 'vue';
+// 問答js
+import Puzzle from "/src/js/game_quiz.js";
+// import particlesJS_Start from "/src/js/game_quesion.js";
+
+import { onMounted, ref } from "vue";
+// import particlesJS_Start from '/src/js/particle.js';
+
+// import { onMounted, reactive, ref } from "vue";
+onMounted(() => {
+
+
+
+
+    // particlesJS_Start();
+    Puzzle();
+
+
+})
+</script>
+<style lang="scss" scoped>
+
 /* importing google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
@@ -205,7 +304,7 @@
     display: block;   
 }
 
-.quiz_section .option_list .option{
+.quiz_section .option_list .option.op{
     background: aliceblue;
     border: 1px solid #84c5fe;
     border-radius: 5px;
@@ -336,7 +435,7 @@
 }
 
 .result_box .icon{
-    // width: 300px;
+    font-size: 100px;
     color: #007bff;
     margin-bottom: 10px;
 }
@@ -395,3 +494,5 @@
     color: #fff;
     background: #007bff;
 }
+
+</style>

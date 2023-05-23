@@ -1,10 +1,10 @@
 <template>
         
-    <body class=game_index>
+    <body class=game_choose>
         <Header></Header>
         
             <div class="top">
-                <img src="../img/game_photo.png" alt="">
+                <img src="../../img/game_photo.png" alt="">
             </div>
     
             <div class="banner">
@@ -20,24 +20,22 @@
                 </div>
             </div>
     
-            <div class="game_choose">
+            <div class="game_choose_choose">
     
-                <div class="choose">
-                    <h2>遊戲規則</h2>
-                    <h3>1、遊戲內容分為拼圖關卡以及問答關卡<br>
-                        2、拼圖關卡：共一關，可自行選擇拼圖數量<br>
-                        3、問答關卡：共兩關，皆為選擇題<br>
-                        4、通過關卡可獲得隨機商品折價券！
-                    </h3>
-                    
-                    <div class="game_index_button">
-                        <a class="btn" href="_game_level.html">
-                            <h3>我要挑戰</h3>
-                        </a>
-                    </div>
-                    <img src="../img/game_shark.png" alt="">
+                <RouterLink to="/game_quiz">
+                <div class="choose_quiz">
+                <h2>問答遊戲</h2>
+                <img src="../../img/game_choose_quiz.png" alt="Quiz Image">
                 </div>
-    
+                </RouterLink>
+
+                <RouterLink to="/game_puzzle">
+                <div class="choose_puzzle">
+                <h2>拼圖遊戲</h2>
+                <img src="../../img/game_choose_puzzle.png" alt="Puzzle Image">
+                </div>
+                </RouterLink>
+
             </div>
     
 
@@ -45,7 +43,7 @@
     </body>
     
     
-    <RouterView></RouterView>
+    <!-- <RouterView></RouterView> -->
     
     </template>
     <script setup>  
@@ -56,5 +54,5 @@
     import Footer from '/src/components/Footer.vue';
     </script>
     <style lang="scss" scoped>
-    @import "../../assets/sass/page/game_index"
+    @import "../../assets/sass/page/game_choose"
     </style>

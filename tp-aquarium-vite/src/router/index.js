@@ -96,24 +96,22 @@ const router = createRouter({
       path: "/game_index",
       name: "GameIndex",
       component: () => import("../views/GameIndex.vue"),
-      children: [
-        {
-          path: "game_choose",
-          name: "GameChoose",
-          component: () => import("../views/game/GameChoose.vue"),
-        },
-        {
-          path: "game_question",
-          name: "GameQuestion",
-          component: () => import("../views/game/GameQuestion.vue"),
-        },
-        // {
-        //   path: "game_puzzle",
-        //   name: "GamePuzzle",
-        //   component: () => import("../views/game/GamePuzzle.vue"),
-        // },
-      ]
     },
+    {
+      path: "/game_choose",
+      name: "GameChoose",
+      component: () => import("../views/game/GameChoose.vue"),
+    },
+    {
+      path: "/game_quiz",
+      name: "GameQuiz",
+      component: () => import("../views/game/GameQuiz.vue"),
+    },
+    // {
+    //   path: "game_puzzle",
+    //   name: "GamePuzzle",
+    //   component: () => import("../views/game/GamePuzzle.vue"),
+    // },
     {
       path: "/game_puzzle",
       name: "/GamePuzzle",

@@ -1,4 +1,5 @@
 <template>
+
     <body class=game_index>
         <Header></Header>
 
@@ -30,12 +31,15 @@
                 </h3>
 
                 <div class="game_index_button">
-                    <a class="btn" href="_game_level.html">
+                    <!-- <a class="btn" href="_game_level.html">
                         <h3>我要挑戰</h3>
-                    </a>
-                    <RouterLink to="game_choose">
+                    </a> -->
+                    <div class="btn">
+                        <RouterLink to="/game_choose">
                         <h3>我要挑戰</h3>
-                    </RouterLink>
+                        </RouterLink>
+                    </div>
+
                 </div>
                 <img src="../img/game_shark.png" alt="">
             </div>
@@ -50,7 +54,7 @@
     </body>
 
 
-    <RouterView></RouterView>
+    <!-- <RouterView></RouterView> -->
 </template>
 <script setup>
 import { RouterLink, RouterView } from "vue-router";

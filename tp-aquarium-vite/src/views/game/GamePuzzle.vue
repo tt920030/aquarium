@@ -4,9 +4,11 @@
   <!-- 回首頁按鈕 -->
   <button class="back_to_home">
     <img src="../../img/logosvg.svg" alt="LOGO SVG" />
-    <a href="#">回首頁</a>
+    <RouterLink to="/">
+    <h5>回首頁</h5>
+    </RouterLink>
   </button>
-
+  
   <!-- 拼圖框框 -->
   <div class="puzzle_frame"></div>
 
@@ -18,7 +20,7 @@
 
   <!-- style="display: block;" -->
   <div class="lightbox_out">
-    <div class="lightbox" style="display:block">
+    <div class="lightbox">
       <div class="lightbox-content">
         <span class="close">&times;</span>
         <img src="../../img/crownshark.png" alt="Image">
@@ -38,68 +40,21 @@
   </div>
 </template>
 <script  setup>
-import particlesJS from "vue3-particles";
-import gamepuzzle from "/src/js/puzzle.js";
-import { onMounted } from "vue";
-gamepuzzle;
-onMounted(()=>{
-  gamepuzzle();
+// import particlesJS from "vue3-particles";
+import Puzzle from "/src/js/puzzle.js";
+
+import { onMounted, ref } from "vue";
+import particlesJS_Start from '/src/js/particle.js';
+
+// import { onMounted, reactive, ref } from "vue";
+onMounted(() => {
+  particlesJS_Start()
+
+  Puzzle()
+
 })
 </script>
-
-<style scoped>
-body {
-  margin: 0;
-  padding: 0;
-  border: none;
-
-}
-
-/* ---- 拼圖背景 ---- */
-
-#particles-js {
-
-  width: 100%;
-  height: 100%;
-  background-color: #97CBE0;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-
-  position: fixed;
-  background-position: center;
-  background-size: cover;
-}
-
-/* 回首頁按鈕 */
-.back_to_home {
-  position: absolute;
-  top: 25px;
-  left: 1060px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 125px;
-  height: 45px;
-  border: none;
-  border-radius: 10px;
-  background: #FFF;
-  margin: auto;
-  /* border: 2px solid black; */
-
-}
-
-.back_to_home img {
-  width: 50px;
-}
-
-.back_to_home a {
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-
+<style>
 /* 拼圖框框 */
 .puzzle_frame {
   position: absolute;
@@ -188,6 +143,54 @@ body {
   background-color: #CCF1F5;
   cursor: pointer;
 }
+</style>
+
+<style scoped>
+/* ---- 拼圖背景 ---- */
+
+#particles-js {
+
+  width: 100%;
+  height: 100%;
+  background-color: #97CBE0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  position: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+/* 回首頁按鈕 */
+.back_to_home {
+  position: absolute;
+  top: 25px;
+  left: 1060px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 125px;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  background: #FFF;
+  margin: auto;
+  /* border: 2px solid black; */
+
+}
+
+.back_to_home img {
+  width: 50px;
+}
+
+.back_to_home a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
 
 /* 燈箱 */
 
