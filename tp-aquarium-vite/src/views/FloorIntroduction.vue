@@ -46,7 +46,7 @@
           <li>
             <img src="@/img/floor_introduction_jellyfish.png" alt="水母圖" />
             <h4>水母</h4>
-            <p></p>
+            <p>水母是一種神祕的生物，晶瑩透明的樣態引人注目<br />快來一睹他的光彩</p>
           </li>
           <li>
             <img src="@/img/floor_introduction_dolphin.png" alt="海豚圖" />

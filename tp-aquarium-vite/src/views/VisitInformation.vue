@@ -104,7 +104,7 @@
                                     <p>捷運善導寺站10號出口</p>
                                 </span>
                                 <div class="mid_icon">
-                                    <img class="person" src="src/img/visitinfo1.svg" alt="">
+                                    <img class="person" src="/src/img/visitinfo1.svg" alt="">
                                     <p>出站直行150公尺後向右轉</p>
                                 </div>
                                 <span class="right">
@@ -121,7 +121,7 @@
                                     <p>於台北海生館站下車</p>
                                 </span>
                                 <div class="mid_icon">
-                                    <img class="bus" src="src/img/visitinfo2.png" alt="">
+                                    <img class="bus" src="/src/img/visitinfo2.png" alt="">
                                     <p>下車後向右轉直行100公尺</p>
                                 </div>
                                 <span class="right">
@@ -138,7 +138,7 @@
                                     <p>海生館出口下交流道</p>
                                 </span>
                                 <div class="mid_icon">
-                                    <img class="car" src="src/img/visitinfo3.png" alt="">
+                                    <img class="car" src="/src/img/visitinfo3.png" alt="">
                                     <p>往海生館路直行600公尺</p>
                                 </div>
                                 <span class="right">

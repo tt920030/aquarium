@@ -153,6 +153,12 @@ onMounted(() => {
         }
     
     }
+
+    @include mobile{
+    .back_to_home{
+        left: 280px;
+        }
+    }
 }
 
 // ::selection{

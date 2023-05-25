@@ -1,14 +1,16 @@
 <template>
     <li v-for="product in productInPage" :key="product">
-        <a href="/product" class="product_info">
+        <RouterLink to="/product" class="product_info">
             <div class="imgWrapper">
                 <img :src=product.img alt="">                
             </div>
             <p class="product_name">{{ product.name }}</p>
             <p class="product_price">NTD ${{ product.price }}</p>
             <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
-        </a>
+        </RouterLink>
     </li>
+
+    <RouterView></RouterView>
 </template>
 <script setup>
     import { reactive, defineEmits, defineProps, watch, onMounted, onBeforeMount } from 'vue';
