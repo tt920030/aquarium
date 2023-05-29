@@ -57,7 +57,33 @@
     { id: "release_date", title: "發布日期", type: "date" },
   ]);
   </script>
-  <style lang="scss" scoped>
-  
-  </style>
+<style lang="scss" scoped>
+main {
+  box-sizing: border-box;
+  padding: 50px 0 0 200px;
+  h3 {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+  }
+  .row {
+    margin-right: 0;
+  }
+  .row.justify-content-center {
+    margin-left: -170px;
+  }
+  .buttons{
+        display: flex;
+        margin-left: 305px;
+        margin-top: 30px;
+        button{
+            width: 129px;
+            height: 42px;
+            border:none;
+            background-color: map-get($color, bgc1 );
+            margin-right: 20px;
+        }
+    }
+}
+</style>
   

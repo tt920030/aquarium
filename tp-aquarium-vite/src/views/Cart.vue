@@ -2,9 +2,10 @@
     <Header></Header>
 
     <main class="cart">
-
+        <div class="banner">
+            <h1>購物車<br>SHOPPING CART</h1>
+        </div>
         <div class="wrapper">
-            <h2>購物車</h2>
             <div class="cart-product-information">
 
                 <h2>商品資訊</h2>

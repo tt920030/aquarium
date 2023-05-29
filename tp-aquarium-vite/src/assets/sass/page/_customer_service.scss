@@ -2,7 +2,7 @@
     
         position: fixed;
         right: 2%;
-        bottom: 2%;
+        bottom: -5%;
         z-index: 998;
         @include mobile{
             width: 100%;
@@ -27,7 +27,7 @@
         .customer_service_content{
             border: 1px solid lavender;
             width: 500px;
-            height: 603px;
+            // height: 603px;
             background-color: white;
             position: absolute;
             right: 147px;
@@ -39,7 +39,7 @@
                 width: 98%;
                 height: 650px;
                 right: 66%;
-                bottom: 10px;                
+                // bottom: 10px;                
             }
             .close{
                 position: absolute;
@@ -75,7 +75,9 @@
             // 對話內容區塊
             .messageList{
                 width: 500px;
-                height: 500px;
+                height: 400px;
+                padding-bottom: 70px;
+                box-sizing: border-box;
                 overflow-y:auto;
                 @include mobile{
                     width: 100%;

@@ -57,6 +57,7 @@ const chosePhoto = (e) => {
     left: 50%;
     top: 100px;
     transform: translateX(-50%);
+    z-index: 2;
 
 
     h4 {

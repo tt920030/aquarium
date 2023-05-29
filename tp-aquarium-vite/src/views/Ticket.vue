@@ -2,6 +2,9 @@
 <template>
     <Header />
     <main class="ticket">
+        <div class="banner">
+            <h1>購票資訊<br>TICKET INFORMATION</h1>
+        </div>
         <div class="wrapper">
             <h2>入館費用</h2>
             <h3>單日門票</h3>   
@@ -150,8 +153,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import Header from '/src/components/Header.vue';
-import Footer from '/src/components/Footer.vue';
+
 const dayThs = reactive(["門票種類", "日間票", "星光票", "適用對象"]);
 const Types = ["大人", "學生", "兒童", "博愛票"];
 const Prices = [520, 360, 240, 240];
@@ -165,15 +167,37 @@ const yearTypes = reactive([{ type: Types[0], price: "NT $" + (Prices[0] * 2 + 4
 { type: Types[1], price: "NT $" + (Prices[1] * 2 + 40) },
 { type: Types[2], price: "NT $" + (Prices[2] * 2 + 40) },
 { type: Types[3], price: "NT $" + (Prices[3] * 2 + 40) }])
-const notices = reactive(["我只是一條先隨便打得須知範例不要亂看一條先隨便打得須知範例不要亂看",
-    '我只是一條先隨便打得須知範例不要亂看一條先隨便打得須知範例不要亂看',
-    '我只是一條先隨便打得須知範例不要亂看一條先隨便打得須知範例不要亂看',
-    '我只是一條先隨便打得須知範例不要亂看一條先隨便打得須知範例不要亂看']);
+const notices = reactive(["購票時請主動出示相關證件供售票處工作人員驗證，且於進場前請攜帶相關證件以備查驗，若無法提供有效證件者需以成人票身份重新購票；符合優惠身份者持票入場後，不可要求部分退款或貼補門票差額。相關證件說明如下：學生票：本人有效學生證正本(若為應屆畢業生則提供當年度正式入學通知單或註冊單及攜帶身分證)；孩童票、博愛票：身心障礙證明、孕婦健康手冊、國民身分證或政府核發附有照片、身分證字號及出生年、月、日等足以證明身分證件",
+    '未滿4歲且有家長陪同的幼童可免費入場。',
+    '館內部分展區及活動為需額外付費之範圍，欲了解相關內容請見官網說明或洽現場工作人員。',
+    '請勿於任何非主辦單位正式授權售票之通路、網站購買票劵，以免自身權益受損，若透過上述管道購票發生無法入場或其他交易糾紛問題，主辦單位及相關售票平台概不負責。']);
 </script>
 
 <style lang="scss">
 main.ticket {
-    @include wrapper;
+    .banner{
+            background-image: url(/src/img/ticket_banner.png);
+            height: 660px;
+            background-size: cover;
+            @include mobile{
+                height: 268px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            h1{padding-top: 35rem;
+                padding-left: 40px;
+                @include mobile{
+                    padding-left:0;
+                    padding-top: 100px;
+                    font-size: 2.8rem;
+                    line-height: 5rem;
+                }
+            };
+        }
+
+    @include wrapper{
+        padding: 5rem 0 25rem;
+    }
 
 
     h3{
@@ -276,7 +300,7 @@ main.ticket {
         font-weight: bold;
         padding: 1rem 3rem;
         &:hover{
-            transform: scale(1.2)
+            transform: scale(1.1)
         }
     }
 
@@ -356,7 +380,18 @@ main.ticket {
         table td {
             border-top: none;
         }
-
+        .ticket-notice {
+        padding: 2rem 2rem 0;
+        margin: 5rem;
+        ul{
+            text-align: left;
+            margin: 0;
+            li{ margin: 1rem;
+                line-height: 3rem;
+            }
+        }
+    }
+       
 
     }
 }

@@ -1,8 +1,28 @@
 main.cart {
-    margin: 10rem 0;
+    margin: 0rem 0 45rem;
     position: relative;
-    @include wrapper();
-    
+    @include wrapper{
+        padding-top: 5rem;
+    };
+    .banner{
+        background-image: url(/src/img/cart_banner.png);
+        height: 760px;
+        background-size: cover;
+        @include mobile{
+            height: 268px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        h1{padding-top: 40rem;
+            padding-left: 60px;
+            @include mobile{
+                padding-left:20px;
+                padding-top: 130px;
+                font-size: 2.8rem;
+                line-height: 5rem;
+            }
+        };
+    }
     .wrapper>div {
         border: 4px solid map-get($color, text);
         margin-bottom: 3rem;

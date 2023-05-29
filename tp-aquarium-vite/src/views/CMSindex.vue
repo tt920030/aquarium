@@ -1,6 +1,6 @@
 <template>
   <Header  @clicked="importClicked($event)"></Header>
-  <main>
+  <main class="cms">
     <div v-if="clicked>0" class="mb-3">
       <h3>{{ clicked?manages[clicked].name:'' }}</h3>
       <button>
@@ -28,8 +28,8 @@ const importClicked= (e)=>{
 const manages=[{name:'請選擇管理項目'},{name:'消息管理',change:'news_change',active1:'新增消息'},
 {name:'商品管理',change:'product_change',active1:'新增商品'},
 {name:'行程管理',change:'journey_change',active1:'新增行程'},
-{name:'折價券管理',change:'coupon_change',active1:'新增折價券'},
-{name:'客服',change:'custom_change',active1:'新增客服'}]
+{name:'折價券管理',change:'coupon_create',active1:'新增折價券'},
+{name:'客服',change:'customer_change',active1:'新增客服'}]
 // import "bootstrap";
 // import "bootstrap/dist/css/bootstrap.min.css";
 onMounted(() => {
@@ -46,7 +46,7 @@ import { faPersonWalkingWithCane } from "@fortawesome/free-solid-svg-icons";
 <style lang="scss" scoped>
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-main {
+main.cms {
   box-sizing: border-box;
   padding: 50px 40px 0 200px;
 

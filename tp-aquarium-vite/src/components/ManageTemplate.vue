@@ -25,10 +25,10 @@
             rows="5"
             required
           ></textarea>
+          
         </div>
       </div>
     </form>
-
 </template>
 
 <script setup>

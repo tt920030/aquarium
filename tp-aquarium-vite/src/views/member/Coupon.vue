@@ -83,6 +83,138 @@
             </table>
         </div>
     </div>
+    <div class="mobile_order">
+
+        <select name="" id="">
+            <option value="one_month">已使用</option>
+            <option value="未出貨訂單">未使用</option>
+        </select>
+
+        <div class="table">
+            <div class="title">
+                <h3>我的折價券</h3>
+            </div>
+            <table>
+                <tr class="top">
+                    <th>
+                        <p>名稱</p>
+                    </th>
+                    <td>
+                        <p>小遊戲過關禮物</p>
+                        <img src="/src/img/member_angle.svg" alt="">
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>
+                        <p>序號</p>
+                    </th>
+                    <td>
+                        <p>#gP5BJHspm</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>面額</p>
+                    </th>
+                    <td>
+                        <p>300</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>折數</p>
+                    </th>
+                    <td>
+                        <p>-</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>抵用門檻</p>
+                    </th>
+                    <td>
+                        <p>1000</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>使用狀況</p>
+                    </th>
+                    <td>
+                        <p>未使用</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>有效期限</p>
+                    </th>
+                    <td>
+                        <p>2023/04/01~2023/04/30</p>
+                    </td>
+                </tr>
+                <tr class="top">
+                    <th>
+                        <p>名稱</p>
+                    </th>
+                    <td>
+                        <p>小遊戲過關禮物</p>
+                        <img src="/src/img/member_angle.svg" alt="">
+                    </td>
+
+                </tr>
+                <tr>
+                    <th>
+                        <p>序號</p>
+                    </th>
+                    <td>
+                        <p>#gP5BJHspm</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>面額</p>
+                    </th>
+                    <td>
+                        <p>300</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>折數</p>
+                    </th>
+                    <td>
+                        <p>-</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>抵用門檻</p>
+                    </th>
+                    <td>
+                        <p>1000</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>使用狀況</p>
+                    </th>
+                    <td>
+                        <p>未使用</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <p>有效期限</p>
+                    </th>
+                    <td>
+                        <p>2023/04/01~2023/04/30</p>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -90,7 +222,12 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../../assets/sass/page/member_mobile_order';
 .coupon {
+    
+    @include mobile{
+        display: none;
+    }
     select {
         margin-bottom: 60px;
         width: 150px;
@@ -162,4 +299,5 @@
             }
         }
     }
-}</style>
+}
+</style>

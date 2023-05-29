@@ -66,8 +66,12 @@
 <script setup>
 	import Header from '/src/components/Header.vue';
 	import Footer from '/src/components/Footer.vue';
-     	import CustomerService from '/src/components/CustomerService.vue';
-    	import { ref, reactive } from "vue";
+    import CustomerService from '/src/components/CustomerService.vue';
+    import { ref, reactive } from "vue";
+    import src1 from "@/img/product_1_1.jpg"
+    import src2 from "@/img/product_1_2.jpg"
+    import src3 from "@/img/product_1_3.jpg"
+
 
     // 數量
     let counter = ref(1);
@@ -76,7 +80,7 @@
     // 預設顯示內容
     let contentShow = ref('滿NTD 1000即可享有免運')
     // 大圖src
-    let imgUrl = ref('src/img/product_1_1.jpg')
+    let imgUrl = src1
     // 預設大圖
     let currentImg = ref(0)
 
@@ -110,9 +114,9 @@
         price: 500,
         intro: '企鵝絨毛娃娃的外觀可愛，經典的設計包括黑白相間的身體和圓滾滾的身材，令人難以抗拒。面料使用高品質的絨毛製成，手感柔軟舒適。',
         imgs: [
-        'src/img/product_1_1.jpg',
-        'src/img/product_1_2.jpg',
-        'src/img/product_1_3.jpg'
+        src1,
+        src2,
+        src3
         ]
     })
 

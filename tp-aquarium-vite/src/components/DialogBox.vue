@@ -1,5 +1,4 @@
 <template>
-    <div class="customer-reply" >
         <div v-if="isReply" class="answer">
             <img src="../img/customer_service1.png" alt="">
             <div class="messageWrapper">
@@ -11,7 +10,6 @@
                 <p class="messageQuestion">{{ text }}</p>
             </div>
         </div>    
-    </div>
   </template>
   
   <script setup>
@@ -28,10 +26,6 @@
   </script>
   
   <style scoped lang="scss"> 
-  .customer-reply {
-    margin-bottom: 10px;
-  }
-  
   .answer{
     width: 80%;
     height: fit-content;
