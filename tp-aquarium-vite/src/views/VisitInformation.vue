@@ -123,7 +123,10 @@
     import { RouterLink, RouterView } from "vue-router";
     import { onMounted, reactive, ref } from "vue";
     import Header from '/src/components/Header.vue';
+    
     import Footer from '/src/components/Footer.vue';
+
+
     import $ from "jquery";
 
     const abc = function(){};
