@@ -71,9 +71,9 @@
                 <div class="bottom">
                     <p class="register2">或用以下方式登入</p>
                     <div class="social">
-                        <img src="@/img/login_fb.svg" alt="">
-                        <img src="@/img/login_twitter.svg" alt="">
-                        <img src="@/img/login_google.svg" alt="">
+                        <img src="/src/img/login_fb.svg" alt="">
+                        <img src="/src/img/login_twitter.svg" alt="">
+                        <img src="/src/img/login_google.svg" alt="">
                     </div>
                 </div>
 

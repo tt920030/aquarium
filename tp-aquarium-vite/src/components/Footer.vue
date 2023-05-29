@@ -29,7 +29,7 @@
                         <p>{{ right.content }}</p>
                     </router-link>
                 </div>
-                <a class="logo" href=""><img src="src/img/logo-white.svg" alt=""></a>
+                <a class="logo" href=""><img src="/src/img/logo-white.svg" alt=""></a>
             </nav>
         </div>
     </footer>
@@ -39,16 +39,16 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-const mids = reactive([{
-    path: '/about',
-    content: "關於我們"
-}, {
-    path: "/visit_information",
-    content: "參觀資訊"
-}, {
-    path: "/floor_Introduction",
-    content: "園區介紹"
-}]);
+    const mids = reactive([{
+        path: '/about',
+        content: "關於我們"
+    }, {
+        path: "/visit_information",
+        content: "參觀資訊"
+    }, {
+        path: "/floor_Introduction",
+        content: "園區介紹"
+    }]);
 
 const rights = reactive([{
     path: '/ticket',
@@ -92,7 +92,13 @@ footer {
             animation: wave 10s -3s linear infinite;
             transform: translate3d(0, 0, 0);
             opacity: 0.8;
+
+            &.-light_color{
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='DeepSkyBlue'/%3E%3C/svg%3E");
+            }
         }
+
+        
 
         .wave:nth-of-type(2) {
             bottom: 0;
@@ -128,6 +134,10 @@ footer {
         bottom: 0;
         left: 0;
         right: 0;
+
+        &.-light_color2{
+            background-color: DeepSkyBlue;
+        }
 
         h4 {
             color: white;

@@ -49,7 +49,7 @@
             <li>
               <div class="index_journey_content">
                 <a href="">
-                  <img src="@/img/index_journey1.jpg" alt="">
+                  <img src="../img/index_journey1.jpg" alt="">
                   <div class="index_journey_content_sub">
                     <h4>海洋跳躍者：海豚秀</h4>
                     <p>看到海豚們跳躍、翻轉、灑水等技巧動作，展現出它們非凡的運動天賦。</p>
@@ -60,7 +60,7 @@
             <li>
               <div class="index_journey_content">
                 <a href="">
-                  <img src="@/img/index_journey2.jpg" alt="">
+                  <img src="../img/index_journey2.jpg" alt="">
                   <div class="index_journey_content_sub">
                     <h4>水中留影</h4>
                     <p>在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻。</p>
@@ -71,7 +71,7 @@
             <li>
               <div class="index_journey_content">
                 <a href="">
-                  <img src="@/img/index_journey3.jpg" alt="">
+                  <img src="../img/index_journey3.jpg" alt="">
                   <div class="index_journey_content_sub">
                     <h4>磷蝦小管家：<br>餵魚體驗活動</h4>
                     <p>穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。</p>
@@ -82,7 +82,7 @@
             <li>
               <div class="index_journey_content">
                 <a href="">
-                  <img src="@/img/index_journey4.jpg" alt="">
+                  <img src="../img/index_journey4.jpg" alt="">
                   <div class="index_journey_content_sub">
                     <h4>只想和你做朋友:<br>與水獺近距離接觸</h4>
                     <p>親手投放食物給水獺，觀察牠們的行為與習性。</p>
@@ -100,13 +100,6 @@
       </main>
     </div>
 
-
-    <!-- 館內照片輪播圖 -->
-    <!-- <div class="index_colorblock">
-        <div class="index_path">
-            <img src="src/img/index_park1.jpg" alt="">
-        </div>
-    </div> -->
 
     <main class="index_news">
 
@@ -185,10 +178,10 @@ const openLogin = (n) => {
 
 
 const park_buttons = reactive([
-  { a: "", src1: "@/img/index_penguin.svg", class: "penguin_blue", src2: "@/img/index_penguin_blue-01.svg", cName: "企鵝館", eName: "Penguin House", src3: "@/img/index_button1.jpg" },
-  { a: "", src1: "@/img/index_jellyfish.svg", class: "jellyfish_blue", src2: "@/img/index_jellyfish_blue-01.svg", cName: "水母館", eName: "JellyFish House", src3: "@/img/index_button2.jpg" },
-  { a: "", src1: "@/img/index_dolphin.svg", class: "dolphin_blue", src2: "@/img/index_dolphin_blue-01.svg", cName: "海豚館", eName: "Dolphin House", src3: "@/img/index_button3.jpg" },
-  { a: "", src1: "@/img/index_sealion.svg", class: "sealion_blue", src2: "@/img/index_sealion_blue-01.svg", cName: "海獅館", eName: "Sea Lion House", src3: "@/img/index_button4.jpg" }
+  { a: "", src1: "/src/img/index_penguin.svg", class: "penguin_blue", src2: "/src/img/index_penguin_blue-01.svg", cName: "企鵝館", eName: "Penguin House", src3: "/src/img/index_button1.jpg" },
+  { a: "", src1: "/src/img/index_jellyfish.svg", class: "jellyfish_blue", src2: "/src/img/index_jellyfish_blue-01.svg", cName: "水母館", eName: "JellyFish House", src3: "/src/img/index_button2.jpg" },
+  { a: "", src1: "/src/img/index_dolphin.svg", class: "dolphin_blue", src2: "/src/img/index_dolphin_blue-01.svg", cName: "海豚館", eName: "Dolphin House", src3: "/src/img/index_button3.jpg" },
+  { a: "", src1: "/src/img/index_sealion.svg", class: "sealion_blue", src2: "/src/img/index_sealion_blue-01.svg", cName: "海獅館", eName: "Sea Lion House", src3: "/src/img/index_button4.jpg" }
 ]);
 
 
@@ -409,6 +402,11 @@ window.onload = function() {
                         border-radius: 50%;
                         transition: all .5s ease;
                         z-index: -5;
+
+                        @include mobile(){
+                          width: 200px;
+                          height: 200px;
+                        }
                     }
 
                     img {
@@ -528,6 +526,7 @@ window.onload = function() {
 
                         a {
                             display: flex;
+                            align-items: center;
                             justify-content: space-between;
 
                             img {
@@ -548,7 +547,7 @@ window.onload = function() {
 
                                 p {
                                     font-size: 12px;
-                                    margin-top: 20px;
+                                    margin-top: 5px;
                                 }
                             }
                         }
@@ -561,7 +560,6 @@ window.onload = function() {
                         .index_journey_content {
                             a {
                                 .index_journey_content_sub {
-                                    margin-top: 20px;
 
                                     p {
                                         margin-top: 10px;

@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import index from "../views/Index.vue";
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
@@ -39,9 +39,11 @@ const router = createRouter({
         
       ]
     },
+    //後臺管理頁面
     {
       path: "/cms",
       name: "CMS",
+      meta: {title:'台北海生館｜後台管理系統'},
       component: () => import("../views/CMSindex.vue"),
       children: [
         {
@@ -60,6 +62,11 @@ const router = createRouter({
           component: () => import("../views/manage/CouponManage.vue")
         },
         {
+          path: "coupon_create",
+          name: "CouponCreate",
+          component: () => import("../views/manage/CouponCreate.vue")
+        },
+        {
           path: "journey_manage",
           name: "JourneyManage",
           component: () => import("../views/manage/JourneyManage.vue")
@@ -75,8 +82,14 @@ const router = createRouter({
           component: () => import("../views/manage/ProductManage.vue")
         },
         {
-          path: "customer_change",
+          path: "customer_manage",
           name: "CustomerManage",
+          component: () => import("../views/manage/CustomerManage.vue")
+        },
+
+        {
+          path: "customer_change",
+          name: "CustomerChange",
           component: () => import("../views/manage/CustomerChange.vue")
         }
 
@@ -87,26 +100,33 @@ const router = createRouter({
     {
       path: "/cart",
       name: "Cart",
-      meta: { title: '購物車' },
+      meta: { title: '台北海生館｜購物車' },
       component: () => import("../views/Cart.vue"),
     },
     {
       path: "/game_index",
       name: "GameIndex",
       component: () => import("../views/GameIndex.vue"),
-      children: [
-        {
-          path: "game_question",
-          name: "GameQuestion",
-          component: () => import("../views/game/GameQuestion.vue"),
-        },
-        {
-          path: "game_puzzle",
-          name: "GamePuzzle",
-          component: () => import("../views/game/GamePuzzle.vue"),
-        },
-      ]
-
+    },
+    {
+      path: "/game_choose",
+      name: "GameChoose",
+      component: () => import("../views/game/GameChoose.vue"),
+    },
+    {
+      path: "/game_quiz",
+      name: "GameQuiz",
+      component: () => import("../views/game/GameQuiz.vue"),
+    },
+    // {
+    //   path: "game_puzzle",
+    //   name: "GamePuzzle",
+    //   component: () => import("../views/game/GamePuzzle.vue"),
+    // },
+    {
+      path: "/game_puzzle",
+      name: "/GamePuzzle",
+      component: () => import("../views/game/GamePuzzle.vue"),
     },
 
     {
@@ -124,6 +144,7 @@ const router = createRouter({
       component: () => import("../views/Overnight.vue")
 
     },
+
 
     {
       path: "/faq",
@@ -178,23 +199,21 @@ const router = createRouter({
     {
       path: "/ticket", //自己取之後連的路徑名稱
       name: "ticket", //自己取
+      meta: {title:'台北海生館｜購票資訊'},
       component: () => import("../views/Ticket.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
-      meta: { title: "購票資訊" }
     },
     {
       path: "/yearpass", //自己取之後連的路徑名稱
-    },
-    {
-      path: "/ticket/yearpass", //自己取之後連的路徑名稱
       name: "YearPass", //自己取
+      meta: {title:'台北海生館｜年度通行證'},
       component: () => import("../views/ticket/Yearpass.vue"), //路徑連到剛剛建的vue檔
       //children是這個頁面的子頁面
     },
     {
       path: "/itinerary", //自己取之後連的路徑名稱
       name: "Itinerary", //自己取
-      meta: { title: "票券/行程購買" },
+      meta: { title: "台北海生館｜票券及行程購買" },
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
 
@@ -255,11 +274,11 @@ const router = createRouter({
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
     },
     {
-      path: "/backstagelogin", //自己取之後要連的路徑名稱
-      name: "Backstagelogin", //自己取
-      component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
-    },
-  ]});
+      path: "/axios", //自己取之後要連的路徑名稱
+      name: "AxiosTest", //自己取
+      component: () => import("../views/AxiosTest.vue"), //路徑連到剛剛建的vue檔
+    }]}
+  );
 router.beforeEach((to, from, next) => {
   window.document.title = to.meta.title
   next()
