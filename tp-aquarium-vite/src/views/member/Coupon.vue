@@ -1,15 +1,15 @@
 <template>
     <div class="coupon wrapper">
-        <select name="" id="">
-            <option value="未使用">未使用</option>
-            <option value="已使用">已使用</option>
+        <select v-model="used" id="coupon">
+            <option :value="false">未使用</option>
+            <option :value="true">已使用</option>
         </select>
 
         <div class="table">
             <div class="title">
                 <h3>我的折價券</h3>
             </div>
-            <table>
+            <table >
                 <tr>
                     <th>
                         <p>名稱</p>
@@ -33,192 +33,157 @@
                         <p>有效期限</p>
                     </th>
                 </tr>
-                <tr>
-                    <td>
-                        <p>小遊戲過關禮物</p>
-                    </td>
-                    <td>
-                        <p>#gP5BJHspm</p>
-                    </td>
-                    <td>
-                        <p>300</p>
-                    </td>
-                    <td>
-                        <p>-</p>
-                    </td>
-                    <td>
-                        <p>1000</p>
-                    </td>
-                    <td>
-                        <p>未使用</p>
-                    </td>
-                    <td>
-                        <p>2023/04/01~2023/04/30</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>小遊戲過關禮物</p>
-                    </td>
-                    <td>
-                        <p>#gP5BJHspm</p>
-                    </td>
-                    <td>
-                        <p>-</p>
-                    </td>
-                    <td>
-                        <p>95折</p>
-                    </td>
-                    <td>
-                        <p>-</p>
-                    </td>
-                    <td>
-                        <p>未使用</p>
-                    </td>
-                    <td>
-                        <p>2023/04/01~2023/04/30</p>
-                    </td>
-                </tr>
+                <template  v-for="item in coupon" :key="item.serial">
+                    <tr v-if="item.state === used">
+                        <td>
+                            <p>{{ item.name }}</p>
+                        </td>
+                        <td>
+                            <p>{{item.serial}}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.discount }}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.DENO }}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.needPrice }}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.state ? "已使用":"未使用" }}</p>
+                        </td>
+                        <td>
+                            <p>{{item.expiry}}</p>
+                        </td>
+                    </tr>
+                </template>
+                
+
 
             </table>
         </div>
     </div>
     <div class="mobile_order">
 
-        <select name="" id="">
-            <option value="one_month">已使用</option>
-            <option value="未出貨訂單">未使用</option>
-        </select>
+        <!-- <select @change="changeState" id="coupon">
+            <option value="false">未使用</option>
+            <option value="true">已使用</option>
+        </select> -->
 
+        
         <div class="table">
             <div class="title">
                 <h3>我的折價券</h3>
             </div>
-            <table>
-                <tr class="top">
-                    <th>
-                        <p>名稱</p>
-                    </th>
-                    <td>
-                        <p>小遊戲過關禮物</p>
-                        <img src="./img/member_angle.svg" alt="">
-                    </td>
+            <template  v-for="item in coupon" :key="item.serial" >
+                <div class="tableContainer2"  v-if="item.state === used">
+                <table >
+                    <tr class="top" >
+                        <th>
+                            <p>名稱</p>
+                        </th>
+                        <td>
+                            <p>{{ item.name }}</p>
+                            <img src="@/img/member_angle.svg" alt="" @click="closeOrder($event)">
+                        </td>
 
-                </tr>
-                <tr>
-                    <th>
-                        <p>序號</p>
-                    </th>
-                    <td>
-                        <p>#gP5BJHspm</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>面額</p>
-                    </th>
-                    <td>
-                        <p>300</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>折數</p>
-                    </th>
-                    <td>
-                        <p>-</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>抵用門檻</p>
-                    </th>
-                    <td>
-                        <p>1000</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>使用狀況</p>
-                    </th>
-                    <td>
-                        <p>未使用</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>有效期限</p>
-                    </th>
-                    <td>
-                        <p>2023/04/01~2023/04/30</p>
-                    </td>
-                </tr>
-                <tr class="top">
-                    <th>
-                        <p>名稱</p>
-                    </th>
-                    <td>
-                        <p>小遊戲過關禮物</p>
-                        <img src="./img/member_angle.svg" alt="">
-                    </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>序號</p>
+                        </th>
+                        <td>
+                            <p>{{ item.serial }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>面額</p>
+                        </th>
+                        <td>
+                            <p>{{ item.discount }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>折數</p>
+                        </th>
+                        <td>
+                            <p>{{ item.DENO }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>抵用門檻</p>
+                        </th>
+                        <td>
+                            <p>{{ item.needPrice }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>使用狀況</p>
+                        </th>
+                        <td>
+                            <p>{{ item.state ? "已使用":"未使用" }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>有效期限</p>
+                        </th>
+                        <td>
+                            <p>{{item.expiry}}</p>
+                        </td>
+                    </tr>
 
-                </tr>
-                <tr>
-                    <th>
-                        <p>序號</p>
-                    </th>
-                    <td>
-                        <p>#gP5BJHspm</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>面額</p>
-                    </th>
-                    <td>
-                        <p>300</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>折數</p>
-                    </th>
-                    <td>
-                        <p>-</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>抵用門檻</p>
-                    </th>
-                    <td>
-                        <p>1000</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>使用狀況</p>
-                    </th>
-                    <td>
-                        <p>未使用</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>有效期限</p>
-                    </th>
-                    <td>
-                        <p>2023/04/01~2023/04/30</p>
-                    </td>
-                </tr>
-
-            </table>
+                </table>
+            </div>
+            </template>
         </div>
+            
+            
     </div>
 </template>
 
 <script setup>
+import { onMounted, ref, defineEmits } from 'vue';
+const used = ref(false);
 
+const coupon = [
+    {
+        name: "小遊戲過關禮物",
+        serial: "#gP5BJHspm",
+        discount: "300",
+        DENO: "-",
+        needPrice: "1000",
+        state: false,
+        expiry: "2023/04/01~2023/04/30"
+
+    },
+    {
+        name: "小遊戲過關禮物",
+        serial: "#gP5BJdfg",
+        discount: "-",
+        DENO: "95",
+        needPrice: "1000",
+        state: true,
+        expiry: "2023/04/01~2023/04/30"
+
+    },
+];
+
+const closeOrder = (e) => {
+    e.target.closest(".tableContainer2").classList.toggle("-close");
+}
+
+// const changeState = () => {
+    
+//     // const value = document.getElementById("coupon").value;
+//     // used.value = value;
+//     console.log(value);
+// }
 </script>
 
 <style lang="scss" scoped>

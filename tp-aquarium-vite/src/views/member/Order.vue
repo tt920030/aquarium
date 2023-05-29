@@ -12,6 +12,7 @@
             </div>
 
             <table>
+                
                 <tr>
                     <th>
                         <p>訂單編號</p>
@@ -38,47 +39,53 @@
                         <p>處理狀態</p>
                     </th>
                 </tr>
-                <tr>
-                    <td rowspan='2'>
-                        <p>20230325012413</p>
-                    </td>
-                    <td rowspan='2' class="time">
-                        <p>2023/03/25 21:36:54</p>
-                    </td>
-                    <td rowspan='2'>
-                        <p>信用卡付款</p>
-                    </td>
-                    <td rowspan='2'>
-                        <p>640</p>
-                    </td>
-                    <td>
-                        <p>2023/1/1</p>
-                    </td>
-                    <td>
-                        <p>成人票</p>
-                    </td>
-                    <td>
-                        <p>1</p>
-                    </td>
-                    <td class="time">
-                        <p>03/27 08:30 已使用</p>
-                    </td>
-                </tr>
+                <template v-for="item in order" :key="item.id">
+                    <tr>
+                        <td :rowspan='item.products.length'>
+                            <p>{{ item.id }}</p>
+                        </td>
+                        <td :rowspan='item.products.length' class="time">
+                            <p>{{ item.buyTime }}</p>
+                        </td>
+                        <td :rowspan='item.products.length'>
+                            <p>{{ item.pay }}</p>
+                        </td>
+                        <td :rowspan='item.products.length'>
+                            <p>{{ item.total }}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.products[0].usedTime }}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.products[0].name }}</p>
+                        </td>
+                        <td>
+                            <p>{{ item.products[0].number }}</p>
+                        </td>
+                        <td class="time">
+                            <p>{{ item.products[0].state }}</p>
+                        </td>
+                    </tr>
+                    <template v-for="(product, index) in item.products" :key="product.name">
+                        <tr v-if="index !== 0">
+                            <td>
+                                <p>{{ product.usedTime }}</p>
+                            </td>
+                            <td>
+                                <p>{{ product.name }}</p>
+                            </td>
+                            <td>
+                                <p>{{ product.number }}</p>
+                            </td>
+                            <td class="time">
+                                <p>{{ product.state }}</p>
+                            </td>
+                        </tr>
+                    </template>
+                </template>
+                
 
-                <tr>
-                    <td>
-                        <p>-</p>
-                    </td>
-                    <td>
-                        <p>企鵝筆記本</p>
-                    </td>
-                    <td>
-                        <p>1</p>
-                    </td>
-                    <td class="time">
-                        <p>03/27 17:21 已取貨</p>
-                    </td>
-                </tr>
+                
 
             </table>
         </div>
@@ -95,96 +102,118 @@
             <div class="title">
                 <h3>我的訂單</h3>
             </div>
-            <table>
-                <tr class="top">
-                    <th>
-                        <p>訂單編號</p>
-                    </th>
-                    <td>
-                        <p>20230325012413</p>
-                        <img src="./img/member_angle.svg" alt="">
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <th>
-                        <p>訂購時間</p>
-                    </th>
-                    <td>
-                        <p>2023/03/25 21:36:54</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>付款方式</p>
-                    </th>
-                    <td>
-                        <p>信用卡付款</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>訂單金額</p>
-                    </th>
-                    <td>
-                        <p>3000</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>商品名稱</p>
-                    </th>
-                    <td>
-                        <p>成人票</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>數量</p>
-                    </th>
-                    <td>
-                        <p>1</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>處理狀態</p>
-                    </th>
-                    <td>
-                        <p>03/27 08:30 已使用</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>商品名稱</p>
-                    </th>
-                    <td>
-                        <p>企鵝筆記本</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>數量</p>
-                    </th>
-                    <td>
-                        <p>1</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>
-                        <p>處理狀態</p>
-                    </th>
-                    <td>
-                        <p>03/27 17:21 已取貨</p>
-                    </td>
-                </tr>
-            </table>
+            <div class="tableContainer" v-for="item in order" :key="item.id">
+                <table>
+                    <tr class="top">
+                        <th>
+                            <p>訂單編號</p>
+                        </th>
+                        <td>
+                            <p>{{ item.id }}</p>
+                            <img src="@/img/member_angle.svg" alt="" @click="closeOrder($event)">
+                        </td>
+                        
+                    </tr>
+                    <tr class="text">
+                        <th>
+                            <p>訂購時間</p>
+                        </th>
+                        <td>
+                            <p>{{ item.buyTime }}</p>
+                        </td>
+                    </tr>
+                    <tr  class="text">
+                        <th>
+                            <p>付款方式</p>
+                        </th>
+                        <td>
+                            <p>{{ item.pay }}</p>
+                        </td>
+                    </tr>
+                    <tr class="text">
+                        <th>
+                            <p>訂單金額</p>
+                        </th>
+                        <td>
+                            <p>{{ item.total }}</p>
+                        </td>
+                    </tr>
+                    <template v-for="product in item.products" :key="product.name">
+                        <tr class="text">
+                            <th>
+                                <p>商品名稱</p>
+                            </th>
+                            <td>
+                                <p>{{ product.name }}</p>
+                            </td>
+                        </tr>
+                        <tr class="text">
+                            <th>
+                                <p>使用時間</p>
+                            </th>
+                            <td>
+                                <p>{{ product.usedTime }}</p>
+                            </td>
+                        </tr>
+                        <tr class="text">
+                            <th>
+                                <p>數量</p>
+                            </th>
+                            <td>
+                                <p>{{ product.number }}</p>
+                            </td>
+                        </tr>
+                        <tr class="text">
+                            <th>
+                                <p>處理狀態</p>
+                            </th>
+                            <td>
+                                <p>{{ product.state }}</p>
+                            </td>
+                        </tr>
+                    </template>
+                </table>
+            </div>
+            
         </div>
     </div>
 </template>
 
 <script setup>
+import { onMounted, ref, defineEmits } from 'vue';
+const order = [
+    {
+        id:"3",
+        buyTime: "2023/03/25 21:36:54",
+        pay: "信用卡付款",
+        total: "640",
+        products: [{
+            usedTime: "2023/1/1",
+            name: "成人票",
+            number: "1",
+            state: "03/27 17:21 已使用"
+        },
+        {
+            usedTime: "-",
+            name: "企鵝筆記本",
+            number: "1",
+            state: "03/27 17:21 已取貨"
+        },
+        {
+            usedTime: "-",
+            name: "企鵝筆記本",
+            number: "1",
+            state: "03/27 17:21 已取貨"
+        }
+    ]
 
+        
+    }
+];
+
+const closeOrder = (e) => {
+    e.target.closest(".tableContainer").classList.toggle("-close");
+}
 </script>
 
 <style lang="scss" scoped>

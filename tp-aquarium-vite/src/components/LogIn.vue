@@ -49,7 +49,7 @@
                         <div class="input">
                             <label for="password">密碼</label>
                             <input :type="eye" id="password" name="password" placeholder="請輸入密碼">
-                            <img src="@/img/login_eye.svg" alt="" class="eye" @click="toText()">
+                            <img :src="eyeImg" alt="" class="eye" @click="toText($event)">
                             <div class="invalid-feedback">密碼錯誤</div>
                             <p class="forget" @click="toResigner('C')">忘記密碼</p>
                         </div>
@@ -95,14 +95,14 @@
                         </div>
                         <div class="input">
                             <label for="password">密碼</label>
-                            <input type="password" id="password" name="password" placeholder="密碼長度需六至十二位">
-                            <img src="./img/login_eye.svg" alt="" class="eye" @click="toText()">
+                            <input :type="eye" id="password" name="password" placeholder="密碼長度需六至十二位">
+                            <img :src="eyeImg" alt="" class="eye" @click="toText($event)">
                             <div class="invalid-feedback">密碼須包含大小寫英文及數字</div>
                         </div>
                         <div class="input">
-                            <label for="password">密碼確認</label>
-                            <input type="password" id="password" name="password" placeholder="請再次輸入密碼">
-                            <img src="./img/login_eye.svg" alt="" class="eye" @click="toText()">
+                            <label for="password2">密碼確認</label>
+                            <input :type="eye" id="password2" name="password2" placeholder="請再次輸入密碼">
+                            <img :src="eyeImg" alt="" class="eye" @click="toText($event)">
                             <div class="invalid-feedback">二次輸入與密碼不符</div>
                         </div>
 
@@ -120,18 +120,10 @@
                 <div class="top">
                     <form action="post">
                         <div class="input">
-                            <label for="password">密碼</label>
-                            <input :type="eye" id="password" name="password" placeholder="密碼長度需六至十二位">
-                            <img src="@/img/login_eye.svg" alt="" class="eye">
-                            <div class="invalid-feedback">密碼須包含大小寫英文及數字</div>
+                            <label for="email">email</label>
+                            <input type="email" id="email" name="email" placeholder="請輸入email">
+                            <div class="invalid-feedback">email格式錯誤</div>
                         </div>
-                        <div class="input">
-                            <label for="password2">密碼確認</label>
-                            <input :type="eye" id="password2" name="password" placeholder="請再次輸入密碼">
-                            <img src="@/img/login_eye.svg" alt="" class="eye">
-                            <div class="invalid-feedback">二次輸入與密碼不符</div>
-                        </div>
-
 
                         <button type="button" class="btn1">
                             <h4>確認</h4>
@@ -165,6 +157,8 @@ const type = ref("A");
 
 const eye = ref("password");
 
+const eyeImg = ref("src/img/login_eye.svg");
+
 const close = (e) => {
     e.stopPropagation();
     emit('close', false);
@@ -175,14 +169,16 @@ const toResigner = (n) => {
 }
 
 
-const toText = () => {
+const toText = (e) => {
     // console.log(eye.value);
     if(eye.value == "password"){
         eye.value = "text";
-        // console.log(eye.value);
+        eyeImg.value = "src/img/login_eyeopen.svg";
+
     }
     else{
         eye.value = "password";
+        eyeImg.value = "src/img/login_eye.svg";
         // console.log(eye.value);
     }
 }

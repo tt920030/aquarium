@@ -57,15 +57,21 @@
 
         <RouterLink to="/member/Profile" @click="hideBar()">
             <button class="btn1">
-                <p>修改資料</p>
+                <p>年度會員</p>
             </button>
         </RouterLink>
 
 
         <div class="bottom">
+            <RouterLink to="/member/Profile" @click="hideBar()">
+                <div class="list4 list">
+                    <img src="@/img/member_user.svg" alt="">
+                    <p>我的資料</p>
+                </div>
+            </RouterLink>
             <RouterLink to="/member/Order" @click="hideBar()">
                 <div class="list1 list">
-                    <img src="@/img/member_user.svg" alt="">
+                    <img src="@/img/member_order.svg" alt="">
                     <p>我的訂單</p>
                 </div>
             </RouterLink>
@@ -88,14 +94,14 @@
 
     </div>
     <RouterView v-else></RouterView>
-    <Profile v-if="false" @showPassword="showPassword1"></Profile>
+    
     <Footer></Footer>
-    <!-- <ChangePassword v-if="password"></ChangePassword> -->
+    <Profile v-if="false" @showPassword="showPassword1"></Profile>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import ChangePassword from '../components/ChangePassword.vue';
+
 import Profile from "./member/Profile.vue";
 import { onMounted, reactive, ref, watch } from "vue";
 import $ from "jquery";
@@ -122,7 +128,9 @@ const hideBar = () => {
     mobile.value = false;
 }
 
-
+onMounted(() => {
+    mobile.value = true;
+})
 
 
 
@@ -160,6 +168,26 @@ const hideBar = () => {
 
     input {
         appearance: none;
+        border: 0px;
+        border-bottom: 1px solid black;
+        border-radius: 0;
+        height: 40px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: left 5px center;
+        padding: 0 25px;
+
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+            border-bottom: 1px solid black;
+            background-color: white;
+
+        }
+    }
+
+    select{
+        // appearance: none;
         border: 0px;
         border-bottom: 1px solid black;
         border-radius: 0;

@@ -1,4 +1,5 @@
 <template>
+    <!-- <ChangePassword ></ChangePassword> -->
     
     <div class="profile wrapper ">
         <Photo v-if="show" @closePhoto="showPhoto()" ></Photo>
@@ -30,7 +31,12 @@
                 </div>
                 <div class="input">
                     <label for="sex">性別</label>
-                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" class="text">
+                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" v-if="isButtonDisabled">
+                    <select name="sex" id="sex" v-else  class="text">
+                        <option value="無">請選擇</option>
+                        <option value="女">女</option>
+                        <option value="男">男</option>
+                    </select>
                 </div>
                 <div class="input">
                     <label for="birthday">生日</label>
@@ -63,7 +69,7 @@
         </div>
 
     </div>
-    <div class="mobile_info wrapper " >
+    <!-- <div class="mobile_info wrapper " >
         <div class="top">
             <div class="left">
                 <div class="photo-area">
@@ -91,6 +97,10 @@
                 <div class="input">
                     <label for="sex">性別</label>
                     <input type="text" id="sex" name="sex" disabled="disabled">
+                    <select name="sex" id="sex" disabled="disabled">
+                        <option value="女">女</option>
+                        <option value="男">男</option>
+                    </select>
                 </div>
                 <div class="input">
                     <label for="birthday">生日</label>
@@ -119,15 +129,16 @@
 
             </form>
         </div>
-    </div>
+    </div> -->
     
 
 </template>
 
 <script setup>
 import { onMounted, ref, defineEmits } from 'vue';
-import Photo from '../../components/Photo.vue';
+import Photo from '@/components/Photo.vue';
 import "bootstrap";
+import ChangePassword from '@/components/ChangePassword.vue';
 
 import $ from "jquery";
 
@@ -150,7 +161,8 @@ const changeDisabled = (e) => {
     isButtonDisabled.value? type.value = "password" : type.value = "text";
     
     $(".text").toggleClass("-on");
-
+    // console.log($(".text"));
+    
 }
 
 
@@ -166,7 +178,7 @@ const changePassword = () => {
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/sass/page/member_mobile_info';
+// @import '../../assets/sass/page/member_mobile_info';
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 .btn1 {
@@ -187,15 +199,26 @@ const changePassword = () => {
 .profile {
     position: relative;
     @include mobile{
-        display: none;
+        margin-top: 150px;
+        width: 100%;
+        height: 1480px;
     }
 
     .top {
         display: flex;
+        @include mobile{
+        flex-direction: column;
+        align-items: center;
+
+        }
 
         .inner-left {
             width: 50%;
             background-color: #fff;
+
+            @include mobile{
+                width: 100%;
+            }
 
 
             .photo-area {
@@ -203,6 +226,9 @@ const changePassword = () => {
                 height: 240px;
                 margin: 0 auto;
                 margin-bottom: 55px;
+                @include mobile{
+                    margin-bottom: 40px;
+                }
 
                 img {}
             }
@@ -219,12 +245,21 @@ const changePassword = () => {
 
         .inner-right {
             width: 50%;
+            @include mobile{
+                width: 90%;
+            }
             
 
             .input {
                 margin-top: 100px;
                 margin-left: 70px;
                 width: 300px;
+                @include mobile{
+                    margin: 30px auto 20px;
+                    margin-top: 30px;
+                    width: 100%;
+                    
+                }
 
                 label {}
 
@@ -246,10 +281,19 @@ const changePassword = () => {
             flex-wrap: wrap;
             justify-content: space-between;
 
+            @include mobile{
+                width: 90%;
+                flex-direction: column;
+                align-items: center;
+            }
+
             .input {
                 width: 320px;
                 margin: 20px 0;
                 position: relative;
+                @include mobile{
+                    width: 100%;
+                }
 
                 .-on {
                     // border: 1px solid black;
@@ -271,6 +315,13 @@ const changePassword = () => {
                     cursor: pointer;
                     border: 0;
                     width: fit-content;
+                }
+            }
+
+            select{
+                .-on {
+                    // border: 1px solid black;
+                    background-color: map-get($color , bgc1 );
                 }
             }
 

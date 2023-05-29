@@ -26,7 +26,7 @@
         </ul>
         <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
         <ul class="menu">
-            <li v-for="item in navItems">
+            <li v-for="item in navItems" :key="item">
                 <RouterLink :to="item.link">
                     <p>{{ item.name }}</p>
                 </RouterLink>
@@ -39,7 +39,7 @@
             <div class="wave"></div>
             <div class="wave"></div>
             <div class="wave"></div>
-        </div>>
+        </div>
     </header>
 </template>
 
