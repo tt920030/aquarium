@@ -1,15 +1,15 @@
 <template>
     <div>
         搜尋帳號:<input name="account" type="text" v-model="account">
-        回傳結果: {{ data }}
+        回傳結果: <p v-for="data in datas[0]">{{ data.Account }}</p>
     </div>
 </template>
 
 <script setup>
 import axios from 'axios';
 import { watch } from 'vue';
-import { ref } from 'vue';
-const data = ref(); //最終取得資料
+import { ref, reactive } from 'vue';
+const datas = reactive([]); //最終取得資料
 const account = ref();// 綁定input v-model 
 const getData = function () {		//取得資料函式
     let params = new URLSearchParams();     //建立PHP可接受的格式
@@ -19,9 +19,10 @@ const getData = function () {		//取得資料函式
     )				
 
         .then((res) => {			//回傳後如何處理
-          
+
             console.log(res.data);
-            data.value = res.data;
+            datas[0]=res.data;
+         
 
         }).catch(err => console.log(err))  //錯誤如何處理
 
