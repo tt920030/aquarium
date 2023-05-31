@@ -6,26 +6,27 @@
                 <h1>園區介紹<br>GUIDED TOUR</h1>
             </div>
 
+
             <!-- 樓層指南選單 -->
             <ul class="floor_nav">
-      <li>
-        <RouterLink to="/floor_introduction"><img src="@/img/floor_p1.svg" alt="" /></RouterLink>
-        <h4 >樓層介紹</h4>
-      </li>
-      <li>
-        <RouterLink to="/park_activity"><img src="@/img/floor_p2.svg" alt="" /> </RouterLink>
+                <li>
+                    <RouterLink to="/floor_introduction"><img src="@/img/floor_p1.svg" alt="" /></RouterLink>
+                    <h4>樓層介紹</h4>
+                </li>
+                <li>
+                    <RouterLink to="/park_activity"><img src="@/img/floor_p2.svg" alt="" /> </RouterLink>
 
-        <h4>館內活動</h4>
-      </li>
-      <li>
-        <RouterLink to="/faq"><img src="@/img/floor_p3_active.svg" alt="" />  </RouterLink>
-        <h4 class="h4_active">常見問題</h4>
-      </li>
-      <li>
-        <RouterLink to="/visit_information"><img src="@/img/floor_p4.svg" alt="" /> </RouterLink>
-        <h4>參觀資訊</h4>
-      </li>
-    </ul>
+                    <h4>館內活動</h4>
+                </li>
+                <li>
+                    <RouterLink to="/faq"><img src="@/img/floor_p3_active.svg" alt="" /> </RouterLink>
+                    <h4 class="h4_active">常見問題</h4>
+                </li>
+                <li>
+                    <RouterLink to="/visit_information"><img src="@/img/floor_p4.svg" alt="" /> </RouterLink>
+                    <h4>參觀資訊</h4>
+                </li>
+            </ul>
 
             <div class="wrapper">
                 <div class="accordion ">
@@ -91,22 +92,24 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { onMounted, reactive, ref } from "vue";
+import { onMounted } from "vue";
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer.vue';
 import $ from "jquery";
 
-const abc = function () { };
+// const abc = function () { };
 
-onMounted();
-
-$(function () {
-    // 手風琴()
-    $(".accordion").click(function () {
-        $(this).find(".topic").toggleClass("on");
-        $(this).find(".faq1").slideToggle();
+onMounted(() => {
+    $(function () {
+        // 手風琴()
+        $(".accordion").click(function () {
+            $(this).find(".topic").toggleClass("on");
+            $(this).find(".faq1").slideToggle();
+        });
     });
 });
+
+
 
 </script>
 
