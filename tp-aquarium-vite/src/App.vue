@@ -19,9 +19,9 @@ const openLogin = (n) => {
 <template>
 
   <!-- <router-link to="/"></router-link> -->
-  <header></header>
+  <Header @openLogin="openLogin"></Header>
   <RouterView />
-  <footer></footer>
+  <Footer></Footer>
   <LogIn v-if="hide" @close="openLogin"></LogIn>
 </template>
 

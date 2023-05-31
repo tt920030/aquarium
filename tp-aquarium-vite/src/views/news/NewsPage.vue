@@ -1,5 +1,4 @@
 <template>
-    <Header></Header>
     <div class="newspage">
         <div class="banner">
             <h1>最新消息<br>NEWS</h1>
@@ -29,6 +28,8 @@
                             :snapAlign="center"
                             :variable-width="true"
                             :wrapAround="true"
+                            
+                            
                             >
                             <slide v-for="slide in slides" :key="slide">
                                 <img :src="slide" alt="">
@@ -48,7 +49,6 @@
             </div>
         </main>
     </div>
-    <Footer></Footer>
 </template>
 
 <script setup>

@@ -1,5 +1,4 @@
 <template>
-    <Header></Header>
 
     <!-- 電腦版 -->
     <div class="member">
@@ -13,7 +12,8 @@
                     <p>年度會員</p>
                 </button>
 
-                <RouterLink to="/member/Profile" @showPassword="showPassword1(n)">
+                <div class="manu">
+                    <RouterLink to="/member/Profile" @showPassword="showPassword1(n)">
                     <div class="list -on" @click="button(0)">
                         <img src="@/img/member_user.svg" alt="">
                         <p>我的資料</p>
@@ -37,10 +37,12 @@
                         <p>虛擬寵物</p>
                     </div>
                 </RouterLink>
+                </div>
+                
 
 
             </div>
-            <div class="right">
+            <div class="right_view">
 
 
                 <RouterView></RouterView>
@@ -49,53 +51,7 @@
             </div>
         </main>
     </div>
-    <div class="member_mobile" v-if="mobile">
-        <div class="photo">
-            <img src="@/img/member_photo1.png" alt="">
-        </div>
-        <p class="name">使用者姓名</p>
 
-        <RouterLink to="/member/Profile" @click="hideBar()">
-            <button class="btn1">
-                <p>年度會員</p>
-            </button>
-        </RouterLink>
-
-
-        <div class="bottom">
-            <RouterLink to="/member/Profile" @click="hideBar()">
-                <div class="list4 list">
-                    <img src="@/img/member_user.svg" alt="">
-                    <p>我的資料</p>
-                </div>
-            </RouterLink>
-            <RouterLink to="/member/Order" @click="hideBar()">
-                <div class="list1 list">
-                    <img src="@/img/member_order.svg" alt="">
-                    <p>我的訂單</p>
-                </div>
-            </RouterLink>
-
-            <RouterLink to="/member/Coupon" @click="hideBar()">
-                <div class="list2  list">
-                    <img src="@/img/member_coupon.svg" alt="">
-                    <p>我的折價券</p>
-                </div>
-            </RouterLink>
-
-            <RouterLink to="/member/Pet" @click="hideBar()">
-                <div class="list3  list">
-                    <img src="@/img/member_pet.svg" alt="">
-                    <p>虛擬寵物</p>
-                </div>
-            </RouterLink>
-
-        </div>
-
-    </div>
-    <RouterView v-else></RouterView>
-    
-    <Footer></Footer>
     <Profile v-if="false" @showPassword="showPassword1"></Profile>
 </template>
 
@@ -107,8 +63,6 @@ import { onMounted, reactive, ref, watch } from "vue";
 import $ from "jquery";
 
 const password = ref(false);
-
-const mobile = ref(true);
 
 
 const button = (i) => {
@@ -124,13 +78,8 @@ const showPassword1 = (n) => {
     console.log(password.value);
 }
 
-const hideBar = () => {
-    mobile.value = false;
-}
 
-onMounted(() => {
-    mobile.value = true;
-})
+
 
 
 
@@ -138,7 +87,7 @@ onMounted(() => {
 
 <style lang="scss">
 @import "../../src/assets/sass/page/member";
-@import "../../src/assets/sass/page/member_mobile";
+// @import "../../src/assets/sass/page/member_mobile";
 
 .btn1 {
     display: block;
