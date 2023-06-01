@@ -42,22 +42,24 @@
                 <div class="top">
                     <form action="post">
                         <div class="input">
-                            <label for="email">email</label>
-                            <input type="email" id="email" name="email" placeholder="請輸入email">
+                            <label for="email" class="form-label">email</label>
+                            <input type="email" id="email" name="email" placeholder="請輸入email" class="form-control"
+                                :class="{ 'is-invalid': !login.email }" v-model.trim="loginText.email">
                             <div class="invalid-feedback">email格式錯誤</div>
                         </div>
                         <div class="input">
-                            <label for="password">密碼</label>
-                            <input :type="eye" id="password" name="password" placeholder="請輸入密碼">
-                            <img src="/src/img/login_eye.svg" alt="" class="eye" @click="toText()">
+                            <label for="password" class="form-label">密碼</label>
+                            <input :type="eye" id="password" name="password" placeholder="請輸入密碼" class="form-control"
+                                :class="{ 'is-invalid': !login.password }" v-model.trim="loginText.password">
+                            <img :src="eyeImg" alt="" class="eye" @click="toText($event)">
                             <div class="invalid-feedback">密碼錯誤</div>
                             <p class="forget" @click="toResigner('C')">忘記密碼</p>
                         </div>
 
-                        <button type="button" class="btn1">
-                            <RouterLink to="/member/profile">
-                                <h4>登入</h4>
-                            </RouterLink>
+                        <button type="button" class="btn1" @click="loginButton">
+                            <!-- <RouterLink to="/member/profile" > -->
+                            <h4>登入</h4>
+                            <!-- </RouterLink> -->
 
                         </button>
                         <div class="register1">
@@ -84,29 +86,34 @@
                 <div class="top">
                     <form action="post">
                         <div class="input">
-                            <label for="name">姓名</label>
-                            <input type="text" id="name" name="name" placeholder="請輸入姓名">
+                            <label for="name" class="form-label">姓名</label>
+                            <input type="text" id="name" name="name" placeholder="請輸入姓名" class="form-control"
+                                :class="{ 'is-invalid': !register.name }" v-model.trim="registerText.registerName">
                             <div class="invalid-feedback">此欄位必填</div>
                         </div>
                         <div class="input">
-                            <label for="email">email</label>
-                            <input type="email" id="email" name="email" placeholder="請輸入email">
+                            <label for="email" class="form-label">email</label>
+                            <input type="email" id="email" name="email" placeholder="請輸入email" class="form-control"
+                                :class="{ 'is-invalid': !register.email }" v-model.trim="registerText.registerEmail">
                             <div class="invalid-feedback">email格式錯誤</div>
                         </div>
                         <div class="input">
-                            <label for="password">密碼</label>
-                            <input type="password" id="password" name="password" placeholder="密碼長度需六至十二位">
-                            <img src="/src/img/login_eye.svg" alt="" class="eye" @click="toText()">
+                            <label for="password" class="form-label">密碼</label>
+                            <input :type="eye" id="password" name="password" placeholder="密碼長度需六至十二位" class="form-control"
+                                :class="{ 'is-invalid': !register.password }" v-model.trim="registerText.registerPassword">
+                            <img :src="eyeImg" alt="" class="eye" @click="toText($event)">
                             <div class="invalid-feedback">密碼須包含大小寫英文及數字</div>
                         </div>
                         <div class="input">
-                            <label for="password">密碼確認</label>
-                            <input type="password" id="password" name="password" placeholder="請再次輸入密碼">
-                            <img src="/src/img/login_eye.svg" alt="" class="eye" @click="toText()">
-                            <div class="invalid-feedback">二次輸入與密碼不符</div>
+                            <label for="password2" class="form-label">密碼確認</label>
+                            <input :type="eye" id="password2" name="password2" placeholder="請再次輸入密碼"
+                                :class="{ 'is-invalid': !register.password2 }" class="form-control"
+                                v-model.trim="registerText.registerPassword2">
+                            <img :src="eyeImg" alt="" class="eye" @click="toText($event)">
+                            <div class="invalid-feedback ">二次輸入與密碼不符</div>
                         </div>
 
-                        <button type="submit" class="btn1">
+                        <button type="button" class="btn1" @click="registerButton">
                             <h4>註冊</h4>
                         </button>
 
@@ -118,50 +125,41 @@
             <div class="right" v-else-if="type === 'C'">
                 <h3>重設密碼</h3>
                 <div class="top">
-                    <form action="" >
+                    <form action="">
                         <div class="input">
-                            <label for="email">信箱</label>
-                            <input v-model="sendEmail" type="email" id="email" name="email" placeholder="請輸入信箱">
-                            <div class="invalid-feedback">密碼須包含大小寫英文及數字</div>
+                            <label for="email" class="form-label">email</label>
+                            <input type="email" id="email" name="email" placeholder="請輸入email" class="form-control"
+                                :class="{ 'is-invalid': !changeEmail }" v-model.trim="changeEmailText.email">
+                            <div class="invalid-feedback">email格式錯誤</div>
                         </div>
 
-
-                        <button @click="send" type="button" class="btn1">
+                        <button type="button" class="btn1" @click="changeEmailButton">
                             <h4>確認</h4>
                         </button>
 
                     </form>
                 </div>
 
-                
+
 
 
             </div>
         </main>
 
-<!-- google登入 -->
+        <!-- google登入 -->
 
-<div>
-    <!-- icon樣式內容 -->
-    <div id="g_id_onload"
-     data-client_id="706694523939-o7a211c2ma3tdiglm2todss0h3cc07nk.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
-     data-login_uri="http://localhost"
-     data-itp_support="true">
-</div>
+        <div>
+            <!-- icon樣式內容 -->
+            <div id="g_id_onload" data-client_id="706694523939-o7a211c2ma3tdiglm2todss0h3cc07nk.apps.googleusercontent.com"
+                data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost" data-itp_support="true">
+            </div>
 
-<div class="g_id_signin"
-     data-type="icon"
-     data-shape="circle"
-     data-theme="outline"
-     data-text="signin_with"
-     data-size="large"
-     >
-</div>
+            <div class="g_id_signin" data-type="icon" data-shape="circle" data-theme="outline" data-text="signin_with"
+                data-size="large">
+            </div>
 
-    <span id="GOOGLE_STATUS_1"></span>
-  </div>
+            <span id="GOOGLE_STATUS_1"></span>
+        </div>
 
 
 
@@ -170,15 +168,48 @@
 
 <script setup>
 import "bootstrap";
-
 import axios from 'axios';
-import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { reactive, ref, onMounted } from "vue";
 
+const router = useRouter();
 const emit = defineEmits(['close']);
 
 const type = ref("A");
 
 const eye = ref("password");
+
+const eyeImg = ref("src/img/login_eye.svg");
+
+const register = reactive({
+    name: true,
+    email: true,
+    password: true,
+    password2: true
+});
+
+const registerText = reactive({
+    registerName: "",
+    registerEmail: "",
+    registerPassword: "",
+    registerPassword2: ""
+});
+
+const changeEmail = ref(true);
+
+const changeEmailText = reactive({
+    email: ""
+});
+
+const login = reactive({
+    email: true,
+    password: true
+});
+
+const loginText = reactive({
+    email: "",
+    password: ""
+});
 
 const close = (e) => {
     e.stopPropagation();
@@ -190,68 +221,194 @@ const toResigner = (n) => {
 }
 
 
-const toText = () => {
+const toText = (e) => {
     // console.log(eye.value);
-    if(eye.value == "password"){
+    if (eye.value == "password") {
         eye.value = "text";
-        // console.log(eye.value);
+        eyeImg.value = "src/img/login_eyeopen.svg";
+
     }
-    else{
+    else {
         eye.value = "password";
+        eyeImg.value = "src/img/login_eye.svg";
         // console.log(eye.value);
     }
 }
 //寄信
 const sendEmail = ref('');
 const sendResult = ref();
-const send = function(){
+const send = function () {
     let params = new URLSearchParams();
-    params.append('email',sendEmail.value);
+    params.append('email', sendEmail.value);
     axios.post('http://localhost/emailapi/api.php',
-    params).then((res)=>{
-        if(res.data.success){
-            alert("寄送成功");
-        }else{
-            alert("寄送失敗");
-        }
-        
-        sendResult.value = res.data.success;
-    }).catch(err=>console.log(err))
+        params).then((res) => {
+            if (res.data.success) {
+                alert("寄送成功");
+            } else {
+                alert("寄送失敗");
+            }
+
+            sendResult.value = res.data.success;
+        }).catch(err => console.log(err))
 };
+
+const loginButton = () => {
+    const send_data = ref(true);
+
+    if (loginText.email === "") {
+        login.email = false;
+        send_data.value = false;
+    } else {
+        login.email = true;
+    }
+
+    if (loginText.password === "") {
+        login.password = false;
+        send_data.value = false;
+    } else {
+        login.password = true;
+    }
+
+    if (send_data.value === true) {
+        console.log("ccc");
+        router.push({ path: '/member/profile' });
+
+        // loginPHP();
+    }
+}
+
+const registerButton = () => {
+    const send_data = ref(true);
+
+    if (registerText.registerName === "") {
+        register.name = false;
+        send_data.value = false;
+    } else {
+        register.name = true;
+    }
+
+    let emailRule = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (registerText.registerEmail === "" || !emailRule.test(registerText.registerEmail)) {
+        register.email = false;
+        send_data.value = false;
+    } else {
+        register.email = true;
+    }
+
+    let passwordRule = /(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,12}$/;
+
+    if (registerText.registerPassword === "" || !passwordRule.test(registerText.registerPassword)) {
+        register.password = false;
+        send_data.value = false;
+    } else {
+        register.password = true;
+    }
+
+    if (registerText.registerPassword2 !== registerText.registerPassword || registerText.registerPassword2 === "") {
+        register.password2 = false;
+        send_data.value = false;
+    } else {
+        register.password2 = true;
+    }
+
+    if (send_data.value === true) {
+        // console.log("aaa");
+        registerPHP();
+
+    }
+}
+
+const changeEmailButton = () => {
+    const send_data = ref(true);
+    let emailRule = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (changeEmailText.email === "" || !emailRule.test(changeEmailText.email)) {
+        changeEmail.value = false;
+        send_data.value = false;
+    } else {
+        changeEmail.value = true;
+    }
+
+    if (send_data.value === true) {
+        // console.log("bbb");
+
+    }
+}
+
+
+const registerPHP = function () {		//取得資料的方法
+    let params = new URLSearchParams();
+    params.append('name', registerText.registerName);
+    params.append('email', registerText.registerEmail);
+    params.append('password', registerText.registerPassword);
+
+
+    axios.post('http://localhost/PHP/register.php', params)	//使用get或post等取得路徑資料(php)
+
+        .then((res) => {	//回傳後如何處理
+
+            // console.log(res);
+            // console.log("ddd");
+
+            // listsData.value = res;
+
+        }).catch(err => console.log(err))  //錯誤如何處理
+
+};
+
+// const loginPHP = function(){		//取得資料的方法
+//     let params = new URLSearchParams();
+//     params.append('email', loginText.email);
+//     params.append('password', loginText.password);
+
+//     axios.post('http://localhost/PHP/login.php',params)	//使用get或post等取得路徑資料(php)
+
+//     .then((res)=>{	//回傳後如何處理
+
+//         // console.log(res);
+//         // console.log("ddd");
+
+//         // listsData.value = res;
+
+//     }).catch(err => console.log(err))  //錯誤如何處理
+
+// };
+
+
 
 // google登入
 const onSignIn1 = (response) => {
-  var credential = response.credential;
-  var profile = JSON.parse(
-    decodeURIComponent(
-      escape(
-        window.atob(
-          credential.split(".")[1]
-            .replace(/-/g, "+")
-            .replace(/_/g, "/")
+    var credential = response.credential;
+    var profile = JSON.parse(
+        decodeURIComponent(
+            escape(
+                window.atob(
+                    credential.split(".")[1]
+                        .replace(/-/g, "+")
+                        .replace(/_/g, "/")
+                )
+            )
         )
-      )
-    )
-  );
+    );
 
-  var target = document.getElementById("GOOGLE_STATUS_1");
-  var html = "";
+    var target = document.getElementById("GOOGLE_STATUS_1");
+    var html = "";
 
-  html += "ID: " + profile.sub + "<br/>";
-  html += "會員暱稱： " + profile.name + "<br/>";
-  html += "會員頭像：" + profile.picture + "<br/>";
-  html += "會員 email：" + profile.email + "<br/>";
-  target.innerHTML = html;
+    html += "ID: " + profile.sub + "<br/>";
+    html += "會員暱稱： " + profile.name + "<br/>";
+    html += "會員頭像：" + profile.picture + "<br/>";
+    html += "會員 email：" + profile.email + "<br/>";
+    target.innerHTML = html;
 };
 
-import { onMounted } from 'vue';
 
 onMounted(() => {
-  const script = document.createElement('script');
-  script.src = 'https://accounts.google.com/gsi/client';
-  script.async = true;
-  script.defer = true;
-  document.body.appendChild(script);
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
 });
 </script>
 

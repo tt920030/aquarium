@@ -1,6 +1,5 @@
 <template>
   <div class="floor_introduction">
-    <Header></Header>
     <!-- 開場介紹圖 -->
     <div class="banner">
       <h1>
@@ -11,20 +10,28 @@
     <!-- 樓層指南選單 -->
     <ul class="floor_nav">
       <li>
-        <RouterLink to="/floor_introduction"><img src="@/img/floor_p1_active.svg" alt="" /></RouterLink>
+        <RouterLink to="/floor_introduction"
+          ><img src="@/img/floor_p1_active.svg" alt=""
+        /></RouterLink>
         <h4 class="h4_active">樓層介紹</h4>
       </li>
       <li>
-        <RouterLink to="/park_activity"><img src="@/img/floor_p2.svg" alt="" /> </RouterLink>
+        <RouterLink to="/park_activity"
+          ><img src="@/img/floor_p2.svg" alt="" />
+        </RouterLink>
 
         <h4>館內活動</h4>
       </li>
       <li>
-        <RouterLink to="/faq"><img src="@/img/floor_p3.svg" alt="" />  </RouterLink>
+        <RouterLink to="/faq"
+          ><img src="@/img/floor_p3.svg" alt="" />
+        </RouterLink>
         <h4>常見問題</h4>
       </li>
       <li>
-        <RouterLink to="/visit_information"><img src="@/img/floor_p4.svg" alt="" /> </RouterLink>
+        <RouterLink to="/visit_information"
+          ><img src="@/img/floor_p4.svg" alt="" />
+        </RouterLink>
         <h4>參觀資訊</h4>
       </li>
     </ul>
@@ -46,7 +53,9 @@
           <li>
             <img src="@/img/floor_introduction_jellyfish.png" alt="水母圖" />
             <h4>水母</h4>
-            <p>水母是一種神祕的生物，晶瑩透明的樣態引人注目<br />快來一睹他的光彩</p>
+            <p>
+              水母是一種神祕的生物，晶瑩透明的樣態引人注目<br />快來一睹他的光彩
+            </p>
           </li>
           <li>
             <img src="@/img/floor_introduction_dolphin.png" alt="海豚圖" />
@@ -76,13 +85,19 @@
             <p>1<span>F</span></p>
             <img src="@/img/floor_introduction_floor1.svg" alt="樓層圖" />
             <div class="p1 fp" id="dolphin">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p1.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p1.jpg" alt=""
+              /></a>
             </div>
             <div class="p2 fp" id="shark">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p2.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p2.jpg" alt=""
+              /></a>
             </div>
             <div class="p3 fp" id="coral">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p3.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p3.jpg" alt=""
+              /></a>
             </div>
           </div>
           <!-- 2樓 -->
@@ -90,13 +105,19 @@
             <p>2<span>F</span></p>
             <img src="@/img/floor_introduction_floor2.svg" alt="樓層圖" />
             <div class="p1 fp" id="penguin">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p4.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p4.jpg" alt=""
+              /></a>
             </div>
             <div class="p2 fp" id="jellyfish">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p5.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p5.jpg" alt=""
+              /></a>
             </div>
             <div class="p3 fp" id="seal">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p6.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p6.jpg" alt=""
+              /></a>
             </div>
           </div>
 
@@ -105,44 +126,50 @@
             <p>3<span>F</span></p>
             <img src="@/img/floor_introduction_floor3.svg" alt="樓層圖" />
             <div class="p4 fp" id="turtle">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p7.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p7.jpg" alt=""
+              /></a>
             </div>
             <div class="p5 fp" id="starfish">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p8.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p8.jpg" alt=""
+              /></a>
             </div>
             <div class="p6 fp" id="otter">
-              <a href="" class="lightbox"><img src="@/img/floor_introduction_p9.jpg" alt="" /></a>
+              <a href="" class="lightbox" @click="lightboxClickHandler"
+                ><img src="@/img/floor_introduction_p9.jpg" alt=""
+              /></a>
             </div>
           </div>
         </div>
-         <!-- 圖像說明 -->
-      <div class="floor_white1">
-        <ul>
-          <li class="barrier">無障礙休息室</li>
-          <li class="scope">水族範圍</li>
-          <li class="lift">電梯</li>
-          <li class="baby">親子空間</li>
-          <li class="shop">海洋商城</li>
-          <li class="toilet">洗手間</li>
-          <li class="academy">海洋學院</li>
-          <li class="cafe">咖啡館</li>
-        </ul>
+        <!-- 圖像說明 -->
+        <div class="floor_white1">
+          <ul>
+            <li class="barrier">無障礙休息室</li>
+            <li class="scope">水族範圍</li>
+            <li class="lift">電梯</li>
+            <li class="baby">親子空間</li>
+            <li class="shop">海洋商城</li>
+            <li class="toilet">洗手間</li>
+            <li class="academy">海洋學院</li>
+            <li class="cafe">咖啡館</li>
+            <Testh :testdata="testdata"></Testh>
+          </ul>
+        </div>
       </div>
-      </div>
-
-     
-
     </section>
 
     <!-- 燈箱 -->
     <section class="light_box">
       <!-- 海豚 -->
-      <div class="lightbox_overlay dolphin">
+      <div class="lightbox_overlay dolphin" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">海豚</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                海豚
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p1.jpg" alt="" /></li>
                 <li>
@@ -155,10 +182,17 @@
             </div>
             <!-- 區塊2 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">海豚秀</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                海豚秀
+              </h4>
               <ul>
                 <li>
-                  <img style="width: 360px" class="intro_img" src="@/img/journey_intro4.jpg" alt="" />
+                  <img
+                    style="width: 360px"
+                    class="intro_img"
+                    src="@/img/journey_intro4.jpg"
+                    alt=""
+                  />
                 </li>
                 <li>
                   <p>
@@ -171,16 +205,18 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
 
       <!-- 鯨鯊 -->
-      <div class="lightbox_overlay shark">
+      <div class="lightbox_overlay shark" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">鯨鯊</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                鯨鯊
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p2.jpg" alt="" /></li>
                 <li>
@@ -194,16 +230,18 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
 
       <!-- 珊瑚礁 -->
-      <div class="lightbox_overlay coral">
+      <div class="lightbox_overlay coral" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">珊瑚礁</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                珊瑚礁
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p3.jpg" alt="" /></li>
                 <li>
@@ -217,16 +255,18 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
 
       <!-- 企鵝 -->
-      <div class="lightbox_overlay penguin">
+      <div class="lightbox_overlay penguin" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">企鵝</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                企鵝
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p4.jpg" alt="" /></li>
                 <li>
@@ -240,16 +280,18 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
 
       <!-- 水母 -->
-      <div class="lightbox_overlay jellyfish">
+      <div class="lightbox_overlay jellyfish" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">水母</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                水母
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p5.jpg" alt="" /></li>
                 <li>
@@ -263,16 +305,18 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
 
       <!-- 海獅 -->
-      <div class="lightbox_overlay seal">
+      <div class="lightbox_overlay seal" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">海獅</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                海獅
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p6.jpg" alt="" /></li>
                 <li>
@@ -285,7 +329,9 @@
             </div>
             <!-- 區塊2 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">海獅秀</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                海獅秀
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p6.jpg" alt="" /></li>
                 <li>
@@ -299,16 +345,18 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
 
       <!-- 海龜 -->
-      <div class="lightbox_overlay turtle">
+      <div class="lightbox_overlay turtle" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">海龜</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                海龜
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p7.jpg" alt="" /></li>
                 <li>
@@ -323,7 +371,9 @@
             </div>
             <!-- 區塊2 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">餵食海龜</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                餵食海龜
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p7.jpg" alt="" /></li>
                 <li>
@@ -334,16 +384,18 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
 
       <!-- 海星 -->
-      <div class="lightbox_overlay starfish">
+      <div class="lightbox_overlay starfish" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">海星</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                海星
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p8.jpg" alt="" /></li>
                 <li>
@@ -356,7 +408,9 @@
             </div>
             <!-- 區塊2 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">海星觸摸</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                海星觸摸
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p8.jpg" alt="" /></li>
                 <li>
@@ -370,16 +424,18 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
 
       <!-- 水獺 -->
-      <div class="lightbox_overlay otter">
+      <div class="lightbox_overlay otter" @click="lightboxOverlayHandler">
         <div class="wrapper">
-          <div class="lightbox_content">
+          <div class="lightbox_content" @click="lightboxContentHandler">
             <!-- 區塊1 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">水獺</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                水獺
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p9.jpg" alt="" /></li>
                 <li>
@@ -392,7 +448,9 @@
             </div>
             <!-- 區塊2 -->
             <div class="lightbox_block">
-              <h4 class="accordion_header">水獺近距離接觸</h4>
+              <h4 class="accordion_header" @click="accordionHeaderHandler">
+                水獺近距離接觸
+              </h4>
               <ul>
                 <li><img src="@/img/floor_introduction_p9.jpg" alt="" /></li>
                 <li>
@@ -407,67 +465,75 @@
           </div>
         </div>
         <!-- 關閉按鈕 -->
-        <div class="lightbox_close">x</div>
+        <div class="lightbox_close" @click="lightboxCloseHandler">x</div>
       </div>
     </section>
     <RouterLink to="/ticket"></RouterLink>
-    <Footer></Footer>
     <RouterView></RouterView>
   </div>
 </template>
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import $ from "jquery";
+import axios from "axios";
+import Testh from "/src/components/Testh.vue";
+// 燈箱點擊處理函式
+const lightboxClickHandler = (e) => {
+  e.preventDefault();
+  let parentId = e.currentTarget.parentNode.getAttribute("id");
+  document.querySelector(`.${parentId}`).style.display = "block";
+  document.body.style.overflow = "hidden";
+};
 
-$(function () {
-  // 燈箱()
-  // 找到該元素
-  $(".lightbox").click(function (e) {
-    // 防止點擊時跳轉
-    e.preventDefault();
-    // 找到父元素的ID
-    let parentId = $(this).parent().attr("id");
-    $("." + parentId).fadeIn();
-    // 停掉body的滾輪
-    $("body").css("overflow", "hidden");
-  });
+// 燈箱關閉處理函式
+const lightboxCloseHandler = (e) => {
+  e.stopPropagation(); //可以都寫currentTarget就能避免很多冒泡問題
+  e.currentTarget.parentNode.style.display = "none";
+  document.body.style.overflow = "visible";
+};
 
-  //點擊x關閉
-  $(".lightbox_close").click(function () {
-    $(this).parent().fadeOut();
-    $("body").css("overflow", "visible");
-  });
-  // 點擊旁邊關閉
-  $(".lightbox_content").click(function (e) {
-    e.stopPropagation();
-  });
-  $(".lightbox_overlay").click(function (e) {
-    $(this).fadeOut();
-    $("body").css("overflow", "visible");
-  });
+// 燈箱疊加處理函式
+const lightboxOverlayHandler = (e) => {
+  e.target.style.display = "none";
+  document.body.style.overflow = "visible";
+};
 
-  // 手風琴()
-  $(".accordion_header").click(function () {
-    $(this).toggleClass("active");
-    $(this).next().slideToggle();
-  });
-  // $(".accordion_header").first().click();
+// 燈箱內容處理函式(防止事件冒泡)
+const lightboxContentHandler = (e) => {
+  e.stopPropagation();
+};
+
+// 手風琴標題處理函式
+const accordionHeaderHandler = (e) => {
+  e.target.classList.toggle("active");
+  e.target.nextElementSibling.style.display = e.target.classList.contains(
+    "active"
+  )
+    ? "block"
+    : "none";
+};
+
+const testdata = reactive([]);
+onMounted(() => {
+  axios
+    .get("http://localhost/G6/Select.php")
+    .then((res) => {
+      testdata.push(...res.data);
+    })
+    .catch((err) => console.log(err));
 });
 </script>
 
 <style lang="scss" scoped>
 .floor_introduction {
+  // 開場介紹圖
   ::-webkit-scrollbar {
     background-color: transparent;
-    width: 7px;
+    width: 722px;
   }
-
   ::-webkit-scrollbar-thumb {
     background-color: black;
   }
-
-  // 開場介紹圖
   .banner {
     background-image: url("@/img/guided_tour_banner.jpg");
     width: 100%;
@@ -606,70 +672,85 @@ $(function () {
 .floor {
   background: #f4f5f7;
 
-   // 圖像說明
-   .floor_white1 {
-      padding: 70px 50px 40px 142px;
-      margin: 0 0 250px;
-      background: #fff;
-      border-radius: 28px;
+  // 圖像說明
+  .floor_white1 {
+    padding: 70px 50px 40px 142px;
+    margin: 0 0 250px;
+    background: #fff;
+    border-radius: 28px;
 
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
 
-      ul {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+      li {
+        width: 135px;
+        margin-right: 20px;
+        padding-left: 40px;
+        margin-bottom: 30px;
+        font-size: $p;
+        line-height: 2;
+      }
+      li {
+        width: 135px;
+        margin-right: 20px;
+        padding-left: 40px;
+        margin-bottom: 30px;
+        font-size: $p;
+        line-height: 2;
+      }
 
-        li {
-          width: 135px;
-          margin-right: 20px;
-          padding-left: 40px;
-          margin-bottom: 30px;
-          font-size: $p;
-          line-height: 2;
-        }
+      // 各區塊設定
+      .barrier {
+        background: url("@/img/floor_introduction_barrier_free_icon.svg")
+          no-repeat 2px 50%;
+        background-size: 25px 25px;
+      }
 
-        // 各區塊設定
-        .barrier {
-          background: url("@/img/floor_introduction_barrier_free_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .scope {
+        background: url("@/img/floor_introduction_fish_icon.svg") no-repeat 2px
+          50%;
+        background-size: 25px 25px;
+      }
 
-        .scope {
-          background: url("@/img/floor_introduction_fish_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .lift {
+        background: url("@/img/floor_introduction_lift_icon.svg") no-repeat 2px
+          50%;
+        background-size: 25px 25px;
+      }
 
-        .lift {
-          background: url("@/img/floor_introduction_lift_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .baby {
+        background: url("@/img/floor_introduction_baby_icon.svg") no-repeat 2px
+          50%;
+        background-size: 30px 25px;
+      }
 
-        .baby {
-          background: url("@/img/floor_introduction_baby_icon.svg") no-repeat 2px 50%;
-          background-size: 30px 25px;
-        }
+      .shop {
+        background: url("@/img/floor_introduction_shop_icon.svg") no-repeat 2px
+          50%;
+        background-size: 25px 25px;
+      }
 
-        .shop {
-          background: url("@/img/floor_introduction_shop_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .toilet {
+        background: url("@/img/floor_introduction_toilet_icon.svg") no-repeat
+          2px 50%;
+        background-size: 25px 25px;
+      }
 
-        .toilet {
-          background: url("@/img/floor_introduction_toilet_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .academy {
+        background: url("@/img/floor_introduction_school_icon.svg") no-repeat
+          2px 50%;
+        background-size: 25px 25px;
+      }
 
-        .academy {
-          background: url("@/img/floor_introduction_school_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
-
-        .cafe {
-          background: url("@/img/floor_introduction_coffee_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .cafe {
+        background: url("@/img/floor_introduction_coffee_icon.svg") no-repeat
+          2px 50%;
+        background-size: 25px 25px;
       }
     }
+  }
   @include mobile() {
     display: none;
   }
@@ -684,7 +765,8 @@ $(function () {
       font-size: 24px;
       line-height: 1.6;
       font-weight: bold;
-      background: url("@/img/floor_introduction_h2_line.svg") no-repeat left bottom;
+      background: url("@/img/floor_introduction_h2_line.svg") no-repeat left
+        bottom;
       background-size: 250px 10px;
     }
 
@@ -778,8 +860,6 @@ $(function () {
         }
       }
     }
-
-   
   }
 }
 
@@ -834,7 +914,6 @@ $(function () {
 
         // 區塊
         .lightbox_block {
-
           // RWD
           @include mobile() {
             border: 1px solid #ddd;
@@ -911,7 +990,6 @@ $(function () {
               }
 
               img {
-
                 // RWD
                 @include mobile() {
                   margin: auto;
