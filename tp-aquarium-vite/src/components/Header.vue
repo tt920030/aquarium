@@ -22,15 +22,17 @@
           <i class="bi bi-list"></i>
           <li>
             <p>
-              <span class="rain">{{ rainWeatherState }}</span>
+              <span class="rain" @change="getWeather">{{
+                rainWeatherState
+              }}</span>
             </p>
           </li>
           <li>
             <p>
-              <span class="temp">{{ tempWeather }}</span>
+              <span class="temp" @change="getWeather">{{ tempWeather }}</span>
             </p>
           </li>
-          <li><img :src="imgPath" alt="" class="weather_img" /></li>
+          <li><img :src="get_weather_img()" alt="" class="weather_img" /></li>
           <li>
             <button
               type="button"
@@ -41,19 +43,21 @@
               <i class="bi bi-moon-stars-fill"></i>
             </button>
           </li>
-          <li><img class="icons" src="src/img/header.member.svg" alt="" /></li>
+          <li @click="logIn()">
+            <img class="icons" src="/src/img/header_member.svg" alt="" />
+          </li>
           <li>
             <RouterLink to="/cart"
-              ><img class="icons" src="src/img/header_cart.svg" alt=""
+              ><img class="icons" src="/src/img/header_cart.svg" alt=""
             /></RouterLink>
           </li>
         </ul>
         <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
         <ul class="menu">
           <li v-for="item in navItems">
-            <RouterLink :to="item.link"
-              ><p>{{ item.name }}</p></RouterLink
-            >
+            <RouterLink :to="item.link">
+              <p>{{ item.name }}</p>
+            </RouterLink>
           </li>
         </ul>
       </nav>
@@ -80,10 +84,18 @@
 import { RouterLink, RouterView } from "vue-router";
 import { defineEmits, ref, onMounted } from "vue";
 import $ from "jquery";
+import axios from "axios";
+
 import { transform } from "@vue/compiler-core";
 import axios from "axios";
 
 const emit = defineEmits(["openLogin"]);
+
+const emit = defineEmits(["openLogin"]);
+
+const logIn = () => {
+  emit("openLogin", true);
+};
 
 const navItems = [
   { name: "最新消息", link: "/news" },
@@ -244,6 +256,7 @@ header {
         li:nth-child(6) {
           margin-right: 0;
         }
+
         // @include mobile{
         //     margin-right: 5px;
         // }
@@ -278,6 +291,7 @@ header {
               font-size: 0.1rem;
             }
           }
+
           .icons {
             width: 25px;
           }
@@ -290,6 +304,7 @@ header {
           p {
             color: white;
           }
+
           // }
 
           .switch {
@@ -297,6 +312,7 @@ header {
 
             i {
               display: block;
+
               @include mobile() {
                 font-size: 10px;
                 color: map-get($color, text);
@@ -423,9 +439,11 @@ header {
       0% {
         transform: translateX(0);
       }
+
       50% {
         transform: translateX(-25%);
       }
+
       100% {
         transform: translateX(-50%);
       }

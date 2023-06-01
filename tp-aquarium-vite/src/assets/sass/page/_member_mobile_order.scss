@@ -1,11 +1,10 @@
 .mobile_order {
     display: none;
-    height: 1110px;
-    margin-top: 160px;
-    margin-bottom: 150px;
+    margin-top: 40px;
 
     @include mobile {
         display: block;
+        
 
         select {
             margin-bottom: 30px;
@@ -28,83 +27,162 @@
 
         }
 
-        .table {
-            margin: 0 auto;
-            width: 90%;
-            border: 1px solid map-get($color, bgc2);
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 100px;
+        
+            .table {
+                margin: 0 auto;
+                width: 90%;
+                border: 1px solid map-get($color, bgc2);
+                border-radius: 20px;
+                overflow: hidden;
+                margin-bottom: 100px;
 
-            .title {
-                height: 65px;
-                background-color: map-get($color, bgc2);
+                .title {
+                    height: 65px;
+                    background-color: map-get($color, bgc2);
 
-                h3 {
-                    line-height: 65px;
-                    text-align: center;
+                    h3 {
+                        line-height: 65px;
+                        text-align: center;
+                    }
                 }
+
+                .tableContainer{
+                    transition: all .5s;
+                    height: auto;
+                    overflow: hidden;
+
+                    table {
+
+                        width: 100%;
+    
+                        .top {
+                            background-color: map-get($color, bgc1);
+                        }
+    
+                        tr {
+                            width: 100%;
+    
+                            text-align: center;
+    
+                            th {
+                                box-sizing: border-box;
+                                border: 1px solid map-get($color, bgc2);
+                                padding: 15px;
+                                vertical-align: middle;
+                                width: 30%;
+                                border-left: 0px;
+    
+    
+                            }
+    
+                            td {
+                                box-sizing: border-box;
+                                border: 1px solid map-get($color, bgc2);
+                                padding: 15px;
+                                vertical-align: middle;
+                                width: 70%;
+                                border-right: 0px;
+                                position: relative;
+    
+                                img {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 50%;
+                                    transform: translate(0, -50%);
+                                }
+                            }
+    
+                            &:last-child {
+    
+                                th {
+                                    border-bottom: 0;
+                                }
+                            }
+    
+                            &:last-child {
+                                td {
+                                    border-bottom: 0;
+                                }
+    
+                            }
+    
+                            p {}
+                        }
+                    }
+                }
+
+                .tableContainer2{
+                    transition: all .5s;
+                    height: 358px;
+                    overflow: hidden;
+                    table {
+
+                        width: 100%;
+    
+                        .top {
+                            background-color: map-get($color, bgc1);
+                        }
+    
+                        tr {
+                            width: 100%;
+    
+                            text-align: center;
+    
+                            th {
+                                box-sizing: border-box;
+                                border: 1px solid map-get($color, bgc2);
+                                padding: 15px;
+                                vertical-align: middle;
+                                width: 30%;
+                                border-left: 0px;
+    
+    
+                            }
+    
+                            td {
+                                box-sizing: border-box;
+                                border: 1px solid map-get($color, bgc2);
+                                padding: 15px;
+                                vertical-align: middle;
+                                width: 70%;
+                                border-right: 0px;
+                                position: relative;
+    
+                                img {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 50%;
+                                    transform: translate(0, -50%);
+                                }
+                            }
+    
+                            &:last-child {
+    
+                                th {
+                                    border-bottom: 0;
+                                }
+                            }
+    
+                            &:last-child {
+                                td {
+                                    border-bottom: 0;
+                                }
+    
+                            }
+    
+                            p {}
+                        }
+                    }
+                }
+
+                .-close{
+                    height: 50px;
+                }
+                
             }
-
-            table {
-
-                width: 100%;
-
-                .top {
-                    background-color: map-get($color, bgc1);
-                }
-
-                tr {
-                    width: 100%;
-
-                    text-align: center;
-
-                    th {
-                        box-sizing: border-box;
-                        border: 1px solid map-get($color, bgc2);
-                        padding: 15px;
-                        vertical-align: middle;
-                        width: 30%;
-                        border-left: 0px;
+        
 
 
-                    }
-
-                    td {
-                        box-sizing: border-box;
-                        border: 1px solid map-get($color, bgc2);
-                        padding: 15px;
-                        vertical-align: middle;
-                        width: 70%;
-                        border-right: 0px;
-                        position: relative;
-
-                        img {
-                            position: absolute;
-                            right: 10px;
-                            top: 50%;
-                            transform: translate(0, -50%);
-                        }
-                    }
-
-                    &:last-child {
-
-                        th {
-                            border-bottom: 0;
-                        }
-                    }
-
-                    &:last-child {
-                        td {
-                            border-bottom: 0;
-                        }
-
-                    }
-
-                    p {}
-                }
-            }
-        }
     }
 
 }

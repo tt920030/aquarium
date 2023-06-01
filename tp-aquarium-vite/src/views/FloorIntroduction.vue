@@ -694,6 +694,14 @@ onMounted(() => {
         font-size: $p;
         line-height: 2;
       }
+      li {
+        width: 135px;
+        margin-right: 20px;
+        padding-left: 40px;
+        margin-bottom: 30px;
+        font-size: $p;
+        line-height: 2;
+      }
 
       // 各區塊設定
       .barrier {

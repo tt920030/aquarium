@@ -1,35 +1,36 @@
 <template>
     <ul class="page">
-        <li @click="previous()">
-            <img src="../img/news_left.svg" alt="">
-            <p>PREV</p>
+        <li @click="previous()" :class="{'-gray' : currentPage === 1}">
+            <img src="@/img/news_left.svg" alt="" >
+            <p id="PREV" >PREV</p>
         </li>
-        <li class="num" v-for="n in totalPages" :key="n" :class="{ '-on': n == currentPage }" @click="now($event)">
+        <li class="num" v-for="n in totalPages" :key="n" :class="{ '-on': n == currentPage }" @click="now($event)" >
             <p :id="n">{{ n }}</p>
         </li>
-        <li @click="next()">
-            <p>NEXT</p>
-            <img src="../img/news_right.svg" alt="">
+        <li @click="next()" :class="{'-gray' : currentPage === totalPages}">
+            <p id="NEXT">NEXT</p>
+            <img src="@/img/news_right.svg" alt="">
 
         </li>
-
 
     </ul>
 </template>
 
 <script setup>
 
-import { computed, defineProps, defineEmits, ref } from 'vue';
+import { computed, defineProps, defineEmits, ref, watch ,watchEffect} from 'vue';
 
 
 const props = defineProps(["totalItems", "itemsPerPage", "currentPage", "current"]);
 
 const emit = defineEmits(["current"]);
 
+
 // 計算總頁數
 const totalPages = computed(() => {
     return Math.ceil(props.totalItems / props.itemsPerPage);
 });
+
 
 
 // 下一頁
@@ -42,15 +43,15 @@ const next = () => {
 
 }
 
+// 點擊
 const now = (e) => {
     
     const n = Number(e.target.closest("p").getAttribute("id"));
     emit("current", n); 
 
-    
-
 }
 
+// 上一頁
 const previous = () => {
     if (props.currentPage != 1) {
 
@@ -72,9 +73,19 @@ const previous = () => {
     li {
         cursor: pointer;
 
+        &.-gray{
+            opacity: 0.3
+        }
+
         img {
             margin: 0px 10px;
+            color: red;
+
+            
+        
         }
+
+   
 
         display: flex;
         margin: 0px 10px;
