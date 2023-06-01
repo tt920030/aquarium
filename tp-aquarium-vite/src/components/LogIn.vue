@@ -229,7 +229,7 @@ const loginButton = () => {
         console.log("ccc");
         router.push({ path: '/member/profile' });
         
-
+        // loginPHP();
     }
 }
 
@@ -270,7 +270,7 @@ const registerButton = () => {
 
     if(send_data.value === true){
         // console.log("aaa");
-        listsDt();
+        registerPHP();
 
     }
 }
@@ -293,7 +293,7 @@ const changeEmailButton = () => {
 }
 
 
-const listsDt = function(){		//取得資料的方法
+const registerPHP = function(){		//取得資料的方法
     let params = new URLSearchParams();
     params.append('name', registerText.registerName);
     params.append('email', registerText.registerEmail);
@@ -312,6 +312,24 @@ const listsDt = function(){		//取得資料的方法
     }).catch(err => console.log(err))  //錯誤如何處理
 
 };
+
+// const loginPHP = function(){		//取得資料的方法
+//     let params = new URLSearchParams();
+//     params.append('email', loginText.email);
+//     params.append('password', loginText.password);
+
+//     axios.post('http://localhost/PHP/login.php',params)	//使用get或post等取得路徑資料(php)
+            
+//     .then((res)=>{	//回傳後如何處理
+
+//         // console.log(res);
+//         // console.log("ddd");
+                
+//         // listsData.value = res;
+
+//     }).catch(err => console.log(err))  //錯誤如何處理
+
+// };
 
 
 
