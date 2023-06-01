@@ -54,9 +54,6 @@ import { transform } from "@vue/compiler-core";
 
 const emit = defineEmits(['openLogin']);
 
-const logIn = () => {
-    emit('openLogin', true)
-}
 
 const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/journey" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
 $(function () {
@@ -151,6 +148,10 @@ $(function () {
         }
     }
     getWeather(); 
+
+    const logIn = () => {
+        emit("openLogin", true);
+    }
 
 </script>
 
