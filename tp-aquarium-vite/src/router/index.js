@@ -193,6 +193,7 @@ const router = createRouter({
     {
       path: "/news/news_page",
       name: "NewsPage",
+      meta: { title: '最新消息' },
       component: () => import("../views/news/NewsPage.vue"),
     },
 
