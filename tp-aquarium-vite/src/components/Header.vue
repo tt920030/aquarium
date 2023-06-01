@@ -1,62 +1,40 @@
 <template>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <header>
     <div class="content" :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }">
-      <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt=""/></RouterLink>
+      <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt=""></RouterLink>
       <nav>
         <ul class="icon">
           <i class="bi bi-list"></i>
-          <li><p><span class="rain">{{ rainWeatherState }}</span></p></li>
-          <li><p><span class="temp">{{ tempWeather }}</span></p></li>
-          <li><img :src="imgPath" alt="" class="weather_img" /></li><li>
-            <button type="button" ref="circle" class="switch" @click="SwitchColor">
-              <i class="bi bi-moon-stars-fill"></i>
-            </button>
+          <li>
+            <p><span class="rain" @change="getWeather">{{ rainWeatherState }}</span></p>
           </li>
-          <li><img class="icons" src="src/img/header.member.svg" alt="" /></li>
-          <li><RouterLink to="/cart"><img class="icons" src="src/img/header_cart.svg" alt=""/></RouterLink>
+          <li>
+            <p><span class="temp" @change="getWeather">{{ tempWeather }}</span></p>
+          </li>
+          <li><img :src="get_weather_img()" alt="" class="weather_img"></li>
+          <li><button type="button" ref="circle" class="switch" @click="SwitchColor"><i
+                class="bi bi-moon-stars-fill"></i></button></li>
+          <li @click="logIn()"><img class="icons" src="/src/img/header_member.svg" alt=""></li>
+          <li>
+            <RouterLink to="/cart"><img class="icons" src="/src/img/header_cart.svg" alt=""></RouterLink>
           </li>
         </ul>
         <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
         <ul class="menu">
-          <li v-for="item in navItems"><RouterLink :to="item.link"><p>{{ item.name }}</p></RouterLink></li>
+          <li v-for="item in navItems">
+            <RouterLink :to="item.link">
+              <p>{{ item.name }}</p>
+            </RouterLink>
+          </li>
         </ul>
       </nav>
     </div>
-   <header>
-        <div class="content" :class="{'-light_color2':waveColor2 === 'DeepSkyBlue'}">
-            <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt=""></RouterLink>
-            <nav>
-                <ul class="icon">
-                    <i class="bi bi-list"></i>
-                    <li><p><span class="rain" @change="getWeather">{{ rainWeatherState }}</span></p></li>
-                    <li><p><span class="temp" @change="getWeather">{{ tempWeather }}</span></p></li>
-                    <li><img :src="get_weather_img()" alt="" class="weather_img"></li>
-                    <li><button type="button" ref="circle" class="switch"  @click="SwitchColor" ><i class="bi bi-moon-stars-fill"></i></button></li>
-                    <li @click="logIn()"><img class="icons" src="/src/img/header_member.svg" alt=""></li>
-                    <li>
-                        <RouterLink to="/cart"><img class="icons" src="/src/img/header_cart.svg" alt=""></RouterLink>
-                    </li>
-                </ul>
-                <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
-                <ul class="menu">
-                    <li v-for="item in navItems">
-                        <RouterLink :to="item.link">
-                            <p>{{ item.name }}</p>
-                        </RouterLink>
-                    </li>
-                </ul>
-            </nav>
-        </div>
 
     <div class="ocean">
       <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
@@ -68,108 +46,105 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { defineEmits, ref, onMounted} from "vue";
+import { defineEmits, ref, onMounted } from "vue";
 import $ from "jquery";
-
-    
-
-
+import axios from 'axios';
 
 import { transform } from "@vue/compiler-core";
 
 const emit = defineEmits(['openLogin']);
 
 const logIn = () => {
-    emit('openLogin', true);
+  emit('openLogin', true);
 }
 
 const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/journey" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
 $(function () {
-    let is_open = false;
-    $("header .content nav i").click(function () {
-        if (is_open == false) {
-            $("header .content .menu").animate({ right: "0px" }, 1000).show();
-            is_open = true;
-        } else {
-            $("header .content .menu").animate({ right: "-100%", display: 'none' }, 1000);
-            is_open = false;
-        }
-    });
+  let is_open = false;
+  $("header .content nav i").click(function () {
+    if (is_open == false) {
+      $("header .content .menu").animate({ right: "0px" }, 1000).show();
+      is_open = true;
+    } else {
+      $("header .content .menu").animate({ right: "-100%", display: 'none' }, 1000);
+      is_open = false;
+    }
+  });
 })
 
 
-    // switch color
-    const flag = ref(false);
-    const circle = ref(null);
-    const waveColor = ref(null);
-    const waveColor2 = ref(null);
+// switch color
+const flag = ref(false);
+const circle = ref(null);
+const waveColor = ref(null);
+const waveColor2 = ref(null);
 
-    function SwitchColor (){
-            flag.value = !flag.value;
+function SwitchColor() {
+  flag.value = !flag.value;
 
-            if(flag.value){
-                circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
-                let icon = document.querySelector('i');
+  if (flag.value) {
+    circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    let icon = document.querySelector('i');
 
-                circle.value.style.backgroundColor = '#ccf1f5';
-                waveColor.value = 'DeepSkyBlue'
-                waveColor2.value = 'DeepSkyBlue'
+    circle.value.style.backgroundColor = '#ccf1f5';
+    waveColor.value = 'DeepSkyBlue'
+    waveColor2.value = 'DeepSkyBlue'
 
-            }else{
-                circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-                circle.value.style.backgroundColor = 'lightgrey';
-                waveColor.value = 'blue'
-                waveColor2.value = 'blue'
-            }
-        }
-
-
-    // weather API
-    const currentWeather = ref('') //天氣型態的第一個字
-    const tempWeather = ref(null); //溫度
-    const rainWeatherState = ref(null); //天氣型態
-    const imgPath = ref(''); // 存取天氣型態對應的圖片路徑
-
-    function get_weather_img () { //天氣型態對應的圖片
-        switch (currentWeather.value) {
-            case '陰':
-            return './src/img/weather_elements2.png';
-            case '晴':
-            return './src/img/weather_elements3.png';
-            default:
-            return './src/img/weather_elements1.png';
-        }
-    };
+  } else {
+    circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+    circle.value.style.backgroundColor = 'lightgrey';
+    waveColor.value = 'blue'
+    waveColor2.value = 'blue'
+  }
+}
 
 
-	  onMounted(()=>{
-      axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415')				//使用get或post等取得路徑資料(php或json)
-		  .then((res)=>{	//回傳後如何處理
-        // console.log(res);
+// weather API
+const currentWeather = ref('') //天氣型態的第一個字
+const tempWeather = ref(null); //溫度
+const rainWeatherState = ref(null); //天氣型態
+const imgPath = ref(''); // 存取天氣型態對應的圖片路徑
 
-        // 查找溫度資料
-        let temp = res.data.records.location[14].weatherElement[3].elementValue;
-        // console.log(temp);
+function get_weather_img() { //天氣型態對應的圖片
+  switch (currentWeather.value) {
+    case '陰':
+      return './src/img/weather_elements2.png';
+    case '晴':
+      return './src/img/weather_elements3.png';
+    default:
+      return './src/img/weather_elements1.png';
+  }
+};
 
-        // 查找天氣型態資料
-        let WeatherState = res.data.records.location[14].weatherElement[20].elementValue;
-        // console.log(WeatherState);
 
-        // 加上溫度單位
-        let tempList = temp + "°C";
+onMounted(() => {
+  axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415')				//使用get或post等取得路徑資料(php或json)
+    .then((res) => {	//回傳後如何處理
+      // console.log(res);
 
-        tempWeather.value = tempList;
-        rainWeatherState.value = WeatherState;
+      // 查找溫度資料
+      let temp = res.data.records.location[14].weatherElement[3].elementValue;
+      // console.log(temp);
 
-        // 找出天氣描述的第一個字去換圖片
-        currentWeather.value = WeatherState.slice(0,1);
-        imgPath.value = get_weather_img();
+      // 查找天氣型態資料
+      let WeatherState = res.data.records.location[14].weatherElement[20].elementValue;
+      // console.log(WeatherState);
 
-		}).catch(err => console.log(err))  //錯誤如何處理
-    });
+      // 加上溫度單位
+      let tempList = temp + "°C";
 
-   
-       
+      tempWeather.value = tempList;
+      rainWeatherState.value = WeatherState;
+
+      // 找出天氣描述的第一個字去換圖片
+      currentWeather.value = WeatherState.slice(0, 1);
+      imgPath.value = get_weather_img();
+
+    }).catch(err => console.log(err))  //錯誤如何處理
+});
+
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -232,6 +207,7 @@ header {
         li:nth-child(6) {
           margin-right: 0;
         }
+
         // @include mobile{
         //     margin-right: 5px;
         // }
@@ -266,6 +242,7 @@ header {
               font-size: 0.1rem;
             }
           }
+
           .icons {
             width: 25px;
           }
@@ -278,6 +255,7 @@ header {
           p {
             color: white;
           }
+
           // }
 
           .switch {
@@ -285,6 +263,7 @@ header {
 
             i {
               display: block;
+
               @include mobile() {
                 font-size: 10px;
                 color: map-get($color, text);
@@ -411,9 +390,11 @@ header {
       0% {
         transform: translateX(0);
       }
+
       50% {
         transform: translateX(-25%);
       }
+
       100% {
         transform: translateX(-50%);
       }

@@ -20,7 +20,7 @@
         <h4>館內活動</h4>
       </li>
       <li>
-        <RouterLink to="/faq"><img src="@/img/floor_p3.svg" alt="" />  </RouterLink>
+        <RouterLink to="/faq"><img src="@/img/floor_p3.svg" alt="" /> </RouterLink>
         <h4>常見問題</h4>
       </li>
       <li>
@@ -115,22 +115,22 @@
             </div>
           </div>
         </div>
-         <!-- 圖像說明 -->
-      <div class="floor_white1">
-        <ul>
-          <li class="barrier">無障礙休息室</li>
-          <li class="scope">水族範圍</li>
-          <li class="lift">電梯</li>
-          <li class="baby">親子空間</li>
-          <li class="shop">海洋商城</li>
-          <li class="toilet">洗手間</li>
-          <li class="academy">海洋學院</li>
-          <li class="cafe">咖啡館</li>
-        </ul>
-      </div>
+        <!-- 圖像說明 -->
+        <div class="floor_white1">
+          <ul>
+            <li class="barrier">無障礙休息室</li>
+            <li class="scope">水族範圍</li>
+            <li class="lift">電梯</li>
+            <li class="baby">親子空間</li>
+            <li class="shop">海洋商城</li>
+            <li class="toilet">洗手間</li>
+            <li class="academy">海洋學院</li>
+            <li class="cafe">咖啡館</li>
+          </ul>
+        </div>
       </div>
 
-     
+
 
     </section>
 
@@ -606,70 +606,71 @@ $(function () {
 .floor {
   background: #f4f5f7;
 
-   // 圖像說明
-   .floor_white1 {
-      padding: 70px 50px 40px 142px;
-      margin: 0 0 250px;
-      background: #fff;
-      border-radius: 28px;
+  // 圖像說明
+  .floor_white1 {
+    padding: 70px 50px 40px 142px;
+    margin: 0 0 250px;
+    background: #fff;
+    border-radius: 28px;
 
 
-      ul {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
 
-        li {
-          width: 135px;
-          margin-right: 20px;
-          padding-left: 40px;
-          margin-bottom: 30px;
-          font-size: $p;
-          line-height: 2;
-        }
+      li {
+        width: 135px;
+        margin-right: 20px;
+        padding-left: 40px;
+        margin-bottom: 30px;
+        font-size: $p;
+        line-height: 2;
+      }
 
-        // 各區塊設定
-        .barrier {
-          background: url("@/img/floor_introduction_barrier_free_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      // 各區塊設定
+      .barrier {
+        background: url("@/img/floor_introduction_barrier_free_icon.svg") no-repeat 2px 50%;
+        background-size: 25px 25px;
+      }
 
-        .scope {
-          background: url("@/img/floor_introduction_fish_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .scope {
+        background: url("@/img/floor_introduction_fish_icon.svg") no-repeat 2px 50%;
+        background-size: 25px 25px;
+      }
 
-        .lift {
-          background: url("@/img/floor_introduction_lift_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .lift {
+        background: url("@/img/floor_introduction_lift_icon.svg") no-repeat 2px 50%;
+        background-size: 25px 25px;
+      }
 
-        .baby {
-          background: url("@/img/floor_introduction_baby_icon.svg") no-repeat 2px 50%;
-          background-size: 30px 25px;
-        }
+      .baby {
+        background: url("@/img/floor_introduction_baby_icon.svg") no-repeat 2px 50%;
+        background-size: 30px 25px;
+      }
 
-        .shop {
-          background: url("@/img/floor_introduction_shop_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .shop {
+        background: url("@/img/floor_introduction_shop_icon.svg") no-repeat 2px 50%;
+        background-size: 25px 25px;
+      }
 
-        .toilet {
-          background: url("@/img/floor_introduction_toilet_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .toilet {
+        background: url("@/img/floor_introduction_toilet_icon.svg") no-repeat 2px 50%;
+        background-size: 25px 25px;
+      }
 
-        .academy {
-          background: url("@/img/floor_introduction_school_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .academy {
+        background: url("@/img/floor_introduction_school_icon.svg") no-repeat 2px 50%;
+        background-size: 25px 25px;
+      }
 
-        .cafe {
-          background: url("@/img/floor_introduction_coffee_icon.svg") no-repeat 2px 50%;
-          background-size: 25px 25px;
-        }
+      .cafe {
+        background: url("@/img/floor_introduction_coffee_icon.svg") no-repeat 2px 50%;
+        background-size: 25px 25px;
       }
     }
+  }
+
   @include mobile() {
     display: none;
   }
@@ -779,7 +780,7 @@ $(function () {
       }
     }
 
-   
+
   }
 }
 
