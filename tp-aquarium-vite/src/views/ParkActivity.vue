@@ -1,6 +1,5 @@
 <template>
   <div class="journey">
-    <Header></Header>
     <main>
       <div class="banner">
         <h1>
@@ -10,23 +9,31 @@
       </div>
       <!-- 樓層指南選單 -->
       <ul class="floor_nav">
-      <li>
-        <RouterLink to="/floor_introduction"><img src="@/img/floor_p1.svg" alt="" /></RouterLink>
-        <h4 >樓層介紹</h4>
-      </li>
-      <li>
-        <RouterLink to="/park_activity"><img src="@/img/floor_p2_active.svg" alt="" /> </RouterLink>
-        <h4 class="h4_active">館內活動</h4>
-      </li>
-      <li>
-        <RouterLink to="/faq"><img src="@/img/floor_p3.svg" alt="" />  </RouterLink>
-        <h4>常見問題</h4>
-      </li>
-      <li>
-        <RouterLink to="/visit_information"><img src="@/img/floor_p4.svg" alt="" /> </RouterLink>
-        <h4>參觀資訊</h4>
-      </li>
-    </ul>
+        <li>
+          <RouterLink to="/floor_introduction"
+            ><img src="@/img/floor_p1.svg" alt=""
+          /></RouterLink>
+          <h4>樓層介紹</h4>
+        </li>
+        <li>
+          <RouterLink to="/park_activity"
+            ><img src="@/img/floor_p2_active.svg" alt="" />
+          </RouterLink>
+          <h4 class="h4_active">館內活動</h4>
+        </li>
+        <li>
+          <RouterLink to="/faq"
+            ><img src="@/img/floor_p3.svg" alt="" />
+          </RouterLink>
+          <h4>常見問題</h4>
+        </li>
+        <li>
+          <RouterLink to="/visit_information"
+            ><img src="@/img/floor_p4.svg" alt="" />
+          </RouterLink>
+          <h4>參觀資訊</h4>
+        </li>
+      </ul>
       <section class="wrapper">
         <!-- journey information -->
         <h3 class="journey_info">台北海生館活動</h3>
@@ -45,7 +52,6 @@
                   <p>
                     導覽員會帶領參觀者進入展館或戶外區域，介紹不同種類的海洋生物、牠們的生活習性、食物鏈、海洋保育等相關知識。這種活動讓人們能夠深入了解海洋世界，了解海洋生物的生存環境和保育現狀，提高對保護海洋環境的意識。
                   </p>
-                 
                 </div>
                 <div class="journey_intor_icon">
                   <a class="btn">了解更多</a>
@@ -211,8 +217,7 @@
                   <li><img src="@/img/park_activity4.jpg" alt="" /></li>
                   <li>
                     <h4>感受海星神秘的觸感吧!</h4>
-                    <p>
-                    </p>
+                    <p></p>
                   </li>
                 </ul>
               </div>
@@ -249,8 +254,6 @@
 
       <RouterLink to="/ticket"></RouterLink>
     </main>
-
-    <Footer></Footer>
   </div>
   <RouterView />
 </template>

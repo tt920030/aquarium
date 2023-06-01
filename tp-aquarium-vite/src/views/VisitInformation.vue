@@ -1,5 +1,4 @@
 <template>
-    <Header></Header>
     <div class="visit_information">
         <main>
             <div class="banner">
@@ -180,8 +179,6 @@
         </main>
 
     </div>
-
-    <Footer></Footer>
 </template>
 
 <script setup>

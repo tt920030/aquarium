@@ -1,6 +1,5 @@
 <template>
   <div class="floor_introduction">
-    <Header></Header>
     <!-- 開場介紹圖 -->
     <div class="banner">
       <h1>
@@ -470,7 +469,6 @@
       </div>
     </section>
     <RouterLink to="/ticket"></RouterLink>
-    <Footer></Footer>
     <RouterView></RouterView>
   </div>
 </template>
