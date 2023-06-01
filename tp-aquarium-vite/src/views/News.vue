@@ -1,5 +1,4 @@
 <template>
-    <Header></Header>
     <div class="news">
         <div class="banner">
             <h1>最新消息<br>NEWS</h1>
@@ -29,7 +28,6 @@
         <Page :total-items="page.totalItems" :items-per-page="page.itemsPerPage" :current-page="page.currentPage" :key="page.currentPage" @current="next"></Page>
 
     </div>
-    <Footer></Footer>
 </template>
 
 <script setup>

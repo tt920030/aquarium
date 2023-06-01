@@ -27,7 +27,7 @@
       <ul>
 
         <li v-for="button in park_buttons">
-          <a href="">
+          <RouterLink to="/floor_Introduction" ref="">
             <div class="house_icon">
               <img :src=button.src1 alt="">
               <img :class=button.class :src=button.src2 alt="">
@@ -35,7 +35,7 @@
               <p>{{ button.eName }}</p>
             </div>
             <img :src=button.src3 alt="">
-          </a>
+          </RouterLink>
         </li>
       </ul>
     </div>
@@ -48,46 +48,46 @@
           <ul>
             <li>
               <div class="index_journey_content">
-                <a href="">
+                <RouterLink to="/journey" href="">
                   <img src="../img/index_journey1.jpg" alt="">
                   <div class="index_journey_content_sub">
                     <h4>海洋跳躍者：海豚秀</h4>
                     <p>看到海豚們跳躍、翻轉、灑水等技巧動作，展現出它們非凡的運動天賦。</p>
                   </div>
-                </a>
+                </RouterLink>
               </div>
             </li>
             <li>
               <div class="index_journey_content">
-                <a href="">
+                <RouterLink to="/journey" href="">
                   <img src="../img/index_journey2.jpg" alt="">
                   <div class="index_journey_content_sub">
                     <h4>水中留影</h4>
                     <p>在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻。</p>
                   </div>
-                </a>
+                </RouterLink>
               </div>
             </li>
             <li>
               <div class="index_journey_content">
-                <a href="">
+                <RouterLink to="/journey" href="">
                   <img src="../img/index_journey3.jpg" alt="">
                   <div class="index_journey_content_sub">
                     <h4>磷蝦小管家：<br>餵魚體驗活動</h4>
                     <p>穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。</p>
                   </div>
-                </a>
+                </RouterLink>
               </div>
             </li>
             <li>
               <div class="index_journey_content">
-                <a href="">
+                <RouterLink to="/journey" href="">
                   <img src="../img/index_journey4.jpg" alt="">
                   <div class="index_journey_content_sub">
                     <h4>只想和你做朋友:<br>與水獺近距離接觸</h4>
                     <p>親手投放食物給水獺，觀察牠們的行為與習性。</p>
                   </div>
-                </a>
+                </RouterLink>
               </div>
             </li>
           </ul>
@@ -95,7 +95,7 @@
 
         <!-- 了解更多button -->
         <div class="index_button">
-          <a class="btn">了解更多<i class="bi bi-chevron-right"></i></a>
+          <RouterLink to="/journey" class="btn">了解更多<i class="bi bi-chevron-right"></i></RouterLink>
         </div>
       </main>
     </div>
@@ -107,27 +107,31 @@
       <div class="wrapper">
         <h2>最新消息</h2>
         <ul>
-          <li>
-            <img src="@/img/index_news1.jpg" alt="">
-            <div class="index_news_content">
-              <h3>2023/04/17</h3>
-              <h4>企鵝館迎來新成員！</h4>
-              <p>保育人員細心照顧，企鵝寶寶健康成長中！</p>
-            </div>
-          </li>
-          <li>
-            <img src="@/img/index_news2.jpg" alt="">
-            <div class="index_news_content">
-              <h3>2023/04/17</h3>
-              <h4>台北水族館新開幕！</h4>
-              <p>各種海洋生物都在這，還有各項活動可以參與！</p>
-            </div>
-          </li>
+          <RouterLink to="/news/news_page">
+            <li>
+              <img src="@/img/index_news1.jpg" alt="">
+              <div class="index_news_content">
+                <h3>2023/04/17</h3>
+                <h4>企鵝館迎來新成員！</h4>
+                <p>保育人員細心照顧，企鵝寶寶健康成長中！</p>
+              </div>
+            </li>
+          </RouterLink>
+          <RouterLink to="/news/news_page">
+            <li>
+              <img src="@/img/index_news2.jpg" alt="">
+              <div class="index_news_content">
+                <h3>2023/04/17</h3>
+                <h4>台北水族館新開幕！</h4>
+                <p>各種海洋生物都在這，還有各項活動可以參與！</p>
+              </div>
+            </li>
+          </RouterLink>
         </ul>
 
         <!-- 了解更多button -->
         <div class="index_button">
-          <a class="btn">了解更多<i class="bi bi-chevron-right"></i></a>
+          <RouterLink to="/news" class="btn">了解更多<i class="bi bi-chevron-right"></i></RouterLink>
         </div>
 
       </div>
@@ -156,26 +160,16 @@
 </template>
 
 <script setup>
-
-
 import Header from '/src/components/Header.vue';
 import Footer from '/src/components/Footer.vue';
-
-
-
-
 import { onMounted, reactive, ref } from "vue";
 
 const hide = ref(false);
-
 const openLogin = (n) => {
   // console.log(n );
   hide.value = n;
   // console.log(hide.value);
 };
-
-
-
 
 const park_buttons = reactive([
   { a: "", src1: "/src/img/index_penguin.svg", class: "penguin_blue", src2: "/src/img/index_penguin_blue-01.svg", cName: "企鵝館", eName: "Penguin House", src3: "/src/img/index_button1.jpg" },
@@ -183,7 +177,6 @@ const park_buttons = reactive([
   { a: "", src1: "/src/img/index_dolphin.svg", class: "dolphin_blue", src2: "/src/img/index_dolphin_blue-01.svg", cName: "海豚館", eName: "Dolphin House", src3: "/src/img/index_button3.jpg" },
   { a: "", src1: "/src/img/index_sealion.svg", class: "sealion_blue", src2: "/src/img/index_sealion_blue-01.svg", cName: "海獅館", eName: "Sea Lion House", src3: "/src/img/index_button4.jpg" }
 ]);
-
 
 
 // index video
@@ -203,47 +196,43 @@ onMounted(()=>{
 });
 
 
-
 // index_ad 跑馬燈
-window.onload = function() {
+onMounted(()=>{
+  window.onload = function() {
 
-    let box = document.querySelector('.index_ad_box');
-    let list = document.querySelector('.index_ad_list');
+  let box = document.querySelector('.index_ad_box');
+  let list = document.querySelector('.index_ad_list');
 
-    // 複製一份讓中間不間斷
-    list.innerHTML += list.innerHTML;
+  // 複製一份讓中間不間斷
+  list.innerHTML += list.innerHTML;
 
-    let left = 0;
-    let time;
-    
-    function move(){
-        clearInterval(time);
-        time = setInterval(() => {
-        left -= 2;
+  let left = 0;
+  let time;
 
-            if( left === -(6 * 200 + 6 * 20)){
-                left = 0;
-            }
+  function move(){
+    clearInterval(time);
+    time = setInterval(() => {
+    left -= 2;
+      if( left === -(6 * 200 + 6 * 20)){
+          left = 0;
+      }
+    list.style.left = left + "px"
+    }, 20)
+  };
 
-        list.style.left = left + "px"
-        }, 20)
-    };
+  box.addEventListener('mouseenter', () => {
+    clearInterval(time);
+  });
 
+  box.addEventListener('mouseleave', () => {
     move();
-
-    box.addEventListener('mouseenter', () => {
-        clearInterval(time);
-    });
-
-    box.addEventListener('mouseleave', () => {
-        move();
-    });
-};
+  });
+  };
+});
 
 </script>
 
 <style lang="scss" scoped>
-
 .index {
 
 .index_logo_video {
