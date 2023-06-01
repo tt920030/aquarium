@@ -91,8 +91,6 @@ import axios from "axios";
 
 const emit = defineEmits(["openLogin"]);
 
-const emit = defineEmits(["openLogin"]);
-
 const logIn = () => {
   emit("openLogin", true);
 };
