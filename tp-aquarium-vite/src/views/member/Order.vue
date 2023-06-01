@@ -102,7 +102,7 @@
                     </th>
                     <td>
                         <p>20230325012413</p>
-                        <img src="./img/member_angle.svg" alt="">
+                        <img src="/src/img/member_angle.svg" alt="">
                     </td>
                     
                 </tr>

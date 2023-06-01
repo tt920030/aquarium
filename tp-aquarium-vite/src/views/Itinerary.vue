@@ -1,5 +1,8 @@
 <template>
-    <!-- <Header></Header> -->
+    <Header></Header>
+    <div class="banner">
+        <h1>購票資訊<br>TICKET INFORMATION</h1>
+    </div>
     <div class="wrapper">
         <div class="top">
             <ItineraryChooser class="chooser" @itinerary-selected="getItinerary"></ItineraryChooser>
@@ -14,7 +17,7 @@
             <TicketCounter @count="count" @total="total" @types="types" :add="add" :itinerary="itinerarySelected">
             </TicketCounter>
             <div class="final">
-                <h4 v-if="!dateSelected">尚未選擇日期</h4>
+                <h4 style="color:red" v-if="!dateSelected">尚未選擇日期</h4>
                 <h4>{{ dateSelected }}</h4>
                 <h4 class="iti">{{ itinerarySelected }}</h4>
                 <div class="inside">
@@ -30,7 +33,7 @@
         </div>
 
     </div>
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
     <RouterView></RouterView>
 </template>
 
@@ -75,7 +78,7 @@ const addCart = function () {
         list.push(data);
         localStorage.setItem(dataKey, JSON.stringify(list));
         alert("加入成功，請至購物車查看!");
-        add.value+=1;
+        add.value += 1;
     } else {
         alert("尚未選取任何票券");
     }
@@ -84,9 +87,27 @@ const addCart = function () {
 
 <style lang="scss" scoped>
 @include wrapper;
-
+.banner{
+            background-image: url(/src/img/ticket_banner.png);
+            height: 660px;
+            background-size: cover;
+            @include mobile{
+                height: 268px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            h1{padding-top: 35rem;
+                padding-left: 40px;
+                @include mobile{
+                    padding-left:0;
+                    padding-top: 100px;
+                    font-size: 2.8rem;
+                    line-height: 5rem;
+                }
+            };
+        }
 .wrapper {
-    padding: 25rem 3rem;
+    padding: 5rem 3rem 25rem;
 
     h4 {
         margin: 2rem 0;
