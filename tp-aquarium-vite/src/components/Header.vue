@@ -146,6 +146,10 @@ $(function () {
     }
     getWeather(); 
 
+    const logIn = () => {
+        emit("openLogin", true);
+    }
+
 </script>
 
 <style lang="scss" scoped>

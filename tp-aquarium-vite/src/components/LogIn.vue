@@ -133,13 +133,35 @@
                     </form>
                 </div>
 
+                
+
 
             </div>
         </main>
 
+<!-- google登入 -->
 
+<div>
+    <!-- icon樣式內容 -->
+    <div id="g_id_onload"
+     data-client_id="706694523939-o7a211c2ma3tdiglm2todss0h3cc07nk.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="http://localhost"
+     data-itp_support="true">
+</div>
 
+<div class="g_id_signin"
+     data-type="icon"
+     data-shape="circle"
+     data-theme="outline"
+     data-text="signin_with"
+     data-size="large"
+     >
+</div>
 
+    <span id="GOOGLE_STATUS_1"></span>
+  </div>
 
 
 
@@ -196,9 +218,45 @@ const send = function(){
         sendResult.value = res.data.success;
     }).catch(err=>console.log(err))
 };
+
+// google登入
+const onSignIn1 = (response) => {
+  var credential = response.credential;
+  var profile = JSON.parse(
+    decodeURIComponent(
+      escape(
+        window.atob(
+          credential.split(".")[1]
+            .replace(/-/g, "+")
+            .replace(/_/g, "/")
+        )
+      )
+    )
+  );
+
+  var target = document.getElementById("GOOGLE_STATUS_1");
+  var html = "";
+
+  html += "ID: " + profile.sub + "<br/>";
+  html += "會員暱稱： " + profile.name + "<br/>";
+  html += "會員頭像：" + profile.picture + "<br/>";
+  html += "會員 email：" + profile.email + "<br/>";
+  target.innerHTML = html;
+};
+
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  const script = document.createElement('script');
+  script.src = 'https://accounts.google.com/gsi/client';
+  script.async = true;
+  script.defer = true;
+  document.body.appendChild(script);
+});
 </script>
 
 <style lang="scss" scoped>
 @import '../assets/sass/page/sign';
 @import "bootstrap/dist/css/bootstrap.min.css";
 </style>
+
