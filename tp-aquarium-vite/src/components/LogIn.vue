@@ -118,22 +118,15 @@
             <div class="right" v-else-if="type === 'C'">
                 <h3>重設密碼</h3>
                 <div class="top">
-                    <form action="post">
+                    <form action="" >
                         <div class="input">
-                            <label for="password">密碼</label>
-                            <input :type="eye" id="password" name="password" placeholder="密碼長度需六至十二位">
-                            <img src="/src/img/login_eye.svg" alt="" class="eye">
+                            <label for="email">信箱</label>
+                            <input v-model="sendEmail" type="email" id="email" name="email" placeholder="請輸入信箱">
                             <div class="invalid-feedback">密碼須包含大小寫英文及數字</div>
                         </div>
-                        <div class="input">
-                            <label for="password2">密碼確認</label>
-                            <input :type="eye" id="password2" name="password" placeholder="請再次輸入密碼">
-                            <img src="/src/img/login_eye.svg" alt="" class="eye">
-                            <div class="invalid-feedback">二次輸入與密碼不符</div>
-                        </div>
 
 
-                        <button type="button" class="btn1">
+                        <button @click="send" type="button" class="btn1">
                             <h4>確認</h4>
                         </button>
 
@@ -156,7 +149,7 @@
 <script setup>
 import "bootstrap";
 
-
+import axios from 'axios';
 import { ref } from "vue";
 
 const emit = defineEmits(['close']);
@@ -186,7 +179,23 @@ const toText = () => {
         // console.log(eye.value);
     }
 }
-
+//寄信
+const sendEmail = ref('');
+const sendResult = ref();
+const send = function(){
+    let params = new URLSearchParams();
+    params.append('email',sendEmail.value);
+    axios.post('http://localhost/emailapi/api.php',
+    params).then((res)=>{
+        if(res.data.success){
+            alert("寄送成功");
+        }else{
+            alert("寄送失敗");
+        }
+        
+        sendResult.value = res.data.success;
+    }).catch(err=>console.log(err))
+};
 </script>
 
 <style lang="scss" scoped>

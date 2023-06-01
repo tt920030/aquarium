@@ -15,7 +15,7 @@
                     <li><p><span class="temp" @change="getWeather">{{ tempWeather }}</span></p></li>
                     <li><img :src="get_weather_img()" alt="" class="weather_img"></li>
                     <li><button type="button" ref="circle" class="switch"  @click="SwitchColor" ><i class="bi bi-moon-stars-fill"></i></button></li>
-                    <li><img class="icons" src="/src/img/header_member.svg" alt=""></li>
+                    <li @click="logIn()"><img class="icons" src="/src/img/header_member.svg" alt=""></li>
                     <li>
                         <RouterLink to="/cart"><img class="icons" src="/src/img/header_cart.svg" alt=""></RouterLink>
                     </li>
@@ -44,11 +44,13 @@ import { RouterLink, RouterView } from "vue-router";
     import { defineEmits, ref } from "vue";
 import $ from "jquery";
 
-    const emit = defineEmits(['openLogin']);
-
-
-
 import { transform } from "@vue/compiler-core";
+
+const emit = defineEmits(['openLogin']);
+
+const logIn = () => {
+    emit('openLogin', true);
+}
 
 const navItems = [{ name: "最新消息", link: "/news" }, { name: "園區介紹", link: "/floor_Introduction" }, { name: "購票資訊", link: "/ticket" }, { name: "行程預約", link: "/journey" }, { name: "關於我們", link: "/about" }, { name: "網路商城", link: "/stores" }, { name: "小遊戲", link: "/game_index" }];
 $(function () {
