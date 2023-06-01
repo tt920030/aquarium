@@ -1,5 +1,7 @@
 <template>
+    
     <body class="quiz">
+        <div id="particles-js"></div>
 
           <!-- 回首頁按鈕 -->
         <button class="back_to_home">
@@ -89,19 +91,138 @@ import Puzzle from "/src/js/game_quiz.js";
 // import particlesJS_Start from "/src/js/game_quesion.js";
 
 import { onMounted, ref } from "vue";
-// import particlesJS_Start from '/src/js/particle.js';
+import particlesJS_Start from '/src/js/particle.js';
 
-// import { onMounted, reactive, ref } from "vue";
+// 問答背景
 onMounted(() => {
+  // particlesJS_Start()
 
 
 
+  var head = document.getElementsByTagName("head")[0];
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.onload = function () {
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 160,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          },
+          "image": {
+            "src": "img/github.svg",
+            "width": 100,
+            "height": 100
+          }
+        },
+        "opacity": {
+          "value": 1,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 0.9723133766012793,
+            "opacity_min": 0.10533394913180526,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 10,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 4,
+            "size_min": 0.3,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": false,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 600
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "bubble"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 400,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "bubble": {
+            "distance": 250,
+            "size": 0,
+            "duration": 2,
+            "opacity": 0,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 400,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    }, function () {
+      console.log("callback - particles.js config loaded");
+    });
+  };
+  script.src =
+    "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js";
+  head.appendChild(script);
 
-    // particlesJS_Start();
-    Puzzle();
-
-
+  Puzzle();
 })
+
 </script>
 <style lang="scss">
 
@@ -536,6 +657,22 @@ onMounted(() => {
 .buttons button.quit:hover{
     color: #fff;
     background: #007bff;
+}
+
+/* ---- 問答背景 ---- */
+
+#particles-js {
+
+width: 100%;
+height: 100%;
+background-color: #97CBE0;
+background-size: cover;
+background-position: 50% 50%;
+background-repeat: no-repeat;
+
+position: fixed;
+background-position: center;
+background-size: cover;
 }
 
 </style>
