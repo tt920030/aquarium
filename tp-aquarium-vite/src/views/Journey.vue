@@ -320,7 +320,6 @@
         </div>
       </section>
       
-      <RouterLink to="/ticket">aaaaaa</RouterLink>
     </main>
 
     <Footer></Footer>

@@ -1,13 +1,13 @@
 <template>
     <footer>
 
-        <div class="ocean">
-            <div class="wave"></div>
-            <div class="wave"></div>
-            <div class="wave"></div>
-        </div>
+    <div class="ocean">
+        <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
+        <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
+        <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
+    </div>
 
-        <div class="content">
+        <div class="content" :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }">
             <nav>
                 <div class="left">
                     <h4>台北海生館</h4>
@@ -38,17 +38,18 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { onMounted, reactive, ref } from "vue";
-    const mids = reactive([{
-        path: '/about',
-        content: "關於我們"
-    }, {
-        path: "/visit_information",
-        content: "參觀資訊"
-    }, {
-        path: "/floor_Introduction",
-        content: "園區介紹"
-    }]);
+import { watch, reactive, ref } from "vue";
+
+const mids = reactive([{
+    path: '/about',
+    content: "關於我們"
+}, {
+    path: "/visit_information",
+    content: "參觀資訊"
+}, {
+    path: "/floor_Introduction",
+    content: "園區介紹"
+}]);
 
 const rights = reactive([{
     path: '/ticket',
@@ -61,6 +62,22 @@ const rights = reactive([{
     content: "網路商城"
 }]);
 
+// const flag = ref(false);
+const waveColor = ref(null);
+const waveColor2 = ref(null);
+const storedata = ref(sessionStorage.getItem('changecolor'));
+
+    watch(storedata, (a) => {
+        if( a === 'true'){
+            // flag.value = true;
+            waveColor.value = 'DeepSkyBlue'
+            waveColor2.value = 'DeepSkyBlue'    
+        }else{
+            // flag.value = false;
+            waveColor.value = 'blue'
+            waveColor2.value = 'blue'  
+        }
+    });
 
 </script>
 
