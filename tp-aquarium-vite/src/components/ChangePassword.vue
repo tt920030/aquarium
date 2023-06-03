@@ -1,7 +1,7 @@
 <template>
     <div class="sign reset_password">
         <main>
-            <img src="@/img/input_fork.svg" alt="" class="fork">
+            <img src="@/img/input_fork.svg" alt="" class="fork" @click="closePassword">
             <div class="left">
                 <div class="pic1"></div>
                 <div class="pic2"></div>
@@ -71,9 +71,17 @@
 </template>
 
 <script setup>
+import "bootstrap";
 
+const emit = defineEmits(['closePassword']);
+
+
+const closePassword = () => {
+    emit('closePassword');
+}
 </script>
 
 <style lang="scss" scoped>
+@import "bootstrap/dist/css/bootstrap.min.css";
 @import "../assets/sass/page/sign";
 </style>

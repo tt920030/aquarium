@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container1">
         <img src="@/img/input_fork.svg" alt="" class="fork" @click="emitClose">
         <h4>請選擇頭貼</h4>
         <form method="post" action="" class="photo">
@@ -10,9 +10,12 @@
                 </label>
 
             </div>
-            <button type="submit" class="btn1">
-                <p>確認</p>
-            </button>
+            <div class="button">
+                <button type="submit" class="btn1">
+                    <p>確認</p>
+                </button>
+            </div>
+            
         </form>
 
     </div>
@@ -48,8 +51,8 @@ const chosePhoto = (e) => {
 </script>
 
 <style lang="scss" scoped>
-.container {
-    width: 600px;
+.container1 {
+    width: 720px;
     border: 5px solid map-get($color, bgc2);
     border-radius: 15px;
     background-color: #fff;
@@ -58,6 +61,10 @@ const chosePhoto = (e) => {
     top: 100px;
     transform: translateX(-50%);
     z-index: 2;
+
+    @include mobile{
+        width: 100%;
+    }
 
 
     h4 {
@@ -74,14 +81,26 @@ const chosePhoto = (e) => {
         justify-content: center;
         align-items: center;
 
+        // @include mobile{
+        //     justify-content: start;
+        // }
+        
+
         .list {
             width: 150px;
             height: 150px;
             padding: 10px;
             // border: 1px solid red;
+            
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include mobile{
+                width: 50%;
+                height: 50%;
+                box-sizing: border-box;
+            }
 
             input {
                 appearance: none;
@@ -112,13 +131,21 @@ const chosePhoto = (e) => {
 
         }
 
-        .btn1 {
-            margin-top: 40px;
+        .button{
+            display: block;
+            width: 100%;
+            .btn1 {
+                margin-top: 40px;
+                @include mobile{
+                    display: block;
+                }
 
-            p {
-                margin: 0;
+                p {
+                    margin: 0;
+                }
             }
         }
+        
     }
 }
 </style>
