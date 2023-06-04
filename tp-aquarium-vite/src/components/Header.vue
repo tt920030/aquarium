@@ -22,42 +22,38 @@
           <i class="bi bi-list"></i>
           <li>
             <p>
-              <span class="rain" @change="getWeather">{{
-                rainWeatherState
-              }}</span>
+              <span class="rain">{{ rainWeatherState }}</span>
             </p>
           </li>
           <li>
             <p>
-              <span class="temp" @change="getWeather">{{ tempWeather }}</span>
+              <span class="temp">{{ tempWeather }}</span>
             </p>
           </li>
-          <li><img :src="get_weather_img()" alt="" class="weather_img" /></li>
+          <li><img :src="get_weather_img" alt="" class="weather_img" /></li>
           <li>
             <button
               type="button"
               ref="circle"
               class="switch"
-              @click="SwitchColor"
+              @click="switchColor"
             >
               <i class="bi bi-moon-stars-fill"></i>
             </button>
           </li>
-          <li @click="logIn()">
-            <img class="icons" src="/src/img/header_member.svg" alt="" />
-          </li>
+          <li><img class="icons" src="src/img/header_member.svg" alt="" /></li>
           <li>
             <RouterLink to="/cart"
-              ><img class="icons" src="/src/img/header_cart.svg" alt=""
+              ><img class="icons" src="src/img/header_cart.svg" alt=""
             /></RouterLink>
           </li>
         </ul>
         <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
         <ul class="menu">
           <li v-for="item in navItems">
-            <RouterLink :to="item.link">
-              <p>{{ item.name }}</p>
-            </RouterLink>
+            <RouterLink :to="item.link"
+              ><p>{{ item.name }}</p></RouterLink
+            >
           </li>
         </ul>
       </nav>
@@ -82,11 +78,11 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { defineEmits, ref, onMounted } from "vue";
+import { ref, onMounted, computed, watch } from "vue";
 import $ from "jquery";
 import axios from "axios";
 import { transform } from "@vue/compiler-core";
-const emit = defineEmits(["openLogin"]);
+const emit = defineEmits(["openLogin", "color"]);
 
 const logIn = () => {
   emit("openLogin", true);
@@ -122,44 +118,25 @@ const flag = ref(false);
 const circle = ref(null);
 const waveColor = ref(null);
 const waveColor2 = ref(null);
+const storedata = ref(null);
 
-function SwitchColor() {
-  flag.value = !flag.value;
-
-  if (flag.value) {
+onMounted(() => {
+  storedata.value = sessionStorage.getItem("changecolor");
+  if (storedata.value === "true") {
+    flag.value = true;
     circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
-    let icon = document.querySelector("i");
-
     circle.value.style.backgroundColor = "#ccf1f5";
     waveColor.value = "DeepSkyBlue";
     waveColor2.value = "DeepSkyBlue";
   } else {
+    flag.value = false;
     circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
     circle.value.style.backgroundColor = "lightgrey";
     waveColor.value = "blue";
     waveColor2.value = "blue";
   }
-}
 
-// weather API
-const currentWeather = ref(""); //天氣型態的第一個字
-const tempWeather = ref(null); //溫度
-const rainWeatherState = ref(null); //天氣型態
-const imgPath = ref(""); // 存取天氣型態對應的圖片路徑
-
-function get_weather_img() {
-  //天氣型態對應的圖片
-  switch (currentWeather.value) {
-    case "陰":
-      return "./src/img/weather_elements2.png";
-    case "晴":
-      return "./src/img/weather_elements3.png";
-    default:
-      return "./src/img/weather_elements1.png";
-  }
-}
-
-onMounted(() => {
+  // 串接天氣api
   axios
     .get(
       "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415"
@@ -182,13 +159,93 @@ onMounted(() => {
 
       tempWeather.value = tempList;
       rainWeatherState.value = WeatherState;
-
-      // 找出天氣描述的第一個字去換圖片
-      currentWeather.value = WeatherState.slice(0, 1);
-      imgPath.value = get_weather_img();
     })
     .catch((err) => console.log(err)); //錯誤如何處理
 });
+
+const switchColor = () => {
+  flag.value = !flag.value;
+  emit("color", flag.value);
+  if (flag.value) {
+    circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    circle.value.style.backgroundColor = "#ccf1f5";
+    waveColor.value = "DeepSkyBlue";
+    waveColor2.value = "DeepSkyBlue";
+    storedata.value = sessionStorage.setItem("changecolor", "true");
+  } else {
+    circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+    circle.value.style.backgroundColor = "lightgrey";
+    waveColor.value = "blue";
+    waveColor2.value = "blue";
+    storedata.value = sessionStorage.setItem("changecolor", "false");
+  }
+};
+
+// watch(flag, (newFlag, oldFlag) => {
+//   if (newFlag !== oldFlag) {
+//     console.log(newFlag);
+//     emit("color", flag.value);
+//   }
+// });
+
+// weather API
+const tempWeather = ref(null); //溫度
+const rainWeatherState = ref(""); //天氣型態
+
+const get_weather_img = computed(() => {
+  if (rainWeatherState.value.match(/雨/g)) {
+    return "./src/img/weather_elements4.png";
+  } else if (rainWeatherState.value.match(/晴/g)) {
+    return "./src/img/weather_elements3.png";
+  } else if (rainWeatherState.value.match(/陰/g)) {
+    return "./src/img/weather_elements2.png";
+  } else {
+    return "./src/img/weather_elements1.png";
+  }
+});
+
+// // weather API
+// const currentWeather = ref('') //天氣型態的第一個字
+// const tempWeather = ref(null); //溫度
+// const rainWeatherState = ref(null); //天氣型態
+// const imgPath = ref(''); // 存取天氣型態對應的圖片路徑
+
+// function get_weather_img () { //天氣型態對應的圖片
+//     switch (currentWeather.value) {
+//         case '陰':
+//         return './src/img/weather_elements2.png';
+//         case '晴':
+//         return './src/img/weather_elements3.png';
+//         default:
+//         return './src/img/weather_elements1.png';
+//     }
+// };
+
+// onMounted(()=>{
+//   axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415')        //使用get或post等取得路徑資料(php或json)
+//   .then((res)=>{ //回傳後如何處理
+//     // console.log(res);
+
+//     // 查找溫度資料
+//     let temp = res.data.records.location[14].weatherElement[3].elementValue;
+//     // console.log(temp);
+
+//     // 查找天氣型態資料
+//     let WeatherState = res.data.records.location[14].weatherElement[20].elementValue;
+//     // console.log(WeatherState);
+
+//     // 加上溫度單位
+//     let tempList = temp + "°C";
+
+//     tempWeather.value = tempList;
+//     rainWeatherState.value = WeatherState;
+
+//     // 找出天氣描述的第一個字去換圖片
+//     currentWeather.value = WeatherState.slice(0,1);
+//     imgPath.value = get_weather_img();
+
+// }).catch(err => console.log(err))  //錯誤如何處理
+// });
 </script>
 
 <style lang="scss" scoped>
@@ -251,7 +308,6 @@ header {
         li:nth-child(6) {
           margin-right: 0;
         }
-
         // @include mobile{
         //     margin-right: 5px;
         // }
@@ -286,7 +342,6 @@ header {
               font-size: 0.1rem;
             }
           }
-
           .icons {
             width: 25px;
           }
@@ -299,7 +354,6 @@ header {
           p {
             color: white;
           }
-
           // }
 
           .switch {
@@ -307,7 +361,6 @@ header {
 
             i {
               display: block;
-
               @include mobile() {
                 font-size: 10px;
                 color: map-get($color, text);
@@ -434,11 +487,9 @@ header {
       0% {
         transform: translateX(0);
       }
-
       50% {
         transform: translateX(-25%);
       }
-
       100% {
         transform: translateX(-50%);
       }
