@@ -78,11 +78,10 @@
           <h2>回味夜宿海生館<br />體驗海洋奇妙，留下珍貴回憶</h2>
         </section>
         <div class="overnight_slider">
-          <div class="overnight_slider_box">
-            <div class="overnight_slider_list">
-              <img src="@/img/overnight_slide1.jpg" alt="" />
-              <img src="@/img/overnight_slide2.jpg" alt="" />
-              <img src="@/img/overnight_slide3.jpg" alt="" />
+          <div class="overnight_slider_box" @mouseenter="enter" @mouseleave="leave">
+            <div class="overnight_slider_list" :style="{left: left + 'px'}">
+              <img v-for="image in images" :key="image.id" :src="image.src" alt="">
+              <img v-for="image in images" :key="image.id" :src="image.src" alt="">
             </div>
           </div>
         </div>
@@ -146,39 +145,41 @@ import Header from "/src/components/Header.vue";
 import Footer from "/src/components/Footer.vue";
 
 // overnight slider 跑馬燈
-window.onload = function () {
-  let box = document.querySelector(".overnight_slider_box");
-  let list = document.querySelector(".overnight_slider_list");
+const left = ref(0);
+const time = ref(null);
+const listContent = ref('');
+const images = ref([
+  { id: 1, src: "../../public/img/overnight_slide1.jpg" },
+  { id: 2, src: "../../public/img/overnight_slide2.jpg" },
+  { id: 3, src: "../../public/img/overnight_slide3.jpg" },
+])
 
-  // 複製一份讓中間不間斷
-  list.innerHTML += list.innerHTML;
+const move = () => {
+  clearInterval(time.value);
+  time.value = setInterval(() => {
+  left.value -= 2;
 
-  let left = 0;
-  let time;
-
-  move();
-
-  function move() {
-    clearInterval(time);
-    time = setInterval(() => {
-      left -= 2;
-
-      if (left === -(3 * 685 + 3 * 30)) {
-        left = 0;
-      }
-
-      list.style.left = left + "px";
-    }, 20);
-  }
-
-  box.addEventListener("mouseenter", () => {
-    clearInterval(time);
-  });
-
-  box.addEventListener("mouseleave", () => {
-    move();
-  });
+    if (left.value === -(3 * 685 + 3 * 30)) {
+      left.value = 0;
+    }
+  }, 20);
 };
+
+const enter = () => {
+  clearInterval(time.value);
+};
+
+const leave = () => {
+  move();
+};
+
+// 複製一份讓中間不間斷
+// images.value.innerHTML += images.value;
+
+onMounted(() => {
+  move();
+});
+
 </script>
 
 <style lang="scss" scoped>
