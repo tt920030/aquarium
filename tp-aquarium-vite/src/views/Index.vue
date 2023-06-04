@@ -36,7 +36,6 @@
               <img :src="button.src1" alt="" />
               <img :class="button.class" :src="button.src2" alt="" />
               <p>{{ button.cName }}</p>
-              <p>{{ button.eName }}</p>
             </div>
             <img :src="button.src3" alt="" />
           </RouterLink>
@@ -85,6 +84,7 @@
                     <p>
                       穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。
                     </p>
+                    <h4>磷蝦小管家：<br />餵魚體驗活動</h4>
                   </div>
                 </RouterLink>
               </div>
@@ -148,8 +148,7 @@
       </div>
     </main>
 
-    <!-- 贊助商 -->
-
+    <!-- index_ad -->
     <div class="index_ad">
       <div class="index_ad_box">
         <div class="index_ad_list">
