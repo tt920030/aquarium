@@ -179,11 +179,6 @@ const router = createRouter({
       component: () => import("../views/ParkActivity.vue"), //路徑連到剛剛建的vue檔
     },
     {
-      path: "/park_activity1", //自己取之後要連的路徑名稱
-      name: "ParkActivity1", //自己取
-      component: () => import("../views/ParkActivity1.vue"), //路徑連到剛剛建的vue檔
-    },
-    {
       path: "/news",
       name: "News",
       meta: { title: "台北海生館｜最新消息" },
