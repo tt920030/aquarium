@@ -42,7 +42,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { ref, onMounted, computed, watch } from "vue";
-import $ from "jquery";
 import axios from "axios";
 import { transform } from "@vue/compiler-core";
 const emit = defineEmits(["openLogin", "color"]);
@@ -60,21 +59,40 @@ const navItems = [
   { name: "網路商城", link: "/stores" },
   { name: "小遊戲", link: "/game_index" },
 ];
-$(function () {
-  let is_open = false;
-  $("header .content nav i").click(function () {
-    if (is_open == false) {
-      $("header .content .menu").animate({ right: "0px" }, 1000).show();
-      is_open = true;
+// $(function () {
+//   let is_open = false;
+//   $("header .content nav i").click(function () {
+//     if (is_open == false) {
+//       $("header .content .menu").animate({ right: "0px" }, 1000).show();
+//       is_open = true;
+//     } else {
+//       $("header .content .menu").animate(
+//         { right: "-100%", display: "none" },
+//         1000
+//       );
+//       is_open = false;
+//     }
+//   });
+// });
+const is_open = ref(false);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const navIcon = document.querySelector('header .content nav i');
+  const menu = document.querySelector('header .content .menu');
+
+  navIcon.addEventListener('click', () => {
+    if (!is_open.value) {
+      menu.style.right = '0px';
+      menu.style.display = 'block';
+      is_open.value = true;
     } else {
-      $("header .content .menu").animate(
-        { right: "-100%", display: "none" },
-        1000
-      );
-      is_open = false;
+      menu.style.right = '-100%';
+      menu.style.display = 'none';
+      is_open.value = false;
     }
   });
 });
+
 
 // switch color
 const flag = ref(false);
@@ -144,71 +162,22 @@ const switchColor = () => {
   }
 };
 
-// watch(flag, (newFlag, oldFlag) => {
-//   if (newFlag !== oldFlag) {
-//     console.log(newFlag);
-//     emit("color", flag.value);
-//   }
-// });
-
-// weather API
 const tempWeather = ref(null); //溫度
 const rainWeatherState = ref(""); //天氣型態
 
 const get_weather_img = computed(() => {
-  if (rainWeatherState.value.match(/雨/g)) {
+  switch (true) {
+  case rainWeatherState.value.match(/雨/g):
     return "./src/img/weather_elements4.png";
-  } else if (rainWeatherState.value.match(/晴/g)) {
+  case rainWeatherState.value.match(/晴/g):
     return "./src/img/weather_elements3.png";
-  } else if (rainWeatherState.value.match(/陰/g)) {
+  case rainWeatherState.value.match(/陰/g):
     return "./src/img/weather_elements2.png";
-  } else {
+  default:
     return "./src/img/weather_elements1.png";
   }
 });
 
-// // weather API
-// const currentWeather = ref('') //天氣型態的第一個字
-// const tempWeather = ref(null); //溫度
-// const rainWeatherState = ref(null); //天氣型態
-// const imgPath = ref(''); // 存取天氣型態對應的圖片路徑
-
-// function get_weather_img () { //天氣型態對應的圖片
-//     switch (currentWeather.value) {
-//         case '陰':
-//         return './src/img/weather_elements2.png';
-//         case '晴':
-//         return './src/img/weather_elements3.png';
-//         default:
-//         return './src/img/weather_elements1.png';
-//     }
-// };
-
-// onMounted(()=>{
-//   axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415')        //使用get或post等取得路徑資料(php或json)
-//   .then((res)=>{ //回傳後如何處理
-//     // console.log(res);
-
-//     // 查找溫度資料
-//     let temp = res.data.records.location[14].weatherElement[3].elementValue;
-//     // console.log(temp);
-
-//     // 查找天氣型態資料
-//     let WeatherState = res.data.records.location[14].weatherElement[20].elementValue;
-//     // console.log(WeatherState);
-
-//     // 加上溫度單位
-//     let tempList = temp + "°C";
-
-//     tempWeather.value = tempList;
-//     rainWeatherState.value = WeatherState;
-
-//     // 找出天氣描述的第一個字去換圖片
-//     currentWeather.value = WeatherState.slice(0,1);
-//     imgPath.value = get_weather_img();
-
-// }).catch(err => console.log(err))  //錯誤如何處理
-// });
 </script>
 
 <style lang="scss" scoped>
@@ -277,7 +246,7 @@ header {
 
         i {
           display: none;
-
+          
           @include mobile {
             display: block;
             font-size: 30px;

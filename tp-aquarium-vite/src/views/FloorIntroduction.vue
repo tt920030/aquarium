@@ -68,7 +68,7 @@
             <img src="@/img/floor_introduction_seal.png" alt="海獅圖" />
             <h4>海獅</h4>
             <p>
-              海獅是一種生活在海洋中的哺乳動物，<br />
+              海獅是一種生活在海洋中的哺乳動物，<br/>
               有著厚實的身體和尖銳的鬃毛
             </p>
           </li>
@@ -529,7 +529,7 @@ onMounted(() => {
   // 開場介紹圖
   ::-webkit-scrollbar {
     background-color: transparent;
-    width: 722px;
+    width: 7px;
   }
   ::-webkit-scrollbar-thumb {
     background-color: black;

@@ -1,18 +1,11 @@
 <template>
   <body class="index">
     <div class="index_logo_video">
-      <video
-        src="@/img/index_videosea.mp4"
-        id="video_sea"
-        width="100%"
-        autoplay
-        muted
-        loop
-      ></video>
+      <video src="@/img/index_videosea.mp4" id="video_sea" width="100%" autoplay muted loop></video>
       <div class="index_logo_text">
         <h4>探索海洋奧秘</h4>
         <p>in Taipei Town</p>
-        <img src="@/img/index_logo.svg" alt="" />
+        <img src="@/img/index_logo.svg" alt=""/>
       </div>
     </div>
 
@@ -30,7 +23,7 @@
     <!-- 連結到園區介紹按鈕 -->
     <div class="index_park_button_all">
       <ul>
-        <li v-for="button in park_buttons">
+        <li v-for="button in park_buttons" :key="button.eName">
           <RouterLink to="/floor_Introduction" ref="">
             <div class="house_icon">
               <img :src="button.src1" alt="" />
@@ -50,52 +43,13 @@
         <div class="index_journey">
           <h2>活動行程</h2>
           <ul>
-            <li>
+            <li v-for="index_journey in journeyPage" :key="index_journey.id">
               <div class="index_journey_content">
                 <RouterLink to="/journey" href="">
-                  <img src="../img/index_journey1.jpg" alt="" />
+                  <img :src="index_journey.src" alt="" />
                   <div class="index_journey_content_sub">
-                    <h4>海洋跳躍者：海豚秀</h4>
-                    <p>
-                      看到海豚們跳躍、翻轉、灑水等技巧動作，展現出它們非凡的運動天賦。
-                    </p>
-                  </div>
-                </RouterLink>
-              </div>
-            </li>
-            <li>
-              <div class="index_journey_content">
-                <RouterLink to="/journey" href="">
-                  <img src="../img/index_journey2.jpg" alt="" />
-                  <div class="index_journey_content_sub">
-                    <h4>水中留影</h4>
-                    <p>
-                      在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻。
-                    </p>
-                  </div>
-                </RouterLink>
-              </div>
-            </li>
-            <li>
-              <div class="index_journey_content">
-                <RouterLink to="/journey" href="">
-                  <img src="../img/index_journey3.jpg" alt="" />
-                  <div class="index_journey_content_sub">
-                    <h4>磷蝦小管家：<br />餵魚體驗活動</h4>
-                    <p>
-                      穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。
-                    </p>
-                  </div>
-                </RouterLink>
-              </div>
-            </li>
-            <li>
-              <div class="index_journey_content">
-                <RouterLink to="/journey" href="">
-                  <img src="../img/index_journey4.jpg" alt="" />
-                  <div class="index_journey_content_sub">
-                    <h4>只想和你做朋友:<br />與水獺近距離接觸</h4>
-                    <p>親手投放食物給水獺，觀察牠們的行為與習性。</p>
+                    <h4>{{ index_journey.title }}</h4>
+                    <p>{{ index_journey.content }}</p>
                   </div>
                 </RouterLink>
               </div>
@@ -105,9 +59,7 @@
 
         <!-- 了解更多button -->
         <div class="index_button">
-          <RouterLink to="/journey" class="btn"
-            >了解更多<i class="bi bi-chevron-right"></i
-          ></RouterLink>
+          <RouterLink to="/journey" class="btn">了解更多<i class="bi bi-chevron-right"></i></RouterLink>
         </div>
       </main>
     </div>
@@ -116,34 +68,29 @@
       <!-- 最新消息 -->
       <div class="wrapper">
         <h2>最新消息</h2>
-        <ul>
-          <RouterLink to="/news/news_page">
-            <li>
-              <img src="@/img/index_news1.jpg" alt="" />
-              <div class="index_news_content">
-                <h3>2023/04/17</h3>
-                <h4>企鵝館迎來新成員！</h4>
-                <p>保育人員細心照顧，企鵝寶寶健康成長中！</p>
-              </div>
-            </li>
-          </RouterLink>
-          <RouterLink to="/news/news_page">
-            <li>
-              <img src="@/img/index_news2.jpg" alt="" />
-              <div class="index_news_content">
-                <h3>2023/04/17</h3>
-                <h4>台北水族館新開幕！</h4>
-                <p>各種海洋生物都在這，還有各項活動可以參與！</p>
-              </div>
-            </li>
-          </RouterLink>
-        </ul>
+          <ul>
+            <swiper 
+                    :slides-per-group="2"
+                    :slides-per-view="2"
+                    :space-between="20">
+              <swiper-slide v-for="news in newsPage" :key="news.id">  
+                <RouterLink to="/news/news_page">
+                  <li>
+                    <img :src="news.src" alt="" />
+                    <div class="index_news_content">
+                      <h3>{{ news.month }}</h3>
+                      <h4>{{ news.title }}</h4>
+                      <p>{{ news.content }}</p>
+                    </div>
+                  </li>
+                </RouterLink>
+              </swiper-slide>
+            </swiper>
+          </ul>
 
         <!-- 了解更多button -->
         <div class="index_button">
-          <RouterLink to="/news" class="btn"
-            >了解更多<i class="bi bi-chevron-right"></i
-          ></RouterLink>
+          <RouterLink to="/news" class="btn">了解更多<i class="bi bi-chevron-right"></i></RouterLink>
         </div>
       </div>
     </main>
@@ -161,9 +108,27 @@
 </template>
 
 <script setup>
-import Header from "/src/components/Header.vue";
-import Footer from "/src/components/Footer.vue";
 import { onMounted, reactive, ref } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Virtual } from "swiper";
+import "swiper/css";
+
+
+onMounted(() => {
+  videoNoStop();
+  move();
+});
+
+// index video
+const videoNoStop = function () {
+  let video_sea = document.getElementById("video_sea");
+
+  video_sea.addEventListener("timeupdate", function () {
+    if (video_sea.currentTime >= video_sea.duration - 0.15) {
+      video_sea.currentTime = 0.15;
+    }
+  });
+};
 
 const park_buttons = reactive([
   {
@@ -204,25 +169,65 @@ const park_buttons = reactive([
   },
 ]);
 
-// index video
-const videoNoStop = function () {
-  let video_sea = document.getElementById("video_sea");
+// 活動行程
+const journeyPage =reactive([
+  {
+    id: 1,
+    src: '../../public/img/index_journey1.jpg',
+    title: '海洋跳躍者：海豚秀',
+    content: '看到海豚們跳躍、翻轉，展現出它們非凡的運動天賦。',
+  },
+  {
+    id: 2,
+    src: '../../public/img/index_journey2.jpg',
+    title: '水中留影',
+    content: '在水中自由拍攝照片和影片，捕捉美麗的海底風景及快樂的時刻。',
+  },
+  {
+    id: 3,
+    src: '../../public/img/index_journey3.jpg',
+    title: '磷蝦小管家：餵魚體驗活動',
+    content: '跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。',
+  },
+  {
+    id: 4,
+    src: '../../public/img/index_journey4.jpg',
+    title: '只想和你做朋友:與水獺近距離接觸',
+    content: '親手投放食物給水獺，觀察牠們的行為與習性。',
+  },
+]);
 
-  video_sea.addEventListener("timeupdate", function () {
-    if (video_sea.currentTime >= video_sea.duration - 0.15) {
-      video_sea.currentTime = 0.15;
-    }
-  });
-};
+// 最新消息
+const newsPage=reactive([
+  {
+    id: 1,
+    src: '../../public/img/index_news1.jpg',
+    month: '2023/04/17',
+    title: '企鵝館迎來新成員！',
+    content: '保育人員細心照顧，企鵝寶寶健康成長中！'
+  },
+  {
+    id: 2,
+    src: '../../public/img/index_news2.jpg',
+    month: '2023/04/17',
+    title: '台北水族館新開幕！',
+    content: '各種海洋生物都在這，還有各項活動可以參與！'
+  },
+  {
+    id: 3,
+    src: '../../public/img/index_news2.jpg',
+    month: '2023/04/17',
+    title: '台北水族館新開幕！',
+    content: '各種海洋生物都在這，還有各項活動可以參與！'
+  },
+]);
 
-onMounted(() => {
-  videoNoStop();
-});
+
 
 // index_ad 跑馬燈
 const time = ref(null);
 const left = ref(0);
-const images = ref([
+const images = reactive([
   { id: 1, src: "../../public/img/index_logo1.jpg" },
   { id: 2, src: "../../public/img/index_logo2.jpg" },
   { id: 3, src: "../../public/img/index_logo3.jpg" },
@@ -249,10 +254,6 @@ const enter = () => {
 const leave = () => {
   move();
 };
-
-onMounted(() => {
-  move();
-});
 
 </script>
 
@@ -611,6 +612,9 @@ onMounted(() => {
 
       ul {
         margin-top: 50px;
+        .column{
+          transform: rotate(0deg);
+        }
       }
 
       li {

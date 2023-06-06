@@ -53,6 +53,7 @@ import { RouterLink, RouterView } from "vue-router";
 import { watch, reactive, ref, onMounted } from "vue";
 import { computed } from "vue";
 
+// const props = defineProps(["color2"]);
 const props = defineProps({
   color2: {
     type: Boolean,
@@ -106,8 +107,7 @@ onMounted(() => {
 });
 
 watch(
-  () => props.color2,
-  (newValue) => {
+  () => props.color2,(newValue) => {
     // console.log(props.color2);
     if (newValue) {
       waveColor.value = "DeepSkyBlue";
