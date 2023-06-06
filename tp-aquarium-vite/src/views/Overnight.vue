@@ -16,57 +16,16 @@
       <!-- 夜宿海生館介紹文 -->
       <div class="overnight_circle_bgc">
         <section class="wrapper">
-          <div class="overnight_circle_content">
-            <img src="@/img/overnight_circle1.png" alt="" />
+
+          <div v-for="circle in circlePage" :key="circle.id" class="overnight_circle_content">
+            <img :src="circle.src" alt="" />
             <div class="overnight_circle_content_text">
               <div class="overnight_circle_content_text_inside">
-                <h3>世界水域區(兩天一夜)</h3>
-                <span><p class="p_hight">1-12月</p></span>
+                <h3>{{ circle.title }}</h3>
+                <span><p class="p_hight">{{ circle.month }}</p></span>
               </div>
-              <h4>觀賞海底奇景，體驗海洋生態</h4>
-              <p class="p_sub">
-                世界水域區更設有專業的生物解說，讓你更了解這些神奇的海洋生物的特性及生態，開啟對自然的新視野。<br /><br />除了觀賞海洋生物，你還可以參加各種水上活動，如划艇、帆船等等，全面感受大海的魅力。此外，豐富多彩的活動，如夜間星空觀賞、海邊營火派對等，讓你的假期充滿無限的樂趣。
-              </p>
-            </div>
-          </div>
-          <div class="overnight_circle_content">
-            <img src="@/img/overnight_circle2.png" alt="" />
-            <div class="overnight_circle_content_text">
-              <div class="overnight_circle_content_text_inside">
-                <h3>台灣水域區(兩天一夜)</h3>
-                <span><p class="p_hight">3-6月</p></span>
-              </div>
-              <h4>觀賞海底奇景，體驗海洋生態</h4>
-              <p class="p_sub">
-                第一天：前往海洋博物館了解海洋文化和保育知識，隨後乘船前往藍洞探索秘境，觀察熱帶魚和珊瑚礁。晚上入住海生館，進行夜間探索、聆聽海洋生物的聲音，更有機會觀察到燈籠魚、海蜇等特殊生物。
-                <br /><br />第二天：前往海洋保護區進行浮潛活動，近距離觀察海洋生態，並且參與海洋保育行動。這個兩天一夜的行程充滿探索和學習的樂趣，讓您深入了解台灣水域區的獨特之處。
-              </p>
-            </div>
-          </div>
-          <div class="overnight_circle_content">
-            <img src="@/img/overnight_circle3.png" alt="" />
-            <div class="overnight_circle_content_text">
-              <div class="overnight_circle_content_text_inside">
-                <h3>觀賞珊瑚(兩天一夜)</h3>
-                <span><p class="p_hight">7-9月</p></span>
-              </div>
-              <h4>觀賞海底奇景，體驗海洋生態</h4>
-              <p class="p_sub">
-                第一天：您將前往海生館夜宿，體驗夜間探索，聆聽海洋生物的聲音，甚至有機會看到燈籠魚等特殊生物。接著，您將前往珊瑚區進行浮潛活動，近距離觀察五彩繽紛的珊瑚和不同種類的熱帶魚。<br /><br />第二天：您將前往海底隧道，這是一條位於海底的隧道，讓您感受獨特的海底生態和神秘的氛圍。這個兩天一夜的行程讓您完全沉浸在海洋世界中，體驗不一樣的探索和冒險。
-              </p>
-            </div>
-          </div>
-          <div class="overnight_circle_content">
-            <img src="@/img/overnight_circle4.png" alt="" />
-            <div class="overnight_circle_content_text">
-              <div class="overnight_circle_content_text_inside">
-                <h3>蟹逅(兩天一夜)</h3>
-                <span><p class="p_hight">10-12月</p></span>
-              </div>
-              <h4>觀賞海底奇景，體驗海洋生態</h4>
-              <p class="p_sub">
-                在這兩天一夜的旅程中，你可以享用豐盛的海鮮美食，品嚐鮮味十足的螃蟹料理，並且探索海洋生物的神秘世界。<br /><br />除了品嚐美食，你還可以參加專業的生物解說，了解螃蟹的生長習性，更進一步瞭解海洋生物的多樣性。而豐富多彩的活動，如海濱散步、沙灘沐浴、水上活動等，讓你全身心地感受大自然的美好。
-              </p>
+              <h4>{{ circle.content }}</h4>
+              <p class="p_sub">{{ circle.text }}</p>
             </div>
           </div>
         </section>
@@ -98,40 +57,13 @@
         <section class="wrapper">
           <div class="overnight_notice_right">
             <ul>
-              <li>
-                <h4>注意事項</h4>
-                <p>
-                  夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。
-                </p>
-              </li>
-              <li>
-                <h4>注意事項</h4>
-                <p>
-                  夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。
-                </p>
-              </li>
-              <li>
-                <h4>注意事項</h4>
-                <p>
-                  夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。
-                </p>
-              </li>
-              <li>
-                <h4>注意事項</h4>
-                <p>
-                  夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。
-                </p>
-              </li>
-              <li>
-                <h4>注意事項</h4>
-                <p>
-                  夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。
-                </p>
+              <li v-for="notice in noticePage" :key="notice.id">
+                <h4>{{ notice.title }}</h4>
+                <p>{{ notice.content }}</p>
               </li>
             </ul>
           </div>
         </section>
-        <!-- <a href="" class="btn">回首頁</a> -->
       </div>
     </main>
   </div>
@@ -141,13 +73,46 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import Header from "/src/components/Header.vue";
-import Footer from "/src/components/Footer.vue";
+
+// 夜宿海生館介紹文
+const circlePage =reactive([
+  { 
+    id: 1,
+    src: "../../public/img/overnight_circle1.png",
+    title: '世界水域區(兩天一夜)',
+    month: '1-12月',
+    content: '觀賞海底奇景，體驗海洋生態',
+    text: '世界水域區更設有專業的生物解說，讓你更了解這些神奇的海洋生物的特性及生態，開啟對自然的新視野。除了觀賞海洋生物，你還可以參加各種水上活動，如划艇、帆船等等，全面感受大海的魅力。此外，豐富多彩的活動，如夜間星空觀賞、海邊營火派對等，讓你的假期充滿無限的樂趣。'
+  },
+  { 
+    id: 2,
+    src: "../../public/img/overnight_circle2.png",
+    title: '台灣水域區(兩天一夜)',
+    month: '3-6月',
+    content: '觀賞海底奇景，體驗海洋生態',
+    text: '第一天：前往海洋博物館了解海洋文化和保育知識，隨後乘船前往藍洞探索秘境，觀察熱帶魚和珊瑚礁。晚上入住海生館，進行夜間探索、聆聽海洋生物的聲音，更有機會觀察到燈籠魚、海蜇等特殊生物。第二天：前往海洋保護區進行浮潛活動，近距離觀察海洋生態，並且參與海洋保育行動。這個兩天一夜的行程充滿探索和學習的樂趣，讓您深入了解台灣水域區的獨特之處。'
+  },
+  { 
+    id: 3,
+    src: "../../public/img/overnight_circle3.png",
+    title: '觀賞珊瑚(兩天一夜)',
+    month: '7-9月',
+    content: '觀賞海底奇景，體驗海洋生態',
+    text: '第一天：您將前往海生館夜宿，體驗夜間探索，聆聽海洋生物的聲音，甚至有機會看到燈籠魚等特殊生物。接著，您將前往珊瑚區進行浮潛活動，近距離觀察五彩繽紛的珊瑚和不同種類的熱帶魚。'
+  },
+  { 
+    id: 4,
+    src: "../../public/img/overnight_circle4.png",
+    title: '蟹逅(兩天一夜)',
+    month: '10-12月',
+    content: '觀賞海底奇景，體驗海洋生態',
+    text: '在這兩天一夜的旅程中，你可以享用豐盛的海鮮美食，品嚐鮮味十足的螃蟹料理，並且探索海洋生物的神秘世界。'
+  },
+]);
 
 // overnight slider 跑馬燈
 const left = ref(0);
 const time = ref(null);
-const listContent = ref('');
 const images = ref([
   { id: 1, src: "../../public/img/overnight_slide1.jpg" },
   { id: 2, src: "../../public/img/overnight_slide2.jpg" },
@@ -173,12 +138,38 @@ const leave = () => {
   move();
 };
 
-// 複製一份讓中間不間斷
-// images.value.innerHTML += images.value;
-
 onMounted(() => {
   move();
 });
+
+// overnight notice
+const noticePage=reactive([
+  {
+    id:1,
+    title: '注意事項',
+    content: '夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。'
+  },
+  {
+    id:2,
+    title: '注意事項',
+    content: '夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。'
+  },
+  {
+    id:3,
+    title: '注意事項',
+    content: '夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。'
+  },
+  {
+    id:4,
+    title: '注意事項',
+    content: '夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。'
+  },
+  {
+    id:5,
+    title: '注意事項',
+    content: '夜宿海生館是一個獨特的體驗，但在您前往之前，請注意以下事項：建議提前預訂，確保有足夠的床位；夜間導覽時請保持安靜，不要打擾其他旅客和海洋生物；請勿攜帶食物進入海生館，以免影響生物的食物鏈和健康；在遊覽期間請注意安全，不要靠近海洋生物，並遵守工作人員的規定和指示。最後，請務必帶備個人用品和衣物，以便您度過一個愉快舒適的夜晚。'
+  },
+]);
 
 </script>
 
