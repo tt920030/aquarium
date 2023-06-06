@@ -25,13 +25,13 @@ const props = defineProps({
     required: true,
   },
 });
-const lightboxData = reactive(props.lightboxData);
+const lightboxData = reactive(props.lightboxData.value[0]);
 </script>
 <template>
   <section class="light_box">
     <div
       class="lightbox_overlay"
-      :class="lightboxData.value[0].class"
+      :class="lightboxData.class"
       @click="lightboxOverlayHandler"
     >
       <div class="wrapper">
@@ -39,37 +39,37 @@ const lightboxData = reactive(props.lightboxData);
           <!-- 區塊1 -->
           <div class="lightbox_block">
             <h4 class="accordion_header" @click="accordionHeaderHandler">
-              {{ lightboxData.value[0].title }}
+              {{ lightboxData.title }}
             </h4>
             <ul>
-              <li><img :src="lightboxData.value[0].src" alt="" /></li>
+              <li><img :src="lightboxData.src" alt="" /></li>
               <li>
-                <h4>{{ lightboxData.value[0].h4 }}</h4>
+                <h4>{{ lightboxData.h4 }}</h4>
                 <p>
-                  {{ lightboxData.value[0].p }}
+                  {{ lightboxData.p }}
                 </p>
               </li>
             </ul>
           </div>
           <!-- 區塊2 -->
-          <div class="lightbox_block" v-if="lightboxData.value[0].section2">
+          <div class="lightbox_block" v-if="lightboxData.section2">
             <h4 class="accordion_header" @click="accordionHeaderHandler">
-              {{ lightboxData.value[0].h41 }}
+              {{ lightboxData.h41 }}
             </h4>
             <ul>
               <li>
                 <img
                   style="width: 360px"
                   class="intro_img"
-                  :src="lightboxData.value[0].src1"
+                  :src="lightboxData.src1"
                   alt=""
                 />
               </li>
               <li>
                 <p>
-                  {{ lightboxData.value[0].p1 }}
+                  {{ lightboxData.p1 }}
                 </p>
-                <RouterLink :to="lightboxData.value[0].to" class="btn"
+                <RouterLink :to="lightboxData.to" class="btn"
                   >了解更多</RouterLink
                 >
               </li>

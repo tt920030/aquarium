@@ -31,7 +31,7 @@ import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 import Lightbox from "/src/components/Lightbox.vue";
-import FloorNav from "/src/components/Floor/FloorNav.vue";
+import FloorNav from "/src/components/FloorNav.vue";
 import FloorMain from "/src/components/Floor/FloorMain.vue";
 import FloorIntro from "/src/components/Floor/FloorIntro.vue";
 // 傳遞屬性給FloorNav
