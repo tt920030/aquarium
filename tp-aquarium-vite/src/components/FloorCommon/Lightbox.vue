@@ -19,6 +19,16 @@ const lightboxContentHandler = (e) => {
   e.stopPropagation();
 };
 
+// 手風琴標題處理函式
+const accordionHeaderHandler = (e) => {
+  e.target.classList.toggle("active");
+  e.target.nextElementSibling.style.display = e.target.classList.contains(
+    "active"
+  )
+    ? "block"
+    : "none";
+};
+
 const props = defineProps({
   lightboxData: {
     type: Array,

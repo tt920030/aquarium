@@ -22,7 +22,8 @@
       :lightboxData="lightboxData"
       @closeBox="closeLightbox"
     ></Lightbox>
-    <RouterLink to="/ticket"></RouterLink>
+    <!-- RWD手風琴 -->
+    <Acoordion :accordionData="lightboxData1"></Acoordion>
     <RouterView></RouterView>
   </div>
 </template>
@@ -30,10 +31,11 @@
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
-import Lightbox from "/src/components/Lightbox.vue";
-import FloorNav from "/src/components/FloorNav.vue";
+import Lightbox from "/src/components/FloorCommon/Lightbox.vue";
+import FloorNav from "/src/components/FloorCommon/FloorNav.vue";
 import FloorMain from "/src/components/Floor/FloorMain.vue";
 import FloorIntro from "/src/components/Floor/FloorIntro.vue";
+import Acoordion from "/src/components/FloorCommon/Accordion.vue";
 // 傳遞屬性給FloorNav
 const navData = reactive([
   {
@@ -207,24 +209,16 @@ const lightboxData1 = reactive([
     to: "/visit_information",
   },
 ]);
+
 // 決定傳甚麼值給燈箱
 const openLightbox = (i) => {
   lightboxIsOpen.value = true;
   lightboxData.value = lightboxData1.filter((item) => item.class === i);
 };
+
 // 關閉燈箱
 const closeLightbox = () => {
   lightboxIsOpen.value = false;
-};
-
-// 手風琴標題處理函式
-const accordionHeaderHandler = (e) => {
-  e.target.classList.toggle("active");
-  e.target.nextElementSibling.style.display = e.target.classList.contains(
-    "active"
-  )
-    ? "block"
-    : "none";
 };
 </script>
 
@@ -257,38 +251,6 @@ const accordionHeaderHandler = (e) => {
         padding-top: 105px;
       }
     }
-  }
-}
-
-// 動畫
-@keyframes animalMove {
-  0% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-
-  50% {
-    transform: translate(0, 20px);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes shake {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(4px, 0);
-  }
-
-  100% {
-    transform: translate(0, 0);
   }
 }
 </style>
