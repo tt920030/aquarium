@@ -29,7 +29,6 @@
               <img :src="button.src1" alt="" />
               <img :class="button.class" :src="button.src2" alt="" />
               <p>{{ button.cName }}</p>
-              <p>{{ button.eName }}</p>
             </div>
             <img :src="button.src3" alt="" />
           </RouterLink>
@@ -97,10 +96,14 @@
 
     <!-- index_ad -->
     <div class="index_ad">
-      <div class="index_ad_box" @mouseenter="enter" @mouseleave="leave">
-        <div class="index_ad_list" :style="{left: left + 'px'}">
-          <img v-for="image in images" :key="image.id" :src="image.src" alt="">
-          <img v-for="image in images" :key="image.id" :src="image.src" alt="">
+      <div class="index_ad_box">
+        <div class="index_ad_list">
+          <img src="@/img/index_logo1.jpg" alt="" />
+          <img src="@/img/index_logo2.jpg" alt="" />
+          <img src="@/img/index_logo3.jpg" alt="" />
+          <img src="@/img/index_logo4.jpg" alt="" />
+          <img src="@/img/index_logo5.jpg" alt="" />
+          <img src="@/img/index_logo6.jpg" alt="" />
         </div>
       </div>
     </div>
@@ -236,10 +239,8 @@ const images = reactive([
   { id: 6, src: "../../public/img/index_logo6.jpg" },
 ]);
 
-const move = () => {
-  clearInterval(time.value);
-  time.value = setInterval(() => {
-  left.value -= 2;
+    let left = 0;
+    let time;
 
     if (left.value === -(6 * 200 + 6 * 20)) {
       left.value = 0;
@@ -247,9 +248,9 @@ const move = () => {
   }, 20);
 };
 
-const enter = () => {
-  clearInterval(time.value);
-};
+    box.addEventListener("mouseenter", () => {
+      clearInterval(time);
+    });
 
 const leave = () => {
   move();

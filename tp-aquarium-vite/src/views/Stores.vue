@@ -142,8 +142,6 @@
   <router-view></router-view>
 </template>
 <script setup>
-import Header from "/src/components/Header.vue";
-import Footer from "/src/components/Footer.vue";
 import CustomerService from "/src/components/CustomerService.vue";
 import ProductList from "../components/ProductList.vue";
 import Paginator from "../components/Paginator.vue";

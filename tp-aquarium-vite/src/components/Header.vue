@@ -10,31 +10,68 @@
   />
 
   <header>
-    <div class="content" :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }">
-      <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt=""/></RouterLink>
+    <div
+      class="content"
+      :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }"
+    >
+      <RouterLink to="/" class="logo" href=""
+        ><img src="@/img/logo-white.svg" alt=""
+      /></RouterLink>
       <nav>
         <ul class="icon">
           <i class="bi bi-list"></i>
-          <li><p><span class="rain">{{ rainWeatherState }}</span></p></li>
-          <li><p><span class="temp">{{ tempWeather }}</span></p></li>
+          <li>
+            <p>
+              <span class="rain">{{ rainWeatherState }}</span>
+            </p>
+          </li>
+          <li>
+            <p>
+              <span class="temp">{{ tempWeather }}</span>
+            </p>
+          </li>
           <li><img :src="get_weather_img" alt="" class="weather_img" /></li>
-          <li><button type="button" ref="circle" class="switch" @click="switchColor"><i class="bi bi-moon-stars-fill"></i></button></li>
+          <li>
+            <button
+              type="button"
+              ref="circle"
+              class="switch"
+              @click="switchColor"
+            >
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+          </li>
           <li><img class="icons" src="src/img/header_member.svg" alt="" /></li>
-          <li><RouterLink to="/cart"><img class="icons" src="src/img/header_cart.svg" alt=""/></RouterLink></li>
+          <li>
+            <RouterLink to="/cart"
+              ><img class="icons" src="src/img/header_cart.svg" alt=""
+            /></RouterLink>
+          </li>
         </ul>
         <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
         <ul class="menu">
           <li v-for="item in navItems">
-            <RouterLink :to="item.link"><p>{{ item.name }}</p></RouterLink>
+            <RouterLink :to="item.link"
+              ><p>{{ item.name }}</p></RouterLink
+            >
           </li>
         </ul>
       </nav>
     </div>
 
     <div class="ocean">
-      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
-      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
-      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
+      <div
+        class="wave"
+        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
+      ></div>
+      <div
+        class="wave"
+        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
+      ></div>
+      <div
+        class="wave"
+        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
+      ></div>
     </div>
   </header>
 </template>

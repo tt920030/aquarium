@@ -13,7 +13,7 @@ const openLogin = (n) => {
 };
 
 const color = (i) => {
-  console.log(i);
+  // console.log(i);
   color2.value = i;
 };
 </script>
