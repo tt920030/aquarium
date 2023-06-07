@@ -1,14 +1,9 @@
 <template>
   <div class="floor_introduction">
     <!-- 開場介紹圖 -->
-    <div class="banner">
-      <h1>
-        樓層指南<br />
-        GUIDED TOUR
-      </h1>
-    </div>
+    <floor-banner></floor-banner>
     <!-- 樓層指南選單 -->
-    <floor-nav :navData="navData"></floor-nav>
+    <floor-nav :navData="navData" :pageNow="pageNow"></floor-nav>
     <!-- 樓層中間區塊 -->
     <floor-main :mainData="mainData"></floor-main>
     <!--各樓層指南  -->
@@ -24,11 +19,9 @@
     ></Lightbox>
     <!-- RWD手風琴 -->
     <Acoordion :accordionData="lightboxData1"></Acoordion>
-    <RouterView></RouterView>
   </div>
 </template>
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 import Lightbox from "/src/components/FloorCommon/Lightbox.vue";
@@ -36,6 +29,8 @@ import FloorNav from "/src/components/FloorCommon/FloorNav.vue";
 import FloorMain from "/src/components/Floor/FloorMain.vue";
 import FloorIntro from "/src/components/Floor/FloorIntro.vue";
 import Acoordion from "/src/components/FloorCommon/Accordion.vue";
+import FloorBanner from "/src/components/FloorCommon/FloorBanner.vue";
+
 // 傳遞屬性給FloorNav
 const navData = reactive([
   {
@@ -47,6 +42,7 @@ const navData = reactive([
   { to: "/faq", src: "/src/img/floor_p3.svg", title: "常見問題" },
   { to: "/visit_information", src: "/src/img/floor_p4.svg", title: "參觀資訊" },
 ]);
+const pageNow = ref("樓層介紹");
 
 // 傳遞屬性給FloorMain
 const mainData = reactive([
@@ -231,26 +227,6 @@ const closeLightbox = () => {
   }
   ::-webkit-scrollbar-thumb {
     background-color: black;
-  }
-  .banner {
-    background-image: url("/src/img/guided_tour_banner.jpg");
-    width: 100%;
-    height: 660px;
-    background-size: cover;
-
-    // RWD
-    @include mobile {
-      height: 300px;
-    }
-
-    h1 {
-      padding-top: 300px;
-      padding-left: 40px;
-
-      @include mobile {
-        padding-top: 105px;
-      }
-    }
   }
 }
 </style>

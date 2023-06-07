@@ -7,6 +7,7 @@ const testdata = reactive([]);
 onMounted(() => {
   axios
     .get("http://localhost/G6/Select.php")
+    // https://tibamef2e.com/thd101/g6/PHP/Select.php
     .then((res) => {
       testdata.push(...res.data);
     })
@@ -26,10 +27,6 @@ const floorIntroData = reactive(props.floorIntroData);
 const emits = defineEmits(["openBox"]);
 // 燈箱點擊處理函式
 const lightboxClickHandler = (e) => {
-  // e.preventDefault();
-  // let parentId = e.currentTarget.parentNode.getAttribute("id");
-  // document.querySelector(`.${parentId}`).style.display = "block";
-  // document.body.style.overflow = "hidden";
   e.preventDefault();
   let parentId = e.currentTarget.parentNode.getAttribute("id");
   emits("openBox", parentId);

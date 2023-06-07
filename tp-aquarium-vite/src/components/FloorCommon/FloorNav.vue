@@ -5,17 +5,21 @@ const props = defineProps({
     type: Array,
     required: true,
   },
+  pageNow: {
+    type: String,
+    required: true,
+  },
 });
 const navData = reactive(props.navData);
 // 激活導覽列圖片
-const pageNow = ref("樓層介紹");
+const pageNow = ref(props.pageNow);
 </script>
 <template>
   <!-- 樓層指南選單 -->
   <ul class="floor_nav">
-    <li v-for="item in navData">
+    <li v-for="item in navData" :class="item.title === pageNow ? 'active' : ''">
       <RouterLink :to="item.to"><img :src="item.src" alt="" /></RouterLink>
-      <h4 :class="item.title === pageNow ? 'h4_active' : ''">
+      <h4 :class="item.title === pageNow ? 'active' : ''">
         {{ item.title }}
       </h4>
     </li>
@@ -38,7 +42,7 @@ const pageNow = ref("樓層介紹");
       padding: 0 10px;
     }
 
-    &:first-child::after {
+    &.active::after {
       content: "";
       background-image: url("@/img/floor_nav_index.jpg");
       background-repeat: no-repeat;
@@ -67,10 +71,9 @@ const pageNow = ref("樓層介紹");
 
     h4 {
       color: #97cbe0;
-    }
-
-    .h4_active {
-      color: #16355a;
+      &.active {
+        color: #16355a;
+      }
     }
   }
 }
