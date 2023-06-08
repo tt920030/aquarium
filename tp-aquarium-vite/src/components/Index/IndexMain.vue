@@ -32,13 +32,10 @@
       <div class="wrapper">
         <h2>最新消息</h2>
           <ul>
-            <swiper 
-                    :slides-per-group="2"
-                    :slides-per-view="2"
-                    :space-between="20">
-              <swiper-slide v-for="news in newsPage" :key="news.id">  
+           
+           
                 <RouterLink to="/news/news_page">
-                  <li>
+                  <li v-for="news in newsPage" :key="news.id">
                     <img :src="news.src" alt="" />
                     <div class="index_news_content">
                       <h3>{{ news.month }}</h3>
@@ -47,8 +44,7 @@
                     </div>
                   </li>
                 </RouterLink>
-              </swiper-slide>
-            </swiper>
+          
           </ul>
 
         <!-- 了解更多button -->
@@ -62,9 +58,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { reactive } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Virtual } from "swiper";
-import "swiper/css";
 
 // 活動行程
 const journeyPage = reactive([
