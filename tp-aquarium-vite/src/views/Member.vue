@@ -14,25 +14,25 @@
 
                 <div class="manu">
                     <RouterLink to="/member/Profile" @showPassword="showPassword1(n)">
-                    <div class="list -on" @click="button(0)">
+                    <div class="list" :class="{'-on': button === 1}" @click="button = 1">
                         <img src="@/img/member_user.svg" alt="">
                         <p>我的資料</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Order">
-                    <div class="list " @click="button(1)">
+                    <div class="list " :class="{'-on': button === 2}" @click="button = 2">
                         <img src="@/img/member_order.svg" alt="">
                         <p>我的訂單</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Coupon">
-                    <div class="list" @click="button(2)">
+                    <div class="list" :class="{'-on': button === 3}" @click="button = 3">
                         <img src="@/img/member_coupon.svg" alt="">
                         <p>我的折價券</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Pet">
-                    <div class="list" @click="button(3)">
+                    <div class="list" :class="{'-on': button === 4}" @click="button = 4">
                         <img src="@/img/member_pet.svg" alt="">
                         <p>虛擬寵物</p>
                     </div>
@@ -60,22 +60,17 @@ import { RouterLink, RouterView } from "vue-router";
 
 import Profile from "./member/Profile.vue";
 import { onMounted, reactive, ref, watch } from "vue";
-import $ from "jquery";
+
 
 const password = ref(false);
 
+const button = ref(1);
 
-const button = (i) => {
-
-    $(document).find(".list").removeClass("-on");
-    $(document).find(".list").eq(i).addClass("-on");
-
-}
 
 const showPassword1 = (n) => {
-    console.log(n);
+    // console.log(n);
     password.value = n;
-    console.log(password.value);
+    // console.log(password.value);
 }
 
 

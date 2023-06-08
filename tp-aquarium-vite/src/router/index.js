@@ -114,6 +114,8 @@ const router = createRouter({
     {
       path: "/game_quiz",
       name: "GameQuiz",
+      // 把header和footer藏起來
+      meta: { hideHeader: true },
       component: () => import("../views/game/GameQuiz.vue"),
     },
     // {
@@ -124,6 +126,7 @@ const router = createRouter({
     {
       path: "/game_puzzle",
       name: "/GamePuzzle",
+      meta: { hideHeader: true },
       component: () => import("../views/game/GamePuzzle.vue"),
     },
 
@@ -269,6 +272,12 @@ const router = createRouter({
       name: "BackstageIndex", //自己取
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
     },
+    {
+      path: "/backstage_login", //自己取之後要連的路徑名稱
+      name: "Backstagelogin", //自己取
+      component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
+    },
+    
     {
       path: "/axios", //自己取之後要連的路徑名稱
       name: "AxiosTest", //自己取
