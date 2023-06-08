@@ -74,6 +74,7 @@
     import { RouterLink, RouterView } from "vue-router";
     import { onMounted, reactive, ref } from "vue";
     import axios from 'axios';
+    import axios from 'axios';
     // 引入bootstrap
     import "bootstrap";
     import "bootstrap/dist/css/bootstrap.min.css";
