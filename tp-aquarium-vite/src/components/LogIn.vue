@@ -159,10 +159,6 @@
             </div>
         </main>
 
-       
-
-
-
 
     </div>
 </template>

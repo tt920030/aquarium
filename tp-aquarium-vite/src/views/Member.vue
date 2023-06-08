@@ -5,34 +5,34 @@
         <main>
             <div class="left">
                 <div class="photo">
-                    <img src="@/img/member_photo1.png" alt="">
+                    <img :src="'../../public/img/' + photo" alt="">
                 </div>
                 <p class="name">使用者姓名</p>
-                <button class="btn1">
-                    <p>年度會員</p>
+                <button class="btn1" @click="logOut">
+                    <p>登出</p>
                 </button>
 
                 <div class="manu">
                     <RouterLink to="/member/Profile" @showPassword="showPassword1(n)">
-                    <div class="list" :class="{'-on': button === 1}" @click="button = 1">
+                    <div class="list">
                         <img src="@/img/member_user.svg" alt="">
                         <p>我的資料</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Order">
-                    <div class="list " :class="{'-on': button === 2}" @click="button = 2">
+                    <div class="list ">
                         <img src="@/img/member_order.svg" alt="">
                         <p>我的訂單</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Coupon">
-                    <div class="list" :class="{'-on': button === 3}" @click="button = 3">
+                    <div class="list">
                         <img src="@/img/member_coupon.svg" alt="">
                         <p>我的折價券</p>
                     </div>
                 </RouterLink>
                 <RouterLink to="/member/Pet">
-                    <div class="list" :class="{'-on': button === 4}" @click="button = 4">
+                    <div class="list">
                         <img src="@/img/member_pet.svg" alt="">
                         <p>虛擬寵物</p>
                     </div>
@@ -57,15 +57,21 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-
+import { useCookies } from "vue3-cookies";
 import Profile from "./member/Profile.vue";
 import { onMounted, reactive, ref, watch } from "vue";
-
+import axios from 'axios';
+import { useRouter } from "vue-router";
+const router = useRouter();
+const { cookies } = useCookies();
 
 const password = ref(false);
 
+const photo = ref("");
+
 const button = ref(1);
 
+const id = cookies.get("id");
 
 const showPassword1 = (n) => {
     // console.log(n);
@@ -73,10 +79,47 @@ const showPassword1 = (n) => {
     // console.log(password.value);
 }
 
+const photoId = ref();
+const getPhotoId = () => {
+    let params = new URLSearchParams();
+    params.append('id', id);
 
+    axios.post('http://localhost/PHP/getPhoto.php',params)
+    .then((res) => {
 
+        // console.log(res.data[0].PHOTO_ID);
+        // profileText.email = res.data[0].EMAIL;
+        photoId.value = res.data[0].PHOTO_ID;
 
+        getPhotoName();
+    }).catch(err => console.log(err))
+}
 
+const getPhotoName = () => {
+    let params = new URLSearchParams();
+    params.append('photo_id', photoId.value);
+
+    axios.post('http://localhost/PHP/photoName.php',params)
+    .then((res) => {
+
+        // console.log(res.data[0].PHOTO);
+        photo.value = res.data[0].PHOTO;
+        // profileText.email = res.data[0].EMAIL;
+        // photoId.value = res.data[0].PHOTO_ID;
+    
+    }).catch(err => console.log(err))
+}
+
+const logOut = () => {
+    cookies.remove("id");
+    router.push({ path: '/' });
+}
+
+onMounted(() => {
+    getPhotoId();
+    // console.log(photoId.value);
+    
+});
 
 </script>
 

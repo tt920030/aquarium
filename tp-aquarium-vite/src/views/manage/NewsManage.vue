@@ -4,7 +4,7 @@
       <h3>行程管理</h3>
       <button>新增行程</button>
     </div> -->
-    <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
+    <manage-template :title="title" :forms="forms" :pageNow="pageNow"></manage-template>
  
 </template>
 
@@ -23,15 +23,16 @@ const title = reactive([
 ]);
 const forms = reactive([]);
 
+const pageNow = '消息';
 const news = () => {
   axios.post('http://localhost/PHP/newsManage.php')	//使用get或post等取得路徑資料(php)
 
   .then((res) => {	//回傳後如何處理
 
-    // console.log(res.data);
+    console.log(res.data);
 
     res.data.forEach(element => {
-      forms.push([element["TITLE"], element["SUB_TITLE"], element["DATE"]]);
+      forms.push([element["TITLE"], element["SUB_TITLE"], element["DATE"],element['ID']]);
     });
 
     // console.log(forms);

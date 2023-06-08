@@ -276,7 +276,7 @@ const getOrder = () => {
                 order.push({
                     id: item.ID,
                     buyTime: item.BUY_TIME,
-                    // total: item.TOTAL,
+                    total: item.SUM,
                     pay: item.PAY,
                     products: []
                 });
