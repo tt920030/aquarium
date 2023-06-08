@@ -26,9 +26,9 @@
                     <th>
                         <p>訂單金額</p>
                     </th>
-                    <th>
+                    <!-- <th>
                         <p>使用時間</p>
-                    </th>
+                    </th> -->
                     <th>
                         <p>商品名稱</p>
                     </th>
@@ -53,9 +53,9 @@
                         <td :rowspan='item.products.length'>
                             <p>{{ item.total }}</p>
                         </td>
-                        <td>
-                            <p>{{ item.products[0].usedTime }}</p>
-                        </td>
+                        <!-- <td>
+                            <p>{{ item.products[0].usedTime ? item.products[0].usedTime : "-"}}</p>
+                        </td> -->
                         <td>
                             <p>{{ item.products[0].name }}</p>
                         </td>
@@ -63,14 +63,14 @@
                             <p>{{ item.products[0].number }}</p>
                         </td>
                         <td class="time">
-                            <p>{{ item.products[0].state }}</p>
+                            <p>{{ item.products[0].state  === 0 ? "未取貨": "已取貨"}}</p>
                         </td>
                     </tr>
                     <template v-for="(product, index) in item.products" :key="product.name">
                         <tr v-if="index !== 0">
-                            <td>
-                                <p>{{ product.usedTime }}</p>
-                            </td>
+                            <!-- <td>
+                                <p>{{ product.usedTime  ? product.usedTime: "-"}}</p>
+                            </td> -->
                             <td>
                                 <p>{{ product.name }}</p>
                             </td>
@@ -78,7 +78,7 @@
                                 <p>{{ product.number }}</p>
                             </td>
                             <td class="time">
-                                <p>{{ product.state }}</p>
+                                <p>{{ product.state  === 0 ? "未取貨": "已取貨"}}</p>
                             </td>
                         </tr>
                     </template>
@@ -132,7 +132,7 @@
                             </td>
                         </tr>
                         <template v-for="product in item.products" :key="product.name">
-                            <tr class="text">
+                            <tr class="text product_name">
                                 <th>
                                     <p>商品名稱</p>
                                 </th>
@@ -161,7 +161,7 @@
                                     <p>處理狀態</p>
                                 </th>
                                 <td>
-                                    <p>{{ product.state }}</p>
+                                    <p>{{ product.state === 0 ? "未取貨": "已取貨"}}</p>
                                 </td>
                             </tr>
                         </template>
@@ -176,84 +176,150 @@
 </template>
 
 <script setup>
-import { onMounted, ref, defineEmits } from 'vue';
+import axios, { Axios } from 'axios';
+import { onMounted, ref, defineEmits, reactive } from 'vue';
+import { useCookies } from "vue3-cookies";
 const close = ref(true);
 
-const order = [
-    {
-        id:"3",
-        buyTime: "2023/03/25 21:36:54",
-        pay: "信用卡付款",
-        total: "640",
-        products: [{
-            usedTime: "2023/1/1",
-            name: "成人票",
-            number: "1",
-            state: "03/27 17:21 已使用"
-        },
-        {
-            usedTime: "-",
-            name: "企鵝筆記本",
-            number: "1",
-            state: "03/27 17:21 已取貨"
-        },
-        {
-            usedTime: "-",
-            name: "企鵝筆記本",
-            number: "1",
-            state: "03/27 17:21 已取貨"
-        }
-    ]
+const order = reactive([
+    // {
+    //     id:"3",
+    //     buyTime: "2023/03/25 21:36:54",
+    //     pay: "信用卡付款",
+    //     total: "640",
+    //     products: [{
+    //         usedTime: "2023/1/1",
+    //         name: "成人票",
+    //         number: "1",
+    //         state: "03/27 17:21 已使用"
+    //     },
+    //     {
+    //         usedTime: "-",
+    //         name: "企鵝筆記本",
+    //         number: "1",
+    //         state: "03/27 17:21 已取貨"
+    //     },
+    //     {
+    //         usedTime: "-",
+    //         name: "企鵝筆記本",
+    //         number: "1",
+    //         state: "03/27 17:21 已取貨"
+    //     }
+    // ]
 
         
-    },
-    {
-        id:"4",
-        buyTime: "2023/05/25 21:36:54",
-        pay: "信用卡付款",
-        total: "640",
-        products: [{
-            usedTime: "2023/1/1",
-            name: "成人票",
-            number: "1",
-            state: "03/27 17:21 已使用"
-        },
-        {
-            usedTime: "-",
-            name: "企鵝筆記本",
-            number: "1",
-            state: "03/27 17:21 已取貨"
-        }
-    ]
+    // },
+    // {
+    //     id:"4",
+    //     buyTime: "2023/05/25 21:36:54",
+    //     pay: "信用卡付款",
+    //     total: "640",
+    //     products: [{
+    //         usedTime: "2023/1/1",
+    //         name: "成人票",
+    //         number: "1",
+    //         state: "03/27 17:21 已使用"
+    //     },
+    //     {
+    //         usedTime: "-",
+    //         name: "企鵝筆記本",
+    //         number: "1",
+    //         state: "03/27 17:21 已取貨"
+    //     }
+    // ]
 
         
-    },
-    {
-        id:"5",
-        buyTime: "2023/05/25 21:36:54",
-        pay: "信用卡付款",
-        total: "640",
-        products: [{
-            usedTime: "2023/1/1",
-            name: "成人票",
-            number: "1",
-            state: "03/27 17:21 已使用"
-        },
-        {
-            usedTime: "-",
-            name: "企鵝筆記本",
-            number: "1",
-            state: "03/27 17:21 已取貨"
-        }
-    ]
+    // },
+    // {
+    //     id:"5",
+    //     buyTime: "2023/05/25 21:36:54",
+    //     pay: "信用卡付款",
+    //     total: "640",
+    //     products: [{
+    //         usedTime: "2023/1/1",
+    //         name: "成人票",
+    //         number: "1",
+    //         state: "03/27 17:21 已使用"
+    //     },
+    //     {
+    //         usedTime: "-",
+    //         name: "企鵝筆記本",
+    //         number: "1",
+    //         state: "03/27 17:21 已取貨"
+    //     }
+    // ]
 
         
-    }
-];
+    // }
+]);
 
 const closeOrder = (e) => {
     close.value = !close.value;
 }
+
+const { cookies } = useCookies();
+
+const id = cookies.get("id");
+
+const getOrder = () => {
+    let params = new URLSearchParams();
+    params.append('id', id);
+
+
+    axios.post('http://localhost/PHP/getOrder.php', params)	//使用get或post等取得路徑資料(php)
+
+        .then((res) => {	//回傳後如何處理
+
+            // console.log(res.data);
+
+            res.data.forEach(item => {
+                order.push({
+                    id: item.ID,
+                    buyTime: item.BUY_TIME,
+                    total: item.SUM,
+                    pay: item.PAY,
+                    products: []
+                });
+            });
+
+        }).catch(err => console.log(err))  //錯誤如何處理
+}
+
+const getOrderDetail = () => {
+    let params = new URLSearchParams();
+    params.append('id', id);
+
+
+    axios.post('http://localhost/PHP/getOrderDetail.php', params)	//使用get或post等取得路徑資料(php)
+
+        .then((res) => {	//回傳後如何處理
+
+            console.log(res.data);
+
+            res.data.forEach(item => {
+                order.forEach(orderList => {
+                    if(orderList.id === item.ORDER_ID){
+                        orderList.products.push({
+                            // usedTime: item.USE_DATE,
+                            name: item.NAME,
+                            number: item.NUMBER,
+                            state: item.RECEIVE
+                        });
+                    }
+                })
+                
+            });
+
+        }).catch(err => console.log(err))  //錯誤如何處理
+}
+
+const now = new Date();
+
+onMounted(() => {
+    getOrder();
+    getOrderDetail();
+    console.log("2023/05/25 21:36:54" - now);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -312,8 +378,11 @@ const closeOrder = (e) => {
             width: 100%;
 
             text-align: center;
+            
 
             tr {
+
+                
 
                 th,
                 td {
@@ -390,6 +459,10 @@ const closeOrder = (e) => {
                         table {
 
                             width: 100%;
+
+                            .product_name{
+                                background-color: #fff71c75;
+                            }
         
                             .top {
                                 background-color: map-get($color, bgc1);

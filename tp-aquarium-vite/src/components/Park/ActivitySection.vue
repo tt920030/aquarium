@@ -7,6 +7,7 @@ const props = defineProps({
   },
 });
 const sectionData = reactive(props.sectionData);
+// 不懂 ??(*´･д･)?
 
 const emits = defineEmits(["openBox"]);
 // 燈箱點擊處理函式
@@ -32,9 +33,7 @@ const lightboxClickHandler = (e) => {
             <div class="journey_intro_main">
               <img src="/src/img/journey_intro_icon.svg" alt="" />
               <h4>{{ item.h4 }}</h4>
-              <p>
-                {{ item.p }}
-              </p>
+              <p>{{ item.p }}</p>
             </div>
             <div class="journey_intor_icon">
               <i class="bi bi-clock" v-if="item.iShow"
