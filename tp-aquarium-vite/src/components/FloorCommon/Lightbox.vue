@@ -5,6 +5,7 @@ const emits = defineEmits(["closeBox"]);
 const lightboxCloseHandler = (e) => {
   e.stopPropagation(); //可以都寫currentTarget就能避免很多冒泡問題
   document.body.style.overflow = "visible";
+  // 是指燈箱的scroll可以超出燈箱嗎？
   emits("closeBox");
 };
 
@@ -36,6 +37,8 @@ const props = defineProps({
   },
 });
 const lightboxData = reactive(props.lightboxData.value[0]);
+// 不懂 ??(*´･д･)?
+
 </script>
 <template>
   <section class="light_box">
