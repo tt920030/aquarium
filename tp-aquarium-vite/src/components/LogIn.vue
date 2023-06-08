@@ -133,7 +133,7 @@
                             <div class="invalid-feedback">email格式錯誤</div>
                         </div>
 
-                        <button type="button" class="btn1" @click="changeEmailButton">
+                        <button type="button" class="btn1" @click="send">
                             <h4>確認</h4>
                         </button>
 
@@ -239,9 +239,11 @@ const sendEmail = ref('');
 const sendResult = ref();
 const send = function () {
     let params = new URLSearchParams();
-    params.append('email', sendEmail.value);
-    axios.post('http://localhost/emailapi/api.php',
+    params.append('email', changeEmailText.email);
+    console.log(changeEmailText.email);
+    axios.post('http://localhost/emailapi/emailapi.php',
         params).then((res) => {
+            console.log(res.data.success);
             if (res.data.success) {
                 alert("寄送成功");
             } else {

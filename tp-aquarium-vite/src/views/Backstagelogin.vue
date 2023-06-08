@@ -40,26 +40,25 @@
             <div class="right">
                 <h3>後台登入</h3>
                 <div class="top">
-                    <form action="post">
+                    
                         <div class="input">
-                            <label for="email">帳號</label>
-                            <input type="email" id="email" name="email" placeholder="請輸入帳號">
+                            <label for="name">帳號</label>
+                            <input type="text" id="name" name="name" placeholder="請輸入帳號" v-model.trim="bgName.name">
                             <div class="invalid-feedback">帳號錯誤</div>
                         </div>
                         <div class="input">
                             <label for="password">密碼</label>
-                            <input type="password" id="password" name="password"  placeholder="請輸入密碼">
-                            <img src="@/img/login_eye.svg" alt="" class="eye">
+                            <input type="password" id="password" name="password"  placeholder="請輸入密碼" v-model.trim="bgName.password">
                             <div class="invalid-feedback">密碼錯誤</div>
                             
                         </div>
 
-                        <button type="submit" class="btn1">
+                        <button type="button" class="btn1" @click="bgLogin">
                             <h4>登入</h4>
                         </button>
                         
 
-                    </form>
+                 
                 </div>
 
 
@@ -74,9 +73,28 @@
 <script setup>
     import { RouterLink, RouterView } from "vue-router";
     import { onMounted, reactive, ref } from "vue";
+    import axios from 'axios';
     // 引入bootstrap
     import "bootstrap";
     import "bootstrap/dist/css/bootstrap.min.css";
+
+    const bgName = reactive({
+        name : "",
+        password : ""
+    });
+
+    const bgLogin = function(){
+        let params = new URLSearchParams();
+        params.append('name', bgName.name);
+        params.append('password', bgName.password);
+        console.log(bgName.name);
+        axios.post('http://localhost/bglogin.php',
+            params).then((res) => {
+                console.log(res);
+            }).catch(err => console.log(err))
+    }
+
+
 </script>
 
 <style lang="scss" scoped>
