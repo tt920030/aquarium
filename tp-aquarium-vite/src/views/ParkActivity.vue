@@ -15,18 +15,18 @@
       :lightboxData="lightboxData"
       @closeBox="closeLightbox"
     ></Lightbox>
+    <!-- RWD手風琴 -->
+    <Acoordion :accordionData="lightboxData1"></Acoordion>
   </div>
-  <RouterView />
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import $ from "jquery";
 import FloorBanner from "/src/components/FloorCommon/FloorBanner.vue";
 import FloorNav from "/src/components/FloorCommon/FloorNav.vue";
 import ActivitySection from "/src/components/Park/ActivitySection.vue";
 import Lightbox from "/src/components/FloorCommon/Lightbox.vue";
+import Acoordion from "/src/components/FloorCommon/Accordion.vue";
 
 // 傳遞屬性給FloorNav
 const navData = reactive([
@@ -138,36 +138,6 @@ const openLightbox = (i) => {
 const closeLightbox = () => {
   lightboxIsOpen.value = false;
 };
-
-$(function () {
-  // 手風琴()
-  $(".accordion_header").click(function () {
-    $(this).toggleClass("active");
-    $(this).next().slideToggle();
-    // 滾動到 .accordion_header 的位置
-    $("html, body").animate(
-      {
-        scrollTop: $(this).offset().top,
-      },
-      500
-    );
-  });
-  //   $(".accordion_header").first().click();
-
-  // 點了解更多打開手風琴
-  $(".btn").click(function (e) {
-    // 防止點擊時跳轉
-    e.preventDefault();
-    // 找到父元素的ID
-    let parentId = $(this).closest("li").attr("id");
-    console.log(parentId);
-    //  打開手風琴
-    $("." + parentId)
-      .find(".accordion_header")
-      .click();
-    // 滾動至手風琴的位置
-  });
-});
 </script>
 
 <style lang="scss" scoped>
