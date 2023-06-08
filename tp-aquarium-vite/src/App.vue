@@ -20,9 +20,9 @@ const color = (i) => {
 
 <template>
   <!-- <router-link to="/"></router-link> -->
-  <Header @openLogin="openLogin" @color="color"></Header>
+  <Header @openLogin="openLogin" @color="color" v-if="!$route.meta.hideHeader"></Header>
   <RouterView />
-  <Footer :color2="color2"></Footer>
+  <Footer :color2="color2" v-if="!$route.meta.hideHeader"></Footer>
   <LogIn v-if="hide" @close="openLogin"></LogIn>
 </template>
 

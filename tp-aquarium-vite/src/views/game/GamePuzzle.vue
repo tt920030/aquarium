@@ -367,9 +367,15 @@ onMounted(() => {
   /* max-height: 50%; */
 }
 
-.lightbox-content h1 {
-  margin: 10px;
+.lightbox-content h2 {
+  margin: 15px;
 }
+
+.lightbox-content p {
+  margin: 15px;
+}
+
+
 
 .close {
   position: absolute;

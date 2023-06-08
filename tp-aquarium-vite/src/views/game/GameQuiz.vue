@@ -385,6 +385,10 @@ onMounted(() => {
 }
 
 .quiz_box{
+
+  @include mobile {
+    width: 90%;
+  }
     width: 550px;
     background: #fff;
     border-radius: 5px;
@@ -446,6 +450,7 @@ onMounted(() => {
 }
 
 .quiz_box .quiz_header .time_line{
+
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -523,6 +528,7 @@ onMounted(() => {
     color: #23903c;
     border-color: #23903c;
     background: #d4edda;
+    font-weight: bold;
 }
 
 .option_list .option .icon.cross{
@@ -584,6 +590,9 @@ onMounted(() => {
 }
 
 .result_box{
+  @include mobile {
+    width: 90%;
+  }
     background: #fff;
     border-radius: 5px;
     display: flex;
@@ -638,6 +647,10 @@ onMounted(() => {
     border-radius: 5px;
     border: 1px solid #007bff;
     transition: all 0.3s ease;
+}
+
+.result_box .winner img {
+  width: 90%;
 }
 
 .buttons button.restart{
