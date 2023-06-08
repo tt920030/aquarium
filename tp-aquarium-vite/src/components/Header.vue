@@ -87,7 +87,6 @@ import $ from "jquery";
 import axios from "axios";
 
 import { transform } from "@vue/compiler-core";
-import axios from "axios";
 
 const emit = defineEmits(["openLogin"]);
 
