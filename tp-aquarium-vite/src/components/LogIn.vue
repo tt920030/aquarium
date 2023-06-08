@@ -243,14 +243,8 @@ const sendEmail = ref('');
 const sendResult = ref();
 const send = function () {
     let params = new URLSearchParams();
-<<<<<<< HEAD
-    params.append('email', changeEmailText.email);
-    console.log(changeEmailText.email);
-    axios.post('http://localhost/emailapi/emailapi.php',
-=======
     params.append('email', sendEmail.value);
     axios.post('http://localhost/PHP/emailapi.php',
->>>>>>> mycode
         params).then((res) => {
             console.log(res.data.success);
             if (res.data.success) {
