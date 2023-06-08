@@ -146,6 +146,9 @@
             </div>
         </main>
 
+
+
+
 <!-- google登入 -->
 
 <div>
@@ -154,7 +157,7 @@
      data-client_id="706694523939-o7a211c2ma3tdiglm2todss0h3cc07nk.apps.googleusercontent.com"
      data-context="signin"
      data-ux_mode="popup"
-     data-login_uri="http://localhost"
+     data-login_uri="https://tibamef2e.com"
      data-itp_support="true">
 </div>
 
@@ -208,6 +211,7 @@ const toText = () => {
         // console.log(eye.value);
     }
 }
+
 
 // google登入
 const onSignIn1 = (response) => {
