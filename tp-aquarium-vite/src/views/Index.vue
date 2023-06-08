@@ -1,6 +1,6 @@
 <template>
   <body class="index">
-    <Header @openLogin="openLogin"></Header>
+    <!-- <Header @openLogin="openLogin"></Header> -->
     <div class="index_logo_video">
       <video src="@/img/index_videosea.mp4" id="video_sea" width="100%" autoplay muted loop></video>
       <div class="index_logo_text">
@@ -152,8 +152,8 @@
       </div>
     </div>
 
-    <Footer/>
-    <LogIn v-if="hide" @close="openLogin"></LogIn>
+    <!-- <Footer/> -->
+    <!-- <LogIn v-if="hide" @close="openLogin"></LogIn> -->
     
   </body>
   

@@ -85,12 +85,36 @@ import { RouterLink, RouterView } from "vue-router";
 import { defineEmits, ref, onMounted } from "vue";
 import $ from "jquery";
 import axios from "axios";
+import { useRouter } from "vue-router";
 import { transform } from "@vue/compiler-core";
+import { useCookies } from "vue3-cookies";
 const emit = defineEmits(["openLogin"]);
+const router = useRouter();
+
+const { cookies } = useCookies();
+
 
 const logIn = () => {
-  emit("openLogin", true);
+  if(cookies.isKey("id")){
+    router.push({ path: '/member/profile' });
+  }else{
+    emit("openLogin", true);
+  }
+  
+  
 };
+
+const loginCheck = () => {
+  axios.post('http://localhost/PHP/loginCheck.php',)
+        .then((res) => {
+            if (res.data !== "") {
+              isLogin.value = true;
+            }
+
+            console.log(res.data);
+
+        }).catch(err => console.log(err))
+}
 
 const navItems = [
   { name: "最新消息", link: "/news" },
