@@ -91,6 +91,7 @@ const sectionData = reactive([
 // 決定燈箱是否開啟
 const lightboxIsOpen = ref(null);
 const lightboxData = reactive([]);
+// 這個是要放點擊的那個資料嗎？
 const lightboxData1 = reactive([
   {
     class: "journey1",
