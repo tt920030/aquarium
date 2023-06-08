@@ -146,13 +146,20 @@
             </div>
         </main>
 
-        <!-- google登入 -->
 
-        <div>
-            <!-- icon樣式內容 -->
-            <div id="g_id_onload" data-client_id="706694523939-o7a211c2ma3tdiglm2todss0h3cc07nk.apps.googleusercontent.com"
-                data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost" data-itp_support="true">
-            </div>
+
+
+<!-- google登入 -->
+
+<div>
+    <!-- icon樣式內容 -->
+    <div id="g_id_onload"
+     data-client_id="706694523939-o7a211c2ma3tdiglm2todss0h3cc07nk.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="https://tibamef2e.com"
+     data-itp_support="true">
+</div>
 
             <div class="g_id_signin" data-type="icon" data-shape="circle" data-theme="outline" data-text="signin_with"
                 data-size="large">
@@ -374,6 +381,8 @@ const registerPHP = function () {		//取得資料的方法
 //     }).catch(err => console.log(err))  //錯誤如何處理
 
 // };
+
+
 
 
 

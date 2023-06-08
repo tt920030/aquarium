@@ -23,7 +23,6 @@
 </template>
 <script setup>
 import { onMounted, reactive, ref } from "vue";
-import axios from "axios";
 import Lightbox from "/src/components/FloorCommon/Lightbox.vue";
 import FloorNav from "/src/components/FloorCommon/FloorNav.vue";
 import FloorMain from "/src/components/Floor/FloorMain.vue";
