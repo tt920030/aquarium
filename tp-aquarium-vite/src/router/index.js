@@ -114,6 +114,8 @@ const router = createRouter({
     {
       path: "/game_quiz",
       name: "GameQuiz",
+      // 把header和footer藏起來
+      meta: { hideHeader: true },
       component: () => import("../views/game/GameQuiz.vue"),
     },
     // {
@@ -124,6 +126,7 @@ const router = createRouter({
     {
       path: "/game_puzzle",
       name: "/GamePuzzle",
+      meta: { hideHeader: true },
       component: () => import("../views/game/GamePuzzle.vue"),
     },
 
