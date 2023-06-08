@@ -75,7 +75,20 @@
                     <div class="social">
                         <img src="/src/img/login_fb.svg" alt="">
                         <img src="/src/img/login_twitter.svg" alt="">
-                        <img src="/src/img/login_google.svg" alt="">
+                         <!-- google登入 -->
+                        <div class="icon">
+                            <!-- icon樣式內容 -->
+                            <div id="g_id_onload" data-client_id="706694523939-o7a211c2ma3tdiglm2todss0h3cc07nk.apps.googleusercontent.com"
+                                data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost" data-itp_support="true">
+                            </div>
+
+                            <div class="g_id_signin" data-type="icon" data-shape="circle" data-theme="outline" data-text="signin_with"
+                                data-size="large">
+                            </div>
+
+                            <span id="GOOGLE_STATUS_1"></span>
+                        </div>
+
                     </div>
                 </div>
 
@@ -146,27 +159,8 @@
             </div>
         </main>
 
+       
 
-
-
-<!-- google登入 -->
-
-<div>
-    <!-- icon樣式內容 -->
-    <div id="g_id_onload"
-     data-client_id="706694523939-o7a211c2ma3tdiglm2todss0h3cc07nk.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
-     data-login_uri="https://tibamef2e.com"
-     data-itp_support="true">
-</div>
-
-            <div class="g_id_signin" data-type="icon" data-shape="circle" data-theme="outline" data-text="signin_with"
-                data-size="large">
-            </div>
-
-            <span id="GOOGLE_STATUS_1"></span>
-        </div>
 
 
 
@@ -178,6 +172,7 @@ import "bootstrap";
 import axios from 'axios';
 import { useRouter } from "vue-router";
 import { reactive, ref, onMounted } from "vue";
+import { useCookies } from "vue3-cookies";
 
 const router = useRouter();
 const emit = defineEmits(['close']);
@@ -187,6 +182,8 @@ const type = ref("A");
 const eye = ref("password");
 
 const eyeImg = ref("src/img/login_eye.svg");
+
+const { cookies } = useCookies();
 
 const register = reactive({
     name: true,
@@ -219,7 +216,7 @@ const loginText = reactive({
 });
 
 const close = (e) => {
-    e.stopPropagation();
+    // e.stopPropagation();
     emit('close', false);
 }
 
@@ -246,13 +243,20 @@ const sendEmail = ref('');
 const sendResult = ref();
 const send = function () {
     let params = new URLSearchParams();
+<<<<<<< HEAD
     params.append('email', changeEmailText.email);
     console.log(changeEmailText.email);
     axios.post('http://localhost/emailapi/emailapi.php',
+=======
+    params.append('email', sendEmail.value);
+    axios.post('http://localhost/PHP/emailapi.php',
+>>>>>>> mycode
         params).then((res) => {
             console.log(res.data.success);
             if (res.data.success) {
                 alert("寄送成功");
+                type.value = "A";
+
             } else {
                 alert("寄送失敗");
             }
@@ -260,6 +264,25 @@ const send = function () {
             sendResult.value = res.data.success;
         }).catch(err => console.log(err))
 };
+
+// 確認資料庫有這筆email
+const sendEmailPHP = () => {
+    let params = new URLSearchParams();
+    params.append('email', changeEmailText.email);
+
+
+    axios.post('http://localhost/PHP/sendEmail.php', params)	//使用get或post等取得路徑資料(php)
+
+        .then((res) => {	//回傳後如何處理
+
+            if(res.data == 'Y'){
+                send();
+            }else{
+                alert("無此帳號");
+            }
+
+        }).catch(err => console.log(err))  //錯誤如何處理
+}
 
 const loginButton = () => {
     const send_data = ref(true);
@@ -279,10 +302,9 @@ const loginButton = () => {
     }
 
     if (send_data.value === true) {
-        console.log("ccc");
-        router.push({ path: '/member/profile' });
-
-        // loginPHP();
+        // console.log(loginText.email);
+        // console.log(loginText.password);
+        loginPHP();
     }
 }
 
@@ -340,8 +362,8 @@ const changeEmailButton = () => {
     }
 
     if (send_data.value === true) {
-        // console.log("bbb");
-
+        sendEmailPHP();
+        
     }
 }
 
@@ -357,32 +379,43 @@ const registerPHP = function () {		//取得資料的方法
 
         .then((res) => {	//回傳後如何處理
 
-            // console.log(res);
-            // console.log("ddd");
-
-            // listsData.value = res;
+            if(res.data == 'Y'){
+                alert("註冊成功!請重新登入");
+                type.value = "A";
+            }else{
+                alert("註冊失敗");
+            }
 
         }).catch(err => console.log(err))  //錯誤如何處理
 
 };
 
-// const loginPHP = function(){		//取得資料的方法
-//     let params = new URLSearchParams();
-//     params.append('email', loginText.email);
-//     params.append('password', loginText.password);
+const loginPHP = function(){		//取得資料的方法
+    let params = new URLSearchParams();
+    params.append('email', loginText.email);
+    params.append('password', loginText.password);
 
-//     axios.post('http://localhost/PHP/login.php',params)	//使用get或post等取得路徑資料(php)
 
-//     .then((res)=>{	//回傳後如何處理
+    axios.post('http://localhost/PHP/login.php',params)	//使用get或post等取得路徑資料(php)
 
-//         // console.log(res);
-//         // console.log("ddd");
+    .then((res)=>{	//回傳後如何處理
+        // console.log(res.data);
+        if(res.data && res.data.success === true){
+            //登入成功->導回產品頁
 
-//         // listsData.value = res;
+            // console.log(res.data);
+            alert('登入成功');
+            cookies.set("id", res.data.id);
+            close();
+            router.push({ path: '/member/profile' });
 
-//     }).catch(err => console.log(err))  //錯誤如何處理
+        }else{
+            alert('帳號或密碼錯誤');
+        } 
 
-// };
+    }).catch(err => console.log(err))  //錯誤如何處理
+
+};
 
 
 

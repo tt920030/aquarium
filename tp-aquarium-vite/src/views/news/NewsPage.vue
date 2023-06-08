@@ -25,7 +25,6 @@
                             :items-to-show="1"
                             :autoplay="3000"
                             :infinite="true"
-                            :snapAlign="center"
                             :variable-width="true"
                             :wrapAround="true"
                             
@@ -52,10 +51,12 @@
 </template>
 
 <script setup>
-import { reactive, VueElement } from 'vue';
-import { defineComponent } from 'vue'
+import { onMounted, reactive, VueElement ,defineComponent} from 'vue';
+import { useRouter,useRoute } from 'vue-router'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
+import axios from 'axios';
+
 
 defineComponent({
   name: 'Basic',
@@ -66,7 +67,11 @@ defineComponent({
     Navigation,
   },
 });
+const router = useRouter()
+const route = useRoute()
 
+console.log(router);
+console.log(route.query);
 const slides = reactive(["../../../public/img/news_picture1-1.jpg","../../../public/img/news_picture1-2.jpg","../../../public/img/news_picture1-3.jpg"]);
 
 const news = reactive({
@@ -84,7 +89,39 @@ const news = reactive({
 最後，我們希望大家能夠繼續關注小寶寶的成長，也期待在未來能夠與大家一同分享更多有關他的好消息。`
 
 });
+console.log(this);
+
+const newsPage = (e) => {
+
+
+
+    axios.post('http://localhost/PHP/newspage.php')	//使用get或post等取得路徑資料(php)
+
+        .then((res) => {	//回傳後如何處理
+
+            console.log(res.date);
+
+        }).catch(err => console.log(err))  //錯誤如何處理    
+
+}
+
+onMounted(() => {
+    newsPage();
+});
 </script>
+
+
+<style lang="scss">
+
+.carousel__icon{
+    fill: map-get($color , bgc2 );
+}
+
+.carousel__pagination-button:hover::after, .carousel__pagination-button--active::after{
+    background-color: map-get($color , bgc2 );
+}
+
+</style>
 
 <style lang="scss" scoped>
 @import '../../assets/sass/page/newspage';

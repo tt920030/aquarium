@@ -10,7 +10,7 @@
         <li @click="next()" :class="{'-gray' : currentPage === totalPages}">
             <p id="NEXT">NEXT</p>
             <img src="@/img/news_right.svg" alt="">
-
+            {{ props.totalItems }}
         </li>
 
     </ul>
@@ -18,7 +18,7 @@
 
 <script setup>
 
-import { computed, defineProps, defineEmits, ref, watch ,watchEffect} from 'vue';
+import { computed, defineProps, defineEmits, ref, watch ,watchEffect, onMounted} from 'vue';
 
 
 const props = defineProps(["totalItems", "itemsPerPage", "currentPage", "current"]);
