@@ -270,6 +270,11 @@ const router = createRouter({
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
     },
     {
+      path: "/backstage_login", //自己取之後要連的路徑名稱
+      name: "BackstageLogin", //自己取
+      component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
+    },
+    {
       path: "/axios", //自己取之後要連的路徑名稱
       name: "AxiosTest", //自己取
       component: () => import("../views/AxiosTest.vue"), //路徑連到剛剛建的vue檔

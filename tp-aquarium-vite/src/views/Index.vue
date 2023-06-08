@@ -29,6 +29,7 @@
               <img :src="button.src1" alt="" />
               <img :class="button.class" :src="button.src2" alt="" />
               <p>{{ button.cName }}</p>
+              <p>{{ button.eName }}</p>
             </div>
             <img :src="button.src3" alt="" />
           </RouterLink>
@@ -96,14 +97,10 @@
 
     <!-- index_ad -->
     <div class="index_ad">
-      <div class="index_ad_box">
-        <div class="index_ad_list">
-          <img src="@/img/index_logo1.jpg" alt="" />
-          <img src="@/img/index_logo2.jpg" alt="" />
-          <img src="@/img/index_logo3.jpg" alt="" />
-          <img src="@/img/index_logo4.jpg" alt="" />
-          <img src="@/img/index_logo5.jpg" alt="" />
-          <img src="@/img/index_logo6.jpg" alt="" />
+      <div class="index_ad_box" @mouseenter="enter" @mouseleave="leave">
+        <div class="index_ad_list" :style="{left: left + 'px'}">
+          <img v-for="image in images" :key="image.id" :src="image.src" alt="">
+          <img v-for="image in images" :key="image.id" :src="image.src" alt="">
         </div>
       </div>
     </div>
@@ -225,8 +222,6 @@ const newsPage=reactive([
   },
 ]);
 
-
-
 // index_ad 跑馬燈
 const time = ref(null);
 const left = ref(0);
@@ -239,8 +234,10 @@ const images = reactive([
   { id: 6, src: "../../public/img/index_logo6.jpg" },
 ]);
 
-    let left = 0;
-    let time;
+const move = () => {
+  clearInterval(time.value);
+  time.value = setInterval(() => {
+  left.value -= 2;
 
     if (left.value === -(6 * 200 + 6 * 20)) {
       left.value = 0;
@@ -248,9 +245,9 @@ const images = reactive([
   }, 20);
 };
 
-    box.addEventListener("mouseenter", () => {
-      clearInterval(time);
-    });
+const enter = () => {
+  clearInterval(time.value);
+};
 
 const leave = () => {
   move();

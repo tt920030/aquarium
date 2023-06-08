@@ -117,7 +117,7 @@ const images = ref([
   { id: 1, src: "../../public/img/overnight_slide1.jpg" },
   { id: 2, src: "../../public/img/overnight_slide2.jpg" },
   { id: 3, src: "../../public/img/overnight_slide3.jpg" },
-])
+]);
 
 const move = () => {
   clearInterval(time.value);
