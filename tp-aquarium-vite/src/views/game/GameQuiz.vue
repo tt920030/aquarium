@@ -450,9 +450,7 @@ onMounted(() => {
 }
 
 .quiz_box .quiz_header .time_line{
-  @include mobile {
-    width: 80%;
-  }
+
     position: absolute;
     bottom: 0px;
     left: 0px;
