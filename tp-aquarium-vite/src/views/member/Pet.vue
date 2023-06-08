@@ -6,7 +6,11 @@
         <form method="post" action="" class="area">
             <div class="fish" :class="{'-chose': item.id == memberData.chose_pet}" v-for="item in Pet" :key="item.id">
                 <input type="radio" :id="item.id" name="chose_pet" :value="item.id" v-model="pet_id">
-                <label for="1">
+                {{ item }}
+                {{ item.id }}
+
+                {{memberData['pet' + item.id] === 1 }}
+                <label >
                     <div class="container">
                         <img :src="'../../../public/img/' + item.on_picture" alt="">
                     </div>
