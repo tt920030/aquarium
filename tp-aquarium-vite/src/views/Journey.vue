@@ -1,71 +1,50 @@
 <template>
   <div class="journey">
-    <Header></Header>
     <main>
       <!-- journer banner -->
       <div class="journey_banner_content">
         <h2>台北海生館</h2>
         <h1>行程介紹</h1>
-        <h4>
-          遊海洋 、探生物<br />都在台北海生館<br />觀賞海底奇景<br />體驗海洋生態
-        </h4>
+        <h4>遊海洋 、探生物<br />都在台北海生館<br />觀賞海底奇景<br />體驗海洋生態</h4>
       </div>
 
       <div class="journey_banner">
-        <div class="pic_1"></div>
-        <div class="pic_2"></div>
-        <div class="pic_3"></div>
-        <div class="pic_4"></div>
-        <div class="pic_5"></div>
-        <div class="pic_6"></div>
+        <div v-for="pic in picPage" :key="pic.id" :class="pic.name"></div>
       </div>
 
-      <svg
-        width="0px"
-        viewPort="0 0 1920 1920"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg width="0px" viewPort="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
         <clipPath id="foam_1">
           <path
-            d="M132.809 0C192.343 0 222 64.1411 222 123.716C222 178.216 187.272 231 132.809 231C66.1537 231 0 190.417 0 123.716C0 52.8075 61.9501 0 132.809 0Z"
-          />
+            d="M132.809 0C192.343 0 222 64.1411 222 123.716C222 178.216 187.272 231 132.809 231C66.1537 231 0 190.417 0 123.716C0 52.8075 61.9501 0 132.809 0Z"/>
         </clipPath>
         <clipPath id="foam_2">
           <path
-            d="M94.4387 0.00158853C139.429 0.302741 165.195 45.37 179.01 88.3187C192.706 130.9 196.856 181.185 161.489 208.451C123.798 237.508 70.2004 230.421 32.7042 201.112C-1.19687 174.613 -6.32664 128.365 6.321 87.1628C19.742 43.4417 48.8327 -0.303687 94.4387 0.00158853Z"
-          />
+            d="M94.4387 0.00158853C139.429 0.302741 165.195 45.37 179.01 88.3187C192.706 130.9 196.856 181.185 161.489 208.451C123.798 237.508 70.2004 230.421 32.7042 201.112C-1.19687 174.613 -6.32664 128.365 6.321 87.1628C19.742 43.4417 48.8327 -0.303687 94.4387 0.00158853Z"/>
         </clipPath>
         <clipPath id="foam_3">
           <path
-            d="M222.317 0.364088C292.665 3.75065 346.668 53.5755 371.904 119.356C403.146 200.793 425.151 299.291 358.628 355.679C278.657 423.466 158.528 434.202 74.6374 371.334C-6.21459 310.744 -16.6558 196.342 20.7218 102.45C51.5311 25.0579 139.146 -3.63985 222.317 0.364088Z"
-          />
+            d="M222.317 0.364088C292.665 3.75065 346.668 53.5755 371.904 119.356C403.146 200.793 425.151 299.291 358.628 355.679C278.657 423.466 158.528 434.202 74.6374 371.334C-6.21459 310.744 -16.6558 196.342 20.7218 102.45C51.5311 25.0579 139.146 -3.63985 222.317 0.364088Z"/>
         </clipPath>
         <clipPath id="foam_4">
           <path
-            d="M98.2735 5.38836C133.152 0.467112 174.935 -8.19893 197.892 18.238C221.199 45.0769 205.114 84.6553 197.039 119.123C189.016 153.366 184.839 193.638 153.097 209.438C121.011 225.409 83.1359 209.459 52.3574 191.141C25.4821 175.146 5.67021 149.478 0.842331 118.822C-3.61051 90.5471 10.1525 63.8917 28.8834 42.0844C46.7506 21.2826 70.9558 9.24277 98.2735 5.38836Z"
-          />
+            d="M98.2735 5.38836C133.152 0.467112 174.935 -8.19893 197.892 18.238C221.199 45.0769 205.114 84.6553 197.039 119.123C189.016 153.366 184.839 193.638 153.097 209.438C121.011 225.409 83.1359 209.459 52.3574 191.141C25.4821 175.146 5.67021 149.478 0.842331 118.822C-3.61051 90.5471 10.1525 63.8917 28.8834 42.0844C46.7506 21.2826 70.9558 9.24277 98.2735 5.38836Z"/>
         </clipPath>
         <clipPath id="foam_5">
           <path
-            d="M101.075 3.0382C126.087 4.79428 151.876 6.41364 169.288 24.4786C188.779 44.7001 202.401 73.3103 194.914 100.395C187.679 126.565 159.551 137.973 134.829 149.132C111.229 159.785 86.1613 169.437 61.8818 160.444C34.7774 150.404 12.7773 128.764 4.77162 100.959C-3.79138 71.2178 -1.97827 36.0303 19.7112 13.9767C39.9125 -6.56376 72.3556 1.02177 101.075 3.0382Z"
-          />
+            d="M101.075 3.0382C126.087 4.79428 151.876 6.41364 169.288 24.4786C188.779 44.7001 202.401 73.3103 194.914 100.395C187.679 126.565 159.551 137.973 134.829 149.132C111.229 159.785 86.1613 169.437 61.8818 160.444C34.7774 150.404 12.7773 128.764 4.77162 100.959C-3.79138 71.2178 -1.97827 36.0303 19.7112 13.9767C39.9125 -6.56376 72.3556 1.02177 101.075 3.0382Z"/>
         </clipPath>
         <clipPath id="foam_6">
           <path
-            d="M195.383 2.17794C241.131 7.22373 281.359 31.5506 308.462 68.6958C334.026 103.732 338.895 147.107 332.406 189.968C325.066 238.457 314.7 293.157 271.073 315.679C226.601 338.637 175.839 314.385 129.901 294.512C80.3869 273.091 24.2279 252.773 7.36071 201.591C-10.9039 146.168 5.88683 82.2226 45.9414 39.7413C82.9874 0.450862 141.665 -3.74675 195.383 2.17794Z"
-          />
+            d="M195.383 2.17794C241.131 7.22373 281.359 31.5506 308.462 68.6958C334.026 103.732 338.895 147.107 332.406 189.968C325.066 238.457 314.7 293.157 271.073 315.679C226.601 338.637 175.839 314.385 129.901 294.512C80.3869 273.091 24.2279 252.773 7.36071 201.591C-10.9039 146.168 5.88683 82.2226 45.9414 39.7413C82.9874 0.450862 141.665 -3.74675 195.383 2.17794Z"/>
         </clipPath>
       </svg>
 
       <!-- journey slider -->
       <div class="journey_slider">
-        <div class="journey_slider_box">
-          <div class="journey_slider_list">
-            <img src="../img/journey_slide1.jpg" alt="" />
-            <img src="../img/journey_slide2.jpg" alt="" />
-            <img src="../img/journey_slide3.jpg" alt="" />
-            <img src="../img/journey_slide4.jpg" alt="" />
-            <img src="../img/journey_slide5.jpg" alt="" />
+        <div class="journey_slider_box" @mouseenter="enter" @mouseleave="leave">
+          <div class="journey_slider_list" :style="{left: left + 'px'}">
+            <img v-for="image in images" :key="image.id" :src="image.src" alt="">
+            <img v-for="image in images" :key="image.id" :src="image.src" alt="">
           </div>
         </div>
       </div>
@@ -90,7 +69,7 @@
               <div class="journey_intro_content">
                 <div class="journey_intro_main">
                   <img src="@/img/journey_intro_icon.svg" alt="" />
-                  <h4>夜宿海生館-兩天一夜</h4>                   
+                  <h4>夜宿海生館-兩天一夜</h4>
                   <p>
                     夜宿海生館是一個兩天一夜的活動，將帶您前往探索台灣水域區的豐富生態和文化。<br />進行夜間探索、聆聽海洋生物的聲音，更有機會觀察到燈籠魚、海蜇等特殊生物，兩天一夜的行程充滿探索和學習的樂趣，讓您深入了解台灣水域區的獨特之處。
                   </p>
@@ -113,7 +92,7 @@
                   <img src="@/img/journey_intro_icon.svg" alt="" />
                   <h4>水中留影</h4>
                   <p>
-                    水中拍照是一種非常有趣的活動，可以在游泳池或海灘等水域進行。<br/>通過使用專業的防水相機或手機殼，您可以在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻技巧，如水滴拍攝、水面倒影等，以獲得令人驚嘆的效果。
+                    水中拍照是一種非常有趣的活動，可以在游泳池或海灘等水域進行。<br />通過使用專業的防水相機或手機殼，您可以在水中自由拍攝照片和影片，捕捉美麗的海底風景、游泳的動作以及快樂的時刻技巧，如水滴拍攝、水面倒影等，以獲得令人驚嘆的效果。
                   </p>
                 </div>
 
@@ -211,7 +190,9 @@
                       晚上，您將入住海生館，進行夜間探索、聆聽海洋生物的聲音，更有機會觀察到燈籠魚、海蜇等特殊生物。第二天，您將前往海洋保護區進行浮潛活動，近距離觀察海洋生態，並且參與海洋保
                       育行動。這個兩天一夜的行程充滿探索和學習的樂趣，讓您深入了解台灣水域區的獨特之處。
                     </p>
-                    <RouterLink to="/overnight" class="btn" @click="rescroll">了解更多</RouterLink>
+                    <RouterLink to="/overnight" class="btn" @click="rescroll"
+                      >了解更多</RouterLink
+                    >
                   </li>
                 </ul>
               </div>
@@ -302,9 +283,9 @@
                 <h4 class="accordion_header">磷蝦小管家：餵魚體驗活動</h4>
                 <ul>
                   <li>
-                    <img src="@/img/journey_intro5.jpg" alt="" /></li>
+                    <img src="@/img/journey_intro5.jpg" alt="" />
+                  </li>
                   <li>
-                    
                     <h4>快來親自體會磷蝦餵魚的樂趣吧!</h4>
                     <p>
                       在海生館，你可以參加「磷蝦小管家」活動，親身體驗磷蝦餵魚的樂趣！在活動中，你將穿上特殊的衣物，跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。當磷蝦在餌料中出現時，你會感到一陣刺鼻的氣味，但
@@ -320,22 +301,25 @@
         </div>
       </section>
       
-      <RouterLink to="/ticket">aaaaaa</RouterLink>
     </main>
-
-    <Footer></Footer>
   </div>
   <RouterView />
 </template>
 
-
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import Header from "/src/components/Header.vue";
-import Footer from "/src/components/Footer.vue";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import $ from "jquery";
+
+const picPage=reactive([
+  { id: 1, name: 'pic_1' },
+  { id: 2, name: 'pic_2' },
+  { id: 3, name: 'pic_3' },
+  { id: 4, name: 'pic_4' },
+  { id: 5, name: 'pic_5' },
+  { id: 6, name: 'pic_6' }
+]);
 
 $(function () {
   // 燈箱()
@@ -373,46 +357,44 @@ $(function () {
   // $(".accordion_header").first().click();
 });
 //滾輪復原
-const rescroll = function(){
+const rescroll = function () {
   document.querySelector("body").style.overflow = "visible";
   window.scrollTo(0, 0);
-}
-// index_ad 跑馬燈
-window.onload = function() {
-
-let box = document.querySelector('.journey_slider_box');
-let list = document.querySelector('.journey_slider_list');
-
-// 複製一份讓中間不間斷
-list.innerHTML += list.innerHTML;
-
-let left = 0;
-let time = 0;
-
-move();
-
-function move(){
-    clearInterval(time);
-    time = setInterval(() => {
-    left -= 2;
-
-        if( left === -(324 + 326 + 3 * 390 + 5 * 20)){
-            left = 0;
-        }
-
-    list.style.left = left + "px"
-    }, 20)
 };
 
+// journey 跑馬燈
+const left = ref(0);
+const time = ref(null);
+const images = ref([
+  { id: 1, src: "../../public/img/journey_slide1.jpg" },
+  { id: 2, src: "../../public/img/journey_slide2.jpg" },
+  { id: 3, src: "../../public/img/journey_slide3.jpg" },
+  { id: 4, src: "../../public/img/journey_slide4.jpg" },
+  { id: 5, src: "../../public/img/journey_slide5.jpg" },
+])
 
-box.addEventListener('mouseenter', () => {
-    clearInterval(time);
-});
+const move = () => {
+  clearInterval(time.value);
+  time.value = setInterval(() => {
+  left.value -= 2;
 
-box.addEventListener('mouseleave', () => {
-    move();
-});
+    if (left.value === -(324 + 326 + 3 * 390 + 5 * 20)) {
+      left.value = 0;
+    }
+  }, 20);
 };
+
+const enter = () => {
+  clearInterval(time.value);
+};
+
+const leave = () => {
+  move();
+};
+
+onMounted(() => {
+  move();
+});
 
 </script>
 
@@ -760,20 +742,19 @@ box.addEventListener('mouseleave', () => {
     justify-content: center;
     align-items: center;
     // margin-top: 420px;
-    .journey_slider_box{
+    .journey_slider_box {
       position: relative;
       width: 100%;
       height: 200px;
       overflow: hidden;
 
-      .journey_slider_list{
+      .journey_slider_list {
         position: absolute;
         display: flex;
         gap: 20px;
         left: 0;
       }
     }
-
   }
 
   @include wrapper {
@@ -800,7 +781,6 @@ box.addEventListener('mouseleave', () => {
       margin-bottom: 420px;
 
       ul {
-        
         li {
           position: relative;
           display: flex;
