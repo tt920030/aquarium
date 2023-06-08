@@ -530,6 +530,7 @@ onMounted(() => {
     color: #23903c;
     border-color: #23903c;
     background: #d4edda;
+    font-weight: bold;
 }
 
 .option_list .option .icon.cross{
