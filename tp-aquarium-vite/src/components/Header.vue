@@ -41,7 +41,7 @@
               <i class="bi bi-moon-stars-fill"></i>
             </button>
           </li>
-          <li><img class="icons" src="src/img/header_member.svg" alt="" @click="logIn"/></li>
+          <li @click="logIn()"><img class="icons" src="src/img/header_member.svg" alt="" /></li>
           <li>
             <RouterLink to="/cart"
               ><img class="icons" src="src/img/header_cart.svg" alt=""
