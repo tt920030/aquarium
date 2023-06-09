@@ -27,7 +27,9 @@
               <i class="bi bi-moon-stars-fill"></i>
             </button>
           </li>
-          <li @click="logIn()"><img class="icons" src="src/img/header_member.svg" alt="" /></li>
+          <li @click="logIn()">
+            <img class="icons" src="/src/img/header_member.svg" alt="" />
+          </li>
           <li>
             <RouterLink to="/cart"><img class="icons cart-icon" src="src/img/header_cart.svg" alt="" />
               <div class="cart-count" v-if="cart"></div>
@@ -86,16 +88,16 @@ const logIn = () => {
 };
 
 const loginCheck = () => {
-  axios.post('http://localhost/PHP/loginCheck.php',)
+  axios.post(`${import.meta.env.VITE_API_URL}loginCheck.php`)
     .then((res) => {
       if (res.data !== "") {
         isLogin.value = true;
       }
 
       console.log(res.data);
-
-    }).catch(err => console.log(err))
-}
+    })
+    .catch((err) => console.log(err));
+};
 
 const navItems = [
   { name: "最新消息", link: "/news" },
@@ -123,23 +125,22 @@ const navItems = [
 // });
 const is_open = ref(false);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const navIcon = document.querySelector('header .content nav i');
-  const menu = document.querySelector('header .content .menu');
+document.addEventListener("DOMContentLoaded", () => {
+  const navIcon = document.querySelector("header .content nav i");
+  const menu = document.querySelector("header .content .menu");
 
-  navIcon.addEventListener('click', () => {
+  navIcon.addEventListener("click", () => {
     if (!is_open.value) {
-      menu.style.right = '0px';
-      menu.style.display = 'block';
+      menu.style.right = "0px";
+      menu.style.display = "block";
       is_open.value = true;
     } else {
-      menu.style.right = '-100%';
-      menu.style.display = 'none';
+      menu.style.right = "-100%";
+      menu.style.display = "none";
       is_open.value = false;
     }
   });
 });
-
 
 // switch color
 const flag = ref(false);
@@ -215,16 +216,15 @@ const rainWeatherState = ref(""); //天氣型態
 const get_weather_img = computed(() => {
   switch (true) {
     case rainWeatherState.value.match(/雨/g):
-      return "./src/img/weather_elements4.png";
+      return "/src/img/weather_elements4.png";
     case rainWeatherState.value.match(/晴/g):
-      return "./src/img/weather_elements3.png";
+      return "/src/img/weather_elements3.png";
     case rainWeatherState.value.match(/陰/g):
-      return "./src/img/weather_elements2.png";
+      return "/src/img/weather_elements2.png";
     default:
-      return "./src/img/weather_elements1.png";
+      return "/src/img/weather_elements1.png";
   }
 });
-
 </script>
 
 <style lang="scss" scoped>
