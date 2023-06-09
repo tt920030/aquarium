@@ -10,7 +10,6 @@
         <li @click="next()" :class="{'-gray' : currentPage === totalPages}">
             <p id="NEXT">NEXT</p>
             <img src="@/img/news_right.svg" alt="">
-            {{ props.totalItems }}
         </li>
 
     </ul>

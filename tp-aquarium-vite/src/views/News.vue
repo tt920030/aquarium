@@ -6,9 +6,9 @@
 
         <main class="wrapper list">
             <ul>
-                <!-- <RouterLink v-for="item in items.slice(9*(page.currentPage - 1) ,9*page.currentPage)" :to="{ path: '/news/news_page' }" :key="item.id" @click="toNewsPage($event)"> -->
-                <a v-for="item in items.slice(page.itemsPerPage*(page.currentPage - 1) ,page.itemsPerPage*page.currentPage)" :key="item.id" >
-                    <li :data-id="item.id" @click="toNewsPage($event)">
+                <RouterLink v-for="item in items.slice(9*(page.currentPage - 1) ,9*page.currentPage)" :to="{ path: `/news/${item.id}`}" :key="item.id">
+                <!-- <a v-for="item in items.slice(page.itemsPerPage*(page.currentPage - 1) ,page.itemsPerPage*page.currentPage)" :key="item.id" > -->
+                    <li :data-id="item.id" >
                         <div class="container">
                             <img class="picture" :src="`../../public/img/${item.src}`" alt="">
                             <img class="wave" src="../img/news_bg.svg" alt="">
@@ -21,9 +21,9 @@
                             </a>
                         </div>
                     </li>
-                </a>
+                <!-- </a> -->
                     
-                <!-- </RouterLink> -->
+                </RouterLink>
 
             </ul>
         </main>
@@ -50,7 +50,7 @@ const router = useRouter();
 // 頁數
 const page = reactive({
     // totalItems: items.length,
-    itemsPerPage: 4,
+    itemsPerPage: 9,
     currentPage: 1
 });
 
@@ -61,7 +61,7 @@ const next = (n) => {
 };
 
 const news = () => {
-    axios.post('http://localhost/PHP/news.php')	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/news.php')	//使用get或post等取得路徑資料(php)
 
    .then((res) => {	//回傳後如何處理
 
@@ -85,23 +85,23 @@ onMounted(() => {
     news();
 });
 
-const toNewsPage = (e) => {
+// const toNewsPage = (e) => {
 
-    const id = e.target.closest('li').getAttribute('data-id');
+//     const id = e.target.closest('li').getAttribute('data-id');
 
-    let params = new URLSearchParams();
-    params.append('id', id);
+//     let params = new URLSearchParams();
+//     params.append('id', id);
 
 
-    axios.post('http://localhost/PHP/newspage.php', params)	//使用get或post等取得路徑資料(php)
+//     axios.post('http://localhost/g6/newspage.php', params)	//使用get或post等取得路徑資料(php)
 
-        .then((res) => {	//回傳後如何處理
+//         .then((res) => {	//回傳後如何處理
 
-            router.push({ path: '/news/news_page' });
+//             router.push({ path: '/news/news_page' });
 
-        }).catch(err => console.log(err))  //錯誤如何處理    
+//         }).catch(err => console.log(err))  //錯誤如何處理    
 
-}
+// }
 </script>
 
 <style lang="scss" scoped>

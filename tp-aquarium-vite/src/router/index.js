@@ -193,10 +193,10 @@ const router = createRouter({
       component: () => import("../views/News.vue"),
     },
     {
-      path: "/news/news_page",
+      path: "/news/:news_pageid",
       name: "NewsPage",
       meta: { title: "最新消息" },
-      component: () => import("../views/news/NewsPage.vue"),
+      component: () => import("../views/news/NewsPageid.vue"),
     },
 
     {
