@@ -270,6 +270,7 @@ const router = createRouter({
       path: "/journeyCreate", //自己取之後要連的路徑名稱
       name: "Journey_Create", //自己取
       meta: { title: "台北海生館後台｜新增行程" },
+      meta: { hideHeader: true },
       component: () => import("../views/JourneyCreate.vue"), //路徑連到剛剛建的vue檔
     },
     {
