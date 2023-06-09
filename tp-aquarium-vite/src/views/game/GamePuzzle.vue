@@ -1,11 +1,12 @@
 <template>
+  <LogIn v-if="!hide" @close="openLogin"></LogIn>
   <div id="particles-js"></div>
 
   <!-- 回首頁按鈕 -->
   <button class="back_to_home">
     <img src="../../img/logosvg.svg" alt="LOGO SVG" />
-    <RouterLink to="/">
-      <h5>回首頁</h5>
+    <RouterLink to="/game_index">
+      <h5>回小遊戲</h5>
     </RouterLink>
   </button>
 
@@ -20,7 +21,7 @@
 
   <!-- style="display: block;" -->
   <div class="lightbox_out">
-    <div class="lightbox" style="display: block;">
+    <div class="lightbox" style="display: none;">
       <div class="lightbox-content">
         <span class="close">&times;</span>
         <img src="../../img/crownshark.png" alt="Image">
@@ -39,11 +40,11 @@
     </div>
 
     <!-- 儲存折扣碼是否前往登入 -->
-    <div class="game_savecoupon" v-if="!logIn">
+    <div class="game_savecoupon hide">
       <h4>登入會員即可儲存折價券！<br>是否確定前往登入頁面？</h4>
       
-      <button class="game_savecoupon_sure_btn"><p>確定</p></button>
-      <button class="game_savecoupon_cancel_btn"><p>取消</p></button>
+      <button @click="openLogIn();close()" class="game_savecoupon_sure_btn"><p>確定</p></button>
+      <button @click="allClose()" class="game_savecoupon_cancel_btn"><p>取消</p></button>
     </div>
 
   </div>
@@ -56,7 +57,7 @@
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 const id = cookies.get("id");
-
+const hide = ref(true);
 import Puzzle from "/src/js/puzzle.js";
 // import Puzzle from "/src/js/save_coupon.js";
 
@@ -69,7 +70,19 @@ const bg = function () {
 
 
 }
-
+const openLogin = function(){
+  hide.value = true;
+}
+const close = function(){
+  document.querySelector(".game_savecoupon").classList.add("hide");
+}
+const allClose = function(){
+  document.querySelector(".game_savecoupon").classList.add("hide");
+  document.querySelector(".lightbox").style.display="none";
+}
+const openLogIn = function(){
+  hide.value = false;
+}
 // 拼圖背景
 onMounted(() => {
     
@@ -322,7 +335,7 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 125px;
+  width: 150px;
   height: 45px;
   border: none;
   border-radius: 10px;
@@ -472,6 +485,9 @@ onMounted(() => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    &.hide{
+      display: none;
+    }
 }
 
 .game_savecoupon button {

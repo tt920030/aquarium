@@ -228,7 +228,13 @@ const addTotal = function () {
 
     });
     total.value = totalCount;
-
+    if (total.value === 0) {
+        for (const key in localStorage) {
+            if (key.startsWith("cart")) {
+                localStorage.removeItem(key);
+            }
+        }
+    }
 }
 //改變商品數量要修改localstorage
 const amountChange = function () {
