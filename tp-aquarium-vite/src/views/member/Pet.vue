@@ -1,78 +1,22 @@
 <template>
     <div class="pet wrapper">
-        <h3>目前點數:&nbsp<span>2</span>點</h3>
+        <h3>目前點數:&nbsp<span>{{ memberData.point}}</span>點</h3>
         <p>-&nbsp每消費500元就可獲得1點</p>
 
         <form method="post" action="" class="area">
-            <div class="fish -chose">
-                <input type="radio" id="1" name="chose_pet" value="1" checked>
-                <label for="1">
+            <div class="fish" :class="{'-chose': item.id == memberData.chose_pet}" v-for="item in Pet" :key="item.id">
+                <input type="radio" :id="item.id" name="chose_pet" :value="item.id" v-model="pet_id">
+                {{ item }}
+                {{ item.id }}
+
+                {{memberData['pet' + item.id] === 1 }}
+                <label >
                     <div class="container">
-                        <img src="@/img/member_pet1_on.png" alt="">
+                        <img :src="'../../../public/img/' + item.on_picture" alt="">
                     </div>
 
-                    <p class="name">小丑魚</p>
-                    <p class="point">1點</p>
-                </label>
-
-            </div>
-            <div class="fish ">
-                <input type="radio" id="2" name="chose_pet" value="2">
-                <label for="2">
-                    <div class="container">
-                        <img src="@/img/member_pet2_off.png" alt="">
-                    </div>
-
-                    <p class="name">???</p>
-                    <p class="point">5點</p>
-                </label>
-
-            </div>
-            <div class="fish">
-                <input type="radio" id="3" name="chose_pet" value="3">
-                <label for="3">
-                    <div class="container">
-                        <img src="@/img/member_pet3_off.png" alt="">
-                    </div>
-
-                    <p class="name">???</p>
-                    <p class="point">10點</p>
-                </label>
-
-            </div>
-            <div class="fish">
-                <input type="radio" id="4" name="chose_pet" value="4">
-                <label for="4">
-                    <div class="container">
-                        <img src="@/img/member_pet4_off.png" alt="">
-                    </div>
-
-                    <p class="name">???</p>
-                    <p class="point">15點</p>
-                </label>
-
-            </div>
-            <div class="fish">
-                <input type="radio" id="5" name="chose_pet" value="5">
-                <label for="5">
-                    <div class="container">
-                        <img src="@/img/member_pet5_off.png" alt="">
-                    </div>
-
-                    <p class="name">???</p>
-                    <p class="point">20點</p>
-                </label>
-
-            </div>
-            <div class="fish">
-                <input type="radio" id="6" name="chose_pet" value="6">
-                <label for="6">
-                    <div class="container">
-                        <img src="@/img/member_pet6_off.png" alt="">
-                    </div>
-
-                    <p class="name">???</p>
-                    <p class="point">25點</p>
+                    <p class="name">{{ item.name }}</p>
+                    <p class="point">{{ item.point }}點</p>
                 </label>
 
             </div>
@@ -80,14 +24,84 @@
                 <button type="submit" class="btn1">
                     <p>更換寵物</p>
                 </button>
-            </div>
+            </div> 
 
         </form>
     </div>
 </template>
 
 <script setup>
+import axios from 'axios';
+import { onMounted, reactive , ref} from 'vue';
+import { useCookies } from "vue3-cookies";
 
+const { cookies } = useCookies();
+
+const Pet = reactive([]);
+
+const id = cookies.get("id");
+
+const pet_id = ref();
+
+const memberData = reactive({
+    pet1: "",
+    pet2: "",
+    pet3: "",
+    pet4: "",
+    pet5: "",
+    pet6: "",
+    point: "",
+    chose_pet: ""
+}); 
+
+const getInfo = () => {
+
+    axios.post('http://localhost/PHP/getInfo.php')
+    .then((res) => {
+
+        // console.log(res.data);
+        
+        res.data.forEach(item => {
+            Pet.push({
+                id: item.ID,
+                name: item.NAME,
+                on_picture: item.ON_PICTURE,
+                off_picture: item.OFF_PICTURE,
+                point:item.POINT
+            });
+        });
+        
+    }).catch(err => console.log(err))
+}
+
+const getPet = () => {
+
+    let params = new URLSearchParams();
+    params.append('id', id);
+
+    axios.post('http://localhost/PHP/profile.php',params)
+    .then((res) => {
+
+        console.log(res.data);
+        memberData.pet1 = res.data[0].PET1;
+        memberData.pet2 = res.data[0].PET2;
+        memberData.pet3 = res.data[0].PET3;
+        memberData.pet4 = res.data[0].PET4;
+        memberData.pet5 = res.data[0].PET5;
+        memberData.pet6 = res.data[0].PET6;
+        memberData.point = res.data[0].POINT;
+        memberData.chose_pet = res.data[0].CHOSE_PET_ID;
+
+
+        
+    }).catch(err => console.log(err))
+}
+
+onMounted(() => {
+    getInfo();
+    getPet();
+    console.log(memberData);
+});
 </script>
 
 <style lang="scss" scoped>

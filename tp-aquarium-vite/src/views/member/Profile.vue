@@ -2,11 +2,11 @@
     
     
     <div class="profile wrapper ">
-        <Photo v-if="show" @closePhoto="showPhoto()" ></Photo>
+        <Photo v-if="show" @closePhoto="showPhoto()" :id="profileText.photo_id"></Photo>
         <div class="top">
             <div class="inner-left">
                 <div class="photo-area">
-                    <img src="@/img/member_photo1.png" alt="">
+                    <img :src="'../../../public/img/' + profileText.photo" alt="">
                 </div>
                 <button class="btn1" @click="showPhoto()">
                     <p>更換頭貼</p>
@@ -17,7 +17,7 @@
             <div class="inner-right">
                 <div class="input">
                     <label for="email">email</label>
-                    <input type="email" id="email" name="email" disabled="disabled" value="123@gmail.com">
+                    <input type="email" id="email" name="email" disabled="disabled" v-model.trim="profileText.email">
                 </div>
 
             </div>
@@ -26,41 +26,41 @@
             <form action="post" method="" class=""  @submit.prevent="onSubmit">
                 <div class="input">
                     <label for="name">姓名</label>
-                    <input type="text" id="name" name="name" :disabled="isButtonDisabled" value="王小明" :class="{ '-on' : !isButtonDisabled }">
+                    <input type="text" id="name" name="name" :disabled="isButtonDisabled" :class="{ '-on' : !isButtonDisabled }" v-model.trim="profileText.name">
                     <div class="invalid-feedback">此欄位必填</div>
                 </div>
                 <div class="input">
                     <label for="sex">性別</label>
-                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" v-if="isButtonDisabled">
-                    <select name="sex" id="sex" v-else  class="text" :class="{ '-on' : !isButtonDisabled }">
-                        <option value="無">請選擇</option>
-                        <option value="女">女</option>
-                        <option value="男">男</option>
+                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" v-if="isButtonDisabled" v-model.trim="profileText.sex">
+                    <select name="sex" id="sex" v-else  class="text" :class="{ '-on' : !isButtonDisabled }" v-model="profileText.sex">
+                        <option value="null">請選擇</option>
+                        <option value="0">女</option>
+                        <option value="1">男</option>
                     </select>
                 </div>
                 <div class="input">
                     <label for="birthday">生日</label>
-                    <input type="date" id="birthday" name="birthday" :disabled="isButtonDisabled" :class="{ '-on' : !isButtonDisabled }">
+                    <input type="date" id="birthday" name="birthday" :disabled="isButtonDisabled" :class="{ '-on' : !isButtonDisabled }" v-model="profileText.birthday">
                 </div>
                 <div class="input">
                     <label for="phone">手機</label>
-                    <input type="phone" id="phone" name="phone" :disabled="isButtonDisabled" value="0912345678" :class="{ '-on' : !isButtonDisabled }">
+                    <input type="phone" id="phone" name="phone" :disabled="isButtonDisabled" :class="{ '-on' : !isButtonDisabled }" v-model.trim="profileText.phone">
                 </div>
                 <div class="input">
                     <label for="password">密碼</label>
-                    <input :type="type" id="password" name="password" value="Aa1234" disabled>
+                    <input :type="type" id="password" name="password" disabled v-model.trim="profileText.password">
                     <div class="invalid-feedback">此欄位必填</div>
                     <button class="change" v-if="!isButtonDisabled" @click="changePassword">修改</button>
                 </div>
                 <div class="input">
-                    <label for="address">地址</label>
-                    <input type="text" id="address" name="address" :disabled="isButtonDisabled" :class="{ '-on' : !isButtonDisabled }">
+                    <label for="address">地址</label> 
+                    <input type="text" id="address" name="address" :disabled="isButtonDisabled" :class="{ '-on' : !isButtonDisabled }" v-model.trim="profileText.address">
                 </div>
 
                 <div class="block">
-                    <button type="submit" class="btn1" @click="changeDisabled($event)">
+                    <button type="button" class="btn1" @click="changeDisabled($event)">
                         <h4 v-if="isButtonDisabled">修改資料</h4>
-                        <h4 v-else>確認修改</h4>
+                        <h4 v-else @click="changePofile($event)">確認修改</h4>
                     </button>
 
                 </div>
@@ -74,12 +74,12 @@
 </template>
 
 <script setup>
-import { onMounted, ref, defineEmits } from 'vue';
+import { onMounted, ref, defineEmits, reactive } from 'vue';
+import { useCookies } from "vue3-cookies";
 import Photo from '@/components/Photo.vue';
 import "bootstrap";
 import ChangePassword from '@/components/ChangePassword.vue';
-
-import $ from "jquery";
+import axios from 'axios';
 
 
 const show = ref(false);
@@ -89,6 +89,20 @@ const isButtonDisabled = ref(true);
 const openPassword = ref(false);
 
 const type = ref("password");
+
+const { cookies } = useCookies();
+
+const profileText = reactive({
+    email: "",
+    name: "",
+    sex: "",
+    birthday: "",
+    phone: "",
+    password: "",
+    address: "",
+    photo: "",
+    photo_id: ""
+});
 
 const emit = defineEmits(["showPassword"]);
 
@@ -109,6 +123,82 @@ const changeDisabled = (e) => {
 const changePassword = () => {
     openPassword.value = !openPassword.value;
 }
+
+const id = cookies.get("id");
+
+const getProfile = () => {
+
+    let params = new URLSearchParams();
+    params.append('id', id);
+
+    axios.post('http://localhost/PHP/profile.php',params)
+    .then((res) => {
+
+        // console.log(res.data[0]);
+        profileText.email = res.data[0].EMAIL;
+        profileText.name = res.data[0].NAME;
+        profileText.sex = res.data[0].SEX;
+        profileText.birthday = res.data[0].BIRTHDAY;
+        profileText.phone = res.data[0].PHONE;
+        profileText.password = res.data[0].PASSWORD;
+        profileText.address = res.data[0].ADDRESS;
+        profileText.photo_id = res.data[0].PHOTO_ID;
+
+        photo();
+        
+    }).catch(err => console.log(err))
+}
+
+const changePofile = () => {
+
+    // console.log(id);
+    // console.log(profileText.email);
+    // console.log(profileText.name);
+    // console.log(profileText.sex);
+    // console.log(profileText.birthday);
+    // console.log(profileText.phone);
+    // console.log(profileText.address);
+    
+    let params = new URLSearchParams();
+    params.append('id', id);
+    params.append('email', profileText.email);
+    params.append('password', profileText.password);
+    params.append('name', profileText.name);
+    params.append('sex', profileText.sex);
+    params.append('birthday', profileText.birthday);
+    params.append('phone', profileText.phone);
+    params.append('address', profileText.address);
+
+    axios.post('http://localhost/PHP/changeProfile.php',params)
+    .then((res) => {
+
+        // console.log(res.data[0].EMAIL);
+        getProfile();
+    }).catch(err => console.log(err))
+}
+
+const photo = () => {
+    let params = new URLSearchParams();
+    params.append('photo_id', profileText.photo_id);
+
+    // console.log(profileText.photo_id);
+
+
+    axios.post('http://localhost/PHP/photoName.php',params)
+    .then((res) => {
+
+        // console.log(res.data);
+        profileText.photo = res.data[0].PHOTO;
+        
+    }).catch(err => console.log(err))
+}
+
+onMounted(() => {
+    getProfile();
+    
+})
+
+
 
 
 </script>

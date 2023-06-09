@@ -3,15 +3,15 @@
         <img src="@/img/input_fork.svg" alt="" class="fork" @click="emitClose">
         <h4>請選擇頭貼</h4>
         <form method="post" action="" class="photo">
-            <div class="list" v-for="(photo, index) in photos" :key="index" @click="chosePhoto($event)">
-                <input type="radio" name="chose_photo" :id="index + 1" :value="index + 1">
-                <label :for="index + 1" :class="currentIndex == (index + 1) ? '-on' : ''">
+            <div class="list" v-for="(photo, index) in photos" :key="photo">
+                <input type="radio" name="chose_photo" :id="index + 1" :value="index + 1" v-model="photo_id">
+                <label :for="index + 1" :class="photo_id == (index + 1) ? '-on' : ''">
                     <img :src="photo" alt="">
                 </label>
 
             </div>
             <div class="button">
-                <button type="submit" class="btn1">
+                <button type="button" class="btn1" @click="photo">
                     <p>確認</p>
                 </button>
             </div>
@@ -23,10 +23,17 @@
 
 <script setup>
 import { ref } from "vue";
-const emit = defineEmits(["closePhoto"]);
+import axios from "axios";
+import { useCookies } from "vue3-cookies";
+const emit = defineEmits(["closePhoto", "emitPhotoId"]);
 const emitClose = () => {
   emit("closePhoto","");
 }
+
+const emitPhoto = () => {
+    emit("emitPhotoId", photo_id.value);
+}
+const props = defineProps(["id"]);
 
 const photos = ref([
     "../../src/img/member_photo1.png",
@@ -42,12 +49,29 @@ const photos = ref([
 
 const currentIndex = ref(1);
 
-const chosePhoto = (e) => {
-    currentIndex.value = e.target.closest("input").value;
+const photo_id = ref(props.id);
+
+const { cookies } = useCookies();
+
+const id = cookies.get("id");
+
+
+const photo = () => {
+    let params = new URLSearchParams();
+    params.append('photo_id', photo_id.value);
+    params.append('id', id);
+
+    // console.log(profileText.photo_id);
+
+
+    axios.post('http://localhost/PHP/changePhoto.php',params)
+    .then((res) => {
+        emitPhoto();
+        emitClose();
+        
+        
+    }).catch(err => console.log(err))
 }
-
-
-
 </script>
 
 <style lang="scss" scoped>

@@ -1,8 +1,8 @@
 <template>
     <div class="coupon wrapper">
         <select v-model="used" id="coupon">
-            <option :value="false">未使用</option>
-            <option :value="true">已使用</option>
+            <option :value="0">未使用</option>
+            <option :value="1">已使用</option>
         </select>
 
         <div class="table">
@@ -33,7 +33,7 @@
                         <p>有效期限</p>
                     </th>
                 </tr>
-                <template  v-for="item in coupon" :key="item.serial">
+                <template  v-for="(item, index) in coupon" :key="index" >
                     <tr v-if="item.state === used">
                         <td>
                             <p>{{ item.name }}</p>
@@ -70,7 +70,7 @@
                     <div class="title">
                         <h3>我的折價券</h3>
                     </div>
-                    <template  v-for="item in coupon" :key="item.serial" >
+                    <template  v-for="(item, index) in coupon" :key="index" >
                         <div class="tableContainer2"  v-if="item.state === used" :class="{'-close': close}">
                             <table >
                                 <tr class="top" >
@@ -144,44 +144,78 @@
 </template>
 
 <script setup>
-import { onMounted, ref, defineEmits } from 'vue';
-const used = ref(false);
+import { onMounted, ref, defineEmits, reactive } from 'vue';
+import axios from 'axios';
+import { useCookies } from "vue3-cookies";
+const used = ref(0);
 
 const close = ref(true);
 
-const coupon = [
-    {
-        name: "小遊戲過關禮物",
-        serial: "#gP5BJHspm",
-        discount: "300",
-        DENO: "-",
-        needPrice: "1000",
-        state: false,
-        expiry: "2023/04/01~2023/04/30"
+const { cookies } = useCookies();
 
-    },
-    {
-        name: "小遊戲過關禮物",
-        serial: "#gP5BJdfg",
-        discount: "-",
-        DENO: "95",
-        needPrice: "1000",
-        state: true,
-        expiry: "2023/04/01~2023/04/30"
-
-    },
-];
+const coupon = reactive([]);
 
 const closeOrder = (e) => {
     close.value = !close.value;
 }
 
-// const changeState = () => {
-    
-//     // const value = document.getElementById("coupon").value;
-//     // used.value = value;
-//     console.log(value);
-// }
+const id = cookies.get("id");
+
+const getCoupon1 = () => {
+    let params = new URLSearchParams();
+    params.append('id', id);
+
+
+    axios.post('http://localhost/PHP/getCoupon1.php',params)
+    .then((res) => {
+
+        // console.log(res.data);
+        res.data.forEach(item => {
+            coupon.push({
+                name: item.NAME,
+                serial: item.SERIAL_NUMBER,
+                discount: "-",
+                DENO: item.DENO,
+                needPrice: item.NEED_PRICE,
+                state: item.STATE,
+                expiry: item.EXPIRED
+            });
+        });
+
+        
+    }).catch(err => console.log(err))
+}
+
+const getCoupon2 = () => {
+    let params = new URLSearchParams();
+    params.append('id', id);
+
+
+    axios.post('http://localhost/PHP/getCoupon2.php',params)
+    .then((res) => {
+
+        // console.log(res.data);
+        res.data.forEach(item => {
+            coupon.push({
+                name: item.NAME,
+                serial: item.SERIAL_NUMBER,
+                discount: item.DISCOUNT,
+                DENO: "-",
+                needPrice: item.NEED_PRICE,
+                state: item.STATE,
+                expiry: item.EXPIRED
+            });
+        });
+
+        
+    }).catch(err => console.log(err))
+}
+
+onMounted(() => {
+    getCoupon1();
+    getCoupon2();
+    // console.log(coupon);
+});
 </script>
 
 <style lang="scss" scoped>
