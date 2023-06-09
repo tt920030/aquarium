@@ -268,7 +268,7 @@ const getOrder = () => {
     params.append('id', id);
 
 
-    axios.post('http://localhost/PHP/getOrder.php', params)	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/getOrder.php', params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
@@ -294,7 +294,7 @@ const getOrderDetail = () => {
     params.append('id', id);
 
 
-    axios.post('http://localhost/PHP/getOrderDetail.php', params)	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/getOrderDetail.php', params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 

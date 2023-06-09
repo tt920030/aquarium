@@ -2,7 +2,7 @@
     
     
     <div class="profile wrapper ">
-        <Photo v-if="show" @closePhoto="showPhoto()" :id="profileText.photo_id"></Photo>
+        <Photo v-if="show" @closePhoto="showPhoto()" :id="profileText.photo_id" @reload="getProfile"></Photo>
         <div class="top">
             <div class="inner-left">
                 <div class="photo-area">
@@ -31,11 +31,11 @@
                 </div>
                 <div class="input">
                     <label for="sex">性別</label>
-                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" v-if="isButtonDisabled" :value="[profileText.sex === '1' ? '男':'女']">
+                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" v-if="isButtonDisabled" :value="result">
                     <select name="sex" id="sex" v-else  class="text" :class="{ '-on' : !isButtonDisabled }" v-model="profileText.sex">
                         <option :value="null">請選擇</option>
-                        <option :value="0">女</option>
-                        <option :value="1">男</option>
+                        <option :value="true">女</option>
+                        <option :value="false">男</option>
                     </select>
                 </div>
                 <div class="input">
@@ -49,7 +49,6 @@
                 <div class="input">
                     <label for="password">密碼</label>
                     <input :type="type" id="password" name="password" disabled v-model.trim="profileText.password">
-                    <div class="invalid-feedback">此欄位必填</div>
                     <button class="change" v-if="!isButtonDisabled" @click="changePassword">修改</button>
                 </div>
                 <div class="input">
@@ -70,7 +69,7 @@
 
     </div>
     
-    <ChangePassword v-if="openPassword" @closePassword="changePassword"></ChangePassword>
+    <ChangePassword v-if="openPassword" @closePassword="changePassword" @reload="getProfile"></ChangePassword>
 </template>
 
 <script setup>
@@ -104,7 +103,22 @@ const profileText = reactive({
     // photo_id: ""
 });
 
-const emit = defineEmits(["showPassword"]);
+const emit = defineEmits(["showPassword","reload"]);
+const result = ref("");
+const handleClick = () => {
+  
+
+  switch (profileText.sex) {
+    case 0:
+      result.value = "女";
+      break;
+    case 1:
+      result.value = "男";
+      break;
+    default:
+      result.value = "";
+  }
+}
 
 const showPhoto = () => {
 
@@ -131,18 +145,36 @@ const getProfile = () => {
     let params = new URLSearchParams();
     params.append('id', id);
 
-    axios.post('http://localhost/PHP/profile.php',params)
+    axios.post('http://localhost/g6/profile.php',params)
     .then((res) => {
 
-        // console.log(res.data[0]);
+        console.log(res.data[0]);
         profileText.email = res.data[0].EMAIL;
         profileText.name = res.data[0].NAME;
         profileText.sex = res.data[0].SEX;
-        profileText.birthday = res.data[0].BIRTHDAY;
-        profileText.phone = res.data[0].PHONE;
+
+        if(res.data[0].BIRTHDAY === "null"){
+            profileText.birthday = "";
+        }else{
+            profileText.birthday = res.data[0].BIRTHDAY;
+        }
+
+        if(res.data[0].ADDRESS === "null"){
+            profileText.address = "";
+        }else{
+            profileText.address = res.data[0].ADDRESS;
+        }
+
+        if(res.data[0].PHONE === "null"){
+            profileText.phone = "";
+        }else{
+            profileText.phone = res.data[0].PHONE;
+        }
+        
         profileText.password = res.data[0].PASSWORD;
-        profileText.address = res.data[0].ADDRESS;
         profileText.photo_id = res.data[0].PHOTO_ID;
+
+        handleClick();
 
         photo();
         
@@ -169,7 +201,7 @@ const changePofile = () => {
     params.append('phone', profileText.phone);
     params.append('address', profileText.address);
 
-    axios.post('http://localhost/PHP/changeProfile.php',params)
+    axios.post('http://localhost/g6/changeProfile.php',params)
     .then((res) => {
 
         // console.log(res.data[0].EMAIL);
@@ -184,11 +216,13 @@ const photo = () => {
     // console.log(profileText.photo_id);
 
 
-    axios.post('http://localhost/PHP/photoName.php',params)
+    axios.post('http://localhost/g6/photoName.php',params)
     .then((res) => {
 
         // console.log(res.data);
         profileText.photo = res.data[0].PHOTO;
+        // getPhotoId();
+        emit('reload');
         
     }).catch(err => console.log(err))
 }

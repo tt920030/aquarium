@@ -25,13 +25,17 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useCookies } from "vue3-cookies";
-const emit = defineEmits(["closePhoto", "emitPhotoId"]);
+const emit = defineEmits(["closePhoto", "emitPhotoId","reload"]);
 const emitClose = () => {
   emit("closePhoto","");
 }
 
 const emitPhoto = () => {
     emit("emitPhotoId", photo_id.value);
+}
+
+const emitreload = () => {
+    emit('reload');
 }
 const props = defineProps(["id"]);
 
@@ -41,8 +45,8 @@ const photos = ref([
     "../../src/img/member_photo3.png",
     "../../src/img/member_photo4.png",
     "../../src/img/member_photo5.png",
-    "../../src/img/member_photo7.png",
     "../../src/img/member_photo6.png",
+    "../../src/img/member_photo7.png",
     "../../src/img/member_photo8.png",
     "../../src/img/member_photo9.png"
 ]);
@@ -64,9 +68,10 @@ const photo = () => {
     // console.log(profileText.photo_id);
 
 
-    axios.post('http://localhost/PHP/changePhoto.php',params)
+    axios.post('http://localhost/g6/changePhoto.php',params)
     .then((res) => {
         emitPhoto();
+        emitreload();
         emitClose();
         
         
