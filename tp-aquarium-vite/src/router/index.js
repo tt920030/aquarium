@@ -42,7 +42,8 @@ const router = createRouter({
     {
       path: "/cms",
       name: "CMS",
-      meta: { title: "台北海生館｜後台管理系統" },
+      meta: { title: "台北海生館｜後台管理系統",
+    hideHeader:true },
       component: () => import("../views/CMSindex.vue"),
       children: [
         {
