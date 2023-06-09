@@ -397,7 +397,7 @@ const loginPHP = function(){		//取得資料的方法
             alert('登入成功');
             cookies.set("id", res.data.id);
             close();
-            router.push({ path: '/member/profile' });
+            // router.push({ path: '/member/profile' }); //不用跳轉
 
         }else{
             alert('帳號或密碼錯誤');

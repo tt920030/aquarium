@@ -98,8 +98,13 @@ const router = createRouter({
       path: "/cart",
       name: "Cart",
       meta: { title: "台北海生館｜購物車" },
-      meta: { title: "台北海生館｜購物車" },
       component: () => import("../views/Cart.vue"),
+    },
+    {
+      path: "/payment_success",
+      name: "PaymentSuccess",
+      meta: { title: "台北海生館｜購買成功" },
+      component: () => import("../views/PaymentSuccess.vue"),
     },
     {
       path: "/game_index",
@@ -240,7 +245,8 @@ const router = createRouter({
     {
       path: "/:pathMatch(.*)",
       name: "NotFound",
-      meta: { title: "404 Not Found" },
+      meta: { title: "404 Not Found",
+              hideHeader:true },
       component: import("../views/404.vue"),
     },
     {

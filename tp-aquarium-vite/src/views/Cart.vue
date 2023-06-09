@@ -171,7 +171,7 @@
 
 <script setup>
 import axios from 'axios';
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRouter } from "vue-router";
 import { watch, onBeforeUpdate, onMounted, reactive, ref } from "vue";
 import AddressJson from '/src/json/CityCountyData.json';
 const inCart = reactive([]);
@@ -194,6 +194,7 @@ const zipSelected = ref(AddressJson.find(item => item.CityName === citySelected.
 const addressFilled = ref('');
 const addressModify = ref(false);
 const addressEmpty = ref(false);
+const router = useRouter();
 //引入行程名稱、種類及票價資訊
 const choices = reactive(
     {
@@ -315,7 +316,7 @@ const payment = function () {
 
         if (name === 'id') {
             let value = cookiePair[1];
-            console.log(value);
+            router.push({ path: '/payment_success' }); 
             return;
         }
     }
