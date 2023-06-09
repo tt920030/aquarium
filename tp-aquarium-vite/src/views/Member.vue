@@ -31,12 +31,12 @@
                         <p>我的折價券</p>
                     </div>
                 </RouterLink>
-                <RouterLink to="/member/Pet">
+                <!-- <RouterLink to="/member/Pet">
                     <div class="list">
                         <img src="@/img/member_pet.svg" alt="">
                         <p>虛擬寵物</p>
                     </div>
-                </RouterLink>
+                </RouterLink> -->
                 </div>
                 
 

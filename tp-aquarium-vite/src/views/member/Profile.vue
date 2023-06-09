@@ -31,11 +31,11 @@
                 </div>
                 <div class="input">
                     <label for="sex">性別</label>
-                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" v-if="isButtonDisabled" v-model.trim="profileText.sex">
+                    <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" v-if="isButtonDisabled" :value="[profileText.sex === '1' ? '男':'女']">
                     <select name="sex" id="sex" v-else  class="text" :class="{ '-on' : !isButtonDisabled }" v-model="profileText.sex">
-                        <option value="null">請選擇</option>
-                        <option value="0">女</option>
-                        <option value="1">男</option>
+                        <option :value="null">請選擇</option>
+                        <option :value="0">女</option>
+                        <option :value="1">男</option>
                     </select>
                 </div>
                 <div class="input">
@@ -93,15 +93,15 @@ const type = ref("password");
 const { cookies } = useCookies();
 
 const profileText = reactive({
-    email: "",
-    name: "",
-    sex: "",
-    birthday: "",
-    phone: "",
-    password: "",
-    address: "",
-    photo: "",
-    photo_id: ""
+    // email: "",
+    // name: "",
+    // sex: "",
+    // birthday: "",
+    // phone: "",
+    // password: "",
+    // address: "",
+    // photo: "",
+    // photo_id: ""
 });
 
 const emit = defineEmits(["showPassword"]);

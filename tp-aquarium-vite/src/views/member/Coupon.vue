@@ -71,7 +71,8 @@
                         <h3>我的折價券</h3>
                     </div>
                     <template  v-for="(item, index) in coupon" :key="index" >
-                        <div class="tableContainer2"  v-if="item.state === used" :class="{'-close': close}">
+                        <!-- <div class="tableContainer2"  v-if="item.state === used" :class="{'-close': close}"> -->
+                        <div class="tableContainer2"  v-if="item.state === used">
                             <table >
                                 <tr class="top" >
                                     <th>
@@ -79,7 +80,7 @@
                                     </th>
                                     <td>
                                         <p>{{ item.name }}</p>
-                                        <img src="@/img/member_angle.svg" alt="" @click="closeOrder">
+                                        <!-- <img src="@/img/member_angle.svg" alt="" @click="closeOrder"> -->
                                     </td>
 
                                 </tr>
