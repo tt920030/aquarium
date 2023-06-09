@@ -76,7 +76,7 @@
             .messageList{
                 width: 500px;
                 height: 400px;
-                padding-bottom: 70px;
+                margin-bottom: 60px;
                 box-sizing: border-box;
                 overflow-y:auto;
                 @include mobile{

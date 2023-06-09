@@ -1,19 +1,19 @@
 <template>
-    <li v-for="product in productInPage" :key="product">
-        <RouterLink to="/product" class="product_info">
+    <li v-for="(product, index) in productInPage" :key="product">
+        <RouterLink :to="'/product/'+ product.ID" class="product_info">
             <div class="imgWrapper">
-                <img :src=product.img alt="">                
+                <img :src="'public/img/' + product.PICTURE" alt="">
             </div>
-            <p class="product_name">{{ product.name }}</p>
-            <p class="product_price">NTD ${{ product.price }}</p>
-            <button href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
+            <p class="product_name" ref="productName">{{ product.NAME }}</p>
+            <p class="product_price" ref="productPrice">NTD ${{ product.PRICE }}</p>
+            <button @click="addToCart($event, index)" href="" class="btn addToCartBtn">加入購物車  <i class="fa-solid fa-chevron-right"></i></button>
         </RouterLink>
     </li>
 
     <RouterView></RouterView>
 </template>
 <script setup>
-    import { reactive, defineEmits, defineProps, watch, onMounted, onBeforeMount } from 'vue';
+    import { reactive, defineEmits, defineProps, watch, onMounted, onBeforeMount, ref, toRef } from 'vue';
    
     const props = defineProps(['productInPage','currentPage','filterNumber']);
     let productInPage = reactive(props.productInPage);
@@ -21,6 +21,19 @@
     watch(() => props.productInPage, (newVal) => {
         productInPage = [...newVal]
     })
+
+
+    function addToCart(event, index){
+        event.preventDefault();
+        
+        const product = productInPage[index];   
+        const dataKey = "cartProduct";
+        const data = {  "name": product.name , "price": product.price, "amount": 1, "img": product.img};
+        const list = JSON.parse(localStorage.getItem(dataKey)) || [];
+        list.push(data);
+        localStorage.setItem(dataKey, JSON.stringify(list));
+        alert("加入成功，請至購物車查看!");
+    }
 
 </script>
 <style lang="scss" scoped>

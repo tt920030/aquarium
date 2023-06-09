@@ -273,6 +273,12 @@ const router = createRouter({
     //   component: import("../views/[id].vue")
     // },
     {
+      path: "/product/:id",
+      name: "Product/:id",
+      component: ()=>import("../views/Product[id].vue"),
+      meta:{title:"Product"}
+    },
+    {
       path: "/:pathMatch(.*)",
       name: "NotFound",
       meta: { title: "404 Not Found", hideHeader: true },

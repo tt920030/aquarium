@@ -3,3 +3,4 @@ sass/style.css
 sass/style.css.map
 dist
 .vscode
+package-lock.json

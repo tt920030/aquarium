@@ -15,7 +15,7 @@
             <div class="messageList" ref="messageContainer">
                 <!-- 客服回覆 -->
                 <div class="answerDefault">
-                    <img src="../img/customer_service1.png" alt="">
+                    <img src="public/img/customer_service1.png" alt="">
                     <div class="messageWrapper">
                         <p class="messageAnswer">您好～我是智能客服，請於下方點選您的問題，或是輸入於下方對話框</p>
                     </div>
@@ -78,14 +78,15 @@
 </template>
 <script setup>
     import 'vue3-carousel/dist/carousel.css'
-    import { ref, reactive, watch, computed } from 'vue';
+    import { ref, reactive, watch, computed,nextTick } from 'vue';
     import { Carousel, Slide, Navigation } from 'vue3-carousel'; 
     import  DialogBox from '/src/components/DialogBox.vue';
+    import axios from 'axios';
 
     // 對話框關閉或開啟
     const isVisible = ref(false);
     // 客服圖案
-    const photoSrc = ref('src/img/customer_service_2.svg');
+    const photoSrc = ref('public/img/customer_service_2.svg');
     //對話框內容
     const questionText = ref('');
     //問題及回覆
@@ -108,23 +109,45 @@
         isVisible.value = !isVisible.value;
         if(isVisible.value == true){
             if(window.innerWidth > 414 ){
-                photoSrc.value = 'src/img/customer_service1.png'
+                photoSrc.value = 'public/img/customer_service1.png'
             }else{
                 photoSrc.value = ''
             }
         }else{
-            photoSrc.value = 'src/img/customer_service_2.svg';
+            photoSrc.value = 'public/img/customer_service_2.svg';
             localStorage.clear();
         }
     }    
+
+    const reply = ref('');
     //用戶提問送出
     const submitQuestion = (e) => {
+        const data = {
+            question: questionText.value
+        };
         e.preventDefault();
         if (questionText.value.trim() !== '') {
             const message = { id: Date.now(), text: questionText.value, isReply: false };
             messages.push(message);
-            scrollToBottom();
+            // scrollToBottom();
             questionText.value = '';
+            axios.post('http://localhost/PHP/costumerRes.php', data)
+            .then(response => {
+                // 处理响应
+                reply.value = response.data;
+                const message = { id: Date.now(), text: reply.value, isReply: true };
+                messages.push(message);
+                nextTick(()=>{
+                    const list = this.$refs.messageContainer;
+                    list.scroll({
+                        top: list.scrollHeight,
+                        behavior: "smooth",
+                    });
+                })
+            })
+            .catch(error => {
+                console.error(error);
+            });
         }
     };
     //常見問題點選
@@ -140,7 +163,7 @@
 
     const scrollToBottom = () => {
         if (messageContainer.value) {
-            messageContainer.value.scrollTop = messageContainer.value.scrollHeight - 114;
+            messageContainer.value.scrollTop = messageContainer.value.scrollHeight ;
         }
     };
 
