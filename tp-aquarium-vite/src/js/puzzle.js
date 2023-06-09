@@ -1,6 +1,5 @@
 export default function () {
   "use strict";
-
   let autoStart;
   const mrandom = Math.random,
     mfloor = Math.floor,
@@ -1219,6 +1218,18 @@ export default function () {
     this.anim.cpt = Math.floor(this.anim.cpt);
     this.anim.tmr = window.setInterval(
       (function (puzz) {
+       
+        let cookieArr = document.cookie.split(";");
+        for (var i = 0; i < cookieArr.length; i++) {
+          let cookiePair = cookieArr[i].split("=");
+          let name = cookiePair[0].trim();
+  
+          if (name === 'id') {
+              logIn.value=true;
+              return;
+          }
+      }
+      alert("請登入會員");
         return function () {
           var lightbox = document.querySelector('.lightbox');
 

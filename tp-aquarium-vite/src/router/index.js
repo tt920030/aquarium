@@ -42,8 +42,7 @@ const router = createRouter({
     {
       path: "/cms",
       name: "CMS",
-      meta: { title: "台北海生館｜後台管理系統",
-    hideHeader:true },
+      meta: { title: "台北海生館｜後台管理系統", hideHeader: true },
       component: () => import("../views/CMSindex.vue"),
       children: [
         {
@@ -278,7 +277,7 @@ const router = createRouter({
       name: "Backstagelogin", //自己取
       component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
     },
-    
+
     {
       path: "/axios", //自己取之後要連的路徑名稱
       name: "AxiosTest", //自己取

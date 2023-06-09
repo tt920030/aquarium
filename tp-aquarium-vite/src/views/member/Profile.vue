@@ -137,7 +137,7 @@ const getProfile = () => {
         // console.log(res.data[0]);
         profileText.email = res.data[0].EMAIL;
         profileText.name = res.data[0].NAME;
-        // profileText.sex = res.data[0].SEX;
+        profileText.sex = res.data[0].SEX;
         profileText.birthday = res.data[0].BIRTHDAY;
         profileText.phone = res.data[0].PHONE;
         profileText.password = res.data[0].PASSWORD;
