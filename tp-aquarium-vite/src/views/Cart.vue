@@ -228,6 +228,9 @@ const addTotal = function () {
 
     });
     total.value = totalCount;
+   
+}
+watch(()=>total.value,(newVal)=>{
     if (total.value === 0) {
         for (const key in localStorage) {
             if (key.startsWith("cart")) {
@@ -235,7 +238,7 @@ const addTotal = function () {
             }
         }
     }
-}
+})
 //改變商品數量要修改localstorage
 const amountChange = function () {
     tickets.splice(0, tickets.length, ...transformedTickets);
