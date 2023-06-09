@@ -209,6 +209,7 @@ const lightboxData1 = reactive([
 const openLightbox = (i) => {
   lightboxIsOpen.value = true;
   lightboxData.value = lightboxData1.filter((item) => item.class === i);
+  console.log(lightboxData);
 };
 
 // 關閉燈箱
