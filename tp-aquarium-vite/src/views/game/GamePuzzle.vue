@@ -1,11 +1,12 @@
 <template>
+  <LogIn v-if="!hide" @close="openLogin"></LogIn>
   <div id="particles-js"></div>
 
   <!-- 回首頁按鈕 -->
   <button class="back_to_home">
     <img src="../../img/logosvg.svg" alt="LOGO SVG" />
-    <RouterLink to="/">
-      <h5>回首頁</h5>
+    <RouterLink to="/game_index">
+      <h5>回小遊戲</h5>
     </RouterLink>
   </button>
 
@@ -13,14 +14,14 @@
   <div class="puzzle_frame"></div>
 
 
-  <div id="forPuzzle"></div>
+  <div id="forPuzzle"></div> 
 
 
   <button class="open-lightbox" style="display: none;">獲得折價券</button>
 
   <!-- style="display: block;" -->
   <div class="lightbox_out">
-    <div class="lightbox">
+    <div class="lightbox" style="display: none;">
       <div class="lightbox-content">
         <span class="close">&times;</span>
         <img src="../../img/crownshark.png" alt="Image">
@@ -37,23 +38,56 @@
         </div>
       </div>
     </div>
+
+    <!-- 儲存折扣碼是否前往登入 -->
+    <div class="game_savecoupon hide">
+      <h4>登入會員即可儲存折價券！<br>是否確定前往登入頁面？</h4>
+      
+      <button @click="openLogIn();close()" class="game_savecoupon_sure_btn"><p>確定</p></button>
+      <button @click="allClose()" class="game_savecoupon_cancel_btn"><p>取消</p></button>
+    </div>
+
   </div>
+
 </template>
+
 <script  setup>
-// import particlesJS from "vue3-particles";
+
+//vue3-cookies
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
+const id = cookies.get("id");
+const hide = ref(true);
 import Puzzle from "/src/js/puzzle.js";
+// import Puzzle from "/src/js/save_coupon.js";
+
 
 import { onMounted, ref } from "vue";
-// import particlesJS_Start from '/src/js/particle.js';
+
 
 const bg = function () {
 
 
 
 }
-
+const openLogin = function(){
+  hide.value = true;
+}
+const close = function(){
+  document.querySelector(".game_savecoupon").classList.add("hide");
+}
+const allClose = function(){
+  document.querySelector(".game_savecoupon").classList.add("hide");
+  document.querySelector(".lightbox").style.display="none";
+}
+const openLogIn = function(){
+  hide.value = false;
+}
 // 拼圖背景
 onMounted(() => {
+    
+
+  
   // particlesJS_Start()
 
 
@@ -301,7 +335,7 @@ onMounted(() => {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  width: 125px;
+  width: 150px;
   height: 45px;
   border: none;
   border-radius: 10px;
@@ -343,7 +377,7 @@ onMounted(() => {
 
   margin: 50px;
   top: 45%;
-  left: 48%;
+  left: 46%;
   width: 350px;
   height: 350px;
   background-color: #FFFEEE;
@@ -428,6 +462,43 @@ onMounted(() => {
 
 .open-lightbox {
   margin-top: 20px;
+}
+
+//前往儲存折價券
+
+.game_savecoupon {
+    border: 5px solid #16355A;
+    width: 350px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: #CCF1F5;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    margin: auto;
+    display: flex;
+    // display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &.hide{
+      display: none;
+    }
+}
+
+.game_savecoupon button {
+    margin-top: 40px;
+    width: 120px;
+    height: 40px;
+    color: white;
+    background-color: #16355A;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
 }
 </style>
 

@@ -72,11 +72,6 @@
             </div>
         </div>
 
-        <!--Questions and Options-->
-        <!-- <script src="game_quesion.js"></script> -->
-
-        <!--Quiz Codes -->
-        <!-- <script src="game_quiz.js"></script> -->
 
     </body>
 
@@ -85,17 +80,22 @@
 </template>
 
 <script  setup>
+
+//vue3-cookies
+import { useCookies } from "vue3-cookies";
+const { cookies } = useCookies();
+const id = cookies.get("id");
+
 import {reactive} from 'vue';
 // 問答js
 import Puzzle from "/src/js/game_quiz.js";
-// import particlesJS_Start from "/src/js/game_quesion.js";
 
 import { onMounted, ref } from "vue";
 import particlesJS_Start from '/src/js/particle.js';
 
+
 // 問答背景
 onMounted(() => {
-  // particlesJS_Start()
 
 
 

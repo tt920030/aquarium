@@ -212,9 +212,13 @@ main.cart {
         &>div {
             display: flex;
             padding: 2rem;
-            justify-content: space-between;
+            justify-content:flex-start;
+            gap: 100%;
+            flex-wrap: wrap;
             align-items: center;
-
+            h4{
+                margin: 20px 0;
+            }
         }
     }
 
@@ -330,7 +334,7 @@ main.cart {
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
-
+                
             }
         }
 
