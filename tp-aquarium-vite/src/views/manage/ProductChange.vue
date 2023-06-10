@@ -1,9 +1,8 @@
 <template>
   <ManageTemplate :news="news"></ManageTemplate>
   <div class="buttons">
-    <button>取消</button>
     <button>更改</button>
-    <button>刪除</button>
+    <button>取消</button>
   </div>
 </template>
 
