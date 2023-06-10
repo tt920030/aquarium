@@ -25,9 +25,13 @@
 import { ref } from "vue";
 import axios from "axios";
 import { useCookies } from "vue3-cookies";
-const emit = defineEmits(["closePhoto"]);
+const emit = defineEmits(["closePhoto", "emitPhotoId"]);
 const emitClose = () => {
   emit("closePhoto","");
+}
+
+const emitPhoto = () => {
+    emit("emitPhotoId", photo_id.value);
 }
 const props = defineProps(["id"]);
 
@@ -62,7 +66,7 @@ const photo = () => {
 
     axios.post('http://localhost/PHP/changePhoto.php',params)
     .then((res) => {
-
+        emitPhoto();
         emitClose();
         
         

@@ -42,9 +42,10 @@ const lightboxData = reactive(props.lightboxData.value[0]);
 </script>
 <template>
   <section class="light_box">
+    <!-- :class="lightboxData.class" -->
+
     <div
       class="lightbox_overlay"
-      :class="lightboxData.class"
       @click="lightboxOverlayHandler"
     >
       <div class="wrapper">

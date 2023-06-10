@@ -42,7 +42,7 @@ const router = createRouter({
     {
       path: "/cms",
       name: "CMS",
-      meta: { title: "台北海生館｜後台管理系統" },
+      meta: { title: "台北海生館｜後台管理系統", hideHeader: true },
       component: () => import("../views/CMSindex.vue"),
       children: [
         {
@@ -98,8 +98,13 @@ const router = createRouter({
       path: "/cart",
       name: "Cart",
       meta: { title: "台北海生館｜購物車" },
-      meta: { title: "台北海生館｜購物車" },
       component: () => import("../views/Cart.vue"),
+    },
+    {
+      path: "/payment_success",
+      name: "PaymentSuccess",
+      meta: { title: "台北海生館｜購買成功" },
+      component: () => import("../views/PaymentSuccess.vue"),
     },
     {
       path: "/game_index",
@@ -165,6 +170,11 @@ const router = createRouter({
       path: "/visit_information",
       name: "VisitInformation",
       component: () => import("../views/VisitInformation.vue"),
+    },
+    {
+      path: "/testaaaa",
+      name: "testaaaa",
+      component: () => import("../views/testaaaa.vue"),
     },
     {
       path: "/about",
@@ -235,7 +245,8 @@ const router = createRouter({
     {
       path: "/:pathMatch(.*)",
       name: "NotFound",
-      meta: { title: "404 Not Found" },
+      meta: { title: "404 Not Found",
+              hideHeader:true },
       component: import("../views/404.vue"),
     },
     {
@@ -265,6 +276,7 @@ const router = createRouter({
       path: "/journeyCreate", //自己取之後要連的路徑名稱
       name: "Journey_Create", //自己取
       meta: { title: "台北海生館後台｜新增行程" },
+      meta: { hideHeader: true },
       component: () => import("../views/JourneyCreate.vue"), //路徑連到剛剛建的vue檔
     },
     {
@@ -279,7 +291,7 @@ const router = createRouter({
       component: () => import("../views/Backstagelogin.vue"),//路徑連到剛剛建的vue檔
       meta: { hideHeader: true }, 
     },
-    
+
     {
       path: "/axios", //自己取之後要連的路徑名稱
       name: "AxiosTest", //自己取

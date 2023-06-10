@@ -102,9 +102,11 @@
                         }
                     }
 
-                    .-on {
-                        background-color: #fff;
-                    }
+                    
+                }
+
+                .router-link-active {
+                    background-color: #fff;
                 }
             }
 

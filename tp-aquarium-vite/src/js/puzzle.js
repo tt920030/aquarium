@@ -1,6 +1,5 @@
 export default function () {
   "use strict";
-
   let autoStart;
   const mrandom = Math.random,
     mfloor = Math.floor,
@@ -1219,9 +1218,23 @@ export default function () {
     this.anim.cpt = Math.floor(this.anim.cpt);
     this.anim.tmr = window.setInterval(
       (function (puzz) {
+       
         return function () {
           var lightbox = document.querySelector('.lightbox');
-
+          let cookieArr = document.cookie.split(";");
+          for (var i = 0; i < cookieArr.length; i++) {
+              let cookiePair = cookieArr[i].split("=");
+              let name = cookiePair[0].trim();
+      
+              if (name === 'id') {
+                  let value = cookiePair[1];
+                  console.log(value);
+                  return;
+              }else{
+                document.querySelector('.game_savecoupon').classList.remove('hide');
+              }
+          }
+         
           // 按叉叉關掉
           var closeBtn = document.querySelector(".close");
           closeBtn.addEventListener("click", function () {
