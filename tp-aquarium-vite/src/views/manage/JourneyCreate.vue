@@ -12,7 +12,6 @@ import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 const creates = ref(false);
 const news = reactive([
-  // { id: "ID", title: "行程ID", type: "text" },
   { id: "title", title: "行程名稱", type: "text" },
   { id: "time", title: "行程時間", type: "text" },
   { id: "ticketMoney", title: "票價", type: "text" },

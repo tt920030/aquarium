@@ -12,6 +12,11 @@ import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 
 import ManageTemplate from "/src/components/ManageTemplate.vue";
+
+// 接受模板2傳來的值
+const $route = useRoute();
+const changeData = reactive(JSON.parse($route.query.changeData));
+
 const news = reactive([
   { id: "title", title: "問題編號", type: "text" },
   { id: "sub_title", title: "關鍵字", type: "text" },

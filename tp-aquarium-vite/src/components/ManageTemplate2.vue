@@ -52,15 +52,12 @@ const goChange = (e) => {
   // 抓出ID
   const pageNow = e.target.parentElement.previousElementSibling.innerHTML;
   const changeData = props.resData.find((item) => item.ID == pageNow);
-  // console.log(changeData);
   router.push({
     path: changePage.value,
     query: { changeData: JSON.stringify(changeData) },
   });
-  // router.push({
-  //   path: changePage.value + `/${pageNow}`,
-  // });
 };
+console.log(props.resData);
 </script>
 <style lang="scss" scoped>
 @import "bootstrap/dist/css/bootstrap.min.css";

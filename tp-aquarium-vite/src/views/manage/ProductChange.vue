@@ -1,22 +1,21 @@
 <template>
-  <ManageTemplate :news="news" :changeData="changeData"></ManageTemplate>
+  <ManageTemplate :news="news"></ManageTemplate>
   <div class="buttons">
-    <button>刪除</button>
     <button>取消</button>
     <button>更改</button>
+    <button>刪除</button>
   </div>
 </template>
 
 <script setup>
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-
 import ManageTemplate from "/src/components/ManageTemplate.vue";
 
 // 接受模板2傳來的值
 const $route = useRoute();
 const changeData = reactive(JSON.parse($route.query.changeData));
-
+// console.log($route.query.changeData);
 // 資料處理
 const typeTrans = (data) => {
   switch (data) {

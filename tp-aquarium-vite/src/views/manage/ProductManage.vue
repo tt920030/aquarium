@@ -40,7 +40,6 @@ const news = () => {
           element["ID"],
         ];
       });
-
       forms.push(...transformedData);
       resData.push(...res.data);
       console.log(resData);
