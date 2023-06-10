@@ -63,6 +63,7 @@ import Puzzle from "/src/js/puzzle.js";
 
 
 import { onMounted, ref } from "vue";
+import { watch } from "vue";
 
 
 const bg = function () {
@@ -74,15 +75,20 @@ const openLogin = function(){
   hide.value = true;
 }
 const close = function(){
-  document.querySelector(".game_savecoupon").classList.add("hide");
+  document.querySelector(".game_savecoupon").style.display="none";
 }
 const allClose = function(){
-  document.querySelector(".game_savecoupon").classList.add("hide");
+  document.querySelector(".game_savecoupon").style.display="none";
   document.querySelector(".lightbox").style.display="none";
 }
 const openLogIn = function(){
   hide.value = false;
 }
+watch(()=>hide.value,(newVal)=>{
+  if(hide.value===true){
+    allClose();
+  }
+})
 // 拼圖背景
 onMounted(() => {
     

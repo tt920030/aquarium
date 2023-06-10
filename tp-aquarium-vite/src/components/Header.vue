@@ -64,18 +64,9 @@ import { transform } from "@vue/compiler-core";
 const emit = defineEmits(["openLogin", "color"]);
 import { useCookies } from "vue3-cookies";
 const router = useRouter();
-const cart=ref(false);
+const cart = ref(false);
 const { cookies } = useCookies();
 
-//取得localStorge中加入購物車的資料(key開頭為cart)
-const keys = Object.keys(localStorage);
-const cartKeys = keys.filter(key => key.startsWith("cart"));
-if (cartKeys.length > 0) {
-  cart.value=true;
-  cartKeys.forEach(cartKey => {
-    const cartValue = JSON.parse(localStorage.getItem(cartKey));
-  });
-}
 
 const logIn = () => {
   if (cookies.isKey("id")) {
@@ -149,48 +140,59 @@ const waveColor = ref(null);
 const waveColor2 = ref(null);
 const storedata = ref(null);
 
+
+
+
 onMounted(() => {
-  storedata.value = sessionStorage.getItem("changecolor");
-  if (storedata.value === "true") {
-    flag.value = true;
-    circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
-    circle.value.style.backgroundColor = "#ccf1f5";
-    waveColor.value = "DeepSkyBlue";
-    waveColor2.value = "DeepSkyBlue";
-  } else {
-    flag.value = false;
-    circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-    circle.value.style.backgroundColor = "lightgrey";
-    waveColor.value = "blue";
-    waveColor2.value = "blue";
+  //取得localStorge中加入購物車的資料(key開頭為cart)
+  const keys = Object.keys(localStorage);
+  const cartKeys = keys.filter(key => key.startsWith("cart"));
+  if (cartKeys.length > 0) {
+    cart.value = true;
   }
 
-  // 串接天氣api
-  axios
-    .get(
-      "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415"
-    ) //使用get或post等取得路徑資料(php或json)
-    .then((res) => {
-      //回傳後如何處理
-      // console.log(res);
+  
+    storedata.value = sessionStorage.getItem("changecolor");
+    if (storedata.value === "true") {
+      flag.value = true;
+      circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
+      circle.value.style.backgroundColor = "#ccf1f5";
+      waveColor.value = "DeepSkyBlue";
+      waveColor2.value = "DeepSkyBlue";
+    } else {
+      flag.value = false;
+      circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+      circle.value.style.backgroundColor = "lightgrey";
+      waveColor.value = "blue";
+      waveColor2.value = "blue";
+    }
 
-      // 查找溫度資料
-      let temp = res.data.records.location[14].weatherElement[3].elementValue;
-      // console.log(temp);
+    // 串接天氣api
+    axios
+      .get(
+        "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415"
+      ) //使用get或post等取得路徑資料(php或json)
+      .then((res) => {
+        //回傳後如何處理
+        // console.log(res);
 
-      // 查找天氣型態資料
-      let WeatherState =
-        res.data.records.location[14].weatherElement[20].elementValue;
-      // console.log(WeatherState);
+        // 查找溫度資料
+        let temp = res.data.records.location[14].weatherElement[3].elementValue;
+        // console.log(temp);
 
-      // 加上溫度單位
-      let tempList = temp + "°C";
+        // 查找天氣型態資料
+        let WeatherState =
+          res.data.records.location[14].weatherElement[20].elementValue;
+        // console.log(WeatherState);
 
-      tempWeather.value = tempList;
-      rainWeatherState.value = WeatherState;
-    })
-    .catch((err) => console.log(err)); //錯誤如何處理
-});
+        // 加上溫度單位
+        let tempList = temp + "°C";
+
+        tempWeather.value = tempList;
+        rainWeatherState.value = WeatherState;
+      })
+      .catch((err) => console.log(err)); //錯誤如何處理
+  });
 
 const switchColor = () => {
   flag.value = !flag.value;
