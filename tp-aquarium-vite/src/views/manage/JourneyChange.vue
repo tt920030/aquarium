@@ -1,9 +1,8 @@
 <template>
   <ManageTemplate :news="news" :updates="updates"></ManageTemplate>
   <div class="buttons">
-    <button>取消</button>
     <button @click="updates++">更改</button>
-    <button>刪除</button>
+    <button>取消</button>
   </div>
 </template>
 

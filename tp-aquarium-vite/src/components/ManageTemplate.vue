@@ -67,7 +67,7 @@ const types2 = reactive({
   客服: "deleteCustomer",
 });
 
-const props = defineProps(["news", "creates", "updates"]);
+const props = defineProps(["news", "creates", "updates", "removes"]);
 const title = ref("");
 
 // 新增
@@ -194,8 +194,9 @@ const journey1 = () => {
       params
     )
     .then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       // console.log(params);
+      alert("修改成功!");
     })
     .catch((err) => console.log(err)); // 錯誤如何處理
 };
@@ -231,6 +232,13 @@ watch(
   () => props.updates,
   (newVal) => {
     update();
+    // console.log(data1);
+  }
+);
+watch(
+  () => props.removes,
+  (newVal) => {
+    remove();
     // console.log(data1);
   }
 );
