@@ -167,7 +167,7 @@ const getCoupon1 = () => {
     params.append('id', id);
 
 
-    axios.post('http://localhost/g6/getCoupon1.php',params)
+    axios.post(`${import.meta.env.VITE_API_URL}getCoupon1.php`,params)
     .then((res) => {
 
         // console.log(res.data);
@@ -192,7 +192,7 @@ const getCoupon2 = () => {
     params.append('id', id);
 
 
-    axios.post('http://localhost/g6/getCoupon2.php',params)
+    axios.post(`${import.meta.env.VITE_API_URL}getCoupon2.php`,params)
     .then((res) => {
 
         // console.log(res.data);

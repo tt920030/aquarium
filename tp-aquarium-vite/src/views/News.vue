@@ -61,7 +61,7 @@ const next = (n) => {
 };
 
 const news = () => {
-    axios.post('http://localhost/g6/news.php')	//使用get或post等取得路徑資料(php)
+    axios.post(`${import.meta.env.VITE_API_URL}news.php`)	//使用get或post等取得路徑資料(php)
 
    .then((res) => {	//回傳後如何處理
 
@@ -85,23 +85,6 @@ onMounted(() => {
     news();
 });
 
-// const toNewsPage = (e) => {
-
-//     const id = e.target.closest('li').getAttribute('data-id');
-
-//     let params = new URLSearchParams();
-//     params.append('id', id);
-
-
-//     axios.post('http://localhost/g6/newspage.php', params)	//使用get或post等取得路徑資料(php)
-
-//         .then((res) => {	//回傳後如何處理
-
-//             router.push({ path: '/news/news_page' });
-
-//         }).catch(err => console.log(err))  //錯誤如何處理    
-
-// }
 </script>
 
 <style lang="scss" scoped>

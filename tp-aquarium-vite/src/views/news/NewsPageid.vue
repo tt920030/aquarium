@@ -93,7 +93,7 @@ const newsPage = (e) => {
     let params = new URLSearchParams();
     params.append('id', number);
 
-    axios.post('http://localhost/g6/newspage.php',params)	//使用get或post等取得路徑資料(php)
+    axios.post(`${import.meta.env.VITE_API_URL}newspage.php`,params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
