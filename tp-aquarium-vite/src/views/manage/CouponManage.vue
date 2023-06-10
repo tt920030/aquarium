@@ -1,9 +1,5 @@
 <template>
- 
-  
-  
-    
-<!-- 
+  <!-- 
     <table class="table table-bordered border-dark">
       <thead class="table-primary border-dark">
         <tr>
@@ -41,12 +37,10 @@
         </tr>
       </tbody>
     </table> -->
-    <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
-
+  <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
 </template>
 
 <script setup>
-
 import { onMounted, reactive, ref } from "vue";
 
 // 引入bootstrap
@@ -67,6 +61,4 @@ const forms = reactive([
   ["無敵折價券", "88888", 10000, 0.1, 10000, 30],
 ]);
 </script>
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
