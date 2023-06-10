@@ -43,7 +43,13 @@ import axios from "axios";
 import "bootstrap";
 import { watch } from "vue";
 
-const types = reactive({ 行程管理: "InsertJourney" });
+const types = reactive({
+  行程管理: "InsertJourney",
+  商品管理: "InsertProduct",
+  消息管理: "InsertNews",
+  折價券管理: "InsertCoupon",
+  客服: "InsertCustomer",
+});
 const props = defineProps(["news", "creates"]);
 const title = ref("");
 
