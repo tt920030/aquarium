@@ -81,7 +81,7 @@
 </template>
 
 <script  setup>
-
+import axios from 'axios';
 //vue3-cookies
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
@@ -101,18 +101,31 @@ const openLogin = function () {
 const openLogIn = function () {
   hide.value = false;
 }
+//領取折價券
 const get = function () {
   let cookieArr = document.cookie.split(";");
   for (var i = 0; i < cookieArr.length; i++) {
     let cookiePair = cookieArr[i].split("=");
     let name = cookiePair[0].trim();
 
-    if (name === 'id') {
-      alert("領取成功，請於結帳時使用");
-      return;
-    } 
+    if (name === 'id') {         //判斷cookies裡面有沒有id
+      let value = cookiePair[1];
       
-    
+      let params = new URLSearchParams();
+      params.append('id',value);    //有id就把會員id傳到php
+
+      axios.post('http://localhost/PHP/saveCoupon.php', params)
+        .then((res) => {
+          if(res.data==='exists'){
+            alert("您已經領取過囉");
+          }else{
+            alert("領取成功，請於結帳時使用");
+          }
+        }).catch(err => console.log(err))
+      return;
+    }
+
+
   }
   openLogIn();
 }
