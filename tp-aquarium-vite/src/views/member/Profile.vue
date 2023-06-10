@@ -33,9 +33,9 @@
                     <label for="sex">性別</label>
                     <input type="text" id="sex" name="sex" :disabled="isButtonDisabled" v-if="isButtonDisabled" :value="result">
                     <select name="sex" id="sex" v-else  class="text" :class="{ '-on' : !isButtonDisabled }" v-model="profileText.sex">
-                        <option :value="null">請選擇</option>
-                        <option :value="true">女</option>
-                        <option :value="false">男</option>
+                        <option disabled>請選擇</option>
+                        <option :value="0">女</option>
+                        <option :value="1">男</option>
                     </select>
                 </div>
                 <div class="input">
@@ -94,7 +94,7 @@ const { cookies } = useCookies();
 const profileText = reactive({
     // email: "",
     // name: "",
-    // sex: "",
+    // sex: "2",
     // birthday: "",
     // phone: "",
     // password: "",
@@ -109,14 +109,15 @@ const handleClick = () => {
   
 
   switch (profileText.sex) {
-    case 0:
+    case "0":
       result.value = "女";
       break;
-    case 1:
+    case "1":
       result.value = "男";
       break;
     default:
       result.value = "";
+      break;
   }
 }
 
