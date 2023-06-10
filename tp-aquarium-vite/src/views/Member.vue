@@ -31,12 +31,12 @@
                         <p>我的折價券</p>
                     </div>
                 </RouterLink>
-                <RouterLink to="/member/Pet">
+                <!-- <RouterLink to="/member/Pet">
                     <div class="list">
                         <img src="@/img/member_pet.svg" alt="">
                         <p>虛擬寵物</p>
                     </div>
-                </RouterLink>
+                </RouterLink> -->
                 </div>
                 
 
@@ -45,7 +45,7 @@
             <div class="right_view">
 
 
-                <RouterView></RouterView>
+                <RouterView @reload="getPhotoId"></RouterView>
 
 
             </div>
@@ -84,7 +84,7 @@ const getPhotoId = () => {
     let params = new URLSearchParams();
     params.append('id', id);
 
-    axios.post('http://localhost/PHP/getPhoto.php',params)
+    axios.post('http://localhost/g6/getPhoto.php',params)
     .then((res) => {
 
         // console.log(res.data[0].PHOTO_ID);
@@ -99,7 +99,7 @@ const getPhotoName = () => {
     let params = new URLSearchParams();
     params.append('photo_id', photoId.value);
 
-    axios.post('http://localhost/PHP/photoName.php',params)
+    axios.post('http://localhost/g6/photoName.php',params)
     .then((res) => {
 
         // console.log(res.data[0].PHOTO);

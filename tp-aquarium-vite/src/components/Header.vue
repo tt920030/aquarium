@@ -1,22 +1,13 @@
 <template>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <header>
-    <div
-      class="content"
-      :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }"
-    >
-      <RouterLink to="/" class="logo" href=""
-        ><img src="@/img/logo-white.svg" alt=""
-      /></RouterLink>
+    <div class="content" :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }">
+      <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt="" /></RouterLink>
       <nav>
         <ul class="icon">
           <i class="bi bi-list"></i>
@@ -32,46 +23,34 @@
           </li>
           <li><img :src="get_weather_img" alt="" class="weather_img" /></li>
           <li>
-            <button
-              type="button"
-              ref="circle"
-              class="switch"
-              @click="switchColor"
-            >
+            <button type="button" ref="circle" class="switch" @click="switchColor">
               <i class="bi bi-moon-stars-fill"></i>
             </button>
           </li>
-          <li @click="logIn()"><img class="icons" src="src/img/header_member.svg" alt="" /></li>
+          <li @click="logIn()">
+            <img class="icons" src="/src/img/header_member.svg" alt="" />
+          </li>
           <li>
-            <RouterLink to="/cart"
-              ><img class="icons" src="src/img/header_cart.svg" alt=""
-            /></RouterLink>
+            <RouterLink to="/cart"><img class="icons cart-icon" src="src/img/header_cart.svg" alt="" />
+              <div class="cart-count" v-if="cart"></div>
+            </RouterLink>
           </li>
         </ul>
         <!-- <ul class="menu" :class="{'active': is_open === true}"> -->
         <ul class="menu">
           <li v-for="item in navItems">
-            <RouterLink :to="item.link"
-              ><p>{{ item.name }}</p></RouterLink
-            >
+            <RouterLink :to="item.link">
+              <p>{{ item.name }}</p>
+            </RouterLink>
           </li>
         </ul>
       </nav>
     </div>
 
     <div class="ocean">
-      <div
-        class="wave"
-        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
-      ></div>
-      <div
-        class="wave"
-        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
-      ></div>
-      <div
-        class="wave"
-        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
-      ></div>
+      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
+      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
+      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
     </div>
   </header>
 </template>
@@ -85,31 +64,31 @@ import { transform } from "@vue/compiler-core";
 const emit = defineEmits(["openLogin", "color"]);
 import { useCookies } from "vue3-cookies";
 const router = useRouter();
-
+const cart = ref(false);
 const { cookies } = useCookies();
 
 
 const logIn = () => {
-  if(cookies.isKey("id")){
+  if (cookies.isKey("id")) {
     router.push({ path: '/member/profile' });
-  }else{
+  } else {
     emit("openLogin", true);
   }
-  
-  
+
+
 };
 
 const loginCheck = () => {
-  axios.post('http://localhost/PHP/loginCheck.php',)
-        .then((res) => {
-            if (res.data !== "") {
-              isLogin.value = true;
-            }
+  axios.post(`${import.meta.env.VITE_API_URL}loginCheck.php`)
+    .then((res) => {
+      if (res.data !== "") {
+        isLogin.value = true;
+      }
 
-            console.log(res.data);
-
-        }).catch(err => console.log(err))
-}
+      console.log(res.data);
+    })
+    .catch((err) => console.log(err));
+};
 
 const navItems = [
   { name: "最新消息", link: "/news" },
@@ -137,23 +116,22 @@ const navItems = [
 // });
 const is_open = ref(false);
 
-document.addEventListener('DOMContentLoaded', () => {
-  const navIcon = document.querySelector('header .content nav i');
-  const menu = document.querySelector('header .content .menu');
+document.addEventListener("DOMContentLoaded", () => {
+  const navIcon = document.querySelector("header .content nav i");
+  const menu = document.querySelector("header .content .menu");
 
-  navIcon.addEventListener('click', () => {
+  navIcon.addEventListener("click", () => {
     if (!is_open.value) {
-      menu.style.right = '0px';
-      menu.style.display = 'block';
+      menu.style.right = "0px";
+      menu.style.display = "block";
       is_open.value = true;
     } else {
-      menu.style.right = '-100%';
-      menu.style.display = 'none';
+      menu.style.right = "-100%";
+      menu.style.display = "none";
       is_open.value = false;
     }
   });
 });
-
 
 // switch color
 const flag = ref(false);
@@ -162,48 +140,59 @@ const waveColor = ref(null);
 const waveColor2 = ref(null);
 const storedata = ref(null);
 
+
+
+
 onMounted(() => {
-  storedata.value = sessionStorage.getItem("changecolor");
-  if (storedata.value === "true") {
-    flag.value = true;
-    circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
-    circle.value.style.backgroundColor = "#ccf1f5";
-    waveColor.value = "DeepSkyBlue";
-    waveColor2.value = "DeepSkyBlue";
-  } else {
-    flag.value = false;
-    circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-    circle.value.style.backgroundColor = "lightgrey";
-    waveColor.value = "blue";
-    waveColor2.value = "blue";
+  //取得localStorge中加入購物車的資料(key開頭為cart)
+  const keys = Object.keys(localStorage);
+  const cartKeys = keys.filter(key => key.startsWith("cart"));
+  if (cartKeys.length > 0) {
+    cart.value = true;
   }
 
-  // 串接天氣api
-  axios
-    .get(
-      "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415"
-    ) //使用get或post等取得路徑資料(php或json)
-    .then((res) => {
-      //回傳後如何處理
-      // console.log(res);
+  
+    storedata.value = sessionStorage.getItem("changecolor");
+    if (storedata.value === "true") {
+      flag.value = true;
+      circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
+      circle.value.style.backgroundColor = "#ccf1f5";
+      waveColor.value = "DeepSkyBlue";
+      waveColor2.value = "DeepSkyBlue";
+    } else {
+      flag.value = false;
+      circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+      circle.value.style.backgroundColor = "lightgrey";
+      waveColor.value = "blue";
+      waveColor2.value = "blue";
+    }
 
-      // 查找溫度資料
-      let temp = res.data.records.location[14].weatherElement[3].elementValue;
-      // console.log(temp);
+    // 串接天氣api
+    axios
+      .get(
+        "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415"
+      ) //使用get或post等取得路徑資料(php或json)
+      .then((res) => {
+        //回傳後如何處理
+        // console.log(res);
 
-      // 查找天氣型態資料
-      let WeatherState =
-        res.data.records.location[14].weatherElement[20].elementValue;
-      // console.log(WeatherState);
+        // 查找溫度資料
+        let temp = res.data.records.location[14].weatherElement[3].elementValue;
+        // console.log(temp);
 
-      // 加上溫度單位
-      let tempList = temp + "°C";
+        // 查找天氣型態資料
+        let WeatherState =
+          res.data.records.location[14].weatherElement[20].elementValue;
+        // console.log(WeatherState);
 
-      tempWeather.value = tempList;
-      rainWeatherState.value = WeatherState;
-    })
-    .catch((err) => console.log(err)); //錯誤如何處理
-});
+        // 加上溫度單位
+        let tempList = temp + "°C";
+
+        tempWeather.value = tempList;
+        rainWeatherState.value = WeatherState;
+      })
+      .catch((err) => console.log(err)); //錯誤如何處理
+  });
 
 const switchColor = () => {
   flag.value = !flag.value;
@@ -228,17 +217,16 @@ const rainWeatherState = ref(""); //天氣型態
 
 const get_weather_img = computed(() => {
   switch (true) {
-  case rainWeatherState.value.match(/雨/g):
-    return "./src/img/weather_elements4.png";
-  case rainWeatherState.value.match(/晴/g):
-    return "./src/img/weather_elements3.png";
-  case rainWeatherState.value.match(/陰/g):
-    return "./src/img/weather_elements2.png";
-  default:
-    return "./src/img/weather_elements1.png";
+    case rainWeatherState.value.match(/雨/g):
+      return "/src/img/weather_elements4.png";
+    case rainWeatherState.value.match(/晴/g):
+      return "/src/img/weather_elements3.png";
+    case rainWeatherState.value.match(/陰/g):
+      return "/src/img/weather_elements2.png";
+    default:
+      return "/src/img/weather_elements1.png";
   }
 });
-
 </script>
 
 <style lang="scss" scoped>
@@ -301,13 +289,14 @@ header {
         li:nth-child(6) {
           margin-right: 0;
         }
+
         // @include mobile{
         //     margin-right: 5px;
         // }
 
         i {
           display: none;
-          
+
           @include mobile {
             display: block;
             font-size: 30px;
@@ -317,6 +306,10 @@ header {
         }
 
         li {
+          a {
+            position: relative;
+          }
+
           button {
             width: 28px;
             height: 28px;
@@ -334,10 +327,28 @@ header {
             p {
               font-size: 0.1rem;
             }
+
           }
+
           .icons {
             width: 25px;
+
+            &.cart-icon {
+
+              ~div.cart-count {
+                right: -.5rem;
+                top: -.5rem;
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                background-color: red;
+                border-radius: 50%;
+              }
+            }
           }
+
+
+
 
           .weather_img {
             width: 35px;
@@ -347,6 +358,7 @@ header {
           p {
             color: white;
           }
+
           // }
 
           .switch {
@@ -354,6 +366,7 @@ header {
 
             i {
               display: block;
+
               @include mobile() {
                 font-size: 10px;
                 color: map-get($color, text);
@@ -480,9 +493,11 @@ header {
       0% {
         transform: translateX(0);
       }
+
       50% {
         transform: translateX(-25%);
       }
+
       100% {
         transform: translateX(-50%);
       }

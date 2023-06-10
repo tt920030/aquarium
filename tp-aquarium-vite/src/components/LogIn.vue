@@ -97,7 +97,7 @@
             <div class="right" v-else-if="type === 'B'">
                 <h3>註冊</h3>
                 <div class="top">
-                    <form action="post">
+                    <form>
                         <div class="input">
                             <label for="name" class="form-label">姓名</label>
                             <input type="text" id="name" name="name" placeholder="請輸入姓名" class="form-control"
@@ -240,7 +240,7 @@ const sendResult = ref();
 const send = function () {
     let params = new URLSearchParams();
     params.append('email', sendEmail.value);
-    axios.post('http://localhost/PHP/emailapi.php',
+    axios.post('http://localhost/g6/emailapi.php',
         params).then((res) => {
             console.log(res.data.success);
             if (res.data.success) {
@@ -261,7 +261,7 @@ const sendEmailPHP = () => {
     params.append('email', changeEmailText.email);
 
 
-    axios.post('http://localhost/PHP/sendEmail.php', params)	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/sendEmail.php', params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
@@ -365,7 +365,7 @@ const registerPHP = function () {		//取得資料的方法
     params.append('password', registerText.registerPassword);
 
 
-    axios.post('http://localhost/PHP/register.php', params)	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/register.php', params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
@@ -386,7 +386,7 @@ const loginPHP = function(){		//取得資料的方法
     params.append('password', loginText.password);
 
 
-    axios.post('http://localhost/PHP/login.php',params)	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/login.php',params)	//使用get或post等取得路徑資料(php)
 
     .then((res)=>{	//回傳後如何處理
         // console.log(res.data);
@@ -397,7 +397,7 @@ const loginPHP = function(){		//取得資料的方法
             alert('登入成功');
             cookies.set("id", res.data.id);
             close();
-            router.push({ path: '/member/profile' });
+            // router.push({ path: '/member/profile' }); //不用跳轉
 
         }else{
             alert('帳號或密碼錯誤');

@@ -1,10 +1,9 @@
 <template>
     <div class="order wrapper">
-        <select name="" id="">
-            <option value="one_month">一個月內訂單</option>
-            <option value="未出貨訂單">未出貨訂單</option>
-            <option value="six_month">六個月內訂單</option>
-        </select>
+        <!-- <select v-model="used" id="order">
+            <option :value="0">未取貨</option>
+            <option :value="1">已使用</option>
+        </select> -->
 
         <div class="table">
             <div class="title">
@@ -95,7 +94,8 @@
                 <div class="title">
                     <h3>我的訂單</h3>
                 </div>
-                <div class="tableContainer" v-for="item in order" :key="item.id" :class="{'-close': close}">
+                <!-- <div class="tableContainer" v-for="item in order" :key="item.id" :class="{'-close': close}"> -->
+                    <div class="tableContainer" v-for="item in order" :key="item.id">
                     <table>
                         <tr class="top">
                             <th>
@@ -103,7 +103,7 @@
                             </th>
                             <td>
                                 <p>{{ item.id }}</p>
-                                <img src="@/img/member_angle.svg" alt="" @click="closeOrder">
+                                <!-- <img src="@/img/member_angle.svg" alt="" @click="closeOrder"> -->
                             </td>
                             
                         </tr>
@@ -257,6 +257,8 @@ const closeOrder = (e) => {
     close.value = !close.value;
 }
 
+const used = ref(0);
+
 const { cookies } = useCookies();
 
 const id = cookies.get("id");
@@ -266,7 +268,7 @@ const getOrder = () => {
     params.append('id', id);
 
 
-    axios.post('http://localhost/PHP/getOrder.php', params)	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/getOrder.php', params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
@@ -282,6 +284,8 @@ const getOrder = () => {
                 });
             });
 
+            getOrderDetail();
+
         }).catch(err => console.log(err))  //錯誤如何處理
 }
 
@@ -290,7 +294,7 @@ const getOrderDetail = () => {
     params.append('id', id);
 
 
-    axios.post('http://localhost/PHP/getOrderDetail.php', params)	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/getOrderDetail.php', params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
@@ -317,8 +321,7 @@ const now = new Date();
 
 onMounted(() => {
     getOrder();
-    getOrderDetail();
-    console.log("2023/05/25 21:36:54" - now);
+    
 });
 </script>
 

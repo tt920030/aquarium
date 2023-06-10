@@ -50,6 +50,8 @@
     </div>
 </template>
 
+<!-- <img src="../../../public/img/" alt=""> -->
+
 <script setup>
 import { onMounted, reactive, VueElement ,defineComponent} from 'vue';
 import { useRouter,useRoute } from 'vue-router'
@@ -67,46 +69,63 @@ defineComponent({
     Navigation,
   },
 });
-const router = useRouter()
-const route = useRoute()
 
-console.log(router);
-console.log(route.query);
-const slides = reactive(["../../../public/img/news_picture1-1.jpg","../../../public/img/news_picture1-2.jpg","../../../public/img/news_picture1-3.jpg"]);
+const route = useRoute();
+
+// console.log(router);
+// console.log(route.query);
+const slides = reactive([]);
 
 const news = reactive({
-    month: "Apr",
-    date: "18",
-    title: "企鵝館迎來新成員！小企鵝寶寶布布誕生了！",
-    subTitle: "保育人員細心照顧，企鵝寶寶健康成長中！",
-    content:
- `最近，企鵝館裡迎來了一位新成員！小企鵝寶寶布布在4月18日的凌晨破殼而出，讓大家都為他感到興奮不已。他的父母，國王企鵝小花和奇奇，也非常高興迎接他的到來。
-    
-現在，保育人員們正細心照顧著小寶寶，確保他能夠順利地成長。幾個月後，他就會成為企鵝館的明星，讓遊客們在館內欣賞他可愛的模樣。
-    
-這個消息也讓所有的企鵝館工作人員和愛護動物的朋友們都感到十分欣喜和興奮。我們相信，這位新成員將會成為企鵝館的驕傲，也會帶來更多的歡笑和快樂。
-    
-最後，我們希望大家能夠繼續關注小寶寶的成長，也期待在未來能夠與大家一同分享更多有關他的好消息。`
+    month: "",
+    date: "",
+    title: "",
+    subTitle: "",
+    content: ""
 
 });
-console.log(this);
+
+const urlString = route.path;
+const number = urlString.split("/")[2];
 
 const newsPage = (e) => {
 
+    let params = new URLSearchParams();
+    params.append('id', number);
 
-
-    axios.post('http://localhost/PHP/newspage.php')	//使用get或post等取得路徑資料(php)
+    axios.post('http://localhost/g6/newspage.php',params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
-            console.log(res.date);
+            console.log(res.data);
+
+            news.month = new Date(res.data[0].DATE).toLocaleString('default', { month: 'short' });
+            news.date = res.data[0].DATE.split("-")[2];
+            news.title = res.data[0].TITLE;
+            news.subTitle = res.data[0].SUB_TITLE;
+            news.content = res.data[0].CONTENT;
+
+            slides.push('../../../public/img/' + res.data[0].PICTURE);
+
+            if(res.data[0].SUB_PICTURE1 !== ""){
+                slides.push('../../../public/img/' + res.data[0].SUB_PICTURE1);
+            }
+
+            if(res.data[0].SUB_PICTURE2 !== ""){
+                slides.push('../../../public/img/' + res.data[0].SUB_PICTURE2);
+            }
+
 
         }).catch(err => console.log(err))  //錯誤如何處理    
 
 }
 
+
+
 onMounted(() => {
     newsPage();
+    
+    console.log(slides);
 });
 </script>
 

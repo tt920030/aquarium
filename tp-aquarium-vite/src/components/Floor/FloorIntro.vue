@@ -6,7 +6,7 @@ import Testh from "/src/components/Testh.vue";
 const testdata = reactive([]);
 onMounted(() => {
   axios
-    .get("http://localhost/G6/Select.php")
+    .get(`${import.meta.env.VITE_API_URL}Select.php`)
     // https://tibamef2e.com/thd101/g6/PHP/Select.php
     .then((res) => {
       testdata.push(...res.data);
