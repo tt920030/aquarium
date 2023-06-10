@@ -17,7 +17,7 @@ const lightboxOverlayHandler = (e) => {
 
 // 燈箱內容處理函式(防止事件冒泡)
 const lightboxContentHandler = (e) => {
-  e.stopPropagation();
+  // e.stopPropagation();
 };
 
 // 手風琴標題處理函式
@@ -38,20 +38,16 @@ const props = defineProps({
 });
 const lightboxData = reactive(props.lightboxData.value[0]);
 // 不懂 ??(*´･д･)?
-
 </script>
 <template>
   <section class="light_box">
     <!-- :class="lightboxData.class" -->
 
-    <div
-      class="lightbox_overlay"
-      @click="lightboxOverlayHandler"
-    >
+    <div class="lightbox_overlay" @click="lightboxOverlayHandler">
       <div class="wrapper">
         <div class="lightbox_content" @click="lightboxContentHandler">
           <!-- 區塊1 -->
-          <div class="lightbox_block">
+          <div class="lightbox_block" v-if="lightboxData.section">
             <h4 class="accordion_header" @click="accordionHeaderHandler">
               {{ lightboxData.title }}
             </h4>

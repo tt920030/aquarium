@@ -2,11 +2,17 @@
   <div class="cms">
     <!-- Header -->
     <header>
-      <RouterLink class="logoLink" @click="clicked = ''; emitClicked()" to="/cms">
+      <RouterLink
+        class="logoLink"
+        @click="
+          clicked = '';
+          emitClicked();
+        "
+        to="/cms"
+      >
         <img class="logo" src="@/img/cms_logo.svg" alt="" />
         <h2>後台管理系統</h2>
       </RouterLink>
-
 
       <div class="profile">
         <h3>後台管理員</h3>
@@ -20,47 +26,84 @@
     </header>
     <!-- 選單列 -->
     <aside>
-      <RouterLink to="/cms/news_manage" @click="clicked = '1'; emitClicked()" :class="{ click: clicked == '1' }">
+      <RouterLink
+        to="/cms/news_manage"
+        @click="
+          clicked = '1';
+          emitClicked();
+        "
+        :class="{ click: clicked == '1' }"
+      >
         <div class="news"></div>
         <h4>消息管理</h4>
       </RouterLink>
 
-      <RouterLink to="/cms/product_manage" @click="clicked = '2'; emitClicked()" :class="{ click: clicked == '2' }">
+      <RouterLink
+        to="/cms/product_manage"
+        @click="
+          clicked = '2';
+          emitClicked();
+        "
+        :class="{ click: clicked == '2' }"
+      >
         <div class="product"></div>
         <h4>商品管理</h4>
       </RouterLink>
 
-      <RouterLink to="/cms/journey_manage" @click="clicked = '3'; emitClicked()" :class="{ click: clicked == '3' }">
+      <RouterLink
+        to="/cms/journey_manage"
+        @click="
+          clicked = '3';
+          emitClicked();
+        "
+        :class="{ click: clicked == '3' }"
+      >
         <div class="journey"></div>
         <h4>行程管理</h4>
       </RouterLink>
 
-      <RouterLink to="/cms/coupon_manage" @click="clicked = '4'; emitClicked()" :class="{ click: clicked == '4' }">
+      <RouterLink
+        to="/cms/coupon_manage"
+        @click="
+          clicked = '4';
+          emitClicked();
+        "
+        :class="{ click: clicked == '4' }"
+      >
         <div class="coupon"></div>
         <h4>折價券管理</h4>
       </RouterLink>
 
-      <RouterLink to="/cms/customer_manage" @click="clicked = '5'; emitClicked()" :class="{ click: clicked == '5' }">
+      <RouterLink
+        to="/cms/customer_manage"
+        @click="
+          clicked = '5';
+          emitClicked();
+        "
+        :class="{ click: clicked == '5' }"
+      >
         <div class="customer"></div>
         <h4>客服</h4>
       </RouterLink>
-
     </aside>
   </div>
 </template>
 <script setup>
-import { ref, defineEmits, watch, onMounted } from 'vue';
-import { RouterLink } from 'vue-router';
-const clicked = ref('0');
-const emit = defineEmits(['clicked']);
+import { ref, defineEmits, watch, onMounted } from "vue";
+import { RouterLink } from "vue-router";
+const clicked = ref("0");
+const emit = defineEmits(["clicked"]);
 const emitClicked = function () {
   emit("clicked", clicked.value);
 };
-watch(() => clicked.value, (newval) => {
-  localStorage.setItem('clicked', newval);
-})
+watch(
+  () => clicked.value,
+  (newval) => {
+    localStorage.setItem("clicked", newval);
+  }
+);
 onMounted(() => {
-  const savedClicked = localStorage.getItem('clicked');
+  const savedClicked = localStorage.getItem("clicked");
   if (savedClicked) {
     clicked.value = savedClicked;
   }
@@ -69,28 +112,25 @@ onMounted(() => {
 <style lang="scss" scoped>
 .cms {
   header {
-
     @include flex;
     width: 100%;
     height: 100px;
     align-items: center;
     background-color: map-get($color, text);
-    .logoLink{
+    .logoLink {
       display: flex;
       align-items: center;
       gap: 1rem;
       margin-left: 1rem;
-      .logo {
-     
+      //   .logo {
+
+      // }
+
+      h2 {
+        color: white;
+      }
     }
 
-    h2 {
-      color: white;
-  
-    }
-
-    }
-   
     .profile {
       position: absolute;
       right: 15%;
@@ -234,4 +274,5 @@ onMounted(() => {
       }
     }
   }
-}</style>
+}
+</style>

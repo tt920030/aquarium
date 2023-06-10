@@ -9,7 +9,7 @@
 </template>
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import ManageTemplate from '/src/components/ManageTemplate.vue';
+import ManageTemplate from "/src/components/ManageTemplate.vue";
 import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 const creates = ref(false);
@@ -24,7 +24,6 @@ const news = reactive([
   ]);
 </script>
 <style lang="scss" scoped>
-
 main {
   box-sizing: border-box;
   padding: 50px 20px 0 200px;
@@ -39,19 +38,17 @@ main {
   .row.justify-content-center {
     margin-left: -170px;
   }
-  .buttons{
-        display: flex;
-        margin-left: 305px;
-        margin-top: 30px;
-        button{
-            width: 129px;
-            height: 42px;
-            border:none;
-            background-color: map-get($color, bgc1 );
-            margin-right: 20px;
-        }
+  .buttons {
+    display: flex;
+    margin-left: 305px;
+    margin-top: 30px;
+    button {
+      width: 129px;
+      height: 42px;
+      border: none;
+      background-color: map-get($color, bgc1);
+      margin-right: 20px;
     }
+  }
 }
 </style>
-
-
