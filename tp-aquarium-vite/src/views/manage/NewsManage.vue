@@ -1,8 +1,4 @@
 <template>
-  <!-- <div class="mb-3">
-      <h3>行程管理</h3>
-      <button>新增行程</button>
-    </div> -->
   <manage-template
     :title="title"
     :forms="forms"
@@ -44,6 +40,7 @@ const news = () => {
       });
 
       resData.push(...res.data);
+      console.log(resData);
     })
     .catch((err) => console.log(err)); //錯誤如何處理
 };

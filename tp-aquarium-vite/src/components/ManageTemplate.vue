@@ -36,13 +36,12 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import Header from "/src/components/CMSHeader.vue";
 // 引入bootstrap
 import "bootstrap";
-
+// 接受傳遞過來的值
 const props = defineProps(["news", "changeData"]);
 console.log(props.news);
-// 接受傳遞過來的值
+
 const showaa = (e) => {
   console.log(e.target.value);
 };
