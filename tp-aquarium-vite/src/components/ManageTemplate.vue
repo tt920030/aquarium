@@ -50,7 +50,7 @@ const types = reactive({
   折價券管理: "InsertCoupon",
   客服: "InsertCustomer",
 });
-const props = defineProps(["news", "creates"]);
+const props = defineProps(["news", "creates", "changeData"]);
 const title = ref("");
 
 function create() {
@@ -93,7 +93,10 @@ const journey = () => {
     }
   }
   axios
-    .post(`http://localhost/G6/` + types[title.value] + `.php`, params)
+    .post(
+      `${import.meta.env.VITE_API_URL}` + types[title.value] + `.php`,
+      params
+    )
     .then((res) => {
       console.log(res.data);
     })
