@@ -76,6 +76,11 @@ const router = createRouter({
           component: () => import("../views/manage/JourneyChange.vue"),
         },
         {
+          path: "journey_create",
+          name: "JourneyCreate",
+          component: () => import("../views/manage/JourneyCreate.vue"),
+        },
+        {
           path: "product_manage",
           name: "ProductManage",
           component: () => import("../views/manage/ProductManage.vue"),
