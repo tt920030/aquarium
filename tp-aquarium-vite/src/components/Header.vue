@@ -332,6 +332,7 @@ header {
 
           .icons {
             width: 25px;
+            cursor: pointer;
 
             &.cart-icon {
 
