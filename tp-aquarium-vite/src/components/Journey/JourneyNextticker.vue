@@ -53,7 +53,6 @@ onMounted(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    // margin-top: 420px;
     .journey_slider_box {
       position: relative;
       width: 100%;
@@ -66,6 +65,9 @@ onMounted(() => {
         gap: 20px;
         left: 0;
       }
+    }
+    @include mobile(){
+      margin-top: -80px;
     }
 }
 </style>

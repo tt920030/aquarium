@@ -3,20 +3,20 @@
     <div class="index_logo_video">
     <video src="@/img/index_videosea.mp4" id="video_sea" width="100%" autoplay muted loop></video>
     <div class="index_logo_text">
-        <h4>探索海洋奧秘</h4>
-        <p>in Taipei Town</p>
-        <img src="@/img/index_logo.svg" alt=""/>
+      <h4>探索海洋奧秘</h4>
+      <p>in Taipei Town</p>
+      <img src="@/img/index_logo.svg" alt=""/>
     </div>
     </div>
 
     <div class="wrapper">
     <!-- index_intro -->
     <div class="intro_text">
-        <h4>探索海洋奧秘展開驚奇之旅</h4>
-        <h1>Taipei Aquarium</h1>
-        <p>
-        位於台灣北部的台北海生館是一個充滿驚奇和探索的地方，讓您感受到海洋的無限魅力。這裡是一個集科學、教育和娛樂於一體的海洋主題公園，展示了豐富多彩的海洋生物和海洋文化。台北海生館是一個適合全家大小和各種興趣愛好者的地方，無論您是海洋愛好者，還是想探索科學和文化的人，都能在這裡找到樂趣和啟發。
-        </p>
+      <h4>探索海洋奧秘展開驚奇之旅</h4>
+      <h1>Taipei Aquarium</h1>
+      <p>
+      位於台灣北部的台北海生館是一個充滿驚奇和探索的地方，讓您感受到海洋的無限魅力。這裡是一個集科學、教育和娛樂於一體的海洋主題公園，展示了豐富多彩的海洋生物和海洋文化。台北海生館是一個適合全家大小和各種興趣愛好者的地方，無論您是海洋愛好者，還是想探索科學和文化的人，都能在這裡找到樂趣和啟發。
+      </p>
     </div>
     </div>
 </template>

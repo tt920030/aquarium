@@ -74,8 +74,6 @@ const logIn = () => {
   } else {
     emit("openLogin", true);
   }
-
-
 };
 
 const loginCheck = () => {
@@ -140,9 +138,6 @@ const waveColor = ref(null);
 const waveColor2 = ref(null);
 const storedata = ref(null);
 
-
-
-
 onMounted(() => {
   //取得localStorge中加入購物車的資料(key開頭為cart)
   const keys = Object.keys(localStorage);
@@ -151,7 +146,6 @@ onMounted(() => {
     cart.value = true;
   }
 
-  
     storedata.value = sessionStorage.getItem("changecolor");
     if (storedata.value === "true") {
       flag.value = true;

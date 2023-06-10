@@ -1,9 +1,11 @@
 <template>
+    
   <ManageTemplate :news="news" :creates="creates"></ManageTemplate>
   <div class="buttons">
     <button>取消</button>
     <button @click="creates++">新增</button>
   </div>
+    
 </template>
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
@@ -12,13 +14,14 @@ import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 const creates = ref(false);
 const news = reactive([
-  { id: "title", title: "行程名稱", type: "text" },
-  { id: "time", title: "行程時間", type: "text" },
-  { id: "ticketMoney", title: "票價", type: "text" },
-  { id: "restriction", title: "數量限制", type: "number" },
-  { id: "picture", title: "封面圖片", type: "file" },
-  { id: "introduction", title: "活動介紹", type: "textarea" },
-]);
+    // { id: "ID", title: "行程ID", type: "text" },
+    { id: "title", title: "行程名稱", type: "text" },
+    { id: "time", title: "行程時間", type: "text" },
+    { id: "ticketMoney", title: "票價", type: "text" },
+    { id: "restriction", title: "數量限制", type: "number" },
+    { id: "picture", title: "封面圖片", type: "file" },
+    { id: "introduction", title: "活動介紹", type: "textarea" },
+  ]);
 </script>
 <style lang="scss" scoped>
 main {
