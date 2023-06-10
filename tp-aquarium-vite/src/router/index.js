@@ -98,8 +98,13 @@ const router = createRouter({
       path: "/cart",
       name: "Cart",
       meta: { title: "台北海生館｜購物車" },
-      meta: { title: "台北海生館｜購物車" },
       component: () => import("../views/Cart.vue"),
+    },
+    {
+      path: "/payment_success",
+      name: "PaymentSuccess",
+      meta: { title: "台北海生館｜購買成功" },
+      component: () => import("../views/PaymentSuccess.vue"),
     },
     {
       path: "/game_index",
@@ -240,7 +245,8 @@ const router = createRouter({
     {
       path: "/:pathMatch(.*)",
       name: "NotFound",
-      meta: { title: "404 Not Found" },
+      meta: { title: "404 Not Found",
+              hideHeader:true },
       component: import("../views/404.vue"),
     },
     {
@@ -277,11 +283,13 @@ const router = createRouter({
       path: "/backstage_index", //自己取之後要連的路徑名稱
       name: "BackstageIndex", //自己取
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
+      meta: { hideHeader: true },
     },
     {
       path: "/backstage_login", //自己取之後要連的路徑名稱
       name: "Backstagelogin", //自己取
-      component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
+      component: () => import("../views/Backstagelogin.vue"),//路徑連到剛剛建的vue檔
+      meta: { hideHeader: true }, 
     },
 
     {
