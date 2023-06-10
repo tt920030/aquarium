@@ -86,7 +86,6 @@ const lightboxClickHandler = (e) => {
 
 </script>
 
-
 <style lang="scss" scoped>
   @include wrapper {
     .journey_title {
@@ -97,19 +96,25 @@ const lightboxClickHandler = (e) => {
         font-size: 18px;
         margin-top: 10px;
       }
+      @include mobile() {
+        margin: 50px 0;
+      }
     }
 
     .journey_info {
       margin-bottom: 20px;
 
       @include mobile() {
-        padding-left: 20px;
-        margin: 0;
+        text-align: center;
       }
     }
 
     .journey_intro {
       margin-bottom: 420px;
+      @include mobile{
+        margin-bottom: 0;
+
+      }
 
       ul {
         li {

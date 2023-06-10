@@ -1,11 +1,10 @@
 <template>
     
-        <ManageTemplate :news="news" :creates="creates"></ManageTemplate>
-        <div class="buttons">
-          <button>取消</button>
-          <button @click="creates++">新增</button>
-        
-        </div>
+  <ManageTemplate :news="news" :creates="creates"></ManageTemplate>
+  <div class="buttons">
+    <button>取消</button>
+    <button @click="creates++">新增</button>
+  </div>
     
 </template>
 <script setup>
@@ -23,11 +22,6 @@ const news = reactive([
     { id: "picture", title: "封面圖片", type: "file" },
     { id: "introduction", title: "活動介紹", type: "textarea" },
   ]);
-
-  
-
-
-
 </script>
 <style lang="scss" scoped>
 
