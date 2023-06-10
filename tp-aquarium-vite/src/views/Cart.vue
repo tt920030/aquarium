@@ -94,9 +94,9 @@
             <div class="cart-delivery">
                 <h2>運送資訊</h2>
                 <div>
-                    <h4>收件人:{{receiver}}</h4>
-                    <h4>電話:{{phone}}</h4>
-                    <h4>電子信箱:{{email}}</h4>
+                    <h4>收件人:{{ receiver }}</h4>
+                    <h4>電話:{{ phone }}</h4>
+                    <h4>電子信箱:{{ email }}</h4>
                     <h4>宅配地址: {{ address }}</h4>
                     <button @click="addressModify = true" class="cart-button">
                         <p>變更收貨地址</p>
@@ -112,14 +112,15 @@
                         <h4>NT ${{ total }}</h4>
                     </div>
                     <div class="discount">
-                        <h4>折扣金額 <span>(使用折價券: 1D52593)</span></h4>
+                        <h4>折扣金額 <span>(使用折價券: {{ couponSelected }})</span></h4>
                         <h4>-NT ${{ discount }}</h4>
 
                     </div>
 
-                    <button class="cart-button">
+                    <button @click="getCoupon(); couponCheck = true" class="cart-button">
                         <p>查看可用優惠券</p>
                     </button>
+
                     <div class="shipping">
                         <h4>商品運費</h4>
                         <h4>NT ${{ delivery }}</h4>
@@ -127,7 +128,7 @@
                     <div class="hr"></div>
                     <div>
                         <h3>付款金額</h3>
-                        <h3>NT ${{ total - discount + delivery }}</h3>
+                        <h3>NT ${{ (total - discount + delivery)>0?(total - discount + delivery):0 }}</h3>
                     </div>
                     <a class="btn" @click="payment()">立即付款</a>
                 </div>
@@ -164,7 +165,23 @@
         </div>
 
     </div>
+    <div v-if="couponCheck" class="coupon-checker">
 
+        <div>
+            <button @click="couponCheck = false" class="close"><img src="/src/img/cart_close.svg" alt=""></button>
+            <h3>選擇折價券</h3>
+            <div>
+                <div>
+                    <p>折價券:</p>
+                    <select v-model="couponSelected">
+                        <option v-for="coupon in coupons" value="TAIPEI2023">TAIPEI2023</option>
+                    </select>
+                </div>
+            </div>
+            <button @click="couponCheck = false" class="btn">確定使用</button>
+        </div>
+
+    </div>
 
     <RouterView></RouterView>
 </template>
@@ -189,13 +206,20 @@ const phone = ref();
 const email = ref();
 const address = ref();
 const citySelected = ref('臺北市');
+const couponSelected = ref('');
 const areaSelected = ref('中正區');
 const zipSelected = ref(AddressJson.find(item => item.CityName === citySelected.value).AreaList.find(item => item.AreaName === areaSelected.value).ZipCode);
 const addressFilled = ref('');
+const couponCheck = ref(false);
 const addressModify = ref(false);
 const addressEmpty = ref(false);
 const router = useRouter();
+const coupons = ref();
+watch(()=>couponSelected.value,(newVal)=>{
+    discount.value=100;
+})
 //引入行程名稱、種類及票價資訊
+
 const choices = reactive(
     {
         '日間票': [{ name: "大人", price: 520, id: 1, amount: 0 }, { name: "學生", price: 360, id: 2, amount: 0 }, { name: "兒童", price: 240, id: 3, amount: 0 }, { name: "博愛票", price: 240, id: 4, amount: 0 }],
@@ -229,9 +253,9 @@ const addTotal = function () {
 
     });
     total.value = totalCount;
-   
+
 }
-watch(()=>total.value,(newVal)=>{
+watch(() => total.value, (newVal) => {
     if (total.value === 0) {
         for (const key in localStorage) {
             if (key.startsWith("cart")) {
@@ -276,11 +300,10 @@ const addressChange = function () {
         addressEmpty.value = true;
     }
 }
-//如為登入狀態，取得會員資料
-const getProfile = () => {
 
+const getCoupon = function () {
     let params = new URLSearchParams();
-    
+
     let cookieArr = document.cookie.split(";");
     for (var i = 0; i < cookieArr.length; i++) {
         let cookiePair = cookieArr[i].split("=");
@@ -291,7 +314,31 @@ const getProfile = () => {
             params.append('id', value);
         }
     }
-    
+
+
+    axios.post('http://localhost/g6/getCoupon.php', params)
+        .then((res) => {
+
+           coupons.value=res.data;
+
+        }).catch(err => console.log(err))
+};
+//如為登入狀態，取得會員資料
+const getProfile = () => {
+
+    let params = new URLSearchParams();
+
+    let cookieArr = document.cookie.split(";");
+    for (var i = 0; i < cookieArr.length; i++) {
+        let cookiePair = cookieArr[i].split("=");
+        let name = cookiePair[0].trim();
+
+        if (name === 'id') {
+            let value = cookiePair[1];
+            params.append('id', value);
+        }
+    }
+
 
     axios.post('http://localhost/PHP/profile.php', params)
         .then((res) => {
@@ -316,7 +363,7 @@ const payment = function () {
 
         if (name === 'id') {
             let value = cookiePair[1];
-            router.push({ path: '/payment_success' }); 
+            router.push({ path: '/payment_success' });
             return;
         }
     }
