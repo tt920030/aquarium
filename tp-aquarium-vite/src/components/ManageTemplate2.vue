@@ -53,13 +53,13 @@ const goChange = (e) => {
   const pageNow = e.target.parentElement.previousElementSibling.innerHTML;
   const changeData = props.resData.find((item) => item.ID == pageNow);
   // console.log(changeData);
-  // router.push({
-  //   path: changePage.value,
-  //   query: { changeData: JSON.stringify(changeData) },
-  // });
   router.push({
-    path: changePage.value + `/${pageNow}`,
+    path: changePage.value,
+    query: { changeData: JSON.stringify(changeData) },
   });
+  // router.push({
+  //   path: changePage.value + `/${pageNow}`,
+  // });
 };
 </script>
 <style lang="scss" scoped>

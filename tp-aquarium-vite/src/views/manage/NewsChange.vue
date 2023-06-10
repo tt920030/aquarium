@@ -16,7 +16,6 @@ import ManageTemplate from "/src/components/ManageTemplate.vue";
 // 接受模板2傳來的值
 const $route = useRoute();
 const changeData = reactive(JSON.parse($route.query.changeData));
-console.log(changeData);
 // 傳值給模板1
 const news = reactive([
   { id: "title", title: "消息標題", type: "text", data: changeData.TITLE },
