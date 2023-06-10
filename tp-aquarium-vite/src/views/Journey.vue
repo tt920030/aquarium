@@ -85,22 +85,18 @@ const sectionData = reactive([
 ]);
 
 const data = reactive([]);
-
-
 onMounted(() => {
   let params = new URLSearchParams();     //建立PHP可接受的格式
-        params.append('data',data.value); //將搜尋值傳入params物件內
-        axios.post('http://localhost/aquarium/getJourney.php') //使用get或post等取得路徑資料(php))				
+    params.append('data',data.value); //將搜尋值傳入params物件內
+    axios.post('http://localhost/aquarium/getJourney.php') //使用get或post等取得路徑資料(php))				
 
-        .then((res) => {			//回傳後如何處理
-            res.data.forEach(element => {
-                sectionData.push(element);
-            });
-            console.log(sectionData)
-        }).catch(err => console.log(err))  //錯誤如何處理
-
-})
-
+    .then((res) => {			//回傳後如何處理
+        res.data.forEach(element => {
+            sectionData.push(element);
+        });
+        console.log(sectionData)
+    }).catch(err => console.log(err))  //錯誤如何處理
+});
 
 // 決定燈箱是否開啟
 const lightboxIsOpen = ref(null);

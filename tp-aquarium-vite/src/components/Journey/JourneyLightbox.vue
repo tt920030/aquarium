@@ -12,7 +12,6 @@
     <div class="journey_intro">
       <ul>
         <li v-for="item in sectionData" :id="item.ID">
-          <!-- 設了id就不用設key嗎？意思一樣？ -->
           <a href="" class="lightbox" @click="lightboxClickHandler">
             <img class="intro_img" :src="'public/img/' + item.PICTURE" alt="" />
           </a>
@@ -50,7 +49,7 @@ import axios from 'axios';
 // onMounted(() => {
 //   let params = new URLSearchParams();     //建立PHP可接受的格式
 //         params.append('data',data.value); //將搜尋值傳入params物件內
-//         axios.post('http://localhost/aquarium/getJourney.php') //使用get或post等取得路徑資料(php))				
+//         axios.post('http://localhost/G6/getJourney.php') //使用get或post等取得路徑資料(php))				
 
 //         .then((res) => {			//回傳後如何處理
 //             res.data.forEach(element => {

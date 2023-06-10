@@ -18,16 +18,17 @@
             :id="news.id"
             required
           />
-          <textarea
+          <textarea 
             v-if="news.type == 'textarea'"
             class="form-control"
             :id="news.id"
             rows="5"
             required
           ></textarea>
-          
         </div>
+        
       </div>
+   
     </form>
 </template>
 
@@ -35,10 +36,67 @@
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import Header from "/src/components/CMSHeader.vue";
+import axios from "axios";
+
 // 引入bootstrap
 import "bootstrap";
+import { watch } from "vue";
 
-const props = defineProps(['news']);
+
+const types = reactive({'行程管理':'InsertJourney'});
+const props = defineProps(['news','creates']);
+const title = ref("");
+
+
+function create(){
+  title.value = document.getElementById("title").innerHTML;
+  // console.log(title.value);
+
+  console.log(types[title.value]);
+
+  const inputs = document.querySelectorAll('.justify-content-center');
+  inputs.forEach(input=>{
+    const name = ref("");
+    const value = ref("");
+
+    name.value = input.querySelector("label").getAttribute("for");
+    // console.log(input.querySelector("label").getAttribute("for"));
+    if(input.querySelector("input")){
+      value.value = input.querySelector("input").value;
+      // console.log(input.querySelector("input").value);
+    }else{
+      value.value = input.querySelector("textarea").value;
+      // console.log(input.querySelector("textarea").value);
+    }
+  //  data.push({
+  //   name: value,
+  //  });
+
+  data[name.value] = value.value;
+  })
+  journey();
+}
+
+
+const data =reactive({}); 
+const journey = () => {
+  let params = new URLSearchParams();  //建立PHP可接受的格式
+    for (var key in data) {           // 取得input內的值
+      if (data.hasOwnProperty(key)) {
+        var value = data[key];
+        params.append( key, value ); //將搜尋值傳入params物件內
+      }
+    }    
+      axios.post(`http://localhost/G6/`+types[title.value]+`.php`,params)
+      .then((res) => {
+        console.log(res.data);
+      }).catch((err) => console.log(err)); // 錯誤如何處理
+};
+
+watch(()=>props.creates,(newVal)=>{
+  create();
+  console.log(data);
+});
 
 </script>
 <style lang="scss" scoped>

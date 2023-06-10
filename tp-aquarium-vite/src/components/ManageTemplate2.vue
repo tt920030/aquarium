@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { RouterLink, RouterView,useRouter } from "vue-router";
+import { RouterLink, RouterView, useRouter } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 const router = useRouter();
 import Header from "/src/components/CMSHeader.vue";
