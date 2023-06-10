@@ -90,10 +90,10 @@
         params.append('name', bgName.name);
         params.append('password', bgName.password);
         // console.log(bgName.name);
-        axios.post('http://localhost/bglogin.php',
+        axios.post('http://localhost/G6/bglogin.php',
             params).then((res) => {
                 console.log(res.data);
-                if (res.data.value="y") {
+                if (res.data === "y") {
                     router.push({ path: '/news_create' });
                 };
             }).catch(err => console.log(err))
