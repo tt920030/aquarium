@@ -74,6 +74,7 @@
     import { RouterLink, RouterView } from "vue-router";
     import { onMounted, reactive, ref } from "vue";
     import axios from 'axios';
+    import { useRouter } from "vue-router";
     
     // 引入bootstrap
     import "bootstrap";
@@ -92,8 +93,13 @@
         axios.post('http://localhost/bglogin.php',
             params).then((res) => {
                 console.log(res.data);
+                if (res.data.value="y") {
+                    router.push({ path: '/news_create' });
+                };
             }).catch(err => console.log(err))
     }
+
+    const router = useRouter();
 
 
 </script>
