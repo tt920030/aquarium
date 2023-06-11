@@ -179,6 +179,7 @@ const journey = () => {
     )
     .then((res) => {
       console.log(res.data);
+      alert("新增成功!");
     })
     .catch((err) => console.log(err)); // 錯誤如何處理
 };
