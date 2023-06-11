@@ -114,7 +114,7 @@ const get = function () {
       let params = new URLSearchParams();
       params.append('id',value);    //有id就把會員id傳到php
 
-      axios.post('http://localhost/PHP/saveCoupon.php', params)
+      axios.post('http://localhost/g6/saveCoupon.php', params)
         .then((res) => {
           if(res.data==='exists'){
             alert("您已經領取過囉");

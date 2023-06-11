@@ -58,7 +58,7 @@ const picPage = reactive([
         position: absolute;
         z-index: 999;
         top: 55%;
-        right: 25%;
+        right: 21%;
         writing-mode: vertical-lr;
         font-family: Noto Sans TC;
       }
@@ -67,7 +67,7 @@ const picPage = reactive([
         position: absolute;
         z-index: 999;
         top: 55%;
-        right: 29%;
+        right: 25%;
         color: map-get($color, text);
         writing-mode: vertical-lr;
         font-family: Noto Sans TC;
@@ -78,7 +78,7 @@ const picPage = reactive([
         position: absolute;
         z-index: 999;
         top: 65%;
-        right: 35%;
+        right: 30%;
         writing-mode: vertical-lr;
         font-family: Noto Sans TC;
         line-height: 2;
@@ -142,7 +142,7 @@ const picPage = reactive([
         width: 250px;
         height: 250px;
         top: -30px;
-        right: 380px;
+        right: 270px;
         background-image: url(../img/journey_banner4.jpg);
         clip-path: url(#foam_4);
       }
@@ -152,7 +152,7 @@ const picPage = reactive([
         width: 250px;
         height: 250px;
         bottom: -110px;
-        right: 15px;
+        right: -30px;
         background-image: url(../img/journey_banner5.jpg);
         background-position-x: center;
         clip-path: url(#foam_5);
@@ -163,7 +163,7 @@ const picPage = reactive([
         width: 300px;
         height: 350px;
         top: -100px;
-        right: 0;
+        right: -70px;
         background-image: url(../img/journey_banner6.jpg);
         background-position-y: 70px;
         background-position-x: -80px;
@@ -171,13 +171,14 @@ const picPage = reactive([
       }
 
       @include mobile() {
-        padding-bottom: 460px;
-        overflow-x: hidden;
+        padding-bottom: 372px;
+        // overflow-x: hidden;
         margin-top: -115px;
         .pic_1 {
           overflow-x: hidden;
           top: -150px;
           left: 300px;
+          display: none;
         }
 
         .pic_2 {

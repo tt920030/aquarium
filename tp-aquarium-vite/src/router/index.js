@@ -56,9 +56,20 @@ const router = createRouter({
           component: () => import("../views/manage/NewsManage.vue"),
         },
         {
+          path: "news_create", //自己取之後要連的路徑名稱
+          name: "NewsCreate", //自己取
+          component: () => import("../views/manage/NewsCreate.vue"), //路徑連到剛剛建的vue檔
+          // meta: { title: "新增消息" },
+        },
+        {
           path: "coupon_manage",
           name: "CouponManage",
           component: () => import("../views/manage/CouponManage.vue"),
+        },
+        {
+          path: "coupon_change",
+          name: "CouponChange",
+          component: () => import("../views/manage/CouponChange.vue"),
         },
         {
           path: "coupon_create",
@@ -76,20 +87,39 @@ const router = createRouter({
           component: () => import("../views/manage/JourneyChange.vue"),
         },
         {
+          path: "journey_create",
+          name: "JourneyCreate",
+          component: () => import("../views/manage/JourneyCreate.vue"),
+        },
+        {
           path: "product_manage",
           name: "ProductManage",
           component: () => import("../views/manage/ProductManage.vue"),
+        },
+        {
+          path: "product_change",
+          name: "ProductChange",
+          component: () => import("../views/manage/ProductChange.vue"),
+        },
+        {
+          path: "product_create",
+          name: "ProductCreate",
+          component: () => import("../views/manage/ProductCreate.vue"),
         },
         {
           path: "customer_manage",
           name: "CustomerManage",
           component: () => import("../views/manage/CustomerManage.vue"),
         },
-
         {
           path: "customer_change",
           name: "CustomerChange",
           component: () => import("../views/manage/CustomerChange.vue"),
+        },
+        {
+          path: "customer_create",
+          name: "CustomerCreate",
+          component: () => import("../views/manage/CustomerCreate.vue"),
         },
       ],
     },
@@ -245,16 +275,10 @@ const router = createRouter({
     {
       path: "/:pathMatch(.*)",
       name: "NotFound",
-      meta: { title: "404 Not Found",
-              hideHeader:true },
+      meta: { title: "404 Not Found", hideHeader: true },
       component: import("../views/404.vue"),
     },
-    {
-      path: "/news_create", //自己取之後要連的路徑名稱
-      name: "NewsCreate", //自己取
-      component: () => import("../views/NewsCreate.vue"), //路徑連到剛剛建的vue檔
-      meta: { title: "新增消息" },
-    },
+
     // {
     //   path: "/coupon_manage", //自己取之後要連的路徑名稱
     //   name: "CouponManage", //自己取
@@ -272,13 +296,7 @@ const router = createRouter({
     //   meta: {title:'台北海生館後台｜修改行程'},
     //   component: () => import("../views/JourneyChange.vue"), //路徑連到剛剛建的vue檔
     // },
-    {
-      path: "/journeyCreate", //自己取之後要連的路徑名稱
-      name: "Journey_Create", //自己取
-      meta: { title: "台北海生館後台｜新增行程" },
-      meta: { hideHeader: true },
-      component: () => import("../views/JourneyCreate.vue"), //路徑連到剛剛建的vue檔
-    },
+
     {
       path: "/backstage_index", //自己取之後要連的路徑名稱
       name: "BackstageIndex", //自己取
@@ -288,8 +306,8 @@ const router = createRouter({
     {
       path: "/backstage_login", //自己取之後要連的路徑名稱
       name: "Backstagelogin", //自己取
-      component: () => import("../views/Backstagelogin.vue"),//路徑連到剛剛建的vue檔
-      meta: { hideHeader: true }, 
+      component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
+      meta: { hideHeader: true },
     },
 
     {

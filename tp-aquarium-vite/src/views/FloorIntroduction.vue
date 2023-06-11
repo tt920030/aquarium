@@ -126,6 +126,7 @@ const lightboxData1 = reactive([
     src1: "@/img/journey_intro4.jpg",
     p1: "來到海生館，別錯過與海豚互動的機會！海豚秀是海生館最受歡迎的活動之一，每天都有多場表演，讓你可以近距離觀察這些聰明、可愛的海洋哺乳動物。",
     to: "/visit_information",
+    section: true,
   },
   {
     class: "shark",
@@ -133,6 +134,7 @@ const lightboxData1 = reactive([
     src: "@/img/floor_introduction_p2.jpg",
     h4: "鯨鯊是一種生活在海洋中的巨型動物，體型驚人",
     p: "進入鯨鯊區，你將能夠看到鯨鯊的真實大小，為他們感到震驚，並且了解牠們的生態習性、行為模式和生命故事。我們的專業飼育員也會在這裡與你分享他們的知識和經驗，讓你更深入地了解這些驚人的生物。",
+    section: true,
   },
   {
     class: "coral",
@@ -140,6 +142,7 @@ const lightboxData1 = reactive([
     src: "@/img/floor_introduction_p3.jpg",
     h4: "海生館內的珊瑚礁區是一個令人驚嘆的世界",
     p: "在這裡您能夠親身體驗大海的神秘與美麗。進入珊瑚礁區，您會立刻感受到這裡的氛圍，到處都是色彩斑斕的珊瑚和各種奇妙的海洋生物。您可以欣賞到各種形狀和顏色的珊瑚，並且近距離觀察到如海星、海膽、海龜等令人驚嘆的生物。",
+    section: true,
   },
   {
     class: "penguin",
@@ -147,6 +150,7 @@ const lightboxData1 = reactive([
     src: "@/img/floor_introduction_p4.jpg",
     h4: "國王企鵝，霸道威武 、 雪花企鵝，小巧玲瓏",
     p: "在這裡，您可以欣賞到各種不同品種的企鵝，從小巧可愛的雪花企鵝到高大威武的帝王企鵝，此外我們的企鵝區還設有豐富多彩的互動體驗，讓您可以更深入地了解這些生物，例如可以和企鵝一起玩耍、拍照和學習如何照顧牠們。如果您想放鬆心情、感受一下可愛企鵝的活潑與愉悅。",
+    section: true,
   },
   {
     class: "jellyfish",
@@ -154,6 +158,7 @@ const lightboxData1 = reactive([
     src: "@/img/floor_introduction_p5.jpg",
     h4: "優雅的月亮水母與奇異的炸彈水母",
     p: "進入這個區域，您會立即被這些優美、透明的生物所吸引，並且感受到一種神秘和靜謐的氛圍。在這裡，您可以觀察到各種形狀、大小和顏色的水母，從優雅的月亮水母到奇異的炸彈水母，每種水母都展現了其獨特的魅力。我們特別設計了燈光和音樂效果，讓這個區域更加生動、富有趣味和互動性。",
+    section: true,
   },
   {
     class: "seal",
@@ -166,6 +171,7 @@ const lightboxData1 = reactive([
     src1: "@/img/floor_introduction_p6.jpg",
     p1: "在這個活動中，訓練師會訓練海獅完成各種表演，例如跳躍、翻滾、平衡、接球等，以展示海獅的智慧和技能。這種活動不僅讓觀眾欣賞到海獅的可愛和聰明，還可以提高人們對海洋動物的認識和對保護海洋環境的意識。",
     to: "/visit_information",
+    section: true,
   },
   {
     class: "turtle",
@@ -178,6 +184,7 @@ const lightboxData1 = reactive([
     src1: "@/img/floor_introduction_p7.jpg",
     p1: "在這個活動中，訓練師會訓練海獅完成各種表演，例如跳躍、翻滾、平衡、接球等，以展示海獅的智慧和技能。這種活動不僅讓觀眾欣賞到海獅的可愛和聰明，還可以提高人們對海洋動物的認識和對保護海洋環境的意識。",
     to: "/visit_information",
+    section: true,
   },
   {
     class: "starfish",
@@ -190,6 +197,7 @@ const lightboxData1 = reactive([
     src1: "@/img/floor_introduction_p8.jpg",
     p1: "觸摸海星活動是一種與海洋生物近距離互動的體驗，海星是一種生活在海洋中的奇特生物，牠們的身體扁平，呈星形，有著吸盤狀的足，能夠吸附在海洋中的礁石或其他物體上。通過觸摸海星活動，人們可以近距離觀察和感受這種奇特生物的外形和觸感，以及了解更多海星的生態和習性。",
     to: "/visit_information",
+    section: true,
   },
   {
     class: "otter",
@@ -202,6 +210,7 @@ const lightboxData1 = reactive([
     src1: "@/img/floor_introduction_p9.jpg",
     p1: " 您可以參加「水獺小管家」活動，與水獺近距離接觸！在活動中，您將跟隨專業的飼養員進入水獺的棲息地，親手投放食物給水獺，觀察牠們的行為與習性。當水獺靠近你時，您會感受到牠們柔軟的毛髮和溫暖的體溫，與牠們互動的過程也會讓您感到愉悅和驚喜。",
     to: "/visit_information",
+    section: true,
   },
 ]);
 

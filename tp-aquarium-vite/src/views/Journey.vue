@@ -8,7 +8,7 @@
     <journey-lightbox
       :sectionData="sectionData"
       @openBox="openLightbox"
-      ></journey-lightbox>
+    ></journey-lightbox>
     <!-- 燈箱 -->
     <Lightbox
       v-if="lightboxIsOpen"
@@ -85,22 +85,20 @@ const sectionData = reactive([
 ]);
 
 const data = reactive([]);
-
-
 onMounted(() => {
   let params = new URLSearchParams();     //建立PHP可接受的格式
-        params.append('data',data.value); //將搜尋值傳入params物件內
-        axios.post('http://localhost/aquarium/getJourney.php') //使用get或post等取得路徑資料(php))				
+    params.append('data',data.value); //將搜尋值傳入params物件內
+    axios.post(`${import.meta.env.VITE_API_URL}getJourney.php`) //使用get或post等取得路徑資料(php))				
 
-        .then((res) => {			//回傳後如何處理
-            res.data.forEach(element => {
-                sectionData.push(element);
-            });
-            console.log(sectionData)
-        }).catch(err => console.log(err))  //錯誤如何處理
-
-})
-
+    .then((res) => {
+      //回傳後如何處理
+      res.data.forEach((element) => {
+        sectionData.push(element);
+      });
+      console.log(sectionData);
+    })
+    .catch((err) => console.log(err)); //錯誤如何處理
+});
 
 // 決定燈箱是否開啟
 const lightboxIsOpen = ref(null);
@@ -148,20 +146,17 @@ const lightboxData1 = reactive([
 const openLightbox = (i) => {
   lightboxIsOpen.value = true;
   // lightboxData.value = sectionData.find(object => object.ID == i)
-   lightboxData.value = sectionData.filter((item) => item.ID == i);
-   lightboxData.value[0].h41 = lightboxData.value[0].NAME;
-   lightboxData.value[0].p1 = lightboxData.value[0].CONTENT;
-   lightboxData.value[0].src1 = lightboxData.value[0].PICTURE;
-   lightboxData.value[0].section2 = true;
-   lightboxData.value[0].to ='/overnight' ;
-   delete lightboxData.value[0].NAME;
-   delete lightboxData.value[0].CONTENT;
-   delete lightboxData.value[0].PICTURE;
-   const src = lightboxData.value[0].src1;
-   lightboxData.value[0].src1 = '/src/img/' + src;
-  // console.log(sectionData)
+  lightboxData.value = sectionData.filter((item) => item.ID == i);
+  lightboxData.value[0].h41 = lightboxData.value[0].NAME;
+  lightboxData.value[0].p1 = lightboxData.value[0].CONTENT;
+  lightboxData.value[0].src1 = lightboxData.value[0].PICTURE;
+  lightboxData.value[0].section2 = true;
+  lightboxData.value[0].to = "/overnight";
+  const src1 = lightboxData.value[0].src1;
+  lightboxData.value[0].src1 = "/src/img/" + src1;
+  console.log(sectionData);
   // console.log(i)
-  console.log(lightboxData)
+  console.log(lightboxData);
 };
 // const openLightbox = (i) => {
 //   lightboxIsOpen.value = true;
@@ -172,10 +167,12 @@ const openLightbox = (i) => {
 const closeLightbox = () => {
   lightboxIsOpen.value = false;
 };
-
 </script>
 
 <style lang="scss" scoped>
 .journey {
+  @include mobile{
+    margin-bottom: 300px;
+  }
 }
 </style>

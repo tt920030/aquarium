@@ -32,19 +32,16 @@
       <div class="wrapper">
         <h2>最新消息</h2>
           <ul>
-           
-           
-                <RouterLink to="/news/news_page">
-                  <li v-for="news in newsPage" :key="news.id">
-                    <img :src="news.src" alt="" />
-                    <div class="index_news_content">
-                      <h3>{{ news.month }}</h3>
-                      <h4>{{ news.title }}</h4>
-                      <p>{{ news.content }}</p>
-                    </div>
-                  </li>
-                </RouterLink>
-          
+            <RouterLink to="/news">
+              <li v-for="news in newsPage" :key="news.id">
+                <img :src="news.src" alt="" />
+                <div class="index_news_content">
+                  <h3>{{ news.month }}</h3>
+                  <h4>{{ news.title }}</h4>
+                  <p>{{ news.content }}</p>
+                </div>
+              </li>
+            </RouterLink>
           </ul>
 
         <!-- 了解更多button -->
@@ -98,13 +95,6 @@ const newsPage = reactive([
   },
   {
     id: 2,
-    src: '../../public/img/index_news2.jpg',
-    month: '2023/04/17',
-    title: '台北水族館新開幕！',
-    content: '各種海洋生物都在這，還有各項活動可以參與！'
-  },
-  {
-    id: 3,
     src: '../../public/img/index_news2.jpg',
     month: '2023/04/17',
     title: '台北水族館新開幕！',
