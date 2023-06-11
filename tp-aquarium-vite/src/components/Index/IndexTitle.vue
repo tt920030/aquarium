@@ -1,7 +1,7 @@
 <template>
     <!-- index_video -->
     <div class="index_logo_video">
-    <video src="@/img/index_videosea.mp4" id="video_sea" width="100%" autoplay muted loop></video>
+    <video src="../../../public/img/index_videosea.mp4" id="video_sea" width="100%" autoplay muted loop></video>
     <div class="index_logo_text">
         <h4>探索海洋奧秘</h4>
         <p>in Taipei Town</p>

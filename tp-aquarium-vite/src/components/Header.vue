@@ -31,7 +31,7 @@
             <img class="icons" src="/src/img/header_member.svg" alt="" />
           </li>
           <li>
-            <RouterLink to="/cart"><img class="icons cart-icon" src="src/img/header_cart.svg" alt="" />
+            <RouterLink to="/cart"><img class="icons cart-icon" src="/src/img/header_cart.svg" alt="" />
               <div class="cart-count" v-if="cart"></div>
             </RouterLink>
           </li>
