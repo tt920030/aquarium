@@ -176,7 +176,7 @@
 	onMounted(() =>{
         let params = new URLSearchParams();     //建立PHP可接受的格式
         params.append('data',data.value); //將搜尋值傳入params物件內
-        axios.post('http://localhost/PHP/getProduct.php') //使用get或post等取得路徑資料(php))				
+        axios.post(`${import.meta.env.VITE_API_URL}getProduct.php`) //使用get或post等取得路徑資料(php))				
 
         .then((res) => {			//回傳後如何處理
             res.data.forEach(element => {

@@ -28,7 +28,7 @@
         
         const product = productInPage[index];   
         const dataKey = "cartProduct";
-        const data = {  "name": product.name , "price": product.price, "amount": 1, "img": product.img};
+        const data = {  "name": product.NAME , "price": product.PRICE, "amount": 1, "img": "public/img/"+product.PICTURE};
         const list = JSON.parse(localStorage.getItem(dataKey)) || [];
         list.push(data);
         localStorage.setItem(dataKey, JSON.stringify(list));

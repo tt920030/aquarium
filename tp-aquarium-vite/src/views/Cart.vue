@@ -279,7 +279,7 @@ const addTotal = function () {
         }
 
     });
-    products.forEach(product =>{
+    transformedProducts.forEach(product =>{
         if(product.checked && product.amount){
         totalCount += product.price * product.amount;
         }
@@ -290,7 +290,7 @@ const addTotal = function () {
 watch(() => total.value, (newVal) => {
     if (total.value === 0) {
         for (const key in localStorage) {
-            if (key.startsWith("cart")) {
+            if (key.startsWith("cart") || key.startsWith("cartProduct")) {
                 localStorage.removeItem(key);
             }
         }

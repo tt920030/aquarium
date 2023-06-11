@@ -131,7 +131,7 @@
             messages.push(message);
             // scrollToBottom();
             questionText.value = '';
-            axios.post('http://localhost/PHP/costumerRes.php', data)
+            axios.post(`${import.meta.env.VITE_API_URL}costumerRes.php`, data)
             .then(response => {
                 // 处理响应
                 reply.value = response.data;
