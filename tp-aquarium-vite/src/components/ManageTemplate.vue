@@ -91,10 +91,6 @@ function create() {
       value.value = input.querySelector("textarea").value;
       // console.log(input.querySelector("textarea").value);
     }
-    //  data.push({
-    //   name: value,
-    //  });
-
     data[name.value] = value.value;
   });
   journey();
