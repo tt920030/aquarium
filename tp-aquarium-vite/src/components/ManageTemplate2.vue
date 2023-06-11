@@ -2,7 +2,7 @@
   <table class="table table-bordered border-dark">
     <thead class="table-primary border-dark">
       <tr>
-        <th scope="col" v-for="(title, index) in title" :key="index">
+        <th scope="col" v-for="(title, index) in props.title" :key="index">
           {{ title }}
         </th>
       </tr>

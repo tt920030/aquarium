@@ -146,7 +146,7 @@ const getProfile = () => {
     let params = new URLSearchParams();
     params.append('id', id);
 
-    axios.post('http://localhost/g6/profile.php',params)
+    axios.post(`${import.meta.env.VITE_API_URL}profile.php`,params)
     .then((res) => {
 
         console.log(res.data[0]);
@@ -202,7 +202,7 @@ const changePofile = () => {
     params.append('phone', profileText.phone);
     params.append('address', profileText.address);
 
-    axios.post('http://localhost/g6/changeProfile.php',params)
+    axios.post(`${import.meta.env.VITE_API_URL}changeProfile.php`,params)
     .then((res) => {
 
         // console.log(res.data[0].EMAIL);
@@ -217,7 +217,7 @@ const photo = () => {
     // console.log(profileText.photo_id);
 
 
-    axios.post('http://localhost/g6/photoName.php',params)
+    axios.post(`${import.meta.env.VITE_API_URL}photoName.php`,params)
     .then((res) => {
 
         // console.log(res.data);

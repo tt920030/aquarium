@@ -4,12 +4,12 @@
   <body class="quiz">
     <div id="particles-js"></div>
 
-    <!-- 回首頁按鈕 -->
+    <!-- 返回小遊戲首頁按鈕 -->
     <button class="back_to_home">
       <img src="../../img/logosvg.svg" alt="LOGO SVG" />
-      <RouterLink to="/">
-        <h5>回首頁</h5>
-      </RouterLink>
+      <RouterLink to="/game_index">
+      <h5>回小遊戲</h5>
+    </RouterLink>
     </button>
     <!-- start Quiz button -->
     <div class="start_btn"><button>開始答題</button></div>
@@ -114,7 +114,7 @@ const get = function () {
       let params = new URLSearchParams();
       params.append('id',value);    //有id就把會員id傳到php
 
-      axios.post('http://localhost/g6/saveCoupon.php', params)
+      axios.post('http://localhost/G6/saveCoupon.php', params)
         .then((res) => {
           if(res.data==='exists'){
             alert("您已經領取過囉");
@@ -275,7 +275,7 @@ onMounted(() => {
 
   }
 
-  /* 回首頁按鈕 */
+  /* 返回小遊戲首頁按鈕 */
   .back_to_home {
     position: absolute;
     top: 25px;
@@ -283,7 +283,7 @@ onMounted(() => {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: 125px;
+    width: 150px;
     height: 45px;
     border: none;
     border-radius: 10px;

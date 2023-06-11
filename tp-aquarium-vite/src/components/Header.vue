@@ -5,16 +5,21 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
   />
   <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+  />
+  <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
     rel="stylesheet"
   />
+  rel="stylesheet" />
 
   <header>
     <div
       class="content"
       :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }"
     >
-      <RouterLink to="/" class="logo" href=""
+      <RouterLink to="/index" class="logo"
         ><img src="@/img/logo-white.svg" alt=""
       /></RouterLink>
       <nav>
@@ -353,6 +358,7 @@ header {
 
           .icons {
             width: 25px;
+            cursor: pointer;
 
             &.cart-icon {
               ~ div.cart-count {
@@ -380,7 +386,7 @@ header {
 
           .switch {
             background-color: lightgrey;
-
+            cursor: pointer;
             i {
               display: block;
 

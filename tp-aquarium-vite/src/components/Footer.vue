@@ -42,7 +42,9 @@
             <p>{{ right.content }}</p>
           </router-link>
         </div>
-        <a class="logo" href=""><img src="/src/img/logo-white.svg" alt="" /></a>
+        <RouterLink to="/index" class="logo"
+          ><img src="@/img/logo-white.svg" alt=""
+        /></RouterLink>
       </nav>
     </div>
   </footer>
@@ -107,7 +109,8 @@ onMounted(() => {
 });
 
 watch(
-  () => props.color2,(newValue) => {
+  () => props.color2,
+  (newValue) => {
     // console.log(props.color2);
     if (newValue) {
       waveColor.value = "DeepSkyBlue";

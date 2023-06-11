@@ -17,7 +17,6 @@
           :id="news.id"
           required
           v-model="news.data"
-          @change="showaa"
         />
 
         <textarea
@@ -84,10 +83,14 @@ function create() {
 
     name.value = input.querySelector("label").getAttribute("for");
     // console.log(input.querySelector("label").getAttribute("for"));
-    if (input.querySelector("input")) {
+    if (input.querySelector("input[type='file']")) {
+      files[0] = input.querySelector("input").files[0];
+      // upload();
+      value.value = input.querySelector("input").files[0].name;
+    } else if (input.querySelector("input")) {
       value.value = input.querySelector("input").value;
       // console.log(input.querySelector("input").value);
-    } else {
+    } else if (input.querySelector("textarea")) {
       value.value = input.querySelector("textarea").value;
       // console.log(input.querySelector("textarea").value);
     }
@@ -157,7 +160,44 @@ const data = reactive({});
 const data1 = reactive({});
 // 刪除
 const data2 = reactive({});
+//上傳
+const files = reactive([]);
 
+// 商品資料處理特例
+// 資料處理
+const typeTrans = (data) => {
+  switch (data) {
+    case "玩偶":
+      return "1";
+    case "文具":
+      return "2";
+    case "吊飾":
+      return "3";
+    case "食品":
+      return "4";
+    case "其他":
+      return "5";
+    default:
+      return data;
+  }
+};
+
+const animalTrans = (data) => {
+  switch (data) {
+    case "企鵝":
+      return "1";
+    case "海豚":
+      return "2";
+    case "魚類":
+      return "3";
+    case "水母":
+      return "4";
+    case "其他":
+      return "5";
+    default:
+      return data;
+  }
+};
 // 新增
 const journey = () => {
   let params = new URLSearchParams(); //建立PHP可接受的格式
@@ -165,9 +205,15 @@ const journey = () => {
     // 取得input內的值
     if (data.hasOwnProperty(key)) {
       var value = data[key];
+      // 商品特例處理
+      value = typeTrans(value);
+      value = animalTrans(value);
+      console.log(value);
       params.append(key, value); //將搜尋值傳入params物件內
     }
   }
+
+  console.log(data);
   axios
     .post(
       `${import.meta.env.VITE_API_URL}` + types[title.value] + `.php`,
@@ -186,16 +232,20 @@ const journey1 = () => {
     // 取得input內的值
     if (data1.hasOwnProperty(key)) {
       var value = data1[key];
+      // 商品特例處理
+      value = typeTrans(value);
+      value = animalTrans(value);
       params.append(key, value); //將搜尋值傳入params物件內
     }
   }
+  console.log(data1);
   axios
     .post(
       `${import.meta.env.VITE_API_URL}` + types1[title.value] + `.php`,
       params
     )
     .then((res) => {
-      // console.log(res.data);
+      console.log(res.data);
       // console.log(params);
       alert("修改成功!");
     })

@@ -31,7 +31,7 @@
               <i class="bi bi-coin"
                 ><p>${{ item.PRICE }}</p></i
               >
-              <RouterLink class="btn" to="/ticket">了解更多</RouterLink>
+              <RouterLink class="btn" to="/itinerary">前往購票</RouterLink>
             </div>
           </div>
         </li>

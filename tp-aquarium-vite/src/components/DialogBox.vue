@@ -1,6 +1,6 @@
 <template>
         <div v-if="isReply" class="answer">
-            <img src="../img/customer_service1.png" alt="">
+            <img src="public/img/customer_service1.png" alt="">
             <div class="messageWrapper">
                 <p class="messageAnswer">{{ text }}</p>
             </div>

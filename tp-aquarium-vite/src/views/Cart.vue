@@ -76,11 +76,35 @@
                 </div>
                 <!-- 商品 -->
 
-                <div v-if="products[0]" class="cart-group cart-products">
+                <div v-if="products[0]" :class="['cart-group', 'cart-tickets',{'close':productsClose}]">
                     <h3>商品</h3>
+                    <div v-for="product in products" class="cart-product-content">
+                        <div class="content-inside" v-if="product.amount">
+                            <input type="checkbox" v-model="product.checked" @change="addTotal" checked>
+                            <div class="cart-product-content-r">
+                                <img :src = product.img alt="">
+                                <div>
+                                    <div>
+                                        <h4>{{ product.name }}</h4>
+                                        <h3>${{ product.price }}</h3>
+                                        <div>
+                                            <button @click="product.amount--; addTotal();amountChange()">-</button>
+                                            <p>{{ product.amount }}</p>
+                                            <button @click="product.amount++; addTotal();amountChange()">+</button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4>金額</h4>
+                                        <h3 class="count">NT ${{ product.price * product.amount }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <button>
-                        <h4>展開查看全部</h4>
+                    <button @click="productsClose=!productsClose">
+                        <h4 v-if="productsClose">展開查看全部</h4>
+                        <h4 v-if="!productsClose">收起</h4>
                     </button>
                 </div>
                 <!-- 初步總計 -->
@@ -118,7 +142,7 @@
                     </div>
 
                     <button @click="getCoupon(); couponCheck = true" class="cart-button">
-                        <p>查看可用優惠券</p>
+                        <p>查看可用折價券</p>
                     </button>
 
                     <div class="shipping">
@@ -174,8 +198,10 @@
                 <div>
                     <p>折價券:</p>
                     <select v-model="couponSelected">
+                        <option value="" selected>請選擇折價券</option>
                         <option v-for="coupon in coupons" value="TAIPEI2023">TAIPEI2023</option>
                     </select>
+                    <button @click="clear()" v-if="couponSelected">取消使用</button>
                 </div>
             </div>
             <button @click="couponCheck = false" class="btn">確定使用</button>
@@ -192,6 +218,7 @@ import { RouterLink, RouterView, useRouter } from "vue-router";
 import { watch, onBeforeUpdate, onMounted, reactive, ref } from "vue";
 import AddressJson from '/src/json/CityCountyData.json';
 const inCart = reactive([]);
+const productInCart = reactive([]);
 const tickets = reactive([]);
 const journeys = reactive([]);
 const products = reactive([]);
@@ -216,7 +243,11 @@ const addressEmpty = ref(false);
 const router = useRouter();
 const coupons = ref();
 watch(()=>couponSelected.value,(newVal)=>{
-    discount.value=100;
+    if(couponSelected.value!=0){
+        discount.value=100;
+    }else{
+        discount.value=0;
+    }
 })
 //引入行程名稱、種類及票價資訊
 
@@ -237,6 +268,8 @@ const transformedTickets = reactive([]);
 const transformedJourneys = reactive([]);
 //登入會員資訊
 const profileText = reactive({});
+const transformedProducts = reactive([])
+
 //計算商品總金額
 const addTotal = function () {
     let totalCount = 0;
@@ -252,13 +285,18 @@ const addTotal = function () {
         }
 
     });
+    transformedProducts.forEach(product =>{
+        if(product.checked && product.amount){
+        totalCount += product.price * product.amount;
+        }
+    })
     total.value = totalCount;
 
 }
 watch(() => total.value, (newVal) => {
     if (total.value === 0) {
         for (const key in localStorage) {
-            if (key.startsWith("cart")) {
+            if (key.startsWith("cart") || key.startsWith("cartProduct")) {
                 localStorage.removeItem(key);
             }
         }
@@ -268,8 +306,9 @@ watch(() => total.value, (newVal) => {
 const amountChange = function () {
     tickets.splice(0, tickets.length, ...transformedTickets);
     journeys.splice(0, journeys.length, ...transformedJourneys);
+    products.splice(0, products.length, ...transformedProducts);
     Object.keys(localStorage).forEach(key => {
-        if (key.startsWith("cart")) {
+        if (key.startsWith("cart") || key.startsWith("cartProduct")) {
             localStorage.removeItem(key);
         }
     });
@@ -283,6 +322,13 @@ const amountChange = function () {
     journeys.forEach(journey => {
         const dataKey = "cart" + journey.name + journey.date;
         const data = { ...{ "name": journey.name }, ...{ [journey.type]: journey.amount }, ...{ "date": journey.date } };
+        let list = JSON.parse(localStorage.getItem(dataKey)) || [];
+        list.push(data);
+        localStorage.setItem(dataKey, JSON.stringify(list));
+    })
+    products.forEach(product=>{
+        const dataKey = "cartProduct";
+        const data = {  "name": product.name , "price": product.price, "amount": product.amount, "img": product.img };
         let list = JSON.parse(localStorage.getItem(dataKey)) || [];
         list.push(data);
         localStorage.setItem(dataKey, JSON.stringify(list));
@@ -316,13 +362,21 @@ const getCoupon = function () {
     }
 
 
-    axios.post('http://localhost/g6/getCoupon.php', params)
+    axios.post('http://localhost/G6/getCoupon.php', params)
         .then((res) => {
-
-           coupons.value=res.data;
+            console.log(res.data);
+            if(typeof res.data == 'object'){
+                coupons.value=res.data;
+            }
+       
 
         }).catch(err => console.log(err))
 };
+
+const clear = function(){
+    
+    couponSelected.value = '';
+}
 //如為登入狀態，取得會員資料
 const getProfile = () => {
 
@@ -340,7 +394,7 @@ const getProfile = () => {
     }
 
 
-    axios.post('http://localhost/PHP/profile.php', params)
+    axios.post('http://localhost/G6/profile.php', params)
         .then((res) => {
 
             email.value = res.data[0].EMAIL;
@@ -376,14 +430,20 @@ watch(() => areaSelected.value, (newVal) => {
     zipSelected.value = AddressJson.find(item => item.CityName === citySelected.value).AreaList.find(item => item.AreaName === areaSelected.value).ZipCode;
 })
 onMounted(() => {
-    //取得localStorge中加入購物車的資料(key開頭為cart)
+    //取得localStorge中加入購物車的資料(key開頭為cart/cartProduct)
     const keys = Object.keys(localStorage);
     const cartKeys = keys.filter(key => key.startsWith("cart"));
+    const productCartKeys = keys.filter(key => key.startsWith("cartProduct"))
+
     if (cartKeys.length > 0) {
         cartKeys.forEach(cartKey => {
             const cartValue = JSON.parse(localStorage.getItem(cartKey));
             inCart.push(cartValue);
         });
+        productCartKeys.forEach( productCartKeys =>{
+            const productCartValue = JSON.parse(localStorage.getItem(productCartKeys));
+            products.push(...productCartValue);
+        })
     }
     if (inCart.length > 0) {
 
@@ -397,6 +457,9 @@ onMounted(() => {
         };
 
     }
+
+
+
 
     //將日期和品名相同的商品結合
     for (let i = 0; i < tickets.length; i++) {
@@ -432,6 +495,21 @@ onMounted(() => {
             }
         }
     }
+    console.log(journeys)
+    for (let i = 0; i < products.length; i++) {
+        for (let j = i + 1; j < products.length; j++) {
+            if (products[i].name === products[j].name ) {
+                products[i].amount += products[j].amount;
+                products.splice(j, 1);
+                j--; // 递减内部循环的索引以保持一致性
+            }
+        }
+    }
+    console.log(products)
+
+
+
+    
     //將各商品細項分類出來
     transformedTickets.push(...tickets.flatMap(item => {
         const { name, date, 大人, 學生, 兒童, 博愛票 } = item;
@@ -450,6 +528,18 @@ onMounted(() => {
     }));
 
     getProfile();
+    transformedProducts.push(...products.flatMap(item =>{
+        const {name, price, amount, img} = item;
+        return [
+            { name, price, amount, img , "checked":true},
+        ];
+    }));
+
+    // console.log(transformedTickets);
+    // console.log(transformedJourneys)
+    // console.log(products)
+    // console.log(transformedProducts)
+    
     addTotal();
 
 });

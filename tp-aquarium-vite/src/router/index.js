@@ -1,13 +1,19 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import index from "../views/Index.vue";
+import index from "../views/BackstageIndex.vue";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "index",
+      name: "backstageindex",
       component: index,
+      meta: { title: "台北海生館｜前後台選擇" , hideHeader: true },
+    },
+    {
+      path: "/index",
+      name: "index",
+      component: () => import("../views/Index.vue"),
       meta: { title: "台北海生館｜首頁" },
     },
     {
@@ -46,79 +52,94 @@ const router = createRouter({
       component: () => import("../views/CMSindex.vue"),
       children: [
         {
-          path: "news_change/:id",
+          path: "news_change",
           name: "NewsChange",
+          meta: { title: "後台管理系統｜修改消息" },
           component: () => import("../views/manage/NewsChange.vue"),
         },
         {
           path: "news_manage",
           name: "NewsManage",
+          meta: { title: "後台管理系統｜消息管理" },
           component: () => import("../views/manage/NewsManage.vue"),
         },
         {
           path: "news_create", //自己取之後要連的路徑名稱
           name: "NewsCreate", //自己取
+          meta: { title: "後台管理系統｜新增消息" },
           component: () => import("../views/manage/NewsCreate.vue"), //路徑連到剛剛建的vue檔
           // meta: { title: "新增消息" },
         },
         {
           path: "coupon_manage",
           name: "CouponManage",
+          meta: { title: "後台管理系統｜折價卷管理" },
           component: () => import("../views/manage/CouponManage.vue"),
         },
         {
           path: "coupon_change",
           name: "CouponChange",
+          meta: { title: "後台管理系統｜修改折價卷" },
           component: () => import("../views/manage/CouponChange.vue"),
         },
         {
           path: "coupon_create",
           name: "CouponCreate",
+          meta: { title: "後台管理系統｜新增折價卷" },
           component: () => import("../views/manage/CouponCreate.vue"),
         },
         {
           path: "journey_manage",
           name: "JourneyManage",
+          meta: { title: "後台管理系統｜行程管理" },
           component: () => import("../views/manage/JourneyManage.vue"),
         },
         {
           path: "journey_change",
           name: "JourneyChange",
+          meta: { title: "後台管理系統｜修改行程" },
           component: () => import("../views/manage/JourneyChange.vue"),
         },
         {
           path: "journey_create",
           name: "JourneyCreate",
+          meta: { title: "後台管理系統｜新增行程" },
           component: () => import("../views/manage/JourneyCreate.vue"),
         },
         {
           path: "product_manage",
           name: "ProductManage",
+          meta: { title: "後台管理系統｜商品管理" },
           component: () => import("../views/manage/ProductManage.vue"),
         },
         {
           path: "product_change",
           name: "ProductChange",
+          meta: { title: "後台管理系統｜修改商品" },
           component: () => import("../views/manage/ProductChange.vue"),
         },
         {
           path: "product_create",
           name: "ProductCreate",
+          meta: { title: "後台管理系統｜新增商品" },
           component: () => import("../views/manage/ProductCreate.vue"),
         },
         {
           path: "customer_manage",
           name: "CustomerManage",
+          meta: { title: "後台管理系統｜客服管理" },
           component: () => import("../views/manage/CustomerManage.vue"),
         },
         {
           path: "customer_change",
           name: "CustomerChange",
+          meta: { title: "後台管理系統｜修改客服" },
           component: () => import("../views/manage/CustomerChange.vue"),
         },
         {
           path: "customer_create",
           name: "CustomerCreate",
+          meta: { title: "後台管理系統｜新增客服" },
           component: () => import("../views/manage/CustomerCreate.vue"),
         },
       ],
@@ -139,18 +160,20 @@ const router = createRouter({
     {
       path: "/game_index",
       name: "GameIndex",
+      meta: { title: "台北海生館｜遊戲挑戰" },
       component: () => import("../views/GameIndex.vue"),
     },
     {
       path: "/game_choose",
       name: "GameChoose",
+      meta: { title: "台北海生館｜遊戲大廳" },
       component: () => import("../views/game/GameChoose.vue"),
     },
     {
       path: "/game_quiz",
       name: "GameQuiz",
       // 把header和footer藏起來
-      meta: { hideHeader: true },
+      meta: { hideHeader: true, title: "台北海生館｜問答遊戲" },
       component: () => import("../views/game/GameQuiz.vue"),
     },
     // {
@@ -161,7 +184,7 @@ const router = createRouter({
     {
       path: "/game_puzzle",
       name: "/GamePuzzle",
-      meta: { hideHeader: true },
+      meta: { hideHeader: true, title: "台北海生館｜拼圖遊戲" },
       component: () => import("../views/game/GamePuzzle.vue"),
     },
 
@@ -182,23 +205,25 @@ const router = createRouter({
     {
       path: "/faq",
       name: "Faq",
+      meta: { title: "台北海生館｜常見問題" },
       component: () => import("../views/Faq.vue"),
     },
     {
       path: "/product",
       name: "Product",
-      component: () => import("../views/Product.vue"),
       meta: { title: "台北海生館｜商品介紹" },
+      component: () => import("../views/Product.vue"),
     },
     {
       path: "/stores",
       name: "Stores",
-      component: () => import("../views/Stores.vue"),
       meta: { title: "台北海生館｜網路商城" },
+      component: () => import("../views/Stores.vue"),
     },
     {
       path: "/visit_information",
       name: "VisitInformation",
+      meta: { title: "台北海生館｜參觀資訊" },
       component: () => import("../views/VisitInformation.vue"),
     },
     {
@@ -209,16 +234,19 @@ const router = createRouter({
     {
       path: "/about",
       name: "About",
+      meta: { title: "台北海生館｜關於我們" },
       component: () => import("../views/About.vue"),
     },
     {
       path: "/floor_Introduction", //自己取之後要連的路徑名稱
       name: "FloorIntroduction", //自己取
+      meta: { title: "台北海生館｜樓層介紹" },
       component: () => import("../views/FloorIntroduction.vue"), //路徑連到剛剛建的vue檔
     },
     {
       path: "/park_activity", //自己取之後要連的路徑名稱
       name: "ParkActivity", //自己取
+      meta: { title: "台北海生館｜館內活動" },
       component: () => import("../views/ParkActivity.vue"), //路徑連到剛剛建的vue檔
     },
     {
@@ -230,7 +258,7 @@ const router = createRouter({
     {
       path: "/news/:news_pageid",
       name: "NewsPage",
-      meta: { title: "最新消息" },
+      meta: { title: "台北海生館｜最新消息內頁" },
       component: () => import("../views/news/NewsPageid.vue"),
     },
 
@@ -252,7 +280,6 @@ const router = createRouter({
       path: "/itinerary", //自己取之後連的路徑名稱
       name: "Itinerary", //自己取
       meta: { title: "台北海生館｜票券｜行程購買" },
-      meta: { title: "台北海生館｜票券及行程購買" },
       component: () => import("../views/Itinerary.vue"), //路徑連到剛剛建的vue檔
     },
 
@@ -272,6 +299,12 @@ const router = createRouter({
     //   name: 'userdata',
     //   component: import("../views/[id].vue")
     // },
+    {
+      path: "/product/:id",
+      name: "Product/:id",
+      component: ()=>import("../views/Product[id].vue"),
+      meta:{title:"Product"}
+    },
     {
       path: "/:pathMatch(.*)",
       name: "NotFound",
@@ -300,14 +333,14 @@ const router = createRouter({
     {
       path: "/backstage_index", //自己取之後要連的路徑名稱
       name: "BackstageIndex", //自己取
+      meta: { hideHeader: true, title: "台北海生館｜前後台首頁" },
       component: () => import("../views/BackstageIndex.vue"), //路徑連到剛剛建的vue檔
-      meta: { hideHeader: true },
     },
     {
       path: "/backstage_login", //自己取之後要連的路徑名稱
       name: "Backstagelogin", //自己取
+      meta: { hideHeader: true, title: "台北海生館｜後台登入" },
       component: () => import("../views/Backstagelogin.vue"), //路徑連到剛剛建的vue檔
-      meta: { hideHeader: true },
     },
 
     {

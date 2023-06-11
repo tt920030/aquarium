@@ -1,7 +1,7 @@
 <template>
-  <ManageTemplate :news="news"></ManageTemplate>
+  <ManageTemplate :news="news" :updates="updates"></ManageTemplate>
   <div class="buttons">
-    <button>更改</button>
+    <button @click="updates++">更改</button>
     <button>取消</button>
   </div>
 </template>
@@ -10,6 +10,8 @@
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import ManageTemplate from "/src/components/ManageTemplate.vue";
+// 修改
+const updates = ref(false);
 
 // 接受模板2傳來的值
 const $route = useRoute();
@@ -58,10 +60,10 @@ const news = reactive([
     id: "PRODUCT_ID",
     title: "商品編號",
     type: "text",
-    data: changeData.PRODUCT_ID,
+    data: changeData.ID,
   },
   {
-    id: "ID",
+    id: "NAME",
     title: "商品名稱",
     type: "text",
     data: changeData.NAME,
@@ -79,7 +81,7 @@ const news = reactive([
     data: changeData.INVENTORY,
   },
   {
-    id: "ANIMAl_ID",
+    id: "ANIMAL_ID",
     title: "動物分類",
     type: "text",
     data: animal,

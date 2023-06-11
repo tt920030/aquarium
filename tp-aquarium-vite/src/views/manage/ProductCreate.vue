@@ -1,8 +1,8 @@
 <template>
-  <ManageTemplate :news="news"></ManageTemplate>
+  <ManageTemplate :news="news" :creates="creates"></ManageTemplate>
   <div class="buttons">
     <button>取消</button>
-    <button @click.prevent="sendDb">新增</button>
+    <button @click="creates++">新增</button>
   </div>
 </template>
 <script setup>
@@ -10,14 +10,15 @@ import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import ManageTemplate from "/src/components/ManageTemplate.vue";
 import axios from "axios";
+const creates = ref(false);
 const news = reactive([
+  // {
+  //   id: "PRODUCT_ID",
+  //   title: "商品編號",
+  //   type: "text",
+  // },
   {
-    id: "PRODUCT_ID",
-    title: "商品編號",
-    type: "text",
-  },
-  {
-    id: "ID",
+    id: "NAME",
     title: "商品名稱",
     type: "text",
   },
@@ -32,7 +33,7 @@ const news = reactive([
     type: "text",
   },
   {
-    id: "ANIMAl_ID",
+    id: "ANIMAL_ID",
     title: "動物分類",
     type: "text",
   },
@@ -54,8 +55,6 @@ const news = reactive([
   { id: "picture1", title: "消息副照片", type: "file" },
   { id: "picture2", title: "消息副照片", type: "file" },
 ]);
-// 送到資料庫
-const sendDb = () => {};
 </script>
 <style lang="scss" scoped>
 .buttons {
