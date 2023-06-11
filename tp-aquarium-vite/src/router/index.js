@@ -8,7 +8,7 @@ const router = createRouter({
       path: "/",
       name: "backstageindex",
       component: index,
-      meta: { title: "台北海生館｜前後台選擇" , hideHeader: true },
+      meta: { title: "台北海生館｜前後台選擇", hideHeader: true },
     },
     {
       path: "/index",
@@ -209,12 +209,6 @@ const router = createRouter({
       component: () => import("../views/Faq.vue"),
     },
     {
-      path: "/product",
-      name: "Product",
-      meta: { title: "台北海生館｜商品介紹" },
-      component: () => import("../views/Product.vue"),
-    },
-    {
       path: "/stores",
       name: "Stores",
       meta: { title: "台北海生館｜網路商城" },
@@ -302,8 +296,8 @@ const router = createRouter({
     {
       path: "/product/:id",
       name: "Product/:id",
-      component: ()=>import("../views/Product[id].vue"),
-      meta:{title:"Product"}
+      component: () => import("../views/Product[id].vue"),
+      meta: { title: "Product" },
     },
     {
       path: "/:pathMatch(.*)",
