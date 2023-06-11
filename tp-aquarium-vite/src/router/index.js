@@ -46,7 +46,7 @@ const router = createRouter({
       component: () => import("../views/CMSindex.vue"),
       children: [
         {
-          path: "news_change/:id",
+          path: "news_change",
           name: "NewsChange",
           component: () => import("../views/manage/NewsChange.vue"),
         },

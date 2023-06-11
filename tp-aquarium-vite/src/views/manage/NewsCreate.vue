@@ -1,14 +1,16 @@
 <template>
-  <ManageTemplate :news="news"></ManageTemplate>
+  <ManageTemplate :news="news" :creates="creates"></ManageTemplate>
   <div class="buttons">
     <button>取消</button>
-    <button>新增</button>
+    <button @click="creates++">新增</button>
   </div>
 </template>
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import ManageTemplate from "/src/components/ManageTemplate.vue";
+import axios from "axios";
+const creates = ref(false);
 const news = reactive([
   { id: "title", title: "消息標題", type: "text" },
   {
