@@ -77,7 +77,7 @@
               <div class="link_text">
                 <h4>園區介紹</h4>
                 <p>認識我們的園區，看看感興趣的區域，規劃您的海生館行程</p>
-                <a href=""><p>more</p></a>
+                <router-link to="/news"><p>more</p></router-link>
               </div>
             </li>
             <li>
@@ -85,7 +85,7 @@
               <div class="link_text">
                 <h4>園區介紹</h4>
                 <p>認識我們的園區，看看感興趣的區域，規劃您的海生館行程</p>
-                <a href=""><p>more</p></a>
+                <router-link to="/news"><p>more</p></router-link>
               </div>
             </li>
             <li>
@@ -93,7 +93,7 @@
               <div class="link_text">
                 <h4>園區介紹</h4>
                 <p>認識我們的園區，看看感興趣的區域，規劃您的海生館行程</p>
-                <a href=""><p>more</p></a>
+                <router-link to="/news"><p>more</p></router-link>
               </div>
             </li>
           </ul>

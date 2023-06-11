@@ -39,7 +39,7 @@ const lightboxClickHandler = (e) => {
       <div class="floor_white">
         <div class="floor_img" v-for="(item, index) in floorIntroData">
           <p>{{ index + 1 }}<span>F</span></p>
-          <img src="/src/img/floor_introduction_floor1.svg" alt="樓層圖" />
+          <img src="/img/floor_introduction_floor1.svg" alt="樓層圖" />
           <div
             v-for="item1 in item.animals"
             class="fp"
@@ -106,50 +106,50 @@ const lightboxClickHandler = (e) => {
 
       // 各區塊設定
       .barrier {
-        background: url("/src/img/floor_introduction_barrier_free_icon.svg")
+        background: url("/img/floor_introduction_barrier_free_icon.svg")
           no-repeat 2px 50%;
         background-size: 25px 25px;
       }
 
       .scope {
-        background: url("/src/img/floor_introduction_fish_icon.svg") no-repeat
-          2px 50%;
+        background: url("/img/floor_introduction_fish_icon.svg") no-repeat 2px
+          50%;
         background-size: 25px 25px;
       }
 
       .lift {
-        background: url("/src/img/floor_introduction_lift_icon.svg") no-repeat
-          2px 50%;
+        background: url("/img/floor_introduction_lift_icon.svg") no-repeat 2px
+          50%;
         background-size: 25px 25px;
       }
 
       .baby {
-        background: url("/src/img/floor_introduction_baby_icon.svg") no-repeat
-          2px 50%;
+        background: url("/img/floor_introduction_baby_icon.svg") no-repeat 2px
+          50%;
         background-size: 30px 25px;
       }
 
       .shop {
-        background: url("/src/img/floor_introduction_shop_icon.svg") no-repeat
-          2px 50%;
+        background: url("/img/floor_introduction_shop_icon.svg") no-repeat 2px
+          50%;
         background-size: 25px 25px;
       }
 
       .toilet {
-        background: url("/src/img/floor_introduction_toilet_icon.svg") no-repeat
-          2px 50%;
+        background: url("/img/floor_introduction_toilet_icon.svg") no-repeat 2px
+          50%;
         background-size: 25px 25px;
       }
 
       .academy {
-        background: url("/src/img/floor_introduction_school_icon.svg") no-repeat
-          2px 50%;
+        background: url("/img/floor_introduction_school_icon.svg") no-repeat 2px
+          50%;
         background-size: 25px 25px;
       }
 
       .cafe {
-        background: url("/src/img/floor_introduction_coffee_icon.svg") no-repeat
-          2px 50%;
+        background: url("/img/floor_introduction_coffee_icon.svg") no-repeat 2px
+          50%;
         background-size: 25px 25px;
       }
     }
@@ -168,7 +168,7 @@ const lightboxClickHandler = (e) => {
       font-size: 24px;
       line-height: 1.6;
       font-weight: bold;
-      background: url("/src/img/floor_introduction_h2_line.svg") no-repeat left
+      background: url("/img/floor_introduction_h2_line.svg") no-repeat left
         bottom;
       background-size: 250px 10px;
     }

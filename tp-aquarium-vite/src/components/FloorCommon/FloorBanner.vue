@@ -8,7 +8,7 @@
 </template>
 <style lang="scss" scoped>
 .banner {
-  background-image: url("/src/img/guided_tour_banner.jpg");
+  background-image: url("/img/guided_tour_banner.jpg");
   width: 100%;
   height: 660px;
   background-size: cover;
