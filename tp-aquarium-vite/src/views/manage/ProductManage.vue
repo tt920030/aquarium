@@ -12,12 +12,12 @@ import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 import ManageTemplate from "/src/components/ManageTemplate2.vue";
 const title = reactive([
-  "商品編號",
   "商品名稱",
   "動物分類",
   "種類分類",
   "價格",
   "庫存數量",
+  "商品編號",
   "修改",
   "刪除",
 ]);
@@ -42,7 +42,7 @@ const news = () => {
       });
       forms.push(...transformedData);
       resData.push(...res.data);
-      console.log(resData);
+      // console.log(resData);
     })
     .catch((err) => console.log(err));
 };

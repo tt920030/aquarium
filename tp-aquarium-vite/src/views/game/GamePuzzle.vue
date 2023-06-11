@@ -2,7 +2,7 @@
   <LogIn v-if="!hide" @close="openLogin"></LogIn>
   <div id="particles-js"></div>
 
-  <!-- 回首頁按鈕 -->
+  <!-- 返回小遊戲首頁按鈕 -->
   <button class="back_to_home">
     <img src="../../img/logosvg.svg" alt="LOGO SVG" />
     <RouterLink to="/game_index">
@@ -21,7 +21,7 @@
 
   <!-- style="display: block;" -->
   <div class="lightbox_out">
-    <div class="lightbox" style="display: none;">
+    <div class="lightbox">
       <div class="lightbox-content">
         <span class="close">&times;</span>
         <img src="../../img/crownshark.png" alt="Image">
@@ -32,20 +32,11 @@
         </p>
         <div class="puzzle_coupon">
           <div class="puzzle_number">TAIPEI2023</div>
-          <button class="save_coupon">
-            <a href="#">儲存折價券</a>
-          </button>
+          <button @click="get()" class="save_coupon">儲存折價券</button>
         </div>
       </div>
     </div>
 
-    <!-- 儲存折扣碼是否前往登入 -->
-    <div class="game_savecoupon hide">
-      <h4>登入會員即可儲存折價券！<br>是否確定前往登入頁面？</h4>
-      
-      <button @click="openLogIn();close()" class="game_savecoupon_sure_btn"><p>確定</p></button>
-      <button @click="allClose()" class="game_savecoupon_cancel_btn"><p>取消</p></button>
-    </div>
 
   </div>
 
@@ -53,50 +44,60 @@
 
 <script  setup>
 
+import axios from 'axios';
 //vue3-cookies
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 const id = cookies.get("id");
-const hide = ref(true);
-import Puzzle from "/src/js/puzzle.js";
-// import Puzzle from "/src/js/save_coupon.js";
 
+import { reactive } from 'vue';
+
+//拼圖JS
+import Puzzle from "/src/js/puzzle.js";
 
 import { onMounted, ref } from "vue";
-import { watch } from "vue";
-
-
-const bg = function () {
 
 
 
-}
-const openLogin = function(){
+const hide = ref(true);
+const openLogin = function () {
   hide.value = true;
 }
-const close = function(){
-  document.querySelector(".game_savecoupon").style.display="none";
-}
-const allClose = function(){
-  document.querySelector(".game_savecoupon").style.display="none";
-  document.querySelector(".lightbox").style.display="none";
-}
-const openLogIn = function(){
+const openLogIn = function () {
   hide.value = false;
 }
-watch(()=>hide.value,(newVal)=>{
-  if(hide.value===true){
-    allClose();
+//領取折價券
+const get = function () {
+  let cookieArr = document.cookie.split(";");
+  for (var i = 0; i < cookieArr.length; i++) {
+    let cookiePair = cookieArr[i].split("=");
+    let name = cookiePair[0].trim();
+
+    if (name === 'id') {         //判斷cookies裡面有沒有id
+      let value = cookiePair[1];
+      
+      let params = new URLSearchParams();
+      params.append('id',value);    //有id就把會員id傳到php
+
+      axios.post('http://localhost/PHP/saveCoupon.php', params)
+        .then((res) => {
+          if(res.data==='exists'){
+            alert("您已經領取過囉");
+          }else{
+            alert("領取成功，請於結帳時使用");
+          }
+        }).catch(err => console.log(err))
+      return;
+    }
+
+
   }
-})
+  openLogIn();
+}
+
 // 拼圖背景
 onMounted(() => {
     
-
-  
-  // particlesJS_Start()
-
-
 
   var head = document.getElementsByTagName("head")[0];
   var script = document.createElement("script");
@@ -333,7 +334,7 @@ onMounted(() => {
   background-size: cover;
 }
 
-/* 回首頁按鈕 */
+/* 返回小遊戲首頁按鈕 */
 .back_to_home {
   position: absolute;
   top: 25px;
@@ -459,6 +460,7 @@ onMounted(() => {
   background: #FFF61C;
   margin: auto;
 
+  cursor: pointer;
 }
 
 .save_coupon a {

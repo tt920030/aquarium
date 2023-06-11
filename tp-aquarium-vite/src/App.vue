@@ -2,6 +2,7 @@
 import { RouterLink, RouterView, useRouter } from "vue-router";
 // const router = useRouter();
 import { onMounted, reactive, ref } from "vue";
+import CustomerService from "/src/components/CustomerService.vue";
 
 const hide = ref(false);
 const color2 = ref(false);
@@ -20,7 +21,12 @@ const color = (i) => {
 
 <template>
   <!-- <router-link to="/"></router-link> -->
-  <Header @openLogin="openLogin" @color="color" v-if="!$route.meta.hideHeader"></Header>
+  <Header
+    @openLogin="openLogin"
+    @color="color"
+    v-if="!$route.meta.hideHeader"
+  ></Header>
+  <CustomerService v-if="!$route.meta.hideHeader"></CustomerService>
   <RouterView />
   <Footer :color2="color2" v-if="!$route.meta.hideHeader"></Footer>
   <LogIn v-if="hide" @close="openLogin"></LogIn>

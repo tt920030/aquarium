@@ -152,7 +152,7 @@ const picPage = reactive([
         width: 250px;
         height: 250px;
         bottom: -110px;
-        right: -30px;
+        right: 0;
         background-image: url(../img/journey_banner5.jpg);
         background-position-x: center;
         clip-path: url(#foam_5);
@@ -163,7 +163,7 @@ const picPage = reactive([
         width: 300px;
         height: 350px;
         top: -100px;
-        right: -70px;
+        right: 0px;
         background-image: url(../img/journey_banner6.jpg);
         background-position-y: 70px;
         background-position-x: -80px;

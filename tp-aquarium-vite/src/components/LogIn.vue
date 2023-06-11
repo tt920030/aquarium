@@ -239,8 +239,8 @@ const sendEmail = ref('');
 const sendResult = ref();
 const send = function () {
     let params = new URLSearchParams();
-    params.append('email', sendEmail.value);
-    axios.post('http://localhost/g6/emailapi.php',
+    params.append('email', changeEmailText.email);
+    axios.post(`${import.meta.env.VITE_API_URL}emailapi.php`,
         params).then((res) => {
             console.log(res.data.success);
             if (res.data.success) {
@@ -261,7 +261,7 @@ const sendEmailPHP = () => {
     params.append('email', changeEmailText.email);
 
 
-    axios.post('http://localhost/g6/sendEmail.php', params)	//使用get或post等取得路徑資料(php)
+    axios.post(`${import.meta.env.VITE_API_URL}sendEmail.php`, params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
@@ -365,7 +365,7 @@ const registerPHP = function () {		//取得資料的方法
     params.append('password', registerText.registerPassword);
 
 
-    axios.post('http://localhost/g6/register.php', params)	//使用get或post等取得路徑資料(php)
+    axios.post(`${import.meta.env.VITE_API_URL}register.php`, params)	//使用get或post等取得路徑資料(php)
 
         .then((res) => {	//回傳後如何處理
 
@@ -386,7 +386,7 @@ const loginPHP = function(){		//取得資料的方法
     params.append('password', loginText.password);
 
 
-    axios.post('http://localhost/g6/login.php',params)	//使用get或post等取得路徑資料(php)
+    axios.post(`${import.meta.env.VITE_API_URL}login.php`,params)	//使用get或post等取得路徑資料(php)
 
     .then((res)=>{	//回傳後如何處理
         // console.log(res.data);
@@ -397,6 +397,7 @@ const loginPHP = function(){		//取得資料的方法
             alert('登入成功');
             cookies.set("id", res.data.id);
             close();
+            location.reload();
             // router.push({ path: '/member/profile' }); //不用跳轉
 
         }else{

@@ -1,13 +1,22 @@
 <template>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+  />
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet"
+  />
 
   <header>
-    <div class="content" :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }">
-      <RouterLink to="/" class="logo" href=""><img src="@/img/logo-white.svg" alt="" /></RouterLink>
+    <div
+      class="content"
+      :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }"
+    >
+      <RouterLink to="/index" class="logo"
+        ><img src="@/img/logo-white.svg" alt=""
+      /></RouterLink>
       <nav>
         <ul class="icon">
           <i class="bi bi-list"></i>
@@ -23,7 +32,12 @@
           </li>
           <li><img :src="get_weather_img" alt="" class="weather_img" /></li>
           <li>
-            <button type="button" ref="circle" class="switch" @click="switchColor">
+            <button
+              type="button"
+              ref="circle"
+              class="switch"
+              @click="switchColor"
+            >
               <i class="bi bi-moon-stars-fill"></i>
             </button>
           </li>
@@ -31,7 +45,12 @@
             <img class="icons" src="/src/img/header_member.svg" alt="" />
           </li>
           <li>
-            <RouterLink to="/cart"><img class="icons cart-icon" src="src/img/header_cart.svg" alt="" />
+            <RouterLink to="/cart"
+              ><img
+                class="icons cart-icon"
+                src="src/img/header_cart.svg"
+                alt=""
+              />
               <div class="cart-count" v-if="cart"></div>
             </RouterLink>
           </li>
@@ -48,9 +67,18 @@
     </div>
 
     <div class="ocean">
-      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
-      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
-      <div class="wave" :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"></div>
+      <div
+        class="wave"
+        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
+      ></div>
+      <div
+        class="wave"
+        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
+      ></div>
+      <div
+        class="wave"
+        :class="{ '-light_color': waveColor === 'DeepSkyBlue' }"
+      ></div>
     </div>
   </header>
 </template>
@@ -67,17 +95,17 @@ const router = useRouter();
 const cart = ref(false);
 const { cookies } = useCookies();
 
-
 const logIn = () => {
   if (cookies.isKey("id")) {
-    router.push({ path: '/member/profile' });
+    router.push({ path: "/member/profile" });
   } else {
     emit("openLogin", true);
   }
 };
 
 const loginCheck = () => {
-  axios.post(`${import.meta.env.VITE_API_URL}loginCheck.php`)
+  axios
+    .post(`${import.meta.env.VITE_API_URL}loginCheck.php`)
     .then((res) => {
       if (res.data !== "") {
         isLogin.value = true;
@@ -141,52 +169,52 @@ const storedata = ref(null);
 onMounted(() => {
   //取得localStorge中加入購物車的資料(key開頭為cart)
   const keys = Object.keys(localStorage);
-  const cartKeys = keys.filter(key => key.startsWith("cart"));
+  const cartKeys = keys.filter((key) => key.startsWith("cart"));
   if (cartKeys.length > 0) {
     cart.value = true;
   }
 
-    storedata.value = sessionStorage.getItem("changecolor");
-    if (storedata.value === "true") {
-      flag.value = true;
-      circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
-      circle.value.style.backgroundColor = "#ccf1f5";
-      waveColor.value = "DeepSkyBlue";
-      waveColor2.value = "DeepSkyBlue";
-    } else {
-      flag.value = false;
-      circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
-      circle.value.style.backgroundColor = "lightgrey";
-      waveColor.value = "blue";
-      waveColor2.value = "blue";
-    }
+  storedata.value = sessionStorage.getItem("changecolor");
+  if (storedata.value === "true") {
+    flag.value = true;
+    circle.value.innerHTML = '<i class="bi bi-sun-fill"></i>';
+    circle.value.style.backgroundColor = "#ccf1f5";
+    waveColor.value = "DeepSkyBlue";
+    waveColor2.value = "DeepSkyBlue";
+  } else {
+    flag.value = false;
+    circle.value.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+    circle.value.style.backgroundColor = "lightgrey";
+    waveColor.value = "blue";
+    waveColor2.value = "blue";
+  }
 
-    // 串接天氣api
-    axios
-      .get(
-        "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415"
-      ) //使用get或post等取得路徑資料(php或json)
-      .then((res) => {
-        //回傳後如何處理
-        // console.log(res);
+  // 串接天氣api
+  axios
+    .get(
+      "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-27C8451A-9958-4266-BF95-4D2E7E36A415"
+    ) //使用get或post等取得路徑資料(php或json)
+    .then((res) => {
+      //回傳後如何處理
+      // console.log(res);
 
-        // 查找溫度資料
-        let temp = res.data.records.location[14].weatherElement[3].elementValue;
-        // console.log(temp);
+      // 查找溫度資料
+      let temp = res.data.records.location[14].weatherElement[3].elementValue;
+      // console.log(temp);
 
-        // 查找天氣型態資料
-        let WeatherState =
-          res.data.records.location[14].weatherElement[20].elementValue;
-        // console.log(WeatherState);
+      // 查找天氣型態資料
+      let WeatherState =
+        res.data.records.location[14].weatherElement[20].elementValue;
+      // console.log(WeatherState);
 
-        // 加上溫度單位
-        let tempList = temp + "°C";
+      // 加上溫度單位
+      let tempList = temp + "°C";
 
-        tempWeather.value = tempList;
-        rainWeatherState.value = WeatherState;
-      })
-      .catch((err) => console.log(err)); //錯誤如何處理
-  });
+      tempWeather.value = tempList;
+      rainWeatherState.value = WeatherState;
+    })
+    .catch((err) => console.log(err)); //錯誤如何處理
+});
 
 const switchColor = () => {
   flag.value = !flag.value;
@@ -321,17 +349,16 @@ header {
             p {
               font-size: 0.1rem;
             }
-
           }
 
           .icons {
             width: 25px;
+            cursor: pointer;
 
             &.cart-icon {
-
-              ~div.cart-count {
-                right: -.5rem;
-                top: -.5rem;
+              ~ div.cart-count {
+                right: -0.5rem;
+                top: -0.5rem;
                 position: absolute;
                 width: 1rem;
                 height: 1rem;
@@ -340,9 +367,6 @@ header {
               }
             }
           }
-
-
-
 
           .weather_img {
             width: 35px;
@@ -357,7 +381,7 @@ header {
 
           .switch {
             background-color: lightgrey;
-
+            cursor: pointer;
             i {
               display: block;
 

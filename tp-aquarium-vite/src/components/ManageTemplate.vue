@@ -17,7 +17,6 @@
           :id="news.id"
           required
           v-model="news.data"
-          @change="showaa"
         />
 
         <textarea
@@ -84,10 +83,14 @@ function create() {
 
     name.value = input.querySelector("label").getAttribute("for");
     // console.log(input.querySelector("label").getAttribute("for"));
-    if (input.querySelector("input")) {
+    if (input.querySelector("input[type='file']")) {
+      files[0] = input.querySelector("input").files[0];
+      // upload();
+      value.value = input.querySelector("input").files[0].name;
+    } else if (input.querySelector("input")) {
       value.value = input.querySelector("input").value;
       // console.log(input.querySelector("input").value);
-    } else {
+    } else if (input.querySelector("textarea")) {
       value.value = input.querySelector("textarea").value;
       // console.log(input.querySelector("textarea").value);
     }
@@ -157,6 +160,8 @@ const data = reactive({});
 const data1 = reactive({});
 // 刪除
 const data2 = reactive({});
+//上傳
+const files = reactive([]);
 
 // 商品資料處理特例
 // 資料處理
@@ -203,9 +208,11 @@ const journey = () => {
       // 商品特例處理
       value = typeTrans(value);
       value = animalTrans(value);
+      console.log(value);
       params.append(key, value); //將搜尋值傳入params物件內
     }
   }
+
   console.log(data);
   axios
     .post(
@@ -225,16 +232,20 @@ const journey1 = () => {
     // 取得input內的值
     if (data1.hasOwnProperty(key)) {
       var value = data1[key];
+      // 商品特例處理
+      value = typeTrans(value);
+      value = animalTrans(value);
       params.append(key, value); //將搜尋值傳入params物件內
     }
   }
+  console.log(data1);
   axios
     .post(
       `${import.meta.env.VITE_API_URL}` + types1[title.value] + `.php`,
       params
     )
     .then((res) => {
-      // console.log(res.data);
+      console.log(res.data);
       // console.log(params);
       alert("修改成功!");
     })

@@ -1,7 +1,7 @@
 <template>
-  <ManageTemplate :news="news" :changeData="changeData"></ManageTemplate>
+  <ManageTemplate :news="news"  :updates="updates"></ManageTemplate>
   <div class="buttons">
-    <button>更改</button>
+    <button @click="updates++">更改</button>
     <button>取消</button>
   </div>
 </template>
@@ -9,15 +9,18 @@
 <script setup>
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-
 import ManageTemplate from "/src/components/ManageTemplate.vue";
+
+// 修改
+const updates = ref(false);
 
 // 接受模板2傳來的值
 const $route = useRoute();
 const changeData = reactive(JSON.parse($route.query.changeData));
-console.log(changeData);
+// console.log(changeData);
 // 傳值給模板1
 const news = reactive([
+  { id: "ID", title: "消息ID", type: "text", data: changeData.ID },
   { id: "title", title: "消息標題", type: "text", data: changeData.TITLE },
   {
     id: "sub_title",
@@ -45,6 +48,10 @@ const news = reactive([
     data: changeData.DATE,
   },
 ]);
+
+// 傳值到資料庫
+const sendToDB = () => {};
+
 </script>
 <style lang="scss" scoped>
 .buttons {

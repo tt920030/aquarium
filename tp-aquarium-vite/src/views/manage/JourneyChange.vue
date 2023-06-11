@@ -36,8 +36,6 @@ const news = reactive([
     data: changeData.CONTENT,
   },
 ]);
-// 傳值到資料庫
-const sendToDB = () => {};
 </script>
 
 <style lang="scss" scoped>

@@ -56,7 +56,7 @@ const memberData = reactive({
 
 const getInfo = () => {
 
-    axios.post('http://localhost/g6/getInfo.php')
+    axios.post(`${import.meta.env.VITE_API_URL}getInfo.php`)
     .then((res) => {
 
         // console.log(res.data);
@@ -79,7 +79,7 @@ const getPet = () => {
     let params = new URLSearchParams();
     params.append('id', id);
 
-    axios.post('http://localhost/g6/profile.php',params)
+    axios.post(`${import.meta.env.VITE_API_URL}profile.php`,params)
     .then((res) => {
 
         console.log(res.data);

@@ -1,30 +1,36 @@
 <template>
-  <Header></Header>
-  <main>
-    <div class="mb-3">
-      <h3>消息管理</h3>
-    </div>
-    <ManageTemplate :news="news" :buttons="buttons"></ManageTemplate>
-  </main>
+
+  <ManageTemplate :news="news" :updates="updates"></ManageTemplate>
+  <div class="buttons">
+    <button @click="updates++">更改</button>
+    <button>取消</button>
+  </div>
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRoute } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-import Header from "/src/components/CMSHeader.vue";
-// 引入bootstrap
-// import "bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import ManageTemplate from "/src/components/ManageTemplate.vue";
+
+// 修改
+const updates = ref(false);
+
+// 接受模板2傳來的值
+const $route = useRoute();
+const changeData = reactive(JSON.parse($route.query.changeData));
+// console.log(changeData);
 const news = reactive([
-  { id: "title", title: "名稱", type: "text" },
-  { id: "number", title: "序號", type: "text" },
-  { id: "value", title: "面額", type: "text" },
-  { id: "discount", title: "折數", type: "text" },
-  { id: "threshold", title: "抵用門檻", type: "text" },
-  { id: "expire", title: "有效期限", type: "text" },
+  { id: "ID", title: "折價券ID", type: "text", data: changeData.ID },
+  { id: "NAME", title: "名稱", type: "text", data: changeData.NAME },
+  { id: "SERIAL_NUMBER", title: "序號", type: "text", data: changeData.SERIAL_NUMBER },
+  { id: "DENO", title: "面額", type: "text", data: changeData.DENO },
+  { id: "NEED_PRICE", title: "抵用門檻", type: "text", data: changeData.NEED_PRICE },
+  { id: "DURATION", title: "有效期限", type: "text", data: changeData.DURATION },
+
 ]);
-const buttons = reactive(["刪除", "取消", "更改"]);
+// 傳值到資料庫
+const sendToDB = () => {};
+
 </script>
 <style lang="scss" scoped>
 main {

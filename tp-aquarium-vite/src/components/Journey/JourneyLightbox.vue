@@ -27,7 +27,7 @@
               <i class="bi bi-clock"><p>{{ item.TIME }}小時</p></i>
               <i class="bi bi-geo-alt-fill"><p>台北海生館</p></i>
               <i class="bi bi-coin"><p>${{ item.PRICE }}</p></i>
-              <RouterLink class="btn" to="/ticket">了解更多</RouterLink>
+              <RouterLink class="btn" to="/itinerary">前往購票</RouterLink>
             </div>
           </div>
         </li>
