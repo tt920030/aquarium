@@ -163,8 +163,7 @@ const data2 = reactive({});
 //上傳
 const files = reactive([]);
 
-// 商品資料處理特例
-// 資料處理
+// 商品資料處理
 const typeTrans = (data) => {
   switch (data) {
     case "玩偶":
@@ -198,6 +197,18 @@ const animalTrans = (data) => {
       return data;
   }
 };
+
+// 照片處理
+const pictureTrans = (path) => {
+  if (path.includes("C:\\fakepath\\")) {
+    const picture = path.split("\\");
+    const fileName = picture[picture.length - 1];
+    return fileName;
+  } else {
+    return path;
+  }
+};
+
 // 新增
 const journey = () => {
   let params = new URLSearchParams(); //建立PHP可接受的格式
@@ -208,6 +219,7 @@ const journey = () => {
       // 商品特例處理
       value = typeTrans(value);
       value = animalTrans(value);
+      value = pictureTrans(value);
       console.log(value);
       params.append(key, value); //將搜尋值傳入params物件內
     }
@@ -235,6 +247,7 @@ const journey1 = () => {
       // 商品特例處理
       value = typeTrans(value);
       value = animalTrans(value);
+      value = pictureTrans(value);
       params.append(key, value); //將搜尋值傳入params物件內
     }
   }

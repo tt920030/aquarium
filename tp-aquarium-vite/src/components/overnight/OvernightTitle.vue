@@ -13,7 +13,7 @@
 
 <style lang="scss" scoped>
 .overnight_banner {
-  background-image: url("/img/overnight_banner.jpg");
+  background-image: url("https://tibamef2e.com/thd101/g6/img/overnight_banner.jpg");
   width: 100%;
   height: 600px;
   clip-path: ellipse(1000px 450px at 50% 20%);

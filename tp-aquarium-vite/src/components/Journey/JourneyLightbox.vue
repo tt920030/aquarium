@@ -13,12 +13,19 @@
       <ul>
         <li v-for="item in sectionData" :id="item.ID">
           <a href="" class="lightbox" @click="lightboxClickHandler">
-            <img class="intro_img" :src="'/img/' + item.PICTURE" alt="" />
+            <img
+              class="intro_img"
+              :src="'https://tibamef2e.com/thd101/g6/img/' + item.PICTURE"
+              alt=""
+            />
           </a>
 
           <div class="journey_intro_content">
             <div class="journey_intro_main">
-              <img src="/img/journey_intro_icon.svg" alt="" />
+              <img
+                src="https://tibamef2e.com/thd101/g6/img/journey_intro_icon.svg"
+                alt=""
+              />
               <h4>{{ item.NAME }}</h4>
               <p>{{ item.CONTENT }}</p>
             </div>

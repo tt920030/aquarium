@@ -6,10 +6,13 @@
 
     <!-- 返回小遊戲首頁按鈕 -->
     <button class="back_to_home">
-      <img src="../../img/logosvg.svg" alt="LOGO SVG" />
+      <img
+        src="https://tibamef2e.com/thd101/g6/img/logosvg.svg"
+        alt="LOGO SVG"
+      />
       <RouterLink to="/game_index">
-      <h5>回小遊戲</h5>
-    </RouterLink>
+        <h5>回小遊戲</h5>
+      </RouterLink>
     </button>
     <!-- start Quiz button -->
     <div class="start_btn"><button>開始答題</button></div>
@@ -25,14 +28,14 @@
         <div class="info">5. 答對三題以上可獲得<span>商品折價券！</span></div>
       </div>
       <div class="buttons">
-        <button class="quit" style="display: none;">離開遊戲</button>
+        <button class="quit" style="display: none">離開遊戲</button>
         <button class="restart">開始挑戰</button>
       </div>
     </div>
 
     <!-- Quiz Box -->
     <div class="quiz_box">
-      <div class=quiz_header>
+      <div class="quiz_header">
         <div class="title">海洋知識問答</div>
         <div class="timer">
           <div class="time_left_txt">時間剩下</div>
@@ -40,7 +43,7 @@
         </div>
         <div class="time_line"></div>
       </div>
-      <div class=quiz_section>
+      <div class="quiz_section">
         <div class="que_text">
           <!--JavaScript -->
         </div>
@@ -50,7 +53,7 @@
       </div>
 
       <!-- footer of Quiz Box -->
-      <div class=quiz_footer>
+      <div class="quiz_footer">
         <div class="total_que">
           <!--JavaScript -->
         </div>
@@ -61,7 +64,10 @@
     <!-- Result Box -->
     <div class="result_box">
       <div class="winner">
-        <img src="../../img/crownshark.png" alt="Image">
+        <img
+          src="https://tibamef2e.com/thd101/g6/img/crownshark.png"
+          alt="Image"
+        />
       </div>
       <div class="complete_text">完成挑戰！</div>
       <div class="score_text">
@@ -72,35 +78,32 @@
         <button class="quit">再玩一次</button>
       </div>
     </div>
-
-
   </body>
-
 
   <!-- <RouterView></RouterView> -->
 </template>
 
-<script  setup>
-import axios from 'axios';
+<script setup>
+import axios from "axios";
 //vue3-cookies
 import { useCookies } from "vue3-cookies";
 const { cookies } = useCookies();
 const id = cookies.get("id");
 
-import { reactive } from 'vue';
+import { reactive } from "vue";
 // 問答js
 import Puzzle from "/src/js/game_quiz.js";
 
 import { onMounted, ref } from "vue";
-import particlesJS_Start from '/src/js/particle.js';
+import particlesJS_Start from "/src/js/particle.js";
 
 const hide = ref(true);
 const openLogin = function () {
   hide.value = true;
-}
+};
 const openLogIn = function () {
   hide.value = false;
-}
+};
 //領取折價券
 const get = function () {
   let cookieArr = document.cookie.split(";");
@@ -108,171 +111,169 @@ const get = function () {
     let cookiePair = cookieArr[i].split("=");
     let name = cookiePair[0].trim();
 
-    if (name === 'id') {         //判斷cookies裡面有沒有id
+    if (name === "id") {
+      //判斷cookies裡面有沒有id
       let value = cookiePair[1];
-      
-      let params = new URLSearchParams();
-      params.append('id',value);    //有id就把會員id傳到php
 
-      axios.post('http://localhost/G6/saveCoupon.php', params)
+      let params = new URLSearchParams();
+      params.append("id", value); //有id就把會員id傳到php
+
+      axios
+        .post("http://localhost/G6/saveCoupon.php", params)
         .then((res) => {
-          if(res.data==='exists'){
+          if (res.data === "exists") {
             alert("您已經領取過囉");
-          }else{
+          } else {
             alert("領取成功，請於結帳時使用");
           }
-        }).catch(err => console.log(err))
+        })
+        .catch((err) => console.log(err));
       return;
     }
-
-
   }
   openLogIn();
-}
+};
 
 // 問答背景
 onMounted(() => {
-
-
-
   var head = document.getElementsByTagName("head")[0];
   var script = document.createElement("script");
   script.type = "text/javascript";
   script.onload = function () {
-    particlesJS("particles-js", {
-      "particles": {
-        "number": {
-          "value": 160,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
-        },
-        "color": {
-          "value": "#ffffff"
-        },
-        "shape": {
-          "type": "circle",
-          "stroke": {
-            "width": 0,
-            "color": "#000000"
+    particlesJS(
+      "particles-js",
+      {
+        particles: {
+          number: {
+            value: 160,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
           },
-          "polygon": {
-            "nb_sides": 5
+          color: {
+            value: "#ffffff",
           },
-          "image": {
-            "src": "img/github.svg",
-            "width": 100,
-            "height": 100
-          }
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+            image: {
+              src: "img/github.svg",
+              width: 100,
+              height: 100,
+            },
+          },
+          opacity: {
+            value: 1,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 0.9723133766012793,
+              opacity_min: 0.10533394913180526,
+              sync: false,
+            },
+          },
+          size: {
+            value: 10,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 4,
+              size_min: 0.3,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: false,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 600,
+            },
+          },
         },
-        "opacity": {
-          "value": 1,
-          "random": true,
-          "anim": {
-            "enable": true,
-            "speed": 0.9723133766012793,
-            "opacity_min": 0.10533394913180526,
-            "sync": false
-          }
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "bubble",
+            },
+            onclick: {
+              enable: true,
+              mode: "repulse",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 250,
+              size: 0,
+              duration: 2,
+              opacity: 0,
+              speed: 3,
+            },
+            repulse: {
+              distance: 400,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
         },
-        "size": {
-          "value": 10,
-          "random": true,
-          "anim": {
-            "enable": false,
-            "speed": 4,
-            "size_min": 0.3,
-            "sync": false
-          }
-        },
-        "line_linked": {
-          "enable": false,
-          "distance": 150,
-          "color": "#ffffff",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 1,
-          "direction": "none",
-          "random": true,
-          "straight": false,
-          "out_mode": "out",
-          "bounce": false,
-          "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 600
-          }
-        }
+        retina_detect: true,
       },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "bubble"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "repulse"
-          },
-          "resize": true
-        },
-        "modes": {
-          "grab": {
-            "distance": 400,
-            "line_linked": {
-              "opacity": 1
-            }
-          },
-          "bubble": {
-            "distance": 250,
-            "size": 0,
-            "duration": 2,
-            "opacity": 0,
-            "speed": 3
-          },
-          "repulse": {
-            "distance": 400,
-            "duration": 0.4
-          },
-          "push": {
-            "particles_nb": 4
-          },
-          "remove": {
-            "particles_nb": 2
-          }
-        }
-      },
-      "retina_detect": true
-    }, function () {
-      console.log("callback - particles.js config loaded");
-    });
+      function () {
+        console.log("callback - particles.js config loaded");
+      }
+    );
   };
   script.src =
     "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js";
   head.appendChild(script);
 
   Puzzle();
-})
-
+});
 </script>
 <style lang="scss">
 /* importing google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 .quiz {
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-
-
+    font-family: "Poppins", sans-serif;
   }
 
   /* 返回小遊戲首頁按鈕 */
@@ -287,10 +288,9 @@ onMounted(() => {
     height: 45px;
     border: none;
     border-radius: 10px;
-    background: #FFF;
+    background: #fff;
     margin: auto;
     /* border: 2px solid black; */
-
   }
 
   .back_to_home img {
@@ -308,7 +308,6 @@ onMounted(() => {
     .info_box {
       width: 400px !important;
     }
-
   }
 
   @include mobile {
@@ -327,21 +326,16 @@ onMounted(() => {
 .info_box,
 .quiz_box,
 .result_box {
-
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
 .result_box.activeResult {
-
-
-
   opacity: 1;
   z-index: 5;
   pointer-events: auto;
@@ -361,8 +355,6 @@ onMounted(() => {
 }
 
 .info_box {
-
-
   width: 540px;
   background: #fff;
   border-radius: 5px;
@@ -422,7 +414,6 @@ onMounted(() => {
 }
 
 .quiz_box {
-
   @include mobile {
     width: 90%;
   }
@@ -488,7 +479,6 @@ onMounted(() => {
 }
 
 .quiz_box .quiz_header .time_line {
-
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -715,10 +705,9 @@ onMounted(() => {
 /* ---- 問答背景 ---- */
 
 #particles-js {
-
   width: 100%;
   height: 100%;
-  background-color: #97CBE0;
+  background-color: #97cbe0;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;

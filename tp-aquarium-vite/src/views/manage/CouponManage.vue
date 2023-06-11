@@ -27,7 +27,6 @@ onMounted(() => {
           element["NEED_PRICE"],
           element["DURATION"],
           element["ID"],
-          
         ]);
       });
       resData.push(...res.data);
@@ -51,5 +50,3 @@ const pageNow = "折價券";
 </script>
 
 <style lang="scss" scoped></style>
-
-

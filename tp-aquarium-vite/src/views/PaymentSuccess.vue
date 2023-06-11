@@ -1,6 +1,6 @@
 <template>
   <div class="success">
-    <img src="/src/img/payment_success.svg" alt="" />
+    <img src="https://tibamef2e.com/thd101/g6/img/payment_success.svg" alt="" />
     <h2>
       購買成功，已寄送確認信件至您的信箱<br />
       將於3秒後回到首頁

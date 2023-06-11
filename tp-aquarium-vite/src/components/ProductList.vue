@@ -2,7 +2,10 @@
   <li v-for="(product, index) in productInPage" :key="product">
     <RouterLink :to="'/product/' + product.ID" class="product_info">
       <div class="imgWrapper">
-        <img :src="'/img/' + product.PICTURE" alt="" />
+        <img
+          :src="'https://tibamef2e.com/thd101/g6/img/' + product.PICTURE"
+          alt=""
+        />
       </div>
       <p class="product_name" ref="productName">{{ product.NAME }}</p>
       <p class="product_price" ref="productPrice">NTD ${{ product.PRICE }}</p>
@@ -49,7 +52,7 @@ function addToCart(event, index) {
     name: product.NAME,
     price: product.PRICE,
     amount: 1,
-    img: "/img/" + product.PICTURE,
+    img: "https://tibamef2e.com/thd101/g6/img/" + product.PICTURE,
   };
   const list = JSON.parse(localStorage.getItem(dataKey)) || [];
   list.push(data);

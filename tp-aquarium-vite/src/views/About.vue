@@ -73,7 +73,10 @@
           </svg>
           <ul>
             <li>
-              <img src="@/img/about_link1.jpg" alt="" />
+              <img
+                src="https://tibamef2e.com/thd101/g6/img/about_link1.jpg"
+                alt=""
+              />
               <div class="link_text">
                 <h4>園區介紹</h4>
                 <p>認識我們的園區，看看感興趣的區域，規劃您的海生館行程</p>
@@ -81,7 +84,10 @@
               </div>
             </li>
             <li>
-              <img src="@/img/about_link2.jpg" alt="" />
+              <img
+                src="https://tibamef2e.com/thd101/g6/img/about_link2.jpg"
+                alt=""
+              />
               <div class="link_text">
                 <h4>園區介紹</h4>
                 <p>認識我們的園區，看看感興趣的區域，規劃您的海生館行程</p>
@@ -89,7 +95,10 @@
               </div>
             </li>
             <li>
-              <img src="@/img/about_link3.jpg" alt="" />
+              <img
+                src="https://tibamef2e.com/thd101/g6/img/about_link3.jpg"
+                alt=""
+              />
               <div class="link_text">
                 <h4>園區介紹</h4>
                 <p>認識我們的園區，看看感興趣的區域，規劃您的海生館行程</p>
@@ -132,7 +141,7 @@ import { onMounted, reactive, ref } from "vue";
     padding-bottom: 300px;
 
     .banner {
-      background-image: url(../img/about_banner.jpg);
+      background-image: url(https://tibamef2e.com/thd101/g6/img/about_banner.jpg);
       height: 660px;
       background-size: cover;
       @include mobile {
@@ -153,7 +162,7 @@ import { onMounted, reactive, ref } from "vue";
 
     .wrapper {
       .top {
-        background-image: url(../img/about_bg2.png);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/about_bg2.png);
         background-size: 100%;
         background-repeat: no-repeat;
         margin-top: -5px;
@@ -195,7 +204,7 @@ import { onMounted, reactive, ref } from "vue";
           width: 500px;
           height: 500px;
           float: left;
-          background-image: url(@/img/about_bubblebg1.png);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/about_bubblebg1.png);
           clip-path: url(#bobble1);
           background-position-x: -130px;
           margin-top: 40px;
@@ -208,7 +217,7 @@ import { onMounted, reactive, ref } from "vue";
         .img2 {
           width: 500px;
           height: 500px;
-          background-image: url(@/img/about_bubblebg2.png);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/about_bubblebg2.png);
           clip-path: url(#bobble1);
           margin-top: -275px;
           margin-left: 640px;
@@ -285,7 +294,7 @@ import { onMounted, reactive, ref } from "vue";
         .img3 {
           width: 500px;
           height: 500px;
-          background-image: url(@/img/about_bubblebg3.png);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/about_bubblebg3.png);
           clip-path: url(#bobble1);
           float: right;
           margin-top: -165px;
@@ -297,7 +306,7 @@ import { onMounted, reactive, ref } from "vue";
         .img4 {
           width: 500px;
           height: 500px;
-          background-image: url(@/img/about_bubblebg4.png);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/about_bubblebg4.png);
           clip-path: url(#bobble1);
           margin-top: 100px;
           @include mobile {
@@ -328,7 +337,7 @@ import { onMounted, reactive, ref } from "vue";
               margin: 60px 0px;
             }
             .link_text {
-              background-image: url(../img/about_link_bg.png);
+              background-image: url(https://tibamef2e.com/thd101/g6/img/about_link_bg.png);
               padding: 12px;
               padding-top: 60px;
               position: absolute;
@@ -363,7 +372,7 @@ import { onMounted, reactive, ref } from "vue";
       .img5 {
         width: 500px;
         height: 500px;
-        background-image: url(@/img/about_bubblebg5.png);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/about_bubblebg5.png);
         clip-path: url(#bobble1);
         position: absolute;
         margin-top: -385px;
@@ -374,7 +383,7 @@ import { onMounted, reactive, ref } from "vue";
       .img6 {
         width: 500px;
         height: 500px;
-        background-image: url(@/img/about_bubblebg6.png);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/about_bubblebg6.png);
         clip-path: url(#bobble1);
         margin-left: 710px;
         padding-top: 0;

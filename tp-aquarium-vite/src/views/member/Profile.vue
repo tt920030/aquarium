@@ -9,7 +9,10 @@
     <div class="top">
       <div class="inner-left">
         <div class="photo-area">
-          <img :src="'/img/' + profileText.photo" alt="" />
+          <img
+            :src="'https://tibamef2e.com/thd101/g6/img/' + profileText.photo"
+            alt=""
+          />
         </div>
         <button class="btn1" @click="showPhoto()">
           <p>更換頭貼</p>

@@ -63,25 +63,25 @@ import { reactive } from "vue";
 const journeyPage = reactive([
   {
     id: 1,
-    src: "/img/index_journey1.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/index_journey1.jpg",
     title: "海洋跳躍者：海豚秀",
     content: "看到海豚們跳躍、翻轉，展現出它們非凡的運動天賦。",
   },
   {
     id: 2,
-    src: "/img/index_journey2.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/index_journey2.jpg",
     title: "水中留影",
     content: "在水中自由拍攝照片和影片，捕捉美麗的海底風景及快樂的時刻。",
   },
   {
     id: 3,
-    src: "/img/index_journey3.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/index_journey3.jpg",
     title: "磷蝦小管家：餵魚體驗活動",
     content: "跟隨專業的飼養員進入水族館中的觀賞魚缸，親手投放食物給魚群。",
   },
   {
     id: 4,
-    src: "/img/index_journey4.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/index_journey4.jpg",
     title: "只想和你做朋友:與水獺近距離接觸",
     content: "親手投放食物給水獺，觀察牠們的行為與習性。",
   },
@@ -91,14 +91,14 @@ const journeyPage = reactive([
 const newsPage = reactive([
   {
     id: 1,
-    src: "/img/index_news1.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/index_news1.jpg",
     month: "2023/04/17",
     title: "企鵝館迎來新成員！",
     content: "保育人員細心照顧，企鵝寶寶健康成長中！",
   },
   {
     id: 2,
-    src: "/img/index_news2.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/index_news2.jpg",
     month: "2023/04/17",
     title: "台北水族館新開幕！",
     content: "各種海洋生物都在這，還有各項活動可以參與！",

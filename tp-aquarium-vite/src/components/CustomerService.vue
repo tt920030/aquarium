@@ -11,7 +11,10 @@
     <!-- 客服對話框 -->
     <div class="customer_service_content" v-if="isVisible">
       <div class="close" @click="closeContent">
-        <img src="/img/customer_service_close.svg" alt="" />
+        <img
+          src="https://tibamef2e.com/thd101/g6/img/customer_service_close.svg"
+          alt=""
+        />
       </div>
 
       <div class="title">
@@ -20,7 +23,10 @@
       <div class="messageList" ref="messageContainer">
         <!-- 客服回覆 -->
         <div class="answerDefault">
-          <img src="/img/customer_service1.png" alt="" />
+          <img
+            src="https://tibamef2e.com/thd101/g6/img/customer_service1.png"
+            alt=""
+          />
           <div class="messageWrapper">
             <p class="messageAnswer">
               您好～我是智能客服，請於下方點選您的問題，或是輸入於下方對話框
@@ -111,7 +117,7 @@
             v-model.trim="questionText"
           />
           <button class="send" @click.stop="submitQuestion"></button>
-          <!-- <img src="../img/customer_service_send.svg" alt=""> -->
+          <!-- <img src="..https://tibamef2e.com/thd101/g6/img/customer_service_send.svg" alt=""> -->
         </form>
       </div>
     </div>
@@ -127,7 +133,9 @@ import axios from "axios";
 // 對話框關閉或開啟
 const isVisible = ref(false);
 // 客服圖案
-const photoSrc = ref("/img/customer_service_2.svg");
+const photoSrc = ref(
+  "https://tibamef2e.com/thd101/g6/img/customer_service_2.svg"
+);
 //對話框內容
 const questionText = ref("");
 //問題及回覆
@@ -150,12 +158,14 @@ function closeContent() {
   isVisible.value = !isVisible.value;
   if (isVisible.value == true) {
     if (window.innerWidth > 414) {
-      photoSrc.value = "/img/customer_service1.png";
+      photoSrc.value =
+        "https://tibamef2e.com/thd101/g6/img/customer_service1.png";
     } else {
       photoSrc.value = "";
     }
   } else {
-    photoSrc.value = "/img/customer_service_2.svg";
+    photoSrc.value =
+      "https://tibamef2e.com/thd101/g6/img/customer_service_2.svg";
     localStorage.clear();
   }
 }
@@ -337,7 +347,7 @@ const sortedMessages = computed(() => {
             padding: 7px;
           }
           ::before {
-            content: url("/img/customer_service_message_a.svg");
+            content: url("https://tibamef2e.com/thd101/g6/img/customer_service_message_a.svg");
             position: relative;
             left: -12px;
             top: -19px;
@@ -421,7 +431,7 @@ const sortedMessages = computed(() => {
           }
         }
         .send {
-          background-image: url("/img/customer_service_send.svg");
+          background-image: url("https://tibamef2e.com/thd101/g6/img/customer_service_send.svg");
           background-size: cover;
           width: 40px;
           height: 40px;

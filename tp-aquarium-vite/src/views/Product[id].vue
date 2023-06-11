@@ -17,7 +17,7 @@
             <div>
               <img
                 v-for="(img, index) in imgs"
-                :src="'/img/' + img"
+                :src="'https://tibamef2e.com/thd101/g6/img/' + img"
                 :key="index"
                 :class="{ imgOn: currentImg == index }"
                 alt=""
@@ -169,12 +169,12 @@ function updateImg() {
 }
 //取出第一張照片，設為預設大圖
 function getFirstImg() {
-  firstImg = "/img/" + imgs[0];
+  firstImg = "https://tibamef2e.com/thd101/g6/img/" + imgs[0];
   return firstImg;
 }
 //小圖換大圖，被點選的小圖更換樣式
 function updateImgUrl(img, index) {
-  firstImg = "/img/" + img;
+  firstImg = "https://tibamef2e.com/thd101/g6/img/" + img;
   currentImg.value = index;
 }
 //取出商品資訊
@@ -211,7 +211,7 @@ function addToCart(event) {
       name: product.value.NAME,
       price: product.value.PRICE,
       amount: counter.value,
-      img: "/img/" + imgs[0],
+      img: "https://tibamef2e.com/thd101/g6/img/" + imgs[0],
     };
     const list = JSON.parse(localStorage.getItem(dataKey)) || [];
     list.push(data);

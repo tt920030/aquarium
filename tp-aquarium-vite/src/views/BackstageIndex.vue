@@ -1,6 +1,6 @@
 <template>
   <h1>Experience the Wonder and Beauty of Nature</h1>
-  <img src="../img/logo-black.svg" alt="" />
+  <img src="https://tibamef2e.com/thd101/g6/img/logo-black.svg" alt="" />
   <!-- <div><a class="front" href=""><p>前台</p></a></div> -->
   <div>
     <router-link to="/index" class="front"><p>前台</p></router-link>

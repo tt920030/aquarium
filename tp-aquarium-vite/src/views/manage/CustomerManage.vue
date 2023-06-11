@@ -1,31 +1,37 @@
 <template>
-  
-    <!-- <div class="mb-3">
-      <h3>行程管理</h3>
-      <button>新增行程</button>
-    </div> -->
-    <ManageTemplate :title="title" :forms="forms"></ManageTemplate>
- 
+  <manage-template
+    :title="title"
+    :forms="forms"
+    :pageNow="pageNow"
+    :resData="resData"
+  ></manage-template>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
-
 import ManageTemplate from "/src/components/ManageTemplate2.vue";
-const title = reactive([
-  "問題編號",
-  "關鍵字",
-  "回覆",
+import axios from "axios";
 
-  "修改",
-  "刪除",
-]);
-const forms = reactive([
-  ["1","營業時間","AM9:00~PM21:00"],
-  ["2","地點","台北市中正區善導寺捷運站"],
-]);
+onMounted(() => {
+  axios
+    .post(`${import.meta.env.VITE_API_URL}getCustomer.php`) //使用get或post等取得路徑資料(php))
+
+    .then((res) => {
+      // console.log(res.data); //回傳後如何處理
+      res.data.forEach((element) => {
+        forms.push([element["KEYWORDS"], element["ANSWER"], element["ID"]]);
+      });
+      resData.push(...res.data);
+      console.log(resData);
+    })
+    .catch((err) => console.log(err)); //錯誤如何處理
+});
+
+const title = reactive(["關鍵字", "回覆", "問題編號", "修改", "刪除"]);
+const forms = reactive([]);
+const resData = reactive([]);
+const pageNow = "客服";
 </script>
-<style lang="scss" scoped>
 
-</style>
+<style lang="scss" scoped></style>

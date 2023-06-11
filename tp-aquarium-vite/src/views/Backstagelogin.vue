@@ -1,7 +1,11 @@
 <template>
   <div class="sign" id="login">
     <main>
-      <img src="@/img/input_fork.svg" alt="" class="fork" />
+      <img
+        src="https://tibamef2e.com/thd101/g6/img/input_fork.svg"
+        alt=""
+        class="fork"
+      />
       <div class="left">
         <div class="pic1"></div>
         <div class="pic2"></div>
@@ -320,7 +324,7 @@ const router = useRouter();
     }
 
     .left {
-      background-image: url(@/img/login_bg.jpg);
+      background-image: url(https://tibamef2e.com/thd101/g6/img/login_bg.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       width: 414px;
@@ -333,7 +337,7 @@ const router = useRouter();
       .pic1 {
         width: 172px;
         height: 172px;
-        background-image: url(@/img/login_bobble1.jpg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/login_bobble1.jpg);
         background-position-x: -30px;
         clip-path: url(#bobble1);
       }
@@ -344,7 +348,7 @@ const router = useRouter();
         top: 0;
         width: 115px;
         height: 140px;
-        background-image: url(@/img/login_bobble2.jpg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/login_bobble2.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         clip-path: url(#bobble2);
@@ -356,7 +360,7 @@ const router = useRouter();
         top: 146px;
         width: 332px;
         height: 250px;
-        background-image: url(@/img/index_button2.jpg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/index_button2.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position-x: -50px;
@@ -369,7 +373,7 @@ const router = useRouter();
         bottom: 10px;
         width: 147px;
         height: 157px;
-        background-image: url(@/img/login_bobble4.jpg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/login_bobble4.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         clip-path: url(#bobble4);
@@ -381,7 +385,7 @@ const router = useRouter();
         bottom: 0;
         width: 223px;
         height: 170px;
-        background-image: url(@/img/login_bobble5.jpg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/login_bobble5.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         clip-path: url(#bobble5);
@@ -433,15 +437,15 @@ const router = useRouter();
             position: relative;
 
             #name {
-              background-image: url(@/img/register_name.svg);
+              background-image: url(https://tibamef2e.com/thd101/g6/img/register_name.svg);
             }
 
             #email {
-              background-image: url(@/img/login_email.svg);
+              background-image: url(https://tibamef2e.com/thd101/g6/img/login_email.svg);
             }
 
             #password {
-              background-image: url(@/img/login_password.svg);
+              background-image: url(https://tibamef2e.com/thd101/g6/img/login_password.svg);
             }
 
             .eye {

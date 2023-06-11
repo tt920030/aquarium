@@ -29,7 +29,7 @@ const mainData = reactive(props.mainData);
 <style lang="scss" scoped>
 // 主內容
 main {
-  background-image: url("@/img/floor_introduction_bgi.jpg");
+  background-image: url("https://tibamef2e.com/thd101/g6/img/floor_introduction_bgi.jpg");
 
   @include wrapper {
     max-width: 1100px;
@@ -39,7 +39,7 @@ main {
       width: 410px;
       height: 191px;
       margin: 0 auto;
-      background-image: url("@/img/floor_introduction_title.svg");
+      background-image: url("https://tibamef2e.com/thd101/g6/img/floor_introduction_title.svg");
       overflow: hidden;
 
       h2 {

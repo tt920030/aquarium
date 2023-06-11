@@ -32,16 +32,24 @@ import Acoordion from "/src/components/FloorCommon/Accordion.vue";
 const navData = reactive([
   {
     to: "/floor_introduction",
-    src: "/img/floor_p1.svg",
+    src: "https://tibamef2e.com/thd101/g6/img/floor_p1.svg",
     title: "樓層介紹",
   },
   {
     to: "/park_activity",
-    src: "/img/floor_p2_active.svg",
+    src: "https://tibamef2e.com/thd101/g6/img/floor_p2_active.svg",
     title: "館內活動",
   },
-  { to: "/faq", src: "/img/floor_p3.svg", title: "常見問題" },
-  { to: "/visit_information", src: "/img/floor_p4.svg", title: "參觀資訊" },
+  {
+    to: "/faq",
+    src: "https://tibamef2e.com/thd101/g6/img/floor_p3.svg",
+    title: "常見問題",
+  },
+  {
+    to: "/visit_information",
+    src: "https://tibamef2e.com/thd101/g6/img/floor_p4.svg",
+    title: "參觀資訊",
+  },
 ]);
 const pageNow = ref("館內活動");
 
@@ -49,7 +57,7 @@ const pageNow = ref("館內活動");
 const sectionData = reactive([
   {
     id: "journey1",
-    src: "/img/park_activity1.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity1.jpg",
     h4: "海底隧道漫步",
     p: "導覽員會帶領參觀者進入展館或戶外區域，介紹不同種類的海洋生物、牠們的生活習性、食物鏈、海洋保育等相關知識。這種活動讓人們能夠深入了解海洋世界，了解海洋生物的生存環境和保育現狀，提高對保護海洋環境的意識。",
     to: "/visit_information",
@@ -60,28 +68,28 @@ const sectionData = reactive([
   },
   {
     id: "journey2",
-    src: "/img/park_activity2.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity2.jpg",
     h4: "海洋生物導覽",
     p: "導覽員會帶領參觀者進入展館或戶外區域，介紹不同種類的海洋生物、牠們的生活習性、食物鏈、海洋保育等相關知識。這種活動讓人們能夠深入了解海洋世界，了解海洋生物的生存環境和保育現狀，提高對保護海洋環境的意識。",
     to: "/visit_information",
   },
   {
     id: "journey3",
-    src: "/img/park_activity3.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity3.jpg",
     h4: "海獅秀",
     p: "在這個活動中，訓練師會訓練海獅完成各種表演，例如跳躍、翻滾、平衡、接球等，以展示海獅的智慧和技能。這種活動不僅讓觀眾欣賞到海獅的可愛和聰明，還可以提高人們對海洋動物的認識和對保護海洋環境的意識。",
     to: "/visit_information",
   },
   {
     id: "journey4",
-    src: "/img/park_activity4.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity4.jpg",
     h4: "海星觸摸",
     p: "觸摸海星活動是一種與海洋生物近距離互動的體驗，海星是一種生活在海洋中的奇特生物，牠們的身體扁平，呈星形，有著吸盤狀的足，能夠吸附在海洋中的礁石或其他物體上。通過觸摸海星活動，人們可以近距離觀察和感受這種奇特生物的外形和觸感，以及了解更多海星的生態和習性。",
     to: "/visit_information",
   },
   {
     id: "journey5",
-    src: "/img/park_activity5.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity5.jpg",
     h4: "餵食海龜",
     p: "在海生館，你可以參加「餵食海龜體驗」活動，與海洋生物近距離互動。在活動中，你將有機會體驗親手餵食海龜的樂趣和刺激。你可以觀察這些可愛的海龜在水中游動，透過這個活動，你可以了解到關於海龜的一些基本知識。",
     to: "/visit_information",
@@ -96,7 +104,7 @@ const lightboxData1 = reactive([
   {
     class: "journey1",
     title: "海底隧道漫步",
-    src: "/img/park_activity1.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity1.jpg",
     h4: "由專業的嚮導為您解說海底世界",
     p: "導覽員會帶領參觀者進入展館或戶外區域，介紹不同種類的海洋生物、牠們的生活習性、食物鏈、海洋保育等相關知識。這種活動讓人們能夠深入了解海洋世界，了解海洋生物的生存環境和保育現狀，提高對保護海洋環境的意識。",
     section: true,
@@ -104,7 +112,7 @@ const lightboxData1 = reactive([
   {
     class: "journey2",
     title: "海洋生物導覽",
-    src: "/img/park_activity2.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity2.jpg",
     h4: "由專業的嚮導為您解說海底世界",
     p: "導覽員會帶領參觀者進入展館或戶外區域，介紹不同種類的海洋生物、牠們的生活習性、食物鏈、海洋保育等相關知識。這種活動讓人們能夠深入了解海洋世界，了解海洋生物的生存環境和保育現狀，提高對保護海洋環境的意識。",
     section: true,
@@ -112,7 +120,7 @@ const lightboxData1 = reactive([
   {
     class: "journey3",
     title: "海獅秀",
-    src: "/img/park_activity3.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity3.jpg",
     h4: "快來欣賞可愛海獅的表演吧!<",
     p: "在這個活動中，訓練師會訓練海獅完成各種表演，例如跳躍、翻滾、平衡、接球等，以展示海獅的智慧和技能。這種活動不僅讓觀眾欣賞到海獅的可愛和聰明，還可以提高人們對海洋動物的認識和對保護海洋環境的意識。",
     section: true,
@@ -120,7 +128,7 @@ const lightboxData1 = reactive([
   {
     class: "journey4",
     title: "海星觸摸",
-    src: "/img/park_activity4.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity4.jpg",
     h4: "感受海星神秘的觸感吧!",
     p: "導覽員會帶領參觀者進入展館或戶外區域，介紹不同種類的海洋生物、牠們的生活習性、食物鏈、海洋保育等相關知識。這種活動讓人們能夠深入了解海洋世界，了解海洋生物的生存環境和保育現狀，提高對保護海洋環境的意識。",
     section: true,
@@ -128,7 +136,7 @@ const lightboxData1 = reactive([
   {
     class: "journey5",
     title: "餵食海龜",
-    src: "/img/park_activity5.jpg",
+    src: "https://tibamef2e.com/thd101/g6/img/park_activity5.jpg",
     h4: "快來親自體會餵食海龜的樂趣吧!",
     p: "在海生館，你可以參加「餵食海龜體驗」活動，與海洋生物近距離互動。在活動中，你將有機會體驗親手餵食海龜的樂趣和刺激。你可以觀察這些可愛的海龜在水中游動，透過這個活動，你可以了解到關於海龜的一些基本知識，例如牠們的營養需求和生態環境。此外，在活動中，專業的飼養員會分享更多有關海龜的生態和保育知識，讓你更深入了解海洋生物的重要性和生態價值。",
     section: true,

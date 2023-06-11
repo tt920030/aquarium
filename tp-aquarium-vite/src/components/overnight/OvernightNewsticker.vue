@@ -35,9 +35,9 @@ onMounted(() => {
 const left = ref(0);
 const time = ref(null);
 const images = reactive([
-  { id: 1, src: "/img/overnight_slide1.jpg" },
-  { id: 2, src: "/img/overnight_slide2.jpg" },
-  { id: 3, src: "/img/overnight_slide3.jpg" },
+  { id: 1, src: "https://tibamef2e.com/thd101/g6/img/overnight_slide1.jpg" },
+  { id: 2, src: "https://tibamef2e.com/thd101/g6/img/overnight_slide2.jpg" },
+  { id: 3, src: "https://tibamef2e.com/thd101/g6/img/overnight_slide3.jpg" },
 ]);
 
 const move = () => {

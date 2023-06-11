@@ -16,7 +16,10 @@
       <div class="border1">
         <div class="border2">
           <div class="sub_title">
-            <img src="/img/newspage_icon.svg" alt="" />
+            <img
+              src="https://tibamef2e.com/thd101/g6/img/newspage_icon.svg"
+              alt=""
+            />
             <h4>{{ news.subTitle }}</h4>
           </div>
           <div class="picture">
@@ -46,7 +49,7 @@
   </div>
 </template>
 
-<!-- <img src="../../../public/img/" alt=""> -->
+<!-- <img src="../../../publichttps://tibamef2e.com/thd101/g6/img/" alt=""> -->
 
 <script setup>
 import { onMounted, reactive, VueElement, defineComponent } from "vue";
@@ -102,14 +105,18 @@ const newsPage = (e) => {
       news.subTitle = res.data[0].SUB_TITLE;
       news.content = res.data[0].CONTENT;
 
-      slides.push("/img/" + res.data[0].PICTURE);
+      slides.push("https://tibamef2e.com/thd101/g6/img/" + res.data[0].PICTURE);
 
       if (res.data[0].SUB_PICTURE1 !== "") {
-        slides.push("/img/" + res.data[0].SUB_PICTURE1);
+        slides.push(
+          "https://tibamef2e.com/thd101/g6/img/" + res.data[0].SUB_PICTURE1
+        );
       }
 
       if (res.data[0].SUB_PICTURE2 !== "") {
-        slides.push("/img/" + res.data[0].SUB_PICTURE2);
+        slides.push(
+          "https://tibamef2e.com/thd101/g6/img/" + res.data[0].SUB_PICTURE2
+        );
       }
     })
     .catch((err) => console.log(err)); //錯誤如何處理

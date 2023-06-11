@@ -100,7 +100,7 @@
               </th>
               <td>
                 <p>{{ item.id }}</p>
-                <!-- <img src="@/img/member_angle.svg" alt="" @click="closeOrder"> -->
+                <!-- <img src="@https://tibamef2e.com/thd101/g6/img/member_angle.svg" alt="" @click="closeOrder"> -->
               </td>
             </tr>
             <tr class="text">
@@ -326,7 +326,7 @@ onMounted(() => {
     padding: 5px 10px;
     margin-left: 10px;
     appearance: none;
-    background-image: url("/img/member_angle.svg");
+    background-image: url("https://tibamef2e.com/thd101/g6/img/member_angle.svg");
     background-repeat: no-repeat;
     background-position: right 13px center;
     outline: none;
@@ -406,7 +406,7 @@ onMounted(() => {
         padding: 5px 10px;
         margin-left: 20px;
         appearance: none;
-        background-image: url("/img/member_angle.svg");
+        background-image: url("https://tibamef2e.com/thd101/g6/img/member_angle.svg");
         background-repeat: no-repeat;
         background-position: right 13px center;
         outline: none;

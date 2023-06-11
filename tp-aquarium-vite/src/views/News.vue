@@ -17,8 +17,16 @@
           <!-- <a v-for="item in items.slice(page.itemsPerPage*(page.currentPage - 1) ,page.itemsPerPage*page.currentPage)" :key="item.id" > -->
           <li :data-id="item.id">
             <div class="container">
-              <img class="picture" :src="`/img/${item.src}`" alt="" />
-              <img class="wave" src="/img/news_bg.svg" alt="" />
+              <img
+                class="picture"
+                :src="`https://tibamef2e.com/thd101/g6/img/${item.src}`"
+                alt=""
+              />
+              <img
+                class="wave"
+                src="https://tibamef2e.com/thd101/g6/img/news_bg.svg"
+                alt=""
+              />
             </div>
             <div class="link_text">
               <p class="time">{{ item.time }}</p>

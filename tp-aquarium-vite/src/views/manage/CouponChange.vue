@@ -1,5 +1,4 @@
 <template>
-
   <ManageTemplate :news="news" :updates="updates"></ManageTemplate>
   <div class="buttons">
     <button @click="updates++">更改</button>
@@ -22,15 +21,28 @@ const changeData = reactive(JSON.parse($route.query.changeData));
 const news = reactive([
   { id: "ID", title: "折價券ID", type: "text", data: changeData.ID },
   { id: "NAME", title: "名稱", type: "text", data: changeData.NAME },
-  { id: "SERIAL_NUMBER", title: "序號", type: "text", data: changeData.SERIAL_NUMBER },
+  {
+    id: "SERIAL_NUMBER",
+    title: "序號",
+    type: "text",
+    data: changeData.SERIAL_NUMBER,
+  },
   { id: "DENO", title: "面額", type: "text", data: changeData.DENO },
-  { id: "NEED_PRICE", title: "抵用門檻", type: "text", data: changeData.NEED_PRICE },
-  { id: "DURATION", title: "有效期限", type: "text", data: changeData.DURATION },
-
+  {
+    id: "NEED_PRICE",
+    title: "抵用門檻",
+    type: "text",
+    data: changeData.NEED_PRICE,
+  },
+  {
+    id: "DURATION",
+    title: "有效期限",
+    type: "text",
+    data: changeData.DURATION,
+  },
 ]);
 // 傳值到資料庫
 const sendToDB = () => {};
-
 </script>
 <style lang="scss" scoped>
 main {

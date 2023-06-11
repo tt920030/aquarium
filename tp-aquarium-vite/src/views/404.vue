@@ -1,25 +1,23 @@
 <template>
   <div class="not-found">
     <div>
-      <h1>404<br>Not Found</h1>
-      <img src="/src/img/logo-white.svg" alt="">
+      <h1>404<br />Not Found</h1>
+      <img src="https://tibamef2e.com/thd101/g6/img/logo-white.svg" alt="" />
       <RouterLink to="/">click here go home</RouterLink>
-
     </div>
 
     <video autoplay muted loop id="myVideo">
-      <source src="/src/img/404_nemo.mp4" type="video/mp4">
+      <source
+        src="https://tibamef2e.com/thd101/g6/img/404_nemo.mp4"
+        type="video/mp4"
+      />
     </video>
-
   </div>
   <RouterView></RouterView>
 </template>
 
 <script setup>
-
-import { RouterView, RouterLink } from 'vue-router';
-
-
+import { RouterView, RouterLink } from "vue-router";
 </script>
 
 <style lang="scss" scope>
@@ -29,10 +27,9 @@ div.not-found {
   background-color: none;
 
   ::selection {
-    background-color: rgba(76, 76, 76,.5);
-   
+    background-color: rgba(76, 76, 76, 0.5);
+
     color: #ffffff;
-  
   }
 
   h1 {
@@ -64,10 +61,10 @@ div.not-found {
     font-size: 5vw;
     font-weight: bold;
     line-height: 10vw;
-    letter-spacing: .5vw;
+    letter-spacing: 0.5vw;
 
     &:hover {
-      color: map-get($color,warning);
+      color: map-get($color, warning);
     }
   }
 
@@ -78,8 +75,6 @@ div.not-found {
 
     width: 100vw;
     object-fit: cover;
-
   }
-
-
-}</style>
+}
+</style>

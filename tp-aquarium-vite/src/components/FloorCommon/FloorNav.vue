@@ -44,7 +44,7 @@ const pageNow = ref(props.pageNow);
 
     &.active::after {
       content: "";
-      background-image: url("@/img/floor_nav_index.jpg");
+      background-image: url("https://tibamef2e.com/thd101/g6/img/floor_nav_index.svg");
       background-repeat: no-repeat;
       display: block;
       width: 30px;

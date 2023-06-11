@@ -2,7 +2,10 @@
   <div class="overnight_notice">
     <div class="overnight_notice_left">
       <h1>注意事項</h1>
-      <img src="/img/overnight_notice.jpg" alt="" />
+      <img
+        src="https://tibamef2e.com/thd101/g6/img/overnight_notice.jpg"
+        alt=""
+      />
     </div>
 
     <section class="wrapper">

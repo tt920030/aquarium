@@ -24,7 +24,10 @@
                 checked
               />
               <div class="cart-product-content-r">
-                <img src="/img/cart_ticket.png" alt="" />
+                <img
+                  src="https://tibamef2e.com/thd101/g6/img/cart_ticket.png"
+                  alt=""
+                />
                 <div>
                   <div>
                     <h4>{{ ticket.name }}-{{ ticket.type }}</h4>
@@ -87,7 +90,10 @@
                 checked
               />
               <div class="cart-product-content-r">
-                <img src="/img/cart_journey.png" alt="" />
+                <img
+                  src="https://tibamef2e.com/thd101/g6/img/cart_journey.png"
+                  alt=""
+                />
                 <div>
                   <div>
                     <h4>{{ journey.name }}</h4>
@@ -261,7 +267,7 @@
   <div v-if="addressModify" class="address-modifier">
     <div>
       <button @click="addressModify = false" class="close">
-        <img src="/img/cart_close.svg" alt="" />
+        <img src="https://tibamef2e.com/thd101/g6/img/cart_close.svg" alt="" />
       </button>
       <h3>變更收貨地址</h3>
       <div>
@@ -317,7 +323,7 @@
   <div v-if="couponCheck" class="coupon-checker">
     <div>
       <button @click="couponCheck = false" class="close">
-        <img src="/img/cart_close.svg" alt="" />
+        <img src="https://tibamef2e.com/thd101/g6/img/cart_close.svg" alt="" />
       </button>
       <h3>選擇折價券</h3>
       <div>

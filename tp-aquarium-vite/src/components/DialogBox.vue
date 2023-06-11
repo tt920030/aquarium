@@ -1,6 +1,9 @@
 <template>
   <div v-if="isReply" class="answer">
-    <img src="/img/customer_service1.png" alt="" />
+    <img
+      src="https://tibamef2e.com/thd101/g6/img/customer_service1.png"
+      alt=""
+    />
     <div class="messageWrapper">
       <p class="messageAnswer">{{ text }}</p>
     </div>
@@ -58,7 +61,7 @@ const props = defineProps({
       position: relative;
     }
     ::before {
-      content: url("/img/customer_service_message_a.svg");
+      content: url("https://tibamef2e.com/thd101/g6/img/customer_service_message_a.svg");
       position: absolute;
       left: -5px;
       top: -11px;
@@ -99,7 +102,7 @@ const props = defineProps({
       position: relative;
     }
     ::before {
-      content: url("/img/customer_service_message_q.svg");
+      content: url("https://tibamef2e.com/thd101/g6/img/customer_service_message_q.svg");
       position: absolute;
       right: -5px;
       top: -11px;

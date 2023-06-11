@@ -4,7 +4,7 @@
     <main>
       <div class="left">
         <div class="photo">
-          <img :src="'/img/' + photo" alt="" />
+          <img :src="'https://tibamef2e.com/thd101/g6/img/' + photo" alt="" />
         </div>
         <p class="name">使用者姓名</p>
         <button class="btn1" @click="logOut">
@@ -14,25 +14,34 @@
         <div class="manu">
           <RouterLink to="/member/Profile" @showPassword="showPassword1(n)">
             <div class="list">
-              <img src="/img/member_user.svg" alt="" />
+              <img
+                src="https://tibamef2e.com/thd101/g6/img/member_user.svg"
+                alt=""
+              />
               <p>我的資料</p>
             </div>
           </RouterLink>
           <RouterLink to="/member/Order">
             <div class="list">
-              <img src="/img/member_order.svg" alt="" />
+              <img
+                src="https://tibamef2e.com/thd101/g6/img/member_order.svg"
+                alt=""
+              />
               <p>我的訂單</p>
             </div>
           </RouterLink>
           <RouterLink to="/member/Coupon">
             <div class="list">
-              <img src="/img/member_coupon.svg" alt="" />
+              <img
+                src="https://tibamef2e.com/thd101/g6/img/member_coupon.svg"
+                alt=""
+              />
               <p>我的折價券</p>
             </div>
           </RouterLink>
           <!-- <RouterLink to="/member/Pet">
                     <div class="list">
-                        <img src="@/img/member_pet.svg" alt="">
+                        <img src="@https://tibamef2e.com/thd101/g6/img/member_pet.svg" alt="">
                         <p>虛擬寵物</p>
                     </div>
                 </RouterLink> -->

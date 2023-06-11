@@ -2,7 +2,7 @@
   <div class="sign" id="login">
     <main>
       <img
-        src="/img/input_fork.svg"
+        src="https://tibamef2e.com/thd101/g6/img/input_fork.svg"
         alt=""
         class="fork"
         @click="close($event)"
@@ -97,8 +97,14 @@
         <div class="bottom">
           <p class="register2">或用以下方式登入</p>
           <div class="social">
-            <img src="/img/login_fb.svg" alt="" />
-            <img src="/img/login_twitter.svg" alt="" />
+            <img
+              src="https://tibamef2e.com/thd101/g6/img/login_fb.svg"
+              alt=""
+            />
+            <img
+              src="https://tibamef2e.com/thd101/g6/img/login_twitter.svg"
+              alt=""
+            />
             <!-- google登入 -->
             <div class="icon">
               <!-- icon樣式內容 -->
@@ -232,7 +238,7 @@ const type = ref("A");
 
 const eye = ref("password");
 
-const eyeImg = ref("/img/login_eye.svg");
+const eyeImg = ref("https://tibamef2e.com/thd101/g6/img/login_eye.svg");
 
 const { cookies } = useCookies();
 
@@ -279,10 +285,10 @@ const toText = (e) => {
   // console.log(eye.value);
   if (eye.value == "password") {
     eye.value = "text";
-    eyeImg.value = "/img/login_eyeopen.svg";
+    eyeImg.value = "https://tibamef2e.com/thd101/g6/img/login_eyeopen.svg";
   } else {
     eye.value = "password";
-    eyeImg.value = "/img/login_eye.svg";
+    eyeImg.value = "https://tibamef2e.com/thd101/g6/img/login_eye.svg";
     // console.log(eye.value);
   }
 };

@@ -105,7 +105,7 @@ const addCart = function () {
 <style lang="scss" scoped>
 @include wrapper;
 .banner {
-  background-image: url(/src/img/ticket_banner.png);
+  background-image: url(https://tibamef2e.com/thd101/g6/img/ticket_banner.png);
   height: 660px;
   background-size: cover;
   @include mobile {

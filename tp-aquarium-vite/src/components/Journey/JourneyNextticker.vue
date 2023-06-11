@@ -16,11 +16,11 @@ import { onMounted, reactive, ref } from "vue";
 const left = ref(0);
 const time = ref(null);
 const images = reactive([
-  { id: 1, src: "/img/journey_slide1.jpg" },
-  { id: 2, src: "/img/journey_slide2.jpg" },
-  { id: 3, src: "/img/journey_slide3.jpg" },
-  { id: 4, src: "/img/journey_slide4.jpg" },
-  { id: 5, src: "/img/journey_slide5.jpg" },
+  { id: 1, src: "https://tibamef2e.com/thd101/g6/img/journey_slide1.jpg" },
+  { id: 2, src: "https://tibamef2e.com/thd101/g6/img/journey_slide2.jpg" },
+  { id: 3, src: "https://tibamef2e.com/thd101/g6/img/journey_slide3.jpg" },
+  { id: 4, src: "https://tibamef2e.com/thd101/g6/img/journey_slide4.jpg" },
+  { id: 5, src: "https://tibamef2e.com/thd101/g6/img/journey_slide5.jpg" },
 ]);
 
 const move = () => {

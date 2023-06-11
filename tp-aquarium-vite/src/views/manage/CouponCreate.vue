@@ -1,11 +1,9 @@
 <template>
-  
   <ManageTemplate :news="news" :creates="creates"></ManageTemplate>
   <div class="buttons">
     <button>取消</button>
     <button @click="creates++">新增</button>
   </div>
-
 </template>
 
 <script setup>
@@ -16,14 +14,12 @@ import { onMounted, reactive, ref } from "vue";
 import axios from "axios";
 const creates = ref(false);
 const news = reactive([
-    
-    { id: "name", title: "名稱", type: "text" },
-    { id: "serial_number", title: "序號", type: "text" },
-    { id: "deno", title: "面額", type: "text" },
-    { id: "need_price", title: "抵用門檻", type: "text" },
-    { id: "duration", title: "有效期限", type: "text" },
-    
-  ]);
+  { id: "name", title: "名稱", type: "text" },
+  { id: "serial_number", title: "序號", type: "text" },
+  { id: "deno", title: "面額", type: "text" },
+  { id: "need_price", title: "抵用門檻", type: "text" },
+  { id: "duration", title: "有效期限", type: "text" },
+]);
 </script>
 
 <style lang="scss" scoped>

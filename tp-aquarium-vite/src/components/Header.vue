@@ -20,7 +20,7 @@
       :class="{ '-light_color2': waveColor2 === 'DeepSkyBlue' }"
     >
       <RouterLink to="/index" class="logo"
-        ><img src="@/img/logo-white.svg" alt=""
+        ><img src="https://tibamef2e.com/thd101/g6/img/logo-white.svg" alt=""
       /></RouterLink>
       <nav>
         <ul class="icon">
@@ -47,13 +47,17 @@
             </button>
           </li>
           <li @click="logIn()">
-            <img class="icons" src="/src/img/header_member.svg" alt="" />
+            <img
+              class="icons"
+              src="https://tibamef2e.com/thd101/g6/img/header_member.svg"
+              alt=""
+            />
           </li>
           <li>
             <RouterLink to="/cart"
               ><img
                 class="icons cart-icon"
-                src="/src/img/header_cart.svg"
+                src="https://tibamef2e.com/thd101/g6/img/header_cart.svg"
                 alt=""
               />
               <div class="cart-count" v-if="cart"></div>
@@ -245,13 +249,13 @@ const rainWeatherState = ref(""); //天氣型態
 const get_weather_img = computed(() => {
   switch (true) {
     case rainWeatherState.value.match(/雨/g):
-      return "/img/weather_elements4.png";
+      return "https://tibamef2e.com/thd101/g6/img/weather_elements4.png";
     case rainWeatherState.value.match(/晴/g):
-      return "/img/weather_elements3.png";
+      return "https://tibamef2e.com/thd101/g6/img/weather_elements3.png";
     case rainWeatherState.value.match(/陰/g):
-      return "/img/weather_elements2.png";
+      return "https://tibamef2e.com/thd101/g6/img/weather_elements2.png";
     default:
-      return "/img/weather_elements1.png";
+      return "https://tibamef2e.com/thd101/g6/img/weather_elements1.png";
   }
 });
 </script>

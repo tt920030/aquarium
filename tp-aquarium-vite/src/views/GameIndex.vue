@@ -1,7 +1,7 @@
 <template>
   <body class="game_index">
     <div class="top">
-      <img src="../img/game_photo.png" alt="" />
+      <img src="https://tibamef2e.com/thd101/g6/img/game_photo.png" alt="" />
     </div>
 
     <div class="banner">
@@ -17,15 +17,15 @@
       </div>
     </div>
 
-        <div class="game_index_rule">
-
-            <div class="rule">
-                <h2>遊戲規則</h2>
-                <h3>1、遊戲內容分為拼圖關卡以及問答關卡<br>
-                    2、拼圖關卡：共一關，可自行選擇拼圖數量<br>
-                    3、問答關卡：共五關，皆為選擇題<br>
-                    4、通過關卡可獲得隨機商品折價券！
-                </h3>
+    <div class="game_index_rule">
+      <div class="rule">
+        <h2>遊戲規則</h2>
+        <h3>
+          1、遊戲內容分為拼圖關卡以及問答關卡<br />
+          2、拼圖關卡：共一關，可自行選擇拼圖數量<br />
+          3、問答關卡：共五關，皆為選擇題<br />
+          4、通過關卡可獲得隨機商品折價券！
+        </h3>
 
         <div class="game_index_button">
           <!-- <a class="btn" href="_game_level.html">
@@ -37,7 +37,7 @@
             </RouterLink>
           </div>
         </div>
-        <img src="../img/game_shark.png" alt="" />
+        <img src="https://tibamef2e.com/thd101/g6/img/game_shark.png" alt="" />
       </div>
     </div>
   </body>

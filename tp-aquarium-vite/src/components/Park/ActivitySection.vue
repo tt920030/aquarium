@@ -31,7 +31,10 @@ const lightboxClickHandler = (e) => {
           </a>
           <div class="journey_intro_content">
             <div class="journey_intro_main">
-              <img src="/src/img/journey_intro_icon.svg" alt="" />
+              <img
+                src="https://tibamef2e.com/thd101/g6/img/journey_intro_icon.svg"
+                alt=""
+              />
               <h4>{{ item.h4 }}</h4>
               <p>{{ item.p }}</p>
             </div>

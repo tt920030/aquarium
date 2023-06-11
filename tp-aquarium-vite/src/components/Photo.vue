@@ -1,6 +1,11 @@
 <template>
   <div class="container1">
-    <img src="/img/input_fork.svg" alt="" class="fork" @click="emitClose" />
+    <img
+      src="https://tibamef2e.com/thd101/g6/img/input_fork.svg"
+      alt=""
+      class="fork"
+      @click="emitClose"
+    />
     <h4>請選擇頭貼</h4>
     <form method="post" action="" class="photo">
       <div class="list" v-for="(photo, index) in photos" :key="photo">
@@ -43,15 +48,15 @@ const emitreload = () => {
 const props = defineProps(["id"]);
 
 const photos = ref([
-  "/img/member_photo1.png",
-  "/img/member_photo2.png",
-  "/img/member_photo3.png",
-  "/img/member_photo4.png",
-  "/img/member_photo5.png",
-  "/img/member_photo6.png",
-  "/img/member_photo7.png",
-  "/img/member_photo8.png",
-  "/img/member_photo9.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo1.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo2.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo3.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo4.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo5.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo6.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo7.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo8.png",
+  "https://tibamef2e.com/thd101/g6/img/member_photo9.png",
 ]);
 
 const currentIndex = ref(1);

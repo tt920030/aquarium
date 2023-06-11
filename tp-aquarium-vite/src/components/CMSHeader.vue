@@ -10,7 +10,11 @@
         "
         to="/cms"
       >
-        <img class="logo" src="@/img/cms_logo.svg" alt="" />
+        <img
+          class="logo"
+          src="https://tibamef2e.com/thd101/g6/img/cms_logo.svg"
+          alt=""
+        />
         <h2>後台管理系統</h2>
       </RouterLink>
 
@@ -21,7 +25,7 @@
 
       <a class="signOut" href="">
         <h3>登出</h3>
-        <img src="@/img/cms_logout.svg" alt="" />
+        <img src="https://tibamef2e.com/thd101/g6/img/cms_logout.svg" alt="" />
       </a>
     </header>
     <!-- 選單列 -->
@@ -192,23 +196,23 @@ onMounted(() => {
         }
 
         .news {
-          background-image: url(@/img/cms_icon1_white.svg);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon1_white.svg);
         }
 
         .product {
-          background-image: url(@/img/cms_icon2_white.svg);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon2_white.svg);
         }
 
         .journey {
-          background-image: url(@/img/cms_icon3_white.svg);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon3_white.svg);
         }
 
         .coupon {
-          background-image: url(@/img/cms_icon4_white.svg);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon4_white.svg);
         }
 
         .customer {
-          background-image: url(@/img/cms_icon5_white.svg);
+          background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon5_white.svg);
         }
       }
 
@@ -222,43 +226,43 @@ onMounted(() => {
       }
 
       &:hover .news {
-        background-image: url(@/img/cms_icon1_white.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon1_white.svg);
       }
 
       &:hover .product {
-        background-image: url(@/img/cms_icon2_white.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon2_white.svg);
       }
 
       &:hover .journey {
-        background-image: url(@/img/cms_icon3_white.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon3_white.svg);
       }
 
       &:hover .coupon {
-        background-image: url(@/img/cms_icon4_white.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon4_white.svg);
       }
 
       &:hover .customer {
-        background-image: url(@/img/cms_icon5_white.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon5_white.svg);
       }
 
       .news {
-        background-image: url(@/img/cms_icon1_blue.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon1_blue.svg);
       }
 
       .product {
-        background-image: url(@/img/cms_icon2_blue.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon2_blue.svg);
       }
 
       .journey {
-        background-image: url(@/img/cms_icon3_blue.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon3_blue.svg);
       }
 
       .coupon {
-        background-image: url(@/img/cms_icon4_blue.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon4_blue.svg);
       }
 
       .customer {
-        background-image: url(@/img/cms_icon5_blue.svg);
+        background-image: url(https://tibamef2e.com/thd101/g6/img/cms_icon5_blue.svg);
       }
 
       div {

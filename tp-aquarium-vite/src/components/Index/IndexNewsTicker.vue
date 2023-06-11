@@ -20,12 +20,12 @@ onMounted(() => {
 const time = ref(null);
 const left = ref(0);
 const images = reactive([
-  { id: 1, src: "/img/index_logo1.jpg" },
-  { id: 2, src: "/img/index_logo2.jpg" },
-  { id: 3, src: "/img/index_logo3.jpg" },
-  { id: 4, src: "/img/index_logo4.jpg" },
-  { id: 5, src: "/img/index_logo5.jpg" },
-  { id: 6, src: "/img/index_logo6.jpg" },
+  { id: 1, src: "https://tibamef2e.com/thd101/g6/img/index_logo1.jpg" },
+  { id: 2, src: "https://tibamef2e.com/thd101/g6/img/index_logo2.jpg" },
+  { id: 3, src: "https://tibamef2e.com/thd101/g6/img/index_logo3.jpg" },
+  { id: 4, src: "https://tibamef2e.com/thd101/g6/img/index_logo4.jpg" },
+  { id: 5, src: "https://tibamef2e.com/thd101/g6/img/index_logo5.jpg" },
+  { id: 6, src: "https://tibamef2e.com/thd101/g6/img/index_logo6.jpg" },
 ]);
 
 const move = () => {

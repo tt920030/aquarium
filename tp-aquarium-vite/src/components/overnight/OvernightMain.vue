@@ -29,7 +29,7 @@ import { reactive } from "vue";
 const circlePage = reactive([
   {
     id: 1,
-    src: "/img/overnight_circle1.png",
+    src: "https://tibamef2e.com/thd101/g6/img/overnight_circle1.png",
     title: "世界水域區(兩天一夜)",
     month: "1-12月",
     content: "觀賞海底奇景，體驗海洋生態",
@@ -37,7 +37,7 @@ const circlePage = reactive([
   },
   {
     id: 2,
-    src: "/img/overnight_circle2.png",
+    src: "https://tibamef2e.com/thd101/g6/img/overnight_circle2.png",
     title: "台灣水域區(兩天一夜)",
     month: "3-6月",
     content: "觀賞海底奇景，體驗海洋生態",
@@ -45,7 +45,7 @@ const circlePage = reactive([
   },
   {
     id: 3,
-    src: "/img/overnight_circle3.png",
+    src: "https://tibamef2e.com/thd101/g6/img/overnight_circle3.png",
     title: "觀賞珊瑚(兩天一夜)",
     month: "7-9月",
     content: "觀賞海底奇景，體驗海洋生態",
@@ -53,7 +53,7 @@ const circlePage = reactive([
   },
   {
     id: 4,
-    src: "/img/overnight_circle4.png",
+    src: "https://tibamef2e.com/thd101/g6/img/overnight_circle4.png",
     title: "蟹逅(兩天一夜)",
     month: "10-12月",
     content: "觀賞海底奇景，體驗海洋生態",
@@ -64,7 +64,7 @@ const circlePage = reactive([
 
 <style lang="scss" scoped>
 .overnight_circle_bgc {
-  background-image: url("/img/overnight_bgc.jpg");
+  background-image: url("https://tibamef2e.com/thd101/g6/img/overnight_bgc.jpg");
   width: 100%;
   height: 3097px;
   background-repeat: no-repeat;
