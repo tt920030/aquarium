@@ -23,7 +23,7 @@ onMounted(() => {
         forms.push([
           element["NAME"],
           element["SERIAL_NUMBER"],
-          element["DENO"],
+          element["DISCOUNT"],
           element["NEED_PRICE"],
           element["DURATION"],
           element["ID"],
@@ -41,6 +41,7 @@ const title = reactive([
   "面額",
   "抵用門檻",
   "有效期限",
+  "折價券ID",
   "修改",
   "刪除",
 ]);

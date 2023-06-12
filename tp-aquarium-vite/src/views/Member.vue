@@ -114,7 +114,7 @@ const getPhotoName = () => {
 
 const logOut = () => {
   cookies.remove("id");
-  router.push({ path: "/" });
+  router.push({ path: "/index" });
 };
 
 onMounted(() => {

@@ -526,7 +526,7 @@ const getCoupon = function () {
   }
 
   axios
-    .post("http://localhost/G6/getCoupon.php", params)
+    .post(`${import.meta.env.VITE_API_URL}getCoupon.php`, params)
     .then((res) => {
       console.log(res.data);
       if (typeof res.data == "object") {

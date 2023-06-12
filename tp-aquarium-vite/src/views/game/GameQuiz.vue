@@ -119,7 +119,7 @@ const get = function () {
       params.append("id", value); //有id就把會員id傳到php
 
       axios
-        .post("http://localhost/G6/saveCoupon.php", params)
+        .post(`${import.meta.env.VITE_API_URL}saveCoupon.php`, params)
         .then((res) => {
           if (res.data === "exists") {
             alert("您已經領取過囉");

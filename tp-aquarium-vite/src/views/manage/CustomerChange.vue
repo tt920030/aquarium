@@ -10,40 +10,23 @@
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import { onMounted, reactive, ref } from "vue";
 import ManageTemplate from "/src/components/ManageTemplate.vue";
-
 // 修改
 const updates = ref(false);
 
 // 接受模板2傳來的值
 const $route = useRoute();
+console.log($route.query.changeData);
 const changeData = reactive(JSON.parse($route.query.changeData));
 // console.log(changeData);
 const news = reactive([
-  { id: "ID", title: "折價券ID", type: "text", data: changeData.ID },
-  { id: "NAME", title: "名稱", type: "text", data: changeData.NAME },
-  {
-    id: "SERIAL_NUMBER",
-    title: "序號",
-    type: "text",
-    data: changeData.SERIAL_NUMBER,
-  },
-  { id: "DENO", title: "面額", type: "text", data: changeData.DENO },
-  {
-    id: "NEED_PRICE",
-    title: "抵用門檻",
-    type: "text",
-    data: changeData.NEED_PRICE,
-  },
-  {
-    id: "DURATION",
-    title: "有效期限",
-    type: "text",
-    data: changeData.DURATION,
-  },
+  { id: "num", title: "問題編號", type: "text", data: changeData.ID },
+  { id: "keywords", title: "關鍵字", type: "text", data: changeData.KEYWORDS },
+  { id: "answer", title: "回覆", type: "textarea", data: changeData.ANSWER },
 ]);
 // 傳值到資料庫
 const sendToDB = () => {};
 </script>
+
 <style lang="scss" scoped>
 main {
   box-sizing: border-box;
@@ -58,6 +41,18 @@ main {
   }
   .row.justify-content-center {
     margin-left: -170px;
+  }
+  .buttons {
+    display: flex;
+    margin-left: 305px;
+    margin-top: 30px;
+    button {
+      width: 129px;
+      height: 42px;
+      border: none;
+      background-color: map-get($color, bgc1);
+      margin-right: 20px;
+    }
   }
 }
 </style>

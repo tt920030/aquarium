@@ -27,7 +27,7 @@ const news = reactive([
     type: "text",
     data: changeData.SERIAL_NUMBER,
   },
-  { id: "DENO", title: "面額", type: "text", data: changeData.DENO },
+  { id: "DISCOUNT", title: "面額", type: "text", data: changeData.DISCOUNT },
   {
     id: "NEED_PRICE",
     title: "抵用門檻",

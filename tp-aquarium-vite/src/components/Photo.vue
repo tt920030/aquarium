@@ -75,7 +75,7 @@ const photo = () => {
   // console.log(profileText.photo_id);
 
   axios
-    .post("http://localhost/g6/changePhoto.php", params)
+    .post(`${import.meta.env.VITE_API_URL}changePhoto.php`, params)
     .then((res) => {
       emitPhoto();
       emitreload();
