@@ -70,12 +70,14 @@
         </div>
       </main>
     </div>
+    <CustomerService></CustomerService>
   </div>
 </template>
 <script setup>
 import { useRoute } from "vue-router";
 import Header from "/src/components/Header.vue";
 import Footer from "/src/components/Footer.vue";
+import CustomerService from "/src/components/CustomerService.vue";
 import {
   ref,
   reactive,
@@ -121,52 +123,44 @@ const tabs = reactive([
 ]);
 
 //商品資訊
-const products = reactive([]);
-const img1 = reactive([]);
-const img2 = reactive([]);
-const img3 = reactive([]);
-
-//商品資訊
 const data = reactive([]);
 //照片路徑矩陣
 let imgs = reactive([]);
 //第一張照片路徑（給大圖預設值）
 let firstImg = ref();
 //
-let product = ref(null);
+let product = reactive({
+  NAME: "",
+  PRICE: "",
+  CONTENT: "",
+});
 
-onBeforeMount(() => {
+onMounted(() => {
   let params = new URLSearchParams(); //建立PHP可接受的格式
-  params.append("data", data.value); //將搜尋值傳入params物件內
+  params.append("data", route.params.id); //將搜尋值傳入params物件內
   axios
-    .post(`${import.meta.env.VITE_API_URL}getProduct.php`) //使用get或post等取得路徑資料(php))
+    .post(`${import.meta.env.VITE_API_URL}getProductPage.php`, params) //使用get或post等取得路徑資料(php))
 
     .then((res) => {
-      res.data.forEach((element, index) => {
-        products.push(element);
-        img1.push(element.PICTURE);
-        img2.push(element.SUB_PICTURE1);
-        img3.push(element.SUB_PICTURE2);
-      });
-      updateImg();
-      getFirstImg();
-      getProduct();
       //回傳後如何處理
+
+      // console.log(res.data[0].NAME)
+      product.NAME = res.data[0].NAME;
+      product.PRICE = res.data[0].PRICE;
+      product.CONTENT = res.data[0].CONTENT;
+      imgs.push(res.data[0].PICTURE);
+      if (res.data[0].SUB_PICTURE1 != "") {
+        imgs.push(res.data[0].SUB_PICTURE1);
+      }
+      if (res.data[0].SUB_PICTURE2 != "") {
+        imgs.push(res.data[0].SUB_PICTURE2);
+      }
+
+      getFirstImg();
     })
     .catch((err) => console.log(err)); //錯誤如何處理
 });
 
-//取出商品的照片組成矩陣
-function updateImg() {
-  imgs = [img1[route.params.id - 1]];
-  if (img2[route.params.id - 1] != "") {
-    imgs.push(img2[route.params.id - 1]);
-  }
-  if (img3[route.params.id - 1] != "") {
-    imgs.push(img3[route.params.id - 1]);
-  }
-  return imgs;
-}
 //取出第一張照片，設為預設大圖
 function getFirstImg() {
   firstImg = "https://tibamef2e.com/thd101/g6/img/" + imgs[0];
@@ -178,11 +172,6 @@ function updateImgUrl(img, index) {
   currentImg.value = index;
 }
 //取出商品資訊
-function getProduct() {
-  const foundProduct = products.find((object) => object.ID == route.params.id);
-  product.value = foundProduct;
-  return product;
-}
 // let product = computed(()=> products.find(object => object.ID == route.params.id))
 
 //切換顯示內容
@@ -208,8 +197,8 @@ function addToCart(event) {
   const dataKey = "cartProduct";
   nextTick(() => {
     const data = {
-      name: product.value.NAME,
-      price: product.value.PRICE,
+      name: product.NAME,
+      price: product.PRICE,
       amount: counter.value,
       img: "https://tibamef2e.com/thd101/g6/img/" + imgs[0],
     };
